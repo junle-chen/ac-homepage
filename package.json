@@ -1,13 +1,14 @@
 {
-	"name": "simonaking-homepage",
+	"name": "junle-homepage",
 	"version": "1.0.0",
-	"author": "SimonAKing <hi@simonaking.com>",
+	"author": "Junle Chen <cshanppy@gmail.com>",
 	"license": "LGPI-3.0",
-	"homepage": "http://simonaking.com",
-	"repository": "https://github.com/SimonAKing/HomePage",
-	"bugs": "https://github.com/SimonAKing/HomePage/issues",
-	"description": "SimonAKing-homepage",
+	"homepage": "https://junle.site",
+	"repository": "https://github.com/junle-chen",
+	"bugs": "https://github.com/junle-chen",
+	"description": "Junle Chen personal homepage",
 	"scripts": {
+		"import:content": "node scripts/import-junle-content.js",
 		"predev": "gulp build",
 		"dev": "gulp watch",
 		"build": "gulp build"

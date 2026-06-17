@@ -13,6 +13,14 @@ const less = require('gulp-less')
 
 const config = require('./config.json')
 
+function getHomepageContent() {
+	try {
+		return require('./src/data/homepage-content.json')
+	} catch (error) {
+		return {}
+	}
+}
+
 gulp.task('clean', function () {
 	return del(['./dist/css/', './dist/js/'])
 })
@@ -49,17 +57,23 @@ gulp.task('js', function () {
 gulp.task('pug', function () {
 	return gulp
 		.src('./src/index.pug')
-		.pipe(pug({ data: config }))
+		.pipe(pug({ data: { ...config, homepage: getHomepageContent() } }))
 		.pipe(gulp.dest('./dist'))
 })
 
 gulp.task('assets', function () {
 	return gulp
-		.src(['./src/assets/**/*'])
-		.pipe(gulp.dest('./dist/assets'));
+	.src(['./src/assets/**/*'])
+	.pipe(gulp.dest('./dist/assets'));
 })
 
-gulp.task('build', gulp.series('clean', 'assets', 'pug', 'css', 'js', 'html'))
+gulp.task('cname', function () {
+	return gulp
+		.src('./CNAME', { allowEmpty: true })
+		.pipe(gulp.dest('./dist'))
+})
+
+gulp.task('build', gulp.series('clean', 'assets', 'cname', 'pug', 'css', 'js', 'html'))
 gulp.task('default', gulp.series('build'))
 
 gulp.task('watch', function () {

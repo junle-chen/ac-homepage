@@ -1029,3 +1029,118 @@ if (isPhone) {
 		{ passive: true }
 	);
 }
+
+function bindContentFilters() {
+	const noteSearch = document.getElementById("noteSearch");
+	const noteCards = Array.prototype.slice.call(
+		document.querySelectorAll("[data-note-card]")
+	);
+	const noteEmpty = document.getElementById("noteEmptyState");
+
+	if (!noteSearch || !noteCards.length) {
+		return;
+	}
+
+	function matches(card, query) {
+		if (!query) {
+			return true;
+		}
+		const haystack = [
+			card.dataset.title,
+			card.dataset.tags,
+			card.dataset.excerpt,
+		]
+			.join(" ")
+			.toLowerCase();
+		return haystack.indexOf(query) !== -1;
+	}
+
+	function applyFilter() {
+		const query = noteSearch.value.trim().toLowerCase();
+		let visible = 0;
+		noteCards.forEach((card) => {
+			const matched = matches(card, query);
+			card.hidden = !matched;
+			if (matched) {
+				visible += 1;
+			}
+		});
+		if (noteEmpty) {
+			noteEmpty.hidden = visible !== 0;
+		}
+	}
+
+	noteSearch.addEventListener("input", applyFilter);
+	applyFilter();
+}
+
+function scrollMainToHash(hash) {
+	if (!hash || hash === "#") {
+		return;
+	}
+	const target = document.querySelector(hash);
+	if (!target) {
+		return;
+	}
+	target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function bindLocalAnchors() {
+	Array.prototype.slice
+		.call(document.querySelectorAll('a[href^="#"]'))
+		.forEach((link) => {
+			link.addEventListener("click", (event) => {
+				const hash = link.getAttribute("href");
+				if (!hash || hash === "#") {
+					return;
+				}
+				event.preventDefault();
+				loadAll();
+				window.history.replaceState(null, "", hash);
+				setTimeout(() => scrollMainToHash(hash), 500);
+			});
+		});
+}
+
+function revealInitialHash() {
+	if (!window.location.hash || window.location.hash === "#") {
+		return;
+	}
+	loadAll();
+	setTimeout(() => scrollMainToHash(window.location.hash), 1300);
+}
+
+function bindThemeToggle() {
+	const main = document.querySelector(".content-main");
+	const button = document.querySelector("[data-theme-toggle]");
+	const icon = document.querySelector("[data-theme-icon]");
+	if (!main || !button || !icon) {
+		return;
+	}
+
+	function applyTheme(theme) {
+		const isLight = theme === "light";
+		main.classList.toggle("theme-light", isLight);
+		icon.textContent = isLight ? "☾" : "☀";
+		button.setAttribute(
+			"aria-label",
+			isLight ? "Switch to dark mode" : "Switch to light mode"
+		);
+	}
+
+	const savedTheme = window.localStorage.getItem("junle-homepage-theme") || "dark";
+	applyTheme(savedTheme);
+
+	button.addEventListener("click", () => {
+		const nextTheme = main.classList.contains("theme-light") ? "dark" : "light";
+		window.localStorage.setItem("junle-homepage-theme", nextTheme);
+		applyTheme(nextTheme);
+	});
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+	bindContentFilters();
+	bindLocalAnchors();
+	bindThemeToggle();
+	revealInitialHash();
+});

@@ -1,42 +1,42 @@
 {
 	"head": {
-		"title": "SimonAKing",
-		"description": "Author:SimonAKing,Category:Personal Blog",
+		"title": "Junle Chen | Notes, Memos, Research",
+		"description": "Junle Chen personal homepage for notes, memos, research workflow, and paper tracking.",
 		"favicon": "favicon.ico"
 	},
 	"intro": {
-		"title": "SimonAKing",
-		"subtitle": "Front back left right end engineer",
-		"enter": "enter",
-		"supportAuthor": true,
+		"title": "JunleOS",
+		"subtitle": "Notes, memos, paper radar, and research workflow",
+		"enter": "open workspace",
+		"supportAuthor": false,
 		"background": true
 	},
 	"main": {
-		"name": "SimonAKing",
-		"signature": "Code & Input & Output",
+		"name": "Junle Chen",
+		"signature": "Notes, bugs, papers, and research workflow",
 		"avatar": {
-			"link": "assets/avatar.jpg",
+			"link": "assets/avatar.png",
 			"height": "100",
 			"width": "100"
 		},
 		"ul": {
 			"first": {
-				"href": "blog/",
+				"href": "#notes",
 				"icon": "bokeyuan",
-				"text": "Blog"
+				"text": "Notes"
 			},
 			"second": {
-				"href": "about/",
+				"href": "#memos",
 				"icon": "xiaolian",
-				"text": "About"
+				"text": "Memos"
 			},
 			"third": {
-				"href": "mailto:hi@simonaking.com",
+				"href": "mailto:cshanppy@gmail.com",
 				"icon": "email",
 				"text": "Email"
 			},
 			"fourth": {
-				"href": "https://github.com/SimonAKing",
+				"href": "https://github.com/junle-chen",
 				"icon": "github",
 				"text": "Github"
 			}
