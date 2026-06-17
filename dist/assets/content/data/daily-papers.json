@@ -1,0 +1,1494 @@
+{
+  "updated_at": "2026-06-17T17:11:21.816Z",
+  "source": "arxiv",
+  "analysis_method": "metadata-first Codex automation schema",
+  "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
+  "query_terms": [
+    "agentic reinforcement learning",
+    "agentic rl",
+    "multi-turn agent",
+    "multi turn agent",
+    "long-horizon planning",
+    "long horizon agent",
+    "agent planning",
+    "planning agent",
+    "agent memory",
+    "stateful agent",
+    "interactive replanning",
+    "reinforcement learning agent"
+  ],
+  "automation_contract": {
+    "runner": "Codex daily automation can overwrite this JSON with full paper readings before build/deploy.",
+    "email_title_template": "YYYY-MM-DD Daily Paper",
+    "fields": [
+      "作者",
+      "单位",
+      "日期",
+      "论文链接",
+      "项目页",
+      "代码仓库",
+      "录用",
+      "相关度",
+      "偏水风险",
+      "贡献",
+      "总结",
+      "亮点"
+    ]
+  },
+  "digest": {
+    "title": "2026-06-18 Daily Paper",
+    "report_date": "2026-06-18",
+    "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
+    "summary": "今日自动化从 arXiv 抓取并初筛 16 篇候选，重点关注 多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL。相关度为元数据初筛结果，真正价值仍需结合正文确认。",
+    "top_recommendations": [
+      "2606.17680v1",
+      "2606.16774v1",
+      "2606.16478v1"
+    ],
+    "low_priority": [
+      "2606.16274v1",
+      "2606.16733v1",
+      "2606.15872v1"
+    ],
+    "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
+    "email_body": "2026-06-18 Daily Paper\n\n今日自动化从 arXiv 抓取并初筛 16 篇候选，重点关注 多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL。相关度为元数据初筛结果，真正价值仍需结合正文确认。\n\n最值得读的 3 篇\n1. EnvRL: Learn from Environment Dynamics in Agentic Reinforcement Learning\n- 作者：Zhitong Wang, Songze Li, Hao Peng, Shuzheng Si, Yi Wang, Maosong Sun 等\n- 单位：arXiv metadata 未提供；需要正文或项目页确认单位。\n- 日期：2026-06-16\n- 论文链接：https://arxiv.org/abs/2606.17680v1\n- 项目页：未发现\n- 代码仓库：未发现\n- 录用：未确认录用\n- 相关度：高（原因：直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。；偏水风险：低）\n- 贡献：直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。\n- 总结：Reinforcement learning (RL) has emerged as a powerful paradigm for training Large Language Models (LLMs) as agents. However, conventional RL methods for long-horizon agentic tasks often struggle with sparse outcome rewards. Intuitively, this overlooks the rich environment dynamics information contained in rollout interaction trajectories. We argue that the interaction experience inherently serves as an implicit supe...\n- 亮点：有价值：优先进入今日精读候选。；直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。；摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。\n2. OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models\n- 作者：Tianyi Lin, Chuanyu Sun, Jingyi Zhang, Changxu Wei, Huanjin Yao, Shunyu Liu 等\n- 单位：arXiv metadata 未提供；需要正文或项目页确认单位。\n- 日期：2026-06-15\n- 论文链接：https://arxiv.org/abs/2606.16774v1\n- 项目页：未发现\n- 代码仓库：未发现\n- 录用：未确认录用\n- 相关度：高（原因：直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。；偏水风险：低）\n- 贡献：直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。\n- 总结：Equipping Large Language Model (LLM) agents with effective skills is crucial for solving complex tasks in real-world systems like OpenClaw. In this work, we aim to develop a framework that automatically constructs such reusable skills to enhance LLMs in tool use, multi-step reasoning, and dynamic environment interaction. To this end, we propose Collective Skill Tree Search (CSTS), a novel tree-search-based skill con...\n- 亮点：有价值：优先进入今日精读候选。；直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。；摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。\n3. Tensor-Coord: Algebraic Decomposition of Joint Plan Tensors for Conflict-Free Multi-Agent LLM Planning\n- 作者：Mudit Rastogi\n- 单位：arXiv metadata 未提供；需要正文或项目页确认单位。\n- 日期：2026-06-15\n- 论文链接：https://arxiv.org/abs/2606.16478v1\n- 项目页：未发现\n- 代码仓库：未发现\n- 录用：未确认录用\n- 相关度：高（原因：直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。；偏水风险：低）\n- 贡献：直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。\n- 总结：Large language models (LLMs) remain limited in multi-agent planning because independently generated plans can create coordination failures such as spatial collisions, resource contention, and temporal deadlocks. We introduce Tensor-Coord, a multilinear algebra framework that represents the joint plan of N agents as a third-order tensor \\(T \\in R^{N \\times H \\times A}\\) over agents, timesteps, and actions. Canonical...\n- 亮点：有价值：优先进入今日精读候选。；直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。；摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。\n\n暂不优先 / 可能偏水\n- GraphWorld: Long-Horizon Planning with World Models for End-to-End Autonomous Driving：相关度 中，需要谨慎：可能有启发，但先看实验和设定是否扎实。\n- A First-Principles Derivation of LLM Policy Optimization: From Expected Reward to GRPO and Its Structural Extensions：相关度 低，可能偏水：主题或实验信号偏弱，除非和当前问题强相关，否则不优先。\n- SciOrch: Learning to Orchestrate Expert LLMs for Solving Frontier Multimodal Scientific Reasoning Tasks：相关度 中，需要谨慎：可能有启发，但先看实验和设定是否扎实。"
+  },
+  "items": [
+    {
+      "id": "2606.17680v1",
+      "title": "EnvRL: Learn from Environment Dynamics in Agentic Reinforcement Learning",
+      "summary": "Reinforcement learning (RL) has emerged as a powerful paradigm for training Large Language Models (LLMs) as agents. However, conventional RL methods for long-horizon agentic tasks often struggle with sparse outcome rewards. Intuitively, this overlooks the rich environment dynamics information contained in rollout interaction trajectories. We argue that the interaction experience inherently serves as an implicit supervision signal, reveals the underlying transition mechanisms of the environment, and enables the agent to construct a more accurate internal model of the environment.. Therefore, in this work, we investigate how to leverage this additional signal to improve policy learning. Specifically, we propose EnvRL, a framework that incorporates environment dynamics learning into agentic RL via two auxiliary objectives: state prediction and inverse dynamics. By jointly optimizing with the primary RL objective, we encourage the agent to internalize environment dynamics from its own interaction experience. Extensive experiments on two long-horizon agentic benchmarks demonstrate that EnvRL achieves significant improvements on success-rates over RL-only baselines, e.g., when trained with GRPO, lifting Qwen-2.5-1.5B-Instruct from 72.8% to 77.4% on ALFWorld, and from 56.8% to 67.0% on WebShop.",
+      "url": "http://arxiv.org/abs/2606.17680v1",
+      "authors": [
+        "Zhitong Wang",
+        "Songze Li",
+        "Hao Peng",
+        "Shuzheng Si",
+        "Yi Wang",
+        "Maosong Sun",
+        "Juanzi Li"
+      ],
+      "published": "2026-06-16",
+      "updated": "2026-06-16",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhitong Wang",
+          "Songze Li",
+          "Hao Peng",
+          "Shuzheng Si",
+          "Yi Wang",
+          "Maosong Sun",
+          "Juanzi Li"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-16",
+        "paper_url": "https://arxiv.org/abs/2606.17680v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Reinforcement learning (RL) has emerged as a powerful paradigm for training Large Language Models (LLMs) as agents. However, conventional RL methods for long-horizon agentic tasks often struggle with sparse outcome rewards. Intuitively, this overlooks the rich environment dynamics information contained in rollout interaction trajectories. We argue that the interaction experience inherently serves as an implicit supe...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "Reinforcement learning (RL) has emerged as a powerful paradigm for training Large Language Models (LLMs) as agents.",
+        "experiments": "Extensive experiments on two long-horizon agentic benchmarks demonstrate that EnvRL achieves significant improvements on success-rates over RL-only baselines, e.g., when trained with GRPO, lifting Qwen-2.5-1.5B-Instruct from 72.8% to 77.4% on ALFWorld, and from 56.8% to 67.0% on WebShop.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.16774v1",
+      "title": "OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models",
+      "summary": "Equipping Large Language Model (LLM) agents with effective skills is crucial for solving complex tasks in real-world systems like OpenClaw. In this work, we aim to develop a framework that automatically constructs such reusable skills to enhance LLMs in tool use, multi-step reasoning, and dynamic environment interaction. To this end, we propose Collective Skill Tree Search (CSTS), a novel tree-search-based skill construction framework that constructs structured, diverse and generalizable tree of skills. The core idea of CSTS is to leverage collective intelligence to jointly search, identify and compose effective skills via two iterative phases: Collective Skill Node Generation (CSN-Gen) and Collective Skill Node Assessment (CSN-Assess). CSN-Gen exploits collective knowledge from multiple models to explore diverse candidate skills for each subtask, enabling comprehensive skill exploration. CSN-Assess employs multiple models as judges to evaluate and select skill nodes with two scoring mechanisms: (1) collective quality scoring that aggregates independent evaluations to produce a robust estimate of skill effectiveness, and (2) collective transferability scoring that explicitly verifies whether a skill generalizes well across different models. With CSTS, we construct a set of comprehensive tree of skills along with skill-augmented training data, enabling models to effectively learn and utilize skills. Besides, we introduce Collective Skill Reinforcement Learning, which actively selects multiple relevant skills from the tree to broaden solution-space exploration, avoid being trapped by a single skill and its resulting homogeneous or suboptimal solutions. As a result, our trained model, OpenClaw-Skill, exhibits outstanding agentic capabilities in long-horizon planning, tool use and generalization over challenging benchmarks.",
+      "url": "http://arxiv.org/abs/2606.16774v1",
+      "authors": [
+        "Tianyi Lin",
+        "Chuanyu Sun",
+        "Jingyi Zhang",
+        "Changxu Wei",
+        "Huanjin Yao",
+        "Shunyu Liu",
+        "Xikun Zhang",
+        "Liu Liu",
+        "Jiaxing Huang"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Tianyi Lin",
+          "Chuanyu Sun",
+          "Jingyi Zhang",
+          "Changxu Wei",
+          "Huanjin Yao",
+          "Shunyu Liu",
+          "Xikun Zhang",
+          "Liu Liu",
+          "Jiaxing Huang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.16774v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Equipping Large Language Model (LLM) agents with effective skills is crucial for solving complex tasks in real-world systems like OpenClaw. In this work, we aim to develop a framework that automatically constructs such reusable skills to enhance LLMs in tool use, multi-step reasoning, and dynamic environment interaction. To this end, we propose Collective Skill Tree Search (CSTS), a novel tree-search-based skill con...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "Equipping Large Language Model (LLM) agents with effective skills is crucial for solving complex tasks in real-world systems like OpenClaw.",
+        "experiments": "CSN-Assess employs multiple models as judges to evaluate and select skill nodes with two scoring mechanisms: (1) collective quality scoring that aggregates independent evaluations to produce a robust estimate of skill effectiveness, and (2) collective transferability scoring that explicitly verifies whether a skill generalizes well across different models.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.16478v1",
+      "title": "Tensor-Coord: Algebraic Decomposition of Joint Plan Tensors for Conflict-Free Multi-Agent LLM Planning",
+      "summary": "Large language models (LLMs) remain limited in multi-agent planning because independently generated plans can create coordination failures such as spatial collisions, resource contention, and temporal deadlocks. We introduce Tensor-Coord, a multilinear algebra framework that represents the joint plan of N agents as a third-order tensor \\(T \\in R^{N \\times H \\times A}\\) over agents, timesteps, and actions. Canonical Polyadic (CP) and Tucker decompositions are used to identify latent coordination structure. The minimal epsilon-approximate CP rank R* defines a computable coordination complexity measure, with \\(CC(Pi)=(R*-N)/N\\). We prove that R*=N is necessary and sufficient for plan independence. The residual \\(E=T-T_{R*}\\) defines a conflict score over agent pairs, timesteps, and actions, localizing failures without domain-specific rules. Tucker factors provide interpretable agent roles, temporal phases, and action clusters that are converted into natural language constraints for iterative LLM replanning. Experiments on multi-robot delivery tasks across Easy (2 agents, 5x5 grid), Medium (3 agents, 5x5 grid), and Hard (4 agents, 5x5 grid) settings show convergence to conflict-free plans in 100% of 2-agent cases within 1.4 iterations on average, 80% of 3-agent cases within 3.2 iterations, and 60% of 4-agent cases within 4.0 iterations. CP rank scaled approximately linearly as \\(R*(N) = 3.9N + 0.5\\), supporting its use as a predictor of coordination complexity.",
+      "url": "http://arxiv.org/abs/2606.16478v1",
+      "authors": [
+        "Mudit Rastogi"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Mudit Rastogi"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.16478v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Large language models (LLMs) remain limited in multi-agent planning because independently generated plans can create coordination failures such as spatial collisions, resource contention, and temporal deadlocks. We introduce Tensor-Coord, a multilinear algebra framework that represents the joint plan of N agents as a third-order tensor \\(T \\in R^{N \\times H \\times A}\\) over agents, timesteps, and actions. Canonical...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "Large language models (LLMs) remain limited in multi-agent planning because independently generated plans can create coordination failures such as spatial collisions, resource contention, and temporal deadlocks.",
+        "experiments": "The residual \\(E=T-T_{R*}\\) defines a conflict score over agent pairs, timesteps, and actions, localizing failures without domain-specific rules.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.16458v1",
+      "title": "RHO: Your Coding Agent is Secretly a Roboticist",
+      "summary": "Code-as-Policies (CaP) has shown that large language models (LLMs) can write code to solve robotics tasks by composing perception, planning, and control primitives. Recent CaP systems, however, rely on multi-turn code-generation loops at test time, which is often infeasible for real-time robot control. We introduce Robotics Harness Optimization (RHO), a novel paradigm in which tool-enabled coding agents, at training time, propose and search for interpretable, neurosymbolic multi-file policy repositories (Repositories-as-Policies) that compose these primitives rather than a single prompt, function, or file. RHO searches with reflective feedback from environment reward and execution rather than teleoperation demonstrations. It generalizes to perturbed pick-and-place settings like LIBERO-PRO, where OpenVLA scores 0.0% and $π_{0.5}$ averages 12.83%. Using the same low-level primitives, RHO reaches a 45.0% success rate, 2.5x higher than the strongest multi-turn agentic system, and 3.5x higher than $π_{0.5}$. On Robosuite, RHO sets a new state-of-the-art of 70.0%, exceeding the prior multi-turn record of 68.29% using single-turn execution with no corrective LLM code edits at deployment. When an LLM is used in the control loop, as on RAI's O3DE benchmark, RHO optimizes the deployed agent's multi-file harness of prompts, tools, and control code, improving held-out success from 23.5% to 44.3% with 20% less wall-clock time and 27% fewer tool calls.",
+      "url": "http://arxiv.org/abs/2606.16458v1",
+      "authors": [
+        "Karim Elmaaroufi",
+        "Justin Svegliato",
+        "Sarunas Kalade",
+        "Graham Schelle",
+        "Sanjit A. Seshia",
+        "Matei Zaharia"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Karim Elmaaroufi",
+          "Justin Svegliato",
+          "Sarunas Kalade",
+          "Graham Schelle",
+          "Sanjit A. Seshia",
+          "Matei Zaharia"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.16458v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Code-as-Policies (CaP) has shown that large language models (LLMs) can write code to solve robotics tasks by composing perception, planning, and control primitives. Recent CaP systems, however, rely on multi-turn code-generation loops at test time, which is often infeasible for real-time robot control. We introduce Robotics Harness Optimization (RHO), a novel paradigm in which tool-enabled coding agents, at training...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
+        "method": "We introduce Robotics Harness Optimization (RHO), a novel paradigm in which tool-enabled coding agents, at training time, propose and search for interpretable, neurosymbolic multi-file policy repositories (Repositories-as-Policies) that compose these primitives rather than a single prompt, function, or file.",
+        "experiments": "Using the same low-level primitives, RHO reaches a 45.0% success rate, 2.5x higher than the strongest multi-turn agentic system, and 3.5x higher than $π_{0.5}$.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.16285v1",
+      "title": "HiMPO: Hindsight-Informed Memory Policy Optimization for Less-Entangled Credit in Long-Horizon Agents",
+      "summary": "Long-horizon agents rely on memory mechanisms to compress interaction history, but optimizing memory writing faces a distinct credit assignment challenge: a memory update may be rewarded or penalized due to downstream tool failures, noisy observations, or reasoning errors rather than its own contribution. This causally entangled credit can lead agents to discard useful evidence or preserve irrelevant information. We propose HiMPO, a Hindsight-Informed Memory Policy Optimization framework for assigning less-entangled credit to memory-writing actions in long-horizon agents. HiMPO first estimates the local utility of a memory update by comparing the task-relevant information recoverable from the previous and updated memories under the same pre-write state. It then uses hindsight relevance as a bounded retrospective filter that attenuates memory credit when local utility is not supported by the target outcome. The resulting memory-specific advantage is applied only to memory tokens, while trajectory-level rewards optimize the rest of the agent behavior. Across judge-based open-domain tasks and objective compressive-memory QA, HiMPO improves over strong memory-based and RL-based baselines while preserving compressed-context efficiency. Controlled interventions further show that HiMPO reduces blame leakage from tool-induced errors and improves attribution fidelity of memory updates.",
+      "url": "http://arxiv.org/abs/2606.16285v1",
+      "authors": [
+        "Jiangze Yan",
+        "Yi Shen",
+        "Wenjing Zhang",
+        "Jieyun Huang",
+        "Zhaoxiang Liu",
+        "Ning Wang",
+        "Kai Wang",
+        "Shiguo Lian"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jiangze Yan",
+          "Yi Shen",
+          "Wenjing Zhang",
+          "Jieyun Huang",
+          "Zhaoxiang Liu",
+          "Ning Wang",
+          "Kai Wang",
+          "Shiguo Lian"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.16285v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Long-horizon agents rely on memory mechanisms to compress interaction history, but optimizing memory writing faces a distinct credit assignment challenge: a memory update may be rewarded or penalized due to downstream tool failures, noisy observations, or reasoning errors rather than its own contribution. This causally entangled credit can lead agents to discard useful evidence or preserve irrelevant information. We...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
+        "method": "We propose HiMPO, a Hindsight-Informed Memory Policy Optimization framework for assigning less-entangled credit to memory-writing actions in long-horizon agents.",
+        "experiments": "摘要没有明确实验数字；自动化建议先打开正文检查 benchmark、baseline、ablation 和失败案例。",
+        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.17127v1",
+      "title": "Agentic Discovery of Non-Canonical Antimicrobial Peptides with AMPGAN v3",
+      "summary": "Antimicrobial resistance causes to over a million deaths annually. Antimicrobial peptides (AMPs) are a promising solution, but generative AMP models are not yet ready to design peptides with non-natural amino acids and/or chemical modifications, which are essential for real-world peptide drugs. We present AMPGAN v3, a multi-objective conditional GAN that expands the generative vocabulary to D-amino acids and N/C-terminus modifications such as amidation. By separating adversarial and activity-aware supervision across two specialized discriminators, AMPGAN v3 substantially improves training stability and outperforms prior generative AMP models on external classifiers. We validated five candidates spanning three structural classes in vitro; two showed activity against Gram-positive strains, with the best candidate reaching MIC 8 μg/mL against B. subtilis. To support downstream curation, we further present PepCraft, a multi-agent framework for end-to-end AMP discovery in which a Planning Agent orchestrates specialized executors for generation, filtering, and verification. Its prioritization recommendations align with our in vitro outcomes. Together, these contributions let us examine, on a small but real scale, how generative and agentic AI compose in therapeutic peptide discovery. Code: https://github.com/marszzibros/AMPGANv3",
+      "url": "http://arxiv.org/abs/2606.17127v1",
+      "authors": [
+        "Jay Jung",
+        "Xiaohan Zhang",
+        "Shenghan Song",
+        "Mahmoud Sayedahmed",
+        "Chijian Xiang",
+        "Yunong Xu",
+        "Ahmed AbdelKhalek",
+        "Severin T. Schneebeli",
+        "Matthew J. Wargo",
+        "Jianing Li",
+        "Safwan Wshah"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "q-bio.QM",
+      "categories": [
+        "q-bio.QM",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/marszzibros/AMPGANv3",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jay Jung",
+          "Xiaohan Zhang",
+          "Shenghan Song",
+          "Mahmoud Sayedahmed",
+          "Chijian Xiang",
+          "Yunong Xu",
+          "Ahmed AbdelKhalek",
+          "Severin T. Schneebeli",
+          "Matthew J. Wargo",
+          "Jianing Li",
+          "Safwan Wshah"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.17127v1",
+        "project_url": "",
+        "repo_url": "https://github.com/marszzibros/AMPGANv3",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+        "summary": "Antimicrobial resistance causes to over a million deaths annually. Antimicrobial peptides (AMPs) are a promising solution, but generative AMP models are not yet ready to design peptides with non-natural amino acids and/or chemical modifications, which are essential for real-world peptide drugs. We present AMPGAN v3, a multi-objective conditional GAN that expands the generative vocabulary to D-amino acids and N/C-ter...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
+        "method": "We present AMPGAN v3, a multi-objective conditional GAN that expands the generative vocabulary to D-amino acids and N/C-terminus modifications such as amidation.",
+        "experiments": "We validated five candidates spanning three structural classes in vitro; two showed activity against Gram-positive strains, with the best candidate reaching MIC 8 μg/mL against B.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.16386v1",
+      "title": "Game-Theoretic Multi-Agent Reinforcement Learning for Swarm Trajectory Planning in Low-Altitude Wireless Networks",
+      "summary": "The Low-Altitude Economy (LAE) is rapidly expanding, giving rise to low-altitude wireless networks (LAWNs), where large-scale cellular-connected unmanned aerial vehicle (UAV) deployments support heterogeneous mission-critical applications over multi-cell ground base station (GBS) infrastructures. To ensure mission success, each UAV must jointly optimize communication throughput and mission completion efficiency. In fifth-generation (5G) new radio (NR) systems, the equal resource block (RB) allocation policy induces strong strategic coupling among UAV trajectories: when a UAV enters a GBS cell, it reduces the RB share available to all co-served UAVs, thereby altering their achievable rates and trajectory incentives through shared wireless resources. Existing studies either ignore this coupling or focus on single-cell infrastructure, leaving the multi-cell, congestion-aware UAV trajectory planning problem insufficiently addressed. To fill this gap, we formulate the problem as a cooperative stochastic congestion game with a communication-and-mission-aware utility function, and propose a centralized-training decentralized-execution multi-agent proximal policy optimization (CTDE-MAPPO) algorithm to maximize social welfare under multi-cell RB congestion. Simulation results show that the proposed method outperforms QMIX, independent Q-learning, and random baselines in terms of aggregate utility and mission success rate, while achieving stable convergence within practical training budgets.",
+      "url": "http://arxiv.org/abs/2606.16386v1",
+      "authors": [
+        "Nguyen Duc Minh Quang",
+        "Ruoxi Chong",
+        "Zhiqiang Wei",
+        "Chang Liu",
+        "Derrick Wing Kwan Ng"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "cs.GT",
+      "categories": [
+        "cs.GT"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Nguyen Duc Minh Quang",
+          "Ruoxi Chong",
+          "Zhiqiang Wei",
+          "Chang Liu",
+          "Derrick Wing Kwan Ng"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.16386v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "The Low-Altitude Economy (LAE) is rapidly expanding, giving rise to low-altitude wireless networks (LAWNs), where large-scale cellular-connected unmanned aerial vehicle (UAV) deployments support heterogeneous mission-critical applications over multi-cell ground base station (GBS) infrastructures. To ensure mission success, each UAV must jointly optimize communication throughput and mission completion efficiency. In...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
+        "method": "To fill this gap, we formulate the problem as a cooperative stochastic congestion game with a communication-and-mission-aware utility function, and propose a centralized-training decentralized-execution multi-agent proximal policy optimization (CTDE-MAPPO) algorithm to maximize social welfare under multi-cell RB congestion.",
+        "experiments": "To ensure mission success, each UAV must jointly optimize communication throughput and mission completion efficiency.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.16903v1",
+      "title": "Directory-Aware Query and Maintenance in Vector Databases",
+      "summary": "Vector databases typically manage metadata as flat scalar attributes, which limits their ability to express hierarchical directory semantics commonly used to organize code repositories, enterprise documents, and agent memories. As a result, directory-scoped retrieval and structural updates are often implemented as application-layer workarounds, making recursive scope resolution expensive and directory maintenance difficult to keep consistent. This paper studies native directory semantics as a first-class capability for vector databases. We formalize two core operators: Directory-Semantic Query (DSQ) for hierarchically scoped retrieval, and Directory-Semantic Maintenance (DSM) for structural updates. We then evaluate three implementation strategies: query-time path expansion (PE-Online), ingestion-time path expansion (PE-Offline), and a Trie-based Hierarchical Index (TrieHI). Our analysis exposes the fundamental limitations of expansion-based designs: flattening the hierarchy incurs high recursive-query latency in PE-Online and unscalable write amplification during structural changes in both expansion strategies. In contrast, TrieHI keeps the directory topology as a native prefix tree, enabling efficient recursive retrieval through tree traversal and reducing maintenance cost through topological node manipulation. We benchmark these design points within ByteDance's Viking vector search engine and release two large-scale datasets, WIKI-Dir and ARXIV-Dir, to support future research on directory-semantic vector search. Finally, TrieHI has been integrated into OpenViking, an open-source context database for AI agents, where it supports filesystem-style context organization and directory-recursive retrieval.",
+      "url": "http://arxiv.org/abs/2606.16903v1",
+      "authors": [
+        "Mengzhao Wang",
+        "Zheng Gong",
+        "Jingpei Hu",
+        "Jiajie Fu",
+        "Maojia Sheng",
+        "Junwen Chen",
+        "Yifan Zhu"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "cs.DB",
+      "categories": [
+        "cs.DB"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 80,
+        "level": "高",
+        "label": "值得读",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Mengzhao Wang",
+          "Zheng Gong",
+          "Jingpei Hu",
+          "Jiajie Fu",
+          "Maojia Sheng",
+          "Junwen Chen",
+          "Yifan Zhu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.16903v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Vector databases typically manage metadata as flat scalar attributes, which limits their ability to express hierarchical directory semantics commonly used to organize code repositories, enterprise documents, and agent memories. As a result, directory-scoped retrieval and structural updates are often implemented as application-layer workarounds, making recursive scope resolution expensive and directory maintenance di...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
+        "method": "Vector databases typically manage metadata as flat scalar attributes, which limits their ability to express hierarchical directory semantics commonly used to organize code repositories, enterprise documents, and agent memories.",
+        "experiments": "As a result, directory-scoped retrieval and structural updates are often implemented as application-layer workarounds, making recursive scope resolution expensive and directory maintenance difficult to keep consistent.",
+        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。",
+        "recommendation": {
+          "score": 80,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.16274v1",
+      "title": "GraphWorld: Long-Horizon Planning with World Models for End-to-End Autonomous Driving",
+      "summary": "End-to-end autonomous driving has made significant progress by unifying perception, prediction, and planning within a single learning framework, achieving strong performance in short-horizon decision making. However, most existing E2E-AD methods remain confined to short-horizon planning and lack the ability to model long-term temporal dependencies, which severely limits their generalization and security in complex and highly interactive driving scenarios. In this work, we propose GraphWorld, an E2E-AD framework that explicitly enhances long-horizon planning through latent world modeling. We introduce an Ego-Centric Interaction Graph, which adaptively models critical neighboring agents based on spatial proximity, and propagates relational context to planning queries via cross-node cross-attention. We present a World-State-Conditioned Planning that learns ego-centric latent world representations by modeling interactions between an ego vehicle and surrounding agents. This latent world state captures key interaction dynamics and safety-relevant semantics, and serves as a conditioning signal to guide long-horizon, safety-aware trajectory planning. Extensive experiments on Bench2Drive, NAVSIMv1/2, and nuScenes demonstrate that GraphWorld significantly reduces collision rates and improves long-horizon planning performance, validating its effectiveness in complex driving environments.",
+      "url": "http://arxiv.org/abs/2606.16274v1",
+      "authors": [
+        "Ziying Song",
+        "Caiyan Jia",
+        "Lin Liu",
+        "Lei Yang",
+        "Shengkai Zhang",
+        "Feiyang Jia",
+        "Fengda Zhao",
+        "Peiliang Wu",
+        "Shaoqing Xu",
+        "Chen Lv",
+        "Yadan Luo"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 74,
+        "level": "中",
+        "label": "值得读",
+        "water_risk": "中",
+        "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+        "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Ziying Song",
+          "Caiyan Jia",
+          "Lin Liu",
+          "Lei Yang",
+          "Shengkai Zhang",
+          "Feiyang Jia",
+          "Fengda Zhao",
+          "Peiliang Wu",
+          "Shaoqing Xu",
+          "Chen Lv",
+          "Yadan Luo"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.16274v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "End-to-end autonomous driving has made significant progress by unifying perception, prediction, and planning within a single learning framework, achieving strong performance in short-horizon decision making. However, most existing E2E-AD methods remain confined to short-horizon planning and lack the ability to model long-term temporal dependencies, which severely limits their generalization and security in complex a...",
+        "highlights": [
+          "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
+        "method": "End-to-end autonomous driving has made significant progress by unifying perception, prediction, and planning within a single learning framework, achieving strong performance in short-horizon decision making.",
+        "experiments": "Extensive experiments on Bench2Drive, NAVSIMv1/2, and nuScenes demonstrate that GraphWorld significantly reduces collision rates and improves long-horizon planning performance, validating its effectiveness in complex driving environments.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 74,
+          "level": "中",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.16733v1",
+      "title": "A First-Principles Derivation of LLM Policy Optimization: From Expected Reward to GRPO and Its Structural Extensions",
+      "summary": "Policy gradient algorithms for language models optimize the same objective $J(θ) = \\mathbb{E}*{τ\\sim p*θ(τ)}[R(τ)]$, which has exactly two factors: the trajectory probability $p_θ(τ)$ and the reward $R(τ)$. Every method from REINFORCE to PPO to GRPO and their descendants modifies one or both factors to address a specific failure in the preceding formulation. Existing surveys organize these methods by domain or chronology, which obscures the rationale behind each design choice and the precise location of its intervention within the gradient estimator. This survey revisits the landscape of LLM policy optimization from $J(θ)$ on first principles and uses the trajectory side, induced by $p_θ(τ)$, and the reward side, induced by $R(τ)$, as the two axes along which methods are located. It covers the path from REINFORCE and PPO to GRPO, as well as post-GRPO variants, Agentic RL, and GRPO-OPD. The resulting framework is unified, diagnostic, and extensible: it analyzes methods from a shared objective, identifies which side each method modifies and why, and applies the same trajectory and reward axes across these settings. Across these settings, the framework also exposes compound failures that no single-side fix resolves and that therefore require joint design of the trajectory side and the reward side. The boundary cases and coupled failures identified by this map mark where existing solutions run out and provide a principled starting point for designing the next generation of LLM policy optimization algorithms.",
+      "url": "http://arxiv.org/abs/2606.16733v1",
+      "authors": [
+        "Jianghan Shen",
+        "Siqi Luo",
+        "Yue Li",
+        "Jiyao Liu",
+        "Wanying Qu",
+        "Yi Zhang",
+        "Ziyan Huang",
+        "Tianbin Li",
+        "Ming Hu",
+        "Xiaohong Liu",
+        "Yirong Chen",
+        "Junjun He"
+      ],
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 46,
+        "level": "低",
+        "label": "暂不优先",
+        "water_risk": "高",
+        "value_judgement": "可能偏水：主题或实验信号偏弱，除非和当前问题强相关，否则不优先。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": false,
+          "survey": true
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jianghan Shen",
+          "Siqi Luo",
+          "Yue Li",
+          "Jiyao Liu",
+          "Wanying Qu",
+          "Yi Zhang",
+          "Ziyan Huang",
+          "Tianbin Li",
+          "Ming Hu",
+          "Xiaohong Liu",
+          "Yirong Chen",
+          "Junjun He"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-15",
+        "paper_url": "https://arxiv.org/abs/2606.16733v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization。",
+        "summary": "Policy gradient algorithms for language models optimize the same objective $J(θ) = \\mathbb{E}*{τ\\sim p*θ(τ)}[R(τ)]$, which has exactly two factors: the trajectory probability $p_θ(τ)$ and the reward $R(τ)$. Every method from REINFORCE to PPO to GRPO and their descendants modifies one or both factors to address a specific failure in the preceding formulation. Existing surveys organize these methods by domain or chron...",
+        "highlights": [
+          "可能偏水：主题或实验信号偏弱，除非和当前问题强相关，否则不优先。",
+          "直接覆盖 agentic RL 或 policy optimization。",
+          "摘要缺少明确实验信号，可能需要降低阅读优先级。"
+        ],
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "Every method from REINFORCE to PPO to GRPO and their descendants modifies one or both factors to address a specific failure in the preceding formulation.",
+        "experiments": "摘要没有明确实验数字；自动化建议先打开正文检查 benchmark、baseline、ablation 和失败案例。",
+        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。",
+        "recommendation": {
+          "score": 46,
+          "level": "低",
+          "label": "暂不优先",
+          "water_risk": "高",
+          "value_judgement": "可能偏水：主题或实验信号偏弱，除非和当前问题强相关，否则不优先。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": false,
+            "survey": true
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.15609v1",
+      "title": "FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion",
+      "summary": "Large language model (LLM) agents increasingly rely on long-term memory to support complex task execution, user personalization, and domain adaptation. Meanwhile, emerging access-control mechanisms for LLM agents are being explored to block policy-violating requests and prevent misuse. We reveal a novel attack surface arising from agent memory operations: prohibited content that would trigger access control can be fragmented across interactions, stored in long-term memory in benign-appearing form, and later reconstructed through memory retrieval without appearing explicitly in the final user query. We propose FragFuse, the first attack that enables unprivileged users to bypass agent access control by exploiting this temporal channel introduced by long-term memory. FragFuse operates in three stages: (1) identifying rejection-responsive fragments via black-box adaptive querying with fragment masking; (2) injecting these fragments into memory using marker carrier queries; and (3) retrieving and fusing the stored fragments through a follow-up attack query. Although FragFuse can be instantiated manually for individual agents, we further develop a surrogate-based optimization scheme that tunes fusion instructions and marker designs, enabling automated attack generation without violating the attacker's threat-model assumptions. We evaluate FragFuse across four representative agent settings and task domains, covering three state-of-the-art agent access-control mechanisms. FragFuse achieves an average bypass success rate of 86.3% and an average end-to-end harmful task success rate of 41.1% across all settings, with only 4.4% average task-success degradation compared with configurations without access control. We also show that alternative defenses, including state-of-the-art prompt-injection detectors and perplexity detectors, do not effectively address this attack.",
+      "url": "http://arxiv.org/abs/2606.15609v1",
+      "authors": [
+        "Zixin Rao",
+        "Wentian Zhu",
+        "Chan Aristella Lu",
+        "Zhaorun Chen",
+        "Wei Niu",
+        "Le Guan",
+        "Bo Li",
+        "Zhen Xiang"
+      ],
+      "published": "2026-06-14",
+      "updated": "2026-06-14",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zixin Rao",
+          "Wentian Zhu",
+          "Chan Aristella Lu",
+          "Zhaorun Chen",
+          "Wei Niu",
+          "Le Guan",
+          "Bo Li",
+          "Zhen Xiang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-14",
+        "paper_url": "https://arxiv.org/abs/2606.15609v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Large language model (LLM) agents increasingly rely on long-term memory to support complex task execution, user personalization, and domain adaptation. Meanwhile, emerging access-control mechanisms for LLM agents are being explored to block policy-violating requests and prevent misuse. We reveal a novel attack surface arising from agent memory operations: prohibited content that would trigger access control can be f...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
+        "method": "Large language model (LLM) agents increasingly rely on long-term memory to support complex task execution, user personalization, and domain adaptation.",
+        "experiments": "We evaluate FragFuse across four representative agent settings and task domains, covering three state-of-the-art agent access-control mechanisms.",
+        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.15912v1",
+      "title": "On-Policy Distillation with Curriculum Turn-level Guidance for Multi-turn Agents",
+      "summary": "Multi-turn agents that plan, invoke tools, and interact with environments offer a promising paradigm for solving complex tasks, yet their capabilities typically rely on very large models whose inference cost is prohibitive in practice.On-Policy Distillation (OPD) is a natural recipe for transferring such capabilities to smaller students, but we find that it suffers a characteristic failure mode in this setting: small student errors compound across turns and push the trajectory out of the teacher's familiar state distribution, so the teacher's supervision becomes least reliable precisely where the student needs it most.We propose Guided On-Policy Distillation (Guided-OPD), a simple yet effective algorithm that mixes teacher- and student-generated turns within each rollout and schedules the teacher's intervention probability along a curriculum that decays to zero.Strong guidance keeps early trajectories close to the teacher distribution and is then gradually withdrawn to recover the purely on-policy regime used at inference.On ALFWorld, ScienceWorld, and WebShop, distilling Qwen3 students from a Qwen3-30B-A3B teacher, Guided-OPD improves Score by 21.1\\% and Success Rate by 25.5\\% over vanilla OPD on average, with larger gains on smaller students.",
+      "url": "http://arxiv.org/abs/2606.15912v1",
+      "authors": [
+        "Gengsheng Li",
+        "Mao Zheng",
+        "Mingyang Song",
+        "Ruiqi Liu",
+        "Tianyu Yang",
+        "Jie Sun",
+        "Qiyong Zhong",
+        "Haiyun Guo",
+        "Junfeng Fang",
+        "Dan Zhang",
+        "Jinqiao Wang"
+      ],
+      "published": "2026-06-14",
+      "updated": "2026-06-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Gengsheng Li",
+          "Mao Zheng",
+          "Mingyang Song",
+          "Ruiqi Liu",
+          "Tianyu Yang",
+          "Jie Sun",
+          "Qiyong Zhong",
+          "Haiyun Guo",
+          "Junfeng Fang",
+          "Dan Zhang",
+          "Jinqiao Wang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-14",
+        "paper_url": "https://arxiv.org/abs/2606.15912v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Multi-turn agents that plan, invoke tools, and interact with environments offer a promising paradigm for solving complex tasks, yet their capabilities typically rely on very large models whose inference cost is prohibitive in practice.On-Policy Distillation (OPD) is a natural recipe for transferring such capabilities to smaller students, but we find that it suffers a characteristic failure mode in this setting: smal...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
+        "method": "Multi-turn agents that plan, invoke tools, and interact with environments offer a promising paradigm for solving complex tasks, yet their capabilities typically rely on very large models whose inference cost is prohibitive in practice.On-Policy Distillation (OPD) is a natural recipe for transferring such capabilities to smaller students, but we find that it suffers a characteristic failure mode in this setting: small student errors compound across turns and push the trajectory out of the teacher's familiar state distribution, so the teacher's supervision becomes least reliable precisely where the student needs it most.We propose Guided On-Policy Distillation (Guided-OPD), a simple yet effective algorithm that mixes teacher- and student-generated turns within each rollout and schedules the teacher's intervention probability along a curriculum that decays to zero.Strong guidance keeps early trajectories close to the teacher distribution and is then gradually withdrawn to recover the purely on-policy regime used at inference.On ALFWorld, ScienceWorld, and WebShop, distilling Qwen3 students from a Qwen3-30B-A3B teacher, Guided-OPD improves Score by 21.1\\% and Success Rate by 25.5\\% over vanilla OPD on average, with larger gains on smaller students.",
+        "experiments": "Multi-turn agents that plan, invoke tools, and interact with environments offer a promising paradigm for solving complex tasks, yet their capabilities typically rely on very large models whose inference cost is prohibitive in practice.On-Policy Distillation (OPD) is a natural recipe for transferring such capabilities to smaller students, but we find that it suffers a characteristic failure mode in this setting: small student errors compound across turns and push the trajectory out of the teacher's familiar state distribution, so the teacher's supervision becomes least reliable precisely where the student needs it most.We propose Guided On-Policy Distillation (Guided-OPD), a simple yet effective algorithm that mixes teacher- and student-generated turns within each rollout and schedules the teacher's intervention probability along a curriculum that decays to zero.Strong guidance keeps early trajectories close to the teacher distribution and is then gradually withdrawn to recover the purely on-policy regime used at inference.On ALFWorld, ScienceWorld, and WebShop, distilling Qwen3 students from a Qwen3-30B-A3B teacher, Guided-OPD improves Score by 21.1\\% and Success Rate by 25.5\\% over vanilla OPD on average, with larger gains on smaller students.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.15903v2",
+      "title": "Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations",
+      "summary": "Where an LLM sits in an agent memory pipeline -- between the recall plane that retrieves stored facts (extensively benchmarked) and the control plane that mutates them via supersede, release, purge (largely untested) -- shapes which forgetting failure modes the system recovers. Comparing thirteen system configurations on a 385-case adversarial surface, we observe three placement regimes with partly complementary coverage: deterministic primitives suffice for lexical/temporal categories but fail canonicalization (5% on identifier-obfuscation, 0% on cross-lingual); inscribe-time LLM recovers canonicalization (100%) but cannot help intent-aware deletion (0% on prefix-collision and compound-fact); a mutation-time hook recovers intent-aware deletion (78-85%) and brightens nearly all categories simultaneously (91.7-93.2% overall, $0.17 per 385-case run, 2.3s/case mutation latency vs. 64-191ms/case deterministic, recall path unchanged). We expose the trade-off via ForgetEval, a 1000-case templated suite plus a 385-case adversarial layer (132 hand-crafted + 253 LLM-drafted oracle-validated) scored by deterministic substring match, paired with a six-method Adapter Protocol with honest N/A scoring that lets heterogeneous memory stores enter in 130 lines. Admission is corroborated by 10-annotator IAA (Fleiss' kappa = 0.958) and a 77-case external-authored subset (four blind contributors) that replicates the canonicalization asymmetry and amplifies the joint-placement lift (+27.8 pt). Production failures are predominantly forgetting failures rather than recall failures, yet existing benchmarks measure only recall. ForgetEval and all adapters are released under MIT.",
+      "url": "http://arxiv.org/abs/2606.15903v2",
+      "authors": [
+        "Dongxu Yang"
+      ],
+      "published": "2026-06-14",
+      "updated": "2026-06-16",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 90,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Dongxu Yang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-14",
+        "paper_url": "https://arxiv.org/abs/2606.15903v2",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Where an LLM sits in an agent memory pipeline -- between the recall plane that retrieves stored facts (extensively benchmarked) and the control plane that mutates them via supersede, release, purge (largely untested) -- shapes which forgetting failure modes the system recovers. Comparing thirteen system configurations on a 385-case adversarial surface, we observe three placement regimes with partly complementary cov...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
+        "method": "Where an LLM sits in an agent memory pipeline -- between the recall plane that retrieves stored facts (extensively benchmarked) and the control plane that mutates them via supersede, release, purge (largely untested) -- shapes which forgetting failure modes the system recovers.",
+        "experiments": "We expose the trade-off via ForgetEval, a 1000-case templated suite plus a 385-case adversarial layer (132 hand-crafted + 253 LLM-drafted oracle-validated) scored by deterministic substring match, paired with a six-method Adapter Protocol with honest N/A scoring that lets heterogeneous memory stores enter in 130 lines.",
+        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。",
+        "recommendation": {
+          "score": 90,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.15911v1",
+      "title": "Interactor: Agentic RL oriented Iterative Creation for Ad Description Generation in Sponsored Search",
+      "summary": "This paper focuses on automatically generating informative ad descriptions in sponsored search. Unlike ad titles which are usually optimized to attract user click feedbacks, ad descriptions have a longer text span and possess the potential of incorporating world knowledge to address user search intents while presenting the fine-grained selling points of the ads. We propose Interactor, a multi-turn iterative creation framework optimized with agentic RL for ad description generation. The generation model acts as a policy that interacts with a customized environment consisting of multiple generative reward models. Given initial generations by the policy, the customized GenRMs evaluate multi-dimensional qualities including knowledge capacity and landing page consistency, providing both binary signals and reasoning feedbacks. The policy then iteratively refines the descriptions based on such feedbacks to ensure continuous improvement. Experiments on industrial datasets show that the Interactor framework significantly outperforms state-of-the-art approaches in generating knowledge-rich and faithful ad descriptions. Since May 2026, it has been deployed online in a leading search ads system, contributing to both ad revenue and user experience.",
+      "url": "http://arxiv.org/abs/2606.15911v1",
+      "authors": [
+        "Penghui Wei",
+        "Jiayu Wu",
+        "Chao Ye",
+        "Zhi Guo",
+        "Shuanglong Li",
+        "Lin Liu"
+      ],
+      "published": "2026-06-14",
+      "updated": "2026-06-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Penghui Wei",
+          "Jiayu Wu",
+          "Chao Ye",
+          "Zhi Guo",
+          "Shuanglong Li",
+          "Lin Liu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-14",
+        "paper_url": "https://arxiv.org/abs/2606.15911v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "This paper focuses on automatically generating informative ad descriptions in sponsored search. Unlike ad titles which are usually optimized to attract user click feedbacks, ad descriptions have a longer text span and possess the potential of incorporating world knowledge to address user search intents while presenting the fine-grained selling points of the ads. We propose Interactor, a multi-turn iterative creation...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
+        "method": "We propose Interactor, a multi-turn iterative creation framework optimized with agentic RL for ad description generation.",
+        "experiments": "Given initial generations by the policy, the customized GenRMs evaluate multi-dimensional qualities including knowledge capacity and landing page consistency, providing both binary signals and reasoning feedbacks.",
+        "research_help": "对多轮 agent 有帮助：重点看状态保持、用户偏好延续、澄清机制和跨轮评测。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.15872v1",
+      "title": "SciOrch: Learning to Orchestrate Expert LLMs for Solving Frontier Multimodal Scientific Reasoning Tasks",
+      "summary": "Frontier scientific reasoning remains a major challenge for large language models (LLMs), where even the strongest commercial systems fall short of expert-level performance. A closer look at model behavior reveals substantial complementarity that single-model evaluation hides: different frontier models excel on different question types, and no single model captures the full picture. We present SciOrch, a framework that trains a lightweight 8B model to orchestrate frontier LLMs for scientific reasoning. The orchestrator decomposes each question, delegates sub-problems to selected commercial models through API calls, and synthesizes a final answer. Training such an orchestrator is fundamentally harder than conventional agentic RL: each action triggers an API call that is expensive in both dollar cost and latency, making standard online rollouts infeasible. We address this with MCTS-based approach, producing diverse orchestration trajectories, extracting per-node single-turn samples, and optimizing the orchestrator with GRPO-style training. On a 240-question test set spanning SGI-Reasoning and Scientists' First Exam, SciOrch reaches 56.66% average accuracy, outperforming the strongest single commercial model by 3.74% and the strongest multi-agent baseline by 3.33%. It also attains the best accuracy on both SGI and SFE with less than half the API cost of typical multi-agent methods.",
+      "url": "http://arxiv.org/abs/2606.15872v1",
+      "authors": [
+        "Jingru Guo",
+        "Xiangyuan Xue",
+        "Lian Zhang",
+        "Wanghan Xu",
+        "Siki Chen",
+        "Philip Torr",
+        "Wanli Ouyang",
+        "Lei Bai",
+        "Zhenfei Yin"
+      ],
+      "published": "2026-06-14",
+      "updated": "2026-06-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 72,
+        "level": "中",
+        "label": "值得读",
+        "water_risk": "中",
+        "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+        "reason": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jingru Guo",
+          "Xiangyuan Xue",
+          "Lian Zhang",
+          "Wanghan Xu",
+          "Siki Chen",
+          "Philip Torr",
+          "Wanli Ouyang",
+          "Lei Bai",
+          "Zhenfei Yin"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-14",
+        "paper_url": "https://arxiv.org/abs/2606.15872v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Frontier scientific reasoning remains a major challenge for large language models (LLMs), where even the strongest commercial systems fall short of expert-level performance. A closer look at model behavior reveals substantial complementarity that single-model evaluation hides: different frontier models excel on different question types, and no single model captures the full picture. We present SciOrch, a framework t...",
+        "highlights": [
+          "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
+        "method": "A closer look at model behavior reveals substantial complementarity that single-model evaluation hides: different frontier models excel on different question types, and no single model captures the full picture.",
+        "experiments": "On a 240-question test set spanning SGI-Reasoning and Scientists' First Exam, SciOrch reaches 56.66% average accuracy, outperforming the strongest single commercial model by 3.74% and the strongest multi-agent baseline by 3.33%.",
+        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。",
+        "recommendation": {
+          "score": 72,
+          "level": "中",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2606.15367v1",
+      "title": "S1-DeepResearch: Beyond Search, Toward Real-World Long-Horizon Research Agents",
+      "summary": "Deep research agents aim to solve complex knowledge-intensive tasks through long-horizon planning, evidence gathering, reasoning, and report generation. While recent progress in search agents has demonstrated strong capabilities in information retrieval and answer verification, most existing training datasets remain search-centric, focusing primarily on closed-ended question answering and information localization. As a result, they mainly train information-seeking behavior while providing limited coverage of key deep research capabilities, including evidence integration, knowledge synthesis, planning, file understanding, and structured report generation. In this work, we propose a unified trajectory construction paradigm for deep research agents that combines closed-ended QA and open-ended exploration. The proposed framework consists of graph-grounded task formulation, agentic trajectory rollout, and multi-dimensional trajectory verification, enabling scalable synthesis of high-quality agentic trajectories spanning long-chain complex reasoning, deep research instruction following, report writing, file understanding and generation, and skills usage. Compared with existing search-oriented datasets, our synthesized trajectories place greater emphasis on knowledge synthesis, complex reasoning, and planning. S1-DeepResearch-32B achieves state-of-the-art performance among open-source models of comparable scale across 20 benchmarks spanning five capability dimensions, including complex reasoning, instruction following, report generation, file understanding, and skills usage. On several challenging deep research benchmarks, it approaches the performance of leading proprietary frontier models. These results highlight the importance of jointly modeling information acquisition, knowledge synthesis, and planning-oriented agent behaviors for building effective deep research agents.",
+      "url": "http://arxiv.org/abs/2606.15367v1",
+      "authors": [
+        "Yao Dong",
+        "Xinglin Xiao",
+        "Liwei Dong",
+        "Xinlong Jin",
+        "Zhengbo Li",
+        "Heng Zhang",
+        "Duyun Wang",
+        "Nan Xu"
+      ],
+      "published": "2026-06-13",
+      "updated": "2026-06-13",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 78,
+        "level": "高",
+        "label": "值得读",
+        "water_risk": "低",
+        "value_judgement": "有价值：优先进入今日精读候选。",
+        "reason": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yao Dong",
+          "Xinglin Xiao",
+          "Liwei Dong",
+          "Xinlong Jin",
+          "Zhengbo Li",
+          "Heng Zhang",
+          "Duyun Wang",
+          "Nan Xu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-13",
+        "paper_url": "https://arxiv.org/abs/2606.15367v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "summary": "Deep research agents aim to solve complex knowledge-intensive tasks through long-horizon planning, evidence gathering, reasoning, and report generation. While recent progress in search agents has demonstrated strong capabilities in information retrieval and answer verification, most existing training datasets remain search-centric, focusing primarily on closed-ended question answering and information localization. A...",
+        "highlights": [
+          "有价值：优先进入今日精读候选。",
+          "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+        ],
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "While recent progress in search agents has demonstrated strong capabilities in information retrieval and answer verification, most existing training datasets remain search-centric, focusing primarily on closed-ended question answering and information localization.",
+        "experiments": "As a result, they mainly train information-seeking behavior while providing limited coverage of key deep research capabilities, including evidence integration, knowledge synthesis, planning, file understanding, and structured report generation.",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "recommendation": {
+          "score": 78,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      }
+    }
+  ]
+}

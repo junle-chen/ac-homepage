@@ -2,7 +2,10 @@ script(src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js")
 
 script.
 	window.$ = selector => document.querySelector(selector)
-	const getOriginalContent = selector => $(selector).getAttribute("original-content")
+	const getOriginalContent = selector => {
+		const node = $(selector)
+		return node ? node.getAttribute("original-content") || "" : ""
+	}
 	window.subtitle = getOriginalContent(".content-subtitle")
 	window.signature = getOriginalContent("#signature")
 	window.config = {
@@ -33,7 +36,7 @@ script.
 		SUNRAYS_WEIGHT: 1.0,
 	}
 
-script(src='js/main.js')
+script(src='js/main.js?v=20260618-memo-key-v16')
 
 if intro.background
 	script(src='js/background.js')

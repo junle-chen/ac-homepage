@@ -1,19 +1,19 @@
 {
 	"head": {
 		"title": "Junle Chen | Notes, Memos, Research",
-		"description": "Junle Chen personal homepage for notes, memos, research workflow, and paper tracking.",
+		"description": "Junle Chen personal homepage for notes, memos, daily papers, and research links.",
 		"favicon": "favicon.ico"
 	},
 	"intro": {
 		"title": "JunleOS",
-		"subtitle": "Notes, memos, paper radar, and research workflow",
+		"subtitle": "Notes, memos, daily papers, and research notes",
 		"enter": "open workspace",
 		"supportAuthor": false,
 		"background": true
 	},
 	"main": {
 		"name": "Junle Chen",
-		"signature": "Notes, bugs, papers, and research workflow",
+		"signature": "Notes, bugs, papers, and daily arXiv tracking",
 		"avatar": {
 			"link": "assets/avatar.png",
 			"height": "100",

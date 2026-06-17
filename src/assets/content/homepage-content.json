@@ -5,12 +5,12 @@
     "notes": 38,
     "memos": 6,
     "papers": 0,
-    "resources": 6,
+    "resources": 3,
     "assets": 129
   },
   "highlights": [
     "Notes and bug records migrated from the old Jekyll site.",
-    "Memo YAML and research workflow docs are preserved as static assets.",
+    "Memo data is shown as an owner-editable local timeline.",
     "Paper Radar data is ready for future Zotero/arXiv updates."
   ],
   "notes": [
@@ -534,18 +534,6 @@
       "description": "Project and research code collection.",
       "href": "https://github.com/junle-chen?tab=repositories",
       "type": "External"
-    },
-    {
-      "title": "Research Workflow",
-      "description": "How Zotero, Obsidian, Codex, and GitHub Actions feed the research site.",
-      "href": "assets/content/docs/research-workflow.md",
-      "type": "Workflow"
-    },
-    {
-      "title": "Memo Guide",
-      "description": "Original memo system instructions and quick-start notes.",
-      "href": "assets/content/pages/MEMO_GUIDE.md",
-      "type": "Memo"
     },
     {
       "title": "Paper Radar Source",

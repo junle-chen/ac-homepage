@@ -9,6 +9,8 @@
 	"description": "Junle Chen personal homepage",
 	"scripts": {
 		"import:content": "node scripts/import-junle-content.js",
+		"papers:daily": "node scripts/fetch-daily-papers.js",
+		"papers:zotero": "node scripts/export-zotero-paper-list.js",
 		"predev": "gulp build",
 		"dev": "gulp watch",
 		"build": "gulp build"

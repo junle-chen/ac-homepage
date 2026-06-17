@@ -10,149 +10,175 @@
 - const categories = hp.categories || []
 - const navItems = [main.ul.first, main.ul.second, main.ul.third, main.ul.fourth].filter(Boolean)
 - const isExternal = href => /^(https?:|mailto:)/.test(href || '')
+- const externalResources = resources.filter(resource => /external/i.test(resource.type || ""))
+- const paperRadarResources = resources.filter(resource => /paper radar|papers\.md/i.test([resource.type, resource.title, resource.description, resource.href].join(" ")))
+- const baseRailResources = resources.filter(resource => !/external|memo|workflow|paper radar|daily paper|papers\.md|daily-papers/i.test([resource.type, resource.title, resource.description, resource.href].join(" ")))
+- const railResources = baseRailResources
+- const noteCount = stats.notes || notes.length || 0
+- const memoCount = stats.memos || memos.length || 0
+- const resourceCount = railResources.length
+- const paperCount = stats.papers || paperItems.length || 0
+- const tagCounts = new Map()
+- notes.forEach(note => (note.tags || []).forEach(tag => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1)))
+- const tags = Array.from(tagCounts.entries()).sort((a, b) => b[1] - a[1])
+- const cardImages = ["../assets/content/assets/img/path.jpg", "../assets/content/assets/img/thumb.png", "../assets/content/assets/img/bgimage.png", "../assets/content/assets/img/crepe.jpg", "../assets/background.png"]
+- const collectionItems = categories.map(category => ({ name: category, count: notes.filter(note => note.category === category || (note.tags || []).includes(category)).length }))
+- const profileLinks = navItems.filter(item => isExternal(item.href))
 
 .content.content-main
 	canvas.grid-background#gridCanvas
-	.site-shell
-		button.theme-toggle(type="button" aria-label="Switch to light mode" data-theme-toggle)
-			span.theme-toggle-icon(data-theme-icon) ☀
-		#card
-			.card-inner.fade
-				header.profile-header
-					img(src=`${main.avatar.link}` width=`${main.avatar.width}` height=`${main.avatar.height}` alt="Junle Chen avatar")
-					p.profile-eyebrow Imported research workspace
-					h1(data-translate="name") #{main.name}
-					h2#signature(data-translate="signature" original-content=`${main.signature}`) #{main.signature}
+	.site-shell.app-shell
+		.workspace-panel
+			header.workspace-topbar
+				.topbar-title
+					p.workspace-kicker Personal homepage
+					h2 Blog Library
+				.topbar-nav(aria-label="Primary sections")
+					a(href="#notes") Blog
+					a(href="#memos") Memo
+					a(href="#papers") Academic
+					.topbar-dropdown(data-topbar-dropdown)
+						button.topbar-dropbtn(type="button" aria-expanded="false" data-dropdown-toggle) External
+						.topbar-menu
+							each resource in externalResources
+								a(href=`${resource.href}` target="_blank" rel="noopener noreferrer") #{resource.title}
+					a(href="#about") About Me
+				.topbar-actions
+					label.topbar-search(for="noteSearch")
+						span Search
+						input#noteSearch(type="search" placeholder="Search notes and tags..." autocomplete="off")
+					button.theme-toggle(type="button" aria-label="Switch to light mode" data-theme-toggle)
+						span.theme-toggle-icon(data-theme-icon) ☀
 
-				.stats-strip(aria-label="Imported content summary")
-					.stat-item
-						strong #{stats.notes || 0}
-						span Notes
-					.stat-item
-						strong #{stats.memos || 0}
-						span Memos
-					.stat-item
-						strong #{stats.resources || 0}
-						span Resources
-					.stat-item
-						strong #{stats.assets || 0}
-						span Assets
+			section.about-panel#about
+				.about-intro-stage(data-about-intro-stage aria-hidden="true")
+					.about-fluid-field(aria-hidden="true")
+						span.fluid-blob.blob-one
+						span.fluid-blob.blob-two
+						span.fluid-blob.blob-three
+						span.fluid-blob.blob-four
+						span.fluid-blob.blob-five
+					.about-intro-copy
+						h2 JunleOS
+						p Personal research workspace
+				.about-profile
+					.about-card
+						header.about-header
+							img(src=`${main.avatar.link}` width=`${main.avatar.width}` height=`${main.avatar.height}` alt="Junle Chen avatar")
+							p.profile-eyebrow Personal knowledge workspace
+							h1 #{main.name}
+							h2 #{main.signature}
+							p.about-bio 研究方向关注 agent planning、agentic RL、多轮交互、long-horizon planning，以及用自动化工具维护长期 research workflow。
+						if profileLinks.length
+							ul.primary-links.about-links
+								each item in profileLinks
+									li
+										a(href=`${item.href}` aria-label=`${item.text}` target=isExternal(item.href) ? "_blank" : null rel=isExternal(item.href) ? "noopener noreferrer" : null)
+											i(class=`icon icon-${item.icon}`)
+											span #{item.text}
 
-				ul.primary-links
-					each item in navItems
-						li
-							a(href=`${item.href}` aria-label=`${item.text}` target=isExternal(item.href) ? "_blank" : null rel=isExternal(item.href) ? "noopener noreferrer" : null)
-								i(class=`icon icon-${item.icon}`)
-								span(data-translate=`${item.text}`) #{item.text}
-
-				.hero-actions
-					a.action-button.primary(href="#notes") Browse Notes
-					a.action-button(href="#resources") Open Resources
-					a.action-button(href="assets/content/pages/aboutme.md") About Source
-
-		section.content-section#notes
-			.section-heading
-				p.section-eyebrow Notes archive
-				h2 Notes migrated from junle-cc-website
-				p
-					| #{stats.notes || notes.length || 0} Markdown notes are copied into
-					code  assets/content/notes
-					| . The latest entries are shown here with raw Markdown links for the preserved source files.
-			.section-tools
-				label.search-box(for="noteSearch")
-					span Search notes
-					input#noteSearch(type="search" placeholder="motion, pyenv, LLM, benchmark..." autocomplete="off")
-				if categories.length
-					.category-strip(aria-label="Note categories")
-						each category in categories
-							span #{category}
-			.card-grid.note-grid
-				each note in notes.slice(0, 12)
-					article.content-card.note-card(data-note-card data-title=`${note.title}` data-tags=`${(note.tags || []).join(' ')}` data-excerpt=`${note.excerpt}`)
-						.card-meta
-							span #{note.date || "Undated"}
-							span #{note.category || "Note"}
-						h3
-							a(href=`${note.url}` target="_blank" rel="noopener noreferrer") #{note.title}
-						if note.excerpt
-							p #{note.excerpt}
-						if note.tags && note.tags.length
-							.tag-row
-								each tag in note.tags.slice(0, 3)
-									span #{tag}
-			p.empty-state#noteEmptyState(hidden) No matching notes.
-			.archive-link
-				a(href="assets/content/homepage-content.json" target="_blank" rel="noopener noreferrer") Open content manifest
-
-		section.content-section#memos
-			.section-heading
-				p.section-eyebrow Memos
-				h2 Quick public memo stream
-				p
-					| Public memo YAML from the old site is preserved in
-					code  assets/content/data/memos.yml
-					|  and surfaced here as compact cards.
-			.card-grid.memo-grid
-				each memo in memos.slice(0, 8)
-					article.content-card.memo-card(data-memo-card data-title=`${memo.title}` data-content=`${memo.content}` data-category=`${memo.category}`)
-						.card-meta
-							span #{memo.date || "No date"}
-							span #{memo.priority || "normal"}
-						h3 #{memo.title}
-						if memo.content
-							p #{memo.content}
-						else
-							p.muted Empty memo body in source data.
-						.tag-row
-							span #{memo.category || "general"}
-							if memo.completed
-								span done
-							else
-								span open
-
-		section.content-section#papers
-			.section-heading
-				p.section-eyebrow Paper radar
-				h2 Agent-planning paper tracking data
-				p
-					| The Paper Radar JSON was copied from the old site and is ready for future Zotero or arXiv updates.
-					if paperData.updated_at
-						|  Last data date: #{paperData.updated_at}.
-			if paperTopics.length
-				.topic-strip
-					each topic in paperTopics
-						span #{topic}
-				if paperItems.length
-					.card-grid.paper-grid
-						each paper in paperItems.slice(0, 6)
-							article.content-card.paper-card
-								.card-meta
-									span #{paper.date || paper.published || "No date"}
-									span #{paper.source || "paper"}
-								h3
-									if paper.url
-										a(href=`${paper.url}` target="_blank" rel="noopener noreferrer") #{paper.title}
+			section.memo-page#memos
+				.memo-workspace
+					header.memo-hero
+						.memo-brand
+							span.memo-logo M
+							div
+								p.section-eyebrow Timeline-first capture
+								h2 Memos
+						p.memo-intro Quick private memos live in this browser. Owner mode unlocks add and delete controls.
+					.memo-ownerbar
+						input(type="password" data-memo-owner-key placeholder="Owner key" autocomplete="current-password")
+						button(type="button" data-memo-owner) Owner
+						span(data-memo-status) Locked
+					form.memo-composer(data-memo-form hidden)
+						input(type="text" name="title" placeholder="Title")
+						textarea(name="content" placeholder="Write a memo, paste a link, capture a quick thought...")
+						.memo-composer-footer
+							span(data-memo-date-preview) Today
+							button(type="submit") Add Memo
+					.memo-timeline(data-memo-timeline)
+						each memo, index in memos
+							article.memo-entry(data-memo-card data-id=`seed-${index}` data-title=`${memo.title}` data-content=`${memo.content}` data-category=`${memo.category}` data-date=`${memo.date || ""}` data-priority=`${memo.priority || "normal"}` data-source="imported")
+								.memo-entry-dot(aria-hidden="true")
+								.memo-entry-body
+									.memo-entry-meta
+										span #{memo.date || "No date"}
+										span #{memo.category || "general"}
+										span #{memo.completed ? "done" : "open"}
+									h3 #{memo.title}
+									if memo.content
+										p #{memo.content}
 									else
-										| #{paper.title}
-								if paper.summary
-									p #{paper.summary}
-				else
-					p.empty-state Paper data is present, but no active paper items are currently listed in the copied JSON.
+										p.muted Empty memo body in source data.
+									.memo-entry-actions
+										span #{memo.priority || "normal"}
+										if memo.content && /^https?:\/\//.test(memo.content)
+											a(href=`${memo.content}` target="_blank" rel="noopener noreferrer") Open link
+										button.memo-delete(type="button" data-memo-delete hidden) Delete
 
-		section.content-section#resources
-			.section-heading
-				p.section-eyebrow Resources
-				h2 Preserved links and workflow files
-				p
-					| Old-site resources, docs, data files, and scripts are available as static assets. Imported #{importedAt || "from local source"}.
-			.resource-list
-				each resource in resources
-					a.resource-item(href=`${resource.href}` target=isExternal(resource.href) ? "_blank" : null rel=isExternal(resource.href) ? "noopener noreferrer" : null)
-						span.resource-type #{resource.type}
-						strong #{resource.title}
-						span #{resource.description}
-			.source-note
-				span Source archive:
-				a(href="assets/content/data/papers.json" target="_blank" rel="noopener noreferrer") papers.json
-				a(href="assets/content/data/paper_topics.json" target="_blank" rel="noopener noreferrer") paper_topics.json
-				a(href="assets/content/scripts/update_papers.py" target="_blank" rel="noopener noreferrer") update_papers.py
+			section.academic-page#papers
+				.academic-shell
+					header.academic-hero
+						p.section-eyebrow Academic
+						h2 Academic
+						p Daily arXiv reading and Zotero Planning paper list.
+					.academic-board
+						section.academic-section#daily-paper
+							.academic-section-head
+								div
+									p.section-eyebrow Daily Paper
+									h3 Daily Paper
+									p 每日 arXiv agent paper 解读。
+							.topic-strip
+								span agentic rl
+								span multi-turn
+								span long-horizon
+								span planning
+							.academic-paper-list(data-daily-paper-full)
+							p.empty-state(data-daily-paper-full-empty) Waiting for the first Daily Paper update.
+						section.academic-section#paper-list
+							.academic-section-head
+								div
+									p.section-eyebrow Zotero
+									h3 Paper List
+									p Zotero Planning 论文整理。
+							.paper-list-summary(data-paper-list-summary)
+							.zotero-paper-list(data-zotero-paper-list)
+							p.empty-state(data-zotero-paper-empty) Waiting for Zotero paper list.
+
+			section.blog-layout#notes
+				div.feed-column
+					.feed-heading
+						div
+							p.section-eyebrow Research notes
+							h2 Notes
+							p(data-note-count data-total=`${noteCount}`) Showing #{noteCount} of #{noteCount} posts
+						.feed-actions
+							.note-view-toggle(aria-label="Note display mode")
+								button(type="button" data-note-view="site") Site
+								button(type="button" data-note-view="image") Image
+					if categories.length
+						.category-strip(aria-label="Note categories")
+							button(type="button" data-filter-value="") All
+							each category in categories
+								button(type="button" data-filter-value=`${category}`) #{category}
+					.post-feed.note-view-image(data-note-feed)
+						each note, index in notes
+							- const image = cardImages[index % cardImages.length]
+							a.post-card.note-card(href=`${note.url}` target="_blank" rel="noopener noreferrer" data-note-card data-title=`${note.title}` data-tags=`${(note.tags || []).join('|')}` data-category=`${note.category || ''}` data-excerpt=`${note.excerpt || ''}` style=`--card-image: url("${image}")`)
+								.post-art(aria-hidden="true")
+								.post-content
+									.post-meta
+										span #{note.date || "Undated"}
+										span #{note.category || "Note"}
+									h3 #{note.title}
+									if note.excerpt
+										p #{note.excerpt}
+									else
+										p.muted Preserved Markdown note from the old site.
+									.post-footer
+										span.read-time #{Math.max(3, Math.ceil((note.excerpt || note.title || '').length / 120))} min read
+										if note.tags && note.tags.length
+											span.tags-inline #{note.tags.slice(0, 2).join(" / ")}
+								span.post-arrow(aria-hidden="true") >
+					p.empty-state#noteEmptyState(hidden) No matching notes.

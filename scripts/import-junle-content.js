@@ -243,18 +243,6 @@ function buildResources() {
 			type: "External",
 		},
 		{
-			title: "Research Workflow",
-			description: "How Zotero, Obsidian, Codex, and GitHub Actions feed the research site.",
-			href: "assets/content/docs/research-workflow.md",
-			type: "Workflow",
-		},
-		{
-			title: "Memo Guide",
-			description: "Original memo system instructions and quick-start notes.",
-			href: "assets/content/pages/MEMO_GUIDE.md",
-			type: "Memo",
-		},
-		{
 			title: "Paper Radar Source",
 			description: "Original Jekyll page for the paper tracking view.",
 			href: "assets/content/pages/papers.md",
@@ -333,7 +321,7 @@ function importContent() {
 		},
 		highlights: [
 			"Notes and bug records migrated from the old Jekyll site.",
-			"Memo YAML and research workflow docs are preserved as static assets.",
+			"Memo data is shown as an owner-editable local timeline.",
 			"Paper Radar data is ready for future Zotero/arXiv updates.",
 		],
 		notes,

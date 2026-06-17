@@ -1,0 +1,1605 @@
+{
+  "updated_at": "2026-06-17T17:10:48.846Z",
+  "source": "zotero-local-planning",
+  "collection_key": "IH3NISJ6",
+  "analysis_method": "Codex static analysis from Zotero metadata",
+  "groups": [
+    {
+      "key": "P58U5SGR",
+      "name": "Benchmarks & Evaluation",
+      "short": "Benchmark",
+      "count": 17
+    },
+    {
+      "key": "LB5PYX4E",
+      "name": "Travel Planning Agents & Systems",
+      "short": "Travel",
+      "count": 7
+    },
+    {
+      "key": "WY5Z84Q8",
+      "name": "Personalization & User Modeling",
+      "short": "Personalization",
+      "count": 7
+    },
+    {
+      "key": "VUF6JWWA",
+      "name": "Long-Horizon Planning Methods",
+      "short": "Long-horizon",
+      "count": 15
+    },
+    {
+      "key": "8XP65M5K",
+      "name": "Constraints, Verification & Solver Methods",
+      "short": "Constraints",
+      "count": 7
+    },
+    {
+      "key": "DGUY7Y9Z",
+      "name": "Multi-Agent, Collaboration & Backtracking",
+      "short": "Multi-agent",
+      "count": 7
+    },
+    {
+      "key": "8RP7GNLZ",
+      "name": "Multi-turn",
+      "short": "Multi-turn",
+      "count": 16
+    }
+  ],
+  "items": [
+    {
+      "zotero_key": "DYJRJKLV",
+      "title": "Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions",
+      "year": "2025",
+      "authors": [
+        "Yuanzhe Hu",
+        "Yu Wang",
+        "Julian McAuley"
+      ],
+      "publication": "ICLR 2026",
+      "url": "https://arxiv.org/abs/2507.05257",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation",
+        "Long-Horizon Planning Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Benchmark",
+        "Long-horizon",
+        "Multi-turn"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；可用于评测或基准对比；和偏好、记忆或状态保持相关。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Recent benchmarks for Large Language Model (LLM) agents primarily focus on evaluating reasoning, planning, and execution capabilities, while another critical component-memory, encompassing how agents memorize, update, and retrieve long-term information-is under-evaluated due to the lack of benchmarks. We term agents with memory mechanisms as memory agents. In this paper, based on classic theories from memory science and cognitive science, we identify four core competencies essential for memory agents: accurate ret..."
+    },
+    {
+      "zotero_key": "XJW6QU3G",
+      "title": "OrchestrationBench: LLM-driven agentic planning and tool use in multi-domain scenarios",
+      "year": "2026",
+      "authors": [],
+      "publication": "ICLR 2026",
+      "url": "",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation",
+        "Constraints, Verification & Solver Methods"
+      ],
+      "collection_shorts": [
+        "Benchmark",
+        "Constraints"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "XDHTCBS2",
+      "title": "Drift-bench: Diagnosing cooperative breakdowns in LLM agents under input faults via multi-turn interaction",
+      "year": "2026",
+      "authors": [
+        "Han Bao",
+        "Zheyuan Zhang",
+        "Pengcheng Jing",
+        "Zhengqing Yuan",
+        "Kaiwen Shi",
+        "Yanfang Ye"
+      ],
+      "publication": "ICML 2026",
+      "url": "https://arxiv.org/abs/2602.02455",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation",
+        "Personalization & User Modeling",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Benchmark",
+        "Personalization",
+        "Multi-turn"
+      ],
+      "level": "高",
+      "reason": "涉及多轮交互或澄清；可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "ARUKMJ2I",
+      "title": "A Systematic Evaluation of the Planning and Scheduling Abilities of the Reasoning Model o",
+      "year": "2026",
+      "authors": [
+        "Karthik Valmeekam",
+        "Kaya Stechly"
+      ],
+      "publication": "",
+      "url": "",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "OpenAI claims that their recent o1 (Strawberry) model has been specifically constructed and trained to escape the normal limitations of autoregressive Large Language Models (LLMs)–making it a new kind of model: a Large Reasoning Model (LRM)–and be generally capable of tackling procedural reasoning tasks. We present the first comprehensive evaluation of these models on the fundamental tasks of planning and scheduling. Previous research attempted to use LLMs’ expressive generation capabilities to solve these problem..."
+    },
+    {
+      "zotero_key": "VURID9KD",
+      "title": "TripCraft: A Benchmark for Spatio-Temporally Fine Grained Travel Planning",
+      "year": "2025",
+      "authors": [
+        "Soumyabrata Chaudhuri",
+        "Pranav Purkar",
+        "Ritwik Raghav",
+        "Shubhojit Mallick",
+        "Manish Gupta",
+        "Abhik Jana",
+        "Shreya Ghosh"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2502.20508",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Recent advancements in probing Large Language Models (LLMs) have explored their latent potential as personalized travel planning agents, yet existing benchmarks remain limited in real world applicability. Existing datasets, such as TravelPlanner and TravelPlanner+, suffer from semi synthetic data reliance, spatial inconsistencies, and a lack of key travel constraints, making them inadequate for practical itinerary generation. To address these gaps, we introduce TripCraft, a spatiotemporally coherent travel plannin..."
+    },
+    {
+      "zotero_key": "YXXNTU5N",
+      "title": "RETAIL: Towards Real-world Travel Planning for Large Language Models",
+      "year": "2025",
+      "authors": [
+        "Bin Deng",
+        "Yizhe Feng",
+        "Zeming Liu",
+        "Qing Wei",
+        "Xiangrong Zhu",
+        "Shuai Chen",
+        "Yuanfang Guo",
+        "Yunhong Wang"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2508.15335",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Although large language models have enhanced automated travel planning abilities, current systems remain misaligned with real-world scenarios. First, they assume users provide explicit queries, while in reality requirements are often implicit. Second, existing solutions ignore diverse environmental factors and user preferences, limiting the feasibility of plans. Third, systems can only generate plans with basic POI arrangements, failing to provide all-in-one plans with rich details. To mitigate these challenges, w..."
+    },
+    {
+      "zotero_key": "Q5AE5G6Y",
+      "title": "TP-RAG: Benchmarking Retrieval-Augmented Large Language Model Agents for Spatiotemporal-Aware Travel Planning",
+      "year": "2025",
+      "authors": [
+        "Hang Ni",
+        "Fan Liu",
+        "Xinyu Ma",
+        "Lixin Su",
+        "Shuaiqiang Wang",
+        "Dawei Yin",
+        "Hui Xiong",
+        "Hao Liu",
+        "Christos Christodoulopoulos",
+        "Tanmoy Chakraborty",
+        "Carolyn Rose",
+        "Violet Peng"
+      ],
+      "publication": "EMNLP 2025",
+      "url": "https://aclanthology.org/2025.emnlp-main.626/",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Large language models (LLMs) have shown promise in automating travel planning, yet they often fall short in addressing nuanced spatiotemporal rationality. While existing benchmarks focus on basic plan validity, they neglect critical aspects such as route efficiency, POI appeal, and real-time adaptability. This paper introduces **TP-RAG**, the first benchmark tailored for retrieval-augmented, spatiotemporal-aware travel planning. Our dataset includes 2,348 real-world travel queries, 85,575 fine-grain annotated POIs..."
+    },
+    {
+      "zotero_key": "WDE7DJK6",
+      "title": "τ -BENCH: A BENCHMARK FOR TOOL-AGENT-USER INTERACTION IN REAL-WORLD DOMAINS",
+      "year": "2025",
+      "authors": [
+        "Shunyu Yao",
+        "Noah Shinn",
+        "Pedram Razavi",
+        "Karthik Narasimhan"
+      ],
+      "publication": "",
+      "url": "",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "中",
+      "reason": "可用于评测或基准对比；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Existing benchmarks do not test language agents on their interaction with human users or ability to follow domain-specific rules, both of which are vital for deploying them in real world applications. We propose τ -bench, a benchmark emulating dynamic conversations between a user (simulated by language models) and a language agent provided with domain-specific API tools and policy guidelines. We employ an efficient and faithful evaluation process that compares the database state at the end of a conversation with t..."
+    },
+    {
+      "zotero_key": "K5SLZFDP",
+      "title": "TripTailor: A Real-World Benchmark for Personalized Travel Planning",
+      "year": "2025",
+      "authors": [
+        "Kaimin Wang",
+        "Yuanzhe Shen",
+        "Changze Lv",
+        "Xiaoqing Zheng",
+        "Xuanjing Huang",
+        "Wanxiang Che",
+        "Joyce Nabende",
+        "Ekaterina Shutova",
+        "Mohammad Taher Pilehvar"
+      ],
+      "publication": "Findings 2025",
+      "url": "https://aclanthology.org/2025.findings-acl.503/",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "The continuous evolution and enhanced reasoning capabilities of large language models (LLMs) have elevated their role in complex tasks, notably in travel planning, where demand for personalized, high-quality itineraries is rising. However, current benchmarks often rely on unrealistic simulated data, failing to reflect the differences between LLM-generated and real-world itineraries. Existing evaluation metrics, which primarily emphasize constraints, fall short of providing a comprehensive assessment of the overall..."
+    },
+    {
+      "zotero_key": "YW8SYJIU",
+      "title": "WorldTravel: A Realistic Multimodal Travel-Planning Benchmark with Tightly Coupled Constraints",
+      "year": "2026",
+      "authors": [
+        "Zexuan Wang",
+        "Chenghao Yang",
+        "Yingqi Que",
+        "Zhenzhu Yang",
+        "Huaqing Yuan",
+        "Yiwen Wang",
+        "Zhengxuan Jiang",
+        "Shengjie Fang",
+        "Zhenhe Wu",
+        "Zhaohui Wang",
+        "Zhixin Yao",
+        "Jiashuo Liu",
+        "Jincheng Ren",
+        "Yuzhen Li",
+        "Yang Yang",
+        "Jiaheng Liu",
+        "Jian Yang",
+        "Zaiyuan Wang",
+        "Ge Zhang",
+        "Zhoufutu Wen",
+        "Wenhao Huang"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2602.08367",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Real-world autonomous planning requires coordinating tightly coupled constraints where a single decision dictates the feasibility of all subsequent actions. However, existing benchmarks predominantly feature loosely coupled constraints solvable through local greedy decisions and rely on idealized data, failing to capture the complexity of extracting parameters from dynamic web environments. We introduce \\textbf{WorldTravel}, a benchmark comprising 150 real-world travel scenarios across 5 cities that demand navigat..."
+    },
+    {
+      "zotero_key": "WR3MXYNM",
+      "title": "TourPlanner: A Competitive Consensus Framework with Constraint-Gated Reinforcement Learning for Travel Planning",
+      "year": "2026",
+      "authors": [
+        "Yinuo Wang",
+        "Mining Tan",
+        "Wenxiang Jiao",
+        "Xiaoxi Li",
+        "Hao Wang",
+        "Xuanyu Zhang",
+        "Yuan Lu",
+        "Weiming Dong"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2601.04698",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Travel planning is a sophisticated decision-making process that requires synthesizing multifaceted information to construct itineraries. However, existing travel planning approaches face several challenges: (1) Pruning candidate points of interest (POIs) while maintaining a high recall rate; (2) A single reasoning path restricts the exploration capability within the feasible solution space for travel planning; (3) Simultaneously optimizing hard constraints and soft constraints remains a significant difficulty. To..."
+    },
+    {
+      "zotero_key": "GNS23YTD",
+      "title": "IntTravel: A Real-World Dataset and Generative Framework for Integrated Multi-Task Travel Recommendation",
+      "year": "2026",
+      "authors": [
+        "Huimin Yan",
+        "Longfei Xu",
+        "Junjie Sun",
+        "Zheng Liu",
+        "Wei Luo",
+        "Kaikui Liu",
+        "Xiangxiang Chu"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2602.11664",
+      "repo_url": "https://github.com/AMAP-ML/IntTravel",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "中",
+      "reason": "可用于评测或基准对比；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Next Point of Interest (POI) recommendation is essential for modern mobility and location-based services. To provide a smooth user experience, models must understand several components of a journey holistically: \"when to depart\", \"how to travel\", \"where to go\", and \"what needs arise via the route\". However, current research is limited by fragmented datasets that focus merely on next POI recommendation (\"where to go\"), neglecting the departure time, travel mode, and situational requirements along the journey. Furth..."
+    },
+    {
+      "zotero_key": "CD5RQDKI",
+      "title": "TRIP-Bench: A Benchmark for Long-Horizon Interactive Agents in Real-World Scenarios",
+      "year": "2026",
+      "authors": [
+        "Yuanzhe Shen",
+        "Zisu Huang",
+        "Zhengyuan Wang",
+        "Muzhao Tian",
+        "Zhengkang Guo",
+        "Chenyang Zhang",
+        "Shuaiyu Zhou",
+        "Zengjie Hu",
+        "Dailin Li",
+        "Jingwen Xu",
+        "Kaimin Wang",
+        "Wenhao Liu",
+        "Tianlong Li",
+        "Fengpeng Yue",
+        "Feng Hong",
+        "Cao Liu",
+        "Ke Zeng"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2602.01675",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；可用于评测或基准对比；强调约束、验证或回溯。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "As LLM-based agents are deployed in increasingly complex real-world settings, existing benchmarks underrepresent key challenges such as enforcing global constraints, coordinating multi-tool reasoning, and adapting to evolving user behavior over long, multi-turn interactions. To bridge this gap, we introduce \\textbf{TRIP-Bench}, a long-horizon benchmark grounded in realistic travel-planning scenarios. TRIP-Bench leverages real-world data, offers 18 curated tools and 40+ travel requirements, and supports automated e..."
+    },
+    {
+      "zotero_key": "RAK7PN9L",
+      "title": "DeepPlanning: Benchmarking Long-Horizon Agentic Planning with Verifiable Constraints",
+      "year": "2026",
+      "authors": [
+        "Yinger Zhang",
+        "Shutong Jiang",
+        "Renhao Li",
+        "Jianhong Tu",
+        "Yang Su",
+        "Lianghao Deng",
+        "Xudong Guo",
+        "Chenxu Lv",
+        "Junyang Lin"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2601.18137",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "While agent evaluation has shifted toward long-horizon tasks, most benchmarks still emphasize local, step-level reasoning rather than the global constrained optimization (e.g., time and financial budgets) that demands genuine planning ability. Meanwhile, existing LLM planning benchmarks underrepresent the active information gathering and fine-grained local constraints typical of real-world settings. To address this, we introduce DeepPlanning, a challenging benchmark for practical long-horizon agent planning. It fe..."
+    },
+    {
+      "zotero_key": "VMC576U4",
+      "title": "Flex-TravelPlanner: A Benchmark for Flexible Planning with Language Agents",
+      "year": "2025",
+      "authors": [
+        "Juhyun Oh",
+        "Eunsu Kim",
+        "Alice Oh"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2506.04649",
+      "repo_url": "https://github.com/juhyunohh/FlexTravelBench",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Real-world planning problems require constant adaptation to changing requirements and balancing of competing constraints. However, current benchmarks for evaluating LLMs' planning capabilities primarily focus on static, single-turn scenarios. We introduce Flex-TravelPlanner, a benchmark that evaluates language models' ability to reason flexibly in dynamic planning scenarios. Building on the TravelPlanner dataset~\\citep{xie2024travelplanner}, we introduce two novel evaluation settings: (1) sequential constraint int..."
+    },
+    {
+      "zotero_key": "6SFDYWQ5",
+      "title": "UserBench: An Interactive Gym Environment for User-Centric Agents",
+      "year": "2025",
+      "authors": [
+        "Cheng Qian",
+        "Zuxin Liu",
+        "Akshara Prabhakar",
+        "Zhiwei Liu",
+        "Jianguo Zhang",
+        "Haolin Chen",
+        "Heng Ji",
+        "Weiran Yao",
+        "Shelby Heinecke",
+        "Silvio Savarese",
+        "Caiming Xiong",
+        "Huan Wang"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2507.22034",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "涉及多轮交互或澄清；可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Large Language Models (LLMs)-based agents have made impressive progress in reasoning and tool use, enabling them to solve complex tasks. However, their ability to proactively collaborate with users, especially when goals are vague, evolving, or indirectly expressed, remains underexplored. To address this gap, we introduce UserBench, a user-centric benchmark designed to evaluate agents in multi-turn, preference-driven interactions. UserBench features simulated users who start with underspecified goals and reveal pr..."
+    },
+    {
+      "zotero_key": "CBMPRQJW",
+      "title": "Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints",
+      "year": "2026",
+      "authors": [
+        "Dongjie Yang",
+        "Chengqiang Lu",
+        "Qimeng Wang",
+        "Xinbei Ma",
+        "Yan Gao",
+        "Yao Hu",
+        "Hai Zhao"
+      ],
+      "publication": "",
+      "url": "",
+      "repo_url": "",
+      "collections": [
+        "Benchmarks & Evaluation"
+      ],
+      "collection_shorts": [
+        "Benchmark"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关。",
+      "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
+      "abstract": "Unlike reasoning, which often entails a deep sequence of deductive steps, complex real-world planning is characterized by the need to synthesize a broad spectrum of parallel and potentially conflicting information and constraints. For example, in travel planning scenarios, it requires the integration of diverse real-world information and user preferences. While LLMs show promise, existing methods with long-horizon thinking struggle with handling multifaceted constraints, leading to suboptimal solutions. Motivated..."
+    },
+    {
+      "zotero_key": "5LM3WFX7",
+      "title": "HiMAP-Travel: Hierarchical Multi-Agent Planning for Long-Horizon Constrained Travel",
+      "year": "2026",
+      "authors": [
+        "The Viet Bui",
+        "Wenjun Li",
+        "Yong Liu"
+      ],
+      "publication": "ICML 2026",
+      "url": "https://arxiv.org/abs/2603.04750",
+      "repo_url": "",
+      "collections": [
+        "Travel Planning Agents & Systems",
+        "Constraints, Verification & Solver Methods",
+        "Multi-Agent, Collaboration & Backtracking"
+      ],
+      "collection_shorts": [
+        "Travel",
+        "Constraints",
+        "Multi-agent"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
+      "abstract": "Sequential LLM agents fail on long-horizon planning with hard constraints like budgets and diversity requirements. As planning progresses and context grows, these agents drift from global constraints. We propose HiMAP-Travel, a hierarchical multi-agent framework that splits planning into strategic coordination and parallel day-level execution. A Coordinator allocates resources across days, while Day Executors plan independently in parallel. Three key mechanisms enable this: a transactional monitor enforcing budget..."
+    },
+    {
+      "zotero_key": "JFCD9NN4",
+      "title": "Plan Your Travel and Travel with Your Plan: Wide-Horizon Planning and Evaluation via LLM",
+      "year": "2025",
+      "authors": [
+        "Dongjie Yang",
+        "Chengqiang Lu",
+        "Qimeng Wang",
+        "Xinbei Ma",
+        "Yan Gao",
+        "Yao Hu",
+        "Hai Zhao"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2506.12421",
+      "repo_url": "",
+      "collections": [
+        "Travel Planning Agents & Systems"
+      ],
+      "collection_shorts": [
+        "Travel"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关。",
+      "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
+      "abstract": "Travel planning is a complex task requiring the integration of diverse real-world information and user preferences. While LLMs show promise, existing methods with long-horizon thinking struggle with handling multifaceted constraints and preferences in the context, leading to suboptimal itineraries. We formulate this as an $L^3$ planning problem, emphasizing long context, long instruction, and long output. To tackle this, we introduce Multiple Aspects of Planning (MAoP), enabling LLMs to conduct wide-horizon thinki..."
+    },
+    {
+      "zotero_key": "9EGBXIAK",
+      "title": "Personal Travel Solver: A Preference-Driven LLM-Solver System for Travel Planning",
+      "year": "2025",
+      "authors": [
+        "Zijian Shao",
+        "Jiancan Wu",
+        "Weijian Chen",
+        "Xiang Wang",
+        "Wanxiang Che",
+        "Joyce Nabende",
+        "Ekaterina Shutova",
+        "Mohammad Taher Pilehvar"
+      ],
+      "publication": "ACL 2025",
+      "url": "https://aclanthology.org/2025.acl-long.1339/",
+      "repo_url": "https://github.com/cliftclift/PTS",
+      "collections": [
+        "Travel Planning Agents & Systems"
+      ],
+      "collection_shorts": [
+        "Travel"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
+      "abstract": "Personal travel planning is a challenging task that aims to find a feasible plan that not only satisfies diverse constraints but also meets the demands of the user's explicit and implicit preferences. In this paper, we study how to integrate the user's implicit preference into the progress of travel planning. We introduce RealTravel, an augmented version of the TravelPlanner by incorporating real user reviews and point-of-interest metadata from Google Local. Based on RealTravel, we propose Personal Travel Solver (..."
+    },
+    {
+      "zotero_key": "YXC7HXCF",
+      "title": "A Human-Like Reasoning Framework for Multi-Phases Planning Task with Large Language Models",
+      "year": "2026",
+      "authors": [
+        "Chengxing Xie",
+        "Difan Zou"
+      ],
+      "publication": "",
+      "url": "",
+      "repo_url": "",
+      "collections": [
+        "Travel Planning Agents & Systems"
+      ],
+      "collection_shorts": [
+        "Travel"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
+      "abstract": "Recent studies have shown that LLM agents excel in simple tasks like writing and coding using various reasoning strategies. However, they struggle with tasks requiring comprehensive planning, a critical research issue. This study focuses on travel planning, a Multi-Phase problem involving outlining, information gathering, and planning, which requires managing various constraints and uncertainties. Existing approaches have struggled with this complexity (Xie et al., 2024b). Our research aims to address this challen..."
+    },
+    {
+      "zotero_key": "Y4WXFNTG",
+      "title": "Ask-before-Plan: Proactive Language Agents for Real-World Planning",
+      "year": "2024",
+      "authors": [
+        "Xuan Zhang",
+        "Yang Deng",
+        "Zifeng Ren",
+        "See-Kiong Ng",
+        "Tat-Seng Chua",
+        "Yaser Al-Onaizan",
+        "Mohit Bansal",
+        "Yun-Nung Chen"
+      ],
+      "publication": "Findings 2024",
+      "url": "https://aclanthology.org/2024.findings-emnlp.636/",
+      "repo_url": "",
+      "collections": [
+        "Travel Planning Agents & Systems"
+      ],
+      "collection_shorts": [
+        "Travel"
+      ],
+      "level": "低",
+      "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
+      "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "J6W3XCHP",
+      "title": "[Regular Track] AgentTravel: Knowledge-Augmented LLM Agent Framework for Urban Travel Planning",
+      "year": "2026",
+      "authors": [
+        "Jie Zhao",
+        "Jie Feng",
+        "Yong Li"
+      ],
+      "publication": "",
+      "url": "",
+      "repo_url": "https://github.com/csjiezhao/AgentTravel",
+      "collections": [
+        "Travel Planning Agents & Systems"
+      ],
+      "collection_shorts": [
+        "Travel"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
+      "abstract": "Large language models are opening new opportunities for intelligent decision support, with urban travel planning as a challenging and high-impact use case. Effective planning requires integrating real-time, multi-source data—such as points of interest, transportation, and user preferences—while reasoning spatially to generate feasible itineraries. This paper proposes AgentTravel, a unified framework that combines knowledge-grounded modeling, agentic reasoning, and multiperspective evaluation. It includes: 1) Trave..."
+    },
+    {
+      "zotero_key": "3J68AXU2",
+      "title": "Towards Full Delegation: Designing Ideal Agentic Behaviors for Travel Planning",
+      "year": "2024",
+      "authors": [
+        "Song Jiang",
+        "Da JU",
+        "Andrew Cohen",
+        "Sasha Mitts",
+        "Aaron Foss",
+        "Justine T. Kao",
+        "Xian Li",
+        "Yuandong Tian"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2411.13904",
+      "repo_url": "",
+      "collections": [
+        "Travel Planning Agents & Systems"
+      ],
+      "collection_shorts": [
+        "Travel"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
+      "abstract": "How are LLM-based agents used in the future? While many of the existing work on agents has focused on improving the performance of a specific family of objective and challenging tasks, in this work, we take a different perspective by thinking about full delegation: agents take over humans' routine decision-making processes and are trusted by humans to find solutions that fit people's personalized needs and are adaptive to ever-changing context. In order to achieve such a goal, the behavior of the agents, i.e., age..."
+    },
+    {
+      "zotero_key": "ZUC5YXBV",
+      "title": "IntentRL: Training proactive user-intent agents for open-ended deep research via reinforcement learning",
+      "year": "2026",
+      "authors": [
+        "Haohao Luo",
+        "Zexi Li",
+        "Yuexiang Xie",
+        "Wenhao Zhang",
+        "Yaliang Li",
+        "Ying Shen"
+      ],
+      "publication": "ICML 2026",
+      "url": "https://arxiv.org/abs/2602.03468",
+      "repo_url": "",
+      "collections": [
+        "Personalization & User Modeling",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Personalization",
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "涉及多轮交互或澄清；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "G2XVNCAF",
+      "title": "Uncertainty-aware clarification in LLM agents with information gain",
+      "year": "2026",
+      "authors": [
+        "Mengyi Deng",
+        "Zhiwei Li",
+        "Xin Li",
+        "Tingyu Zhu",
+        "Ying Zhao",
+        "Zhijiang Guo",
+        "Wei Wang"
+      ],
+      "publication": "ICML 2026",
+      "url": "https://arxiv.org/abs/2606.03135",
+      "repo_url": "",
+      "collections": [
+        "Personalization & User Modeling",
+        "Constraints, Verification & Solver Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Personalization",
+        "Constraints",
+        "Multi-turn"
+      ],
+      "level": "高",
+      "reason": "涉及多轮交互或澄清；强调约束、验证或回溯；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "EIX76BJZ",
+      "title": "Teaching agents to ask effective clarification questions",
+      "year": "2026",
+      "authors": [],
+      "publication": "ICML 2026",
+      "url": "",
+      "repo_url": "",
+      "collections": [
+        "Personalization & User Modeling",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Personalization",
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "涉及多轮交互或澄清；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "ZJ5HA5H8",
+      "title": "SynthTRIPs: A Knowledge-Grounded Framework for Benchmark Data Generation for Personalized Tourism Recommenders",
+      "year": "2025",
+      "authors": [
+        "Ashmi Banerjee",
+        "Adithi Satish",
+        "Fitri Nur Aisyah",
+        "Wolfgang Wörndl",
+        "Yashar Deldjoo"
+      ],
+      "publication": "",
+      "url": "https://dl.acm.org/doi/10.1145/3726302.3730321",
+      "repo_url": "",
+      "collections": [
+        "Personalization & User Modeling"
+      ],
+      "collection_shorts": [
+        "Personalization"
+      ],
+      "level": "高",
+      "reason": "可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合研究用户偏好建模、长期上下文和个性化规划。",
+      "abstract": "Tourism Recommender Systems (TRS) are crucial in personalizing travel experiences by tailoring recommendations to users' preferences, constraints, and contextual factors. However, publicly available travel datasets often lack sufficient breadth and depth, limiting their ability to support advanced personalization strategies - particularly for sustainable travel and off-peak tourism. In this work, we explore using Large Language Models (LLMs) to generate synthetic travel queries that emulate diverse user personas a..."
+    },
+    {
+      "zotero_key": "DUESSBFT",
+      "title": "Scaling Synthetic Data Creation with 1,000,000,000 Personas",
+      "year": "2025",
+      "authors": [
+        "Tao Ge",
+        "Xin Chan",
+        "Xiaoyang Wang",
+        "Dian Yu",
+        "Haitao Mi",
+        "Dong Yu"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2406.20094",
+      "repo_url": "",
+      "collections": [
+        "Personalization & User Modeling"
+      ],
+      "collection_shorts": [
+        "Personalization"
+      ],
+      "level": "低",
+      "reason": "和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合研究用户偏好建模、长期上下文和个性化规划。",
+      "abstract": "We propose a novel persona-driven data synthesis methodology that leverages various perspectives within a large language model (LLM) to create diverse synthetic data. To fully exploit this methodology at scale, we introduce Persona Hub -- a collection of 1 billion diverse personas automatically curated from web data. These 1 billion personas (~13% of the world's total population), acting as distributed carriers of world knowledge, can tap into almost every perspective encapsulated within the LLM, thereby facilitat..."
+    },
+    {
+      "zotero_key": "JNJII5JA",
+      "title": "Know Me, Respond to Me: Benchmarking LLMs for Dynamic User Profiling and Personalized Responses at Scale",
+      "year": "2025",
+      "authors": [
+        "Bowen Jiang",
+        "Zhuoqun Hao",
+        "Young-Min Cho",
+        "Bryan Li",
+        "Yuan Yuan",
+        "Sihao Chen",
+        "Lyle Ungar",
+        "Camillo J. Taylor",
+        "Dan Roth"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2504.14225",
+      "repo_url": "",
+      "collections": [
+        "Personalization & User Modeling"
+      ],
+      "collection_shorts": [
+        "Personalization"
+      ],
+      "level": "中",
+      "reason": "可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合研究用户偏好建模、长期上下文和个性化规划。",
+      "abstract": "Large Language Models (LLMs) have emerged as personalized assistants for users across a wide range of tasks -- from offering writing support to delivering tailored recommendations or consultations. Over time, the interaction history between a user and an LLM can provide extensive information about an individual's traits and preferences. However, open questions remain on how well LLMs today can effectively leverage such history to (1) internalize the user's inherent traits and preferences, (2) track how the user pr..."
+    },
+    {
+      "zotero_key": "RJP8Y6MP",
+      "title": "AgentGym-RL: Training LLM agents for long-horizon decision making through multi-turn reinforcement learning",
+      "year": "2025",
+      "authors": [
+        "Zhiheng Xi",
+        "Jixuan Huang",
+        "Chenyang Liao",
+        "Baodai Huang",
+        "Honglin Guo",
+        "Jiaqi Liu",
+        "Rui Zheng",
+        "Junjie Ye",
+        "Jiazheng Zhang",
+        "Wenxiang Chen",
+        "Wei He",
+        "Yiwen Ding",
+        "Guanyu Li",
+        "Zehui Chen",
+        "Zhengyin Du",
+        "Xuesong Yao",
+        "Yufei Xu",
+        "Jiecao Chen",
+        "Tao Gui",
+        "Zuxuan Wu",
+        "Zhang Qi",
+        "Xuanjing Huang",
+        "Yu-Gang Jiang"
+      ],
+      "publication": "ICLR 2026",
+      "url": "https://arxiv.org/abs/2509.08755",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "TQP5MA6J",
+      "title": "ToolTree: Efficient LLM agent tool planning via dual-feedback monte carlo tree search and bidirectional pruning",
+      "year": "2026",
+      "authors": [
+        "Shuo Yang",
+        "Soyeon Caren Han",
+        "Yihao Ding",
+        "Shuhe Wang",
+        "Eduard Hoy"
+      ],
+      "publication": "ICLR 2026",
+      "url": "https://arxiv.org/abs/2603.12740",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Constraints, Verification & Solver Methods"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Constraints"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "5P3KXNJ8",
+      "title": "From assumptions to actions: Turning LLM reasoning into uncertainty-aware planning for embodied agents",
+      "year": "2026",
+      "authors": [
+        "SeungWon Seo",
+        "SooBin Lim",
+        "SeongRae Noh",
+        "Haneul Kim",
+        "HyeongYeop Kang"
+      ],
+      "publication": "ICLR 2026",
+      "url": "https://arxiv.org/abs/2602.04326",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Constraints, Verification & Solver Methods",
+        "Multi-Agent, Collaboration & Backtracking"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Constraints",
+        "Multi-agent"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "T6YRGYQL",
+      "title": "MEM1: Learning to synergize memory and reasoning for efficient long-horizon agents",
+      "year": "2025",
+      "authors": [
+        "Zijian Zhou",
+        "Ao Qu",
+        "Zhaoxuan Wu",
+        "Sunghwan Kim",
+        "Alok Prakash",
+        "Daniela Rus",
+        "Jinhua Zhao",
+        "Bryan Kian Hsiang Low",
+        "Paul Pu Liang"
+      ],
+      "publication": "ICLR 2026",
+      "url": "https://arxiv.org/abs/2506.15841",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Multi-turn"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "UJZUKMSS",
+      "title": "HiPER: Hierarchical reinforcement learning with explicit credit assignment for large language model agents",
+      "year": "2026",
+      "authors": [
+        "Jiangweizhi Peng",
+        "Yuanxin Liu",
+        "Ruida Zhou",
+        "Charles Fleming",
+        "Zhaoran Wang",
+        "Alfredo Garcia",
+        "Mingyi Hong"
+      ],
+      "publication": "ICML 2026",
+      "url": "https://arxiv.org/abs/2602.16165",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "AGHLCPY3",
+      "title": "CoPE: a framework for optimizing coordination between planning and execution in LLM-based agents",
+      "year": "2026",
+      "authors": [],
+      "publication": "ICML 2026",
+      "url": "",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "U8B4AN8A",
+      "title": "Experience-evolving multi-turn tool-use agent with hybrid episodic-procedural memory",
+      "year": "2026",
+      "authors": [],
+      "publication": "ICML 2026",
+      "url": "",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Multi-turn"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "XGZ3NZUG",
+      "title": "Mitigating conversational inertia in multi-turn agents",
+      "year": "2026",
+      "authors": [
+        "Yang Wan",
+        "Zheng Cao",
+        "Zhenhao Zhang",
+        "Zhengwen Zeng",
+        "Shuheng Shen",
+        "Changhua Meng",
+        "Linchao Zhu"
+      ],
+      "publication": "ICML 2026",
+      "url": "https://arxiv.org/abs/2602.03664",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "VCUWPPW9",
+      "title": "T²PO: Uncertainty-guided exploration control for stable multi-turn agentic reinforcement learning",
+      "year": "2026",
+      "authors": [
+        "Haixin Wang",
+        "Hejie Cui",
+        "Chenwei Zhang",
+        "Xin Liu",
+        "Shuowei Jin",
+        "Shijie Geng",
+        "Xinyang Zhang",
+        "Nasser Zalmout",
+        "Zhenyu Shi",
+        "Yizhou Sun"
+      ],
+      "publication": "ICML 2026",
+      "url": "https://arxiv.org/abs/2605.02178",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods",
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Long-horizon",
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": ""
+    },
+    {
+      "zotero_key": "T4EMA7KF",
+      "title": "A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks",
+      "year": "2026",
+      "authors": [
+        "Shuzheng Si",
+        "Haozhe Zhao",
+        "Kangyang Luo",
+        "Gang Chen",
+        "Fanchao Qi",
+        "Minjia Zhang",
+        "Baobao Chang",
+        "Maosong Sun"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2510.05608",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods"
+      ],
+      "collection_shorts": [
+        "Long-horizon"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": "Agents based on large language models (LLMs) struggle with brainless trial-and-error and generating hallucinatory actions due to a lack of global planning in long-horizon tasks. In this paper, we introduce a plan-and-execute framework and propose EAGLET, an efficient and effective planner training method to enhance the executor agent's planning abilities without human effort. Specifically, we train a plug-and-play global planner through a two-step process: we first synthesize high-quality plans from an advanced LL..."
+    },
+    {
+      "zotero_key": "HRANTM5R",
+      "title": "MagicAgent: Towards Generalized Agent Planning",
+      "year": "2026",
+      "authors": [
+        "Xuhui Ren",
+        "Shaokang Dong",
+        "Chen Yang",
+        "Qing Gao",
+        "Yunbin Zhao",
+        "Yongsheng Liu",
+        "Xinwei Geng",
+        "Xiang Li",
+        "Demei Yan",
+        "Yanqing Li",
+        "Chenhao Huang",
+        "Dingwei Zhu",
+        "Junjie Ye",
+        "Boxuan Yue",
+        "Yingnan Fu",
+        "Mengzhe Lv",
+        "Zezeng Feng",
+        "Boshen Zhou",
+        "Bocheng Wang",
+        "Xuanjing Huang",
+        "Yu-Gang Jiang",
+        "Tao Gui",
+        "Qi Zhang",
+        "Yunke Zhang"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2602.19000",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods"
+      ],
+      "collection_shorts": [
+        "Long-horizon"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": "The evolution of Large Language Models (LLMs) from passive text processors to autonomous agents has established planning as a core component of modern intelligence. However, achieving generalized planning remains elusive, not only by the scarcity of high-quality interaction data but also by inherent conflicts across heterogeneous planning tasks. These challenges result in models that excel at isolated tasks yet struggle to generalize, while existing multi-task training attempts suffer from gradient interference. I..."
+    },
+    {
+      "zotero_key": "B9KDVZF8",
+      "title": "WebAnchor: Anchoring Agent Planning to Stabilize Long-Horizon Web Reasoning",
+      "year": "2026",
+      "authors": [
+        "Xinmiao Yu",
+        "Liwen Zhang",
+        "Xiaocheng Feng",
+        "Yong Jiang",
+        "Bing Qin",
+        "Pengjun Xie",
+        "Jingren Zhou"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2601.03164",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods"
+      ],
+      "collection_shorts": [
+        "Long-horizon"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": "Large Language Model(LLM)-based agents have shown strong capabilities in web information seeking, with reinforcement learning (RL) becoming a key optimization paradigm. However, planning remains a bottleneck, as existing methods struggle with long-horizon strategies. Our analysis reveals a critical phenomenon, plan anchor, where the first reasoning step disproportionately impacts downstream behavior in long-horizon web reasoning tasks. Current RL algorithms, fail to account for this by uniformly distributing rewar..."
+    },
+    {
+      "zotero_key": "2IBA2232",
+      "title": "A Subgoal-driven Framework for Improving Long-Horizon LLM Agents",
+      "year": "2026",
+      "authors": [
+        "Taiyi Wang",
+        "Sian Gooding",
+        "Florian Hartmann",
+        "Oriana Riva",
+        "Edward Grefenstette"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2603.19685",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods"
+      ],
+      "collection_shorts": [
+        "Long-horizon"
+      ],
+      "level": "中",
+      "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": "Large language model (LLM)-based agents have emerged as powerful autonomous controllers for digital environments, including mobile interfaces, operating systems, and web browsers. Web navigation, for example, requires handling dynamic content and long sequences of actions, making it particularly challenging. Existing LLM-based agents struggle with long-horizon planning in two main ways. During online execution, they often lose track as new information arrives, lacking a clear and adaptive path toward the final goa..."
+    },
+    {
+      "zotero_key": "9ZBYUV7Y",
+      "title": "HyperTree Planning: Enhancing LLM Reasoning via Hierarchical Thinking",
+      "year": "2025",
+      "authors": [
+        "Runquan Gui",
+        "Zhihai Wang",
+        "Jie Wang",
+        "Chi Ma",
+        "Huiling Zhen",
+        "Mingxuan Yuan",
+        "Jianye Hao",
+        "Defu Lian",
+        "Enhong Chen",
+        "Feng Wu"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2505.02322",
+      "repo_url": "",
+      "collections": [
+        "Long-Horizon Planning Methods"
+      ],
+      "collection_shorts": [
+        "Long-horizon"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
+      "abstract": "Recent advancements have significantly enhanced the performance of large language models (LLMs) in tackling complex reasoning tasks, achieving notable success in domains like mathematical and logical reasoning. However, these methods encounter challenges with complex planning tasks, primarily due to extended reasoning steps, diverse constraints, and the challenge of handling multiple distinct sub-tasks. To address these challenges, we propose HyperTree Planning (HTP), a novel reasoning paradigm that constructs hyp..."
+    },
+    {
+      "zotero_key": "DEB3FZRY",
+      "title": "Large Language Models Can Solve Real-World Planning Rigorously with Formal Verification Tools",
+      "year": "2025",
+      "authors": [
+        "Yilun Hao",
+        "Yongchao Chen",
+        "Yang Zhang",
+        "Chuchu Fan",
+        "Luis Chiruzzo",
+        "Alan Ritter",
+        "Lu Wang"
+      ],
+      "publication": "NAACL-HLT 2025",
+      "url": "https://aclanthology.org/2025.naacl-long.176/",
+      "repo_url": "",
+      "collections": [
+        "Constraints, Verification & Solver Methods"
+      ],
+      "collection_shorts": [
+        "Constraints"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合研究约束建模、可验证规划和 LLM 与 solver 的结合。",
+      "abstract": "Large Language Models (LLMs) struggle to directly generate correct plans for complex multi-constraint planning problems, even with self-verification and self-critique. For example, a U.S. domestic travel planning benchmark TravelPlanner was proposed in Xie et al. (2024), where the best LLM OpenAI o1-preview can only find viable travel plans with a 10% success rate given all needed information. In this work, we tackle this by proposing an LLM-based planning framework that formalizes and solves complex multi-constra..."
+    },
+    {
+      "zotero_key": "YZDMTGMB",
+      "title": "Planning with Multi-Constraints via Collaborative Language Agents",
+      "year": "2025",
+      "authors": [
+        "Cong Zhang",
+        "Xin Deik Goh",
+        "Dexun Li",
+        "Hao Zhang",
+        "Yong Liu",
+        "Owen Rambow",
+        "Leo Wanner",
+        "Marianna Apidianaki",
+        "Hend Al-Khalifa",
+        "Barbara Di Eugenio",
+        "Steven Schockaert"
+      ],
+      "publication": "COLING 2025",
+      "url": "https://aclanthology.org/2025.coling-main.672/",
+      "repo_url": "",
+      "collections": [
+        "Constraints, Verification & Solver Methods"
+      ],
+      "collection_shorts": [
+        "Constraints"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合研究约束建模、可验证规划和 LLM 与 solver 的结合。",
+      "abstract": "The rapid advancement of neural language models has sparked a new surge of intelligent agent research. Unlike traditional agents, large language model-based agents (LLM agents) have emerged as a promising paradigm for achieving artificial general intelligence (AGI) due to their superior reasoning and generalization capabilities. Effective planning is crucial for the success of LLM agents in real-world tasks, making it a highly pursued topic in the community. Current planning methods typically translate tasks into..."
+    },
+    {
+      "zotero_key": "ZS7MIWQF",
+      "title": "RAGEN-2: Reasoning Collapse in Agentic RL",
+      "year": "2026",
+      "authors": [
+        "Zihan Wang",
+        "Chi Gui",
+        "Xing Jin",
+        "Qineng Wang",
+        "Licheng Liu",
+        "Kangrui Wang",
+        "Shiqi Chen",
+        "Linjie Li",
+        "Zhengyuan Yang",
+        "Pingyue Zhang",
+        "Yiping Lu",
+        "Jiajun Wu",
+        "Li Fei-Fei",
+        "Lijuan Wang",
+        "Yejin Choi",
+        "Manling Li"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2604.06268",
+      "repo_url": "",
+      "collections": [
+        "Multi-Agent, Collaboration & Backtracking"
+      ],
+      "collection_shorts": [
+        "Multi-agent"
+      ],
+      "level": "中",
+      "reason": "涉及多轮交互或澄清；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
+      "abstract": "RL training of multi-turn LLM agents is inherently unstable, and reasoning quality directly determines task performance. Entropy is widely used to track reasoning stability. However, entropy only measures diversity within the same input, and cannot tell whether reasoning actually responds to different inputs. In RAGEN-2, we find that even with stable entropy, models can rely on fixed templates that look diverse but are input-agnostic. We call this template collapse, a failure mode invisible to entropy and all exis..."
+    },
+    {
+      "zotero_key": "HSW4SU4E",
+      "title": "Agent-Oriented Planning in Multi-Agent Systems",
+      "year": "2025",
+      "authors": [
+        "Ao Li",
+        "Yuexiang Xie",
+        "Songze Li",
+        "Fugee Tsung",
+        "Bolin Ding",
+        "Yaliang Li"
+      ],
+      "publication": "",
+      "url": "",
+      "repo_url": "https://github.com/lalaliat/Agent-Oriented-Planning",
+      "collections": [
+        "Multi-Agent, Collaboration & Backtracking"
+      ],
+      "collection_shorts": [
+        "Multi-agent"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
+      "abstract": "Through the collaboration of multiple LLM-empowered agents possessing diverse expertise and tools, multi-agent systems achieve impressive progress in solving real-world problems. Given the user queries, the meta-agents, serving as the brain within multi-agent systems, are required to decompose the queries into multiple sub-tasks that can be allocated to suitable agents capable of solving them, so-called agent-oriented planning. In this study, we identify three critical design principles of agent-oriented planning,..."
+    },
+    {
+      "zotero_key": "PLTCQW3Q",
+      "title": "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "year": "2025",
+      "authors": [
+        "Xinjie Zhao",
+        "Fan Gao",
+        "Xingyu Song",
+        "Yingjian Chen",
+        "Rui Yang",
+        "Yanran Fu",
+        "Yuyang Wang",
+        "Yusuke Iwasawa",
+        "Yutaka Matsuo",
+        "Irene Li"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2503.06951",
+      "repo_url": "",
+      "collections": [
+        "Multi-Agent, Collaboration & Backtracking"
+      ],
+      "collection_shorts": [
+        "Multi-agent"
+      ],
+      "level": "中",
+      "reason": "强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
+      "abstract": "Recent advances in large language models (LLMs) have significantly improved multi-hop question answering (QA) through direct Chain-of-Thought (CoT) reasoning. However, the irreversible nature of CoT leads to error accumulation, making it challenging to correct mistakes in multi-hop reasoning. This paper introduces ReAgent: a Reversible multi-Agent collaborative framework augmented with explicit backtracking mechanisms, enabling reversible multi-hop reasoning. By incorporating text-based retrieval, information aggr..."
+    },
+    {
+      "zotero_key": "75L8M9ER",
+      "title": "AgentSquare: Automatic LLM Agent Search in Modular Design Space",
+      "year": "2025",
+      "authors": [
+        "Yu Shang",
+        "Yu Li",
+        "Keyu Zhao",
+        "Likai Ma",
+        "Jiahe Liu",
+        "Fengli Xu",
+        "Yong Li"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2410.06153",
+      "repo_url": "https://github.com/tsinghua-fib-lab/AgentSquare",
+      "collections": [
+        "Multi-Agent, Collaboration & Backtracking"
+      ],
+      "collection_shorts": [
+        "Multi-agent"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
+      "abstract": "Recent advancements in Large Language Models (LLMs) have led to a rapid growth of agentic systems capable of handling a wide range of complex tasks. However, current research largely relies on manual, task-specific design, limiting their adaptability to novel tasks. In this paper, we introduce a new research problem: Modularized LLM Agent Search (MoLAS). We propose a modular design space that abstracts existing LLM agent designs into four fundamental modules with uniform IO interface: Planning, Reasoning, Tool Use..."
+    },
+    {
+      "zotero_key": "XMD4VG23",
+      "title": "ATLAS: Constraints-Aware Multi-Agent Collaboration for Real-World Travel Planning",
+      "year": "2025",
+      "authors": [
+        "Jihye Choi",
+        "Jinsung Yoon",
+        "Jiefeng Chen",
+        "Somesh Jha",
+        "Tomas Pfister"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2509.25586",
+      "repo_url": "",
+      "collections": [
+        "Multi-Agent, Collaboration & Backtracking"
+      ],
+      "collection_shorts": [
+        "Multi-agent"
+      ],
+      "level": "高",
+      "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
+      "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
+      "abstract": "While Large Language Models (LLMs) have shown remarkable advancements in reasoning and tool use, they often fail to generate optimal, grounded solutions under complex constraints. Real-world travel planning exemplifies these challenges, evaluating agents' abilities to handle constraints that are explicit, implicit, and even evolving based on interactions with dynamic environments and user needs. In this paper, we present ATLAS, a general multi-agent framework designed to effectively handle such complex nature of c..."
+    },
+    {
+      "zotero_key": "ZNS8QUT7",
+      "title": "Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback",
+      "year": "2026",
+      "authors": [
+        "Xiaoying Zhang",
+        "Yipeng Zhang",
+        "Hao Sun",
+        "Kaituo Feng",
+        "Chaochao Lu",
+        "Chao Yang",
+        "Helen Meng"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2506.03106",
+      "repo_url": "https://github.com/zhangxy-2019/critique-GRPO",
+      "collections": [
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "涉及多轮交互或澄清；贴近 agent planning 工作流。",
+      "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
+      "abstract": "Recent advances in reinforcement learning (RL) using numerical rewards have significantly enhanced the complex reasoning capabilities of large language models (LLMs). However, we identify three fundamental limitations of purely numerical feedback: performance plateaus, ineffective spontaneous self-reflection, and persistent failures. We show that plateaued RL models can successfully refine failed solutions when given natural language critiques. Motivated by this, we propose Critique-GRPO, an online RL framework th..."
+    },
+    {
+      "zotero_key": "PAVJ2QMF",
+      "title": "INFORMATION GAIN-BASED POLICY OPTIMIZATION: A SIMPLE AND EFFECTIVE APPROACH FOR MULTI- TURN SEARCH AGENTS",
+      "year": "2026",
+      "authors": [
+        "Guoqing Wang",
+        "Sunhao Dai",
+        "Guangze Ye",
+        "Zeyu Gan",
+        "Wei Yao",
+        "Yong Deng",
+        "Xiaofeng Wu",
+        "Zhenzhe Ying"
+      ],
+      "publication": "",
+      "url": "",
+      "repo_url": "https://github.com/GuoqingWang1/IGPO",
+      "collections": [
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "涉及多轮交互或澄清；贴近 agent planning 工作流。",
+      "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
+      "abstract": "Large language model (LLM)-based agents are increasingly trained with reinforcement learning (RL) to enhance their ability to interact with external environments through tool use, particularly in search-based settings that require multiturn reasoning and information acquisition. However, existing approaches typically rely on outcome-based rewards that are provided only after generating the final answer. This reward sparsity becomes particularly problematic in multiturn settings, where long trajectories exacerbate..."
+    },
+    {
+      "zotero_key": "F9ZBL8LT",
+      "title": "Beyond Single-Turn: A Survey on Multi-Turn Interactions with Large Language Models",
+      "year": "2026",
+      "authors": [
+        "Yubo Li",
+        "Xiaobin Shen",
+        "Yidi Miao",
+        "Xinyu Yao",
+        "Xueying Ding",
+        "Ramayya Krishnan",
+        "Rema Padman"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2504.04717",
+      "repo_url": "",
+      "collections": [
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "涉及多轮交互或澄清；贴近 agent planning 工作流。",
+      "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
+      "abstract": "Recent advances in large language models (LLMs) have substantially improved single-turn task performance, yet real-world applications increasingly demand sophisticated multi-turn interactions. This survey provides a comprehensive review of recent progress in evaluating and enhancing multi-turn LLM interactions. Centered on a task-oriented taxonomy-spanning instruction following in domains such as mathematics and coding, and conversational engagement in role-playing, healthcare, education, and adversarial jailbreak..."
+    },
+    {
+      "zotero_key": "UDURDKB4",
+      "title": "LLMs Get Lost In Multi-Turn Conversation",
+      "year": "2025",
+      "authors": [
+        "Philippe Laban",
+        "Hiroaki Hayashi",
+        "Yingbo Zhou",
+        "Jennifer Neville"
+      ],
+      "publication": "",
+      "url": "https://arxiv.org/abs/2505.06120",
+      "repo_url": "",
+      "collections": [
+        "Multi-turn"
+      ],
+      "collection_shorts": [
+        "Multi-turn"
+      ],
+      "level": "中",
+      "reason": "涉及多轮交互或澄清；可用于评测或基准对比；贴近 agent planning 工作流。",
+      "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
+      "abstract": "Large Language Models (LLMs) are conversational interfaces. As such, LLMs have the potential to assist their users not only when they can fully specify the task at hand, but also to help them define, explore, and refine what they need through multi-turn conversational exchange. Although analysis of LLM conversation logs has confirmed that underspecification occurs frequently in user instructions, LLM evaluation has predominantly focused on the single-turn, fully-specified instruction setting. In this work, we perf..."
+    }
+  ]
+}
