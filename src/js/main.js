@@ -2285,6 +2285,8 @@ function bindGlassTopbar() {
 		const modalLinks = document.querySelector("[data-paper-modal-links]");
 		const modalIndex = document.querySelector("[data-paper-modal-index]");
 		const modalPosition = document.querySelector("[data-paper-modal-position]");
+		const modalPrev = document.querySelector("[data-paper-modal-prev]");
+		const modalNext = document.querySelector("[data-paper-modal-next]");
 		const modalLimitations = document.querySelector("[data-paper-modal-limitations]");
 		const modalLimitationsSection = document.querySelector("[data-paper-modal-limitations-section]");
 		const modalCloseButtons = Array.prototype.slice.call(
@@ -2305,6 +2307,41 @@ function bindGlassTopbar() {
 		let selectedDate = "";
 		let sortOrder = window.localStorage.getItem(SORT_STORAGE_KEY) || "desc";
 		let currentDigestText = "";
+		let currentModalItems = [];
+		let currentModalIndex = -1;
+
+		const modalHighlightTerms = [
+			"agentic RL",
+			"Agentic RL",
+			"GRPO",
+			"RLOO",
+			"EnvRL",
+			"State Prediction",
+			"Inverse Dynamics",
+			"ALFWorld",
+			"WebShop",
+			"Qwen2.5",
+			"LLM agent",
+			"long-horizon",
+			"multi-turn",
+			"planning reliability",
+			"policy optimization",
+			"trajectory",
+			"rollout",
+			"benchmark",
+			"agent planning",
+			"稀疏奖励",
+			"稀疏结果奖励",
+			"环境动态",
+			"环境反馈",
+			"多轮交互",
+			"长程",
+			"状态理解",
+			"动作可控性",
+			"失败恢复",
+			"消融",
+			"实验",
+		];
 
 		function setEmpty(node, message, hidden) {
 			if (node) {
@@ -2337,6 +2374,39 @@ function bindGlassTopbar() {
 				return value;
 			}
 			return `${value.slice(0, maxLength - 1).trim()}...`;
+		}
+
+		function escapeRegExp(value) {
+			return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+		}
+
+		function appendHighlightedText(node, text) {
+			if (!node) {
+				return;
+			}
+			const value = String(text || "");
+			node.textContent = "";
+			if (!value) {
+				return;
+			}
+			const pattern = new RegExp(
+				`(${modalHighlightTerms.map(escapeRegExp).join("|")})`,
+				"gi"
+			);
+			let cursor = 0;
+			value.replace(pattern, (match, _term, offset) => {
+				if (offset > cursor) {
+					node.appendChild(document.createTextNode(value.slice(cursor, offset)));
+				}
+				const strong = document.createElement("strong");
+				strong.textContent = match;
+				node.appendChild(strong);
+				cursor = offset + match.length;
+				return match;
+			});
+			if (cursor < value.length) {
+				node.appendChild(document.createTextNode(value.slice(cursor)));
+			}
 		}
 
 		function firstSentences(text, maxSentences = 1) {
@@ -2509,7 +2579,7 @@ function bindGlassTopbar() {
 			const heading = document.createElement("h4");
 			heading.textContent = label;
 			const body = document.createElement("p");
-			body.textContent = value || "自动化还没有写入这一部分。";
+			appendHighlightedText(body, value || "自动化还没有写入这一部分。");
 			section.appendChild(heading);
 			section.appendChild(body);
 			return section;
@@ -2534,12 +2604,31 @@ function bindGlassTopbar() {
 			modal.hidden = true;
 			modal.classList.remove("is-open");
 			document.body.classList.remove("paper-modal-open");
+			currentModalIndex = -1;
+		}
+
+		function syncModalNavigation(total) {
+			[modalPrev, modalNext].forEach((button) => {
+				if (button) {
+					button.disabled = total < 2;
+				}
+			});
+		}
+
+		function openModalByOffset(offset) {
+			if (!currentModalItems.length || currentModalIndex < 0) {
+				return;
+			}
+			const total = currentModalItems.length;
+			const nextIndex = (currentModalIndex + offset + total) % total;
+			openPaperModal(currentModalItems[nextIndex], nextIndex, total);
 		}
 
 		function openPaperModal(paper, index, total) {
 			if (!modal) {
 				return;
 			}
+			currentModalIndex = index;
 			const interpretation = getPaperInterpretation(paper);
 			const authors = formatAuthors(paper.authors || (paper.brief && paper.brief.authors));
 			const categories = (paper.categories || [paper.primary_category]).filter(Boolean).join(", ");
@@ -2561,7 +2650,7 @@ function bindGlassTopbar() {
 				modalDate.textContent = `Date: ${getPaperDate(paper) || "N/A"}`;
 			}
 			if (modalSummary) {
-				modalSummary.textContent = getPaperCardSummary(paper);
+				appendHighlightedText(modalSummary, getPaperCardSummary(paper));
 			}
 			if (modalIndex) {
 				modalIndex.textContent = String(index + 1);
@@ -2582,7 +2671,7 @@ function bindGlassTopbar() {
 			}
 			if (modalLimitations && modalLimitationsSection) {
 				const limitations = paper.analysis && paper.analysis.limitations;
-				modalLimitations.textContent = limitations || "";
+				appendHighlightedText(modalLimitations, limitations || "");
 				modalLimitationsSection.hidden = !limitations;
 			}
 			if (modalLinks) {
@@ -2599,6 +2688,8 @@ function bindGlassTopbar() {
 
 			modal.hidden = false;
 			modal.classList.add("is-open");
+			modal.dataset.paperKey = getPaperKey(paper);
+			syncModalNavigation(total);
 			document.body.classList.add("paper-modal-open");
 			const closeButton = modal.querySelector(".paper-modal-close");
 			if (closeButton) {
@@ -3170,6 +3261,7 @@ function bindGlassTopbar() {
 				return;
 			}
 			const items = getFilteredItems();
+			currentModalItems = items;
 			fullList.innerHTML = "";
 			setEmpty(
 				fullEmpty,
@@ -3313,9 +3405,21 @@ function bindGlassTopbar() {
 		modalCloseButtons.forEach((button) => {
 			button.addEventListener("click", closePaperModal);
 		});
+		if (modalPrev) {
+			modalPrev.addEventListener("click", () => openModalByOffset(-1));
+		}
+		if (modalNext) {
+			modalNext.addEventListener("click", () => openModalByOffset(1));
+		}
 		document.addEventListener("keydown", (event) => {
 			if (event.key === "Escape" && modal && !modal.hidden) {
 				closePaperModal();
+			}
+			if (event.key === "ArrowLeft" && modal && !modal.hidden) {
+				openModalByOffset(-1);
+			}
+			if (event.key === "ArrowRight" && modal && !modal.hidden) {
+				openModalByOffset(1);
 			}
 		});
 
