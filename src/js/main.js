@@ -3067,10 +3067,15 @@ function bindGlassTopbar() {
 	function bindZoteroPaperList() {
 		const list = document.querySelector("[data-zotero-paper-list]");
 		const summaryNode = document.querySelector("[data-paper-list-summary]");
+		const filterBar = document.querySelector("[data-zotero-filter-bar]");
 		const empty = document.querySelector("[data-zotero-paper-empty]");
 		if (!list) {
 			return;
 		}
+
+		let allItems = [];
+		let groups = [];
+		let selectedCollection = "";
 
 		function compact(text, maxLength) {
 			const value = String(text || "").replace(/\s+/g, " ").trim();
@@ -3093,23 +3098,57 @@ function bindGlassTopbar() {
 			}
 		}
 
-		function renderSummary(data) {
+		function renderSummary(filteredItems) {
 			if (!summaryNode) {
 				return;
 			}
-			const groups = Array.isArray(data.groups) ? data.groups : [];
 			summaryNode.innerHTML = "";
 			const total = document.createElement("span");
-			total.textContent = `${(data.items || []).length} papers`;
+			total.textContent = selectedCollection
+				? `${filteredItems.length} of ${allItems.length} papers`
+				: `${allItems.length} papers`;
 			summaryNode.appendChild(total);
-			groups
-				.filter((group) => group.count)
-				.slice(0, 7)
-				.forEach((group) => {
-					const chip = document.createElement("span");
-					chip.textContent = `${group.short || group.name}: ${group.count}`;
-					summaryNode.appendChild(chip);
-				});
+			if (selectedCollection) {
+				const active = document.createElement("span");
+				active.textContent = selectedCollection;
+				summaryNode.appendChild(active);
+			}
+		}
+
+		function paperInCollection(paper, collectionName) {
+			if (!collectionName) {
+				return true;
+			}
+			return (paper.collections || []).indexOf(collectionName) !== -1;
+		}
+
+		function getVisibleItems() {
+			return allItems.filter((paper) => paperInCollection(paper, selectedCollection));
+		}
+
+		function renderFilters() {
+			if (!filterBar) {
+				return;
+			}
+			filterBar.innerHTML = "";
+			const options = [
+				{ name: "", label: "All", count: allItems.length },
+				...groups
+					.filter((group) => group.count)
+					.map((group) => ({
+						name: group.name,
+						label: group.short || group.name,
+						count: group.count,
+					})),
+			];
+			options.forEach((option) => {
+				const button = document.createElement("button");
+				button.type = "button";
+				button.dataset.zoteroFilter = option.name;
+				button.classList.toggle("is-active", selectedCollection === option.name);
+				button.textContent = `${option.label} ${option.count}`;
+				filterBar.appendChild(button);
+			});
 		}
 
 		function appendMeta(parent, values) {
@@ -3244,12 +3283,17 @@ function bindGlassTopbar() {
 			return grid;
 		}
 
-		function renderItems(data) {
-			const items = Array.isArray(data.items) ? data.items : [];
+		function renderItems() {
+			const items = getVisibleItems();
 			list.innerHTML = "";
-			renderSummary(data);
-			if (!items.length) {
+			renderFilters();
+			renderSummary(items);
+			if (!allItems.length) {
 				setEmpty("Zotero Paper List is not available yet.", false);
+				return;
+			}
+			if (!items.length) {
+				setEmpty("当前分类没有 paper。", false);
 				return;
 			}
 			setEmpty("", true);
@@ -3293,6 +3337,17 @@ function bindGlassTopbar() {
 				});
 		}
 
+		if (filterBar) {
+			filterBar.addEventListener("click", (event) => {
+				const button = event.target.closest("[data-zotero-filter]");
+				if (!button) {
+					return;
+				}
+				selectedCollection = button.dataset.zoteroFilter || "";
+				renderItems();
+			});
+		}
+
 		fetch("assets/content/data/zotero-paper-list.json", { cache: "no-store" })
 			.then((response) => {
 				if (!response.ok) {
@@ -3300,11 +3355,18 @@ function bindGlassTopbar() {
 				}
 				return response.json();
 			})
-			.then(renderItems)
+			.then((data) => {
+				allItems = Array.isArray(data.items) ? data.items : [];
+				groups = Array.isArray(data.groups) ? data.groups : [];
+				renderItems();
+			})
 			.catch(() => {
 				list.innerHTML = "";
 				if (summaryNode) {
 					summaryNode.innerHTML = "";
+				}
+				if (filterBar) {
+					filterBar.innerHTML = "";
 				}
 				setEmpty("Zotero Paper List is not available yet.", false);
 			});
