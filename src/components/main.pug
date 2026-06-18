@@ -91,7 +91,10 @@
 					.memo-ownerbar
 						input(type="password" data-memo-owner-key placeholder="Owner key" autocomplete="current-password")
 						button(type="button" data-memo-owner) Owner
+						button(type="button" data-realtime-login hidden) GitHub
+						button(type="button" data-realtime-logout hidden) Sign out
 						span(data-memo-status) Locked
+						span(data-realtime-status) Local mode
 					form.memo-composer(data-memo-form hidden)
 						input(type="text" name="title" placeholder="Title")
 						textarea(name="content" placeholder="Write a memo, paste a link, capture a quick thought...")

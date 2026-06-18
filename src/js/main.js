@@ -1041,12 +1041,406 @@ const GISCUS_CONFIG = {
 	installed: true,
 };
 
+function normalizeStringList(value) {
+	if (!Array.isArray(value)) {
+		return [];
+	}
+	return value
+		.map((item) => String(item || "").trim())
+		.filter(Boolean);
+}
+
+function uniqueList(values) {
+	return Array.from(new Set((values || []).filter(Boolean)));
+}
+
+function createJunleRealtimeStore() {
+	const config = window.JUNLE_REALTIME_CONFIG || {};
+	const reactionTypes = ["daily_paper", "zotero_paper", "note_archive"];
+	const state = {
+		client: null,
+		enabled: false,
+		initialized: false,
+		status: "Local mode",
+		user: null,
+		owner: false,
+		memos: [],
+		reactions: {
+			daily_paper: [],
+			zotero_paper: [],
+			note_archive: [],
+		},
+	};
+	const listeners = {};
+	const subscriptions = {};
+	let initPromise = null;
+
+	function on(eventName, handler) {
+		if (!listeners[eventName]) {
+			listeners[eventName] = [];
+		}
+		listeners[eventName].push(handler);
+		return () => {
+			listeners[eventName] = (listeners[eventName] || []).filter((item) => item !== handler);
+		};
+	}
+
+	function emit(eventName, detail) {
+		(listeners[eventName] || []).forEach((handler) => {
+			try {
+				handler(detail);
+			} catch (error) {
+				// Realtime listeners should not break page rendering.
+			}
+		});
+	}
+
+	function isConfigured() {
+		return Boolean(
+			config.supabaseUrl &&
+			config.supabaseAnonKey &&
+			window.supabase &&
+			window.supabase.createClient
+		);
+	}
+
+	function getUserMetadata(user) {
+		return user && user.user_metadata ? user.user_metadata : {};
+	}
+
+	function getGithubId(user) {
+		const metadata = getUserMetadata(user);
+		return String(metadata.provider_id || metadata.sub || metadata.user_id || "").trim();
+	}
+
+	function getGithubLogin(user) {
+		const metadata = getUserMetadata(user);
+		return String(
+			metadata.user_name ||
+			metadata.preferred_username ||
+			metadata.nickname ||
+			metadata.name ||
+			""
+		).trim().toLowerCase();
+	}
+
+	function isOwnerUser(user) {
+		if (!user) {
+			return false;
+		}
+		const ownerGithubIds = normalizeStringList(config.ownerGithubIds);
+		const ownerGithubLogins = normalizeStringList(config.ownerGithubLogins).map((login) => login.toLowerCase());
+		const githubId = getGithubId(user);
+		const githubLogin = getGithubLogin(user);
+		return (
+			(ownerGithubIds.length && ownerGithubIds.indexOf(githubId) !== -1) ||
+			(ownerGithubLogins.length && ownerGithubLogins.indexOf(githubLogin) !== -1)
+		);
+	}
+
+	function getAuthState() {
+		return {
+			enabled: state.enabled,
+			status: state.status,
+			user: state.user,
+			owner: state.owner,
+			githubId: getGithubId(state.user),
+			githubLogin: getGithubLogin(state.user),
+		};
+	}
+
+	function updateAuth(user) {
+		state.user = user || null;
+		state.owner = isOwnerUser(state.user);
+		if (!state.enabled) {
+			state.status = "Local mode";
+		} else if (!state.user) {
+			state.status = "Live read-only";
+		} else if (state.owner) {
+			state.status = "Live owner";
+		} else {
+			state.status = "Signed in read-only";
+		}
+		emit("auth", getAuthState());
+		if (typeof emitOwnerModeChange === "function") {
+			emitOwnerModeChange(isOwnerModeEnabled());
+		}
+	}
+
+	function mapMemoRow(row) {
+		return {
+			id: "remote-" + row.id,
+			remoteId: row.id,
+			title: row.title || "Memo",
+			content: row.content || "",
+			category: row.category || "live",
+			date: row.created_at ? row.created_at.slice(0, 16).replace("T", " ") : "",
+			priority: row.priority || "normal",
+			source: "live",
+		};
+	}
+
+	function init() {
+		if (initPromise) {
+			return initPromise;
+		}
+		initPromise = new Promise((resolve) => {
+			if (!isConfigured()) {
+				state.enabled = false;
+				state.initialized = true;
+				updateAuth(null);
+				emit("ready", getAuthState());
+				resolve(state);
+				return;
+			}
+			state.enabled = true;
+			state.client = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
+			state.client.auth.onAuthStateChange((eventName, session) => {
+				if (session) {
+					scrubOAuthCallbackHash();
+				}
+				updateAuth(session && session.user ? session.user : null);
+			});
+			state.client.auth.getSession()
+				.then((result) => {
+					const session = result && result.data ? result.data.session : null;
+					if (session) {
+						scrubOAuthCallbackHash();
+					}
+					updateAuth(session && session.user ? session.user : null);
+				})
+				.catch(() => {
+					updateAuth(null);
+				})
+				.finally(() => {
+					state.initialized = true;
+					emit("ready", getAuthState());
+					resolve(state);
+				});
+		});
+		return initPromise;
+	}
+
+	function ensureMemoSubscription() {
+		if (!state.client || subscriptions.memos) {
+			return;
+		}
+		subscriptions.memos = state.client
+			.channel("homepage-site-memos")
+			.on(
+				"postgres_changes",
+				{ event: "*", schema: "public", table: "site_memos" },
+				() => {
+					loadMemos();
+				}
+			)
+			.subscribe();
+	}
+
+	function ensureReactionSubscription(type) {
+		if (!state.client || subscriptions["reaction:" + type]) {
+			return;
+		}
+		subscriptions["reaction:" + type] = state.client
+			.channel("homepage-site-reactions-" + type)
+			.on(
+				"postgres_changes",
+				{
+					event: "*",
+					schema: "public",
+					table: "site_reactions",
+					filter: "item_type=eq." + type,
+				},
+				() => {
+					loadReactions(type);
+				}
+			)
+			.subscribe();
+	}
+
+	function loadMemos() {
+		return init().then(() => {
+			if (!state.enabled || !state.client) {
+				return [];
+			}
+			ensureMemoSubscription();
+			return state.client
+				.from("site_memos")
+				.select("*")
+				.is("deleted_at", null)
+				.order("created_at", { ascending: false })
+				.then((result) => {
+					if (result.error) {
+						throw result.error;
+					}
+					state.memos = (result.data || []).map(mapMemoRow);
+					emit("memos", state.memos.slice());
+					return state.memos.slice();
+				})
+				.catch(() => []);
+		});
+	}
+
+	function addMemo(memo) {
+		return init().then(() => {
+			if (!state.enabled || !state.client || !state.owner) {
+				throw new Error("Realtime owner access is not available");
+			}
+			return state.client
+				.from("site_memos")
+				.insert({
+					title: memo.title || "Memo",
+					content: memo.content || "",
+					category: memo.category || "live",
+					priority: memo.priority || "normal",
+					source: "live",
+				})
+				.select("*")
+				.single()
+				.then((result) => {
+					if (result.error) {
+						throw result.error;
+					}
+					return loadMemos().then(() => mapMemoRow(result.data));
+				});
+		});
+	}
+
+	function deleteMemo(remoteId) {
+		return init().then(() => {
+			if (!state.enabled || !state.client || !state.owner || !remoteId) {
+				throw new Error("Realtime owner access is not available");
+			}
+			return state.client
+				.from("site_memos")
+				.delete()
+				.eq("id", remoteId)
+				.then((result) => {
+					if (result.error) {
+						throw result.error;
+					}
+					return loadMemos();
+				});
+		});
+	}
+
+	function loadReactions(type) {
+		if (reactionTypes.indexOf(type) === -1) {
+			return Promise.resolve([]);
+		}
+		return init().then(() => {
+			if (!state.enabled || !state.client) {
+				return [];
+			}
+			ensureReactionSubscription(type);
+			return state.client
+				.from("site_reactions")
+				.select("item_key, active")
+				.eq("item_type", type)
+				.eq("active", true)
+				.then((result) => {
+					if (result.error) {
+						throw result.error;
+					}
+					state.reactions[type] = uniqueList((result.data || []).map((row) => row.item_key));
+					emit("reactions:" + type, state.reactions[type].slice());
+					return state.reactions[type].slice();
+				})
+				.catch(() => []);
+		});
+	}
+
+	function setReaction(type, itemKey, active) {
+		return init().then(() => {
+			if (!state.enabled || !state.client || !state.owner) {
+				throw new Error("Realtime owner access is not available");
+			}
+			const nextKeys = new Set(state.reactions[type] || []);
+			if (active) {
+				nextKeys.add(itemKey);
+			} else {
+				nextKeys.delete(itemKey);
+			}
+			state.reactions[type] = Array.from(nextKeys);
+			emit("reactions:" + type, state.reactions[type].slice());
+			return state.client
+				.from("site_reactions")
+				.upsert(
+					{
+						item_type: type,
+						item_key: itemKey,
+						active: Boolean(active),
+						updated_at: new Date().toISOString(),
+					},
+					{ onConflict: "item_type,item_key" }
+				)
+				.then((result) => {
+					if (result.error) {
+						throw result.error;
+					}
+					return loadReactions(type);
+				});
+		});
+	}
+
+	function signIn() {
+		return init().then(() => {
+			if (!state.enabled || !state.client) {
+				return;
+			}
+			try {
+				window.localStorage.setItem(POST_AUTH_HASH_STORAGE_KEY, getSafeCurrentHash("#memos"));
+			} catch (error) {
+				// Auth can proceed even if localStorage is unavailable.
+			}
+			return state.client.auth.signInWithOAuth({
+				provider: "github",
+				options: {
+					redirectTo: config.redirectTo || window.location.href,
+				},
+			});
+		});
+	}
+
+	function signOut() {
+		return init().then(() => {
+			if (!state.enabled || !state.client) {
+				return;
+			}
+			return state.client.auth.signOut();
+		});
+	}
+
+	return {
+		init,
+		on,
+		signIn,
+		signOut,
+		loadMemos,
+		addMemo,
+		deleteMemo,
+		loadReactions,
+		setReaction,
+		isEnabled: () => state.enabled,
+		canWrite: () => Boolean(state.enabled && state.owner),
+		getStatus: () => state.status,
+		getAuthState,
+	};
+}
+
+window.JunleRealtime = createJunleRealtimeStore();
+
 const OWNER_STORAGE_KEY = "junle-homepage-owner-mode-v2";
 const NOTE_ARCHIVE_STORAGE_KEY = "junle-homepage-archived-notes-v1";
 const NOTE_VIEW_STORAGE_KEY = "junle-homepage-note-view-v2";
+const POST_AUTH_HASH_STORAGE_KEY = "junle-homepage-post-auth-hash-v1";
+
+function isRealtimeOwnerEnabled() {
+	return Boolean(window.JunleRealtime && window.JunleRealtime.canWrite && window.JunleRealtime.canWrite());
+}
 
 function isOwnerModeEnabled() {
-	return window.localStorage.getItem(OWNER_STORAGE_KEY) === "true";
+	return window.localStorage.getItem(OWNER_STORAGE_KEY) === "true" || isRealtimeOwnerEnabled();
 }
 
 function emitOwnerModeChange(ownerMode) {
@@ -1063,6 +1457,55 @@ function isNoteHash(hash) {
 
 function isAcademicHash(hash) {
 	return ["#papers", "#daily-paper", "#paper-list"].indexOf(hash || "") !== -1;
+}
+
+function isOAuthCallbackHash(hash) {
+	const value = String(hash || "");
+	return (
+		/^#(access_token|error|error_code|error_description)=/.test(value) ||
+		value.indexOf("access_token=") !== -1 ||
+		value.indexOf("refresh_token=") !== -1 ||
+		value.indexOf("provider_token=") !== -1
+	);
+}
+
+function isSafeAppHash(hash) {
+	return (
+		["#about", "#notes", "#memos", "#papers", "#daily-paper", "#paper-list", "#note-reader"].indexOf(hash || "") !== -1 ||
+		isNoteHash(hash)
+	);
+}
+
+function getStoredPostAuthHash() {
+	try {
+		const hash = window.localStorage.getItem(POST_AUTH_HASH_STORAGE_KEY);
+		return isSafeAppHash(hash) ? hash : "#memos";
+	} catch (error) {
+		return "#memos";
+	}
+}
+
+function getSafeCurrentHash(fallback = "#about") {
+	const hash = window.location.hash;
+	return isSafeAppHash(hash) ? hash : fallback;
+}
+
+function scrubOAuthCallbackHash() {
+	if (!isOAuthCallbackHash(window.location.hash)) {
+		return;
+	}
+	const nextHash = getStoredPostAuthHash();
+	try {
+		window.localStorage.removeItem(POST_AUTH_HASH_STORAGE_KEY);
+	} catch (error) {
+		// Clearing this hint is best-effort only.
+	}
+	window.history.replaceState(null, "", nextHash);
+	if (typeof setWorkspaceView === "function") {
+		loadAll();
+		setWorkspaceView(nextHash, { introDelay: 0 });
+		setTimeout(() => scrollMainToHash(getScrollTargetHash(nextHash)), 120);
+	}
 }
 
 function getAcademicPanelName(hash) {
@@ -1103,8 +1546,9 @@ function bindContentFilters() {
 	const archiveButtons = Array.prototype.slice.call(
 		document.querySelectorAll("[data-note-archive]")
 	);
-	const noteCountLabel = document.querySelector("[data-note-count]");
-	let activeFilter = "";
+		const noteCountLabel = document.querySelector("[data-note-count]");
+		let activeFilter = "";
+		let remoteArchivedNotes = [];
 
 	if (!noteSearch || !noteCards.length) {
 		return;
@@ -1154,15 +1598,20 @@ function bindContentFilters() {
 		}
 	}
 
-	function readArchivedNotes() {
-		const keys = new Set(getStaticArchivedNotes());
-		readLocalArchivedNotes().forEach((key) => {
-			if (key) {
-				keys.add(key);
-			}
-		});
-		return Array.from(keys);
-	}
+		function readArchivedNotes() {
+			const keys = new Set(getStaticArchivedNotes());
+			readLocalArchivedNotes().forEach((key) => {
+				if (key) {
+					keys.add(key);
+				}
+			});
+			remoteArchivedNotes.forEach((key) => {
+				if (key) {
+					keys.add(key);
+				}
+			});
+			return Array.from(keys);
+		}
 
 	function writeArchivedNotes(keys) {
 		const staticKeys = new Set(getStaticArchivedNotes());
@@ -1286,21 +1735,53 @@ function bindContentFilters() {
 			if (!key) {
 				return;
 			}
-			if (isStaticArchived(key)) {
-				return;
-			}
-			const archived = readArchivedNotes();
-			const index = archived.indexOf(key);
-			if (index === -1) {
-				archived.push(key);
-			} else {
-				archived.splice(index, 1);
-			}
-			writeArchivedNotes(archived);
-			applyFilter();
+				if (isStaticArchived(key)) {
+					return;
+				}
+				const nextArchived = !isArchived(key);
+				if (
+					window.JunleRealtime &&
+					window.JunleRealtime.isEnabled &&
+					window.JunleRealtime.isEnabled() &&
+					window.JunleRealtime.canWrite &&
+					window.JunleRealtime.canWrite()
+				) {
+					window.JunleRealtime.setReaction("note_archive", key, nextArchived)
+						.catch(() => {
+							const archived = readArchivedNotes();
+							const index = archived.indexOf(key);
+							if (nextArchived && index === -1) {
+								archived.push(key);
+							} else if (!nextArchived && index !== -1) {
+								archived.splice(index, 1);
+							}
+							writeArchivedNotes(archived);
+							applyFilter();
+						});
+				} else {
+					const archived = readArchivedNotes();
+					const index = archived.indexOf(key);
+					if (nextArchived && index === -1) {
+						archived.push(key);
+					} else if (!nextArchived && index !== -1) {
+						archived.splice(index, 1);
+					}
+					writeArchivedNotes(archived);
+					applyFilter();
+				}
+			});
 		});
-	});
-	window.addEventListener("junle-owner-mode-change", applyFilter);
+		if (window.JunleRealtime) {
+			window.JunleRealtime.on("reactions:note_archive", (keys) => {
+				remoteArchivedNotes = keys || [];
+				applyFilter();
+			});
+			window.JunleRealtime.loadReactions("note_archive").then((keys) => {
+				remoteArchivedNotes = keys || [];
+				applyFilter();
+			});
+		}
+		window.addEventListener("junle-owner-mode-change", applyFilter);
 	window.addEventListener("storage", (event) => {
 		if (
 			event.key === OWNER_STORAGE_KEY ||
@@ -1313,7 +1794,7 @@ function bindContentFilters() {
 }
 
 	function scrollMainToHash(hash) {
-		if (!hash || hash === "#") {
+		if (!isSafeAppHash(hash)) {
 			return;
 		}
 	const target = document.querySelector(hash);
@@ -1432,6 +1913,13 @@ function bindLocalAnchors() {
 			return;
 		}
 		const hash = window.location.hash;
+		if (!isSafeAppHash(hash)) {
+			loadAll();
+			setWorkspaceView(isOAuthCallbackHash(hash) ? getStoredPostAuthHash() : "#about", {
+				introDelay: 0,
+			});
+			return;
+		}
 		if (isNoteHash(hash) && window.openNoteByHash) {
 			loadAll();
 			window.openNoteByHash(hash, { updateHash: false });
@@ -1455,6 +1943,12 @@ function bindLocalAnchors() {
 				return;
 			}
 			const hash = window.location.hash;
+			if (!isSafeAppHash(hash)) {
+				setWorkspaceView(isOAuthCallbackHash(hash) ? getStoredPostAuthHash() : "#about", {
+					introDelay: 0,
+				});
+				return;
+			}
 			if (isNoteHash(hash) && window.openNoteByHash) {
 				loadAll();
 				window.openNoteByHash(hash, { updateHash: false });
@@ -1590,6 +2084,43 @@ function bindGlassTopbar() {
 				dropdowns.forEach((dropdown) => setOpen(dropdown, false));
 			}
 		});
+	}
+
+	function bindRealtimeAuthControls() {
+		const loginButton = document.querySelector("[data-realtime-login]");
+		const logoutButton = document.querySelector("[data-realtime-logout]");
+		const statusNode = document.querySelector("[data-realtime-status]");
+		const store = window.JunleRealtime;
+		if (!store || !statusNode) {
+			return;
+		}
+
+		function renderAuthState() {
+			const auth = store.getAuthState();
+			const enabled = store.isEnabled();
+			statusNode.textContent = auth.status || store.getStatus();
+			if (loginButton) {
+				loginButton.hidden = !enabled || Boolean(auth.user);
+			}
+			if (logoutButton) {
+				logoutButton.hidden = !enabled || !auth.user;
+			}
+		}
+
+		if (loginButton) {
+			loginButton.addEventListener("click", () => {
+				store.signIn();
+			});
+		}
+		if (logoutButton) {
+			logoutButton.addEventListener("click", () => {
+				store.signOut();
+			});
+		}
+		store.on("auth", renderAuthState);
+		store.on("ready", renderAuthState);
+		store.init().then(renderAuthState);
+		renderAuthState();
 	}
 
 	function escapeHtml(value) {
@@ -2042,8 +2573,9 @@ function bindGlassTopbar() {
 				date: entry.dataset.date || "",
 				priority: entry.dataset.priority || "normal",
 				source: entry.dataset.source || "imported",
-			}));
-		let ownerMode = window.localStorage.getItem(OWNER_STORAGE_KEY) === "true";
+				}));
+			let ownerMode = window.localStorage.getItem(OWNER_STORAGE_KEY) === "true";
+			let remoteMemos = [];
 
 		function readState() {
 			try {
@@ -2081,21 +2613,23 @@ function bindGlassTopbar() {
 			].join("-") + " " + [pad(date.getHours()), pad(date.getMinutes())].join(":");
 		}
 
-		function getVisibleMemos() {
-			const state = readState();
-			const deletedIds = state.deletedSeedIds || [];
-			const localMemos = state.localMemos || [];
-			return seedMemos
-				.filter((memo) => deletedIds.indexOf(memo.id) === -1)
-				.concat(localMemos)
-				.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
-		}
+			function getVisibleMemos() {
+				const state = readState();
+				const deletedIds = state.deletedSeedIds || [];
+				const localMemos = state.localMemos || [];
+				return seedMemos
+					.filter((memo) => deletedIds.indexOf(memo.id) === -1)
+					.concat(remoteMemos)
+					.concat(localMemos)
+					.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+			}
 
 		function createMemoEntry(memo) {
 			const article = document.createElement("article");
 			article.className = "memo-entry";
 			article.dataset.memoCard = "";
 			article.dataset.id = memo.id;
+			article.dataset.remoteId = memo.remoteId || "";
 
 			const dot = document.createElement("div");
 			dot.className = "memo-entry-dot";
@@ -2153,15 +2687,23 @@ function bindGlassTopbar() {
 			return article;
 		}
 
-		function renderMemos() {
-			timeline.innerHTML = "";
-			getVisibleMemos().forEach((memo) => {
-				timeline.appendChild(createMemoEntry(memo));
-			});
-			form.hidden = !ownerMode;
-			status.textContent = ownerMode ? "Owner unlocked" : "Locked";
-			ownerButton.textContent = ownerMode ? "Lock" : "Owner";
-			ownerInput.hidden = ownerMode;
+			function renderMemos() {
+				const localOwnerMode = window.localStorage.getItem(OWNER_STORAGE_KEY) === "true";
+				const realtimeOwnerMode = isRealtimeOwnerEnabled();
+				ownerMode = localOwnerMode || realtimeOwnerMode;
+				timeline.innerHTML = "";
+				getVisibleMemos().forEach((memo) => {
+					timeline.appendChild(createMemoEntry(memo));
+				});
+				form.hidden = !ownerMode;
+				status.textContent = ownerMode
+					? realtimeOwnerMode
+						? "GitHub owner"
+						: "Owner unlocked"
+					: "Locked";
+				ownerButton.hidden = realtimeOwnerMode;
+				ownerButton.textContent = localOwnerMode ? "Lock" : "Owner";
+				ownerInput.hidden = ownerMode;
 			Array.prototype.slice
 				.call(document.querySelectorAll("[data-memo-delete]"))
 				.forEach((button) => {
@@ -2203,51 +2745,99 @@ function bindGlassTopbar() {
 					});
 			});
 
-		form.addEventListener("submit", (event) => {
-			event.preventDefault();
-			if (!ownerMode) {
-				return;
-			}
+			form.addEventListener("submit", (event) => {
+				event.preventDefault();
+				if (!ownerMode) {
+					return;
+				}
 			const titleInput = form.elements.title;
 			const contentInput = form.elements.content;
 			const now = new Date();
 			const date = formatDate(now);
 			const content = contentInput.value.trim();
-			if (!content && !titleInput.value.trim()) {
-				return;
-			}
-			const state = readState();
-			const localMemos = state.localMemos || [];
-			localMemos.push({
-				id: "local-" + now.getTime(),
-				title: titleInput.value.trim() || "Memo " + date.slice(0, 10),
-				content,
-				category: "local",
-				date,
-				priority: "normal",
-				source: "local",
+				if (!content && !titleInput.value.trim()) {
+					return;
+				}
+				const memo = {
+					id: "local-" + now.getTime(),
+					title: titleInput.value.trim() || "Memo " + date.slice(0, 10),
+					content,
+					category: window.JunleRealtime && window.JunleRealtime.canWrite && window.JunleRealtime.canWrite() ? "live" : "local",
+					date,
+					priority: "normal",
+					source: window.JunleRealtime && window.JunleRealtime.canWrite && window.JunleRealtime.canWrite() ? "live" : "local",
+				};
+
+				function saveLocalMemo() {
+					const state = readState();
+					const localMemos = state.localMemos || [];
+					localMemos.push({
+						...memo,
+						category: "local",
+						source: "local",
+					});
+					writeState({
+						deletedSeedIds: state.deletedSeedIds || [],
+						localMemos,
+					});
+					form.reset();
+					renderMemos();
+				}
+
+				if (
+					window.JunleRealtime &&
+					window.JunleRealtime.isEnabled &&
+					window.JunleRealtime.isEnabled() &&
+					window.JunleRealtime.canWrite &&
+					window.JunleRealtime.canWrite()
+				) {
+					status.textContent = "Syncing memo";
+					window.JunleRealtime.addMemo(memo)
+						.then(() => {
+							form.reset();
+							status.textContent = "Memo synced";
+							renderMemos();
+						})
+						.catch(() => {
+							status.textContent = "Saved locally";
+							saveLocalMemo();
+						});
+					return;
+				}
+				saveLocalMemo();
 			});
-			writeState({
-				deletedSeedIds: state.deletedSeedIds || [],
-				localMemos,
-			});
-			form.reset();
-			renderMemos();
-		});
 
 		timeline.addEventListener("click", (event) => {
 			const deleteButton = event.target.closest("[data-memo-delete]");
 			if (!deleteButton || !ownerMode) {
 				return;
 			}
-			const entry = deleteButton.closest("[data-memo-card]");
-			const id = entry ? entry.dataset.id : "";
-			if (!id) {
-				return;
-			}
-			const state = readState();
-			const deletedSeedIds = state.deletedSeedIds || [];
-			const localMemos = state.localMemos || [];
+				const entry = deleteButton.closest("[data-memo-card]");
+				const id = entry ? entry.dataset.id : "";
+				const remoteId = entry ? entry.dataset.remoteId : "";
+				if (!id) {
+					return;
+				}
+				if (
+					remoteId &&
+					window.JunleRealtime &&
+					window.JunleRealtime.canWrite &&
+					window.JunleRealtime.canWrite()
+				) {
+					status.textContent = "Deleting memo";
+					window.JunleRealtime.deleteMemo(remoteId)
+						.then(() => {
+							status.textContent = "Memo deleted";
+							renderMemos();
+						})
+						.catch(() => {
+							status.textContent = "Delete failed";
+						});
+					return;
+				}
+				const state = readState();
+				const deletedSeedIds = state.deletedSeedIds || [];
+				const localMemos = state.localMemos || [];
 			if (id.indexOf("seed-") === 0 && deletedSeedIds.indexOf(id) === -1) {
 				deletedSeedIds.push(id);
 			}
@@ -2255,11 +2845,22 @@ function bindGlassTopbar() {
 				deletedSeedIds,
 				localMemos: localMemos.filter((memo) => memo.id !== id),
 			});
-			renderMemos();
-		});
+				renderMemos();
+			});
 
-		renderMemos();
-	}
+			if (window.JunleRealtime) {
+				window.JunleRealtime.on("auth", renderMemos);
+				window.JunleRealtime.on("memos", (memos) => {
+					remoteMemos = memos || [];
+					renderMemos();
+				});
+				window.JunleRealtime.loadMemos().then((memos) => {
+					remoteMemos = memos || [];
+					renderMemos();
+				});
+			}
+			renderMemos();
+		}
 
 	function bindDailyPapers() {
 		const list = document.querySelector("[data-daily-paper-list]");
@@ -2310,6 +2911,7 @@ function bindGlassTopbar() {
 		let selectedCategory = "";
 		let sortOrder = window.localStorage.getItem(SORT_STORAGE_KEY) || "desc";
 		let starredDailyKeys = loadDailyStarredKeys();
+		let remoteDailyStarredKeys = [];
 		let currentDigestText = "";
 		let currentModalItems = [];
 		let currentModalIndex = -1;
@@ -2389,13 +2991,37 @@ function bindGlassTopbar() {
 			}
 		}
 
+		function getDailyStarredKeys() {
+			return uniqueList(starredDailyKeys.concat(remoteDailyStarredKeys));
+		}
+
 		function isDailyStarred(paper) {
-			return starredDailyKeys.indexOf(getPaperKey(paper)) !== -1;
+			return getDailyStarredKeys().indexOf(getPaperKey(paper)) !== -1;
 		}
 
 		function toggleDailyStar(paper) {
 			const key = getPaperKey(paper);
-			if (starredDailyKeys.indexOf(key) === -1) {
+			const nextStarred = !isDailyStarred(paper);
+			if (
+				window.JunleRealtime &&
+				window.JunleRealtime.isEnabled &&
+				window.JunleRealtime.isEnabled() &&
+				window.JunleRealtime.canWrite &&
+				window.JunleRealtime.canWrite()
+			) {
+				window.JunleRealtime.setReaction("daily_paper", key, nextStarred)
+					.catch(() => {
+						if (nextStarred && starredDailyKeys.indexOf(key) === -1) {
+							starredDailyKeys = starredDailyKeys.concat(key);
+						} else if (!nextStarred) {
+							starredDailyKeys = starredDailyKeys.filter((value) => value !== key);
+						}
+						saveDailyStarredKeys();
+						renderFull();
+					});
+				return;
+			}
+			if (nextStarred) {
 				starredDailyKeys = starredDailyKeys.concat(key);
 			} else {
 				starredDailyKeys = starredDailyKeys.filter((value) => value !== key);
@@ -3526,19 +4152,30 @@ function bindGlassTopbar() {
 			});
 		});
 
-		if (dailyFilterBar) {
-			dailyFilterBar.addEventListener("click", (event) => {
-				const button = event.target.closest("[data-daily-paper-filter]");
-				if (!button) {
-					return;
+			if (dailyFilterBar) {
+				dailyFilterBar.addEventListener("click", (event) => {
+					const button = event.target.closest("[data-daily-paper-filter]");
+					if (!button) {
+						return;
 				}
 				const value = button.dataset.dailyPaperFilter || "";
 				selectedCategory = value === selectedCategory ? "" : value;
 				renderFull();
-			});
-		}
+				});
+			}
 
-		window.openAcademicPaperModal = openPaperModal;
+			if (window.JunleRealtime) {
+				window.JunleRealtime.on("reactions:daily_paper", (keys) => {
+					remoteDailyStarredKeys = keys || [];
+					renderFull();
+				});
+				window.JunleRealtime.loadReactions("daily_paper").then((keys) => {
+					remoteDailyStarredKeys = keys || [];
+					renderFull();
+				});
+			}
+
+			window.openAcademicPaperModal = openPaperModal;
 
 		modalCloseButtons.forEach((button) => {
 			button.addEventListener("click", closePaperModal);
@@ -3604,6 +4241,7 @@ function bindGlassTopbar() {
 		let selectedCollection = "";
 		const STAR_STORAGE_KEY = "junle-homepage-zotero-paper-stars";
 		let starredKeys = loadStarredKeys();
+		let remoteStarredKeys = [];
 
 		function compact(text, maxLength) {
 			const value = String(text || "").replace(/\s+/g, " ").trim();
@@ -3634,13 +4272,37 @@ function bindGlassTopbar() {
 			return paper.zotero_key || paper.url || paper.title || "zotero-paper";
 		}
 
+		function getStarredKeys() {
+			return uniqueList(starredKeys.concat(remoteStarredKeys));
+		}
+
 		function isStarred(paper) {
-			return starredKeys.indexOf(getZoteroKey(paper)) !== -1;
+			return getStarredKeys().indexOf(getZoteroKey(paper)) !== -1;
 		}
 
 		function toggleStar(paper) {
 			const key = getZoteroKey(paper);
-			if (starredKeys.indexOf(key) === -1) {
+			const nextStarred = !isStarred(paper);
+			if (
+				window.JunleRealtime &&
+				window.JunleRealtime.isEnabled &&
+				window.JunleRealtime.isEnabled() &&
+				window.JunleRealtime.canWrite &&
+				window.JunleRealtime.canWrite()
+			) {
+				window.JunleRealtime.setReaction("zotero_paper", key, nextStarred)
+					.catch(() => {
+						if (nextStarred && starredKeys.indexOf(key) === -1) {
+							starredKeys = starredKeys.concat(key);
+						} else if (!nextStarred) {
+							starredKeys = starredKeys.filter((value) => value !== key);
+						}
+						saveStarredKeys();
+						renderItems();
+					});
+				return;
+			}
+			if (nextStarred) {
 				starredKeys = starredKeys.concat(key);
 			} else {
 				starredKeys = starredKeys.filter((value) => value !== key);
@@ -3923,18 +4585,29 @@ function bindGlassTopbar() {
 				});
 		}
 
-		if (filterBar) {
-			filterBar.addEventListener("click", (event) => {
-				const button = event.target.closest("[data-zotero-filter]");
-				if (!button) {
-					return;
+			if (filterBar) {
+				filterBar.addEventListener("click", (event) => {
+					const button = event.target.closest("[data-zotero-filter]");
+					if (!button) {
+						return;
 				}
 				selectedCollection = button.dataset.zoteroFilter || "";
 				renderItems();
-			});
-		}
+				});
+			}
 
-		fetch("assets/content/data/zotero-paper-list.json", { cache: "no-store" })
+			if (window.JunleRealtime) {
+				window.JunleRealtime.on("reactions:zotero_paper", (keys) => {
+					remoteStarredKeys = keys || [];
+					renderItems();
+				});
+				window.JunleRealtime.loadReactions("zotero_paper").then((keys) => {
+					remoteStarredKeys = keys || [];
+					renderItems();
+				});
+			}
+
+			fetch("assets/content/data/zotero-paper-list.json", { cache: "no-store" })
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error("Zotero paper list data missing");
@@ -3963,11 +4636,12 @@ function bindGlassTopbar() {
 			bindLocalAnchors();
 			bindHashNavigation();
 			bindThemeToggle();
-		bindGlassTopbar();
-		bindNoteViewToggle();
-		bindExternalDropdown();
-		bindNoteReader();
-		bindMemoManager();
+			bindGlassTopbar();
+			bindNoteViewToggle();
+			bindExternalDropdown();
+			bindRealtimeAuthControls();
+			bindNoteReader();
+			bindMemoManager();
 		bindDailyPapers();
 		bindZoteroPaperList();
 		revealInitialHash();
