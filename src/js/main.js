@@ -1038,7 +1038,7 @@ const GISCUS_CONFIG = {
 	repoId: "R_kgDOS9Tb_g",
 	category: "General",
 	categoryId: "DIC_kwDOS9Tb_s4C_XG4",
-	installed: false,
+	installed: true,
 };
 
 const OWNER_STORAGE_KEY = "junle-homepage-owner-mode-v2";
@@ -1310,7 +1310,7 @@ function bindContentFilters() {
 			clearAboutIntro.timer = window.setTimeout(() => {
 				main.classList.remove("about-intro-playing");
 				clearAboutIntro.timer = null;
-			}, 100);
+			}, 150);
 		};
 		if (delay > 0) {
 			clearAboutIntro.startTimer = window.setTimeout(startIntro, delay);
@@ -1773,17 +1773,21 @@ function bindGlassTopbar() {
 			return;
 		}
 		host.innerHTML = "";
-		const setup = document.createElement("div");
-		setup.className = "giscus-setup-note";
-		setup.innerHTML = [
-			"<strong>Giscus comments need one GitHub setup step.</strong>",
-			"<span>Install the Giscus GitHub App on <code>junle-chen/HomePage</code>. Discussions and the General category are already configured. Comments support Markdown through GitHub Discussions. After installation, enable <code>GISCUS_CONFIG.installed</code>.</span>",
-			'<a href="https://github.com/apps/giscus" target="_blank" rel="noopener noreferrer">Install Giscus App</a>',
-		].join("");
-		host.appendChild(setup);
 		if (!GISCUS_CONFIG.installed) {
+			const setup = document.createElement("div");
+			setup.className = "giscus-setup-note";
+			setup.innerHTML = [
+				"<strong>Giscus comments need one GitHub setup step.</strong>",
+				"<span>Install the Giscus GitHub App on <code>junle-chen/HomePage</code>. Discussions and the General category are already configured. Comments support Markdown through GitHub Discussions. After installation, enable <code>GISCUS_CONFIG.installed</code>.</span>",
+				'<a href="https://github.com/apps/giscus" target="_blank" rel="noopener noreferrer">Install Giscus App</a>',
+			].join("");
+			host.appendChild(setup);
 			return;
 		}
+		const loading = document.createElement("p");
+		loading.className = "comment-note";
+		loading.textContent = "Loading GitHub Discussions comments...";
+		host.appendChild(loading);
 		const script = document.createElement("script");
 		script.src = "https://giscus.app/client.js";
 		script.async = true;
@@ -1801,10 +1805,10 @@ function bindGlassTopbar() {
 		script.setAttribute("data-theme", getGiscusTheme());
 		script.setAttribute("data-lang", "zh-CN");
 		script.addEventListener("load", () => {
-			setup.classList.add("is-loaded");
+			loading.remove();
 		});
 		script.addEventListener("error", () => {
-			setup.classList.add("is-error");
+			loading.textContent = "Giscus comments failed to load. Please check the repository installation and Discussions category.";
 		});
 		host.appendChild(script);
 	}

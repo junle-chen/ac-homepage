@@ -486,7 +486,7 @@ async function main() {
 		query_focus: focusText,
 		query_terms: queryTerms,
 		automation_contract: {
-			runner: "Codex daily automation can overwrite this JSON with full paper readings before build/deploy.",
+			runner: "npm run papers:daily:codex",
 			email_title_template: "YYYY-MM-DD Daily Paper",
 			fields: [
 				"作者",
