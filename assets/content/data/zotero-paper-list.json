@@ -2,7 +2,7 @@
   "updated_at": "2026-06-17T17:10:48.846Z",
   "source": "zotero-local-planning",
   "collection_key": "IH3NISJ6",
-  "analysis_method": "Codex static analysis from Zotero metadata",
+  "analysis_method": "Codex GPT static reading from Zotero Planning metadata and abstracts",
   "groups": [
     {
       "key": "P58U5SGR",
@@ -73,7 +73,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；可用于评测或基准对比；和偏好、记忆或状态保持相关。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Recent benchmarks for Large Language Model (LLM) agents primarily focus on evaluating reasoning, planning, and execution capabilities, while another critical component-memory, encompassing how agents memorize, update, and retrieve long-term information-is under-evaluated due to the lack of benchmarks. We term agents with memory mechanisms as memory agents. In this paper, based on classic theories from memory science and cognitive science, we identify four core competencies essential for memory agents: accurate ret..."
+      "abstract": "Recent benchmarks for Large Language Model (LLM) agents primarily focus on evaluating reasoning, planning, and execution capabilities, while another critical component-memory, encompassing how agents memorize, update, and retrieve long-term information-is under-evaluated due to the lack of benchmarks. We term agents with memory mechanisms as memory agents. In this paper, based on classic theories from memory science and cognitive science, we identify four core competencies essential for memory agents: accurate ret...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "XJW6QU3G",
@@ -94,7 +101,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是让 agent 能复用、筛选和迁移技能，减少复杂任务里临场规划和工具调用的不稳定。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "XDHTCBS2",
@@ -124,7 +138,14 @@
       "level": "高",
       "reason": "涉及多轮交互或澄清；可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "ARUKMJ2I",
@@ -146,7 +167,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "OpenAI claims that their recent o1 (Strawberry) model has been specifically constructed and trained to escape the normal limitations of autoregressive Large Language Models (LLMs)–making it a new kind of model: a Large Reasoning Model (LRM)–and be generally capable of tackling procedural reasoning tasks. We present the first comprehensive evaluation of these models on the fundamental tasks of planning and scheduling. Previous research attempted to use LLMs’ expressive generation capabilities to solve these problem..."
+      "abstract": "OpenAI claims that their recent o1 (Strawberry) model has been specifically constructed and trained to escape the normal limitations of autoregressive Large Language Models (LLMs)–making it a new kind of model: a Large Reasoning Model (LRM)–and be generally capable of tackling procedural reasoning tasks. We present the first comprehensive evaluation of these models on the fundamental tasks of planning and scheduling. Previous research attempted to use LLMs’ expressive generation capabilities to solve these problem...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "VURID9KD",
@@ -173,7 +201,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Recent advancements in probing Large Language Models (LLMs) have explored their latent potential as personalized travel planning agents, yet existing benchmarks remain limited in real world applicability. Existing datasets, such as TravelPlanner and TravelPlanner+, suffer from semi synthetic data reliance, spatial inconsistencies, and a lack of key travel constraints, making them inadequate for practical itinerary generation. To address these gaps, we introduce TripCraft, a spatiotemporally coherent travel plannin..."
+      "abstract": "Recent advancements in probing Large Language Models (LLMs) have explored their latent potential as personalized travel planning agents, yet existing benchmarks remain limited in real world applicability. Existing datasets, such as TravelPlanner and TravelPlanner+, suffer from semi synthetic data reliance, spatial inconsistencies, and a lack of key travel constraints, making them inadequate for practical itinerary generation. To address these gaps, we introduce TripCraft, a spatiotemporally coherent travel plannin...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 TravelPlanner；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "YXXNTU5N",
@@ -201,7 +236,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Although large language models have enhanced automated travel planning abilities, current systems remain misaligned with real-world scenarios. First, they assume users provide explicit queries, while in reality requirements are often implicit. Second, existing solutions ignore diverse environmental factors and user preferences, limiting the feasibility of plans. Third, systems can only generate plans with basic POI arrangements, failing to provide all-in-one plans with rich details. To mitigate these challenges, w..."
+      "abstract": "Although large language models have enhanced automated travel planning abilities, current systems remain misaligned with real-world scenarios. First, they assume users provide explicit queries, while in reality requirements are often implicit. Second, existing solutions ignore diverse environmental factors and user preferences, limiting the feasibility of plans. Third, systems can only generate plans with basic POI arrangements, failing to provide all-in-one plans with rich details. To mitigate these challenges, w...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "Q5AE5G6Y",
@@ -233,7 +275,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Large language models (LLMs) have shown promise in automating travel planning, yet they often fall short in addressing nuanced spatiotemporal rationality. While existing benchmarks focus on basic plan validity, they neglect critical aspects such as route efficiency, POI appeal, and real-time adaptability. This paper introduces **TP-RAG**, the first benchmark tailored for retrieval-augmented, spatiotemporal-aware travel planning. Our dataset includes 2,348 real-world travel queries, 85,575 fine-grain annotated POIs..."
+      "abstract": "Large language models (LLMs) have shown promise in automating travel planning, yet they often fall short in addressing nuanced spatiotemporal rationality. While existing benchmarks focus on basic plan validity, they neglect critical aspects such as route efficiency, POI appeal, and real-time adaptability. This paper introduces **TP-RAG**, the first benchmark tailored for retrieval-augmented, spatiotemporal-aware travel planning. Our dataset includes 2,348 real-world travel queries, 85,575 fine-grain annotated POIs...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "WDE7DJK6",
@@ -257,7 +306,14 @@
       "level": "中",
       "reason": "可用于评测或基准对比；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Existing benchmarks do not test language agents on their interaction with human users or ability to follow domain-specific rules, both of which are vital for deploying them in real world applications. We propose τ -bench, a benchmark emulating dynamic conversations between a user (simulated by language models) and a language agent provided with domain-specific API tools and policy guidelines. We employ an efficient and faithful evaluation process that compares the database state at the end of a conversation with t..."
+      "abstract": "Existing benchmarks do not test language agents on their interaction with human users or ability to follow domain-specific rules, both of which are vital for deploying them in real world applications. We propose τ -bench, a benchmark emulating dynamic conversations between a user (simulated by language models) and a language agent provided with domain-specific API tools and policy guidelines. We employ an efficient and faithful evaluation process that compares the database state at the end of a conversation with t...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是补足 agent planning / agent memory 的评测缺口，让不同方法可以在同一任务与指标下比较。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "K5SLZFDP",
@@ -286,7 +342,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "The continuous evolution and enhanced reasoning capabilities of large language models (LLMs) have elevated their role in complex tasks, notably in travel planning, where demand for personalized, high-quality itineraries is rising. However, current benchmarks often rely on unrealistic simulated data, failing to reflect the differences between LLM-generated and real-world itineraries. Existing evaluation metrics, which primarily emphasize constraints, fall short of providing a comprehensive assessment of the overall..."
+      "abstract": "The continuous evolution and enhanced reasoning capabilities of large language models (LLMs) have elevated their role in complex tasks, notably in travel planning, where demand for personalized, high-quality itineraries is rising. However, current benchmarks often rely on unrealistic simulated data, failing to reflect the differences between LLM-generated and real-world itineraries. Existing evaluation metrics, which primarily emphasize constraints, fall short of providing a comprehensive assessment of the overall...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "YW8SYJIU",
@@ -327,7 +390,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Real-world autonomous planning requires coordinating tightly coupled constraints where a single decision dictates the feasibility of all subsequent actions. However, existing benchmarks predominantly feature loosely coupled constraints solvable through local greedy decisions and rely on idealized data, failing to capture the complexity of extracting parameters from dynamic web environments. We introduce \\textbf{WorldTravel}, a benchmark comprising 150 real-world travel scenarios across 5 cities that demand navigat..."
+      "abstract": "Real-world autonomous planning requires coordinating tightly coupled constraints where a single decision dictates the feasibility of all subsequent actions. However, existing benchmarks predominantly feature loosely coupled constraints solvable through local greedy decisions and rely on idealized data, failing to capture the complexity of extracting parameters from dynamic web environments. We introduce \\textbf{WorldTravel}, a benchmark comprising 150 real-world travel scenarios across 5 cities that demand navigat...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "WR3MXYNM",
@@ -355,7 +425,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Travel planning is a sophisticated decision-making process that requires synthesizing multifaceted information to construct itineraries. However, existing travel planning approaches face several challenges: (1) Pruning candidate points of interest (POIs) while maintaining a high recall rate; (2) A single reasoning path restricts the exploration capability within the feasible solution space for travel planning; (3) Simultaneously optimizing hard constraints and soft constraints remains a significant difficulty. To..."
+      "abstract": "Travel planning is a sophisticated decision-making process that requires synthesizing multifaceted information to construct itineraries. However, existing travel planning approaches face several challenges: (1) Pruning candidate points of interest (POIs) while maintaining a high recall rate; (2) A single reasoning path restricts the exploration capability within the feasible solution space for travel planning; (3) Simultaneously optimizing hard constraints and soft constraints remains a significant difficulty. To...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是缓解长程 agent 训练里的稀疏反馈和 credit assignment 问题，让环境交互能转化为更稳定的策略学习信号。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "GNS23YTD",
@@ -382,7 +459,14 @@
       "level": "中",
       "reason": "可用于评测或基准对比；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Next Point of Interest (POI) recommendation is essential for modern mobility and location-based services. To provide a smooth user experience, models must understand several components of a journey holistically: \"when to depart\", \"how to travel\", \"where to go\", and \"what needs arise via the route\". However, current research is limited by fragmented datasets that focus merely on next POI recommendation (\"where to go\"), neglecting the departure time, travel mode, and situational requirements along the journey. Furth..."
+      "abstract": "Next Point of Interest (POI) recommendation is essential for modern mobility and location-based services. To provide a smooth user experience, models must understand several components of a journey holistically: \"when to depart\", \"how to travel\", \"where to go\", and \"what needs arise via the route\". However, current research is limited by fragmented datasets that focus merely on next POI recommendation (\"where to go\"), neglecting the departure time, travel mode, and situational requirements along the journey. Furth...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是补足 agent planning / agent memory 的评测缺口，让不同方法可以在同一任务与指标下比较。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "CD5RQDKI",
@@ -419,7 +503,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；可用于评测或基准对比；强调约束、验证或回溯。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "As LLM-based agents are deployed in increasingly complex real-world settings, existing benchmarks underrepresent key challenges such as enforcing global constraints, coordinating multi-tool reasoning, and adapting to evolving user behavior over long, multi-turn interactions. To bridge this gap, we introduce \\textbf{TRIP-Bench}, a long-horizon benchmark grounded in realistic travel-planning scenarios. TRIP-Bench leverages real-world data, offers 18 curated tools and 40+ travel requirements, and supports automated e..."
+      "abstract": "As LLM-based agents are deployed in increasingly complex real-world settings, existing benchmarks underrepresent key challenges such as enforcing global constraints, coordinating multi-tool reasoning, and adapting to evolving user behavior over long, multi-turn interactions. To bridge this gap, we introduce \\textbf{TRIP-Bench}, a long-horizon benchmark grounded in realistic travel-planning scenarios. TRIP-Bench leverages real-world data, offers 18 curated tools and 40+ travel requirements, and supports automated e...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "RAK7PN9L",
@@ -448,7 +539,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "While agent evaluation has shifted toward long-horizon tasks, most benchmarks still emphasize local, step-level reasoning rather than the global constrained optimization (e.g., time and financial budgets) that demands genuine planning ability. Meanwhile, existing LLM planning benchmarks underrepresent the active information gathering and fine-grained local constraints typical of real-world settings. To address this, we introduce DeepPlanning, a challenging benchmark for practical long-horizon agent planning. It fe..."
+      "abstract": "While agent evaluation has shifted toward long-horizon tasks, most benchmarks still emphasize local, step-level reasoning rather than the global constrained optimization (e.g., time and financial budgets) that demands genuine planning ability. Meanwhile, existing LLM planning benchmarks underrepresent the active information gathering and fine-grained local constraints typical of real-world settings. To address this, we introduce DeepPlanning, a challenging benchmark for practical long-horizon agent planning. It fe...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "VMC576U4",
@@ -471,7 +569,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Real-world planning problems require constant adaptation to changing requirements and balancing of competing constraints. However, current benchmarks for evaluating LLMs' planning capabilities primarily focus on static, single-turn scenarios. We introduce Flex-TravelPlanner, a benchmark that evaluates language models' ability to reason flexibly in dynamic planning scenarios. Building on the TravelPlanner dataset~\\citep{xie2024travelplanner}, we introduce two novel evaluation settings: (1) sequential constraint int..."
+      "abstract": "Real-world planning problems require constant adaptation to changing requirements and balancing of competing constraints. However, current benchmarks for evaluating LLMs' planning capabilities primarily focus on static, single-turn scenarios. We introduce Flex-TravelPlanner, a benchmark that evaluates language models' ability to reason flexibly in dynamic planning scenarios. Building on the TravelPlanner dataset~\\citep{xie2024travelplanner}, we introduce two novel evaluation settings: (1) sequential constraint int...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 TravelPlanner；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "6SFDYWQ5",
@@ -503,7 +608,14 @@
       "level": "高",
       "reason": "涉及多轮交互或澄清；可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Large Language Models (LLMs)-based agents have made impressive progress in reasoning and tool use, enabling them to solve complex tasks. However, their ability to proactively collaborate with users, especially when goals are vague, evolving, or indirectly expressed, remains underexplored. To address this gap, we introduce UserBench, a user-centric benchmark designed to evaluate agents in multi-turn, preference-driven interactions. UserBench features simulated users who start with underspecified goals and reveal pr..."
+      "abstract": "Large Language Models (LLMs)-based agents have made impressive progress in reasoning and tool use, enabling them to solve complex tasks. However, their ability to proactively collaborate with users, especially when goals are vague, evolving, or indirectly expressed, remains underexplored. To address this gap, we introduce UserBench, a user-centric benchmark designed to evaluate agents in multi-turn, preference-driven interactions. UserBench features simulated users who start with underspecified goals and reveal pr...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是让 agent 能复用、筛选和迁移技能，减少复杂任务里临场规划和工具调用的不稳定。",
+        "method": "方法核心是构建可搜索的技能树，并用多模型或多轮评估筛选可迁移技能，服务复杂工具调用任务。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "CBMPRQJW",
@@ -530,7 +642,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关。",
       "summary": "适合作为评测基线或 benchmark 入口，重点看任务覆盖、指标设计和失败案例。",
-      "abstract": "Unlike reasoning, which often entails a deep sequence of deductive steps, complex real-world planning is characterized by the need to synthesize a broad spectrum of parallel and potentially conflicting information and constraints. For example, in travel planning scenarios, it requires the integration of diverse real-world information and user preferences. While LLMs show promise, existing methods with long-horizon thinking struggle with handling multifaceted constraints, leading to suboptimal solutions. Motivated..."
+      "abstract": "Unlike reasoning, which often entails a deep sequence of deductive steps, complex real-world planning is characterized by the need to synthesize a broad spectrum of parallel and potentially conflicting information and constraints. For example, in travel planning scenarios, it requires the integration of diverse real-world information and user preferences. While LLMs show promise, existing methods with long-horizon thinking struggle with handling multifaceted constraints, leading to suboptimal solutions. Motivated...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "5LM3WFX7",
@@ -557,7 +676,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
-      "abstract": "Sequential LLM agents fail on long-horizon planning with hard constraints like budgets and diversity requirements. As planning progresses and context grows, these agents drift from global constraints. We propose HiMAP-Travel, a hierarchical multi-agent framework that splits planning into strategic coordination and parallel day-level execution. A Coordinator allocates resources across days, while Day Executors plan independently in parallel. Three key mechanisms enable this: a transactional monitor enforcing budget..."
+      "abstract": "Sequential LLM agents fail on long-horizon planning with hard constraints like budgets and diversity requirements. As planning progresses and context grows, these agents drift from global constraints. We propose HiMAP-Travel, a hierarchical multi-agent framework that splits planning into strategic coordination and parallel day-level execution. A Coordinator allocates resources across days, while Day Executors plan independently in parallel. Three key mechanisms enable this: a transactional monitor enforcing budget...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是用代数分解或结构化表示建模多 agent 联合计划，定位冲突并约束协同执行。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "JFCD9NN4",
@@ -584,7 +710,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关。",
       "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
-      "abstract": "Travel planning is a complex task requiring the integration of diverse real-world information and user preferences. While LLMs show promise, existing methods with long-horizon thinking struggle with handling multifaceted constraints and preferences in the context, leading to suboptimal itineraries. We formulate this as an $L^3$ planning problem, emphasizing long context, long instruction, and long output. To tackle this, we introduce Multiple Aspects of Planning (MAoP), enabling LLMs to conduct wide-horizon thinki..."
+      "abstract": "Travel planning is a complex task requiring the integration of diverse real-world information and user preferences. While LLMs show promise, existing methods with long-horizon thinking struggle with handling multifaceted constraints and preferences in the context, leading to suboptimal itineraries. We formulate this as an $L^3$ planning problem, emphasizing long context, long instruction, and long output. To tackle this, we introduce Multiple Aspects of Planning (MAoP), enabling LLMs to conduct wide-horizon thinki...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "9EGBXIAK",
@@ -612,7 +745,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
-      "abstract": "Personal travel planning is a challenging task that aims to find a feasible plan that not only satisfies diverse constraints but also meets the demands of the user's explicit and implicit preferences. In this paper, we study how to integrate the user's implicit preference into the progress of travel planning. We introduce RealTravel, an augmented version of the TravelPlanner by incorporating real user reviews and point-of-interest metadata from Google Local. Based on RealTravel, we propose Personal Travel Solver (..."
+      "abstract": "Personal travel planning is a challenging task that aims to find a feasible plan that not only satisfies diverse constraints but also meets the demands of the user's explicit and implicit preferences. In this paper, we study how to integrate the user's implicit preference into the progress of travel planning. We introduce RealTravel, an augmented version of the TravelPlanner by incorporating real user reviews and point-of-interest metadata from Google Local. Based on RealTravel, we propose Personal Travel Solver (...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "元数据未给出明确实验结果，可见信号包括 TravelPlanner；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "YXC7HXCF",
@@ -634,7 +774,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
-      "abstract": "Recent studies have shown that LLM agents excel in simple tasks like writing and coding using various reasoning strategies. However, they struggle with tasks requiring comprehensive planning, a critical research issue. This study focuses on travel planning, a Multi-Phase problem involving outlining, information gathering, and planning, which requires managing various constraints and uncertainties. Existing approaches have struggled with this complexity (Xie et al., 2024b). Our research aims to address this challen..."
+      "abstract": "Recent studies have shown that LLM agents excel in simple tasks like writing and coding using various reasoning strategies. However, they struggle with tasks requiring comprehensive planning, a critical research issue. This study focuses on travel planning, a Multi-Phase problem involving outlining, information gathering, and planning, which requires managing various constraints and uncertainties. Existing approaches have struggled with this complexity (Xie et al., 2024b). Our research aims to address this challen...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "Y4WXFNTG",
@@ -662,7 +809,14 @@
       "level": "低",
       "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
       "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "J6W3XCHP",
@@ -685,7 +839,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
-      "abstract": "Large language models are opening new opportunities for intelligent decision support, with urban travel planning as a challenging and high-impact use case. Effective planning requires integrating real-time, multi-source data—such as points of interest, transportation, and user preferences—while reasoning spatially to generate feasible itineraries. This paper proposes AgentTravel, a unified framework that combines knowledge-grounded modeling, agentic reasoning, and multiperspective evaluation. It includes: 1) Trave..."
+      "abstract": "Large language models are opening new opportunities for intelligent decision support, with urban travel planning as a challenging and high-impact use case. Effective planning requires integrating real-time, multi-source data—such as points of interest, transportation, and user preferences—while reasoning spatially to generate feasible itineraries. This paper proposes AgentTravel, a unified framework that combines knowledge-grounded modeling, agentic reasoning, and multiperspective evaluation. It includes: 1) Trave...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "3J68AXU2",
@@ -713,7 +874,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合连接真实旅行规划中的时间、空间、偏好和工具调用约束。",
-      "abstract": "How are LLM-based agents used in the future? While many of the existing work on agents has focused on improving the performance of a specific family of objective and challenging tasks, in this work, we take a different perspective by thinking about full delegation: agents take over humans' routine decision-making processes and are trusted by humans to find solutions that fit people's personalized needs and are adaptive to ever-changing context. In order to achieve such a goal, the behavior of the agents, i.e., age..."
+      "abstract": "How are LLM-based agents used in the future? While many of the existing work on agents has focused on improving the performance of a specific family of objective and challenging tasks, in this work, we take a different perspective by thinking about full delegation: agents take over humans' routine decision-making processes and are trusted by humans to find solutions that fit people's personalized needs and are adaptive to ever-changing context. In order to achieve such a goal, the behavior of the agents, i.e., age...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "ZUC5YXBV",
@@ -741,7 +909,14 @@
       "level": "中",
       "reason": "涉及多轮交互或澄清；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是缓解长程 agent 训练里的稀疏反馈和 credit assignment 问题，让环境交互能转化为更稳定的策略学习信号。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 agentic RL 有帮助，重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 接口。"
+      }
     },
     {
       "zotero_key": "G2XVNCAF",
@@ -772,7 +947,14 @@
       "level": "高",
       "reason": "涉及多轮交互或澄清；强调约束、验证或回溯；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "EIX76BJZ",
@@ -793,7 +975,14 @@
       "level": "中",
       "reason": "涉及多轮交互或澄清；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "ZJ5HA5H8",
@@ -818,7 +1007,14 @@
       "level": "高",
       "reason": "可用于评测或基准对比；强调约束、验证或回溯；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合研究用户偏好建模、长期上下文和个性化规划。",
-      "abstract": "Tourism Recommender Systems (TRS) are crucial in personalizing travel experiences by tailoring recommendations to users' preferences, constraints, and contextual factors. However, publicly available travel datasets often lack sufficient breadth and depth, limiting their ability to support advanced personalization strategies - particularly for sustainable travel and off-peak tourism. In this work, we explore using Large Language Models (LLMs) to generate synthetic travel queries that emulate diverse user personas a..."
+      "abstract": "Tourism Recommender Systems (TRS) are crucial in personalizing travel experiences by tailoring recommendations to users' preferences, constraints, and contextual factors. However, publicly available travel datasets often lack sufficient breadth and depth, limiting their ability to support advanced personalization strategies - particularly for sustainable travel and off-peak tourism. In this work, we explore using Large Language Models (LLMs) to generate synthetic travel queries that emulate diverse user personas a...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是让 agent 能更可靠地写入、更新和使用长期记忆或个性化状态。",
+        "method": "方法核心是构建任务集、指标或评测协议，用统一 benchmark 暴露 agent 的规划、记忆或执行失败。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "DUESSBFT",
@@ -844,7 +1040,14 @@
       "level": "低",
       "reason": "和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合研究用户偏好建模、长期上下文和个性化规划。",
-      "abstract": "We propose a novel persona-driven data synthesis methodology that leverages various perspectives within a large language model (LLM) to create diverse synthetic data. To fully exploit this methodology at scale, we introduce Persona Hub -- a collection of 1 billion diverse personas automatically curated from web data. These 1 billion personas (~13% of the world's total population), acting as distributed carriers of world knowledge, can tap into almost every perspective encapsulated within the LLM, thereby facilitat..."
+      "abstract": "We propose a novel persona-driven data synthesis methodology that leverages various perspectives within a large language model (LLM) to create diverse synthetic data. To fully exploit this methodology at scale, we introduce Persona Hub -- a collection of 1 billion diverse personas automatically curated from web data. These 1 billion personas (~13% of the world's total population), acting as distributed carriers of world knowledge, can tap into almost every perspective encapsulated within the LLM, thereby facilitat...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是改进 LLM agent 在复杂任务中的规划、执行或可靠性表现，需要结合正文确认具体问题设定。",
+        "method": "方法需要结合正文细读；从元数据看，重点应落在 agent 训练、规划模块、工具调用或评测框架上。",
+        "experiments": "元数据未给出明确实验结果，可见信号包括 13%；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "JNJII5JA",
@@ -873,7 +1076,14 @@
       "level": "中",
       "reason": "可用于评测或基准对比；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合研究用户偏好建模、长期上下文和个性化规划。",
-      "abstract": "Large Language Models (LLMs) have emerged as personalized assistants for users across a wide range of tasks -- from offering writing support to delivering tailored recommendations or consultations. Over time, the interaction history between a user and an LLM can provide extensive information about an individual's traits and preferences. However, open questions remain on how well LLMs today can effectively leverage such history to (1) internalize the user's inherent traits and preferences, (2) track how the user pr..."
+      "abstract": "Large Language Models (LLMs) have emerged as personalized assistants for users across a wide range of tasks -- from offering writing support to delivering tailored recommendations or consultations. Over time, the interaction history between a user and an LLM can provide extensive information about an individual's traits and preferences. However, open questions remain on how well LLMs today can effectively leverage such history to (1) internalize the user's inherent traits and preferences, (2) track how the user pr...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是让 agent 能更可靠地写入、更新和使用长期记忆或个性化状态。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "RJP8Y6MP",
@@ -918,7 +1128,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是缓解长程 agent 训练里的稀疏反馈和 credit assignment 问题，让环境交互能转化为更稳定的策略学习信号。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 agentic RL 有帮助，重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 接口。"
+      }
     },
     {
       "zotero_key": "TQP5MA6J",
@@ -945,7 +1162,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "5P3KXNJ8",
@@ -974,7 +1198,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "T6YRGYQL",
@@ -1005,7 +1236,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "UJZUKMSS",
@@ -1034,7 +1272,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是缓解长程 agent 训练里的稀疏反馈和 credit assignment 问题，让环境交互能转化为更稳定的策略学习信号。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 agentic RL 有帮助，重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 接口。"
+      }
     },
     {
       "zotero_key": "AGHLCPY3",
@@ -1055,7 +1300,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是用代数分解或结构化表示建模多 agent 联合计划，定位冲突并约束协同执行。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "U8B4AN8A",
@@ -1076,7 +1328,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；和偏好、记忆或状态保持相关；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是让 agent 能复用、筛选和迁移技能，减少复杂任务里临场规划和工具调用的不稳定。",
+        "method": "方法核心是构建可搜索的技能树，并用多模型或多轮评估筛选可迁移技能，服务复杂工具调用任务。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "XGZ3NZUG",
@@ -1105,7 +1364,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "VCUWPPW9",
@@ -1137,7 +1403,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；涉及多轮交互或澄清；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": ""
+      "abstract": "",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是缓解长程 agent 训练里的稀疏反馈和 credit assignment 问题，让环境交互能转化为更稳定的策略学习信号。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 agentic RL 有帮助，重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 接口。"
+      }
     },
     {
       "zotero_key": "T4EMA7KF",
@@ -1165,7 +1438,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": "Agents based on large language models (LLMs) struggle with brainless trial-and-error and generating hallucinatory actions due to a lack of global planning in long-horizon tasks. In this paper, we introduce a plan-and-execute framework and propose EAGLET, an efficient and effective planner training method to enhance the executor agent's planning abilities without human effort. Specifically, we train a plug-and-play global planner through a two-step process: we first synthesize high-quality plans from an advanced LL..."
+      "abstract": "Agents based on large language models (LLMs) struggle with brainless trial-and-error and generating hallucinatory actions due to a lack of global planning in long-horizon tasks. In this paper, we introduce a plan-and-execute framework and propose EAGLET, an efficient and effective planner training method to enhance the executor agent's planning abilities without human effort. Specifically, we train a plug-and-play global planner through a two-step process: we first synthesize high-quality plans from an advanced LL...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "HRANTM5R",
@@ -1209,7 +1489,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": "The evolution of Large Language Models (LLMs) from passive text processors to autonomous agents has established planning as a core component of modern intelligence. However, achieving generalized planning remains elusive, not only by the scarcity of high-quality interaction data but also by inherent conflicts across heterogeneous planning tasks. These challenges result in models that excel at isolated tasks yet struggle to generalize, while existing multi-task training attempts suffer from gradient interference. I..."
+      "abstract": "The evolution of Large Language Models (LLMs) from passive text processors to autonomous agents has established planning as a core component of modern intelligence. However, achieving generalized planning remains elusive, not only by the scarcity of high-quality interaction data but also by inherent conflicts across heterogeneous planning tasks. These challenges result in models that excel at isolated tasks yet struggle to generalize, while existing multi-task training attempts suffer from gradient interference. I...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "B9KDVZF8",
@@ -1236,7 +1523,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": "Large Language Model(LLM)-based agents have shown strong capabilities in web information seeking, with reinforcement learning (RL) becoming a key optimization paradigm. However, planning remains a bottleneck, as existing methods struggle with long-horizon strategies. Our analysis reveals a critical phenomenon, plan anchor, where the first reasoning step disproportionately impacts downstream behavior in long-horizon web reasoning tasks. Current RL algorithms, fail to account for this by uniformly distributing rewar..."
+      "abstract": "Large Language Model(LLM)-based agents have shown strong capabilities in web information seeking, with reinforcement learning (RL) becoming a key optimization paradigm. However, planning remains a bottleneck, as existing methods struggle with long-horizon strategies. Our analysis reveals a critical phenomenon, plan anchor, where the first reasoning step disproportionately impacts downstream behavior in long-horizon web reasoning tasks. Current RL algorithms, fail to account for this by uniformly distributing rewar...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是缓解长程 agent 训练里的稀疏反馈和 credit assignment 问题，让环境交互能转化为更稳定的策略学习信号。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 agentic RL 有帮助，重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 接口。"
+      }
     },
     {
       "zotero_key": "2IBA2232",
@@ -1261,7 +1555,14 @@
       "level": "中",
       "reason": "覆盖长程规划或多步任务；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": "Large language model (LLM)-based agents have emerged as powerful autonomous controllers for digital environments, including mobile interfaces, operating systems, and web browsers. Web navigation, for example, requires handling dynamic content and long sequences of actions, making it particularly challenging. Existing LLM-based agents struggle with long-horizon planning in two main ways. During online execution, they often lose track as new information arrives, lacking a clear and adaptive path toward the final goa..."
+      "abstract": "Large language model (LLM)-based agents have emerged as powerful autonomous controllers for digital environments, including mobile interfaces, operating systems, and web browsers. Web navigation, for example, requires handling dynamic content and long sequences of actions, making it particularly challenging. Existing LLM-based agents struggle with long-horizon planning in two main ways. During online execution, they often lose track as new information arrives, lacking a clear and adaptive path toward the final goa...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "9ZBYUV7Y",
@@ -1291,7 +1592,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合跟踪长程任务分解、跨步骤状态保持、失败恢复和子目标评估。",
-      "abstract": "Recent advancements have significantly enhanced the performance of large language models (LLMs) in tackling complex reasoning tasks, achieving notable success in domains like mathematical and logical reasoning. However, these methods encounter challenges with complex planning tasks, primarily due to extended reasoning steps, diverse constraints, and the challenge of handling multiple distinct sub-tasks. To address these challenges, we propose HyperTree Planning (HTP), a novel reasoning paradigm that constructs hyp..."
+      "abstract": "Recent advancements have significantly enhanced the performance of large language models (LLMs) in tackling complex reasoning tasks, achieving notable success in domains like mathematical and logical reasoning. However, these methods encounter challenges with complex planning tasks, primarily due to extended reasoning steps, diverse constraints, and the challenge of handling multiple distinct sub-tasks. To address these challenges, we propose HyperTree Planning (HTP), a novel reasoning paradigm that constructs hyp...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "DEB3FZRY",
@@ -1318,7 +1626,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；可用于评测或基准对比；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合研究约束建模、可验证规划和 LLM 与 solver 的结合。",
-      "abstract": "Large Language Models (LLMs) struggle to directly generate correct plans for complex multi-constraint planning problems, even with self-verification and self-critique. For example, a U.S. domestic travel planning benchmark TravelPlanner was proposed in Xie et al. (2024), where the best LLM OpenAI o1-preview can only find viable travel plans with a 10% success rate given all needed information. In this work, we tackle this by proposing an LLM-based planning framework that formalizes and solves complex multi-constra..."
+      "abstract": "Large Language Models (LLMs) struggle to directly generate correct plans for complex multi-constraint planning problems, even with self-verification and self-critique. For example, a U.S. domestic travel planning benchmark TravelPlanner was proposed in Xie et al. (2024), where the best LLM OpenAI o1-preview can only find viable travel plans with a 10% success rate given all needed information. In this work, we tackle this by proposing an LLM-based planning framework that formalizes and solves complex multi-constra...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 TravelPlanner、10%；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     },
     {
       "zotero_key": "YZDMTGMB",
@@ -1349,7 +1664,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合研究约束建模、可验证规划和 LLM 与 solver 的结合。",
-      "abstract": "The rapid advancement of neural language models has sparked a new surge of intelligent agent research. Unlike traditional agents, large language model-based agents (LLM agents) have emerged as a promising paradigm for achieving artificial general intelligence (AGI) due to their superior reasoning and generalization capabilities. Effective planning is crucial for the success of LLM agents in real-world tasks, making it a highly pursued topic in the community. Current planning methods typically translate tasks into..."
+      "abstract": "The rapid advancement of neural language models has sparked a new surge of intelligent agent research. Unlike traditional agents, large language model-based agents (LLM agents) have emerged as a promising paradigm for achieving artificial general intelligence (AGI) due to their superior reasoning and generalization capabilities. Effective planning is crucial for the success of LLM agents in real-world tasks, making it a highly pursued topic in the community. Current planning methods typically translate tasks into...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "ZS7MIWQF",
@@ -1385,7 +1707,14 @@
       "level": "中",
       "reason": "涉及多轮交互或澄清；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
-      "abstract": "RL training of multi-turn LLM agents is inherently unstable, and reasoning quality directly determines task performance. Entropy is widely used to track reasoning stability. However, entropy only measures diversity within the same input, and cannot tell whether reasoning actually responds to different inputs. In RAGEN-2, we find that even with stable entropy, models can rely on fixed templates that look diverse but are input-agnostic. We call this template collapse, a failure mode invisible to entropy and all exis..."
+      "abstract": "RL training of multi-turn LLM agents is inherently unstable, and reasoning quality directly determines task performance. Entropy is widely used to track reasoning stability. However, entropy only measures diversity within the same input, and cannot tell whether reasoning actually responds to different inputs. In RAGEN-2, we find that even with stable entropy, models can rely on fixed templates that look diverse but are input-agnostic. We call this template collapse, a failure mode invisible to entropy and all exis...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是缓解长程 agent 训练里的稀疏反馈和 credit assignment 问题，让环境交互能转化为更稳定的策略学习信号。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 agentic RL 有帮助，重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 接口。"
+      }
     },
     {
       "zotero_key": "HSW4SU4E",
@@ -1411,7 +1740,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
-      "abstract": "Through the collaboration of multiple LLM-empowered agents possessing diverse expertise and tools, multi-agent systems achieve impressive progress in solving real-world problems. Given the user queries, the meta-agents, serving as the brain within multi-agent systems, are required to decompose the queries into multiple sub-tasks that can be allocated to suitable agents capable of solving them, so-called agent-oriented planning. In this study, we identify three critical design principles of agent-oriented planning,..."
+      "abstract": "Through the collaboration of multiple LLM-empowered agents possessing diverse expertise and tools, multi-agent systems achieve impressive progress in solving real-world problems. Given the user queries, the meta-agents, serving as the brain within multi-agent systems, are required to decompose the queries into multiple sub-tasks that can be allocated to suitable agents capable of solving them, so-called agent-oriented planning. In this study, we identify three critical design principles of agent-oriented planning,...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是提升 LLM agent 在长程、多步骤任务中的规划可靠性和失败恢复能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "PLTCQW3Q",
@@ -1441,7 +1777,14 @@
       "level": "中",
       "reason": "强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
-      "abstract": "Recent advances in large language models (LLMs) have significantly improved multi-hop question answering (QA) through direct Chain-of-Thought (CoT) reasoning. However, the irreversible nature of CoT leads to error accumulation, making it challenging to correct mistakes in multi-hop reasoning. This paper introduces ReAgent: a Reversible multi-Agent collaborative framework augmented with explicit backtracking mechanisms, enabling reversible multi-hop reasoning. By incorporating text-based retrieval, information aggr..."
+      "abstract": "Recent advances in large language models (LLMs) have significantly improved multi-hop question answering (QA) through direct Chain-of-Thought (CoT) reasoning. However, the irreversible nature of CoT leads to error accumulation, making it challenging to correct mistakes in multi-hop reasoning. This paper introduces ReAgent: a Reversible multi-Agent collaborative framework augmented with explicit backtracking mechanisms, enabling reversible multi-hop reasoning. By incorporating text-based retrieval, information aggr...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是改进 LLM agent 在复杂任务中的规划、执行或可靠性表现，需要结合正文确认具体问题设定。",
+        "method": "方法需要结合正文细读；从元数据看，重点应落在 agent 训练、规划模块、工具调用或评测框架上。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "75L8M9ER",
@@ -1468,7 +1811,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
-      "abstract": "Recent advancements in Large Language Models (LLMs) have led to a rapid growth of agentic systems capable of handling a wide range of complex tasks. However, current research largely relies on manual, task-specific design, limiting their adaptability to novel tasks. In this paper, we introduce a new research problem: Modularized LLM Agent Search (MoLAS). We propose a modular design space that abstracts existing LLM agent designs into four fundamental modules with uniform IO interface: Planning, Reasoning, Tool Use..."
+      "abstract": "Recent advancements in Large Language Models (LLMs) have led to a rapid growth of agentic systems capable of handling a wide range of complex tasks. However, current research largely relies on manual, task-specific design, limiting their adaptability to novel tasks. In this paper, we introduce a new research problem: Modularized LLM Agent Search (MoLAS). We propose a modular design space that abstracts existing LLM agent designs into four fundamental modules with uniform IO interface: Planning, Reasoning, Tool Use...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是让 agent 能复用、筛选和迁移技能，减少复杂任务里临场规划和工具调用的不稳定。",
+        "method": "方法核心是构建可搜索的技能树，并用多模型或多轮评估筛选可迁移技能，服务复杂工具调用任务。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "XMD4VG23",
@@ -1493,7 +1843,14 @@
       "level": "高",
       "reason": "覆盖长程规划或多步任务；强调约束、验证或回溯；贴近 agent planning 工作流。",
       "summary": "适合研究多 agent 协作、冲突消解、回溯和任务分工。",
-      "abstract": "While Large Language Models (LLMs) have shown remarkable advancements in reasoning and tool use, they often fail to generate optimal, grounded solutions under complex constraints. Real-world travel planning exemplifies these challenges, evaluating agents' abilities to handle constraints that are explicit, implicit, and even evolving based on interactions with dynamic environments and user needs. In this paper, we present ATLAS, a general multi-agent framework designed to effectively handle such complex nature of c..."
+      "abstract": "While Large Language Models (LLMs) have shown remarkable advancements in reasoning and tool use, they often fail to generate optimal, grounded solutions under complex constraints. Real-world travel planning exemplifies these challenges, evaluating agents' abilities to handle constraints that are explicit, implicit, and even evolving based on interactions with dynamic environments and user needs. In this paper, we present ATLAS, a general multi-agent framework designed to effectively handle such complex nature of c...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是让 agent 能复用、筛选和迁移技能，减少复杂任务里临场规划和工具调用的不稳定。",
+        "method": "方法核心是构建可搜索的技能树，并用多模型或多轮评估筛选可迁移技能，服务复杂工具调用任务。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "ZNS8QUT7",
@@ -1520,7 +1877,14 @@
       "level": "中",
       "reason": "涉及多轮交互或澄清；贴近 agent planning 工作流。",
       "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
-      "abstract": "Recent advances in reinforcement learning (RL) using numerical rewards have significantly enhanced the complex reasoning capabilities of large language models (LLMs). However, we identify three fundamental limitations of purely numerical feedback: performance plateaus, ineffective spontaneous self-reflection, and persistent failures. We show that plateaued RL models can successfully refine failed solutions when given natural language critiques. Motivated by this, we propose Critique-GRPO, an online RL framework th..."
+      "abstract": "Recent advances in reinforcement learning (RL) using numerical rewards have significantly enhanced the complex reasoning capabilities of large language models (LLMs). However, we identify three fundamental limitations of purely numerical feedback: performance plateaus, ineffective spontaneous self-reflection, and persistent failures. We show that plateaued RL models can successfully refine failed solutions when given natural language critiques. Motivated by this, we propose Critique-GRPO, an online RL framework th...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是缓解长程 agent 训练里的稀疏反馈和 credit assignment 问题，让环境交互能转化为更稳定的策略学习信号。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 agentic RL 有帮助，重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 接口。"
+      }
     },
     {
       "zotero_key": "PAVJ2QMF",
@@ -1548,7 +1912,14 @@
       "level": "中",
       "reason": "涉及多轮交互或澄清；贴近 agent planning 工作流。",
       "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
-      "abstract": "Large language model (LLM)-based agents are increasingly trained with reinforcement learning (RL) to enhance their ability to interact with external environments through tool use, particularly in search-based settings that require multiturn reasoning and information acquisition. However, existing approaches typically rely on outcome-based rewards that are provided only after generating the final answer. This reward sparsity becomes particularly problematic in multiturn settings, where long trajectories exacerbate..."
+      "abstract": "Large language model (LLM)-based agents are increasingly trained with reinforcement learning (RL) to enhance their ability to interact with external environments through tool use, particularly in search-based settings that require multiturn reasoning and information acquisition. However, existing approaches typically rely on outcome-based rewards that are provided only after generating the final answer. This reward sparsity becomes particularly problematic in multiturn settings, where long trajectories exacerbate...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是让 agent 能复用、筛选和迁移技能，减少复杂任务里临场规划和工具调用的不稳定。",
+        "method": "方法核心是构建可搜索的技能树，并用多模型或多轮评估筛选可迁移技能，服务复杂工具调用任务。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 agentic RL 有帮助，重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 接口。"
+      }
     },
     {
       "zotero_key": "F9ZBL8LT",
@@ -1575,7 +1946,14 @@
       "level": "中",
       "reason": "涉及多轮交互或澄清；贴近 agent planning 工作流。",
       "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
-      "abstract": "Recent advances in large language models (LLMs) have substantially improved single-turn task performance, yet real-world applications increasingly demand sophisticated multi-turn interactions. This survey provides a comprehensive review of recent progress in evaluating and enhancing multi-turn LLM interactions. Centered on a task-oriented taxonomy-spanning instruction following in domains such as mathematics and coding, and conversational engagement in role-playing, healthcare, education, and adversarial jailbreak..."
+      "abstract": "Recent advances in large language models (LLMs) have substantially improved single-turn task performance, yet real-world applications increasingly demand sophisticated multi-turn interactions. This survey provides a comprehensive review of recent progress in evaluating and enhancing multi-turn LLM interactions. Centered on a task-oriented taxonomy-spanning instruction following in domains such as mathematics and coding, and conversational engagement in role-playing, healthcare, education, and adversarial jailbreak...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "对 long-horizon planning 有帮助，重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+      }
     },
     {
       "zotero_key": "UDURDKB4",
@@ -1599,7 +1977,14 @@
       "level": "中",
       "reason": "涉及多轮交互或澄清；可用于评测或基准对比；贴近 agent planning 工作流。",
       "summary": "适合跟踪跨轮状态、澄清、偏好延续和交互式重规划。",
-      "abstract": "Large Language Models (LLMs) are conversational interfaces. As such, LLMs have the potential to assist their users not only when they can fully specify the task at hand, but also to help them define, explore, and refine what they need through multi-turn conversational exchange. Although analysis of LLM conversation logs has confirmed that underspecification occurs frequently in user instructions, LLM evaluation has predominantly focused on the single-turn, fully-specified instruction setting. In this work, we perf..."
+      "abstract": "Large Language Models (LLMs) are conversational interfaces. As such, LLMs have the potential to assist their users not only when they can fully specify the task at hand, but also to help them define, explore, and refine what they need through multi-turn conversational exchange. Although analysis of LLM conversation logs has confirmed that underspecification occurs frequently in user instructions, LLM evaluation has predominantly focused on the single-turn, fully-specified instruction setting. In this work, we perf...",
+      "affiliations": "Zotero metadata 未提供；需打开论文正文或 arXiv 页面确认作者单位。",
+      "analysis": {
+        "motivation": "动机是处理多轮交互中的状态延续、澄清、偏好变化和跨轮一致性。",
+        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
+        "experiments": "元数据未给出明确实验结果；需要打开正文确认任务设置、baseline 和可复现资源。",
+        "research_help": "可作为评测基线或任务设计参考，优先检查任务覆盖、指标定义、失败案例和可复现性。"
+      }
     }
   ]
 }

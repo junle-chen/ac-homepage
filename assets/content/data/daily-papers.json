@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-06-17T23:47:05.467Z",
   "source": "arxiv",
-  "analysis_method": "metadata-first Codex automation schema",
+  "analysis_method": "Codex GPT static reading from arXiv metadata, abstracts, and automation brief fields",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -141,6 +141,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 ALFWorld、WebShop、72.8%、77.4%、56.8%；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     },
     {
@@ -234,6 +240,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "方法核心是构建可搜索的技能树，并用多模型或多轮评估筛选可迁移技能，服务复杂工具调用任务。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     },
     {
@@ -310,6 +322,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "方法核心是用代数分解或结构化表示建模多 agent 联合计划，定位冲突并约束协同执行。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 100%、80%、60%；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     },
     {
@@ -396,6 +414,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
+        "method": "方法核心是让代码型 agent 搜索可解释的策略仓库，把感知、规划和控制原语组合成可执行 policy。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 0.0%、12.83%、45.0%、2.5x、3.5x；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     },
     {
@@ -487,6 +511,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "摘要没有明确实验数字；自动化建议先打开正文检查 benchmark、baseline、ablation 和失败案例。",
+        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。"
       }
     },
     {
@@ -585,6 +615,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     },
     {
@@ -669,6 +705,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     },
     {
@@ -757,6 +799,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。"
       }
     },
     {
@@ -853,6 +901,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
+        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 Bench2Drive、NAVSIM、nuScenes；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     },
     {
@@ -951,6 +1005,12 @@
             "survey": true
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "摘要没有明确实验数字；自动化建议先打开正文检查 benchmark、baseline、ablation 和失败案例。",
+        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。"
       }
     },
     {
@@ -1042,6 +1102,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 86.3%、41.1%、4.4%；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。"
       }
     },
     {
@@ -1139,6 +1205,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
+        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 ALFWorld、WebShop、ScienceWorld；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     },
     {
@@ -1216,6 +1288,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
+        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 5%、0%、100%、85%、93.2%；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。"
       }
     },
     {
@@ -1303,6 +1381,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对多轮 agent 有帮助：重点看状态保持、用户偏好延续、澄清机制和跨轮评测。"
       }
     },
     {
@@ -1395,6 +1479,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
+        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
+        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 56.66%、3.74%、3.33%；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。"
       }
     },
     {
@@ -1488,6 +1578,12 @@
             "survey": false
           }
         }
+      },
+      "analysis": {
+        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
+        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
+        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
+        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
       }
     }
   ]
