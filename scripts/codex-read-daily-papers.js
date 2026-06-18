@@ -16,6 +16,7 @@ const schema = {
 		"method",
 		"experiments",
 		"research_help",
+		"card_summary",
 		"recommendation_level",
 		"water_risk",
 		"value_label",
@@ -29,6 +30,7 @@ const schema = {
 		method: { type: "string" },
 		experiments: { type: "string" },
 		research_help: { type: "string" },
+		card_summary: { type: "string" },
 		recommendation_level: { type: "string", enum: ["高", "中", "低"] },
 		water_risk: { type: "string", enum: ["低", "中", "高"] },
 		value_label: { type: "string" },
@@ -220,6 +222,7 @@ function buildPrompt(paper, source) {
 		"如果 source_scope 是 abstract，只能说这是摘要级判断，不能声称已读全文。",
 		"推荐等级只能使用 高 / 中 / 低；偏水风险只能使用 低 / 中 / 高；不要输出具体数字分数。",
 		"请判断论文是否值得读，是否可能是水文，并给出原因。重点从论文动机、方法、实验结果、Insight 四个角度写。",
+		"card_summary 用两到三句中文概括这篇文章，适合放在网页卡片上，不要分条，不要写 Motivation/Method/Result 等标签。",
 		"research_help 字段请写成 Insight：只说明对 agent planning / agentic RL / 多轮系统 / long-horizon reliability 的可迁移启发，不要出现 Junle 或 Junle research。",
 		"输出必须是严格 JSON，不要 Markdown，不要解释 JSON 之外的内容。",
 		"",
@@ -314,6 +317,7 @@ function normalizeAnswer(answer, source, modelName) {
 		experiments: value("experiments", "需进一步阅读正文确认实验设置和结果。"),
 		research_help: value("research_help", "可作为 Daily Paper 候选，先检查对 agent planning、agentic RL 或多轮系统是否有可迁移启发。"),
 		insight: value("research_help", "可作为 Daily Paper 候选，先检查对 agent planning、agentic RL 或多轮系统是否有可迁移启发。"),
+		card_summary: value("card_summary", "这篇论文还没有自动生成短概括。"),
 		recommendation_level: ["高", "中", "低"].includes(answer.recommendation_level)
 			? answer.recommendation_level
 			: "中",
@@ -347,6 +351,7 @@ function applyAnalysis(paper, analysis) {
 		experiments: analysis.experiments,
 		research_help: analysis.research_help,
 		insight: analysis.insight || analysis.research_help,
+		card_summary: analysis.card_summary,
 		contribution: analysis.value_reason,
 		highlights: [
 			analysis.value_reason,

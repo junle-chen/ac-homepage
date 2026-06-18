@@ -2275,6 +2275,21 @@ function bindGlassTopbar() {
 		const digestBox = document.querySelector("[data-daily-digest]");
 		const digestCopy = document.querySelector("[data-digest-copy]");
 		const digestStatus = document.querySelector("[data-digest-status]");
+		const modal = document.querySelector("[data-paper-modal]");
+		const modalTitle = document.querySelector("[data-paper-modal-title]");
+		const modalAuthors = document.querySelector("[data-paper-modal-authors]");
+		const modalCategories = document.querySelector("[data-paper-modal-categories]");
+		const modalDate = document.querySelector("[data-paper-modal-date]");
+		const modalSummary = document.querySelector("[data-paper-modal-summary]");
+		const modalGrid = document.querySelector("[data-paper-modal-grid]");
+		const modalLinks = document.querySelector("[data-paper-modal-links]");
+		const modalIndex = document.querySelector("[data-paper-modal-index]");
+		const modalPosition = document.querySelector("[data-paper-modal-position]");
+		const modalLimitations = document.querySelector("[data-paper-modal-limitations]");
+		const modalLimitationsSection = document.querySelector("[data-paper-modal-limitations-section]");
+		const modalCloseButtons = Array.prototype.slice.call(
+			document.querySelectorAll("[data-paper-modal-close]")
+		);
 		if (!list && !fullList) {
 			return;
 		}
@@ -2310,8 +2325,44 @@ function bindGlassTopbar() {
 			return paper.id || paper.url || paper.title || "paper";
 		}
 
+		function compactText(text, maxLength = 260) {
+			const value = String(text || "").replace(/\s+/g, " ").trim();
+			if (value.length <= maxLength) {
+				return value;
+			}
+			return `${value.slice(0, maxLength - 1).trim()}...`;
+		}
+
+		function firstSentences(text, maxSentences = 1) {
+			const sentences = String(text || "")
+				.replace(/\s+/g, " ")
+				.split(/(?<=[.!?。！？])\s*/)
+				.map((sentence) => sentence.trim())
+				.filter(Boolean);
+			return sentences.slice(0, maxSentences).join(" ");
+		}
+
+		function firstClause(text, maxLength = 100) {
+			const value = String(text || "").replace(/\s+/g, " ").trim();
+			const clause = value.split(/[。！？.!?；;：:]/).find(Boolean) || value;
+			return compactText(clause, maxLength);
+		}
+
+		function normalizePaperFocus(text) {
+			return String(text || "")
+				.replace(/^(这篇论文|本文|论文)(主要)?(针对|聚焦|试图解决|研究|讨论|提出)\s*/, "聚焦 ")
+				.replace(/^(This paper|The paper)\s+(focuses on|studies|addresses|proposes)\s+/i, "聚焦 ")
+				.trim();
+		}
+
 		function getPaperDate(paper) {
 			return String(paper.published || paper.updated || "").slice(0, 10);
+		}
+
+		function getArxivPdfUrl(paper) {
+			const url = (paper.url || "").replace(/^http:\/\//, "https://");
+			const match = url.match(/arxiv\.org\/abs\/([^?#]+)/i);
+			return match ? `https://arxiv.org/pdf/${match[1]}.pdf` : "";
 		}
 
 		function getRepoUrl(paper) {
@@ -2406,6 +2457,147 @@ function bindGlassTopbar() {
 				"实验结果": experiments,
 				"Insight": researchHelp,
 			};
+		}
+
+		function getPaperCardSummary(paper) {
+			const brief = paper.brief || {};
+			const analysis = paper.analysis || {};
+			const direct =
+				analysis.card_summary ||
+				brief.card_summary ||
+				paper.card_summary ||
+				brief.tldr ||
+				paper.tldr;
+			if (direct) {
+				return compactText(direct, 190);
+			}
+			const motivation = normalizePaperFocus(firstClause(analysis.motivation || brief.motivation, 96));
+			const method = firstClause(analysis.method || brief.method, 88);
+			if (motivation && method) {
+				return compactText(`${motivation}。方法上，${method}。`, 190);
+			}
+			if (motivation) {
+				return compactText(`${motivation}。`, 170);
+			}
+			const recommendation = getRecommendation(paper);
+			return compactText(
+				brief.summary ||
+					paper.summary ||
+					recommendation.reason ||
+					recommendation.judgement ||
+					"这篇论文还没有自动生成短概括。",
+				190
+			);
+		}
+
+		function formatAuthors(authors) {
+			if (Array.isArray(authors) && authors.length) {
+				return authors.join(", ");
+			}
+			return String(authors || "N/A");
+		}
+
+		function createModalSection(label, value) {
+			const section = document.createElement("section");
+			section.className = "paper-modal-detail-card";
+			const heading = document.createElement("h4");
+			heading.textContent = label;
+			const body = document.createElement("p");
+			body.textContent = value || "自动化还没有写入这一部分。";
+			section.appendChild(heading);
+			section.appendChild(body);
+			return section;
+		}
+
+		function createModalLink(label, href) {
+			if (!href) {
+				return null;
+			}
+			const link = document.createElement("a");
+			link.href = href;
+			link.target = "_blank";
+			link.rel = "noopener noreferrer";
+			link.textContent = label;
+			return link;
+		}
+
+		function closePaperModal() {
+			if (!modal) {
+				return;
+			}
+			modal.hidden = true;
+			modal.classList.remove("is-open");
+			document.body.classList.remove("paper-modal-open");
+		}
+
+		function openPaperModal(paper, index, total) {
+			if (!modal) {
+				return;
+			}
+			const interpretation = getPaperInterpretation(paper);
+			const authors = formatAuthors(paper.authors || (paper.brief && paper.brief.authors));
+			const categories = (paper.categories || [paper.primary_category]).filter(Boolean).join(", ");
+			const repoUrl = getRepoUrl(paper);
+			const projectUrl = paper.project_url || (paper.brief && paper.brief.project_url) || "";
+			const arxivUrl = (paper.url || "").replace(/^http:\/\//, "https://");
+			const pdfUrl = getArxivPdfUrl(paper);
+
+			if (modalTitle) {
+				modalTitle.textContent = paper.title || "Untitled paper";
+			}
+			if (modalAuthors) {
+				modalAuthors.textContent = `Authors: ${authors}`;
+			}
+			if (modalCategories) {
+				modalCategories.textContent = `Categories: ${categories || "N/A"}`;
+			}
+			if (modalDate) {
+				modalDate.textContent = `Date: ${getPaperDate(paper) || "N/A"}`;
+			}
+			if (modalSummary) {
+				modalSummary.textContent = getPaperCardSummary(paper);
+			}
+			if (modalIndex) {
+				modalIndex.textContent = String(index + 1);
+			}
+			if (modalPosition) {
+				modalPosition.textContent = `${index + 1} / ${total}`;
+			}
+			if (modalGrid) {
+				modalGrid.innerHTML = "";
+				[
+					["Motivation", interpretation["论文动机"]],
+					["Method", interpretation["方法"]],
+					["Result", interpretation["实验结果"]],
+					["Insight", interpretation["Insight"]],
+				].forEach(([label, value]) => {
+					modalGrid.appendChild(createModalSection(label, value));
+				});
+			}
+			if (modalLimitations && modalLimitationsSection) {
+				const limitations = paper.analysis && paper.analysis.limitations;
+				modalLimitations.textContent = limitations || "";
+				modalLimitationsSection.hidden = !limitations;
+			}
+			if (modalLinks) {
+				modalLinks.innerHTML = "";
+				[
+					createModalLink("arXiv", arxivUrl),
+					createModalLink("PDF", pdfUrl),
+					createModalLink("Code", repoUrl),
+					createModalLink("Project", projectUrl),
+				]
+					.filter(Boolean)
+					.forEach((link) => modalLinks.appendChild(link));
+			}
+
+			modal.hidden = false;
+			modal.classList.add("is-open");
+			document.body.classList.add("paper-modal-open");
+			const closeButton = modal.querySelector(".paper-modal-close");
+			if (closeButton) {
+				closeButton.focus();
+			}
 		}
 
 		function getPaperTags(paper) {
@@ -2978,7 +3170,7 @@ function bindGlassTopbar() {
 				"当前日期没有 Daily Paper。",
 				Boolean(items.length)
 			);
-			items.forEach((paper) => {
+			items.forEach((paper, index) => {
 				const key = getPaperKey(paper);
 				const card = document.createElement("article");
 				card.className = "academic-paper-card";
@@ -2998,36 +3190,26 @@ function bindGlassTopbar() {
 				const titleWrap = document.createElement("div");
 				titleWrap.className = "paper-card-title";
 				const title = document.createElement("h3");
-				const titleLink = document.createElement("a");
-				titleLink.href = (paper.url || "#").replace(/^http:\/\//, "https://");
-				titleLink.target = "_blank";
-				titleLink.rel = "noopener noreferrer";
-				titleLink.textContent = paper.title || "Untitled paper";
-				title.appendChild(titleLink);
+				title.textContent = paper.title || "Untitled paper";
 				titleWrap.appendChild(meta);
 				titleWrap.appendChild(title);
 
 				const actions = document.createElement("div");
 				actions.className = "paper-card-actions";
-				const arxivLink = document.createElement("a");
-				arxivLink.href = titleLink.href;
-				arxivLink.target = "_blank";
-				arxivLink.rel = "noopener noreferrer";
-				arxivLink.textContent = "打开 arXiv";
-				actions.appendChild(arxivLink);
-				const repoUrl = getRepoUrl(paper);
-				if (repoUrl) {
-					const repoLink = document.createElement("a");
-					repoLink.href = repoUrl;
-					repoLink.target = "_blank";
-					repoLink.rel = "noopener noreferrer";
-					repoLink.textContent = "代码仓库";
-					actions.appendChild(repoLink);
-				}
+				const detailButton = document.createElement("button");
+				detailButton.type = "button";
+				detailButton.className = "paper-detail-trigger";
+				detailButton.textContent = "详情";
+				detailButton.addEventListener("click", () => {
+					openPaperModal(paper, index, items.length);
+				});
+				actions.appendChild(detailButton);
 				top.appendChild(titleWrap);
 				top.appendChild(actions);
 
-				const interpretation = createInterpretationGrid(paper);
+				const summary = document.createElement("p");
+				summary.className = "paper-card-summary";
+				summary.textContent = getPaperCardSummary(paper);
 
 				const tags = document.createElement("div");
 				tags.className = "academic-paper-tags";
@@ -3038,9 +3220,7 @@ function bindGlassTopbar() {
 				});
 
 				card.appendChild(top);
-				card.appendChild(createPaperFactsStrip(paper));
-				card.appendChild(interpretation);
-				card.appendChild(createPaperDetailPanel(paper));
+				card.appendChild(summary);
 				card.appendChild(tags);
 				fullList.appendChild(card);
 			});
@@ -3122,6 +3302,15 @@ function bindGlassTopbar() {
 				window.localStorage.setItem(SORT_STORAGE_KEY, sortOrder);
 				renderFull();
 			});
+		});
+
+		modalCloseButtons.forEach((button) => {
+			button.addEventListener("click", closePaperModal);
+		});
+		document.addEventListener("keydown", (event) => {
+			if (event.key === "Escape" && modal && !modal.hidden) {
+				closePaperModal();
+			}
 		});
 
 		fetch("assets/content/data/daily-papers.json", { cache: "no-store" })

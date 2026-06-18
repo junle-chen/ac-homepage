@@ -148,6 +148,28 @@
 									span planning
 								.academic-paper-list(data-daily-paper-full)
 								p.empty-state(data-daily-paper-full-empty) Waiting for the first Daily Paper update.
+								.paper-modal(data-paper-modal hidden)
+									.paper-modal-backdrop(data-paper-modal-close)
+									.paper-modal-dialog(role="dialog" aria-modal="true" aria-labelledby="paperModalTitle")
+										.paper-modal-index(data-paper-modal-index) 1
+										button.paper-modal-close(type="button" aria-label="Close paper detail" data-paper-modal-close) ×
+										header.paper-modal-header
+											h3#paperModalTitle(data-paper-modal-title)
+											.paper-modal-meta
+												p(data-paper-modal-authors)
+												p(data-paper-modal-categories)
+												p(data-paper-modal-date)
+										.paper-modal-body
+											section.paper-modal-tldr
+												h4 TL;DR
+												p(data-paper-modal-summary)
+											.paper-modal-grid(data-paper-modal-grid)
+											section.paper-modal-limitations(data-paper-modal-limitations-section hidden)
+												h4 Notes
+												p(data-paper-modal-limitations)
+										footer.paper-modal-footer
+											span(data-paper-modal-position)
+											.paper-modal-links(data-paper-modal-links)
 							section.academic-section#paper-list(data-academic-panel="paper-list")
 								.academic-section-head
 									div
