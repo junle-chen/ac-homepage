@@ -1676,8 +1676,9 @@
 			inset: 0;
 			z-index: 90;
 			display: grid;
-			place-items: center;
-			padding: clamp(16px, 4vw, 44px);
+			align-items: start;
+			justify-items: center;
+			padding: clamp(8px, 1.6vh, 18px) clamp(12px, 3vw, 34px) clamp(12px, 3vh, 28px);
 		}
 
 		.paper-modal[hidden] {
@@ -1696,8 +1697,8 @@
 			position: relative;
 			display: grid;
 			grid-template-rows: auto minmax(0, 1fr) auto;
-			width: min(980px, calc(100vw - 32px));
-			max-height: min(86vh, 900px);
+			width: min(1040px, calc(100vw - 28px));
+			max-height: calc(100vh - clamp(20px, 4.6vh, 46px));
 			overflow: visible;
 			border: 1px solid var(--line-strong);
 			border-radius: 8px;
@@ -1708,34 +1709,34 @@
 
 		.paper-modal-index {
 			position: absolute;
-			top: -16px;
-			left: -16px;
+			top: -12px;
+			left: -12px;
 			z-index: 2;
 			display: grid;
-			width: 42px;
-			height: 42px;
+			width: 34px;
+			height: 34px;
 			place-items: center;
 			border-radius: 50%;
 			background: var(--accent);
 			color: #10201d;
-			font-size: 0.88rem;
+			font-size: 0.72rem;
 			font-weight: 900;
 			box-shadow: 0 16px 34px var(--shadow);
 		}
 
 		.paper-modal-close {
 			position: absolute;
-			top: 18px;
-			right: 18px;
+			top: 12px;
+			right: 12px;
 			z-index: 2;
-			width: 34px;
-			height: 34px;
+			width: 30px;
+			height: 30px;
 			border: 0;
 			border-radius: 8px;
 			background: transparent;
 			color: var(--accent);
 			font: inherit;
-			font-size: 1.6rem;
+			font-size: 1.35rem;
 			line-height: 1;
 			cursor: pointer;
 		}
@@ -1748,43 +1749,43 @@
 
 		.paper-modal-header {
 			display: grid;
-			gap: 14px;
-			padding: 28px 68px 22px 28px;
+			gap: 8px;
+			padding: 18px 56px 13px 20px;
 			border-bottom: 1px solid var(--line);
 		}
 
 		.paper-modal-header h3 {
 			margin: 0;
 			color: var(--text);
-			font-size: clamp(1.15rem, 2vw, 1.55rem);
-			line-height: 1.32;
+			font-size: clamp(0.86rem, 1.35vw, 1.1rem);
+			line-height: 1.22;
 			letter-spacing: 0;
 		}
 
 		.paper-modal-meta {
 			display: grid;
-			gap: 8px;
+			gap: 4px;
 		}
 
 		.paper-modal-meta p {
 			margin: 0;
 			color: var(--muted);
-			font-size: 0.88rem;
-			line-height: 1.55;
+			font-size: 0.64rem;
+			line-height: 1.34;
 			overflow-wrap: anywhere;
 		}
 
 		.paper-modal-body {
 			display: grid;
-			gap: 18px;
+			gap: 10px;
 			min-height: 0;
 			overflow: auto;
-			padding: 24px 28px 28px;
+			padding: 14px 18px 16px;
 		}
 
 		.paper-modal-tldr {
 			display: grid;
-			gap: 10px;
+			gap: 6px;
 		}
 
 		.paper-modal-tldr h4,
@@ -1792,8 +1793,8 @@
 		.paper-modal-limitations h4 {
 			margin: 0;
 			color: var(--accent);
-			font-size: 0.9rem;
-			line-height: 1.4;
+			font-size: 0.66rem;
+			line-height: 1.24;
 			letter-spacing: 0;
 		}
 
@@ -1802,22 +1803,22 @@
 		.paper-modal-limitations p {
 			margin: 0;
 			color: var(--muted);
-			font-size: 0.94rem;
-			line-height: 1.75;
+			font-size: 0.66rem;
+			line-height: 1.38;
 			overflow-wrap: anywhere;
 		}
 
 		.paper-modal-grid {
 			display: grid;
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 14px;
+			gap: 10px;
 		}
 
 		.paper-modal-detail-card,
 		.paper-modal-limitations {
 			display: grid;
-			gap: 10px;
-			padding: 18px;
+			gap: 6px;
+			padding: 12px;
 			border-left: 3px solid var(--accent);
 			border-radius: 8px;
 			background: rgba(255, 255, 255, 0.04);
@@ -1826,35 +1827,35 @@
 		.paper-modal-footer {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 12px;
+			gap: 8px;
 			align-items: center;
 			justify-content: space-between;
-			padding: 14px 22px;
+			padding: 8px 14px;
 			border-top: 1px solid var(--line);
 			background: rgba(255, 255, 255, 0.035);
 		}
 
 		.paper-modal-footer span {
 			color: var(--muted);
-			font-size: 0.82rem;
+			font-size: 0.7rem;
 			font-weight: 900;
 		}
 
 		.paper-modal-links {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 8px;
+			gap: 6px;
 			justify-content: flex-end;
 		}
 
 		.paper-modal-links a {
-			min-height: 32px;
-			padding: 7px 10px;
+			min-height: 26px;
+			padding: 5px 8px;
 			border: 1px solid var(--line);
 			border-radius: 8px;
 			background: var(--card-bg);
 			color: var(--accent);
-			font-size: 0.78rem;
+			font-size: 0.68rem;
 			font-weight: 900;
 			line-height: 1.35;
 		}
@@ -3020,10 +3021,6 @@
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 			}
 
-			.paper-modal-grid {
-				grid-template-columns: 1fr;
-			}
-
 			.post-feed.note-view-image {
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
@@ -3204,12 +3201,12 @@
 		}
 
 		.paper-modal {
-			padding: 12px;
+			padding: 8px;
 		}
 
 		.paper-modal-dialog {
-			width: calc(100vw - 24px);
-			max-height: 88vh;
+			width: calc(100vw - 16px);
+			max-height: calc(100vh - 16px);
 		}
 
 		.paper-modal-index {
@@ -3221,11 +3218,15 @@
 		}
 
 		.paper-modal-header {
-			padding: 54px 50px 18px 18px;
+			padding: 42px 42px 12px 14px;
 		}
 
 		.paper-modal-body {
-			padding: 18px;
+			padding: 12px 14px;
+		}
+
+		.paper-modal-grid {
+			grid-template-columns: 1fr;
 		}
 
 		.paper-modal-footer {

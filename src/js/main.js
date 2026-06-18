@@ -2290,6 +2290,12 @@ function bindGlassTopbar() {
 		const modalCloseButtons = Array.prototype.slice.call(
 			document.querySelectorAll("[data-paper-modal-close]")
 		);
+		if (modal) {
+			const modalHost = document.querySelector(".content-main");
+			if (modalHost && modal.parentElement !== modalHost) {
+				modalHost.appendChild(modal);
+			}
+		}
 		if (!list && !fullList) {
 			return;
 		}
