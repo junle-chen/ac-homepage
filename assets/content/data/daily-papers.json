@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-06-17T23:47:05.467Z",
   "source": "arxiv",
-  "analysis_method": "Codex GPT static reading from arXiv metadata, abstracts, and automation brief fields",
+  "analysis_method": "Codex CLI paper reading from arXiv PDF text when extractable; fallback entries are marked as abstract.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -18,7 +18,7 @@
     "reinforcement learning agent"
   ],
   "automation_contract": {
-    "runner": "Codex daily automation can overwrite this JSON with full paper readings before build/deploy.",
+    "runner": "npm run papers:daily:codex",
     "email_title_template": "YYYY-MM-DD Daily Paper",
     "fields": [
       "作者",
@@ -33,7 +33,8 @@
       "贡献",
       "总结",
       "亮点"
-    ]
+    ],
+    "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
     "title": "2026-06-18 Daily Paper",
@@ -81,10 +82,10 @@
       "recommendation": {
         "score": 98,
         "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "label": "值得读，偏方法启发型",
+        "water_risk": "中",
+        "value_judgement": "推荐读的主要原因是主题高度贴合 agentic RL 的关键瓶颈：稀疏奖励下如何利用多轮交互中的环境反馈。方法轻量、可复用、容易迁移到现有 GRPO/GiGPO 训练框架，也有较清晰的消融支持。偏水风险不是高，因为论文不是只堆 prompt 或单点 benchmark；但也不能判为很低，因为创新主要是把经典 forward/inverse dynamics auxiliary objectives 移植到 LLM agentic RL，概念新颖性有限，且实验环境仍偏模拟、偏文本、偏封闭。",
+        "reason": "推荐读的主要原因是主题高度贴合 agentic RL 的关键瓶颈：稀疏奖励下如何利用多轮交互中的环境反馈。方法轻量、可复用、容易迁移到现有 GRPO/GiGPO 训练框架，也有较清晰的消融支持。偏水风险不是高，因为论文不是只堆 prompt 或单点 benchmark；但也不能判为很低，因为创新主要是把经典 forward/inverse dynamics auxiliary objectives 移植到 LLM agentic RL，概念新颖性有限，且实验环境仍偏模拟、偏文本、偏封闭。",
         "signals": {
           "agenticRl": true,
           "multiTurn": true,
@@ -112,17 +113,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "推荐读的主要原因是主题高度贴合 agentic RL 的关键瓶颈：稀疏奖励下如何利用多轮交互中的环境反馈。方法轻量、可复用、容易迁移到现有 GRPO/GiGPO 训练框架，也有较清晰的消融支持。偏水风险不是高，因为论文不是只堆 prompt 或单点 benchmark；但也不能判为很低，因为创新主要是把经典 forward/inverse dynamics auxiliary objectives 移植到 LLM agentic RL，概念新颖性有限，且实验环境仍偏模拟、偏文本、偏封闭。",
         "summary": "Reinforcement learning (RL) has emerged as a powerful paradigm for training Large Language Models (LLMs) as agents. However, conventional RL methods for long-horizon agentic tasks often struggle with sparse outcome rewards. Intuitively, this overlooks the rich environment dynamics information contained in rollout interaction trajectories. We argue that the interaction experience inherently serves as an implicit supe...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "推荐读的主要原因是主题高度贴合 agentic RL 的关键瓶颈：稀疏奖励下如何利用多轮交互中的环境反馈。方法轻量、可复用、容易迁移到现有 GRPO/GiGPO 训练框架，也有较清晰的消融支持。偏水风险不是高，因为论文不是只堆 prompt 或单点 benchmark；但也不能判为很低，因为创新主要是把经典 forward/inverse dynamics auxiliary objectives 移植到 LLM agentic RL，概念新颖性有限，且实验环境仍偏模拟、偏文本、偏封闭。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "Reinforcement learning (RL) has emerged as a powerful paradigm for training Large Language Models (LLMs) as agents.",
-        "experiments": "Extensive experiments on two long-horizon agentic benchmarks demonstrate that EnvRL achieves significant improvements on success-rates over RL-only baselines, e.g., when trained with GRPO, lifting Qwen-2.5-1.5B-Instruct from 72.8% to 77.4% on ALFWorld, and from 56.8% to 67.0% on WebShop.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文针对 agentic RL 中长程、多轮交互任务的稀疏结果奖励问题：传统 GRPO/RLOO 等主要依赖 episode 结束后的成功/失败信号，忽略了 rollout 中每一步观察、动作、状态变化所包含的环境动态信息。作者的核心判断是，交互轨迹本身可以作为隐式监督，帮助 LLM agent 建立更准确的环境内部模型，从而提升 long-horizon decision-making。这个动机与 agent planning reliability 很贴近，尤其适合关注“如何从交互过程而非只从最终奖励学习”的方向。",
+        "method": "EnvRL 在常规 RL 目标之外加入两个辅助自监督目标：State Prediction 要求模型根据当前状态和动作预测下一步文本观察，学习前向环境动态；Inverse Dynamics 要求模型根据连续状态反推出导致转移的动作，学习动作与状态变化之间的因果关联。训练时复用 RL rollout 数据，与主 RL objective 联合优化，并用 cosine decay 逐步降低辅助目标权重，使早期强化环境建模、后期回到奖励最大化。方法本身不复杂，但设计比较贴合多轮 agent 轨迹的结构。",
+        "experiments": "实验覆盖 ALFWorld 和 WebShop 两个长程文本交互 benchmark，并在 Qwen2.5-1.5B/7B-Instruct 上结合 GRPO 与更强的 GiGPO 验证。结果显示 EnvRL 在两种环境、两种模型规模、两类 RL baseline 上都带来稳定提升；消融实验也支持 SP、ID 和权重衰减机制各自有贡献。ALFWorld 中 SP 更关键，WebShop 中 ID 更有帮助，这个分析与环境特性基本一致。实验可信度尚可，但主要仍限于两个经典模拟环境，缺少更开放、更真实工具使用或网页任务上的验证。",
+        "research_help": "对 Junle 的 agentic RL / multi-turn agent / long-horizon planning 研究有较高参考价值。它提供了一个很直接的思路：把 agent 交互轨迹转成环境动态学习信号，而不是只做 outcome reward 或 token-level policy update。这个方向可以启发 AgentGym-RL、WebArena/WebShop 类任务中的 dense self-supervision、trajectory replay、model-based planning auxiliary loss、以及 planning reliability 诊断。尤其值得关注的是：SP/ID 是否能提升状态理解、动作可控性和失败恢复，而不仅是提高 benchmark 成功率。",
         "recommendation": {
           "score": 98,
           "level": "高",
@@ -143,10 +144,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
-        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 ALFWorld、WebShop、72.8%、77.4%、56.8%；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文针对 agentic RL 中长程、多轮交互任务的稀疏结果奖励问题：传统 GRPO/RLOO 等主要依赖 episode 结束后的成功/失败信号，忽略了 rollout 中每一步观察、动作、状态变化所包含的环境动态信息。作者的核心判断是，交互轨迹本身可以作为隐式监督，帮助 LLM agent 建立更准确的环境内部模型，从而提升 long-horizon decision-making。这个动机与 agent planning reliability 很贴近，尤其适合关注“如何从交互过程而非只从最终奖励学习”的方向。",
+        "method": "EnvRL 在常规 RL 目标之外加入两个辅助自监督目标：State Prediction 要求模型根据当前状态和动作预测下一步文本观察，学习前向环境动态；Inverse Dynamics 要求模型根据连续状态反推出导致转移的动作，学习动作与状态变化之间的因果关联。训练时复用 RL rollout 数据，与主 RL objective 联合优化，并用 cosine decay 逐步降低辅助目标权重，使早期强化环境建模、后期回到奖励最大化。方法本身不复杂，但设计比较贴合多轮 agent 轨迹的结构。",
+        "experiments": "实验覆盖 ALFWorld 和 WebShop 两个长程文本交互 benchmark，并在 Qwen2.5-1.5B/7B-Instruct 上结合 GRPO 与更强的 GiGPO 验证。结果显示 EnvRL 在两种环境、两种模型规模、两类 RL baseline 上都带来稳定提升；消融实验也支持 SP、ID 和权重衰减机制各自有贡献。ALFWorld 中 SP 更关键，WebShop 中 ID 更有帮助，这个分析与环境特性基本一致。实验可信度尚可，但主要仍限于两个经典模拟环境，缺少更开放、更真实工具使用或网页任务上的验证。",
+        "research_help": "对 Junle 的 agentic RL / multi-turn agent / long-horizon planning 研究有较高参考价值。它提供了一个很直接的思路：把 agent 交互轨迹转成环境动态学习信号，而不是只做 outcome reward 或 token-level policy update。这个方向可以启发 AgentGym-RL、WebArena/WebShop 类任务中的 dense self-supervision、trajectory replay、model-based planning auxiliary loss、以及 planning reliability 诊断。尤其值得关注的是：SP/ID 是否能提升状态理解、动作可控性和失败恢复，而不仅是提高 benchmark 成功率。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，偏方法启发型",
+        "value_reason": "推荐读的主要原因是主题高度贴合 agentic RL 的关键瓶颈：稀疏奖励下如何利用多轮交互中的环境反馈。方法轻量、可复用、容易迁移到现有 GRPO/GiGPO 训练框架，也有较清晰的消融支持。偏水风险不是高，因为论文不是只堆 prompt 或单点 benchmark；但也不能判为很低，因为创新主要是把经典 forward/inverse dynamics auxiliary objectives 移植到 LLM agentic RL，概念新颖性有限，且实验环境仍偏模拟、偏文本、偏封闭。",
+        "limitations": "主要局限包括：只在 ALFWorld 和 WebShop 上验证，无法证明对真实网页、工具调用、开放式多轮规划或长期记忆 agent 同样有效；SP 预测下一步文本观察可能学到环境表面模板，而不一定形成可泛化的世界模型；ID 在 admissible action 较明确的环境中可能被简化；论文没有充分展示对失败恢复、规划稳定性、跨任务泛化、out-of-distribution 环境变化的影响；计算开销虽声称较低，但仍依赖 rollout 质量和额外监督格式。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "作者明确提出 EnvRL：通过 state prediction 和 inverse dynamics 两个辅助目标，把环境动态学习加入 agentic RL。",
+          "主实验显示 EnvRL 在 ALFWorld 与 WebShop 上相对 GRPO/GiGPO baseline 均有稳定成功率提升，并覆盖 1.5B 与 7B 模型规模。",
+          "消融表明移除 SP、移除 ID、取消 decay 或改用 linear decay 都会降低表现，说明收益不完全来自单一训练噪声或超参偶然性。",
+          "论文讨论了 ALFWorld 与 WebShop 中 SP/ID 贡献差异：前者更依赖逻辑状态转移预测，后者更依赖从嘈杂网页观察中识别有效动作。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:16:33.999Z"
       }
     },
     {
@@ -178,10 +194,10 @@
       "recommendation": {
         "score": 98,
         "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "label": "值得读，尤其适合作为 agentic RL 与 skill-based planning 的近期相关工作",
+        "water_risk": "中",
+        "value_judgement": "论文选题正中 agentic RL 和 long-horizon agent planning，方法也不是单纯包装 prompt，而是把多模型轨迹、技能树、迁移性验证和 GRPO 风格训练连在一起。潜在价值在于提供了一个从 agent 经验中构建可复用 procedural knowledge 的完整 pipeline。风险在于当前可见文本中术语较密、声称较强，且实验细节未在提供片段中出现；如果实验主要依赖 LLM judge 或自建 OpenClaw-style 数据，可能需要警惕评估闭环和泛化不足。",
+        "reason": "论文选题正中 agentic RL 和 long-horizon agent planning，方法也不是单纯包装 prompt，而是把多模型轨迹、技能树、迁移性验证和 GRPO 风格训练连在一起。潜在价值在于提供了一个从 agent 经验中构建可复用 procedural knowledge 的完整 pipeline。风险在于当前可见文本中术语较密、声称较强，且实验细节未在提供片段中出现；如果实验主要依赖 LLM judge 或自建 OpenClaw-style 数据，可能需要警惕评估闭环和泛化不足。",
         "signals": {
           "agenticRl": true,
           "multiTurn": true,
@@ -211,17 +227,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "论文选题正中 agentic RL 和 long-horizon agent planning，方法也不是单纯包装 prompt，而是把多模型轨迹、技能树、迁移性验证和 GRPO 风格训练连在一起。潜在价值在于提供了一个从 agent 经验中构建可复用 procedural knowledge 的完整 pipeline。风险在于当前可见文本中术语较密、声称较强，且实验细节未在提供片段中出现；如果实验主要依赖 LLM judge 或自建 OpenClaw-style 数据，可能需要警惕评估闭环和泛化不足。",
         "summary": "Equipping Large Language Model (LLM) agents with effective skills is crucial for solving complex tasks in real-world systems like OpenClaw. In this work, we aim to develop a framework that automatically constructs such reusable skills to enhance LLMs in tool use, multi-step reasoning, and dynamic environment interaction. To this end, we propose Collective Skill Tree Search (CSTS), a novel tree-search-based skill con...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "论文选题正中 agentic RL 和 long-horizon agent planning，方法也不是单纯包装 prompt，而是把多模型轨迹、技能树、迁移性验证和 GRPO 风格训练连在一起。潜在价值在于提供了一个从 agent 经验中构建可复用 procedural knowledge 的完整 pipeline。风险在于当前可见文本中术语较密、声称较强，且实验细节未在提供片段中出现；如果实验主要依赖 LLM judge 或自建 OpenClaw-style 数据，可能需要警惕评估闭环和泛化不足。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "Equipping Large Language Model (LLM) agents with effective skills is crucial for solving complex tasks in real-world systems like OpenClaw.",
-        "experiments": "CSN-Assess employs multiple models as judges to evaluate and select skill nodes with two scoring mechanisms: (1) collective quality scoring that aggregates independent evaluations to produce a robust estimate of skill effectiveness, and (2) collective transferability scoring that explicitly verifies whether a skill generalizes well across different models.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文动机与 Junle 关注点高度贴近：它针对 OpenClaw 这类真实交互式 agent 系统中的长程任务，认为现有自动技能构建方法存在技能碎片化、技能多样性不足、跨模型迁移性弱的问题。这个问题设定直接对应 multi-turn agent、long-horizon planning、tool use、error recovery 与 planning reliability。",
+        "method": "核心方法是 Collective Skill Tree Search。先把复杂任务分解为有序子任务，再对每个子任务用多个模型产生轨迹并总结候选技能节点；随后用多个 judge 做技能质量评估，并通过让其他模型使用该技能来评估迁移性。选中的节点按子任务顺序组成 skill path，用于构造 skill-augmented SFT 数据。之后提出 Collective Skill Reinforcement Learning，在同一子任务下用多个候选技能条件化采样轨迹，并用跨技能的相对优势做 GRPO 风格优化，鼓励模型从多个技能中选择更有效的策略。",
+        "experiments": "从提供文本看，论文声称 OpenClaw-Skill 在长程规划、工具使用、泛化、错误恢复等挑战性 benchmark 上表现突出，但当前提供的正文片段没有包含完整实验表格、对比基线、消融结果和统计细节。因此实验可信度只能做有限判断：方法设计上有明确可消融点，如多模型生成、多模型评估、迁移性打分、CSRL；但若没有看到实验部分，不能确认提升幅度、benchmark 是否充分、是否存在数据污染或 judge 偏置。",
+        "research_help": "对 Junle research 的帮助较高。它把 agent skill 从静态 prompt/skill bank 推到可搜索、可组合、可迁移评估的结构化技能树，这对研究 agent planning reliability、长程任务分解、交互轨迹到可复用策略的抽象、以及 RL 中 skill-conditioned exploration 都有参考价值。尤其值得关注的是 transferability assessment：技能不是只服务生成它的模型，而要能帮助其他模型，这可以作为评估 agent memory/skill 是否真正泛化的一个研究切入点。",
         "recommendation": {
           "score": 98,
           "level": "高",
@@ -242,10 +258,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "方法核心是构建可搜索的技能树，并用多模型或多轮评估筛选可迁移技能，服务复杂工具调用任务。",
-        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文动机与 Junle 关注点高度贴近：它针对 OpenClaw 这类真实交互式 agent 系统中的长程任务，认为现有自动技能构建方法存在技能碎片化、技能多样性不足、跨模型迁移性弱的问题。这个问题设定直接对应 multi-turn agent、long-horizon planning、tool use、error recovery 与 planning reliability。",
+        "method": "核心方法是 Collective Skill Tree Search。先把复杂任务分解为有序子任务，再对每个子任务用多个模型产生轨迹并总结候选技能节点；随后用多个 judge 做技能质量评估，并通过让其他模型使用该技能来评估迁移性。选中的节点按子任务顺序组成 skill path，用于构造 skill-augmented SFT 数据。之后提出 Collective Skill Reinforcement Learning，在同一子任务下用多个候选技能条件化采样轨迹，并用跨技能的相对优势做 GRPO 风格优化，鼓励模型从多个技能中选择更有效的策略。",
+        "experiments": "从提供文本看，论文声称 OpenClaw-Skill 在长程规划、工具使用、泛化、错误恢复等挑战性 benchmark 上表现突出，但当前提供的正文片段没有包含完整实验表格、对比基线、消融结果和统计细节。因此实验可信度只能做有限判断：方法设计上有明确可消融点，如多模型生成、多模型评估、迁移性打分、CSRL；但若没有看到实验部分，不能确认提升幅度、benchmark 是否充分、是否存在数据污染或 judge 偏置。",
+        "research_help": "对 Junle research 的帮助较高。它把 agent skill 从静态 prompt/skill bank 推到可搜索、可组合、可迁移评估的结构化技能树，这对研究 agent planning reliability、长程任务分解、交互轨迹到可复用策略的抽象、以及 RL 中 skill-conditioned exploration 都有参考价值。尤其值得关注的是 transferability assessment：技能不是只服务生成它的模型，而要能帮助其他模型，这可以作为评估 agent memory/skill 是否真正泛化的一个研究切入点。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其适合作为 agentic RL 与 skill-based planning 的近期相关工作",
+        "value_reason": "论文选题正中 agentic RL 和 long-horizon agent planning，方法也不是单纯包装 prompt，而是把多模型轨迹、技能树、迁移性验证和 GRPO 风格训练连在一起。潜在价值在于提供了一个从 agent 经验中构建可复用 procedural knowledge 的完整 pipeline。风险在于当前可见文本中术语较密、声称较强，且实验细节未在提供片段中出现；如果实验主要依赖 LLM judge 或自建 OpenClaw-style 数据，可能需要警惕评估闭环和泛化不足。",
+        "limitations": "主要限制包括：第一，技能质量和迁移性评估依赖多模型 judge 与 verifier，可能引入 judge 偏置和模型族相关性；第二，复杂任务分解本身如何得到、是否稳定，文本中没有充分展开；第三，选择最高分技能节点可能仍会损失有用的互补技能，虽然 CSRL 后续尝试缓解；第四，实验细节在提供文本中不足，无法确认 benchmark 覆盖、基线强度、开源可复现性和真实交互环境中的成本；第五，多模型轨迹生成和跨模型 transfer rollout 计算成本可能较高。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要称 CSTS 自动构建 reusable skills，用于增强工具使用、多步推理和动态环境交互。",
+          "引言明确列出现有 skill construction 的三类问题：skill fragmentation、limited skill diversity、limited skill transferability。",
+          "方法部分描述 CSTS 先做复杂任务分解，再通过 CSN-Gen 从多个模型轨迹生成候选技能节点。",
+          "CSN-Assess 同时做 collective quality scoring 和 collective transferability scoring，后者检查一个模型生成的技能是否能帮助其他模型。领取最高分技能节点后，论文把子任务级技能组成 ordered compositional skill path。CSRL 部分提出在同一子任务下对多个技能..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:19:18.534Z"
       }
     },
     {
@@ -267,11 +298,11 @@
       "venue_status": "未确认录用",
       "recommendation": {
         "score": 98,
-        "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "level": "中",
+        "label": "有想法但证据偏弱的概念验证论文",
+        "water_risk": "高",
+        "value_judgement": "值得快速读，尤其是方法设定和 tensor residual 作为 conflict localization 的想法；但不建议投入太多时间深读，除非需要寻找 planning reliability 的结构化诊断方法。偏水风险较高的原因是：论证中存在较强的代数解释跳跃，实验域很小，指标可靠性主要靠少量 toy setting 支撑，相关工作叙述还混入一些看起来时效性很强但缺乏文本内可验证支撑的行业/模型发布描述，整体更像把成熟张量分解包装到多智能体 LLM planning 上，而不是已经证明能解决真实复杂 agent planning。",
+        "reason": "值得快速读，尤其是方法设定和 tensor residual 作为 conflict localization 的想法；但不建议投入太多时间深读，除非需要寻找 planning reliability 的结构化诊断方法。偏水风险较高的原因是：论证中存在较强的代数解释跳跃，实验域很小，指标可靠性主要靠少量 toy setting 支撑，相关工作叙述还混入一些看起来时效性很强但缺乏文本内可验证支撑的行业/模型发布描述，整体更像把成熟张量分解包装到多智能体 LLM planning 上，而不是已经证明能解决真实复杂 agent planning。",
         "signals": {
           "agenticRl": true,
           "multiTurn": true,
@@ -293,17 +324,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "值得快速读，尤其是方法设定和 tensor residual 作为 conflict localization 的想法；但不建议投入太多时间深读，除非需要寻找 planning reliability 的结构化诊断方法。偏水风险较高的原因是：论证中存在较强的代数解释跳跃，实验域很小，指标可靠性主要靠少量 toy setting 支撑，相关工作叙述还混入一些看起来时效性很强但缺乏文本内可验证支撑的行业/模型发布描述，整体更像把成熟张量分解包装到多智能体 LLM planning 上，而不是已经证明能解决真实复杂 agent planning。",
         "summary": "Large language models (LLMs) remain limited in multi-agent planning because independently generated plans can create coordination failures such as spatial collisions, resource contention, and temporal deadlocks. We introduce Tensor-Coord, a multilinear algebra framework that represents the joint plan of N agents as a third-order tensor \\(T \\in R^{N \\times H \\times A}\\) over agents, timesteps, and actions. Canonical...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "值得快速读，尤其是方法设定和 tensor residual 作为 conflict localization 的想法；但不建议投入太多时间深读，除非需要寻找 planning reliability 的结构化诊断方法。偏水风险较高的原因是：论证中存在较强的代数解释跳跃，实验域很小，指标可靠性主要靠少量 toy setting 支撑，相关工作叙述还混入一些看起来时效性很强但缺乏文本内可验证支撑的行业/模型发布描述，整体更像把成熟张量分解包装到多智能体 LLM planning 上，而不是已经证明能解决真实复杂 agent planning。",
+          "偏水风险：高",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "Large language models (LLMs) remain limited in multi-agent planning because independently generated plans can create coordination failures such as spatial collisions, resource contention, and temporal deadlocks.",
-        "experiments": "The residual \\(E=T-T_{R*}\\) defines a conflict score over agent pairs, timesteps, and actions, localizing failures without domain-specific rules.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文动机贴合多智能体 LLM planning 的核心痛点：单个 agent 独立生成的 plan 看起来合理，但联合执行时会出现空间碰撞、资源争用、时间死锁等协调失败。它试图把“agent 间依赖/冲突”从自然语言层面转化为可计算的联合计划张量结构，用代数分解来衡量协调复杂度并定位冲突。这个问题与 agent planning reliability 和 multi-agent coordination 相关，但目前文本中的任务域主要是小规模 grid-world delivery，离开放式 long-horizon agent 任务还有距离。",
+        "method": "方法是把 N 个 agent、T 个 timestep、K 个 action 编码成三阶 joint plan tensor，然后用 CP decomposition 估计最小近似秩，把超过 agent 数的秩解释为协调复杂度；再用分解残差构造 conflict score 来定位 agent-pair 与 timestep 上的潜在冲突；最后用 Tucker decomposition 提取 agent role、temporal phase、action cluster，并把这些结构翻译成自然语言约束，驱动 LLM 迭代 replanning。思路有一定新意：不是直接做搜索或验证器，而是把计划兼容性投影到张量低秩结构。但理论假设较强，尤其是“CP rank 等价于 plan independence/coordination complexity”的解释是否可靠，需要更严格证明和更多任务验证。",
+        "experiments": "实验部分从提供文本看，主要报告了多机器人 delivery 的三个难度设置：小网格、少量 agent、固定动作空间。结果声称二智能体问题可稳定收敛，三/四智能体时收敛率下降，并且 CP rank 随 agent 数近似线性增长，用来支持其 coordination complexity 指标。问题是文本里没有看到充分的基线比较、消融、统计显著性、失败案例分析、LLM prompt 细节、冲突检测准确率细节，也没有证明它优于 CBS、LLM-Modulo、普通 constraint feedback 或简单冲突检测器。因此实验目前更像概念验证，而不是强实证论文。",
+        "research_help": "对 Junle 的帮助为中等。它提供了一个可借鉴的角度：把 multi-turn/multi-agent planning 中的交互轨迹或 action sequence 编成结构化张量，再用低秩分解或残差来做 planning reliability diagnosis、coordination failure localization、replanning feedback。这对研究 agent memory 与 planning reliability 的“可解释失败定位”可能有启发。但它没有直接处理真实 multi-turn dialogue、长程任务记忆、偏好 carryover、stateful replanning，也没有强化学习训练闭环；如果 Junle 当前关注 agentic RL 或 long-horizon web/task agents，它更适合作为 idea seed，而不是主线必读。",
         "recommendation": {
           "score": 98,
           "level": "高",
@@ -324,10 +355,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "方法核心是用代数分解或结构化表示建模多 agent 联合计划，定位冲突并约束协同执行。",
-        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 100%、80%、60%；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文动机贴合多智能体 LLM planning 的核心痛点：单个 agent 独立生成的 plan 看起来合理，但联合执行时会出现空间碰撞、资源争用、时间死锁等协调失败。它试图把“agent 间依赖/冲突”从自然语言层面转化为可计算的联合计划张量结构，用代数分解来衡量协调复杂度并定位冲突。这个问题与 agent planning reliability 和 multi-agent coordination 相关，但目前文本中的任务域主要是小规模 grid-world delivery，离开放式 long-horizon agent 任务还有距离。",
+        "method": "方法是把 N 个 agent、T 个 timestep、K 个 action 编码成三阶 joint plan tensor，然后用 CP decomposition 估计最小近似秩，把超过 agent 数的秩解释为协调复杂度；再用分解残差构造 conflict score 来定位 agent-pair 与 timestep 上的潜在冲突；最后用 Tucker decomposition 提取 agent role、temporal phase、action cluster，并把这些结构翻译成自然语言约束，驱动 LLM 迭代 replanning。思路有一定新意：不是直接做搜索或验证器，而是把计划兼容性投影到张量低秩结构。但理论假设较强，尤其是“CP rank 等价于 plan independence/coordination complexity”的解释是否可靠，需要更严格证明和更多任务验证。",
+        "experiments": "实验部分从提供文本看，主要报告了多机器人 delivery 的三个难度设置：小网格、少量 agent、固定动作空间。结果声称二智能体问题可稳定收敛，三/四智能体时收敛率下降，并且 CP rank 随 agent 数近似线性增长，用来支持其 coordination complexity 指标。问题是文本里没有看到充分的基线比较、消融、统计显著性、失败案例分析、LLM prompt 细节、冲突检测准确率细节，也没有证明它优于 CBS、LLM-Modulo、普通 constraint feedback 或简单冲突检测器。因此实验目前更像概念验证，而不是强实证论文。",
+        "research_help": "对 Junle 的帮助为中等。它提供了一个可借鉴的角度：把 multi-turn/multi-agent planning 中的交互轨迹或 action sequence 编成结构化张量，再用低秩分解或残差来做 planning reliability diagnosis、coordination failure localization、replanning feedback。这对研究 agent memory 与 planning reliability 的“可解释失败定位”可能有启发。但它没有直接处理真实 multi-turn dialogue、长程任务记忆、偏好 carryover、stateful replanning，也没有强化学习训练闭环；如果 Junle 当前关注 agentic RL 或 long-horizon web/task agents，它更适合作为 idea seed，而不是主线必读。",
+        "recommendation_level": "中",
+        "water_risk": "高",
+        "value_label": "有想法但证据偏弱的概念验证论文",
+        "value_reason": "值得快速读，尤其是方法设定和 tensor residual 作为 conflict localization 的想法；但不建议投入太多时间深读，除非需要寻找 planning reliability 的结构化诊断方法。偏水风险较高的原因是：论证中存在较强的代数解释跳跃，实验域很小，指标可靠性主要靠少量 toy setting 支撑，相关工作叙述还混入一些看起来时效性很强但缺乏文本内可验证支撑的行业/模型发布描述，整体更像把成熟张量分解包装到多智能体 LLM planning 上，而不是已经证明能解决真实复杂 agent planning。",
+        "limitations": "虽然 source_scope 标注为 full_text，但当前提供的 source_text 只完整覆盖到摘要、引言、相关工作和部分问题定义，未看到完整实验章节、附录、证明细节和实现细节。因此这里是基于所给全文摘取内容的阅读判断。主要不确定点包括：CP rank 与真实冲突之间是否存在稳定因果关系；残差冲突分数是否比规则检测更有效；自然语言约束生成是否依赖 prompt 工程；在更大网格、更多 agent、异构动作、非确定环境、长程任务和真实 LLM agent 上是否仍然成立。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确把问题定位为 independently generated plans 导致 spatial collisions、resource contention、temporal deadlocks，目标是 conflict-free multi-agent LLM planning。",
+          "核心技术证据包括 joint plan tensor T ∈ R^{N×T×A}、CP/Tucker decomposition、minimal approximate CP rank、decomposition residual E 以及 conflict score CS(i,j,t)。",
+          "论文声称 R* = N 是 plan independence 的必要充分条件，并用超过 N 的 rank 表示 inter-agent dependencies，这是方法价值和风险都很集中的关键假设。",
+          "实验只在 5×5 multi-robot delivery 的少量 agent 设置中展示收敛趋势，文本中未呈现强基线、消融或真实 long-horizon agent benchmark。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:19:55.547Z"
       }
     },
     {
@@ -355,10 +401,10 @@
       "recommendation": {
         "score": 98,
         "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "label": "值得读，偏系统论文，贡献点清晰但需要重点核查评测公平性与泛化边界",
+        "water_risk": "中",
+        "value_judgement": "推荐等级为高，因为论文把 coding agent、reflective evolution、robot environment feedback 和 deployment-time reliability 结合得很紧，且提出的训练期多文件 agent harness 优化范式对 agent planning 研究有迁移价值。偏水风险为中：结果数字亮眼，叙事也很强，但系统复杂度高，性能可能依赖底层 perception/control primitives、环境服务接口、mutation budget、验证集选择、prompt/template 设计和隔离机制；如果训练实例与验证实例分布接近，或搜索预算很大，SOTA 数字的实际泛化含义需要谨慎解读。",
+        "reason": "推荐等级为高，因为论文把 coding agent、reflective evolution、robot environment feedback 和 deployment-time reliability 结合得很紧，且提出的训练期多文件 agent harness 优化范式对 agent planning 研究有迁移价值。偏水风险为中：结果数字亮眼，叙事也很强，但系统复杂度高，性能可能依赖底层 perception/control primitives、环境服务接口、mutation budget、验证集选择、prompt/template 设计和隔离机制；如果训练实例与验证实例分布接近，或搜索预算很大，SOTA 数字的实际泛化含义需要谨慎解读。",
         "signals": {
           "agenticRl": true,
           "multiTurn": true,
@@ -385,17 +431,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "推荐等级为高，因为论文把 coding agent、reflective evolution、robot environment feedback 和 deployment-time reliability 结合得很紧，且提出的训练期多文件 agent harness 优化范式对 agent planning 研究有迁移价值。偏水风险为中：结果数字亮眼，叙事也很强，但系统复杂度高，性能可能依赖底层 perception/control primitives、环境服务接口、mutation budget、验证集选择、prompt/template 设计和隔离机制；如果训练实例与验证实例分布接近，或搜索预算很大，SOTA 数字的实际泛化含义需要谨慎解读。",
         "summary": "Code-as-Policies (CaP) has shown that large language models (LLMs) can write code to solve robotics tasks by composing perception, planning, and control primitives. Recent CaP systems, however, rely on multi-turn code-generation loops at test time, which is often infeasible for real-time robot control. We introduce Robotics Harness Optimization (RHO), a novel paradigm in which tool-enabled coding agents, at training...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "推荐等级为高，因为论文把 coding agent、reflective evolution、robot environment feedback 和 deployment-time reliability 结合得很紧，且提出的训练期多文件 agent harness 优化范式对 agent planning 研究有迁移价值。偏水风险为中：结果数字亮眼，叙事也很强，但系统复杂度高，性能可能依赖底层 perception/control primitives、环境服务接口、mutation budget、验证集选择、prompt/template 设计和隔离机制；如果训练实例与验证实例分布接近，或搜索预算很大，SOTA 数字的实际泛化含义需要谨慎解读。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
-        "method": "We introduce Robotics Harness Optimization (RHO), a novel paradigm in which tool-enabled coding agents, at training time, propose and search for interpretable, neurosymbolic multi-file policy repositories (Repositories-as-Policies) that compose these primitives rather than a single prompt, function, or file.",
-        "experiments": "Using the same low-level primitives, RHO reaches a 45.0% success rate, 2.5x higher than the strongest multi-turn agentic system, and 3.5x higher than $π_{0.5}$.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文针对 Code-as-Policies 和机器人 agent 的一个核心痛点：现有强系统常依赖部署时多轮 LLM 代码生成、失败归因、重规划和热修复，实时机器人控制中成本高且不稳定；而 VLA 在 LIBERO-PRO 等扰动设置下泛化很差。RHO 的动机是把 agentic 搜索和代码修改从 test-time 前移到 training-time，让最终部署策略成为可解释、可调试的多文件 neurosymbolic policy repository，而不是每次执行时继续调用 LLM 修代码。",
+        "method": "方法上，RHO 将策略表示为 Repositories-as-Policies：一个包含任务路由、感知封装、控制例程、抓取/位姿辅助、以及可选 LLM harness 的多文件仓库。其实现 HELIX 基于 reflective evolutionary optimization：从 Pareto frontier 采样父仓库，用工具增强 coding agent 作为 mutator，在一次 mutation 中编辑多文件、写临时测试、调用机器人环境服务 REaaS 跑 rollout、读 traceback、查询 visual-difference feedback，再提交子仓库。选择机制包括训练 minibatch 上的父子 reward gate、验证集上的 per-instance coverage/Pareto frontier 保留，最后选平均验证 reward 最高的仓库部署。关键点是把多轮 agent 开发过程 amortize 到训练期，部署期在 CaP-Bench 设置下不再进行 LLM corrective code edits。",
+        "experiments": "实验覆盖 Robosuite、LIBERO-PRO 和 RAI O3DE。文中报告 RHO 在 CaP-Bench Robosuite 单轮部署达到 70.0% success，超过此前需要 test-time 多轮代码生成和 visual feedback 的 68.29%；在 LIBERO-PRO 六个扰动单元中，OpenVLA 为 0.0%、π0.5 平均 12.83%、CaP-Agent0 为 18.17%，RHO 达到 45.0%；在 RAI O3DE 中，RHO 优化 LLM-in-the-loop 系统的 prompt、tool 和 control-code harness，把 held-out success 从 23.5% 提升到 44.3%，同时减少 wall-clock time 和 tool calls。实验主张比较强，尤其强调单轮部署、无部署时代码生成，以及对扰动泛化的改善。",
+        "research_help": "对 Junle 的研究有较高参考价值。它直接连接 multi-turn agent、agent planning reliability、long-horizon robot planning 和 agentic RL/optimization：核心思想不是训练权重，而是让 coding agent 通过环境 reward 和执行反馈做训练期搜索，产出可部署的 agent harness/policy repository。这对研究“多轮 agent 的计算应该放在训练期还是推理期”“如何用 Pareto frontier 保留互补规划能力”“如何避免 agent reward hacking/benchmark cheating”“如何把执行 trace 变成可靠 planning artifact”都很有启发。若 Junle 关注 agent memory，也可把 frontier lineage、reflection traces、失败摘要看作一种外部化经验记忆，但论文主线更偏 repository-level policy search，而不是显式长期记忆机制。",
         "recommendation": {
           "score": 98,
           "level": "高",
@@ -416,10 +462,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
-        "method": "方法核心是让代码型 agent 搜索可解释的策略仓库，把感知、规划和控制原语组合成可执行 policy。",
-        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 0.0%、12.83%、45.0%、2.5x、3.5x；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文针对 Code-as-Policies 和机器人 agent 的一个核心痛点：现有强系统常依赖部署时多轮 LLM 代码生成、失败归因、重规划和热修复，实时机器人控制中成本高且不稳定；而 VLA 在 LIBERO-PRO 等扰动设置下泛化很差。RHO 的动机是把 agentic 搜索和代码修改从 test-time 前移到 training-time，让最终部署策略成为可解释、可调试的多文件 neurosymbolic policy repository，而不是每次执行时继续调用 LLM 修代码。",
+        "method": "方法上，RHO 将策略表示为 Repositories-as-Policies：一个包含任务路由、感知封装、控制例程、抓取/位姿辅助、以及可选 LLM harness 的多文件仓库。其实现 HELIX 基于 reflective evolutionary optimization：从 Pareto frontier 采样父仓库，用工具增强 coding agent 作为 mutator，在一次 mutation 中编辑多文件、写临时测试、调用机器人环境服务 REaaS 跑 rollout、读 traceback、查询 visual-difference feedback，再提交子仓库。选择机制包括训练 minibatch 上的父子 reward gate、验证集上的 per-instance coverage/Pareto frontier 保留，最后选平均验证 reward 最高的仓库部署。关键点是把多轮 agent 开发过程 amortize 到训练期，部署期在 CaP-Bench 设置下不再进行 LLM corrective code edits。",
+        "experiments": "实验覆盖 Robosuite、LIBERO-PRO 和 RAI O3DE。文中报告 RHO 在 CaP-Bench Robosuite 单轮部署达到 70.0% success，超过此前需要 test-time 多轮代码生成和 visual feedback 的 68.29%；在 LIBERO-PRO 六个扰动单元中，OpenVLA 为 0.0%、π0.5 平均 12.83%、CaP-Agent0 为 18.17%，RHO 达到 45.0%；在 RAI O3DE 中，RHO 优化 LLM-in-the-loop 系统的 prompt、tool 和 control-code harness，把 held-out success 从 23.5% 提升到 44.3%，同时减少 wall-clock time 和 tool calls。实验主张比较强，尤其强调单轮部署、无部署时代码生成，以及对扰动泛化的改善。",
+        "research_help": "对 Junle 的研究有较高参考价值。它直接连接 multi-turn agent、agent planning reliability、long-horizon robot planning 和 agentic RL/optimization：核心思想不是训练权重，而是让 coding agent 通过环境 reward 和执行反馈做训练期搜索，产出可部署的 agent harness/policy repository。这对研究“多轮 agent 的计算应该放在训练期还是推理期”“如何用 Pareto frontier 保留互补规划能力”“如何避免 agent reward hacking/benchmark cheating”“如何把执行 trace 变成可靠 planning artifact”都很有启发。若 Junle 关注 agent memory，也可把 frontier lineage、reflection traces、失败摘要看作一种外部化经验记忆，但论文主线更偏 repository-level policy search，而不是显式长期记忆机制。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，偏系统论文，贡献点清晰但需要重点核查评测公平性与泛化边界",
+        "value_reason": "推荐等级为高，因为论文把 coding agent、reflective evolution、robot environment feedback 和 deployment-time reliability 结合得很紧，且提出的训练期多文件 agent harness 优化范式对 agent planning 研究有迁移价值。偏水风险为中：结果数字亮眼，叙事也很强，但系统复杂度高，性能可能依赖底层 perception/control primitives、环境服务接口、mutation budget、验证集选择、prompt/template 设计和隔离机制；如果训练实例与验证实例分布接近，或搜索预算很大，SOTA 数字的实际泛化含义需要谨慎解读。",
+        "limitations": "主要局限包括：第一，方法看起来计算预算较重，把部署成本转移到训练期，不等于总成本低；第二，依赖可执行仿真环境、可访问 reward、低层机器人 primitives 和较完整的工程 harness，现实机器人迁移难度可能较高；第三，虽然作者强调 isolation 防止 cheating/reward hacking，但 evolutionary coding agent 天然容易利用评测漏洞，需要看完整实现和 ablation 才能确认；第四，RHO 在机器人任务上很有针对性，对纯文本 long-horizon planning 或开放式 web agent 的迁移还需要额外验证；第五，报告的成功率提升是否来自 repository-level search 本身、visual-difference feedback、REaaS 交互次数、还是更强 coding agent，需要通过消融进一步区分。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要称近期 CaP 系统依赖测试时多轮代码生成，而 RHO 在训练期搜索可解释的 neurosymbolic multi-file policy repositories。",
+          "引言指出 CaP-Agent0 在测试时每个 trial 最多 66 次 LLM 调用，限制成 single-turn 后 Robosuite 成功率从 68.29% 降到 24%。",
+          "方法部分定义 repository R 为可执行机器人策略，评估返回 shaped reward 和结构化 side information，优化目标是在验证集上选择平均 reward 最高的 frontier repository。",
+          "论文描述 HELIX mutation 是一个交互式开发会话：coding agent 可检查文件、编辑多模块、写并运行临时测试、通过 REaaS 运行候选策略、读取 traceback 并查询 visual-difference feedback。涉入多轮 agentic coding，但被限制在训练期。作者报告 Robosuite 70.0%、LIBE..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:20:37.492Z"
       }
     },
     {
@@ -450,10 +511,10 @@
       "recommendation": {
         "score": 98,
         "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "label": "值得读，尤其值得看方法和消融/干预实验",
+        "water_risk": "中",
+        "value_judgement": "推荐等级给高，是因为论文问题定义很贴近 agentic RL 的真实痛点：long-horizon agent 的最终奖励经常把非 memory 错误错误归因给 memory token。HiMPO 的 local counterfactual utility + hindsight filter 设计有明确机制创新，比只做最终 reward shaping 或 summary SFT 更有研究参考价值。偏水风险给中，原因是主表提升幅度相对明确但绝对性能不高，BCP full-context 只有个位数准确率，FRAMES 也只有二十多；同时 open-domain 结果依赖 LLM judge，且论文来自 2026 arXiv 预印本，尚未从提供文本中看到同行评审或强外部复现证据。",
+        "reason": "推荐等级给高，是因为论文问题定义很贴近 agentic RL 的真实痛点：long-horizon agent 的最终奖励经常把非 memory 错误错误归因给 memory token。HiMPO 的 local counterfactual utility + hindsight filter 设计有明确机制创新，比只做最终 reward shaping 或 summary SFT 更有研究参考价值。偏水风险给中，原因是主表提升幅度相对明确但绝对性能不高，BCP full-context 只有个位数准确率，FRAMES 也只有二十多；同时 open-domain 结果依赖 LLM judge，且论文来自 2026 arXiv 预印本，尚未从提供文本中看到同行评审或强外部复现证据。",
         "signals": {
           "agenticRl": true,
           "multiTurn": true,
@@ -482,17 +543,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "推荐等级给高，是因为论文问题定义很贴近 agentic RL 的真实痛点：long-horizon agent 的最终奖励经常把非 memory 错误错误归因给 memory token。HiMPO 的 local counterfactual utility + hindsight filter 设计有明确机制创新，比只做最终 reward shaping 或 summary SFT 更有研究参考价值。偏水风险给中，原因是主表提升幅度相对明确但绝对性能不高，BCP full-context 只有个位数准确率，FRAMES 也只有二十多；同时 open-domain 结果依赖 LLM judge，且论文来自 2026 arXiv 预印本，尚未从提供文本中看到同行评审或强外部复现证据。",
         "summary": "Long-horizon agents rely on memory mechanisms to compress interaction history, but optimizing memory writing faces a distinct credit assignment challenge: a memory update may be rewarded or penalized due to downstream tool failures, noisy observations, or reasoning errors rather than its own contribution. This causally entangled credit can lead agents to discard useful evidence or preserve irrelevant information. We...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "推荐等级给高，是因为论文问题定义很贴近 agentic RL 的真实痛点：long-horizon agent 的最终奖励经常把非 memory 错误错误归因给 memory token。HiMPO 的 local counterfactual utility + hindsight filter 设计有明确机制创新，比只做最终 reward shaping 或 summary SFT 更有研究参考价值。偏水风险给中，原因是主表提升幅度相对明确但绝对性能不高，BCP full-context 只有个位数准确率，FRAMES 也只有二十多；同时 open-domain 结果依赖 LLM judge，且论文来自 2026 arXiv 预印本，尚未从提供文本中看到同行评审或强外部复现证据。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
-        "method": "We propose HiMPO, a Hindsight-Informed Memory Policy Optimization framework for assigning less-entangled credit to memory-writing actions in long-horizon agents.",
-        "experiments": "摘要没有明确实验数字；自动化建议先打开正文检查 benchmark、baseline、ablation 和失败案例。",
-        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。",
+        "motivation": "论文抓住了一个对 long-horizon agent 很关键的问题：压缩记忆不是普通的摘要任务，而是会参与后续推理、工具调用和最终答案的状态写入。作者指出，若只用最终成功/失败给 <mem> token 分配奖励，工具错误、观察噪声、后续推理错误都会把 blame 错误传回 memory write，导致有用证据被删、无关信息被保留。这个动机和 agentic RL、agent memory、planning reliability 的交叉点高度相关。",
+        "method": "HiMPO 把每次 memory update 视作 policy-controlled writing action。核心信号有两个：第一是 local counterfactual utility，在同一个 pre-write state 下比较 updated memory 与 previous memory 对 oracle target outcome 的 recoverability，即答案 log-likelihood 的差值；第二是 hindsight relevance，用目标 outcome 条件下该 memory write 相对 sibling rollouts 的似然作为 retrospective filter。两者通过 sign-consistent gate 组合，只在本地效用和 hindsight relevance 方向一致时放行 memory-specific advantage。该 advantage 只加到 <mem> span，其他 token 仍使用 trajectory-level reward，并配合 successful trajectory mask 与 backward smoothing 稳定训练。整体方法比单纯 outcome-level RL 更像是在做 memory 写入动作的局部信用分配。",
+        "experiments": "实验覆盖 judge-based open-domain long-horizon tasks 和 objective compressive-memory QA。可见正文中重点报告了 BrowseComp-Plus 与 FRAMES：HiMPO 在 BCP full-context 从 MEMPO 的 6.63、SUPO 的 6.99 提升到 9.16，在压缩上下文 4k/8k/16k 下也领先；FRAMES 上 full-context 提升到 23.67，也优于 MEMPO/SUPO。作者还声称做了 controlled interventions，表明 HiMPO 能减少 tool-induced errors 的 blame leakage，并改善 memory update attribution fidelity。实验方向是对题的，但 BCP/FRAMES 的绝对准确率偏低，且 judge-based 评测依赖 LLM judge，仍需要看完整附录中的显著性、种子、prompt、judge 一致性和 LocalWikiSearch 细节。",
+        "research_help": "对 Junle 的研究有中高价值，尤其适合用来思考 multi-turn agent 中 memory/action/reasoning 的 credit disentanglement。它不是简单提出一个记忆模块，而是把 memory write 当作可优化动作，并显式区分 memory 错、tool 错、reasoning 错，这对 agent planning reliability、long-horizon planning、compressed state learning 都有启发。若 Junle 在做 AgentGym-RL、verl 或多轮 planning agent，可以借鉴它的三个设计：memory-token-only advantage、同状态 memory replacement counterfactual、hindsight-conditioned relevance gate。不过它目前更偏 memory compression RL，不是完整的规划策略学习框架；对真实环境规划、复杂工具链和长期偏好记忆的泛化还需进一步验证。",
         "recommendation": {
           "score": 98,
           "level": "高",
@@ -513,10 +574,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
-        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
-        "experiments": "摘要没有明确实验数字；自动化建议先打开正文检查 benchmark、baseline、ablation 和失败案例。",
-        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。"
+        "motivation": "论文抓住了一个对 long-horizon agent 很关键的问题：压缩记忆不是普通的摘要任务，而是会参与后续推理、工具调用和最终答案的状态写入。作者指出，若只用最终成功/失败给 <mem> token 分配奖励，工具错误、观察噪声、后续推理错误都会把 blame 错误传回 memory write，导致有用证据被删、无关信息被保留。这个动机和 agentic RL、agent memory、planning reliability 的交叉点高度相关。",
+        "method": "HiMPO 把每次 memory update 视作 policy-controlled writing action。核心信号有两个：第一是 local counterfactual utility，在同一个 pre-write state 下比较 updated memory 与 previous memory 对 oracle target outcome 的 recoverability，即答案 log-likelihood 的差值；第二是 hindsight relevance，用目标 outcome 条件下该 memory write 相对 sibling rollouts 的似然作为 retrospective filter。两者通过 sign-consistent gate 组合，只在本地效用和 hindsight relevance 方向一致时放行 memory-specific advantage。该 advantage 只加到 <mem> span，其他 token 仍使用 trajectory-level reward，并配合 successful trajectory mask 与 backward smoothing 稳定训练。整体方法比单纯 outcome-level RL 更像是在做 memory 写入动作的局部信用分配。",
+        "experiments": "实验覆盖 judge-based open-domain long-horizon tasks 和 objective compressive-memory QA。可见正文中重点报告了 BrowseComp-Plus 与 FRAMES：HiMPO 在 BCP full-context 从 MEMPO 的 6.63、SUPO 的 6.99 提升到 9.16，在压缩上下文 4k/8k/16k 下也领先；FRAMES 上 full-context 提升到 23.67，也优于 MEMPO/SUPO。作者还声称做了 controlled interventions，表明 HiMPO 能减少 tool-induced errors 的 blame leakage，并改善 memory update attribution fidelity。实验方向是对题的，但 BCP/FRAMES 的绝对准确率偏低，且 judge-based 评测依赖 LLM judge，仍需要看完整附录中的显著性、种子、prompt、judge 一致性和 LocalWikiSearch 细节。",
+        "research_help": "对 Junle 的研究有中高价值，尤其适合用来思考 multi-turn agent 中 memory/action/reasoning 的 credit disentanglement。它不是简单提出一个记忆模块，而是把 memory write 当作可优化动作，并显式区分 memory 错、tool 错、reasoning 错，这对 agent planning reliability、long-horizon planning、compressed state learning 都有启发。若 Junle 在做 AgentGym-RL、verl 或多轮 planning agent，可以借鉴它的三个设计：memory-token-only advantage、同状态 memory replacement counterfactual、hindsight-conditioned relevance gate。不过它目前更偏 memory compression RL，不是完整的规划策略学习框架；对真实环境规划、复杂工具链和长期偏好记忆的泛化还需进一步验证。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其值得看方法和消融/干预实验",
+        "value_reason": "推荐等级给高，是因为论文问题定义很贴近 agentic RL 的真实痛点：long-horizon agent 的最终奖励经常把非 memory 错误错误归因给 memory token。HiMPO 的 local counterfactual utility + hindsight filter 设计有明确机制创新，比只做最终 reward shaping 或 summary SFT 更有研究参考价值。偏水风险给中，原因是主表提升幅度相对明确但绝对性能不高，BCP full-context 只有个位数准确率，FRAMES 也只有二十多；同时 open-domain 结果依赖 LLM judge，且论文来自 2026 arXiv 预印本，尚未从提供文本中看到同行评审或强外部复现证据。",
+        "limitations": "主要局限包括：1. local counterfactual utility 依赖 oracle target outcome 的 log-likelihood，训练时可行但真实在线 agent 场景未必总有高质量 target；2. hindsight relevance 是相对 sibling rollouts 的 proxy，不是真正因果干预，仍可能受模型似然偏置影响；3. judge-based benchmark 的可信度取决于 judge prompt 和模型一致性；4. BCP/FRAMES 的绝对准确率偏低，说明方法虽改善 memory credit，但还没有解决整体 long-horizon agent 能力瓶颈；5. 提供文本在消融实验处截断，因此无法完整核查所有 ablation、LocalWikiSearch 数值和 controlled intervention 的细节。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出 causally entangled memory credit：同样的 final failure 可能来自 tool 错误，也可能来自 memory 丢失关键事实，不能直接把失败归因给 memory。",
+          "HiMPO 的 local utility 定义为在相同 pre-write state 下，用 updated memory 与 previous memory 分别计算 target outcome answerability score 的差值。",
+          "hindsight relevance 通过目标 outcome 条件下 memory token likelihood 相对同 prompt、同 step sibling rollouts 的中心化值构造，并作为 bounded retrospective filter。",
+          "memory-specific advantage 只应用到 <mem> span，其他 token 使用 trajectory-level advantage，从而把 memory 写入优化和全局行为优化分开。可见主表显示 HiMPO 在 BrowseComp-Plus 和 FRAMES 上优于 MEMPO、SUPO、SFT-only 与 ReAct。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:25:38.482Z"
       }
     },
     {
@@ -550,11 +626,11 @@
       "venue_status": "未确认录用",
       "recommendation": {
         "score": 94,
-        "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+        "level": "低",
+        "label": "生物生成模型为主，agentic planning 价值偏弱",
+        "water_risk": "中",
+        "value_judgement": "值得扫读摘要、方法图和 PepCraft workflow，但不太值得作为 Junle agent planning 主线精读。论文的实证价值主要来自非天然 AMP 生成和小规模湿实验验证；agentic 部分更像把已有工具串成多 agent workflow，创新性和评测深度不足。",
+        "reason": "值得扫读摘要、方法图和 PepCraft workflow，但不太值得作为 Junle agent planning 主线精读。论文的实证价值主要来自非天然 AMP 生成和小规模湿实验验证；agentic 部分更像把已有工具串成多 agent workflow，创新性和评测深度不足。",
         "signals": {
           "agenticRl": true,
           "multiTurn": false,
@@ -586,17 +662,17 @@
         "project_url": "",
         "repo_url": "https://github.com/marszzibros/AMPGANv3",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+        "contribution": "值得扫读摘要、方法图和 PepCraft workflow，但不太值得作为 Junle agent planning 主线精读。论文的实证价值主要来自非天然 AMP 生成和小规模湿实验验证；agentic 部分更像把已有工具串成多 agent workflow，创新性和评测深度不足。",
         "summary": "Antimicrobial resistance causes to over a million deaths annually. Antimicrobial peptides (AMPs) are a promising solution, but generative AMP models are not yet ready to design peptides with non-natural amino acids and/or chemical modifications, which are essential for real-world peptide drugs. We present AMPGAN v3, a multi-objective conditional GAN that expands the generative vocabulary to D-amino acids and N/C-ter...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "值得扫读摘要、方法图和 PepCraft workflow，但不太值得作为 Junle agent planning 主线精读。论文的实证价值主要来自非天然 AMP 生成和小规模湿实验验证；agentic 部分更像把已有工具串成多 agent workflow，创新性和评测深度不足。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
-        "method": "We present AMPGAN v3, a multi-objective conditional GAN that expands the generative vocabulary to D-amino acids and N/C-terminus modifications such as amidation.",
-        "experiments": "We validated five candidates spanning three structural classes in vitro; two showed activity against Gram-positive strains, with the best candidate reaching MIC 8 μg/mL against B.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文主要动机是把抗菌肽生成从标准 L-氨基酸序列扩展到更接近真实药物设计的非天然氨基酸、D-氨基酸和端基修饰，并解决旧 AMPGAN 训练不稳定的问题。另一个动机是把生成、过滤、数据库验证等重复步骤包装成一个多 agent 发现流程 PepCraft。这个动机在生物分子设计上比较清楚，但和 agentic RL、long-horizon planning、agent memory 的核心问题关系较弱。",
+        "method": "核心方法是 AMPGAN v3：一个多目标 conditional GAN，用条件变量控制目标物种、MIC 和长度，生成器结合 FiLM conditioning、转置卷积和 Transformer encoder；训练时把真实性判别 D_adv 和活性/MIC 回归 D_mic 拆成两个判别器，以提升稳定性。PepCraft 部分是一个 Planning Agent 调度 Generating、Filtering、Verifying 等 executor agent，按自然语言目标迭代调用生成、理化性质过滤、结构预测和数据库/BLAST 验证工具。整体更像 LLM 工具编排 pipeline，而不是严肃的规划算法或 RL agent。",
+        "experiments": "实验亮点是有真实湿实验验证：合成并测试 5 个候选肽，覆盖 alpha-helix、beta-hairpin、random-coil 等结构，并包含 D-amino acid 和 amidation；其中 2 个对 Gram-positive strains 有活性，最好候选在 B. subtilis 上达到 MIC 8 µg/mL。论文还声称 AMPGAN v3 在外部分类器上优于既有生成 AMP 模型，并改善旧 AMPGAN 的训练稳定性；PepCraft 的候选优先级与体外结果一致。但从提供文本看，agent pipeline 的实验更偏案例展示，缺少对 planner 成功率、失败恢复、长程任务鲁棒性、多轮决策质量的系统评估。",
+        "research_help": "对 Junle 的 agent planning 研究帮助有限到中等。可借鉴的是科学发现场景中 Planning Agent 调度生成器、过滤器、验证器的任务分解形式，以及如何把 agentic workflow 与真实实验闭环连接起来。若关注 multi-turn tool-use agent 的可靠性，它可作为一个小型生物设计 case study。但它不提供新的 agentic RL 训练方法、长期规划 benchmark、agent memory 机制、复杂状态跟踪或 planning reliability 的严谨评测，因此不应作为核心 planning 论文精读。",
         "recommendation": {
           "score": 94,
           "level": "高",
@@ -617,10 +693,25 @@
         }
       },
       "analysis": {
-        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
-        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
-        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文主要动机是把抗菌肽生成从标准 L-氨基酸序列扩展到更接近真实药物设计的非天然氨基酸、D-氨基酸和端基修饰，并解决旧 AMPGAN 训练不稳定的问题。另一个动机是把生成、过滤、数据库验证等重复步骤包装成一个多 agent 发现流程 PepCraft。这个动机在生物分子设计上比较清楚，但和 agentic RL、long-horizon planning、agent memory 的核心问题关系较弱。",
+        "method": "核心方法是 AMPGAN v3：一个多目标 conditional GAN，用条件变量控制目标物种、MIC 和长度，生成器结合 FiLM conditioning、转置卷积和 Transformer encoder；训练时把真实性判别 D_adv 和活性/MIC 回归 D_mic 拆成两个判别器，以提升稳定性。PepCraft 部分是一个 Planning Agent 调度 Generating、Filtering、Verifying 等 executor agent，按自然语言目标迭代调用生成、理化性质过滤、结构预测和数据库/BLAST 验证工具。整体更像 LLM 工具编排 pipeline，而不是严肃的规划算法或 RL agent。",
+        "experiments": "实验亮点是有真实湿实验验证：合成并测试 5 个候选肽，覆盖 alpha-helix、beta-hairpin、random-coil 等结构，并包含 D-amino acid 和 amidation；其中 2 个对 Gram-positive strains 有活性，最好候选在 B. subtilis 上达到 MIC 8 µg/mL。论文还声称 AMPGAN v3 在外部分类器上优于既有生成 AMP 模型，并改善旧 AMPGAN 的训练稳定性；PepCraft 的候选优先级与体外结果一致。但从提供文本看，agent pipeline 的实验更偏案例展示，缺少对 planner 成功率、失败恢复、长程任务鲁棒性、多轮决策质量的系统评估。",
+        "research_help": "对 Junle 的 agent planning 研究帮助有限到中等。可借鉴的是科学发现场景中 Planning Agent 调度生成器、过滤器、验证器的任务分解形式，以及如何把 agentic workflow 与真实实验闭环连接起来。若关注 multi-turn tool-use agent 的可靠性，它可作为一个小型生物设计 case study。但它不提供新的 agentic RL 训练方法、长期规划 benchmark、agent memory 机制、复杂状态跟踪或 planning reliability 的严谨评测，因此不应作为核心 planning 论文精读。",
+        "recommendation_level": "低",
+        "water_risk": "中",
+        "value_label": "生物生成模型为主，agentic planning 价值偏弱",
+        "value_reason": "值得扫读摘要、方法图和 PepCraft workflow，但不太值得作为 Junle agent planning 主线精读。论文的实证价值主要来自非天然 AMP 生成和小规模湿实验验证；agentic 部分更像把已有工具串成多 agent workflow，创新性和评测深度不足。",
+        "limitations": "提供的 source_scope 标为 full_text，但当前 source_text 在 Experiments 开头附近截断，因此对后续详细实验表、消融、统计显著性和 PepCraft 轨迹只能基于已给文本与摘要判断。若完整 PDF 后半部分包含更强的 agent 评测，本判断可能需要修正。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要称 AMPGAN v3 扩展生成词表到 D-amino acids 和 N/C-terminus modifications，并通过两个专门 discriminator 分离 adversarial 与 activity-aware supervision。",
+          "论文指出旧 AMPGAN 训练不稳定，约 10% random initializations 产生可用模型，失败时会塌缩到重复单 token 输出。",
+          "方法部分描述 Planning Agent 会根据用户目标和上一轮 report 选择 executor，并可在目标未满足时重新调用 executor。",
+          "PepCraft 的 executor 包括 Generating Agent、Filtering Agent 和 Verifying Agent，分别负责生成/结构预测、理化与结构过滤、BLAST 与训练数据库验证。引文声称 prioritization recommendations 与体外结果一致。源码中摘要报告 5 个候选中 2 个对 Gram-p..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:43:35.389Z"
       }
     },
     {
@@ -646,11 +737,11 @@
       "venue_status": "未确认录用",
       "recommendation": {
         "score": 86,
-        "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "level": "低",
+        "label": "可略读，除非你正在收集 MARL 轨迹规划或资源拥塞规划案例",
+        "water_risk": "中",
+        "value_judgement": "论文问题设定清楚，建模链条完整，至少不是纯概念拼接；但创新主要是把 congestion game 表述、MAPPO、UAV 通信轨迹规划和 reward shaping 组合到一个特定无线网络场景中。对于 Junle 的 agent planning 主线，方法迁移价值有限，实验也偏小规模仿真，因此不值得作为重点阅读论文。",
+        "reason": "论文问题设定清楚，建模链条完整，至少不是纯概念拼接；但创新主要是把 congestion game 表述、MAPPO、UAV 通信轨迹规划和 reward shaping 组合到一个特定无线网络场景中。对于 Junle 的 agent planning 主线，方法迁移价值有限，实验也偏小规模仿真，因此不值得作为重点阅读论文。",
         "signals": {
           "agenticRl": true,
           "multiTurn": false,
@@ -676,17 +767,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "论文问题设定清楚，建模链条完整，至少不是纯概念拼接；但创新主要是把 congestion game 表述、MAPPO、UAV 通信轨迹规划和 reward shaping 组合到一个特定无线网络场景中。对于 Junle 的 agent planning 主线，方法迁移价值有限，实验也偏小规模仿真，因此不值得作为重点阅读论文。",
         "summary": "The Low-Altitude Economy (LAE) is rapidly expanding, giving rise to low-altitude wireless networks (LAWNs), where large-scale cellular-connected unmanned aerial vehicle (UAV) deployments support heterogeneous mission-critical applications over multi-cell ground base station (GBS) infrastructures. To ensure mission success, each UAV must jointly optimize communication throughput and mission completion efficiency. In...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "论文问题设定清楚，建模链条完整，至少不是纯概念拼接；但创新主要是把 congestion game 表述、MAPPO、UAV 通信轨迹规划和 reward shaping 组合到一个特定无线网络场景中。对于 Junle 的 agent planning 主线，方法迁移价值有限，实验也偏小规模仿真，因此不值得作为重点阅读论文。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
-        "method": "To fill this gap, we formulate the problem as a cooperative stochastic congestion game with a communication-and-mission-aware utility function, and propose a centralized-training decentralized-execution multi-agent proximal policy optimization (CTDE-MAPPO) algorithm to maximize social welfare under multi-cell RB congestion.",
-        "experiments": "To ensure mission success, each UAV must jointly optimize communication throughput and mission completion efficiency.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文动机是低空无线网络中多架 UAV 在多小区 GBS 基础设施下执行任务时，轨迹选择会通过共享 resource block 产生强耦合：某 UAV 进入拥塞小区会降低同小区 UAV 的 RB 份额和通信速率。作者认为已有 UAV-MARL 工作要么忽略 RB-sharing coupling，要么主要停留在单小区设定，因此需要一个能同时考虑通信吞吐、任务完成效率和多小区拥塞的去中心化轨迹规划框架。",
+        "method": "方法上，论文把问题形式化为 cooperative stochastic congestion game，并将其转为 MDP。核心设计包括：用 GBS cell load 作为拥塞充分统计量放入 observation；用 EMA rate 结合最短飞行时间比定义终端 utility；设计 rate improvement、navigation progress、collision penalty、terminal payoff/failure penalty 组成的 dense reward；采用 CTDE-MAPPO，训练时 centralized critic 观察全局拥塞状态，执行时每个 UAV 只基于本地 observation 行动。整体是比较标准的 MAPPO + 领域 reward shaping + congestion-game 建模。",
+        "experiments": "实验是仿真环境：4 架 UAV、4 个 GBS、100×100×30 voxel grid，和 Random、IQL、QMIX 比较；5 个随机种子，训练后在 200 个测试 episode 上评估。文中声称 CTDE-MAPPO 在 mean episodic reward 和 mission success rate 上优于基线，并约在 150K environment steps 内达到 95% 以上成功率。不过从提供文本看，实验规模较小，主要是合成模拟，缺少更大规模 swarm、真实网络轨迹、不同拥塞强度、reward/observation ablation、inter-cell interference 等验证。",
+        "research_help": "对 Junle research 的帮助偏有限但不是完全无关。它和 LLM agent planning、multi-turn agent、agent memory 关系很弱，主要价值在于 multi-agent long-horizon trajectory planning 中如何处理耦合资源约束、任务效率与稳定训练。如果你关注 planning reliability，可以借鉴其把外部耦合因素压缩成 sufficient statistic、用终端目标加 dense shaping 解决长时程稀疏反馈、以及 CTDE 在去中心化执行中的信用分配思路。但它不提供语言智能体、多轮交互、记忆机制或 agentic RL benchmark 方面的直接贡献。",
         "recommendation": {
           "score": 86,
           "level": "高",
@@ -707,10 +798,25 @@
         }
       },
       "analysis": {
-        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
-        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
-        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文动机是低空无线网络中多架 UAV 在多小区 GBS 基础设施下执行任务时，轨迹选择会通过共享 resource block 产生强耦合：某 UAV 进入拥塞小区会降低同小区 UAV 的 RB 份额和通信速率。作者认为已有 UAV-MARL 工作要么忽略 RB-sharing coupling，要么主要停留在单小区设定，因此需要一个能同时考虑通信吞吐、任务完成效率和多小区拥塞的去中心化轨迹规划框架。",
+        "method": "方法上，论文把问题形式化为 cooperative stochastic congestion game，并将其转为 MDP。核心设计包括：用 GBS cell load 作为拥塞充分统计量放入 observation；用 EMA rate 结合最短飞行时间比定义终端 utility；设计 rate improvement、navigation progress、collision penalty、terminal payoff/failure penalty 组成的 dense reward；采用 CTDE-MAPPO，训练时 centralized critic 观察全局拥塞状态，执行时每个 UAV 只基于本地 observation 行动。整体是比较标准的 MAPPO + 领域 reward shaping + congestion-game 建模。",
+        "experiments": "实验是仿真环境：4 架 UAV、4 个 GBS、100×100×30 voxel grid，和 Random、IQL、QMIX 比较；5 个随机种子，训练后在 200 个测试 episode 上评估。文中声称 CTDE-MAPPO 在 mean episodic reward 和 mission success rate 上优于基线，并约在 150K environment steps 内达到 95% 以上成功率。不过从提供文本看，实验规模较小，主要是合成模拟，缺少更大规模 swarm、真实网络轨迹、不同拥塞强度、reward/observation ablation、inter-cell interference 等验证。",
+        "research_help": "对 Junle research 的帮助偏有限但不是完全无关。它和 LLM agent planning、multi-turn agent、agent memory 关系很弱，主要价值在于 multi-agent long-horizon trajectory planning 中如何处理耦合资源约束、任务效率与稳定训练。如果你关注 planning reliability，可以借鉴其把外部耦合因素压缩成 sufficient statistic、用终端目标加 dense shaping 解决长时程稀疏反馈、以及 CTDE 在去中心化执行中的信用分配思路。但它不提供语言智能体、多轮交互、记忆机制或 agentic RL benchmark 方面的直接贡献。",
+        "recommendation_level": "低",
+        "water_risk": "中",
+        "value_label": "可略读，除非你正在收集 MARL 轨迹规划或资源拥塞规划案例",
+        "value_reason": "论文问题设定清楚，建模链条完整，至少不是纯概念拼接；但创新主要是把 congestion game 表述、MAPPO、UAV 通信轨迹规划和 reward shaping 组合到一个特定无线网络场景中。对于 Junle 的 agent planning 主线，方法迁移价值有限，实验也偏小规模仿真，因此不值得作为重点阅读论文。",
+        "limitations": "主要限制包括：假设 LoS-dominant 且 interference-free，邻近 GBS 的 inter-cell interference 被留作 future work；等 RB 分配和最近 GBS association 简化了真实 5G/6G 网络调度；实验只有 4 UAV/4 GBS 的小规模合成环境；未看到充分的消融实验来证明 congestion-aware observation、EMA utility、各 reward 项分别有效；和真实 low-altitude deployment 的 gap 较大。若提供文本确实覆盖全文，则这些是全文级判断；若 PDF 抽取有截断，实验细节判断可能不完整。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "作者明确指出 equal RB allocation 会导致 UAV 轨迹之间通过 GBS cell load 和 RB share 产生战略耦合。",
+          "论文将多 UAV trajectory planning 建模为 cooperative stochastic congestion game，并以 social welfare 最大化为目标。",
+          "方法采用 CTDE-MAPPO，centralized critic 在训练时访问全局状态和 cell load，执行时只部署 decentralized actor。",
+          "reward 由 EMA rate 增量、朝目的地距离进展、collision penalty、terminal utility 或 failure penalty 组成。文中称 dense reward 用于缓解长时程 terminal payoff 的稀疏反馈。文中实验设置为 4 UAV、4 GBS、100×100×30 voxel grid，与 Ra..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:35:32.989Z"
       }
     },
     {
@@ -738,11 +844,11 @@
       "venue_status": "未确认录用",
       "recommendation": {
         "score": 80,
-        "level": "高",
-        "label": "值得读",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+        "level": "中",
+        "label": "值得略读，重点看目录语义抽象、TRIEHI 设计和 OpenViking 集成部分",
+        "water_risk": "中",
+        "value_judgement": "价值主要在工程系统化：它把目录作用域、递归检索、目录移动/合并维护这些 agent memory 中常见但容易被忽略的问题明确抽象出来，并给出与向量检索结合的实现路径。偏水风险在于算法创新较有限，Trie 与路径展开对比比较自然，论文可能更多是工程封装和系统 benchmark；但因为有真实系统集成、开源数据集和 agent context database 场景，不能简单判为水文。",
+        "reason": "价值主要在工程系统化：它把目录作用域、递归检索、目录移动/合并维护这些 agent memory 中常见但容易被忽略的问题明确抽象出来，并给出与向量检索结合的实现路径。偏水风险在于算法创新较有限，Trie 与路径展开对比比较自然，论文可能更多是工程封装和系统 benchmark；但因为有真实系统集成、开源数据集和 agent context database 场景，不能简单判为水文。",
         "signals": {
           "agenticRl": true,
           "multiTurn": false,
@@ -770,17 +876,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "价值主要在工程系统化：它把目录作用域、递归检索、目录移动/合并维护这些 agent memory 中常见但容易被忽略的问题明确抽象出来，并给出与向量检索结合的实现路径。偏水风险在于算法创新较有限，Trie 与路径展开对比比较自然，论文可能更多是工程封装和系统 benchmark；但因为有真实系统集成、开源数据集和 agent context database 场景，不能简单判为水文。",
         "summary": "Vector databases typically manage metadata as flat scalar attributes, which limits their ability to express hierarchical directory semantics commonly used to organize code repositories, enterprise documents, and agent memories. As a result, directory-scoped retrieval and structural updates are often implemented as application-layer workarounds, making recursive scope resolution expensive and directory maintenance di...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "价值主要在工程系统化：它把目录作用域、递归检索、目录移动/合并维护这些 agent memory 中常见但容易被忽略的问题明确抽象出来，并给出与向量检索结合的实现路径。偏水风险在于算法创新较有限，Trie 与路径展开对比比较自然，论文可能更多是工程封装和系统 benchmark；但因为有真实系统集成、开源数据集和 agent context database 场景，不能简单判为水文。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
-        "method": "Vector databases typically manage metadata as flat scalar attributes, which limits their ability to express hierarchical directory semantics commonly used to organize code repositories, enterprise documents, and agent memories.",
-        "experiments": "As a result, directory-scoped retrieval and structural updates are often implemented as application-layer workarounds, making recursive scope resolution expensive and directory maintenance difficult to keep consistent.",
-        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。",
+        "motivation": "论文关注向量数据库中目录层级语义缺失的问题：当前 RAG、代码库、企业文档和 agent memory 往往按目录/命名空间组织，但多数向量数据库只把 metadata 当作扁平属性处理，导致递归检索、分支排除、目录移动/合并等操作需要在应用层绕行。这个动机对 agent memory 和长上下文管理有一定价值，尤其是多轮 agent 需要按项目、任务、版本、用户空间隔离记忆时。",
+        "method": "论文定义了 Directory-Semantic Query 和 Directory-Semantic Maintenance 两类操作，并比较三种实现：查询时路径展开、写入时路径展开、以及基于 Trie 的层级索引 TRIEHI。核心思想不是改 ANN 检索算法，而是在向量检索前增加目录语义的 scope-resolution 层，用树遍历和拓扑操作替代大规模路径枚举或 metadata 重写。方法本身工程直观，Trie 方案并不新奇，但把它作为向量数据库的原生目录语义层来系统化实现和评估，仍有实用意义。",
+        "experiments": "从提供文本看，实验包括在 ByteDance Viking 向量搜索引擎中比较递归/非递归目录查询、目录 move/merge 维护、索引与存储开销，并构造 WIKI-Dir 和 ARXIV-Dir 两个目录结构数据集；还将 TRIEHI 集成到 OpenViking，并在用户记忆和知识库 QA 工作负载上评估。实验设计覆盖读写路径和实际 agent context database 场景，这是加分项。不过当前文本中没有完整可核验的结果表和消融细节，因此只能基于论文陈述判断其系统实验较完整，不能过度相信性能结论。",
+        "research_help": "对 Junle 的 agentic RL、multi-turn agent、long-horizon planning 研究不是核心算法论文，但对 agent memory 和 planning reliability 有中等帮助。它可作为构建层级化 agent memory、任务目录、技能库、长期上下文仓库的系统参考，尤其适合思考如何避免检索到过期分支、错误项目、错误版本的记忆。对 RL 训练方法、planning policy、credit assignment、multi-turn decision making 没有直接贡献。",
         "recommendation": {
           "score": 80,
           "level": "高",
@@ -801,10 +907,25 @@
         }
       },
       "analysis": {
-        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
-        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
-        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。"
+        "motivation": "论文关注向量数据库中目录层级语义缺失的问题：当前 RAG、代码库、企业文档和 agent memory 往往按目录/命名空间组织，但多数向量数据库只把 metadata 当作扁平属性处理，导致递归检索、分支排除、目录移动/合并等操作需要在应用层绕行。这个动机对 agent memory 和长上下文管理有一定价值，尤其是多轮 agent 需要按项目、任务、版本、用户空间隔离记忆时。",
+        "method": "论文定义了 Directory-Semantic Query 和 Directory-Semantic Maintenance 两类操作，并比较三种实现：查询时路径展开、写入时路径展开、以及基于 Trie 的层级索引 TRIEHI。核心思想不是改 ANN 检索算法，而是在向量检索前增加目录语义的 scope-resolution 层，用树遍历和拓扑操作替代大规模路径枚举或 metadata 重写。方法本身工程直观，Trie 方案并不新奇，但把它作为向量数据库的原生目录语义层来系统化实现和评估，仍有实用意义。",
+        "experiments": "从提供文本看，实验包括在 ByteDance Viking 向量搜索引擎中比较递归/非递归目录查询、目录 move/merge 维护、索引与存储开销，并构造 WIKI-Dir 和 ARXIV-Dir 两个目录结构数据集；还将 TRIEHI 集成到 OpenViking，并在用户记忆和知识库 QA 工作负载上评估。实验设计覆盖读写路径和实际 agent context database 场景，这是加分项。不过当前文本中没有完整可核验的结果表和消融细节，因此只能基于论文陈述判断其系统实验较完整，不能过度相信性能结论。",
+        "research_help": "对 Junle 的 agentic RL、multi-turn agent、long-horizon planning 研究不是核心算法论文，但对 agent memory 和 planning reliability 有中等帮助。它可作为构建层级化 agent memory、任务目录、技能库、长期上下文仓库的系统参考，尤其适合思考如何避免检索到过期分支、错误项目、错误版本的记忆。对 RL 训练方法、planning policy、credit assignment、multi-turn decision making 没有直接贡献。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "值得略读，重点看目录语义抽象、TRIEHI 设计和 OpenViking 集成部分",
+        "value_reason": "价值主要在工程系统化：它把目录作用域、递归检索、目录移动/合并维护这些 agent memory 中常见但容易被忽略的问题明确抽象出来，并给出与向量检索结合的实现路径。偏水风险在于算法创新较有限，Trie 与路径展开对比比较自然，论文可能更多是工程封装和系统 benchmark；但因为有真实系统集成、开源数据集和 agent context database 场景，不能简单判为水文。",
+        "limitations": "与 Junle 关注的 agent planning 主线距离较远；没有直接解决多轮规划、长期任务分解、agentic RL 或 planning reliability 的策略层问题。论文价值依赖实验细节是否充分公开、数据集是否真实反映复杂 agent memory 结构、以及 TRIEHI 在动态高并发场景下是否稳定。提供文本不完整展示所有实验结果，因此对性能优势只能做保守判断。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要明确指出向量数据库通常将 metadata 作为扁平标量属性，难以表达代码库、企业文档和 agent memories 中常见的层级目录语义。",
+          "论文将核心操作形式化为 Directory-Semantic Query 和 Directory-Semantic Maintenance，分别对应层级作用域检索和目录结构更新。",
+          "论文比较 PE-ONLINE、PE-OFFLINE 和 TRIEHI，并指出路径展开方案在递归查询延迟或结构更新写放大上存在根本限制。",
+          "TRIEHI 将目录拓扑保存为原生前缀树，通过树遍历支持递归检索，通过拓扑节点操作降低维护成本。本文还声称已集成到 OpenViking，用于 AI agents 的 filesystem-style context organization 和 directory-recursive retrieval。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:36:14.746Z"
       }
     },
     {
@@ -837,10 +958,10 @@
       "recommendation": {
         "score": 74,
         "level": "中",
-        "label": "值得读",
+        "label": "值得扫读方法与实验设定，不必优先全文精读",
         "water_risk": "中",
-        "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
-        "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "value_judgement": "论文选题贴合 long-horizon planning 和 planning reliability，方法也比纯像素 world model 更接近可迁移的 latent planning 思路；但贡献看起来更像自动驾驶 E2E 架构上的组合式改进：交互图、latent world state、flow matching、query reweighting 都是合理模块，真正的新规划机制和跨域 agent 启发需要谨慎判断。若 Junle 正在收集 world-model-for-planning 或 latent state planning 相关文献，值得纳入；若目标是 agentic RL / multi-turn LLM agent，则优先级低于更通用的交互式规划与记忆论文。",
+        "reason": "论文选题贴合 long-horizon planning 和 planning reliability，方法也比纯像素 world model 更接近可迁移的 latent planning 思路；但贡献看起来更像自动驾驶 E2E 架构上的组合式改进：交互图、latent world state、flow matching、query reweighting 都是合理模块，真正的新规划机制和跨域 agent 启发需要谨慎判断。若 Junle 正在收集 world-model-for-planning 或 latent state planning 相关文献，值得纳入；若目标是 agentic RL / multi-turn LLM agent，则优先级低于更通用的交互式规划与记忆论文。",
         "signals": {
           "agenticRl": false,
           "multiTurn": true,
@@ -872,17 +993,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "论文选题贴合 long-horizon planning 和 planning reliability，方法也比纯像素 world model 更接近可迁移的 latent planning 思路；但贡献看起来更像自动驾驶 E2E 架构上的组合式改进：交互图、latent world state、flow matching、query reweighting 都是合理模块，真正的新规划机制和跨域 agent 启发需要谨慎判断。若 Junle 正在收集 world-model-for-planning 或 latent state planning 相关文献，值得纳入；若目标是 agentic RL / multi-turn LLM agent，则优先级低于更通用的交互式规划与记忆论文。",
         "summary": "End-to-end autonomous driving has made significant progress by unifying perception, prediction, and planning within a single learning framework, achieving strong performance in short-horizon decision making. However, most existing E2E-AD methods remain confined to short-horizon planning and lack the ability to model long-term temporal dependencies, which severely limits their generalization and security in complex a...",
         "highlights": [
-          "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
-          "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "论文选题贴合 long-horizon planning 和 planning reliability，方法也比纯像素 world model 更接近可迁移的 latent planning 思路；但贡献看起来更像自动驾驶 E2E 架构上的组合式改进：交互图、latent world state、flow matching、query reweighting 都是合理模块，真正的新规划机制和跨域 agent 启发需要谨慎判断。若 Junle 正在收集 world-model-for-planning 或 latent state planning 相关文献，值得纳入；若目标是 agentic RL / multi-turn LLM agent，则优先级低于更通用的交互式规划与记忆论文。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
-        "method": "End-to-end autonomous driving has made significant progress by unifying perception, prediction, and planning within a single learning framework, achieving strong performance in short-horizon decision making.",
-        "experiments": "Extensive experiments on Bench2Drive, NAVSIMv1/2, and nuScenes demonstrate that GraphWorld significantly reduces collision rates and improves long-horizon planning performance, validating its effectiveness in complex driving environments.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文针对端到端自动驾驶规划普遍偏短视的问题：现有方法多依赖短时轨迹预测，难以建模多车交互中的长期时序依赖；而显式视频/像素级 world model 虽能想象未来，但推理成本高，不适合实时驾驶。作者试图用紧凑的 ego-centric latent world state 替代像素生成，把长期交互风险压缩成可用于规划的隐变量。",
+        "method": "核心是 GraphWorld：先构建 Ego-Centric Interaction Graph，按空间邻近选择关键邻车，用 cross-attention 将邻车交互信息注入 ego planning queries；再用 World-State-Conditioned Planning，把学到的 latent world state 作为条件信号调制多模态轨迹查询。方法中还使用 Flow Matching 在潜空间建模当前 world state 到目标 world state 的连续演化，避免显式多步 rollout 的误差累积，并通过 importance reweighting 强化更安全、更一致的轨迹假设。",
+        "experiments": "实验覆盖闭环 Bench2Drive、NAVSIM 以及开环 nuScenes 系列评测。根据提供文本，GraphWorld 在长时域规划和安全指标上相对 E2E-AD 与 latent world-model baselines 都有提升，尤其强调降低长时域碰撞率，并在 NAVSIM 上保持比扩散式规划更高的推理效率。实验面较广，这是加分项；但从文本来看，关键证据仍主要是自动驾驶 benchmark 指标，缺少对 learned world state 是否真的具备可解释长期因果/规划能力的更深入诊断。",
+        "research_help": "对 Junle 的 agent planning / planning reliability 方向有中等参考价值。可借鉴点是：把 long-horizon planning 重新定义为“在反复 replanning 下学习 future-aware latent representation”，而不是简单延长 rollout；以及用交互图筛选 decision-relevant agents、用 latent world state 调制候选计划。这些思路可迁移到 multi-agent agent planning、交互式任务规划、memory-conditioned planning reliability。但论文主要是自动驾驶轨迹规划，不是 agentic RL 或语言智能体，多轮记忆、任务分解、环境反馈学习等与 Junle 核心方向的直接重合有限。",
         "recommendation": {
           "score": 74,
           "level": "中",
@@ -903,10 +1024,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
-        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
-        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 Bench2Drive、NAVSIM、nuScenes；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文针对端到端自动驾驶规划普遍偏短视的问题：现有方法多依赖短时轨迹预测，难以建模多车交互中的长期时序依赖；而显式视频/像素级 world model 虽能想象未来，但推理成本高，不适合实时驾驶。作者试图用紧凑的 ego-centric latent world state 替代像素生成，把长期交互风险压缩成可用于规划的隐变量。",
+        "method": "核心是 GraphWorld：先构建 Ego-Centric Interaction Graph，按空间邻近选择关键邻车，用 cross-attention 将邻车交互信息注入 ego planning queries；再用 World-State-Conditioned Planning，把学到的 latent world state 作为条件信号调制多模态轨迹查询。方法中还使用 Flow Matching 在潜空间建模当前 world state 到目标 world state 的连续演化，避免显式多步 rollout 的误差累积，并通过 importance reweighting 强化更安全、更一致的轨迹假设。",
+        "experiments": "实验覆盖闭环 Bench2Drive、NAVSIM 以及开环 nuScenes 系列评测。根据提供文本，GraphWorld 在长时域规划和安全指标上相对 E2E-AD 与 latent world-model baselines 都有提升，尤其强调降低长时域碰撞率，并在 NAVSIM 上保持比扩散式规划更高的推理效率。实验面较广，这是加分项；但从文本来看，关键证据仍主要是自动驾驶 benchmark 指标，缺少对 learned world state 是否真的具备可解释长期因果/规划能力的更深入诊断。",
+        "research_help": "对 Junle 的 agent planning / planning reliability 方向有中等参考价值。可借鉴点是：把 long-horizon planning 重新定义为“在反复 replanning 下学习 future-aware latent representation”，而不是简单延长 rollout；以及用交互图筛选 decision-relevant agents、用 latent world state 调制候选计划。这些思路可迁移到 multi-agent agent planning、交互式任务规划、memory-conditioned planning reliability。但论文主要是自动驾驶轨迹规划，不是 agentic RL 或语言智能体，多轮记忆、任务分解、环境反馈学习等与 Junle 核心方向的直接重合有限。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "值得扫读方法与实验设定，不必优先全文精读",
+        "value_reason": "论文选题贴合 long-horizon planning 和 planning reliability，方法也比纯像素 world model 更接近可迁移的 latent planning 思路；但贡献看起来更像自动驾驶 E2E 架构上的组合式改进：交互图、latent world state、flow matching、query reweighting 都是合理模块，真正的新规划机制和跨域 agent 启发需要谨慎判断。若 Junle 正在收集 world-model-for-planning 或 latent state planning 相关文献，值得纳入；若目标是 agentic RL / multi-turn LLM agent，则优先级低于更通用的交互式规划与记忆论文。",
+        "limitations": "主要局限是领域较窄，评测集中在自动驾驶轨迹预测/规划 benchmark；“long-horizon”主要体现为短秒级轨迹与反复 replanning 下的安全改进，不等同于复杂任务级长程规划。文本中尚未看到强消融能证明 latent world state 学到了可泛化的世界模型，而不是更强的交互特征融合器。论文状态显示为 submitted，不能据此认为已经被顶会/期刊接收。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要和引言明确指出现有 E2E-AD 受限于短时域规划，缺少长期时序依赖建模。",
+          "方法部分提出 Ego-Centric Interaction Graph，通过邻近筛选关键 agent，并用 cross-attention 将交互上下文传播到 ego planning queries。",
+          "论文将 long-horizon planning 解释为反复 replanning 下的前瞻决策能力，而非执行固定长轨迹。",
+          "World-State-Conditioned Planning 使用 latent world state 条件化多模态轨迹查询，并用 Flow Matching 建模潜空间世界状态演化。」「实验声称在 Bench2Drive、NAVSIM、nuScenes 等闭环和开环评测上降低碰撞并改善长时域规划，同时比扩散式方法更高效。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:36:55.341Z"
       }
     },
     {
@@ -939,11 +1075,11 @@
       "venue_status": "未确认录用",
       "recommendation": {
         "score": 46,
-        "level": "低",
-        "label": "暂不优先",
-        "water_risk": "高",
-        "value_judgement": "可能偏水：主题或实验信号偏弱，除非和当前问题强相关，否则不优先。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization。",
+        "level": "中",
+        "label": "值得快速精读框架部分，低优先级复现",
+        "water_risk": "中",
+        "value_judgement": "值得读的主要原因是它把 GRPO 之后的混乱方法空间重新压到 J(θ)=E[R(τ)] 的两个因子上，对理解 agentic RL 中 rollout 质量、工具交互、延迟反馈和 credit assignment 的耦合很有帮助。偏水风险来自两点：第一，贡献主要是 taxonomy 和重新表述，可能有“框架包装已知内容”的成分；第二，提供文本未显示实证验证或真正新算法，标题中的“structural extensions”可能比实际贡献更宏大。",
+        "reason": "值得读的主要原因是它把 GRPO 之后的混乱方法空间重新压到 J(θ)=E[R(τ)] 的两个因子上，对理解 agentic RL 中 rollout 质量、工具交互、延迟反馈和 credit assignment 的耦合很有帮助。偏水风险来自两点：第一，贡献主要是 taxonomy 和重新表述，可能有“框架包装已知内容”的成分；第二，提供文本未显示实证验证或真正新算法，标题中的“structural extensions”可能比实际贡献更宏大。",
         "signals": {
           "agenticRl": true,
           "multiTurn": false,
@@ -976,17 +1112,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization。",
+        "contribution": "值得读的主要原因是它把 GRPO 之后的混乱方法空间重新压到 J(θ)=E[R(τ)] 的两个因子上，对理解 agentic RL 中 rollout 质量、工具交互、延迟反馈和 credit assignment 的耦合很有帮助。偏水风险来自两点：第一，贡献主要是 taxonomy 和重新表述，可能有“框架包装已知内容”的成分；第二，提供文本未显示实证验证或真正新算法，标题中的“structural extensions”可能比实际贡献更宏大。",
         "summary": "Policy gradient algorithms for language models optimize the same objective $J(θ) = \\mathbb{E}*{τ\\sim p*θ(τ)}[R(τ)]$, which has exactly two factors: the trajectory probability $p_θ(τ)$ and the reward $R(τ)$. Every method from REINFORCE to PPO to GRPO and their descendants modifies one or both factors to address a specific failure in the preceding formulation. Existing surveys organize these methods by domain or chron...",
         "highlights": [
-          "可能偏水：主题或实验信号偏弱，除非和当前问题强相关，否则不优先。",
-          "直接覆盖 agentic RL 或 policy optimization。",
-          "摘要缺少明确实验信号，可能需要降低阅读优先级。"
+          "值得读的主要原因是它把 GRPO 之后的混乱方法空间重新压到 J(θ)=E[R(τ)] 的两个因子上，对理解 agentic RL 中 rollout 质量、工具交互、延迟反馈和 credit assignment 的耦合很有帮助。偏水风险来自两点：第一，贡献主要是 taxonomy 和重新表述，可能有“框架包装已知内容”的成分；第二，提供文本未显示实证验证或真正新算法，标题中的“structural extensions”可能比实际贡献更宏大。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "Every method from REINFORCE to PPO to GRPO and their descendants modifies one or both factors to address a specific failure in the preceding formulation.",
-        "experiments": "摘要没有明确实验数字；自动化建议先打开正文检查 benchmark、baseline、ablation 和失败案例。",
-        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。",
+        "motivation": "论文试图解决 LLM policy optimization 文献快速膨胀后难以诊断的问题：现有综述多按时间线、任务域或算法家族组织，难以回答“某个训练失败来自轨迹采样/复用/约束，还是来自奖励分配/归一化/credit assignment”。它从 J(θ)=E[R(τ)] 出发，把所有 policy-gradient 类方法拆成 trajectory side 和 reward side 两个干预轴。",
+        "method": "这是一篇理论综述/框架型论文，不是提出完整新算法。核心方法是用一阶原理重写从 REINFORCE、Actor-Critic、GAE、PPO 到 GRPO 的演化逻辑，并把 post-GRPO 方法、Agentic RL、GRPO-OPD 放入同一张“轨迹侧/奖励侧”诊断图中。对 Junle 关注的 agentic RL，它把 multi-turn environment interaction 视为 trajectory side 的扩展，同时指出 delayed feedback 和 temporal credit assignment 会带来 reward side 难题，因此需要两侧联合设计。",
+        "experiments": "提供文本中没有看到新的实验、benchmark 或定量结果；主要贡献是理论推导、文献组织和诊断分类。它的“结果”更多是概念性结论：单侧修补无法解决部分 coupled failures，Agentic RL 和 GRPO-OPD 会暴露 trajectory construction 与 reward construction 的耦合问题。因此不能把它当作有实证性能提升的算法论文来读。",
+        "research_help": "对 Junle research 的帮助为中到高：它能提供一套整理 agentic RL、GRPO、multi-turn rollout、delayed reward、credit assignment、planning reliability 的语言框架，适合用于写 related work、设计 planning-RL 方法 taxonomy、定位长程交互训练失败原因。直接帮助有限之处在于它不是专门研究 long-horizon planning benchmark、agent memory 或 multi-turn planning reliability 的实证论文，也没有给出可直接复现的新训练方案。",
         "recommendation": {
           "score": 46,
           "level": "低",
@@ -1007,10 +1143,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
-        "experiments": "摘要没有明确实验数字；自动化建议先打开正文检查 benchmark、baseline、ablation 和失败案例。",
-        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。"
+        "motivation": "论文试图解决 LLM policy optimization 文献快速膨胀后难以诊断的问题：现有综述多按时间线、任务域或算法家族组织，难以回答“某个训练失败来自轨迹采样/复用/约束，还是来自奖励分配/归一化/credit assignment”。它从 J(θ)=E[R(τ)] 出发，把所有 policy-gradient 类方法拆成 trajectory side 和 reward side 两个干预轴。",
+        "method": "这是一篇理论综述/框架型论文，不是提出完整新算法。核心方法是用一阶原理重写从 REINFORCE、Actor-Critic、GAE、PPO 到 GRPO 的演化逻辑，并把 post-GRPO 方法、Agentic RL、GRPO-OPD 放入同一张“轨迹侧/奖励侧”诊断图中。对 Junle 关注的 agentic RL，它把 multi-turn environment interaction 视为 trajectory side 的扩展，同时指出 delayed feedback 和 temporal credit assignment 会带来 reward side 难题，因此需要两侧联合设计。",
+        "experiments": "提供文本中没有看到新的实验、benchmark 或定量结果；主要贡献是理论推导、文献组织和诊断分类。它的“结果”更多是概念性结论：单侧修补无法解决部分 coupled failures，Agentic RL 和 GRPO-OPD 会暴露 trajectory construction 与 reward construction 的耦合问题。因此不能把它当作有实证性能提升的算法论文来读。",
+        "research_help": "对 Junle research 的帮助为中到高：它能提供一套整理 agentic RL、GRPO、multi-turn rollout、delayed reward、credit assignment、planning reliability 的语言框架，适合用于写 related work、设计 planning-RL 方法 taxonomy、定位长程交互训练失败原因。直接帮助有限之处在于它不是专门研究 long-horizon planning benchmark、agent memory 或 multi-turn planning reliability 的实证论文，也没有给出可直接复现的新训练方案。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "值得快速精读框架部分，低优先级复现",
+        "value_reason": "值得读的主要原因是它把 GRPO 之后的混乱方法空间重新压到 J(θ)=E[R(τ)] 的两个因子上，对理解 agentic RL 中 rollout 质量、工具交互、延迟反馈和 credit assignment 的耦合很有帮助。偏水风险来自两点：第一，贡献主要是 taxonomy 和重新表述，可能有“框架包装已知内容”的成分；第二，提供文本未显示实证验证或真正新算法，标题中的“structural extensions”可能比实际贡献更宏大。",
+        "limitations": "目前判断基于提供的全文抽取内容。文本显示理论推导和综述覆盖较多，但缺少实验支撑、缺少对代表性方法的统一实证比较，也不清楚 Agentic RL 部分是否深入到具体多轮规划、记忆状态建模和可靠性评估。部分 2025/2026 引文和方法名需要额外核验其真实影响力。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要明确说论文从 J(θ)=E[R(τ)] 出发，以 trajectory side 和 reward side 作为两个轴组织 REINFORCE、PPO、GRPO、post-GRPO variants、Agentic RL 和 GRPO-OPD。",
+          "引言指出现有综述按 pipeline、方法族或应用域组织，不能回答 practitioner 面对的诊断问题：失败机制来自哪里，以及最小干预应修改哪个因子。",
+          "论文把 trajectory-side 方法描述为处理 rollout collection、compression、diversity、repair、clipping 和 ratio rules，把 reward-side 方法描述为处理 reward density/source/shaping/multi-objective aggregation、...",
+          "对 Agentic RL，文本明确说它把 trajectory side 扩展到 multi-turn environment interaction，同时引入 delayed feedback 和 temporal credit assignment 等 reward-side challenges。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:37:29.745Z"
       }
     },
     {
@@ -1041,10 +1192,10 @@
       "recommendation": {
         "score": 98,
         "level": "高",
-        "label": "强烈推荐",
+        "label": "值得读，尤其适合作为 memory-based agent security 与 planning reliability 的近期代表论文",
         "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "value_judgement": "选题新且击中真实系统趋势：长期记忆正在成为 agent 框架常见能力，而 access control 往往仍是单轮输入检查。论文不只提出概念攻击，还给出黑盒 threat model、自动化 fragment extraction、memory injection、retrieval-fusion pipeline，并在多个 agent/task/guardrail 设置上评估。它对 Junle 关注的 agent memory 和 long-horizon reliability 有直接启发，尤其是把“记忆检索导致的跨轮意图融合”作为可靠性失败模式。",
+        "reason": "选题新且击中真实系统趋势：长期记忆正在成为 agent 框架常见能力，而 access control 往往仍是单轮输入检查。论文不只提出概念攻击，还给出黑盒 threat model、自动化 fragment extraction、memory injection、retrieval-fusion pipeline，并在多个 agent/task/guardrail 设置上评估。它对 Junle 关注的 agent memory 和 long-horizon reliability 有直接启发，尤其是把“记忆检索导致的跨轮意图融合”作为可靠性失败模式。",
         "signals": {
           "agenticRl": true,
           "multiTurn": true,
@@ -1073,17 +1224,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "选题新且击中真实系统趋势：长期记忆正在成为 agent 框架常见能力，而 access control 往往仍是单轮输入检查。论文不只提出概念攻击，还给出黑盒 threat model、自动化 fragment extraction、memory injection、retrieval-fusion pipeline，并在多个 agent/task/guardrail 设置上评估。它对 Junle 关注的 agent memory 和 long-horizon reliability 有直接启发，尤其是把“记忆检索导致的跨轮意图融合”作为可靠性失败模式。",
         "summary": "Large language model (LLM) agents increasingly rely on long-term memory to support complex task execution, user personalization, and domain adaptation. Meanwhile, emerging access-control mechanisms for LLM agents are being explored to block policy-violating requests and prevent misuse. We reveal a novel attack surface arising from agent memory operations: prohibited content that would trigger access control can be f...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "选题新且击中真实系统趋势：长期记忆正在成为 agent 框架常见能力，而 access control 往往仍是单轮输入检查。论文不只提出概念攻击，还给出黑盒 threat model、自动化 fragment extraction、memory injection、retrieval-fusion pipeline，并在多个 agent/task/guardrail 设置上评估。它对 Junle 关注的 agent memory 和 long-horizon reliability 有直接启发，尤其是把“记忆检索导致的跨轮意图融合”作为可靠性失败模式。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
-        "method": "Large language model (LLM) agents increasingly rely on long-term memory to support complex task execution, user personalization, and domain adaptation.",
-        "experiments": "We evaluate FragFuse across four representative agent settings and task domains, covering three state-of-the-art agent access-control mechanisms.",
-        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。",
+        "motivation": "论文抓住了一个很重要且贴近当前 agent 系统的安全缺口：很多 LLM agent 的 access control 只检查当前 query，但带长期记忆的 agent 会把过去交互作为后续执行上下文，因此违规意图可以跨轮次、跨记忆记录被拆分和重组。这个动机与 multi-turn agent、agent memory、planning reliability 高度相关，尤其是说明长期记忆不是单纯的个性化能力，也会成为绕过权限与策略的时间通道。",
+        "method": "方法 FragFuse 分三步：先用黑盒自适应查询和 fragment masking 找出导致 access control 拒绝的敏感片段；再把这些片段包装进看似正常的 carrier query 并写入 agent 长期记忆；最后通过相似 query 检索这些记忆，并用 fusion instruction 把敏感片段和 masked query 合成原始违规意图。论文还提出用 surrogate model 和遗传算法离线优化 fusion instruction 与 marker 设计，以提升检索、融合和隐蔽性。方法的核心价值在于把安全绕过建模成 memory retrieval + multi-turn composition 问题，而不是传统单轮 jailbreak。",
+        "experiments": "实验覆盖四类 agentic setting：WebShop 上的 RAP、Safe-OS 上的 OSAgent、Mind2Web-SC 上的 SeeAct，以及 AgentHarm 上的 InspAgent，并测试 GuardAgent、AGrail、ShieldAgent 等 access-control 机制。论文报告平均 bypass success rate 为 86.3%，平均 harmful end-to-end success rate 为 41.1%，相比 baseline 的 5.7% 明显更高，并称相对无 access control 配置的任务成功率只下降 4.4%。还做了记忆设置、查询效率、攻击设计消融，以及 prompt-injection detector、perplexity detector 防御测试。整体实验面比较广，但端到端成功率并非压倒性，说明攻击实际危害强但仍受 agent 执行能力、记忆写入/检索策略和任务环境影响。",
+        "research_help": "对 Junle research 很有帮助。它直接连接 agent memory、multi-turn agent、long-horizon planning reliability 与安全控制失效：agent 的长期规划和记忆复用会改变单轮安全假设，导致策略违规意图在时间维度上被组合出来。对于研究 planning reliability，可以借鉴它的 threat model，把可靠性从“当前步骤是否安全/正确”扩展到“跨历史交互的 latent intent 是否会被错误激活”。对于做 agentic RL，也可作为环境记忆、policy guardrail、reward hacking 和 delayed unsafe behavior 的案例。",
         "recommendation": {
           "score": 98,
           "level": "高",
@@ -1104,10 +1255,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
-        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
-        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 86.3%、41.1%、4.4%；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。"
+        "motivation": "论文抓住了一个很重要且贴近当前 agent 系统的安全缺口：很多 LLM agent 的 access control 只检查当前 query，但带长期记忆的 agent 会把过去交互作为后续执行上下文，因此违规意图可以跨轮次、跨记忆记录被拆分和重组。这个动机与 multi-turn agent、agent memory、planning reliability 高度相关，尤其是说明长期记忆不是单纯的个性化能力，也会成为绕过权限与策略的时间通道。",
+        "method": "方法 FragFuse 分三步：先用黑盒自适应查询和 fragment masking 找出导致 access control 拒绝的敏感片段；再把这些片段包装进看似正常的 carrier query 并写入 agent 长期记忆；最后通过相似 query 检索这些记忆，并用 fusion instruction 把敏感片段和 masked query 合成原始违规意图。论文还提出用 surrogate model 和遗传算法离线优化 fusion instruction 与 marker 设计，以提升检索、融合和隐蔽性。方法的核心价值在于把安全绕过建模成 memory retrieval + multi-turn composition 问题，而不是传统单轮 jailbreak。",
+        "experiments": "实验覆盖四类 agentic setting：WebShop 上的 RAP、Safe-OS 上的 OSAgent、Mind2Web-SC 上的 SeeAct，以及 AgentHarm 上的 InspAgent，并测试 GuardAgent、AGrail、ShieldAgent 等 access-control 机制。论文报告平均 bypass success rate 为 86.3%，平均 harmful end-to-end success rate 为 41.1%，相比 baseline 的 5.7% 明显更高，并称相对无 access control 配置的任务成功率只下降 4.4%。还做了记忆设置、查询效率、攻击设计消融，以及 prompt-injection detector、perplexity detector 防御测试。整体实验面比较广，但端到端成功率并非压倒性，说明攻击实际危害强但仍受 agent 执行能力、记忆写入/检索策略和任务环境影响。",
+        "research_help": "对 Junle research 很有帮助。它直接连接 agent memory、multi-turn agent、long-horizon planning reliability 与安全控制失效：agent 的长期规划和记忆复用会改变单轮安全假设，导致策略违规意图在时间维度上被组合出来。对于研究 planning reliability，可以借鉴它的 threat model，把可靠性从“当前步骤是否安全/正确”扩展到“跨历史交互的 latent intent 是否会被错误激活”。对于做 agentic RL，也可作为环境记忆、policy guardrail、reward hacking 和 delayed unsafe behavior 的案例。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "值得读，尤其适合作为 memory-based agent security 与 planning reliability 的近期代表论文",
+        "value_reason": "选题新且击中真实系统趋势：长期记忆正在成为 agent 框架常见能力，而 access control 往往仍是单轮输入检查。论文不只提出概念攻击，还给出黑盒 threat model、自动化 fragment extraction、memory injection、retrieval-fusion pipeline，并在多个 agent/task/guardrail 设置上评估。它对 Junle 关注的 agent memory 和 long-horizon reliability 有直接启发，尤其是把“记忆检索导致的跨轮意图融合”作为可靠性失败模式。",
+        "limitations": "主要局限是攻击依赖 agent 会把 carrier query 写入长期记忆、后续能按相似度检索到对应记录，并且 access control 不会检查 memory-augmented effective prompt；这些假设在一些生产系统中可能会被更严格的 memory gating、memory sanitization 或 execution-time policy checking 削弱。此外，端到端 harmful task success rate 平均为 41.1%，说明从绕过检测到实际完成违规任务之间仍有明显落差。论文偏攻击评估，对系统性防御方案的建设性讨论相对不足。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要与引言明确提出：禁止内容可以被拆分到多次交互中，以 benign-appearing form 存入长期记忆，之后通过 memory retrieval 重构，而最终用户 query 中不显式出现违规内容。",
+          "方法部分说明 FragFuse 包含三阶段：识别 rejection-responsible fragments、用 marked carrier queries 注入记忆、再通过 follow-up attack query 检索并融合 fragments。",
+          "实验说明覆盖 RAP/WebShop、OSAgent/Safe-OS、SeeAct/Mind2Web-SC、InspAgent/AgentHarm 四个 setting，并包括 GuardAgent、AGrail、ShieldAgent 等 access-control 机制。",
+          "论文报告平均 BSR 为 86.3%，平均 E2E-SR 为 41.1%，baseline 为 5.7%，并称相比无 access control 的配置平均 TSR 只下降 4.4%。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:38:05.857Z"
       }
     },
     {
@@ -1141,10 +1307,10 @@
       "recommendation": {
         "score": 92,
         "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "label": "值得读，尤其值得关注其 drift 诊断和 turn-level curriculum distillation 设计",
+        "water_risk": "中",
+        "value_judgement": "论文问题定义明确，方法简洁，实验任务覆盖典型 multi-turn agent benchmark，并且和 agent planning reliability 的核心问题直接相关。最大价值不是某个复杂算法，而是把 OPD 在交互长轨迹中的失败模式讲清楚，并提出一个容易复现和迁移的训练干预。偏水风险来自几个点：标题标注 Working in Progress；实验结论主要依赖作者自述 aggregate improvement；缺少成本公平性分析，因为 teacher turn 注入会增加训练期 teacher 调用；也缺少更强 baseline、更多模型族、统计稳定性和真实工具环境验证。",
+        "reason": "论文问题定义明确，方法简洁，实验任务覆盖典型 multi-turn agent benchmark，并且和 agent planning reliability 的核心问题直接相关。最大价值不是某个复杂算法，而是把 OPD 在交互长轨迹中的失败模式讲清楚，并提出一个容易复现和迁移的训练干预。偏水风险来自几个点：标题标注 Working in Progress；实验结论主要依赖作者自述 aggregate improvement；缺少成本公平性分析，因为 teacher turn 注入会增加训练期 teacher 调用；也缺少更强 baseline、更多模型族、统计稳定性和真实工具环境验证。",
         "signals": {
           "agenticRl": false,
           "multiTurn": true,
@@ -1176,17 +1342,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "论文问题定义明确，方法简洁，实验任务覆盖典型 multi-turn agent benchmark，并且和 agent planning reliability 的核心问题直接相关。最大价值不是某个复杂算法，而是把 OPD 在交互长轨迹中的失败模式讲清楚，并提出一个容易复现和迁移的训练干预。偏水风险来自几个点：标题标注 Working in Progress；实验结论主要依赖作者自述 aggregate improvement；缺少成本公平性分析，因为 teacher turn 注入会增加训练期 teacher 调用；也缺少更强 baseline、更多模型族、统计稳定性和真实工具环境验证。",
         "summary": "Multi-turn agents that plan, invoke tools, and interact with environments offer a promising paradigm for solving complex tasks, yet their capabilities typically rely on very large models whose inference cost is prohibitive in practice.On-Policy Distillation (OPD) is a natural recipe for transferring such capabilities to smaller students, but we find that it suffers a characteristic failure mode in this setting: smal...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "论文问题定义明确，方法简洁，实验任务覆盖典型 multi-turn agent benchmark，并且和 agent planning reliability 的核心问题直接相关。最大价值不是某个复杂算法，而是把 OPD 在交互长轨迹中的失败模式讲清楚，并提出一个容易复现和迁移的训练干预。偏水风险来自几个点：标题标注 Working in Progress；实验结论主要依赖作者自述 aggregate improvement；缺少成本公平性分析，因为 teacher turn 注入会增加训练期 teacher 调用；也缺少更强 baseline、更多模型族、统计稳定性和真实工具环境验证。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
-        "method": "Multi-turn agents that plan, invoke tools, and interact with environments offer a promising paradigm for solving complex tasks, yet their capabilities typically rely on very large models whose inference cost is prohibitive in practice.On-Policy Distillation (OPD) is a natural recipe for transferring such capabilities to smaller students, but we find that it suffers a characteristic failure mode in this setting: small student errors compound across turns and push the trajectory out of the teacher's familiar state distribution, so the teacher's supervision becomes least reliable precisely where the student needs it most.We propose Guided On-Policy Distillation (Guided-OPD), a simple yet effective algorithm that mixes teacher- and student-generated turns within each rollout and schedules the teacher's intervention probability along a curriculum that decays to zero.Strong guidance keeps early trajectories close to the teacher distribution and is then gradually withdrawn to recover the purely on-policy regime used at inference.On ALFWorld, ScienceWorld, and WebShop, distilling Qwen3 students from a Qwen3-30B-A3B teacher, Guided-OPD improves Score by 21.1\\% and Success Rate by 25.5\\% over vanilla OPD on average, with larger gains on smaller students.",
-        "experiments": "Multi-turn agents that plan, invoke tools, and interact with environments offer a promising paradigm for solving complex tasks, yet their capabilities typically rely on very large models whose inference cost is prohibitive in practice.On-Policy Distillation (OPD) is a natural recipe for transferring such capabilities to smaller students, but we find that it suffers a characteristic failure mode in this setting: small student errors compound across turns and push the trajectory out of the teacher's familiar state distribution, so the teacher's supervision becomes least reliable precisely where the student needs it most.We propose Guided On-Policy Distillation (Guided-OPD), a simple yet effective algorithm that mixes teacher- and student-generated turns within each rollout and schedules the teacher's intervention probability along a curriculum that decays to zero.Strong guidance keeps early trajectories close to the teacher distribution and is then gradually withdrawn to recover the purely on-policy regime used at inference.On ALFWorld, ScienceWorld, and WebShop, distilling Qwen3 students from a Qwen3-30B-A3B teacher, Guided-OPD improves Score by 21.1\\% and Success Rate by 25.5\\% over vanilla OPD on average, with larger gains on smaller students.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文抓住了 multi-turn agent 蒸馏里的一个真实痛点：普通 OPD 虽然在静态推理任务上有训练-推理一致性，但在交互式长轨迹中，学生早期小错误会改变后续环境状态，使轨迹逐步离开 teacher 熟悉分布，导致 teacher 对 student-generated tokens 的 PPL 随 turn 增长而变差。这个问题和 long-horizon planning、agent reliability、agentic distillation 高度相关。",
+        "method": "方法是 Guided-OPD：在每条 rollout 内按 turn 粒度混合 teacher turn 和 student turn，而不是让学生完整跑完整轨迹。teacher 介入概率 beta 按 curriculum 从高逐步衰减到 0，早期用 teacher anchor 轨迹，后期回到纯 student on-policy rollout。loss 设计也有区分：student turn 用 reverse KL，让学生输出贴近 teacher 高概率模式；teacher turn 用 forward KL，让学生覆盖 teacher 示范行为。整体方法简单、可实现，核心贡献在于把 DAgger 式混合策略、OPD、turn-level curriculum 组合到 multi-turn agent 蒸馏场景。",
+        "experiments": "实验覆盖 ALFWorld、ScienceWorld、WebShop，teacher 是 Qwen3-30B-A3B，student 是 Qwen3 0.6B、1.7B、4B。对比 Zero-shot、Vanilla OPD、AdaSwitch、TCOD。论文声称 Guided-OPD 相比 Vanilla OPD 平均提升 Score 21.1%、Success Rate 25.5%，平均交互轮数减少 6.0%；0.6B 学生收益最大，4B 学生在部分平均指标上甚至超过 teacher。实验设置和任务选择贴合 multi-turn agent，但提供文本中主要是 aggregate claim，缺少可细查的完整表格、显著性、方差、token/teacher 调用成本和跨模型族泛化证据。",
+        "research_help": "对 Junle 的 agent planning / multi-turn agent 研究有中高价值。它提供了一个很清晰的 reliability 诊断指标：teacher PPL over student-generated tokens 随 turn index 增长，可用来量化长轨迹 drift。方法上，turn-level teacher intervention curriculum 可借鉴到 agentic RL、环境交互训练、multi-turn tool-use、memory/planning 可靠性研究中，尤其适合分析学生 agent 在早期错误后如何偏离可监督状态分布。不过它更偏蒸馏训练算法，不直接解决 agent memory、explicit planning representation 或任务分解机制。",
         "recommendation": {
           "score": 92,
           "level": "高",
@@ -1207,10 +1373,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
-        "method": "方法核心是围绕多轮轨迹维护状态与约束，并用交互反馈修正下一步规划。",
-        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 ALFWorld、WebShop、ScienceWorld；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文抓住了 multi-turn agent 蒸馏里的一个真实痛点：普通 OPD 虽然在静态推理任务上有训练-推理一致性，但在交互式长轨迹中，学生早期小错误会改变后续环境状态，使轨迹逐步离开 teacher 熟悉分布，导致 teacher 对 student-generated tokens 的 PPL 随 turn 增长而变差。这个问题和 long-horizon planning、agent reliability、agentic distillation 高度相关。",
+        "method": "方法是 Guided-OPD：在每条 rollout 内按 turn 粒度混合 teacher turn 和 student turn，而不是让学生完整跑完整轨迹。teacher 介入概率 beta 按 curriculum 从高逐步衰减到 0，早期用 teacher anchor 轨迹，后期回到纯 student on-policy rollout。loss 设计也有区分：student turn 用 reverse KL，让学生输出贴近 teacher 高概率模式；teacher turn 用 forward KL，让学生覆盖 teacher 示范行为。整体方法简单、可实现，核心贡献在于把 DAgger 式混合策略、OPD、turn-level curriculum 组合到 multi-turn agent 蒸馏场景。",
+        "experiments": "实验覆盖 ALFWorld、ScienceWorld、WebShop，teacher 是 Qwen3-30B-A3B，student 是 Qwen3 0.6B、1.7B、4B。对比 Zero-shot、Vanilla OPD、AdaSwitch、TCOD。论文声称 Guided-OPD 相比 Vanilla OPD 平均提升 Score 21.1%、Success Rate 25.5%，平均交互轮数减少 6.0%；0.6B 学生收益最大，4B 学生在部分平均指标上甚至超过 teacher。实验设置和任务选择贴合 multi-turn agent，但提供文本中主要是 aggregate claim，缺少可细查的完整表格、显著性、方差、token/teacher 调用成本和跨模型族泛化证据。",
+        "research_help": "对 Junle 的 agent planning / multi-turn agent 研究有中高价值。它提供了一个很清晰的 reliability 诊断指标：teacher PPL over student-generated tokens 随 turn index 增长，可用来量化长轨迹 drift。方法上，turn-level teacher intervention curriculum 可借鉴到 agentic RL、环境交互训练、multi-turn tool-use、memory/planning 可靠性研究中，尤其适合分析学生 agent 在早期错误后如何偏离可监督状态分布。不过它更偏蒸馏训练算法，不直接解决 agent memory、explicit planning representation 或任务分解机制。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其值得关注其 drift 诊断和 turn-level curriculum distillation 设计",
+        "value_reason": "论文问题定义明确，方法简洁，实验任务覆盖典型 multi-turn agent benchmark，并且和 agent planning reliability 的核心问题直接相关。最大价值不是某个复杂算法，而是把 OPD 在交互长轨迹中的失败模式讲清楚，并提出一个容易复现和迁移的训练干预。偏水风险来自几个点：标题标注 Working in Progress；实验结论主要依赖作者自述 aggregate improvement；缺少成本公平性分析，因为 teacher turn 注入会增加训练期 teacher 调用；也缺少更强 baseline、更多模型族、统计稳定性和真实工具环境验证。",
+        "limitations": "判断基于提供的 arXiv PDF 提取文本，source_scope 为 full_text，但当前输入截断在实验设置附近，未看到完整结果表、附录超参、消融细节和失败案例。因此推荐等级主要依据摘要、方法段和作者报告的实验结论；对实验可信度保留中等不确定性。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确指出 Vanilla OPD 中 teacher PPL over student-generated tokens 会随 interaction turn 增长，说明 student rollout 逐步偏离 teacher familiar distribution。",
+          "Guided-OPD 在每个 turn 以 beta 概率采样 teacher、以 1-beta 概率采样 student，并让 beta 随训练进度按 curriculum 衰减到 0。",
+          "方法在 student turn 使用 reverse KL，在 teacher turn 使用 forward KL，以匹配学生自生成纠偏和教师示范覆盖两种训练角色。",
+          "实验使用 ALFWorld、ScienceWorld、WebShop 三个 multi-turn agent benchmark，并从 Qwen3-30B-A3B teacher 蒸馏到 0.6B、1.7B、4B student。作者报告平均相对 Vanilla OPD 提升 Score 21.1%、Success Rate 25.5%，交互轮数减少 6...."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:38:39.813Z"
       }
     },
     {
@@ -1234,10 +1415,10 @@
       "recommendation": {
         "score": 90,
         "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "label": "值得读，尤其值得读方法和实验分解部分",
+        "water_risk": "中",
+        "value_judgement": "价值主要在问题切入和评测分解：它指出 recall benchmark 无法覆盖 production memory 的遗忘失败，并用 placement ablation 展示 LLM 放置位置会改变 failure-mode coverage。这比单纯提出一个 aggregate memory score 更有研究可迁移性。对 Junle 来说，最可用的是五类 forgetting primitive、Adapter Protocol、adversarial category 设计，以及 mutation-time control hook 对 planning reliability 的启发。",
+        "reason": "价值主要在问题切入和评测分解：它指出 recall benchmark 无法覆盖 production memory 的遗忘失败，并用 placement ablation 展示 LLM 放置位置会改变 failure-mode coverage。这比单纯提出一个 aggregate memory score 更有研究可迁移性。对 Junle 来说，最可用的是五类 forgetting primitive、Adapter Protocol、adversarial category 设计，以及 mutation-time control hook 对 planning reliability 的启发。",
         "signals": {
           "agenticRl": false,
           "multiTurn": false,
@@ -1259,17 +1440,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "价值主要在问题切入和评测分解：它指出 recall benchmark 无法覆盖 production memory 的遗忘失败，并用 placement ablation 展示 LLM 放置位置会改变 failure-mode coverage。这比单纯提出一个 aggregate memory score 更有研究可迁移性。对 Junle 来说，最可用的是五类 forgetting primitive、Adapter Protocol、adversarial category 设计，以及 mutation-time control hook 对 planning reliability 的启发。",
         "summary": "Where an LLM sits in an agent memory pipeline -- between the recall plane that retrieves stored facts (extensively benchmarked) and the control plane that mutates them via supersede, release, purge (largely untested) -- shapes which forgetting failure modes the system recovers. Comparing thirteen system configurations on a 385-case adversarial surface, we observe three placement regimes with partly complementary cov...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "价值主要在问题切入和评测分解：它指出 recall benchmark 无法覆盖 production memory 的遗忘失败，并用 placement ablation 展示 LLM 放置位置会改变 failure-mode coverage。这比单纯提出一个 aggregate memory score 更有研究可迁移性。对 Junle 来说，最可用的是五类 forgetting primitive、Adapter Protocol、adversarial category 设计，以及 mutation-time control hook 对 planning reliability 的启发。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
-        "method": "Where an LLM sits in an agent memory pipeline -- between the recall plane that retrieves stored facts (extensively benchmarked) and the control plane that mutates them via supersede, release, purge (largely untested) -- shapes which forgetting failure modes the system recovers.",
-        "experiments": "We expose the trade-off via ForgetEval, a 1000-case templated suite plus a 385-case adversarial layer (132 hand-crafted + 253 LLM-drafted oracle-validated) scored by deterministic substring match, paired with a six-method Adapter Protocol with honest N/A scoring that lets heterogeneous memory stores enter in 130 lines.",
-        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。",
+        "motivation": "论文把 agent memory 的问题从“能不能召回事实”转向“能不能按控制指令遗忘事实”。核心动机很贴近生产型 agent：很多失败不是 recall 不够强，而是旧密码、已删除用户记录、过期偏好、一次性验证码仍被检索出来。作者提出 memory pipeline 中 LLM 放在 recall plane、inscribe-time、还是 mutation-time，会决定系统能恢复哪些遗忘失败模式。",
+        "method": "方法上，作者提出 FORGETEVAL：1000 个模板用例加 385 个 adversarial forgetting 用例，覆盖 supersession、decay、amnesia、purge、drift 五类遗忘原语，以及 prefix collision、identifier obfuscation、cross-lingual identifier、compound fact 等 10 类攻击场景。评测通过六方法 Adapter Protocol 统一不同 memory store：reset、inscribe、recall_texts 为必需，supersede、release、purge 为可选；缺失能力用 N/A 区分。打分采用 top-k recall 文本上的确定性 substring match，不用 LLM judge 参与最终评分。论文比较了 13 种系统配置，包括 deterministic、vec-only、inscribe-time LLM、KG abstraction、joint placement、mutation-time LLM hook 等。",
+        "experiments": "实验结论比较清晰：deterministic primitive 在 lexical 和 temporal 类遗忘上表现较好，但在 identifier canonicalization 上很弱，例如 identifier obfuscation 和 cross-lingual identifier 基本失败；inscribe-time LLM 能修复 canonicalization，但无法处理 intent-aware deletion；mutation-time LLM hook 对 intent-aware deletion 和多类失败有最大提升，在 345 个非 compound-fact 原语存在性用例上从约 70% 提升到约 93% 到 94%，整体含 compound_fact 约 91.7% 到 93.2%。作者还报告了运行成本、mutation latency、10 人标注一致性、外部作者子集验证，以及 FactConsolidation 交叉评测。实验设计的优点是可复现、粒度细、能区分“能力没实现”和“实现了但失败”。",
+        "research_help": "对 Junle 的研究帮助较高。它直接对应 agent memory、multi-turn/personalized agent 的 planning reliability 问题：长期 agent 不只是要记住，还要能按时间、用户意图、隐私请求和状态更新可靠地忘掉。对 long-horizon planning 来说，过期状态、被 supersede 的 goal/preference、局部删除和跨语言/别名实体对齐都会影响 plan correctness。这篇论文可作为 agent memory reliability benchmark 的参考，也能启发把 memory control-plane primitives 纳入 agentic RL 或 multi-turn agent evaluation，而不是只看任务成功率或 recall。",
         "recommendation": {
           "score": 90,
           "level": "高",
@@ -1290,10 +1471,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机集中在 agent memory 的写入、检索、更新或遗忘可靠性。",
-        "method": "方法核心是把记忆写入、检索、更新或遗忘纳入 agent 控制流程，减少跨任务状态漂移。",
-        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 5%、0%、100%、85%、93.2%；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 agent memory 有帮助：重点看记忆写入、检索、更新和个性化状态如何进入规划过程。"
+        "motivation": "论文把 agent memory 的问题从“能不能召回事实”转向“能不能按控制指令遗忘事实”。核心动机很贴近生产型 agent：很多失败不是 recall 不够强，而是旧密码、已删除用户记录、过期偏好、一次性验证码仍被检索出来。作者提出 memory pipeline 中 LLM 放在 recall plane、inscribe-time、还是 mutation-time，会决定系统能恢复哪些遗忘失败模式。",
+        "method": "方法上，作者提出 FORGETEVAL：1000 个模板用例加 385 个 adversarial forgetting 用例，覆盖 supersession、decay、amnesia、purge、drift 五类遗忘原语，以及 prefix collision、identifier obfuscation、cross-lingual identifier、compound fact 等 10 类攻击场景。评测通过六方法 Adapter Protocol 统一不同 memory store：reset、inscribe、recall_texts 为必需，supersede、release、purge 为可选；缺失能力用 N/A 区分。打分采用 top-k recall 文本上的确定性 substring match，不用 LLM judge 参与最终评分。论文比较了 13 种系统配置，包括 deterministic、vec-only、inscribe-time LLM、KG abstraction、joint placement、mutation-time LLM hook 等。",
+        "experiments": "实验结论比较清晰：deterministic primitive 在 lexical 和 temporal 类遗忘上表现较好，但在 identifier canonicalization 上很弱，例如 identifier obfuscation 和 cross-lingual identifier 基本失败；inscribe-time LLM 能修复 canonicalization，但无法处理 intent-aware deletion；mutation-time LLM hook 对 intent-aware deletion 和多类失败有最大提升，在 345 个非 compound-fact 原语存在性用例上从约 70% 提升到约 93% 到 94%，整体含 compound_fact 约 91.7% 到 93.2%。作者还报告了运行成本、mutation latency、10 人标注一致性、外部作者子集验证，以及 FactConsolidation 交叉评测。实验设计的优点是可复现、粒度细、能区分“能力没实现”和“实现了但失败”。",
+        "research_help": "对 Junle 的研究帮助较高。它直接对应 agent memory、multi-turn/personalized agent 的 planning reliability 问题：长期 agent 不只是要记住，还要能按时间、用户意图、隐私请求和状态更新可靠地忘掉。对 long-horizon planning 来说，过期状态、被 supersede 的 goal/preference、局部删除和跨语言/别名实体对齐都会影响 plan correctness。这篇论文可作为 agent memory reliability benchmark 的参考，也能启发把 memory control-plane primitives 纳入 agentic RL 或 multi-turn agent evaluation，而不是只看任务成功率或 recall。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其值得读方法和实验分解部分",
+        "value_reason": "价值主要在问题切入和评测分解：它指出 recall benchmark 无法覆盖 production memory 的遗忘失败，并用 placement ablation 展示 LLM 放置位置会改变 failure-mode coverage。这比单纯提出一个 aggregate memory score 更有研究可迁移性。对 Junle 来说，最可用的是五类 forgetting primitive、Adapter Protocol、adversarial category 设计，以及 mutation-time control hook 对 planning reliability 的启发。",
+        "limitations": "偏水风险不是低，主要因为作者和机构信息较弱，benchmark 大量用例由 LLM 起草并由另一个 LLM admission，虽然有人工一致性和外部子集缓解，但仍可能存在 benchmark construction bias。系统覆盖也有限，很多主流生产 memory stack 没有完整实证；deterministic substring match 可复现但可能低估语义正确性或高估表面匹配；当前重点是 English memory-store 层，不等同于端到端 multi-turn agent 或 agentic RL 中的真实任务可靠性。compound_fact 也被作者承认更像 partial-edit primitive 能力测试，而不纯粹是 forgetting 测试。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确区分 recall plane 和 control plane，并指出现有 LongMemEval、MTEB、BEIR、LOCOMO 等主要测 recall/use axis，缺少对 memory store 是否能被 commanded to forget 的测试。",
+          "FORGETEVAL 包含 1000 template cases 和 385 adversarial cases，五类 structural families 为 supersession、decay、amnesia、purge、drift，adversarial layer 有 10 类攻击。",
+          "最终评测不使用 LLM judge，而是根据 top-10 recall blob 中 must_contain 和 must_not_contain 的 substring 条件确定 pass/fail。",
+          "核心实验比较 13 个系统配置，结论是 deterministic primitives 适合 lexical/temporal，inscribe-time LLM 修复 canonicalization，mutation-time hook 对 intent-aware deletion 和多类别表现提升最大。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:39:21.000Z"
       }
     },
     {
@@ -1321,11 +1517,11 @@
       "venue_status": "未确认录用",
       "recommendation": {
         "score": 86,
-        "level": "高",
-        "label": "强烈推荐",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+        "level": "中",
+        "label": "值得泛读，重点看方法框架和实验消融，不必作为 agent planning 核心论文精读。",
+        "water_risk": "中",
+        "value_judgement": "论文有真实工业任务、大规模内部数据、线上部署和明确的多轮 agentic RL 设计，方法上比普通 prompt-refine 更系统；但“agentic RL”主要体现在生成-评价-修订闭环，规划深度有限，很多关键资源如工业数据、内部搜索引擎、CTR 模型、GenRM rubric 和线上 A/B 细节不可复现。",
+        "reason": "论文有真实工业任务、大规模内部数据、线上部署和明确的多轮 agentic RL 设计，方法上比普通 prompt-refine 更系统；但“agentic RL”主要体现在生成-评价-修订闭环，规划深度有限，很多关键资源如工业数据、内部搜索引擎、CTR 模型、GenRM rubric 和线上 A/B 细节不可复现。",
         "signals": {
           "agenticRl": true,
           "multiTurn": true,
@@ -1352,17 +1548,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "论文有真实工业任务、大规模内部数据、线上部署和明确的多轮 agentic RL 设计，方法上比普通 prompt-refine 更系统；但“agentic RL”主要体现在生成-评价-修订闭环，规划深度有限，很多关键资源如工业数据、内部搜索引擎、CTR 模型、GenRM rubric 和线上 A/B 细节不可复现。",
         "summary": "This paper focuses on automatically generating informative ad descriptions in sponsored search. Unlike ad titles which are usually optimized to attract user click feedbacks, ad descriptions have a longer text span and possess the potential of incorporating world knowledge to address user search intents while presenting the fine-grained selling points of the ads. We propose Interactor, a multi-turn iterative creation...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "论文有真实工业任务、大规模内部数据、线上部署和明确的多轮 agentic RL 设计，方法上比普通 prompt-refine 更系统；但“agentic RL”主要体现在生成-评价-修订闭环，规划深度有限，很多关键资源如工业数据、内部搜索引擎、CTR 模型、GenRM rubric 和线上 A/B 细节不可复现。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
-        "method": "We propose Interactor, a multi-turn iterative creation framework optimized with agentic RL for ad description generation.",
-        "experiments": "Given initial generations by the policy, the customized GenRMs evaluate multi-dimensional qualities including knowledge capacity and landing page consistency, providing both binary signals and reasoning feedbacks.",
-        "research_help": "对多轮 agent 有帮助：重点看状态保持、用户偏好延续、澄清机制和跨轮评测。",
+        "motivation": "论文针对搜索广告中的长文本广告描述生成：标题主要追求点击，而广告描述有更长文本空间，需要同时注入与用户意图相关的世界知识，并保持与落地页卖点一致。作者认为单轮生成或只靠标量奖励的 RLHF/偏好优化难以处理长文本中的细粒度错误，因此提出把生成过程改造成多轮交互式修订。",
+        "method": "INTERACTOR 将广告描述生成模型作为 policy，与定制环境交互。环境包含知识检索、知识容量 GenRM、落地页一致性 GenRM 和 CTR 估计器。模型先生成或检索，再请求 reward，GenRM 返回二值奖励和自然语言原因反馈，policy 在后续轮次基于反馈修订描述。训练上使用多轮 rollout，并用知识容量、落地页一致性、CTR 的加权奖励通过 GSPO 做 policy optimization。",
+        "experiments": "实验使用百度搜索广告系统的工业数据：约 100 万 user-ad 训练样本，5k/10k 验证/测试样本，并比较 CTOP、DIVER、SINGLE-TURN RL 和 INTERACTOR。表 1 显示 INTERACTOR 在 informativeness、faithfulness、diversity 上优于基线，尤其 faithfulness 从 SINGLE-TURN RL 的 0.726 提升到 0.872；attractiveness 与 single-turn RL 接近。论文还声称自 2026 年 5 月已在线部署，并在 A/B 测试中改善广告收入和用户体验。",
+        "research_help": "对 Junle 的 agentic RL / multi-turn agent 方向有中等参考价值：它提供了一个工业场景中“LLM policy + 环境反馈 + 多轮修订 + RL 优化”的具体范式，尤其适合借鉴如何把 reward model 的自然语言 reasoning 作为下一轮 observation，提升 rollout 质量和 reliability。但它的核心任务是 sponsored search ad copy generation，不是通用 long-horizon planning；状态空间、行动空间和任务目标都较窄，对 agent memory、复杂规划、跨任务泛化的帮助有限。",
         "recommendation": {
           "score": 86,
           "level": "高",
@@ -1383,10 +1579,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机集中在多轮交互中如何保持状态、偏好和约束，并减少跨轮规划退化。",
-        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
-        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对多轮 agent 有帮助：重点看状态保持、用户偏好延续、澄清机制和跨轮评测。"
+        "motivation": "论文针对搜索广告中的长文本广告描述生成：标题主要追求点击，而广告描述有更长文本空间，需要同时注入与用户意图相关的世界知识，并保持与落地页卖点一致。作者认为单轮生成或只靠标量奖励的 RLHF/偏好优化难以处理长文本中的细粒度错误，因此提出把生成过程改造成多轮交互式修订。",
+        "method": "INTERACTOR 将广告描述生成模型作为 policy，与定制环境交互。环境包含知识检索、知识容量 GenRM、落地页一致性 GenRM 和 CTR 估计器。模型先生成或检索，再请求 reward，GenRM 返回二值奖励和自然语言原因反馈，policy 在后续轮次基于反馈修订描述。训练上使用多轮 rollout，并用知识容量、落地页一致性、CTR 的加权奖励通过 GSPO 做 policy optimization。",
+        "experiments": "实验使用百度搜索广告系统的工业数据：约 100 万 user-ad 训练样本，5k/10k 验证/测试样本，并比较 CTOP、DIVER、SINGLE-TURN RL 和 INTERACTOR。表 1 显示 INTERACTOR 在 informativeness、faithfulness、diversity 上优于基线，尤其 faithfulness 从 SINGLE-TURN RL 的 0.726 提升到 0.872；attractiveness 与 single-turn RL 接近。论文还声称自 2026 年 5 月已在线部署，并在 A/B 测试中改善广告收入和用户体验。",
+        "research_help": "对 Junle 的 agentic RL / multi-turn agent 方向有中等参考价值：它提供了一个工业场景中“LLM policy + 环境反馈 + 多轮修订 + RL 优化”的具体范式，尤其适合借鉴如何把 reward model 的自然语言 reasoning 作为下一轮 observation，提升 rollout 质量和 reliability。但它的核心任务是 sponsored search ad copy generation，不是通用 long-horizon planning；状态空间、行动空间和任务目标都较窄，对 agent memory、复杂规划、跨任务泛化的帮助有限。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "值得泛读，重点看方法框架和实验消融，不必作为 agent planning 核心论文精读。",
+        "value_reason": "论文有真实工业任务、大规模内部数据、线上部署和明确的多轮 agentic RL 设计，方法上比普通 prompt-refine 更系统；但“agentic RL”主要体现在生成-评价-修订闭环，规划深度有限，很多关键资源如工业数据、内部搜索引擎、CTR 模型、GenRM rubric 和线上 A/B 细节不可复现。",
+        "limitations": "主要限制是闭源工业数据和内部系统依赖强，外部难以复现；reward 和评测大量依赖内部 GenRM、CTR 估计器与业务 rubric，存在 reward hacking 或评测偏置风险；多轮交互是否真正带来策略层面的 planning 能力，还是主要来自强 reward feedback 的迭代改写，仍需更多开放基准和消融验证。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确说广告描述相比标题更长，应该包含与用户搜索意图匹配的世界知识和落地页中的细粒度卖点。",
+          "INTERACTOR 被定义为 multi-turn iterative creation framework，LLM policy 与由多个 generative reward models 组成的 customized environment 交互。",
+          "GenRMs 同时输出 binary signals 和 fine-grained reasoning information，用于指出缺失知识或与落地页不一致的短语。",
+          "训练奖励由 knowledge capacity、landing page consistency 和 predicted CTR 加权组成，并使用 GSPO 进行多轮 rollout 的 policy optimization。后一轮会基于前一轮 reward reasoning 修订描述。真实评测使用约 100 万训练样本和 5k/10k 验证/测试样..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:40:04.883Z"
       }
     },
     {
@@ -1416,11 +1627,11 @@
       "venue_status": "未确认录用",
       "recommendation": {
         "score": 72,
-        "level": "中",
-        "label": "值得读",
+        "level": "高",
+        "label": "值得读，尤其适合从 agentic RL 训练范式和预算受限 orchestration 角度阅读",
         "water_risk": "中",
-        "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
-        "reason": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+        "value_judgement": "推荐的主要原因是它把多模型协作从固定 prompt 协议推进到可学习的多步决策，并明确处理了在线 RL 在真实 API 调用场景下成本和延迟不可承受的问题。对 Junle 来说，最有价值的不是科学问答本身，而是它的训练数据构造和 credit assignment 设计：MCTS 共享前缀、按节点提取训练样本、利用兄弟动作回报差异提供优势信号，这些都能启发更可靠的 multi-turn planning agent。偏水风险为中，原因是性能提升看起来是小幅但真实的，论文动机清楚；但评测集规模偏小，模型池含未来/商业模型命名且可复现性依赖 API，方法细节里也有一些工程选择可能需要更多消融来确认是否真是 RL / MCTS 本身带来收益，而不是模型池、prompt 或成本策略带来的收益。",
+        "reason": "推荐的主要原因是它把多模型协作从固定 prompt 协议推进到可学习的多步决策，并明确处理了在线 RL 在真实 API 调用场景下成本和延迟不可承受的问题。对 Junle 来说，最有价值的不是科学问答本身，而是它的训练数据构造和 credit assignment 设计：MCTS 共享前缀、按节点提取训练样本、利用兄弟动作回报差异提供优势信号，这些都能启发更可靠的 multi-turn planning agent。偏水风险为中，原因是性能提升看起来是小幅但真实的，论文动机清楚；但评测集规模偏小，模型池含未来/商业模型命名且可复现性依赖 API，方法细节里也有一些工程选择可能需要更多消融来确认是否真是 RL / MCTS 本身带来收益，而不是模型池、prompt 或成本策略带来的收益。",
         "signals": {
           "agenticRl": true,
           "multiTurn": false,
@@ -1450,17 +1661,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "推荐的主要原因是它把多模型协作从固定 prompt 协议推进到可学习的多步决策，并明确处理了在线 RL 在真实 API 调用场景下成本和延迟不可承受的问题。对 Junle 来说，最有价值的不是科学问答本身，而是它的训练数据构造和 credit assignment 设计：MCTS 共享前缀、按节点提取训练样本、利用兄弟动作回报差异提供优势信号，这些都能启发更可靠的 multi-turn planning agent。偏水风险为中，原因是性能提升看起来是小幅但真实的，论文动机清楚；但评测集规模偏小，模型池含未来/商业模型命名且可复现性依赖 API，方法细节里也有一些工程选择可能需要更多消融来确认是否真是 RL / MCTS 本身带来收益，而不是模型池、prompt 或成本策略带来的收益。",
         "summary": "Frontier scientific reasoning remains a major challenge for large language models (LLMs), where even the strongest commercial systems fall short of expert-level performance. A closer look at model behavior reveals substantial complementarity that single-model evaluation hides: different frontier models excel on different question types, and no single model captures the full picture. We present SciOrch, a framework t...",
         "highlights": [
-          "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
-          "直接覆盖 agentic RL 或 policy optimization；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "推荐的主要原因是它把多模型协作从固定 prompt 协议推进到可学习的多步决策，并明确处理了在线 RL 在真实 API 调用场景下成本和延迟不可承受的问题。对 Junle 来说，最有价值的不是科学问答本身，而是它的训练数据构造和 credit assignment 设计：MCTS 共享前缀、按节点提取训练样本、利用兄弟动作回报差异提供优势信号，这些都能启发更可靠的 multi-turn planning agent。偏水风险为中，原因是性能提升看起来是小幅但真实的，论文动机清楚；但评测集规模偏小，模型池含未来/商业模型命名且可复现性依赖 API，方法细节里也有一些工程选择可能需要更多消融来确认是否真是 RL / MCTS 本身带来收益，而不是模型池、prompt 或成本策略带来的收益。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
-        "method": "A closer look at model behavior reveals substantial complementarity that single-model evaluation hides: different frontier models excel on different question types, and no single model captures the full picture.",
-        "experiments": "On a 240-question test set spanning SGI-Reasoning and Scientists' First Exam, SciOrch reaches 56.66% average accuracy, outperforming the strongest single commercial model by 3.74% and the strongest multi-agent baseline by 3.33%.",
-        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。",
+        "motivation": "论文动机比较贴近 agentic RL 和 multi-agent planning：作者观察到前沿商业多模态模型在科学推理中存在明显互补性，单模型评测会掩盖这种互补；固定 self-consistency / debate 成本高且策略静态，单次 router 又无法根据中间证据调整。因此他们把科学多模态问答改写成一个多步 orchestration 决策问题，让小模型学会何时把子问题交给哪个专家模型、何时停止并提交答案。",
+        "method": "方法核心是一个轻量级 VLM orchestrator，把商业模型 API 当作工具动作空间。每一步状态包含原始图像、问题和历史 delegation；动作要么是 delegate，指定模型、子任务类型和子问题指令，要么是 submit final answer。训练上，作者用三阶段 MCTS 生成多样 orchestration 轨迹：先用不同模型池和最远语义距离选择动作来增加分支多样性，再优先扩展回报差异大的节点以增强相对优势信号，最后剪枝保留高价值子节点。随后把树中的节点转成 step-level 单步样本，用 GRPO / REINFORCE++ 风格的离线更新训练 orchestrator，避免每个梯度步骤都触发昂贵 API rollout。",
+        "experiments": "实验设置围绕两个前沿多模态科学推理 benchmark 的小规模测试集，比较单一商业模型、prompt-based multi-agent baselines 和 SciOrch。根据论文文本，SciOrch 在两个评测切片上都优于最强单模型和最强 prompt-based 多代理基线，同时 API 成本低于典型多代理方法。实验支持了两个主张：模型互补性确实存在；学习式 orchestration 比固定协议或一次性 routing 更适合需要分解、证据积累和早停的科学推理任务。不过测试规模不大，且依赖商业闭源模型池，泛化和可复现性仍需谨慎看。",
+        "research_help": "对 Junle 的帮助较高。它不是传统 long-horizon planning benchmark，但很有价值地讨论了“昂贵环境交互下如何训练 agent policy”：每个动作是一次真实 API 调用，这和 tool-use / web / remote environment agent 的成本约束很相似。MCTS 生成多样轨迹、节点级训练、用 sibling return gap 强化相对优势信号，这些都可借鉴到 agent planning reliability、multi-turn agent routing、预算受限 tool orchestration、以及 planner 何时继续收集证据/何时停止的问题。它对 agent memory 的直接贡献较弱，只把历史 delegation 作为短期状态，并未研究长期记忆或个性化记忆。",
         "recommendation": {
           "score": 72,
           "level": "中",
@@ -1481,10 +1692,25 @@
         }
       },
       "analysis": {
-        "motivation": "这篇论文的动机是推进更可靠的 agent 训练、规划或执行能力。",
-        "method": "方法核心是把环境轨迹、奖励信号和 policy optimization 接起来，让 agent 在多步交互中学习更稳定的策略。",
-        "experiments": "摘要显示包含实验或 benchmark 对比，可见信号包括 56.66%、3.74%、3.33%；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 agentic RL 有帮助：重点看奖励设计、trajectory 采样、环境反馈和 policy optimization 的接口。"
+        "motivation": "论文动机比较贴近 agentic RL 和 multi-agent planning：作者观察到前沿商业多模态模型在科学推理中存在明显互补性，单模型评测会掩盖这种互补；固定 self-consistency / debate 成本高且策略静态，单次 router 又无法根据中间证据调整。因此他们把科学多模态问答改写成一个多步 orchestration 决策问题，让小模型学会何时把子问题交给哪个专家模型、何时停止并提交答案。",
+        "method": "方法核心是一个轻量级 VLM orchestrator，把商业模型 API 当作工具动作空间。每一步状态包含原始图像、问题和历史 delegation；动作要么是 delegate，指定模型、子任务类型和子问题指令，要么是 submit final answer。训练上，作者用三阶段 MCTS 生成多样 orchestration 轨迹：先用不同模型池和最远语义距离选择动作来增加分支多样性，再优先扩展回报差异大的节点以增强相对优势信号，最后剪枝保留高价值子节点。随后把树中的节点转成 step-level 单步样本，用 GRPO / REINFORCE++ 风格的离线更新训练 orchestrator，避免每个梯度步骤都触发昂贵 API rollout。",
+        "experiments": "实验设置围绕两个前沿多模态科学推理 benchmark 的小规模测试集，比较单一商业模型、prompt-based multi-agent baselines 和 SciOrch。根据论文文本，SciOrch 在两个评测切片上都优于最强单模型和最强 prompt-based 多代理基线，同时 API 成本低于典型多代理方法。实验支持了两个主张：模型互补性确实存在；学习式 orchestration 比固定协议或一次性 routing 更适合需要分解、证据积累和早停的科学推理任务。不过测试规模不大，且依赖商业闭源模型池，泛化和可复现性仍需谨慎看。",
+        "research_help": "对 Junle 的帮助较高。它不是传统 long-horizon planning benchmark，但很有价值地讨论了“昂贵环境交互下如何训练 agent policy”：每个动作是一次真实 API 调用，这和 tool-use / web / remote environment agent 的成本约束很相似。MCTS 生成多样轨迹、节点级训练、用 sibling return gap 强化相对优势信号，这些都可借鉴到 agent planning reliability、multi-turn agent routing、预算受限 tool orchestration、以及 planner 何时继续收集证据/何时停止的问题。它对 agent memory 的直接贡献较弱，只把历史 delegation 作为短期状态，并未研究长期记忆或个性化记忆。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其适合从 agentic RL 训练范式和预算受限 orchestration 角度阅读",
+        "value_reason": "推荐的主要原因是它把多模型协作从固定 prompt 协议推进到可学习的多步决策，并明确处理了在线 RL 在真实 API 调用场景下成本和延迟不可承受的问题。对 Junle 来说，最有价值的不是科学问答本身，而是它的训练数据构造和 credit assignment 设计：MCTS 共享前缀、按节点提取训练样本、利用兄弟动作回报差异提供优势信号，这些都能启发更可靠的 multi-turn planning agent。偏水风险为中，原因是性能提升看起来是小幅但真实的，论文动机清楚；但评测集规模偏小，模型池含未来/商业模型命名且可复现性依赖 API，方法细节里也有一些工程选择可能需要更多消融来确认是否真是 RL / MCTS 本身带来收益，而不是模型池、prompt 或成本策略带来的收益。",
+        "limitations": "主要局限包括：测试规模较小，难以证明在更广泛任务和更长 horizon agent 环境中的稳定性；强依赖闭源商业模型，模型版本漂移会影响复现；论文强调短期 orchestration history，但没有解决长期记忆、跨任务学习或用户偏好 carryover；奖励似乎主要来自可验证答案正确性，开放式科学推理和部分正确的中间证据如何评价仍不清楚；MCTS 和离线样本可能引入数据陈旧问题，作者称可接受但仍需要更系统分析。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "作者明确把任务建模为多步决策：orchestrator 在每一步基于图像、问题和历史 delegation 选择 delegate 或 submit。",
+          "论文指出标准在线 RL 在该设定下不可行，因为每个动作都会触发真实商业 API 调用，带来成本和延迟。",
+          "MCTS 训练包含多样 rollout、基于回报差异的节点扩展和剪枝，目的是在有限 API 调用下产生更多有效 step-level 训练样本。",
+          "实验声称 SciOrch 在 SGI-Reasoning 和 Scientists’ First Exam 上超过最强单模型与 prompt-based 多代理基线，并且 API 成本低于典型多代理方法。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:40:43.323Z"
       }
     },
     {
@@ -1517,10 +1743,10 @@
       "recommendation": {
         "score": 78,
         "level": "高",
-        "label": "值得读",
-        "water_risk": "低",
-        "value_judgement": "有价值：优先进入今日精读候选。",
-        "reason": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "label": "值得读，但应带着审稿式怀疑读",
+        "water_risk": "中",
+        "value_judgement": "推荐读的原因是主题非常贴近 long-horizon research agent，并且试图系统覆盖规划、工具调用、证据综合、文件处理和报告生成，比普通 search-agent 数据论文更接近真实研究工作流。偏水风险为中，主要因为论文贡献高度依赖自动合成轨迹、自动 verifier 和大量 benchmark 汇总，容易出现数据质量、评测污染、同质化 benchmark、模型真实泛化能力不足等问题；同时方法更像工程化数据框架和 SFT 模型发布，而不是机制上很强的新 agentic RL 方法。",
+        "reason": "推荐读的原因是主题非常贴近 long-horizon research agent，并且试图系统覆盖规划、工具调用、证据综合、文件处理和报告生成，比普通 search-agent 数据论文更接近真实研究工作流。偏水风险为中，主要因为论文贡献高度依赖自动合成轨迹、自动 verifier 和大量 benchmark 汇总，容易出现数据质量、评测污染、同质化 benchmark、模型真实泛化能力不足等问题；同时方法更像工程化数据框架和 SFT 模型发布，而不是机制上很强的新 agentic RL 方法。",
         "signals": {
           "agenticRl": false,
           "multiTurn": false,
@@ -1549,17 +1775,17 @@
         "project_url": "",
         "repo_url": "",
         "venue_status": "未确认录用",
-        "contribution": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+        "contribution": "推荐读的原因是主题非常贴近 long-horizon research agent，并且试图系统覆盖规划、工具调用、证据综合、文件处理和报告生成，比普通 search-agent 数据论文更接近真实研究工作流。偏水风险为中，主要因为论文贡献高度依赖自动合成轨迹、自动 verifier 和大量 benchmark 汇总，容易出现数据质量、评测污染、同质化 benchmark、模型真实泛化能力不足等问题；同时方法更像工程化数据框架和 SFT 模型发布，而不是机制上很强的新 agentic RL 方法。",
         "summary": "Deep research agents aim to solve complex knowledge-intensive tasks through long-horizon planning, evidence gathering, reasoning, and report generation. While recent progress in search agents has demonstrated strong capabilities in information retrieval and answer verification, most existing training datasets remain search-centric, focusing primarily on closed-ended question answering and information localization. A...",
         "highlights": [
-          "有价值：优先进入今日精读候选。",
-          "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
-          "摘要包含实验或 benchmark 信号，可以进一步检查结果是否扎实。"
+          "推荐读的原因是主题非常贴近 long-horizon research agent，并且试图系统覆盖规划、工具调用、证据综合、文件处理和报告生成，比普通 search-agent 数据论文更接近真实研究工作流。偏水风险为中，主要因为论文贡献高度依赖自动合成轨迹、自动 verifier 和大量 benchmark 汇总，容易出现数据质量、评测污染、同质化 benchmark、模型真实泛化能力不足等问题；同时方法更像工程化数据框架和 SFT 模型发布，而不是机制上很强的新 agentic RL 方法。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
         ],
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "While recent progress in search agents has demonstrated strong capabilities in information retrieval and answer verification, most existing training datasets remain search-centric, focusing primarily on closed-ended question answering and information localization.",
-        "experiments": "As a result, they mainly train information-seeking behavior while providing limited coverage of key deep research capabilities, including evidence integration, knowledge synthesis, planning, file understanding, and structured report generation.",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。",
+        "motivation": "论文的核心动机是把“deep research agent”从搜索问答推进到真实长程研究任务：不仅要找信息，还要做多轮规划、证据整合、冲突处理、文件理解、工具/技能调用和结构化报告生成。这个问题与 Junle 关注的 long-horizon planning、multi-turn agent、agent reliability 高度相关。",
+        "method": "方法上，论文提出 S1-DeepResearch 的轨迹构造框架：先用知识图谱和开放网页构造 graph-grounded 复杂任务，再通过 AgentLoop 在沙盒环境中调用搜索、浏览、代码执行、多模态问答等工具生成交互轨迹，最后用多维 verifier 过滤轨迹。它的关键点不是新 RL 算法，而是面向研究型 agent 的 SFT 数据构造与验证范式，覆盖复杂推理、指令跟随、报告写作、文件理解与生成、技能使用等能力。",
+        "experiments": "实验覆盖多个 deep research、复杂推理、报告生成、文件理解和技能使用基准，并声称 S1-DeepResearch-32B 在同规模开源模型中达到领先水平，部分任务接近前沿闭源模型。实验面较宽，和真实 research-agent 能力较贴近；但从论文文本看，主要证据仍是 benchmark 汇总表现，是否真正提升长程可靠性、错误恢复、规划一致性和开放式任务中的可控性，还需要看更细的消融、人工评测和失败案例。",
+        "research_help": "对 Junle research 的帮助较大。第一，它把 deep search 和 deep research 明确区分，适合作为 agent planning / research agent 论文写作中的问题定义参考。第二，graph-grounded task formulation、trajectory rollout、multi-dimensional verification 可以借鉴到多轮 agent planning 数据生成和可靠性评测。第三，论文强调 citation-grounded report generation、file-oriented tasks、skill orchestration，这些都能补充现有只看 QA accuracy 或 retrieval success 的 agent benchmark 设计。第四，如果 Junle 关心 agentic RL，本论文价值更多在“可验证轨迹数据与后训练任务设计”，而不是 RL credit assignment 或 online exploration 本身。",
         "recommendation": {
           "score": 78,
           "level": "高",
@@ -1580,10 +1806,25 @@
         }
       },
       "analysis": {
-        "motivation": "动机是解决长程 agent 任务中的稀疏反馈、复杂交互、失败恢复或规划可靠性问题。",
-        "method": "方法核心是把复杂任务拆成可执行的子目标，结合搜索、重规划或约束检查提升长程规划稳定性。",
-        "experiments": "摘要显示包含实验或 benchmark 对比；精读时应检查 baseline、ablation、失败案例和统计口径。",
-        "research_help": "对 long-horizon planning 有帮助：重点看任务分解、搜索/回溯、失败恢复和子目标评估。"
+        "motivation": "论文的核心动机是把“deep research agent”从搜索问答推进到真实长程研究任务：不仅要找信息，还要做多轮规划、证据整合、冲突处理、文件理解、工具/技能调用和结构化报告生成。这个问题与 Junle 关注的 long-horizon planning、multi-turn agent、agent reliability 高度相关。",
+        "method": "方法上，论文提出 S1-DeepResearch 的轨迹构造框架：先用知识图谱和开放网页构造 graph-grounded 复杂任务，再通过 AgentLoop 在沙盒环境中调用搜索、浏览、代码执行、多模态问答等工具生成交互轨迹，最后用多维 verifier 过滤轨迹。它的关键点不是新 RL 算法，而是面向研究型 agent 的 SFT 数据构造与验证范式，覆盖复杂推理、指令跟随、报告写作、文件理解与生成、技能使用等能力。",
+        "experiments": "实验覆盖多个 deep research、复杂推理、报告生成、文件理解和技能使用基准，并声称 S1-DeepResearch-32B 在同规模开源模型中达到领先水平，部分任务接近前沿闭源模型。实验面较宽，和真实 research-agent 能力较贴近；但从论文文本看，主要证据仍是 benchmark 汇总表现，是否真正提升长程可靠性、错误恢复、规划一致性和开放式任务中的可控性，还需要看更细的消融、人工评测和失败案例。",
+        "research_help": "对 Junle research 的帮助较大。第一，它把 deep search 和 deep research 明确区分，适合作为 agent planning / research agent 论文写作中的问题定义参考。第二，graph-grounded task formulation、trajectory rollout、multi-dimensional verification 可以借鉴到多轮 agent planning 数据生成和可靠性评测。第三，论文强调 citation-grounded report generation、file-oriented tasks、skill orchestration，这些都能补充现有只看 QA accuracy 或 retrieval success 的 agent benchmark 设计。第四，如果 Junle 关心 agentic RL，本论文价值更多在“可验证轨迹数据与后训练任务设计”，而不是 RL credit assignment 或 online exploration 本身。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，但应带着审稿式怀疑读",
+        "value_reason": "推荐读的原因是主题非常贴近 long-horizon research agent，并且试图系统覆盖规划、工具调用、证据综合、文件处理和报告生成，比普通 search-agent 数据论文更接近真实研究工作流。偏水风险为中，主要因为论文贡献高度依赖自动合成轨迹、自动 verifier 和大量 benchmark 汇总，容易出现数据质量、评测污染、同质化 benchmark、模型真实泛化能力不足等问题；同时方法更像工程化数据框架和 SFT 模型发布，而不是机制上很强的新 agentic RL 方法。",
+        "limitations": "主要局限包括：自动合成轨迹是否真的模拟人类研究过程仍需人工质量证据；多维 verifier 的可靠性、漏检和偏置会直接影响训练数据质量；实验若缺少充分消融，很难判断收益来自任务构造、工具轨迹、模型基座还是 benchmark 适配；论文对长期任务中的状态维护、规划失败恢复、证据冲突处理和可重复性风险仍可能评估不足。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要指出现有训练数据多偏 search-centric，主要训练信息查找行为，而较少覆盖证据整合、知识综合、规划决策、文件理解和结构化报告生成。",
+          "引言明确区分 deep search 与 deep research，强调后者还需要分析框架构建、证据冲突处理、可辩护且可引用的研究输出。",
+          "方法部分给出三阶段框架：graph-grounded task formulation、AgentLoop trajectory rollout、multi-dimensional trajectory verification。",
+          "论文将能力划分为 long-chain complex reasoning、deep research instruction following、report writing、file understanding and generation、skills usage。文中还说明最终数据只保留满足动作序列、多维约束和学术标准的轨迹。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-18T08:41:17.406Z"
       }
     }
   ]
