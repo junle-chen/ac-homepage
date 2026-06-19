@@ -1034,11 +1034,11 @@ if (isPhone) {
 }
 
 const GISCUS_CONFIG = {
-	repo: "junle-chen/HomePage",
-	repoId: "R_kgDOS9Tb_g",
+	repo: "junle-chen/ac-homepage",
+	repoId: "R_kgDOS_DVDQ",
 	category: "General",
-	categoryId: "DIC_kwDOS9Tb_s4C_XG4",
-	installed: true,
+	categoryId: "",
+	installed: false,
 };
 
 function normalizeStringList(value) {
@@ -2402,7 +2402,7 @@ function bindGlassTopbar() {
 			setup.className = "giscus-setup-note";
 			setup.innerHTML = [
 				"<strong>Giscus comments need one GitHub setup step.</strong>",
-				"<span>Install the Giscus GitHub App on <code>junle-chen/HomePage</code>. Discussions and the General category are already configured. Comments support Markdown through GitHub Discussions. After installation, enable <code>GISCUS_CONFIG.installed</code>.</span>",
+				"<span>Install the Giscus GitHub App on <code>junle-chen/ac-homepage</code>, then copy the new repo/category IDs into <code>GISCUS_CONFIG</code>. Comments support Markdown through GitHub Discussions. After installation, enable <code>GISCUS_CONFIG.installed</code>.</span>",
 				'<a href="https://github.com/apps/giscus" target="_blank" rel="noopener noreferrer">Install Giscus App</a>',
 			].join("");
 			host.appendChild(setup);

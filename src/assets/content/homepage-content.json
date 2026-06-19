@@ -2,14 +2,14 @@
   "imported_at": "2026-06-17",
   "source": "/Users/junle/Code/junle-cc-website",
   "stats": {
-    "notes": 38,
+    "notes": 36,
     "memos": 6,
     "papers": 0,
     "resources": 3,
     "assets": 129
   },
   "highlights": [
-    "Notes and bug records migrated from the old Jekyll site.",
+    "Notes and bug records migrated from the earlier personal site.",
     "Memo data is shown as an owner-editable local timeline.",
     "Paper Radar data is ready for future Zotero/arXiv updates."
   ],
@@ -389,28 +389,6 @@
       "search": "搭建个人网站进行记录 2024-11-16 notebook 申请域名及配置阿里云 dns 首先在阿里云上申请一个域名，我这边申请了junle.cc，需要一系列的实名认证，然后交钱即可 在阿里云域名管理中，将域名指向 github pages 的服务器，点击 解析 或 dns设置 添加以下解析记录： 主机记录 ： @ 记录类型 ： cname 记录值 ： .github.io ttl ：默认（通常..."
     },
     {
-      "title": "Sample blog post to learn markdown tips",
-      "date": "2020-02-28",
-      "category": "Notebook",
-      "tags": [
-        "Notebook"
-      ],
-      "excerpt": "There's lots to learn!",
-      "url": "assets/content/notes/2020-02-28-sample-markdown.md",
-      "search": "sample blog post to learn markdown tips 2020-02-28 notebook there's lots to learn!"
-    },
-    {
-      "title": "Flake it till you make it",
-      "date": "2020-02-26",
-      "category": "Notebook",
-      "tags": [
-        "Notebook"
-      ],
-      "excerpt": "Excerpt from Soulshaping by Jeff Brown",
-      "url": "assets/content/notes/2020-02-26-flake-it-till-you-make-it.md",
-      "search": "flake it till you make it 2020-02-26 notebook excerpt from soulshaping by jeff brown"
-    },
-    {
       "title": "Are Language Models Actually Useful for Time Series Forecasting?",
       "date": "",
       "category": "Motion & Urban AI",
@@ -537,13 +515,13 @@
     },
     {
       "title": "Paper Radar Source",
-      "description": "Original Jekyll page for the paper tracking view.",
+      "description": "Markdown source for the paper tracking view.",
       "href": "assets/content/pages/papers.md",
       "type": "Data"
     },
     {
-      "title": "Old Site README",
-      "description": "Source-site setup notes and project context.",
+      "title": "Site Usage Guide",
+      "description": "Configuration, deployment, and citation notes for this homepage.",
       "href": "assets/content/pages/README.md",
       "type": "Archive"
     }

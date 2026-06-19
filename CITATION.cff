@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use or reference this website project, please cite it as below."
+type: software
+title: "Junle Chen HomePage"
+version: "1.0.0"
+date-released: 2026-06-19
+authors:
+  - family-names: "Chen"
+    given-names: "Junle"
+url: "https://junle.site"
+repository-code: "https://github.com/junle-chen/ac-homepage"
+license: "LGPL-3.0-only"
+abstract: "A personal research homepage for notes, memos, daily paper reading, paper lists, and research links."
+keywords:
+  - personal homepage
+  - research notes
+  - daily papers
+  - GitHub Pages
+  - Supabase

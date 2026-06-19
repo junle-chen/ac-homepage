@@ -1,11 +1,11 @@
 {
-	"name": "junle-homepage",
+	"name": "ac-homepage",
 	"version": "1.0.0",
 	"author": "Junle Chen <cshanppy@gmail.com>",
-	"license": "LGPI-3.0",
+	"license": "LGPL-3.0-only",
 	"homepage": "https://junle.site",
-	"repository": "https://github.com/junle-chen",
-	"bugs": "https://github.com/junle-chen",
+	"repository": "https://github.com/junle-chen/ac-homepage",
+	"bugs": "https://github.com/junle-chen/ac-homepage/issues",
 	"description": "Junle Chen personal homepage",
 	"scripts": {
 		"import:content": "node scripts/import-junle-content.js",

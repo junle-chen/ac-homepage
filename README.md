@@ -1,165 +1,136 @@
-# SimonAKing-HomePage
+# Junle Chen HomePage
 
-[中文版说明](<README.zh_CN.md>)
+Junle Chen 的个人研究主页，用来发布 notes、memos、daily papers、paper list 和研究链接。当前站点部署在 [junle.site](https://junle.site)，源码仓库为 [junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage)。
 
-## Introduction
+本仓库已经按独立个人项目维护。若 GitHub 仓库页面顶部仍显示 `forked from ...`，那是 GitHub 的仓库元数据，不是 README 或代码内容；要彻底移除，需要用下面的“取消 fork 显示”流程新建一个非 fork 仓库，或者在 GitHub 支持的设置入口中让仓库离开 fork network。
 
-> A modern and elegant personal homepage with fluid animation background, responsive design and smooth page transitions.
+## 功能
 
-![preview](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMncyb3oyc21zc3czejU3cGk4M2tiNTdkaTM0N3FodGVpZmU5azNxaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fhXFCZEogq39rOpKUi/giphy.gif)
+- 个人首页：首屏动画、个人链接、移动端响应式布局。
+- 站内阅读：Markdown notes/pages 在网页内打开，支持目录、搜索、归档状态和 MathJax。
+- Academic 面板：Daily Paper、Paper List、论文星标、论文摘要和导出文本。
+- Memos：GitHub 登录后的 owner 写入，访客只读。
+- Realtime：Supabase 保存共享 memos、paper stars 和 archive 状态。
+- 评论：Giscus 通过 GitHub Discussions 给站内文章提供评论。
 
-[Online browsing](http://simonaking.com)
+## 本地运行
 
-Do you want to install such a cool homepage for your website?
-
-Let's start now!
-
-## Install
-
-```sh
-git clone https://github.com/SimonAKing/HomePage.git
-cd HomePage
+```bash
 npm install
+npm run build
 npm run dev
 ```
 
-## Features
+如果使用 pnpm，遇到 `Ignored build scripts` 提示时需要先按 pnpm 的提示审批依赖构建脚本：
 
-1. Highly encapsulates all the information in the page
-2. Use [WebGL-Fluid-Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/) as background
-3. Use `less` as `css` preprocessor
-4. Use `pug` as `html` preprocessor
-5. Use `gulp` as a build tool and configure the build script
-6. Comfortable animation and beautiful UI
-7. Responsive, mobile support
-8. The referenced `css` and`js` files do not exceed `18.5` kb in total!
-9. Delayed response switch page event
-10. There are many features left for you to explore...
+```bash
+pnpm install
+pnpm approve-builds
+pnpm run build
+pnpm run dev
+```
 
+`npm run dev` 会启动 gulp watch，默认从 `dist` 目录预览。构建产物也在 `dist/`。
 
-## Structure
+## 配置入口
 
-According to the characteristics of the project, it is divided into two categories：
-1. `intro` First screen
-2. `main` Secondary screen
+- `config.json`：首页标题、描述、入口按钮、个人链接、头像和 WebGL 背景开关。
+- `src/data/homepage-content.json`：构建首页时使用的 notes/memos/resources 索引。
+- `src/assets/content/homepage-content.json`：部署到站点的内容索引副本。
+- `src/assets/content/notes/`：长笔记 Markdown。
+- `src/assets/content/pages/`：站内说明页和功能页 Markdown。
+- `src/assets/content/data/daily-papers.json`：Daily Paper 数据。
+- `src/assets/content/data/zotero-paper-list.json`：Paper List 数据。
+- `src/js/realtime-config.js`：Supabase URL、public anon key、owner GitHub id/login。
+- `src/js/main.js` 中的 `GISCUS_CONFIG`：Giscus repo、category 和安装状态。
+- `CNAME`：GitHub Pages 自定义域名，目前是 `junle.site`。
 
-The corresponding functions, styles and configurations are also based on this standard.
+## Realtime 设置
 
+1. 在 Supabase 创建项目，复制 Project URL 和 publishable anon key。
+2. 在 Supabase SQL Editor 运行 `supabase/homepage-realtime.sql`。
+3. 在 GitHub Developer Settings 创建 OAuth App，callback URL 使用：
 
+```text
+https://<project-ref>.supabase.co/auth/v1/callback
+```
 
-## Basic configuration
+4. 在 Supabase Authentication Providers 中启用 GitHub，填入 GitHub Client ID 和 Client Secret。
+5. 更新 `src/js/realtime-config.js`：
 
-Each key name in the config.json file`config.json` corresponds to the corresponding component name.
+```js
+window.JUNLE_REALTIME_CONFIG = {
+	supabaseUrl: "https://<project-ref>.supabase.co",
+	supabaseAnonKey: "<publishable-anon-key>",
+	ownerGithubIds: ["108796659"],
+	ownerGithubLogins: ["junle-chen"],
+	redirectTo: window.location.origin + window.location.pathname,
+};
+```
 
-such as：
+anon key 是公开前端 key；不要把 GitHub OAuth client secret 放进仓库。
 
-```json
-{
-	"head": {
-		"title": "SimonAKing",
-		"description": "Category:Personal Blog",
-		"favicon": "favicon.ico"
-	}
+## Giscus 设置
+
+1. 在目标仓库启用 Discussions。
+2. 安装 [Giscus GitHub App](https://github.com/apps/giscus) 到 `junle-chen/ac-homepage`。
+3. 在 [giscus.app](https://giscus.app) 选择仓库、Discussion category 和 mapping。
+4. 把生成的 repo/category 信息同步到 `src/js/main.js` 的 `GISCUS_CONFIG`。
+5. 确认 `installed: true` 后重新构建部署。
+
+## 部署到 GitHub Pages
+
+```bash
+npm run build
+```
+
+推荐在 GitHub 仓库设置中选择：
+
+- Settings -> Pages
+- Source: Deploy from a branch
+- Branch: `gh-pages`
+- Folder: `/ (root)`
+- Custom domain: `junle.site`
+- Enforce HTTPS: enabled
+
+如果使用 `dist` 直接发布，可以把 `dist/` 内容推到 `gh-pages` 分支。
+
+## 取消 GitHub fork 显示
+
+README 只能改变仓库介绍，不能移除 GitHub 顶部的 fork 关系。要让 GitHub 把它当作独立项目，按官方 duplicate/mirror 思路新建一个不是 fork 创建的仓库：
+
+```bash
+git clone --bare https://github.com/junle-chen/<old-fork-repo>.git
+cd <old-fork-repo>.git
+git push --mirror https://github.com/junle-chen/ac-homepage.git
+```
+
+然后在本地项目里更新 remote：
+
+```bash
+git remote set-url origin https://github.com/junle-chen/ac-homepage.git
+```
+
+如果必须继续使用旧仓库名，需要先备份，再删除 GitHub 上的 fork 仓库，重新创建同名空仓库，最后 mirror-push。删除仓库是不可逆操作，执行前要确认 Pages、Issues、Discussions、Secrets、Giscus 和 Supabase OAuth callback 都能迁移。
+
+GitHub 相关说明：
+
+- [Duplicating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository)
+- [Deleting a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository)
+- [Configuring a publishing source for GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+- [About CITATION files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)
+
+## 引用与致谢
+
+如果使用或参考这个网页项目，请优先使用 GitHub 右侧的 “Cite this repository” 按钮；它由根目录的 `CITATION.cff` 提供。也可以手动引用：
+
+```bibtex
+@software{Chen_Junle_HomePage_2026,
+  author = {Chen, Junle},
+  title = {{Junle Chen HomePage}},
+  year = {2026},
+  url = {https://github.com/junle-chen/ac-homepage}
 }
-
-```
-The above configuration information corresponds to the information in the following `layout/head.pug` component.
-```html
-head
-	title #{head.title}
-	meta(charset="utf-8")
-	meta(name="Description" content=`${head.description}`)
-	link(rel="icon" href=`${head.favicon}` type="image/x-icon")
 ```
 
-
-
-## Advanced configuration
-
-### WebGL-Fluid-Simulation
-
-Use [WebGL-Fluid-Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/) as background at home.
-
-If you want to turn it off, set `intro.background: false`.
-
-### supportAuthor
-
-The `supportAuthor` option is turned on by default for configuration information, that is, authors are supported.
-
-All support items are as follows：
-
-1. The `octopus cat` will be displayed in the upper right corner of the home page.
-2. The console prints the author's site information
-
-If you want to turn it off, set `intro.author: false`.
-
-
-### Icon replacement
-Icons in the project, all from [阿里巴巴矢量图标库](https://www.iconfont.cn)
-
-The replacement steps are as follows:
-
-1. Please select your icon, add it to the project, and change the color to white.
-2. Click Font Class method
-3. Copy the contents of the generated link
-4. Replace the contents of the file `/src/css/common/icon.less`, where the contents of the `icon` selector must be preserved.
-5. Config.json the corresponding item in the `config.json`file`main.ul. * .icon`
-
-```css
-.icon {
-	display: block;
-	width: 1.5em;
-	height: 1.5em;
-	margin: 0 auto;
-	fill: currentColor;
-	font-family: 'iconfont' !important;
-	font-size: inherit;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-```
-
-
-
-## Deployment
-
-After executing `npm run build` under the root directory, the project file will be generated to the `dist` directory.
-
-You can then deploy the dist directory to your favorite server hosting provider.
-
-The following is an example of `GithubPage`:
-
-1. create `userName.github.io` Repo
-
-2. ```sh
-   cd dist
-   git init
-   git add -A
-   git commit -am"init"
-   git remote add origin https://github.com/userName/userName.github.io.git
-   git push -f origin master
-   ```
-
-3. Then set the repo's Github Page option in GitHub.
-
-4. Visit `username.github.io` to browse!
-
-
-
-If your previous `username. github.io` repo already has content, you can create another repo, such as `blog`.
-
- Then migrate the occupied items to `blog` and set the `GithubPage` option for this repo.
-
- The repo became a subdirectory of `username. github.io/blog`.
-
- In this way, your `username. github.io` repo can be left to the home page!
-
-
-
-## Sponsor
-I spent a lot of time and energy to develop this project.
-
-If this project has brought you help, welcome to sponsor, `star`.
-
-Thank you!
+外部网站、服务、库和模板来源列在 [ATTRIBUTION.md](ATTRIBUTION.md)。其中包括 GitHub Pages、Supabase、Giscus、arXiv、Zotero、WebGL Fluid Simulation、MathJax、anime.js、jsDelivr、Alibaba Iconfont、SimonAKing/HomePage 和历史迁移内容中的 Beautiful Jekyll 资产。
