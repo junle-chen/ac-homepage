@@ -2946,6 +2946,7 @@ function bindGlassTopbar() {
 		const modalDate = document.querySelector("[data-paper-modal-date]");
 		const modalSummary = document.querySelector("[data-paper-modal-summary]");
 		const modalGrid = document.querySelector("[data-paper-modal-grid]");
+		const modalExpanded = document.querySelector("[data-paper-modal-expanded]");
 		const modalLinks = document.querySelector("[data-paper-modal-links]");
 		const modalIndex = document.querySelector("[data-paper-modal-index]");
 		const modalPosition = document.querySelector("[data-paper-modal-position]");
@@ -3285,6 +3286,13 @@ function bindGlassTopbar() {
 			return sentences.find((sentence) => pattern.test(sentence)) || "";
 		}
 
+		function choosePaperDetailText(...values) {
+			return values
+				.map((value) => String(value || "").trim())
+				.filter(Boolean)
+				.sort((a, b) => b.length - a.length)[0] || "";
+		}
+
 		function getPaperInterpretation(paper) {
 			const brief = paper.brief || {};
 			const analysis = paper.analysis || {};
@@ -3301,10 +3309,10 @@ function bindGlassTopbar() {
 				brief.research_help
 			) {
 				return {
-					"论文动机": analysis.motivation || brief.motivation || "自动化还没有写入动机解读。",
-					"方法": analysis.method || brief.method || "自动化还没有写入方法解读。",
-					"实验结果": analysis.experiments || brief.experiments || "自动化还没有写入实验结果解读。",
-					"Insight": analysis.insight || brief.insight || analysis.research_help || brief.research_help || "自动化还没有写入 insight。",
+					"论文动机": choosePaperDetailText(brief.motivation, analysis.motivation) || "自动化还没有写入动机解读。",
+					"方法": choosePaperDetailText(brief.method, analysis.method) || "自动化还没有写入方法解读。",
+					"实验结果": choosePaperDetailText(brief.experiments, analysis.experiments) || "自动化还没有写入实验结果解读。",
+					"Insight": choosePaperDetailText(brief.insight, analysis.insight, brief.research_help, analysis.research_help) || "自动化还没有写入 insight。",
 				};
 			}
 			const title = paper.title || "Untitled paper";
@@ -3379,11 +3387,27 @@ function bindGlassTopbar() {
 			);
 		}
 
+		function getPaperModalSummary(paper) {
+			const brief = paper.brief || {};
+			return compactText(brief.summary || paper.summary || getPaperCardSummary(paper), 720);
+		}
+
 		function formatAuthors(authors) {
 			if (Array.isArray(authors) && authors.length) {
 				return authors.join(", ");
 			}
 			return String(authors || "N/A");
+		}
+
+		function normalizeModalValue(value) {
+			if (Array.isArray(value)) {
+				return value
+					.map((item) => String(item || "").trim())
+					.filter(Boolean)
+					.map((item) => `• ${item}`)
+					.join("\n");
+			}
+			return String(value || "").trim();
 		}
 
 		function createModalSection(label, value) {
@@ -3392,10 +3416,17 @@ function bindGlassTopbar() {
 			const heading = document.createElement("h4");
 			heading.textContent = label;
 			const body = document.createElement("p");
-			appendHighlightedText(body, value || "自动化还没有写入这一部分。");
+			appendHighlightedText(body, normalizeModalValue(value) || "自动化还没有写入这一部分。");
 			section.appendChild(heading);
 			section.appendChild(body);
 			return section;
+		}
+
+		function appendModalSection(parent, label, value) {
+			const normalized = normalizeModalValue(value);
+			if (parent && normalized) {
+				parent.appendChild(createModalSection(label, normalized));
+			}
 		}
 
 		function createModalLink(label, href) {
@@ -3446,13 +3477,16 @@ function bindGlassTopbar() {
 			}
 			const modalTotal = total || currentModalItems.length || 1;
 			currentModalIndex = index;
+			const brief = paper.brief || {};
+			const analysis = paper.analysis || {};
 			const interpretation = getPaperInterpretation(paper);
-			const authors = formatAuthors(paper.authors || (paper.brief && paper.brief.authors));
+			const authors = formatAuthors(paper.authors || brief.authors);
 			const categories = (paper.categories || [paper.primary_category]).filter(Boolean).join(", ");
 			const repoUrl = getRepoUrl(paper);
-			const projectUrl = paper.project_url || (paper.brief && paper.brief.project_url) || "";
+			const projectUrl = paper.project_url || brief.project_url || "";
 			const arxivUrl = (paper.url || "").replace(/^http:\/\//, "https://");
 			const pdfUrl = getArxivPdfUrl(paper);
+			const recommendation = getRecommendation(paper);
 
 			if (modalTitle) {
 				modalTitle.textContent = paper.title || "Untitled paper";
@@ -3467,7 +3501,7 @@ function bindGlassTopbar() {
 				modalDate.textContent = `Date: ${getPaperDate(paper) || "N/A"}`;
 			}
 			if (modalSummary) {
-				appendHighlightedText(modalSummary, getPaperCardSummary(paper));
+				appendHighlightedText(modalSummary, getPaperModalSummary(paper));
 			}
 			if (modalIndex) {
 				modalIndex.textContent = String(index + 1);
@@ -3486,8 +3520,22 @@ function bindGlassTopbar() {
 					modalGrid.appendChild(createModalSection(label, value));
 				});
 			}
+			if (modalExpanded) {
+				modalExpanded.innerHTML = "";
+				appendModalSection(modalExpanded, "Full Summary", brief.summary || paper.summary);
+				if (paper.summary && paper.summary !== brief.summary) {
+					appendModalSection(modalExpanded, "Abstract", paper.summary);
+				}
+				appendModalSection(modalExpanded, "Contribution", brief.contribution || getContribution(paper));
+				appendModalSection(modalExpanded, "Highlights", brief.highlights);
+				appendModalSection(
+					modalExpanded,
+					"Recommendation",
+					[recommendation.judgement, recommendation.reason].filter(Boolean).join(" ")
+				);
+			}
 			if (modalLimitations && modalLimitationsSection) {
-				const limitations = paper.analysis && paper.analysis.limitations;
+				const limitations = normalizeModalValue(analysis.limitations || brief.limitations);
 				appendHighlightedText(modalLimitations, limitations || "");
 				modalLimitationsSection.hidden = !limitations;
 			}
