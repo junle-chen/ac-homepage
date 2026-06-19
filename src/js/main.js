@@ -1037,8 +1037,8 @@ const GISCUS_CONFIG = {
 	repo: "junle-chen/ac-homepage",
 	repoId: "R_kgDOS_DVDQ",
 	category: "General",
-	categoryId: "",
-	installed: false,
+	categoryId: "DIC_kwDOS_DVDc4C_djH",
+	installed: true,
 };
 
 function normalizeStringList(value) {
@@ -2422,7 +2422,7 @@ function bindGlassTopbar() {
 		script.setAttribute("data-category-id", GISCUS_CONFIG.categoryId);
 		script.setAttribute("data-mapping", "specific");
 		script.setAttribute("data-term", term);
-		script.setAttribute("data-strict", "1");
+		script.setAttribute("data-strict", "0");
 		script.setAttribute("data-reactions-enabled", "1");
 		script.setAttribute("data-emit-metadata", "0");
 		script.setAttribute("data-input-position", "bottom");
