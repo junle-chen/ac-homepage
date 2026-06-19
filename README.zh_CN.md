@@ -4,7 +4,8 @@
 
 - 本地运行方式
 - 首页、内容、Supabase、Giscus 和 GitHub Pages 的配置入口
-- 如何把 GitHub 仓库从 fork 显示迁移成独立仓库
+- Supabase realtime、GitHub OAuth、memos、paper stars 和 archive 状态的实现说明
+- 网页截图和 About / Memos / Academic / Notes reader 功能说明
 - 如何引用这个网页项目
 - 使用和参考过的网站、服务、库与模板
 - 代码许可、个人内容版权和第三方来源说明
