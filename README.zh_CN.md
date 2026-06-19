@@ -7,6 +7,9 @@
 - 如何把 GitHub 仓库从 fork 显示迁移成独立仓库
 - 如何引用这个网页项目
 - 使用和参考过的网站、服务、库与模板
+- 代码许可、个人内容版权和第三方来源说明
+
+个人内容与代码许可的边界见 [CONTENT_LICENSE.md](CONTENT_LICENSE.md)，上游版权说明见 [NOTICE.md](NOTICE.md)，第三方来源见 [ATTRIBUTION.md](ATTRIBUTION.md)。
 
 站点地址：[junle.site](https://junle.site)
 

@@ -95,6 +95,15 @@ npm run build
 
 如果使用 `dist` 直接发布，可以把 `dist/` 内容推到 `gh-pages` 分支。
 
+## 版权与许可
+
+本仓库包含两类内容：
+
+- 网站源代码：基于 [SimonAKing/HomePage](https://github.com/SimonAKing/HomePage)，按 `LGPL-3.0-only` 保留许可证和上游署名。
+- 个人内容：notes、memos、论文阅读摘要、头像和个人介绍默认版权归 Junle Chen 所有，除非文件另有说明。
+
+具体边界见 [CONTENT_LICENSE.md](CONTENT_LICENSE.md)，上游版权说明见 [NOTICE.md](NOTICE.md)，第三方服务、库和模板来源见 [ATTRIBUTION.md](ATTRIBUTION.md)。
+
 ## 取消 GitHub fork 显示
 
 README 只能改变仓库介绍，不能移除 GitHub 顶部的 fork 关系。要让 GitHub 把它当作独立项目，按官方 duplicate/mirror 思路新建一个不是 fork 创建的仓库：
