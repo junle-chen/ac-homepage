@@ -1554,6 +1554,25 @@
 			min-width: 0;
 		}
 
+		#daily-paper .paper-card-top {
+			grid-template-areas:
+				"meta actions"
+				"title title";
+		}
+
+		#daily-paper .paper-card-top > .academic-paper-meta {
+			grid-area: meta;
+		}
+
+		#daily-paper .paper-card-title {
+			grid-area: title;
+		}
+
+		#daily-paper .paper-card-actions {
+			grid-area: actions;
+			justify-self: end;
+		}
+
 		.paper-card-actions {
 			display: flex;
 			flex-wrap: wrap;
@@ -3307,6 +3326,17 @@
 
 		.paper-card-top {
 			grid-template-columns: 1fr;
+		}
+
+		#daily-paper .paper-card-top {
+			grid-template-areas:
+				"meta"
+				"actions"
+				"title";
+		}
+
+		#daily-paper .paper-card-actions {
+			justify-self: start;
 		}
 
 		.paper-modal {

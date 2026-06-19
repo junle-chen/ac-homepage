@@ -3403,6 +3403,49 @@ function bindGlassTopbar() {
 			);
 		}
 
+		function getPaperAbstractText(paper) {
+			const brief = paper.brief || {};
+			const analysis = paper.analysis || {};
+			return compactText(
+				analysis.abstract_zh ||
+					brief.abstract_zh ||
+					brief.summary_zh ||
+					brief.summary ||
+					analysis.full_summary ||
+					brief.full_summary ||
+					getPaperModalSummary(paper),
+				900
+			);
+		}
+
+		function getPaperTakeawayText(paper) {
+			const brief = paper.brief || {};
+			const recommendation = getRecommendation(paper);
+			const values = [
+				getContribution(paper),
+				recommendation.judgement,
+				recommendation.reason,
+			];
+			const highlights = Array.isArray(brief.highlights) ? brief.highlights : [brief.highlights];
+			highlights.forEach((item) => values.push(item));
+			const seen = new Set();
+			const rows = values
+				.map((item) => String(item || "").replace(/^[-•]\s*/, "").trim())
+				.filter(Boolean)
+				.filter((item) => {
+					const key = item.replace(/\s+/g, " ").replace(/[。；;]+$/g, "").toLowerCase();
+					if (seen.has(key)) {
+						return false;
+					}
+					seen.add(key);
+					return true;
+				});
+			if (!rows.length) {
+				return "";
+			}
+			return rows.length === 1 ? rows[0] : rows.map((item) => `• ${item}`).join("\n");
+		}
+
 		function formatAuthors(authors) {
 			if (Array.isArray(authors) && authors.length) {
 				return authors.join(", ");
@@ -3497,8 +3540,6 @@ function bindGlassTopbar() {
 			const projectUrl = paper.project_url || brief.project_url || "";
 			const arxivUrl = (paper.url || "").replace(/^http:\/\//, "https://");
 			const pdfUrl = getArxivPdfUrl(paper);
-			const recommendation = getRecommendation(paper);
-			const fullSummary = getPaperModalSummary(paper);
 
 			if (modalTitle) {
 				modalTitle.textContent = paper.title || "Untitled paper";
@@ -3534,17 +3575,8 @@ function bindGlassTopbar() {
 			}
 			if (modalExpanded) {
 				modalExpanded.innerHTML = "";
-				appendModalSection(modalExpanded, "Full Summary", fullSummary);
-				if (paper.summary && paper.summary !== fullSummary) {
-					appendModalSection(modalExpanded, "Abstract", paper.summary);
-				}
-				appendModalSection(modalExpanded, "Contribution", brief.contribution || getContribution(paper));
-				appendModalSection(modalExpanded, "Highlights", brief.highlights);
-				appendModalSection(
-					modalExpanded,
-					"Recommendation",
-					uniqueList([recommendation.judgement, recommendation.reason].filter(Boolean)).join(" ")
-				);
+				appendModalSection(modalExpanded, "摘要", getPaperAbstractText(paper));
+				appendModalSection(modalExpanded, "推荐与贡献", getPaperTakeawayText(paper));
 			}
 			if (modalLimitations && modalLimitationsSection) {
 				const limitations = normalizeModalValue(analysis.limitations || brief.limitations);
@@ -4266,11 +4298,11 @@ function bindGlassTopbar() {
 
 				const top = document.createElement("div");
 				top.className = "paper-card-top";
+				top.appendChild(meta);
 				const titleWrap = document.createElement("div");
 				titleWrap.className = "paper-card-title";
 				const title = document.createElement("h3");
 				title.textContent = paper.title || "Untitled paper";
-				titleWrap.appendChild(meta);
 				titleWrap.appendChild(title);
 
 				const actions = document.createElement("div");
