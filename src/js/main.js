@@ -3250,7 +3250,11 @@ function bindGlassTopbar() {
 		}
 
 		function getArxivPdfUrl(paper) {
-			const url = (paper.url || "").replace(/^http:\/\//, "https://");
+			const explicitPdf = (paper.pdf_url || "").replace(/^http:\/\//, "https://");
+			if (explicitPdf) {
+				return explicitPdf;
+			}
+			const url = (paper.arxiv_url || paper.paper_url || paper.url || "").replace(/^http:\/\//, "https://");
 			const match = url.match(/arxiv\.org\/abs\/([^?#]+)/i);
 			return match ? `https://arxiv.org/pdf/${match[1]}.pdf` : "";
 		}
@@ -3538,7 +3542,8 @@ function bindGlassTopbar() {
 			const categories = (paper.categories || [paper.primary_category]).filter(Boolean).join(", ");
 			const repoUrl = getRepoUrl(paper);
 			const projectUrl = paper.project_url || brief.project_url || "";
-			const arxivUrl = (paper.url || "").replace(/^http:\/\//, "https://");
+			const arxivUrl = (paper.arxiv_url || paper.paper_url || paper.url || "").replace(/^http:\/\//, "https://");
+			const paperLinkLabel = /arxiv\.org/i.test(arxivUrl) ? "arXiv" : "Paper";
 			const pdfUrl = getArxivPdfUrl(paper);
 
 			if (modalTitle) {
@@ -3586,7 +3591,7 @@ function bindGlassTopbar() {
 			if (modalLinks) {
 				modalLinks.innerHTML = "";
 				[
-					createModalLink("arXiv", arxivUrl),
+					createModalLink(paperLinkLabel, arxivUrl),
 					createModalLink("PDF", pdfUrl),
 					createModalLink("Code", repoUrl),
 					createModalLink("Project", projectUrl),
@@ -4754,9 +4759,13 @@ function bindGlassTopbar() {
 		}
 
 		function getZoteroCardSummary(paper) {
+			const brief = paper.brief || {};
+			const analysisFields = paper.analysis || {};
 			const analysis = zoteroAnalysisFor(paper);
 			return compact(
-				paper.summary ||
+				analysisFields.card_summary ||
+					brief.card_summary ||
+					paper.summary ||
 					analysis["Insight"] ||
 					paper.reason ||
 					paper.abstract ||
@@ -4766,36 +4775,49 @@ function bindGlassTopbar() {
 		}
 
 		function normalizeZoteroForModal(paper) {
+			const brief = paper.brief || {};
+			const analysisFields = paper.analysis || {};
 			const analysis = zoteroAnalysisFor(paper);
 			return {
 				id: `zotero-${getZoteroKey(paper)}`,
 				title: paper.title || "Untitled paper",
 				summary: paper.abstract || paper.summary || paper.reason || "",
-				url: paper.url || "",
+				url: paper.arxiv_url || paper.paper_url || paper.url || "",
+				arxiv_url: paper.arxiv_url || "",
+				paper_url: paper.paper_url || "",
+				pdf_url: paper.pdf_url || "",
 				repo_url: paper.repo_url || "",
 				authors: paper.authors || [],
 				published: paper.year || "",
 				updated: paper.year || "",
 				primary_category: paper.publication || (paper.collection_shorts || [])[0] || "",
 				categories: paper.collections || paper.collection_shorts || [],
+				affiliations: paper.affiliations || "",
+				recommendation: paper.recommendation,
 				brief: {
+					...brief,
 					card_summary: getZoteroCardSummary(paper),
+					full_summary: brief.full_summary || analysisFields.full_summary || "",
+					abstract_zh: brief.abstract_zh || analysisFields.abstract_zh || "",
+					contribution: brief.contribution || paper.reason || "",
+					highlights: brief.highlights || [],
+					limitations: brief.limitations || analysisFields.limitations || "",
 					repo_url: paper.repo_url || "",
 				},
 				analysis: {
+					...analysisFields,
 					motivation: analysis["论文动机"],
 					method: analysis["方法"],
 					experiments: analysis["实验结果"],
-					insight: analysis["Insight"],
+					insight: analysisFields.insight || analysis["Insight"],
+					research_help: analysisFields.research_help || analysis["Insight"],
 				},
 			};
 		}
 
 		function renderItems() {
 			const visibleItems = getVisibleItems();
-			const items = visibleItems
-				.slice()
-				.sort((a, b) => {
+			const items = visibleItems.slice().sort((a, b) => {
 					const starCompare = Number(isStarred(b)) - Number(isStarred(a));
 					if (starCompare !== 0) {
 						return starCompare;
@@ -4805,8 +4827,7 @@ function bindGlassTopbar() {
 						return yearCompare;
 					}
 					return String(a.title || "").localeCompare(String(b.title || ""));
-				})
-				.slice(0, 30);
+				});
 			const modalItems = items.map(normalizeZoteroForModal);
 			list.innerHTML = "";
 			renderFilters();
@@ -4829,7 +4850,7 @@ function bindGlassTopbar() {
 					top.className = "paper-card-top";
 					const titleWrap = document.createElement("div");
 					titleWrap.className = "paper-card-title";
-					appendMeta(titleWrap, [
+					appendMeta(top, [
 						paper.year || "年份待确认",
 						paper.publication || "",
 						(paper.collections || []).slice(0, 2).join(" / "),
@@ -4866,6 +4887,15 @@ function bindGlassTopbar() {
 						}
 					});
 					actions.appendChild(starButton);
+					const sourceUrl = paper.arxiv_url || paper.paper_url || paper.url || "";
+					if (sourceUrl) {
+						const sourceLink = document.createElement("a");
+						sourceLink.href = sourceUrl;
+						sourceLink.target = "_blank";
+						sourceLink.rel = "noopener noreferrer";
+						sourceLink.textContent = /arxiv\.org/i.test(sourceUrl) ? "arXiv" : "Paper";
+						actions.appendChild(sourceLink);
+					}
 					actions.appendChild(detailButton);
 					top.appendChild(titleWrap);
 					top.appendChild(actions);
