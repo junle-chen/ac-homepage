@@ -4631,16 +4631,7 @@ function bindGlassTopbar() {
 				return;
 			}
 			summaryNode.innerHTML = "";
-			const total = document.createElement("span");
-			total.textContent = selectedCollection
-				? `${filteredItems.length} of ${allItems.length} papers`
-				: `${allItems.length} papers`;
-			summaryNode.appendChild(total);
-			if (selectedCollection) {
-				const active = document.createElement("span");
-				active.textContent = selectedCollection === "__starred" ? "Starred" : selectedCollection;
-				summaryNode.appendChild(active);
-			}
+			summaryNode.hidden = true;
 		}
 
 		function getZoteroCollections(paper) {
