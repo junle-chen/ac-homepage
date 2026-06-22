@@ -21,9 +21,9 @@
       "tags": [
         "Engineering Log"
       ],
-      "excerpt": "这篇记录的是我最后采用的一套配置：本地 Mac 上已经有 Clash/代理监听 127.0.0.1:7890 ，远程服务器本身不默认走代理；只有 codex 、 claude 和 Codex App 启动的远程 codex app server 走这个代理。 结论先放前面： 本地端口还是 7890 。 服务器上不要用 7890 ，用 S...",
+      "excerpt": "Codex 远程代理配置备忘：SSH 端口转发、命令级代理和 Codex App app server。",
       "url": "assets/content/notes/2026-6-23-Codex%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%A3%E7%90%86%E5%92%8CCodex%20App%E8%BF%9C%E7%A8%8BSSH%E9%85%8D%E7%BD%AE.md",
-      "search": "codex 服务器代理和 codex app 远程 ssh 配置 2026-06-23 engineering log 这篇记录的是我最后采用的一套配置：本地 mac 上已经有 clash/代理监听 127.0.0.1:7890 ，远程服务器本身不默认走代理；只有 codex 、 claude 和 codex app 启动的远程 codex app server 走这个代理。 结论先放前面： 本地端口还是 7890 。 服务器上不要用 7890 ，用 s..."
+      "search": "codex 服务器代理和 codex app 远程 ssh 配置 2026-06-23 engineering log codex 远程代理配置备忘：ssh 端口转发、命令级代理和 codex app app server。"
     },
     {
       "title": "1*1卷积",

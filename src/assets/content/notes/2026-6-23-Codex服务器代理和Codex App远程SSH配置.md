@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Codex 服务器代理和 Codex App 远程 SSH 配置
+subtitle: Codex 远程代理配置备忘：SSH 端口转发、命令级代理和 Codex App app-server。
 gh-repo: https://github.com/junle-chen/junle-cc-website
 tags:
   - note
@@ -17,9 +18,9 @@ share-img: /assets/img/path.jpg
 cover-img: /assets/img/path.jpg
 ---
 
-这篇记录的是我最后采用的一套配置：本地 Mac 上已经有 Clash/代理监听 `127.0.0.1:7890`，远程服务器本身不默认走代理；只有 `codex`、`claude` 和 Codex App 启动的远程 `codex app-server` 走这个代理。
+这是一份 Codex 远程代理配置备忘：用 SSH `RemoteForward` 把服务器端口接到本地代理，默认 shell 保持直连，只让 `codex`、`claude` 和 Codex App 的 `app-server` 走代理。
 
-结论先放前面：
+最终方案：
 
 - 本地端口还是 `7890`。
 - 服务器上不要用 `7890`，用 SSH `RemoteForward` 映射出来的远程端口，比如 `17890`。
