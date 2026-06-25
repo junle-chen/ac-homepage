@@ -13,6 +13,74 @@ const outputPath = path.join(
 	"daily-papers.json"
 );
 
+function readExistingDailyPapers() {
+	if (!fs.existsSync(outputPath)) {
+		return null;
+	}
+	try {
+		return JSON.parse(fs.readFileSync(outputPath, "utf8"));
+	} catch (error) {
+		return null;
+	}
+}
+
+function normalizePaperKey(paper) {
+	const value = String(paper.id || paper.url || paper.arxiv_url || paper.paper_url || paper.title || "")
+		.trim()
+		.toLowerCase();
+	const arxivMatch = value.match(/(?:arxiv\.org\/abs\/)?(\d{4}\.\d{4,5})(?:v\d+)?/);
+	return arxivMatch ? arxivMatch[1] : value;
+}
+
+function mergePaperItem(existing, incoming) {
+	const merged = {
+		...(existing || {}),
+		...(incoming || {}),
+	};
+	const existingHasAnalysis = existing && existing.analysis && !incoming.analysis;
+	if (existingHasAnalysis) {
+		merged.analysis = existing.analysis;
+	}
+	if (existing && existing.analysis_error && !incoming.analysis_error) {
+		merged.analysis_error = existing.analysis_error;
+	}
+	merged.recommendation = {
+		...((existing && existing.recommendation) || {}),
+		...((incoming && incoming.recommendation) || {}),
+	};
+	merged.brief = existingHasAnalysis
+		? {
+			...((incoming && incoming.brief) || {}),
+			...((existing && existing.brief) || {}),
+		}
+		: {
+			...((existing && existing.brief) || {}),
+			...((incoming && incoming.brief) || {}),
+		};
+	return merged;
+}
+
+function mergeDailyPaperItems(freshItems, existingItems) {
+	const byKey = new Map();
+	const orderedKeys = [];
+	function upsert(item, fresh) {
+		const key = normalizePaperKey(item);
+		if (!key) {
+			return;
+		}
+		if (!byKey.has(key)) {
+			orderedKeys.push(key);
+			byKey.set(key, item);
+			return;
+		}
+		const current = byKey.get(key);
+		byKey.set(key, fresh ? mergePaperItem(current, item) : mergePaperItem(item, current));
+	}
+	(freshItems || []).forEach((item) => upsert(item, true));
+	(existingItems || []).forEach((item) => upsert(item, false));
+	return orderedKeys.map((key) => byKey.get(key));
+}
+
 const queryTerms = [
 	"agentic reinforcement learning",
 	"agentic rl",
@@ -468,7 +536,7 @@ function buildDigest(items, updatedAt) {
 async function main() {
 	const xml = await requestText(buildUrl());
 	const updatedAt = new Date().toISOString();
-	const items = parseEntries(xml)
+	const freshItems = parseEntries(xml)
 		.filter((item) => relevanceScore(item) >= 46)
 		.sort((a, b) => {
 			const dateCompare = String(b.published).localeCompare(String(a.published));
@@ -478,6 +546,8 @@ async function main() {
 			return relevanceScore(b) - relevanceScore(a);
 		})
 		.slice(0, 16);
+	const existing = readExistingDailyPapers();
+	const items = mergeDailyPaperItems(freshItems, existing && existing.items);
 
 	const output = {
 		updated_at: updatedAt,
@@ -503,14 +573,21 @@ async function main() {
 				"亮点",
 			],
 		},
-		digest: buildDigest(items, updatedAt),
+		digest: buildDigest(freshItems, updatedAt),
+		latest_item_ids: freshItems.map((item) => item.id).filter(Boolean),
+		archive: {
+			policy: "append_or_update_by_arxiv_id",
+			fresh_items: freshItems.length,
+			total_items: items.length,
+			previous_items: existing && Array.isArray(existing.items) ? existing.items.length : 0,
+		},
 		items,
 	};
 
 	fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 	fs.writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`);
 	console.log(
-		`Wrote ${items.length} interpreted arXiv papers to ${path.relative(
+		`Wrote ${freshItems.length} fresh papers and preserved ${items.length} total papers in ${path.relative(
 			projectRoot,
 			outputPath
 		)}`

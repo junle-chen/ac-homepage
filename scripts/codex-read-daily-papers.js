@@ -376,8 +376,17 @@ async function main() {
 	const data = readJson(dataPath);
 	const allItems = data.items || [];
 	const onlyId = process.env.CODEX_PAPER_ONLY_ID || "";
-	const limit = Number(process.env.CODEX_PAPER_LIMIT || allItems.length);
+	const latestIds = Array.isArray(data.latest_item_ids)
+		? data.latest_item_ids.filter(Boolean)
+		: [];
+	const latestIdSet = new Set(latestIds);
+	const useAllItems = process.env.CODEX_PAPER_ALL_ITEMS === "1";
+	const defaultItems = latestIdSet.size && !useAllItems && !onlyId
+		? allItems.filter((paper) => latestIdSet.has(paper.id))
+		: allItems;
+	const limit = Number(process.env.CODEX_PAPER_LIMIT || defaultItems.length);
 	const items = allItems
+		.filter((paper) => useAllItems || onlyId || !latestIdSet.size || latestIdSet.has(paper.id))
 		.filter((paper) => !onlyId || paper.id === onlyId || paper.title === onlyId)
 		.slice(0, limit);
 	const cacheDir = path.join(os.tmpdir(), "junle-homepage-daily-papers");

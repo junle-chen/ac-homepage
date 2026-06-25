@@ -890,13 +890,33 @@ function switchPage() {
 		path: $(".shape-wrap path"),
 		shape: $("svg.shape"),
 	};
+	const cleanupIntroCanvas = () => {
+		if (canvas) {
+			cancelAnimationFrame(animationID);
+			canvas.parentElement.removeChild(canvas);
+			canvas = null;
+		}
+	};
+	const hideIntroLayer = () => {
+		DOM.intro.classList.add("is-hidden");
+		DOM.intro.style.pointerEvents = "none";
+	};
 	DOM.shape.style.transformOrigin = "50% 0%";
+
+	if (typeof anime !== "function") {
+		DOM.intro.style.transform = "translateY(-200vh)";
+		hideIntroLayer();
+		cleanupIntroCanvas();
+		switchPage.switched = true;
+		return;
+	}
 
 	anime({
 		targets: DOM.intro,
 		duration: 1100,
 		easing: "easeInOutSine",
 		translateY: "-200vh",
+		complete: hideIntroLayer,
 	});
 
 	anime({
@@ -920,11 +940,7 @@ function switchPage() {
 		easing: "easeOutQuad",
 		d: DOM.path.getAttribute("pathdata:id"),
 		complete: function (anim) {
-			if (canvas) {
-				cancelAnimationFrame(animationID);
-				canvas.parentElement.removeChild(canvas);
-				canvas = null;
-			}
+			cleanupIntroCanvas();
 		},
 	});
 
@@ -1434,6 +1450,7 @@ const OWNER_STORAGE_KEY = "junle-homepage-owner-mode-v2";
 const NOTE_ARCHIVE_STORAGE_KEY = "junle-homepage-archived-notes-v1";
 const NOTE_VIEW_STORAGE_KEY = "junle-homepage-note-view-v2";
 const POST_AUTH_HASH_STORAGE_KEY = "junle-homepage-post-auth-hash-v1";
+const THEME_STORAGE_KEY = "junle-homepage-theme-v2";
 
 function isRealtimeOwnerEnabled() {
 	return Boolean(window.JunleRealtime && window.JunleRealtime.canWrite && window.JunleRealtime.canWrite());
@@ -1471,7 +1488,7 @@ function isOAuthCallbackHash(hash) {
 
 function isSafeAppHash(hash) {
 	return (
-		["#about", "#notes", "#memos", "#papers", "#daily-paper", "#paper-list", "#note-reader"].indexOf(hash || "") !== -1 ||
+		["#about", "#info", "#notes", "#memos", "#papers", "#daily-paper", "#paper-list", "#note-reader"].indexOf(hash || "") !== -1 ||
 		isNoteHash(hash)
 	);
 }
@@ -1841,10 +1858,12 @@ function bindContentFilters() {
 		const isMemoView = hash === "#memos";
 		const isAcademicView = isAcademicHash(hash);
 		const isAboutView = hash === "#about";
+		const isInfoView = hash === "#info";
 		const isNoteView = isNoteHash(hash);
 		main.classList.toggle("view-memos", isMemoView);
 		main.classList.toggle("view-academic", isAcademicView);
 		main.classList.toggle("view-about", isAboutView);
+		main.classList.toggle("view-info", isInfoView);
 		main.classList.toggle("view-note", isNoteView);
 		if (isAboutView) {
 			playAboutIntro(main, options.introDelay || 0);
@@ -1868,6 +1887,7 @@ function bindContentFilters() {
 					href === hash ||
 					(section === "blog" && (hash === "#notes" || isNoteView)) ||
 					(section === "academic" && isAcademicView) ||
+					(section === "info" && isInfoView) ||
 					(section === "about" && isAboutView);
 					item.classList.toggle("is-active", active);
 				});
@@ -1984,12 +2004,12 @@ function bindThemeToggle() {
 		);
 	}
 
-	const savedTheme = window.localStorage.getItem("junle-homepage-theme") || "dark";
+	const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY) || "light";
 	applyTheme(savedTheme);
 
 	button.addEventListener("click", () => {
 		const nextTheme = main.classList.contains("theme-light") ? "dark" : "light";
-		window.localStorage.setItem("junle-homepage-theme", nextTheme);
+		window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 		applyTheme(nextTheme);
 		if (window.updateGiscusTheme) {
 			window.updateGiscusTheme();
@@ -3836,6 +3856,19 @@ function bindGlassTopbar() {
 				}
 			});
 			dateList.innerHTML = "";
+			const totalCount = Object.keys(counts).reduce((sum, date) => sum + counts[date], 0);
+			const allButton = document.createElement("button");
+			allButton.type = "button";
+			allButton.className = "paper-date-button";
+			allButton.dataset.paperDateButton = "";
+			allButton.classList.toggle("is-active", !selectedDate);
+			const allDateLabel = document.createElement("span");
+			allDateLabel.textContent = "All dates";
+			const allCountLabel = document.createElement("span");
+			allCountLabel.textContent = totalCount + " 篇";
+			allButton.appendChild(allDateLabel);
+			allButton.appendChild(allCountLabel);
+			dateList.appendChild(allButton);
 			Object.keys(counts)
 				.sort((a, b) => b.localeCompare(a))
 				.forEach((date) => {

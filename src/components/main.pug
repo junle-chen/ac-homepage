@@ -25,8 +25,39 @@
 - notes.forEach(note => (note.tags || []).forEach(tag => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1)))
 - const tags = Array.from(tagCounts.entries()).sort((a, b) => b[1] - a[1])
 - const collectionItems = categories.map(category => ({ name: category, count: notes.filter(note => note.category === category || (note.tags || []).includes(category)).length }))
+- const escapeHtml = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
+- const boldSelfAuthor = value => escapeHtml(value).replace(/\bJunle Chen\b/g, '<span class="author-self">Junle Chen</span>')
+-
+	const infoActions = [
+		{ label: "Hong Kong", glyph: "HK" },
+		{ label: "GitHub", icon: "github", href: "https://github.com/junle-chen" },
+		{ label: "Email", icon: "email", href: "mailto:jchenkg@connect.ust.hk" },
+		{ label: "Phone", glyph: "TEL", href: "tel:+85256029402" }
+	]
+	const educationItems = [
+		{ date: "Sept 2021 - Jun 2025", title: "Bachelor of Computer Science and Technology", org: "School of Future Technology, Harbin Institute of Technology", detail: "Formerly Honor School." },
+		{ date: "Jul 2023", title: "AI Cloud-Based Scientific Research with Data-Driven Knowledge", org: "LAMDA, Nanjing University", detail: "Project experience." },
+		{ date: "Sept 2025 -", title: "PhD in Computer Science and Engineering (CSE)", org: "The Hong Kong University of Science and Technology", detail: "Under the guidance of Professor Xiaofang Zhou." }
+	]
+	const researchInterests = ["Large Language Models", "Long-horizon Agents", "Spatial-temporal Data"]
+	const publications = [
+		{ title: "Trip+: Benchmarking Agents in Personalized Interactive Travel Planning", authors: "Junle Chen, Wei Chen, Yehong Xu, Zhengjun Huang, Yuqian Wu, Zhoujin Tian, Kai Wang, Lei Wang, Xiaofang Zhou", venue: "arXiv preprint arXiv:2606.21169, 2026", href: "https://arxiv.org/abs/2606.21169" },
+		{ title: "M^3Exam: Benchmarking Multimodal Memory for Realistic User-Agent Interactions", authors: "Zhengjun Huang, Wenxuan Liu, Zhoujin Tian, Wei Chen, Junle Chen, Yuqian Wu, Fangyuan Zhang, Qintian Guo, Xiaofang Zhou", venue: "arXiv preprint arXiv:2606.07402, 2026", href: "https://arxiv.org/abs/2606.07402" },
+		{ title: "LifeSide: Benchmarking Agents as Lifelong Digital Companions", authors: "Yuqian Wu, Zhijie Deng, Wei Chen, Junwei Li, Yutian Jiang, Junle Chen, Zhengjun Huang, Qingxiang Liu, Jing Tang, Jiaheng Wei, Yuxuan Liang", venue: "arXiv preprint arXiv:2606.04660, 2026", href: "https://arxiv.org/abs/2606.04660" },
+		{ title: "Back to Basics: Let Conversational Agents Remember with Just Retrieval and Generation", authors: "Yuqian Wu, Wei Chen, Zhengjun Huang, Junle Chen, Qingxiang Liu, Kai Wang, Xiaofang Zhou, Yuxuan Liang", venue: "arXiv preprint arXiv:2604.11628, 2026", href: "https://arxiv.org/abs/2604.11628" },
+		{ title: "UrbanFM: Scaling Urban Spatio-Temporal Foundation Models", authors: "Wei Chen, Yuqian Wu, Junle Chen, Xiaofang Zhou, Yuxuan Liang", venue: "KDD 2026 Oral", href: "https://arxiv.org/abs/2602.20677" },
+		{ title: "Learning from Complexity: Exploring Dynamic Sample Pruning of Spatio-Temporal Training", authors: "Wei Chen, Junle Chen, Yuqian Wu, Yuxuan Liang, Xiaofang Zhou", venue: "arXiv preprint arXiv:2602.19113, 2026", href: "https://arxiv.org/abs/2602.19113" },
+		{ title: "Adaptive Indexing for Coverage Queries over Transition Trajectories", authors: "Jian Chen†, Junle Chen†, Donghua Yang, Guangyu Sui, Jinbao Wang, Lina Chen", venue: "World Wide Web, 2025", href: "https://doi.org/10.1007/s11280-025-01368-6" },
+		{ title: "Maximizing Influence Query over Indoor Trajectories", authors: "Jian Chen, Hong Gao, Yuhong Shi, Junle Chen, Donghua Yang, Jianzhong Li", venue: "IEEE Transactions on Knowledge and Data Engineering (TKDE), 2025", href: "https://doi.org/10.1109/TKDE.2024.3514323" },
+		{ title: "Efficient Coverage Query over Transition Trajectories", authors: "Jian Chen, Junle Chen, Hong Gao, Donghua Yang, Kaiqi Zhang", venue: "APWeb-WAIM, 2024", href: "https://doi.org/10.1007/978-981-97-7235-3_32" }
+	]
+	const awards = ["HKUST Postgraduate Studentship (PGS)", "HKUST RedBird PhD Scholarship", "National Scholarship (2022-2023)", "First-Class People's Scholarship (awarded each semester)", "Finalist in the Mathematical Contest in Modeling (MCM), USA", "First Prize in College Mathematics Competition", "Outstanding Student Award (Provincial Level)", "Outstanding Graduate of Heilongjiang Province", "Outstanding Graduate of Harbin Institute of Technology"]
+	const contactItems = [
+		{ label: "Email", value: "jchenkg@connect.ust.hk", href: "mailto:jchenkg@connect.ust.hk" },
+		{ label: "Phone", value: "+852 56029402", href: "tel:+85256029402" }
+	]
 
-.content.content-main
+.content.content-main.theme-light
 	canvas.grid-background#gridCanvas
 	.about-intro-stage(data-about-intro-stage aria-hidden="true")
 		.about-fluid-field(aria-hidden="true")
@@ -48,14 +79,12 @@
 					a(href="#notes" data-nav-section="blog") Blog
 					a(href="#memos") Memo
 					a(href="#papers" data-nav-section="academic") Academic
-					.topbar-dropdown(data-topbar-dropdown)
-						button.topbar-dropbtn(type="button" aria-expanded="false" data-dropdown-toggle)
-							span External
-							span.dropdown-caret(aria-hidden="true")
-						.topbar-menu
-							each resource in externalMenuItems
-								a(href=`${resource.href}` target="_blank" rel="noopener noreferrer") #{resource.title}
-					a(href="#about" data-nav-section="about") About Me
+					a(href="#info" data-nav-section="info") About Me
+					a.topbar-home-link(href="#about" data-nav-section="about" aria-label="Home")
+						svg.topbar-home-icon(viewBox="0 0 24 24" aria-hidden="true" focusable="false")
+							path(d="M3.5 10.5 12 3.5l8.5 7")
+							path(d="M5.5 10v9.5h13V10")
+							path(d="M9.5 19.5V15h5v4.5")
 				.topbar-actions
 					label.topbar-search(for="noteSearch")
 						span Search
@@ -65,13 +94,13 @@
 
 			section.about-panel#about
 				.about-profile
-					.about-card
+					.about-card.about-workspace-card
 						header.about-header
 							img(src=`${main.avatar.link}` width=`${main.avatar.width}` height=`${main.avatar.height}` alt="Junle Chen avatar")
 							p.profile-eyebrow Personal knowledge workspace
 							h1 #{main.name}
 							h2 #{main.signature}
-							p.about-bio 这里是我的个人研究工作台，用来整理 notes、memos、daily arXiv papers 和 Zotero paper list。站点地址是 junle.site，动态 memo、paper stars 和 archive 状态由 Supabase realtime 同步。
+							p.about-bio This website contains my personal profile, research notes, memos, Daily Paper reading archive, Zotero paper list, publications, awards, and contact information.
 						if profileLinks.length
 							ul.primary-links.about-links
 								each item in profileLinks
@@ -79,6 +108,84 @@
 										a(href=`${item.href}` aria-label=`${item.text}` target=isExternal(item.href) ? "_blank" : null rel=isExternal(item.href) ? "noopener noreferrer" : null)
 											i(class=`icon icon-${item.icon}`)
 											span #{item.text}
+
+			section.info-page#info
+				.info-shell.info-layout
+					aside.info-profile-card.info-card
+						.info-window-dots(aria-hidden="true")
+							span
+							span
+							span
+						.info-profile-identity
+							img(src=`${main.avatar.link}` width=`${main.avatar.width}` height=`${main.avatar.height}` alt="Junle Chen avatar")
+							.info-profile-copy
+								h2 Junle Chen
+								p.info-profile-name-cn 陈俊乐
+								p.info-profile-role First-year PhD student at HKUST CSE
+								ul.about-action-list.info-actions
+									each action in infoActions
+										li
+											if action.href
+												a.about-action-button(href=`${action.href}` target=/^https?:/.test(action.href) ? "_blank" : null rel=/^https?:/.test(action.href) ? "noopener noreferrer" : null)
+													if action.icon
+														i.about-action-icon.icon(class=`icon-${action.icon}` aria-hidden="true")
+													else
+														span.about-action-glyph #{action.glyph}
+													span #{action.label}
+											else
+												span.about-action-button
+													if action.icon
+														i.about-action-icon.icon(class=`icon-${action.icon}` aria-hidden="true")
+													else
+														span.about-action-glyph #{action.glyph}
+													span #{action.label}
+					.info-main-stack
+						article.info-card.info-about-card
+							h3 About Me
+							p.info-lead I am a first-year PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology, advised by Professor Xiaofang Zhou. My current research focuses on large language models, long-horizon agents, and spatial-temporal data.
+						article.info-card
+							h3 Education
+							.info-list
+								each item in educationItems
+									article.info-list-item
+										span.about-date #{item.date}
+										h4 #{item.title}
+										p #{item.org}
+										if item.detail
+											p.about-detail #{item.detail}
+						.info-two-column
+							article.info-card
+								h3 Research Interest
+								ul.about-chip-list
+									each interest in researchInterests
+										li #{interest}
+							article.info-card
+								h3 Awards
+								ul.info-bullet-list
+									each award in awards
+										li #{award}
+						article.info-card.info-publications-card
+							h3 Publications
+							.about-publication-list
+								each paper, index in publications
+									article.about-publication
+										span.about-publication-index #{index + 1}
+										div
+											h4
+												a(href=`${paper.href}` target="_blank" rel="noopener noreferrer") #{paper.title}
+											p.about-publication-authors!= boldSelfAuthor(paper.authors)
+											strong #{paper.venue}
+							p.about-footnote † Co-first author
+						article.info-card.info-contact-card
+							h3 Contact
+							ul.about-contact-list.info-contact-list
+								each item in contactItems
+									li
+										span #{item.label}
+										if item.href
+											a(href=`${item.href}` target=/^https?:/.test(item.href) ? "_blank" : null rel=/^https?:/.test(item.href) ? "noopener noreferrer" : null) #{item.value}
+										else
+											strong #{item.value}
 
 			section.memo-page#memos
 				.memo-workspace
@@ -145,6 +252,7 @@
 										p.section-eyebrow Daily Paper
 										h3 Daily Paper
 										p 每日 arXiv agent paper 解读。
+								.category-strip.paper-date-list(aria-label="Daily Paper dates" data-paper-date-list)
 								.category-strip.daily-paper-filters(aria-label="Daily Paper categories" data-daily-paper-filter-bar)
 								.academic-paper-list(data-daily-paper-full)
 								p.empty-state(data-daily-paper-full-empty) Waiting for the first Daily Paper update.
