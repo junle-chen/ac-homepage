@@ -187,6 +187,11 @@
 										a(href=`${item.href}` target=/^https?:/.test(item.href) ? "_blank" : null rel=/^https?:/.test(item.href) ? "noopener noreferrer" : null) #{item.value}
 									else
 										strong #{item.value}
+					article.info-card.info-visitor-card(data-visitor-regions)
+						h3 Visitor Regions
+						p.info-card-subtitle Website visits grouped by region.
+						p.visitor-region-status(data-visitor-region-status) Loading visitor regions...
+						ul.visitor-region-list(data-visitor-region-list aria-label="Website visits by region")
 
 			section.memo-page#memos
 				.memo-workspace
