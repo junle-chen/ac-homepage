@@ -12,9 +12,12 @@ as $$
 		auth.role() = 'authenticated'
 		and (
 			coalesce(auth.jwt() -> 'user_metadata' ->> 'provider_id', '') = '108796659'
+			or coalesce(auth.jwt() -> 'user_metadata' ->> 'sub', '') = '108796659'
+			or coalesce(auth.jwt() -> 'user_metadata' ->> 'user_id', '') = '108796659'
 			or lower(coalesce(auth.jwt() -> 'user_metadata' ->> 'user_name', '')) = lower('junle-chen')
 			or lower(coalesce(auth.jwt() -> 'user_metadata' ->> 'preferred_username', '')) = lower('junle-chen')
 			or lower(coalesce(auth.jwt() -> 'user_metadata' ->> 'nickname', '')) = lower('junle-chen')
+			or lower(coalesce(auth.jwt() -> 'user_metadata' ->> 'name', '')) = lower('junle-chen')
 		);
 $$;
 

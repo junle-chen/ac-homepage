@@ -1371,6 +1371,7 @@ function createJunleRealtimeStore() {
 			if (!state.enabled || !state.client || !state.owner) {
 				throw new Error("Realtime owner access is not available");
 			}
+			const previousKeys = (state.reactions[type] || []).slice();
 			const nextKeys = new Set(state.reactions[type] || []);
 			if (active) {
 				nextKeys.add(itemKey);
@@ -1390,13 +1391,25 @@ function createJunleRealtimeStore() {
 					},
 					{ onConflict: "item_type,item_key" }
 				)
-				.then((result) => {
-					if (result.error) {
-						throw result.error;
-					}
-					return loadReactions(type);
-				});
-		});
+					.then((result) => {
+						if (result.error) {
+							throw result.error;
+						}
+						return loadReactions(type);
+					})
+					.catch((error) => {
+						state.reactions[type] = previousKeys;
+						emit("reactions:" + type, state.reactions[type].slice());
+						emit("error", {
+							action: "setReaction",
+							type,
+							itemKey,
+							active: Boolean(active),
+							message: error && error.message ? error.message : "Realtime sync failed",
+						});
+						throw error;
+					});
+			});
 	}
 
 	function signIn() {
@@ -1752,42 +1765,34 @@ function bindContentFilters() {
 			if (!key) {
 				return;
 			}
-				if (isStaticArchived(key)) {
-					return;
+			if (isStaticArchived(key)) {
+				return;
+			}
+			const nextArchived = !isArchived(key);
+			if (
+				window.JunleRealtime &&
+				window.JunleRealtime.isEnabled &&
+				window.JunleRealtime.isEnabled() &&
+				window.JunleRealtime.canWrite &&
+				window.JunleRealtime.canWrite()
+			) {
+				window.JunleRealtime.setReaction("note_archive", key, nextArchived)
+					.catch(() => {
+						applyFilter();
+					});
+			} else {
+				const archived = readArchivedNotes();
+				const index = archived.indexOf(key);
+				if (nextArchived && index === -1) {
+					archived.push(key);
+				} else if (!nextArchived && index !== -1) {
+					archived.splice(index, 1);
 				}
-				const nextArchived = !isArchived(key);
-				if (
-					window.JunleRealtime &&
-					window.JunleRealtime.isEnabled &&
-					window.JunleRealtime.isEnabled() &&
-					window.JunleRealtime.canWrite &&
-					window.JunleRealtime.canWrite()
-				) {
-					window.JunleRealtime.setReaction("note_archive", key, nextArchived)
-						.catch(() => {
-							const archived = readArchivedNotes();
-							const index = archived.indexOf(key);
-							if (nextArchived && index === -1) {
-								archived.push(key);
-							} else if (!nextArchived && index !== -1) {
-								archived.splice(index, 1);
-							}
-							writeArchivedNotes(archived);
-							applyFilter();
-						});
-				} else {
-					const archived = readArchivedNotes();
-					const index = archived.indexOf(key);
-					if (nextArchived && index === -1) {
-						archived.push(key);
-					} else if (!nextArchived && index !== -1) {
-						archived.splice(index, 1);
-					}
-					writeArchivedNotes(archived);
-					applyFilter();
-				}
-			});
+				writeArchivedNotes(archived);
+				applyFilter();
+			}
 		});
+	});
 		if (window.JunleRealtime) {
 			window.JunleRealtime.on("reactions:note_archive", (keys) => {
 				remoteArchivedNotes = keys || [];
@@ -2114,6 +2119,7 @@ function bindGlassTopbar() {
 		if (!store || !statusNode) {
 			return;
 		}
+		let statusResetTimer = 0;
 
 		function renderAuthState() {
 			const auth = store.getAuthState();
@@ -2125,6 +2131,12 @@ function bindGlassTopbar() {
 			if (logoutButton) {
 				logoutButton.hidden = !enabled || !auth.user;
 			}
+		}
+		function renderRealtimeError(error) {
+			const message = error && error.message ? error.message : "Realtime sync failed";
+			statusNode.textContent = "Sync failed: " + message;
+			window.clearTimeout(statusResetTimer);
+			statusResetTimer = window.setTimeout(renderAuthState, 5000);
 		}
 
 		if (loginButton) {
@@ -2139,6 +2151,7 @@ function bindGlassTopbar() {
 		}
 		store.on("auth", renderAuthState);
 		store.on("ready", renderAuthState);
+		store.on("error", renderRealtimeError);
 		store.init().then(renderAuthState);
 		renderAuthState();
 	}
@@ -3184,12 +3197,6 @@ function bindGlassTopbar() {
 			) {
 				window.JunleRealtime.setReaction("daily_paper", key, nextStarred)
 					.catch(() => {
-						if (nextStarred && starredDailyKeys.indexOf(key) === -1) {
-							starredDailyKeys = starredDailyKeys.concat(key);
-						} else if (!nextStarred) {
-							starredDailyKeys = starredDailyKeys.filter((value) => value !== key);
-						}
-						saveDailyStarredKeys();
 						renderFull();
 					});
 				return;
@@ -4634,12 +4641,6 @@ function bindGlassTopbar() {
 			) {
 				window.JunleRealtime.setReaction("zotero_paper", key, nextStarred)
 					.catch(() => {
-						if (nextStarred && starredKeys.indexOf(key) === -1) {
-							starredKeys = starredKeys.concat(key);
-						} else if (!nextStarred) {
-							starredKeys = starredKeys.filter((value) => value !== key);
-						}
-						saveStarredKeys();
 						renderItems();
 					});
 				return;
