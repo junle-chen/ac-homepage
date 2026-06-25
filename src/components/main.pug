@@ -31,6 +31,7 @@
 	const infoActions = [
 		{ label: "Hong Kong", glyph: "HK" },
 		{ label: "GitHub", icon: "github", href: "https://github.com/junle-chen" },
+		{ label: "Scholar", glyph: "GS", href: "https://scholar.google.com/citations?user=EjiEmLUAAAAJ&hl=zh-CN" },
 		{ label: "Email", icon: "email", href: "mailto:jchenkg@connect.ust.hk" },
 		{ label: "Phone", glyph: "TEL", href: "tel:+85256029402" }
 	]
@@ -54,7 +55,8 @@
 	const awards = ["HKUST Postgraduate Studentship (PGS)", "HKUST RedBird PhD Scholarship", "National Scholarship (2022-2023)", "First-Class People's Scholarship (awarded each semester)", "Finalist in the Mathematical Contest in Modeling (MCM), USA", "First Prize in College Mathematics Competition", "Outstanding Student Award (Provincial Level)", "Outstanding Graduate of Heilongjiang Province", "Outstanding Graduate of Harbin Institute of Technology"]
 	const contactItems = [
 		{ label: "Email", value: "jchenkg@connect.ust.hk", href: "mailto:jchenkg@connect.ust.hk" },
-		{ label: "Phone", value: "+852 56029402", href: "tel:+85256029402" }
+		{ label: "Phone", value: "+852 56029402", href: "tel:+85256029402" },
+		{ label: "WeChat", value: "HIT_junle" }
 	]
 
 .content.content-main.theme-light
@@ -110,8 +112,8 @@
 											span #{item.text}
 
 			section.info-page#info
-				.info-shell.info-layout
-					aside.info-profile-card.info-card
+				.info-shell.info-main-stack
+					aside.info-profile-card.info-card.info-profile-card-top
 						.info-window-dots(aria-hidden="true")
 							span
 							span
@@ -139,53 +141,52 @@
 													else
 														span.about-action-glyph #{action.glyph}
 													span #{action.label}
-					.info-main-stack
-						article.info-card.info-about-card
-							h3 About Me
-							p.info-lead I am a first-year PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology, advised by Professor Xiaofang Zhou. My current research focuses on large language models, long-horizon agents, and spatial-temporal data.
+					article.info-card.info-about-card
+						h3 About Me
+						p.info-lead I am a first-year PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology, advised by Professor Xiaofang Zhou. My current research focuses on large language models, long-horizon agents, and spatial-temporal data.
+					article.info-card
+						h3 Education
+						.info-list
+							each item in educationItems
+								article.info-list-item
+									span.about-date #{item.date}
+									h4 #{item.title}
+									p #{item.org}
+									if item.detail
+										p.about-detail #{item.detail}
+					.info-two-column
 						article.info-card
-							h3 Education
-							.info-list
-								each item in educationItems
-									article.info-list-item
-										span.about-date #{item.date}
-										h4 #{item.title}
-										p #{item.org}
-										if item.detail
-											p.about-detail #{item.detail}
-						.info-two-column
-							article.info-card
-								h3 Research Interest
-								ul.about-chip-list
-									each interest in researchInterests
-										li #{interest}
-							article.info-card
-								h3 Awards
-								ul.info-bullet-list
-									each award in awards
-										li #{award}
-						article.info-card.info-publications-card
-							h3 Publications
-							.about-publication-list
-								each paper, index in publications
-									article.about-publication
-										span.about-publication-index #{index + 1}
-										div
-											h4
-												a(href=`${paper.href}` target="_blank" rel="noopener noreferrer") #{paper.title}
-											p.about-publication-authors!= boldSelfAuthor(paper.authors)
-											strong #{paper.venue}
-							p.about-footnote † Co-first author
-						article.info-card.info-contact-card
-							h3 Contact
-							ul.about-contact-list.info-contact-list
-								each item in contactItems
-									li
-										span #{item.label}
-										if item.href
-											a(href=`${item.href}` target=/^https?:/.test(item.href) ? "_blank" : null rel=/^https?:/.test(item.href) ? "noopener noreferrer" : null) #{item.value}
-										else
-											strong #{item.value}
+							h3 Research Interest
+							ul.about-chip-list
+								each interest in researchInterests
+									li #{interest}
+						article.info-card
+							h3 Awards
+							ul.info-bullet-list
+								each award in awards
+									li #{award}
+					article.info-card.info-publications-card
+						h3 Publications
+						.about-publication-list
+							each paper, index in publications
+								article.about-publication
+									span.about-publication-index #{index + 1}
+									div
+										h4
+											a(href=`${paper.href}` target="_blank" rel="noopener noreferrer") #{paper.title}
+										p.about-publication-authors!= boldSelfAuthor(paper.authors)
+										strong #{paper.venue}
+						p.about-footnote † Co-first author
+					article.info-card.info-contact-card
+						h3 Contact
+						ul.about-contact-list.info-contact-list
+							each item in contactItems
+								li
+									span #{item.label}
+									if item.href
+										a(href=`${item.href}` target=/^https?:/.test(item.href) ? "_blank" : null rel=/^https?:/.test(item.href) ? "noopener noreferrer" : null) #{item.value}
+									else
+										strong #{item.value}
 
 			section.memo-page#memos
 				.memo-workspace
