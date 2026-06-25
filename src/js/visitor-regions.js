@@ -200,8 +200,9 @@
 		setStatus(container, "Loading visitor regions...", "loading");
 		const maybeRecord = shouldRecordVisit(storage, now, settings.visitWindowMs)
 			? fetchGeo(settings.fetch, settings.geoEndpoint)
-					.then((geo) => recordVisit(client, geo))
-					.then(() => markVisitRecorded(storage, now))
+					.then((geo) =>
+						recordVisit(client, geo).then(() => markVisitRecorded(storage, now)).catch(() => undefined)
+					)
 			: Promise.resolve();
 		return maybeRecord
 			.then(() => loadVisitRows(client, settings.limit || DEFAULT_LIMIT))

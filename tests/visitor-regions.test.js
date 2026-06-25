@@ -2,14 +2,10 @@ const assert = require("assert/strict");
 
 const visitorRegions = require("../src/js/visitor-regions.js");
 
+const tests = [];
+
 function runTest(name, fn) {
-	try {
-		fn();
-		console.log(`ok - ${name}`);
-	} catch (error) {
-		console.error(`not ok - ${name}`);
-		throw error;
-	}
+	tests.push({ name, fn });
 }
 
 runTest("normalizes Hong Kong geo payloads", () => {
@@ -81,3 +77,73 @@ runTest("init can run without an explicit window object", () => {
 	});
 	assert.equal(status.textContent, "Visitor stats are not configured.");
 });
+
+runTest("init still loads visit rows when recording fails", async () => {
+	const status = { textContent: "", hidden: false, dataset: {} };
+	const container = {
+		querySelector: (selector) =>
+			selector === "[data-visitor-region-status]" ? status : null,
+	};
+	const document = {
+		querySelector: () => container,
+	};
+	const client = {
+		rpc: () => Promise.resolve({ error: new Error("ambiguous column") }),
+		from: () => ({
+			select: () => ({
+				order: () => ({
+					limit: () =>
+						Promise.resolve({
+							data: [
+								{
+									country_code: "HK",
+									region_label: "Hong Kong",
+									city_label: "Hong Kong",
+									visit_count: 1,
+								},
+							],
+						}),
+				}),
+			}),
+		}),
+	};
+
+	const rows = await visitorRegions.init({
+		client,
+		container,
+		document,
+		fetch: () =>
+			Promise.resolve({
+				ok: true,
+				json: () =>
+					Promise.resolve({
+						country_code: "HK",
+						country_name: "Hong Kong",
+						city: "Hong Kong",
+					}),
+			}),
+		storage: null,
+	});
+
+	assert.deepEqual(rows, [
+		{
+			country_code: "HK",
+			region_label: "Hong Kong",
+			city_label: "Hong Kong",
+			visit_count: 1,
+		},
+	]);
+	assert.notEqual(status.textContent, "Visitor stats are unavailable.");
+});
+
+(async () => {
+	for (const test of tests) {
+		try {
+			await test.fn();
+			console.log(`ok - ${test.name}`);
+		} catch (error) {
+			console.error(`not ok - ${test.name}`);
+			throw error;
+		}
+	}
+})();

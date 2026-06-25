@@ -90,28 +90,53 @@ begin
 		v_region_label := 'Unknown';
 	end if;
 
-	return query
-	insert into public.site_visit_regions as visits (
-		country_code,
-		region_label,
-		city_label,
-		visit_count,
-		first_seen_at,
-		last_seen_at
-	)
-	values (
-		v_country_code,
-		v_region_label,
-		v_city_label,
-		1,
-		now(),
-		now()
-	)
-	on conflict (country_code, region_label, city_label)
-	do update set
+	update public.site_visit_regions as visits
+	set
 		visit_count = visits.visit_count + 1,
 		last_seen_at = now()
-	returning visits.country_code, visits.region_label, visits.city_label, visits.visit_count;
+	where visits.country_code = v_country_code
+		and visits.region_label = v_region_label
+		and visits.city_label = v_city_label
+	returning visits.country_code, visits.region_label, visits.city_label, visits.visit_count
+	into country_code, region_label, city_label, visit_count;
+
+	if found then
+		return next;
+		return;
+	end if;
+
+	begin
+		insert into public.site_visit_regions as visits (
+			country_code,
+			region_label,
+			city_label,
+			visit_count,
+			first_seen_at,
+			last_seen_at
+		)
+		values (
+			v_country_code,
+			v_region_label,
+			v_city_label,
+			1,
+			now(),
+			now()
+		)
+		returning visits.country_code, visits.region_label, visits.city_label, visits.visit_count
+		into country_code, region_label, city_label, visit_count;
+	exception when unique_violation then
+		update public.site_visit_regions as visits
+		set
+			visit_count = visits.visit_count + 1,
+			last_seen_at = now()
+		where visits.country_code = v_country_code
+			and visits.region_label = v_region_label
+			and visits.city_label = v_city_label
+		returning visits.country_code, visits.region_label, visits.city_label, visits.visit_count
+		into country_code, region_label, city_label, visit_count;
+	end;
+
+	return next;
 end;
 $$;
 
