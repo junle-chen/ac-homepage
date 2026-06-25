@@ -1576,9 +1576,9 @@ function bindContentFilters() {
 	const archiveButtons = Array.prototype.slice.call(
 		document.querySelectorAll("[data-note-archive]")
 	);
-		const noteCountLabel = document.querySelector("[data-note-count]");
-		let activeFilter = "";
-		let remoteArchivedNotes = [];
+	const noteCountLabel = document.querySelector("[data-note-count]");
+	let activeFilter = "";
+	let remoteArchivedNotes = [];
 
 	if (!noteSearch || !noteCards.length) {
 		return;
@@ -1628,20 +1628,33 @@ function bindContentFilters() {
 		}
 	}
 
-		function readArchivedNotes() {
-			const keys = new Set(getStaticArchivedNotes());
+	function isRemoteArchiveSourceEnabled() {
+		const realtimeConfig = window.JUNLE_REALTIME_CONFIG || {};
+		return Boolean(
+			window.JunleRealtime &&
+			realtimeConfig.supabaseUrl &&
+			realtimeConfig.supabaseAnonKey &&
+			window.supabase &&
+			window.supabase.createClient
+		);
+	}
+
+	function readArchivedNotes() {
+		const keys = new Set(getStaticArchivedNotes());
+		if (!isRemoteArchiveSourceEnabled()) {
 			readLocalArchivedNotes().forEach((key) => {
 				if (key) {
 					keys.add(key);
 				}
 			});
-			remoteArchivedNotes.forEach((key) => {
-				if (key) {
-					keys.add(key);
-				}
-			});
-			return Array.from(keys);
 		}
+		remoteArchivedNotes.forEach((key) => {
+			if (key) {
+				keys.add(key);
+			}
+		});
+		return Array.from(keys);
+	}
 
 	function writeArchivedNotes(keys) {
 		const staticKeys = new Set(getStaticArchivedNotes());
@@ -1793,17 +1806,17 @@ function bindContentFilters() {
 			}
 		});
 	});
-		if (window.JunleRealtime) {
-			window.JunleRealtime.on("reactions:note_archive", (keys) => {
-				remoteArchivedNotes = keys || [];
-				applyFilter();
-			});
-			window.JunleRealtime.loadReactions("note_archive").then((keys) => {
-				remoteArchivedNotes = keys || [];
-				applyFilter();
-			});
-		}
-		window.addEventListener("junle-owner-mode-change", applyFilter);
+	if (window.JunleRealtime) {
+		window.JunleRealtime.on("reactions:note_archive", (keys) => {
+			remoteArchivedNotes = keys || [];
+			applyFilter();
+		});
+		window.JunleRealtime.loadReactions("note_archive").then((keys) => {
+			remoteArchivedNotes = keys || [];
+			applyFilter();
+		});
+	}
+	window.addEventListener("junle-owner-mode-change", applyFilter);
 	window.addEventListener("storage", (event) => {
 		if (
 			event.key === OWNER_STORAGE_KEY ||
