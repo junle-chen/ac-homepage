@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T01:32:57.175Z",
+  "updated_at": "2026-06-26T01:37:49.417Z",
   "source": "arxiv",
   "analysis_method": "Manual Codex curation from live arXiv abstracts for selected high-relevance papers; non-relevant candidates are filtered out.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
@@ -37,25 +37,377 @@
     "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after manual Codex curation."
   },
   "digest": {
-    "title": "2026-06-25 Daily Paper",
-    "report_date": "2026-06-25",
+    "title": "2026-06-26 Daily Paper",
+    "report_date": "2026-06-26",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日自动化从 arXiv 初筛 16 篇候选，人工复核后保留 6 篇与 agent memory、long-horizon diagnosis、world model、embodied memory 强相关的新论文，并补齐可发布的中文长摘要。",
+    "summary": "今日自动化从 arXiv 初筛 16 篇候选，逐篇复核后仅保留 3 篇与 agentic RL、multi-step tool use、real-time planning budget 强相关的新论文，并补齐可发布的中文长摘要。",
     "top_recommendations": [
-      "2606.24322v1",
-      "2606.24626v1",
-      "2606.24597v1"
+      "2606.26790v1",
+      "2606.26027v1",
+      "2606.26463v1"
     ],
     "low_priority": [
-      "2606.25115v1",
-      "2606.24535v1",
-      "2606.25335v1",
-      "2606.25599v1"
+      "2606.26627v1",
+      "2606.27032v1",
+      "2606.25526v1",
+      "2606.24450v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-06-25 Daily Paper\n\n今日自动化从 arXiv 初筛 16 篇候选，人工复核后保留 6 篇与 agent memory、long-horizon diagnosis、world model、embodied memory 强相关的新论文，并补齐可发布的中文长摘要。\n\n最值得读的 3 篇\n1. Securing LLM-Agent Long-Term Memory Against Poisoning\n- 为什么读：把长期记忆投毒上升到 authority / provenance 设计层，实验里 direct 与 laundering 攻击都压到 0%。\n2. SAFARI\n- 为什么读：把超长 agent 轨迹诊断改成主动调查流程，在 fault 位于 5 倍上下文之外时仍可定位。\n3. Qwen-AgentWorld\n- 为什么读：把语言 world model 直接做成 general agent 的 simulator + warm-up 基础设施。\n\n其余保留论文\n- Are We Ready For An Agent-Native Memory System?：系统性比较 12 个 memory systems，适合做设计取舍。\n- RAVEN：把视觉 embedding、位姿和时间直接写入记忆，适合看 embodied long-horizon memory。\n- MEMPROBE：把用户状态恢复作为 memory audit 指标，纠正只看 task success 的评测习惯。\n\n已过滤掉相关性不足、过于 domain-specific 或主要停留在传统 MARL 优化层的候选。"
+    "email_body": "2026-06-26 Daily Paper\n\n今日自动化从 arXiv 初筛 16 篇候选，逐篇复核后仅保留 3 篇与 agentic RL、multi-step tool use、real-time planning budget 强相关的新论文，并补齐可发布的中文长摘要。\n\n最值得读的 3 篇\n1. OPID\n- 为什么读：把 on-policy 轨迹转成层级 hindsight skill，直接缓解 multi-turn agentic RL 的 credit assignment 问题。\n2. Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It\n- 为什么读：把 tool-use RL 的失败定位到 control token 结构坍塌，并证明 interleaved SFT+RL 更稳。\n3. Finding the Time to Think: Learning Planning Budgets in Real-Time RL\n- 为什么读：把 planning budget 本身建模成可学习控制变量，直接命中 real-time agent planning。\n\n已过滤掉 privacy survey、domain-specific RL 和传统 MARL 优化类候选，因为它们和当前首页主题不够强相关。"
   },
   "items": [
+    {
+      "id": "2606.26790v1",
+      "title": "OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning",
+      "summary": "OPID 把 on-policy 交互轨迹直接转成层级 hindsight skill，用 dense token-level 自蒸馏信号缓解 agentic RL 的 credit assignment 难题。它在 ALFWorld、WebShop 和 Search-based QA 上相对 outcome-only RL 更稳，尤其适合关注多轮长程 agent 训练的人。",
+      "url": "http://arxiv.org/abs/2606.26790v1",
+      "authors": [
+        "Shuo Yang",
+        "Jinyang Wu",
+        "Zhengxi Lu",
+        "Yuhao Shen",
+        "Fan Zhang",
+        "Lang Feng",
+        "Shuai Zhang",
+        "Haoran Luo",
+        "Zheng Lian",
+        "Zhengqi Wen",
+        "Jianhua Tao"
+      ],
+      "published": "2026-06-25",
+      "updated": "2026-06-25",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/jinyangwu/OPID/tree/main",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "值得读，尤其适合关注 agentic RL 与长程规划可靠性的读者",
+        "water_risk": "中",
+        "value_judgement": "论文的问题设定非常贴近 multi-turn agent 和 long-horizon planning：稀疏 outcome reward 不足以指导中间步骤，而外部 skill memory 又有检索错配和维护成本。方法设计比较完整，既保留 GRPO 类 outcome RL，又引入 on-policy hindsight skill 作为 dense shaping signal；训练期使用、推理期不依赖特权上下文这一点也很实用。实验和消融覆盖了主结果、样本效率、泛化、routing 与层级技能贡献，说明作者至少做了较系统的验证。",
+        "reason": "论文的问题设定非常贴近 multi-turn agent 和 long-horizon planning：稀疏 outcome reward 不足以指导中间步骤，而外部 skill memory 又有检索错配和维护成本。方法设计比较完整，既保留 GRPO 类 outcome RL，又引入 on-policy hindsight skill 作为 dense shaping signal；训练期使用、推理期不依赖特权上下文这一点也很实用。实验和消融覆盖了主结果、样本效率、泛化、routing 与层级技能贡献，说明作者至少做了较系统的验证。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Shuo Yang",
+          "Jinyang Wu",
+          "Zhengxi Lu",
+          "Yuhao Shen",
+          "Fan Zhang",
+          "Lang Feng",
+          "Shuai Zhang",
+          "Haoran Luo",
+          "Zheng Lian",
+          "Zhengqi Wen",
+          "Jianhua Tao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-25",
+        "paper_url": "https://arxiv.org/abs/2606.26790v1",
+        "project_url": "",
+        "repo_url": "https://github.com/jinyangwu/OPID/tree/main",
+        "venue_status": "未确认录用",
+        "contribution": "论文的问题设定非常贴近 multi-turn agent 和 long-horizon planning：稀疏 outcome reward 不足以指导中间步骤，而外部 skill memory 又有检索错配和维护成本。方法设计比较完整，既保留 GRPO 类 outcome RL，又引入 on-policy hindsight skill 作为 dense shaping signal；训练期使用、推理期不依赖特权上下文这一点也很实用。实验和消融覆盖了主结果、样本效率、泛化、routing 与层级技能贡献，说明作者至少做了较系统的验证。",
+        "summary": "这篇论文提出 OPID，用于解决多轮智能体强化学习中奖励稀疏、决策归因困难的问题。它不从外部技能库检索提示，而是从 on-policy 轨迹中抽取 episode-level 和 step-level hindsight skill，再根据关键步路由到合适粒度的技能。方法上，OPID 比较同一旧策略在原始上下文和技能增强上下文下对同一动作 token 的概率变化，把这种变化作为技能自蒸馏优势，并和 outcome advantage 一起训练。实验在 embodied、web shopping 和 search QA 三类任务上显示出较稳定收益，尤其是在 ALFWorld 和 WebShop 这类长程交互环境中更明显。论文的阅读价值主要在于它把 agent trajectory 同时视为 RL 样本和可蒸馏的决策知识记录，为 agent planning reliability 提供了一个清晰可迁移的训练范式。",
+        "highlights": [
+          "论文的问题设定非常贴近 multi-turn agent 和 long-horizon planning：稀疏 outcome reward 不足以指导中间步骤，而外部 skill memory 又有检索错配和维护成本。方法设计比较完整，既保留 GRPO 类 outcome RL，又引入 on-policy hindsight skill 作为 dense shaping signal；训练期使用、推理期不依赖特权上下文这一点也很实用。实验和消融覆盖了主结果、样本效率、泛化、routing 与层级技能贡献，说明作者至少做了较系统的验证。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对 agentic RL 中的稀疏、延迟、轨迹级奖励问题：终局成功或失败只能说明整条轨迹结果，难以判断哪一步决策应该被强化或抑制。作者认为，现有技能蒸馏方法常依赖外部 skill memory、检索到的技能文件或特权上下文，在多轮交互中容易和当前策略实际访问到的状态分布不匹配，并且维护成本较高。",
+        "method": "OPID 从当前策略完成的 on-policy 轨迹中抽取 hindsight skill，并把这些技能作为训练期的 dense token-level 自蒸馏信号。它把技能分成 episode-level 和 step-level 两层：前者总结全局工作流或失败规避规则，后者描述关键时间步的局部决策知识。训练时用 critical-first routing 在关键步优先使用 step-level skill，否则回退到 episode-level skill；然后让旧策略在原始上下文和技能增强上下文下重新打分同一个已采样回复，用 log-probability shift 构造 token-level skill advantage，再与 GRPO 风格的 outcome advantage 合并优化。推理时不需要 analyzer、skill retrieval 或 privileged context。",
+        "experiments": "实验覆盖 ALFWorld、WebShop 和 Search-based QA，并在 Qwen2.5-3B、Qwen2.5-7B、Qwen3-1.7B 等模型上比较 Vanilla、Skill-Prompt、GRPO、Skill-GRPO、OPSD、Skill-SD、RLSD、SDAR 等方法。主结果显示 OPID 通常优于 outcome-only GRPO，并在 ALFWorld 与 WebShop 上优势更稳定；Search-based QA 上提升相对更小，但在较大 Qwen2.5 模型上仍有竞争力。论文还给出训练动态、样本效率、ALFWorld unseen 泛化、层级技能消融、routing 消融和定性案例，支持其“轨迹 hindsight 技能能减少无效动作、重复探索和对象幻觉”的结论。",
+        "research_help": "Insight：这篇论文的可迁移启发在于，不必把 agent memory 或 skill library 设计成长期外部检索系统，也可以把 agent 自己的失败和成功轨迹转成训练期的 hindsight supervision，让策略把“如何规划、何时避免错误、关键步如何决策”内化到参数里。对 long-horizon reliability 来说，episode-level workflow 与 step-level critical decision 的分层很有价值，因为它同时覆盖全局任务结构和局部纠错信号。对 agentic RL 来说，关键点不是替代 RL，而是在 outcome reward 之外增加 distribution-matched 的 token-level credit assignment。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移启发在于，不必把 agent memory 或 skill library 设计成长期外部检索系统，也可以把 agent 自己的失败和成功轨迹转成训练期的 hindsight supervision，让策略把“如何规划、何时避免错误、关键步如何决策”内化到参数里。对 long-horizon reliability 来说，episode-level workflow 与 step-level critical decision 的分层很有价值，因为它同时覆盖全局任务结构和局部纠错信号。对 agentic RL 来说，关键点不是替代 RL，而是在 outcome reward 之外增加 distribution-matched 的 token-level credit assignment。",
+        "abstract_zh": "基于结果的强化学习为语言智能体提供了稳定的优化框架，但稀疏的轨迹级奖励很难指出哪些中间决策应该被强化或抑制。论文提出 OPID，从当前策略完成的 on-policy 轨迹中直接抽取层级技能监督，包括描述全局流程或失败规避的 episode-level skill，以及描述关键步骤局部决策的 step-level skill。OPID 通过 critical-first routing 选择合适技能，并比较旧策略在原始上下文和技能增强上下文下对同一回复的打分差异，从而得到 token-level 自蒸馏优势。实验表明，OPID 在 ALFWorld、WebShop 和 Search-based QA 上整体提升了智能体性能、样本效率和鲁棒性。",
+        "full_summary": "这篇论文提出 OPID，用于解决多轮智能体强化学习中奖励稀疏、决策归因困难的问题。它不从外部技能库检索提示，而是从 on-policy 轨迹中抽取 episode-level 和 step-level hindsight skill，再根据关键步路由到合适粒度的技能。方法上，OPID 比较同一旧策略在原始上下文和技能增强上下文下对同一动作 token 的概率变化，把这种变化作为技能自蒸馏优势，并和 outcome advantage 一起训练。实验在 embodied、web shopping 和 search QA 三类任务上显示出较稳定收益，尤其是在 ALFWorld 和 WebShop 这类长程交互环境中更明显。论文的阅读价值主要在于它把 agent trajectory 同时视为 RL 样本和可蒸馏的决策知识记录，为 agent planning reliability 提供了一个清晰可迁移的训练范式。",
+        "card_summary": "OPID 是一篇高度相关的 agentic RL 论文，核心想法是把当前策略自己的完整交互轨迹转成 hindsight skill，再用这些技能产生 dense token-level 自蒸馏信号。它对长程多轮任务中的 credit assignment、技能内化和避免外部 skill memory 依赖都有直接参考价值，但仍需要注意 LLM analyzer 成本、实验覆盖范围和复现细节。"
+      },
+      "analysis": {
+        "motivation": "论文针对 agentic RL 中的稀疏、延迟、轨迹级奖励问题：终局成功或失败只能说明整条轨迹结果，难以判断哪一步决策应该被强化或抑制。作者认为，现有技能蒸馏方法常依赖外部 skill memory、检索到的技能文件或特权上下文，在多轮交互中容易和当前策略实际访问到的状态分布不匹配，并且维护成本较高。",
+        "method": "OPID 从当前策略完成的 on-policy 轨迹中抽取 hindsight skill，并把这些技能作为训练期的 dense token-level 自蒸馏信号。它把技能分成 episode-level 和 step-level 两层：前者总结全局工作流或失败规避规则，后者描述关键时间步的局部决策知识。训练时用 critical-first routing 在关键步优先使用 step-level skill，否则回退到 episode-level skill；然后让旧策略在原始上下文和技能增强上下文下重新打分同一个已采样回复，用 log-probability shift 构造 token-level skill advantage，再与 GRPO 风格的 outcome advantage 合并优化。推理时不需要 analyzer、skill retrieval 或 privileged context。",
+        "experiments": "实验覆盖 ALFWorld、WebShop 和 Search-based QA，并在 Qwen2.5-3B、Qwen2.5-7B、Qwen3-1.7B 等模型上比较 Vanilla、Skill-Prompt、GRPO、Skill-GRPO、OPSD、Skill-SD、RLSD、SDAR 等方法。主结果显示 OPID 通常优于 outcome-only GRPO，并在 ALFWorld 与 WebShop 上优势更稳定；Search-based QA 上提升相对更小，但在较大 Qwen2.5 模型上仍有竞争力。论文还给出训练动态、样本效率、ALFWorld unseen 泛化、层级技能消融、routing 消融和定性案例，支持其“轨迹 hindsight 技能能减少无效动作、重复探索和对象幻觉”的结论。",
+        "research_help": "Insight：这篇论文的可迁移启发在于，不必把 agent memory 或 skill library 设计成长期外部检索系统，也可以把 agent 自己的失败和成功轨迹转成训练期的 hindsight supervision，让策略把“如何规划、何时避免错误、关键步如何决策”内化到参数里。对 long-horizon reliability 来说，episode-level workflow 与 step-level critical decision 的分层很有价值，因为它同时覆盖全局任务结构和局部纠错信号。对 agentic RL 来说，关键点不是替代 RL，而是在 outcome reward 之外增加 distribution-matched 的 token-level credit assignment。",
+        "insight": "Insight：这篇论文的可迁移启发在于，不必把 agent memory 或 skill library 设计成长期外部检索系统，也可以把 agent 自己的失败和成功轨迹转成训练期的 hindsight supervision，让策略把“如何规划、何时避免错误、关键步如何决策”内化到参数里。对 long-horizon reliability 来说，episode-level workflow 与 step-level critical decision 的分层很有价值，因为它同时覆盖全局任务结构和局部纠错信号。对 agentic RL 来说，关键点不是替代 RL，而是在 outcome reward 之外增加 distribution-matched 的 token-level credit assignment。",
+        "abstract_zh": "基于结果的强化学习为语言智能体提供了稳定的优化框架，但稀疏的轨迹级奖励很难指出哪些中间决策应该被强化或抑制。论文提出 OPID，从当前策略完成的 on-policy 轨迹中直接抽取层级技能监督，包括描述全局流程或失败规避的 episode-level skill，以及描述关键步骤局部决策的 step-level skill。OPID 通过 critical-first routing 选择合适技能，并比较旧策略在原始上下文和技能增强上下文下对同一回复的打分差异，从而得到 token-level 自蒸馏优势。实验表明，OPID 在 ALFWorld、WebShop 和 Search-based QA 上整体提升了智能体性能、样本效率和鲁棒性。",
+        "card_summary": "OPID 是一篇高度相关的 agentic RL 论文，核心想法是把当前策略自己的完整交互轨迹转成 hindsight skill，再用这些技能产生 dense token-level 自蒸馏信号。它对长程多轮任务中的 credit assignment、技能内化和避免外部 skill memory 依赖都有直接参考价值，但仍需要注意 LLM analyzer 成本、实验覆盖范围和复现细节。",
+        "full_summary": "这篇论文提出 OPID，用于解决多轮智能体强化学习中奖励稀疏、决策归因困难的问题。它不从外部技能库检索提示，而是从 on-policy 轨迹中抽取 episode-level 和 step-level hindsight skill，再根据关键步路由到合适粒度的技能。方法上，OPID 比较同一旧策略在原始上下文和技能增强上下文下对同一动作 token 的概率变化，把这种变化作为技能自蒸馏优势，并和 outcome advantage 一起训练。实验在 embodied、web shopping 和 search QA 三类任务上显示出较稳定收益，尤其是在 ALFWorld 和 WebShop 这类长程交互环境中更明显。论文的阅读价值主要在于它把 agent trajectory 同时视为 RL 样本和可蒸馏的决策知识记录，为 agent planning reliability 提供了一个清晰可迁移的训练范式。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其适合关注 agentic RL 与长程规划可靠性的读者",
+        "value_reason": "论文的问题设定非常贴近 multi-turn agent 和 long-horizon planning：稀疏 outcome reward 不足以指导中间步骤，而外部 skill memory 又有检索错配和维护成本。方法设计比较完整，既保留 GRPO 类 outcome RL，又引入 on-policy hindsight skill 作为 dense shaping signal；训练期使用、推理期不依赖特权上下文这一点也很实用。实验和消融覆盖了主结果、样本效率、泛化、routing 与层级技能贡献，说明作者至少做了较系统的验证。",
+        "limitations": "主要限制是 OPID 依赖 LLM analyzer 抽取技能，论文正文对 analyzer 质量、成本、失败模式和不同 analyzer 选择的敏感性讨论不够充分。Search-based QA 上收益没有 ALFWorld 和 WebShop 那么强，说明该方法对任务形态可能敏感。实验仍集中在常见文本交互 benchmark，距离真实浏览器、软件工程、长记忆开放任务还有差距。此外，很多结论依赖训练期技能抽取与打分流程，复现时需要关注代码、prompt、rollout 采样和奖励实现是否足够透明。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出 OPID 从 completed on-policy trajectories 中抽取 hierarchical hindsight skills，并区分 episode-level skills 与 step-level skills。",
+          "方法部分说明 routed skill 被注入 interaction history，旧策略在原始和 skill-augmented contexts 下重打分同一 response，用 log-probability shift 构造 token-level self-distillation advantage。",
+          "主实验表明 OPID 在 ALFWorld、WebShop 和 Search-based QA 上整体优于 outcome-only GRPO，并与多种 skill/self-distillation baseline 比较。",
+          "消融实验显示去掉 episode skill、step skill 或 critical-first routing 都会降低整体表现，支持层级技能和路由机制的必要性。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-26T01:32:36.909Z"
+      }
+    },
+    {
+      "id": "2606.26027v1",
+      "title": "Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It",
+      "summary": "这篇论文指出 multi-step tool-use RL 的核心失败往往不是能力退化，而是控制 token 被错误放大后引发结构性坍塌。作者系统比较多种监督信号与交替训练方案，说明 interleaved SFT+RL 比纯 RL 或同步混合更能稳住多轮工具调用。",
+      "url": "http://arxiv.org/abs/2606.26027v1",
+      "authors": [
+        "Yupu Hao",
+        "Zhuoran Jin",
+        "Huanxuan Liao",
+        "Kang Liu",
+        "Jun Zhao"
+      ],
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/hypasd-art/Tool-RL-Box",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "直接讨论 multi-step tool-use agentic RL 的训练坍塌，并把问题定位到控制 token 动态而非能力缺失，方法和分析都很贴近真实 agent 训练。",
+        "reason": "直接讨论 multi-step tool-use agentic RL 的训练坍塌，并把问题定位到控制 token 动态而非能力缺失，方法和分析都很贴近真实 agent 训练。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yupu Hao",
+          "Zhuoran Jin",
+          "Huanxuan Liao",
+          "Kang Liu",
+          "Jun Zhao"
+        ],
+        "affiliations": "中国科学院自动化研究所、国科大（按论文首页作者单位）。",
+        "date": "2026-06-24",
+        "paper_url": "https://arxiv.org/abs/2606.26027v1",
+        "project_url": "",
+        "repo_url": "https://github.com/hypasd-art/Tool-RL-Box",
+        "venue_status": "未确认录用",
+        "contribution": "直接讨论 multi-step tool-use agentic RL 的训练坍塌，并把问题定位到控制 token 动态而非能力缺失，方法和分析都很贴近真实 agent 训练。",
+        "summary": "这篇论文研究为什么面向多轮工具调用的 RL 训练会突然崩掉。作者发现很多失败并不是模型不会用工具了，而是 `<tool_call>`、`<|im_end|>` 这类控制 token 在 RL 中被异常放大，导致输出结构先污染再彻底坍塌。基于这个判断，论文系统比较了 SFT-then-RL、off-policy supervision、hint-based guidance、错误轨迹监督和 process reflection supervision 等方案，并重点分析同步混合与交替训练的差异。结果显示把监督信号穿插进 RL 过程，尤其是 interleaved SFT，最能稳定训练并保住多轮工具调用能力。这篇的价值在于它把 agentic RL 的失败模式从“奖励不够好”进一步细化成“结构 token 动态失控”，对做工具 agent 训练的人很有参考意义。",
+        "highlights": [
+          "把 tool-use RL collapse 具体定位成 control token dynamics 问题，而不是泛泛而谈训练不稳定。",
+          "系统比较多种监督信号与同步/交替训练整合方式，实验设计比较完整。",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "作者关注的是多轮工具调用 RL 里常见的突然性能归零现象。论文认为这类失败如果只从奖励稀疏或探索不足去解释太粗糙，因为模型往往仍有潜在工具能力，只是被结构化输出格式的失控掩盖了。",
+        "method": "方法上先对 RL 训练过程中的输出结构进行细粒度分类，把轨迹分成 healthy tool call、healthy response、polluted output 和 collapsed output 四类，再分析哪些 control tokens 被异常放大。随后系统比较多种监督信号，包括 SFT-then-RL、off-policy supervision、hint-based guidance、erroneous trajectory supervision 和 process reflection supervision，并对 synchronous 与 interleaved 两类整合方案做对比。",
+        "experiments": "实验主要在 BFCL-V3 的多轮工具调用设置上完成，模型包括 Qwen2.5-1.5B-Instruct 和 Qwen3-1.7B。结果显示纯 RL 容易出现 reward 暴跌与 KL 激增；而 interleaved SFT with RL 能显著提高稳定性。论文还检查了 Base、Miss Func、Miss Param 等场景，并分析学习率、提示格式和 OOD 评测下的泛化差异，支持其“坍塌首先是结构问题”的结论。",
+        "research_help": "Insight：如果你在做 tool-use agentic RL，不应只把训练不稳定理解成 credit assignment 或 reward hacking 问题，还要把 action language 的结构 token 当成单独的系统对象来监控。对多轮 agent 来说，监督信号的价值不仅是提高最终任务分数，更是约束工具调用格式不要在探索中漂移失真。",
+        "recommendation": {
+          "score": 95,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "直接讨论 multi-step tool-use agentic RL 的训练坍塌，并把问题定位到控制 token 动态而非能力缺失，方法和分析都很贴近真实 agent 训练。",
+          "reason": "直接讨论 multi-step tool-use agentic RL 的训练坍塌，并把问题定位到控制 token 动态而非能力缺失，方法和分析都很贴近真实 agent 训练。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "full_summary": "这篇论文研究为什么 multi-step tool-use RL 经常在训练过程中突然崩掉。作者通过跟踪 Qwen2.5-1.5B 和 Qwen3-1.7B 在 BFCL-V3 上的训练轨迹发现，很多所谓 collapse 并不是工具能力本身消失了，而是 `<tool_call>`、`<|im_end|>` 等控制 token 的概率被 RL 异常放大，导致输出先出现格式污染，再退化为无意义的终止序列。基于这个发现，论文系统比较了多种监督信号，包括先 SFT 再 RL、off-policy supervision、hint-based guidance、错误轨迹监督和 process reflection supervision，并区分同步混合与交替训练两类整合方式。实验表明，interleaved SFT with RL 对稳定性提升最明显，而同步方案更容易遇到分布错配，在格式或内容 OOD 评测下也更脆弱。对 agent planning / tool-use agent 研究来说，这篇的重要启发是：多轮 agentic RL 的关键瓶颈未必是高层策略搜索，而可能是结构化动作语言本身需要额外监督才能避免训练期 token dynamics 失控。",
+        "card_summary": "作者指出 multi-step tool-use RL 的主要失败模式是控制 token 概率失控引发的结构坍塌，而不是工具能力本身消失。论文系统比较多种监督信号，结论是把 SFT 穿插进 RL 过程比纯 RL 或同步混合更能稳住多轮工具 agent 训练。",
+        "insight": "Insight：如果你在做 tool-use agentic RL，不应只把训练不稳定理解成 credit assignment 或 reward hacking 问题，还要把 action language 的结构 token 当成单独的系统对象来监控。对多轮 agent 来说，监督信号的价值不仅是提高最终任务分数，更是约束工具调用格式不要在探索中漂移失真。",
+        "abstract_zh": "论文研究面向多轮工具调用的 RL 训练为什么经常出现性能骤降和结构失效。作者发现，崩溃并非主要来自工具能力丢失，而是特定控制 token 的概率被异常放大，使输出逐步偏离合法工具调用格式。基于这一分析，论文系统比较多种监督信号以及同步和交替训练方案，结果表明把监督信号穿插进 RL 过程更能稳定训练。整体结论是，多轮 agentic RL 的关键问题之一在于结构化执行模式需要额外监督，而不能只依赖标量奖励。"
+      },
+      "analysis": {
+        "motivation": "作者关注的是多轮工具调用 RL 里常见的突然性能归零现象。论文认为这类失败如果只从奖励稀疏或探索不足去解释太粗糙，因为模型往往仍有潜在工具能力，只是被结构化输出格式的失控掩盖了。",
+        "method": "方法上先对 RL 训练过程中的输出结构进行细粒度分类，把轨迹分成 healthy tool call、healthy response、polluted output 和 collapsed output 四类，再分析哪些 control tokens 被异常放大。随后系统比较多种监督信号，包括 SFT-then-RL、off-policy supervision、hint-based guidance、erroneous trajectory supervision 和 process reflection supervision，并对 synchronous 与 interleaved 两类整合方案做对比。",
+        "experiments": "实验主要在 BFCL-V3 的多轮工具调用设置上完成，模型包括 Qwen2.5-1.5B-Instruct 和 Qwen3-1.7B。结果显示纯 RL 容易出现 reward 暴跌与 KL 激增；而 interleaved SFT with RL 能显著提高稳定性。论文还检查了 Base、Miss Func、Miss Param 等场景，并分析学习率、提示格式和 OOD 评测下的泛化差异，支持其“坍塌首先是结构问题”的结论。",
+        "research_help": "Insight：如果你在做 tool-use agentic RL，不应只把训练不稳定理解成 credit assignment 或 reward hacking 问题，还要把 action language 的结构 token 当成单独的系统对象来监控。对多轮 agent 来说，监督信号的价值不仅是提高最终任务分数，更是约束工具调用格式不要在探索中漂移失真。",
+        "insight": "Insight：如果你在做 tool-use agentic RL，不应只把训练不稳定理解成 credit assignment 或 reward hacking 问题，还要把 action language 的结构 token 当成单独的系统对象来监控。对多轮 agent 来说，监督信号的价值不仅是提高最终任务分数，更是约束工具调用格式不要在探索中漂移失真。",
+        "abstract_zh": "论文研究面向多轮工具调用的 RL 训练为什么经常出现性能骤降和结构失效。作者发现，崩溃并非主要来自工具能力丢失，而是特定控制 token 的概率被异常放大，使输出逐步偏离合法工具调用格式。基于这一分析，论文系统比较多种监督信号以及同步和交替训练方案，结果表明把监督信号穿插进 RL 过程更能稳定训练。整体结论是，多轮 agentic RL 的关键问题之一在于结构化执行模式需要额外监督，而不能只依赖标量奖励。",
+        "card_summary": "作者指出 multi-step tool-use RL 的主要失败模式是控制 token 概率失控引发的结构坍塌，而不是工具能力本身消失。论文系统比较多种监督信号，结论是把 SFT 穿插进 RL 过程比纯 RL 或同步混合更能稳住多轮工具 agent 训练。",
+        "full_summary": "这篇论文研究为什么 multi-step tool-use RL 经常在训练过程中突然崩掉。作者通过跟踪 Qwen2.5-1.5B 和 Qwen3-1.7B 在 BFCL-V3 上的训练轨迹发现，很多所谓 collapse 并不是工具能力本身消失了，而是 `<tool_call>`、`<|im_end|>` 等控制 token 的概率被 RL 异常放大，导致输出先出现格式污染，再退化为无意义的终止序列。基于这个发现，论文系统比较了多种监督信号，包括先 SFT 再 RL、off-policy supervision、hint-based guidance、错误轨迹监督和 process reflection supervision，并区分同步混合与交替训练两类整合方式。实验表明，interleaved SFT with RL 对稳定性提升最明显，而同步方案更容易遇到分布错配，在格式或内容 OOD 评测下也更脆弱。对 agent planning / tool-use agent 研究来说，这篇的重要启发是：多轮 agentic RL 的关键瓶颈未必是高层策略搜索，而可能是结构化动作语言本身需要额外监督才能避免训练期 token dynamics 失控。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强烈推荐",
+        "value_reason": "直接讨论 multi-step tool-use agentic RL 的训练坍塌，并把问题定位到控制 token 动态而非能力缺失，方法和分析都很贴近真实 agent 训练。",
+        "limitations": "论文的核心实验仍集中在 BFCL-V3 及两类较小模型上，离更开放的浏览器代理、代码代理和更大规模长轨迹环境还有距离。部分监督信号的收益也可能受具体 prompt 格式和实现细节影响。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文把输出分成 healthy tool call、healthy response、polluted output 和 collapsed output 四种结构状态，并跟踪其训练中占比变化。",
+          "作者指出 collapse 的直接机制是特定 control token 概率被异常放大，而不是底层工具能力完全丢失。",
+          "论文系统比较 SFT-then-RL、off-policy supervision、hint-based guidance、错误轨迹监督和 process reflection supervision。",
+          "实验结论强调 interleaved SFT with RL 更稳定，而 synchronous 混合更容易分布错配。"
+        ],
+        "model": "manual-codex-curation",
+        "updated_at": "2026-06-26T01:37:49.409Z"
+      }
+    },
+    {
+      "id": "2606.26463v1",
+      "title": "Finding the Time to Think: Learning Planning Budgets in Real-Time RL",
+      "summary": "这篇论文研究 real-time RL 里“思考也要花环境时间”时，agent 应该如何按状态分配 planning budget。作者在 frozen planner 之上训练轻量 gating policy 选择思考时长，在 Pac-Man、Tetris、Snake、Speed Hex 和 Speed Go 上 consistently 优于固定预算基线。",
+      "url": "http://arxiv.org/abs/2606.26463v1",
+      "authors": [
+        "Aneesh Muppidi",
+        "Firas Darwish",
+        "Dylan Cope",
+        "João F. Henriques",
+        "Jakob Nicolaus Foerster"
+      ],
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "把 planning budget 学习成一个显式控制问题，直接命中 long-horizon / real-time agent 的 deliberation-vs-action tradeoff，问题设定很干净。",
+        "reason": "把 planning budget 学习成一个显式控制问题，直接命中 long-horizon / real-time agent 的 deliberation-vs-action tradeoff，问题设定很干净。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Aneesh Muppidi",
+          "Firas Darwish",
+          "Dylan Cope",
+          "João F. Henriques",
+          "Jakob Nicolaus Foerster"
+        ],
+        "affiliations": "牛津大学 BOLD Lab / VGG（按论文首页作者单位）。",
+        "date": "2026-06-24",
+        "paper_url": "https://arxiv.org/abs/2606.26463v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "把 planning budget 学习成一个显式控制问题，直接命中 long-horizon / real-time agent 的 deliberation-vs-action tradeoff，问题设定很干净。",
+        "summary": "这篇论文讨论一个很实际但常被忽略的问题：如果环境不会等你思考，agent 应该什么时候多想、什么时候立刻行动？作者把这个问题形式化为 variable-delay real-time RL，并在 frozen AlphaZero-style planner 之上训练一个轻量 gating policy，为每个状态选择不同 planning budget。这样做避免了“为了决定要不要多想还得再多想一次”的元规划悖论，因为 gate 的开销远小于 MCTS。实验覆盖 real-time Pac-Man、Tetris、Snake、Speed Hex 和 Speed Go，结果表明 learned gating consistently 优于固定预算和启发式分配。对 agent planning 来说，这篇的核心价值是把 computation budget 本身当作策略对象来学，而不是仅把规划深度当部署超参。",
+        "highlights": [
+          "把 deliberation cost 明确建模为环境继续推进造成的机会成本，而不是额外 reward penalty。",
+          "预算选择通过轻量 gating policy 完成，避免了 planning-about-planning 的元规划悖论。",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "标准 RL 默认环境会等待 agent 算完再行动，但真实系统里并非如此。作者想解决的问题是：当环境会在等待中继续推进时，agent 该如何根据状态动态决定是立刻行动，还是多花一些时间规划更优动作。",
+        "method": "论文提出 variable-delay real-time RL，把不同思考时长视为 budgeted options，并在 frozen planner 上方训练一个 gating policy 选择每一步的 planning budget。等待期间 agent 用快速 reflex policy 持续输出动作，而更慢的 MCTS 在后台运行，最终在预算结束时输出规划动作；整个过程被形式化为一个 SMDP。",
+        "experiments": "实验覆盖 real-time Pac-Man、real-time Tetris、Snake、Speed Hex 和 Speed Go。作者比较 learned gating、固定预算基线和若干启发式策略，并进一步分析 planning quality 与 latency 的 co-scaling、输入消融，以及双 GPU 异步部署下的 deadline miss rate 与回报。整体结论是 learned gating 在大多数环境中都更稳且更优。",
+        "research_help": "Insight：对任何带 real-time constraint 的 agent，planning budget 本身都应该被看成策略变量，而不是离线定死的推理深度。更普遍地说，这篇提供了一种把“何时多想”从工程启发式变成可训练控制问题的思路。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "把 planning budget 学习成一个显式控制问题，直接命中 long-horizon / real-time agent 的 deliberation-vs-action tradeoff，问题设定很干净。",
+          "reason": "把 planning budget 学习成一个显式控制问题，直接命中 long-horizon / real-time agent 的 deliberation-vs-action tradeoff，问题设定很干净。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "full_summary": "这篇论文研究 real-time RL 中一个直接关系到 agent planning 的核心问题：环境在你思考时不会暂停，因此“想多久”本身就是策略的一部分。作者提出 variable-delay real-time RL，把 agent 选择不同 deliberation 时长的过程形式化为一个 SMDP，并用 budgeted options 描述不同 planning budget 对环境推进速度和动作质量的联合影响。具体做法是在 frozen AlphaZero-style planner 上再训练一个轻量 gating policy，让它根据当前状态决定使用多大的搜索预算；中间等待阶段由快速 reflex policy 顶住，从而避免 planning-about-planning 的额外开销。实验覆盖 real-time Pac-Man、Tetris、Snake，以及带时钟约束的 Speed Hex 和 Speed Go，结果显示 learned gating 普遍优于固定预算和手工启发式，并能迁移到双 GPU 的真实异步部署。对 long-horizon planning 研究来说，这篇最值得看的点是：planning budget 不是一个静态超参数，而是可随状态动态调度的控制变量。",
+        "card_summary": "作者把“agent 应该花多少时间思考”本身建模成 real-time RL 里的学习问题，并用轻量 gate 在每一步动态选择 planning budget。结果显示这种状态依赖的预算分配在多种实时环境里都优于固定搜索深度，对 real-time planning 很有启发。",
+        "insight": "Insight：对任何带 real-time constraint 的 agent，planning budget 本身都应该被看成策略变量，而不是离线定死的推理深度。更普遍地说，这篇提供了一种把“何时多想”从工程启发式变成可训练控制问题的思路。",
+        "abstract_zh": "论文研究在 real-time RL 中，agent 的思考时间会让环境继续推进，因此规划预算需要按状态动态分配。作者提出 variable-delay real-time RL，并在冻结的 AlphaZero 风格 planner 上训练一个轻量 gating policy，为每个决策点选择不同 planning budget。实验表明，这种状态依赖的预算选择在多种实时环境和时钟博弈中优于固定预算与启发式基线。整体上，它把“想多久”本身转化为了一个可学习的控制问题。"
+      },
+      "analysis": {
+        "motivation": "标准 RL 默认环境会等待 agent 算完再行动，但真实系统里并非如此。作者想解决的问题是：当环境会在等待中继续推进时，agent 该如何根据状态动态决定是立刻行动，还是多花一些时间规划更优动作。",
+        "method": "论文提出 variable-delay real-time RL，把不同思考时长视为 budgeted options，并在 frozen planner 上方训练一个 gating policy 选择每一步的 planning budget。等待期间 agent 用快速 reflex policy 持续输出动作，而更慢的 MCTS 在后台运行，最终在预算结束时输出规划动作；整个过程被形式化为一个 SMDP。",
+        "experiments": "实验覆盖 real-time Pac-Man、real-time Tetris、Snake、Speed Hex 和 Speed Go。作者比较 learned gating、固定预算基线和若干启发式策略，并进一步分析 planning quality 与 latency 的 co-scaling、输入消融，以及双 GPU 异步部署下的 deadline miss rate 与回报。整体结论是 learned gating 在大多数环境中都更稳且更优。",
+        "research_help": "Insight：对任何带 real-time constraint 的 agent，planning budget 本身都应该被看成策略变量，而不是离线定死的推理深度。更普遍地说，这篇提供了一种把“何时多想”从工程启发式变成可训练控制问题的思路。",
+        "insight": "Insight：对任何带 real-time constraint 的 agent，planning budget 本身都应该被看成策略变量，而不是离线定死的推理深度。更普遍地说，这篇提供了一种把“何时多想”从工程启发式变成可训练控制问题的思路。",
+        "abstract_zh": "论文研究在 real-time RL 中，agent 的思考时间会让环境继续推进，因此规划预算需要按状态动态分配。作者提出 variable-delay real-time RL，并在冻结的 AlphaZero 风格 planner 上训练一个轻量 gating policy，为每个决策点选择不同 planning budget。实验表明，这种状态依赖的预算选择在多种实时环境和时钟博弈中优于固定预算与启发式基线。整体上，它把“想多久”本身转化为了一个可学习的控制问题。",
+        "card_summary": "作者把“agent 应该花多少时间思考”本身建模成 real-time RL 里的学习问题，并用轻量 gate 在每一步动态选择 planning budget。结果显示这种状态依赖的预算分配在多种实时环境里都优于固定搜索深度，对 real-time planning 很有启发。",
+        "full_summary": "这篇论文研究 real-time RL 中一个直接关系到 agent planning 的核心问题：环境在你思考时不会暂停，因此“想多久”本身就是策略的一部分。作者提出 variable-delay real-time RL，把 agent 选择不同 deliberation 时长的过程形式化为一个 SMDP，并用 budgeted options 描述不同 planning budget 对环境推进速度和动作质量的联合影响。具体做法是在 frozen AlphaZero-style planner 上再训练一个轻量 gating policy，让它根据当前状态决定使用多大的搜索预算；中间等待阶段由快速 reflex policy 顶住，从而避免 planning-about-planning 的额外开销。实验覆盖 real-time Pac-Man、Tetris、Snake，以及带时钟约束的 Speed Hex 和 Speed Go，结果显示 learned gating 普遍优于固定预算和手工启发式，并能迁移到双 GPU 的真实异步部署。对 long-horizon planning 研究来说，这篇最值得看的点是：planning budget 不是一个静态超参数，而是可随状态动态调度的控制变量。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强烈推荐",
+        "value_reason": "把 planning budget 学习成一个显式控制问题，直接命中 long-horizon / real-time agent 的 deliberation-vs-action tradeoff，问题设定很干净。",
+        "limitations": "论文主要基于 AlphaZero-style planner 和相对规则化的游戏环境，和开放世界软件代理或网页代理之间仍有跨度。另一个限制是 reflex policy 与 planner 的组合较特定，迁移到更复杂动作空间时可能需要额外设计。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出 variable-delay real-time RL，强调环境在等待 agent 计算时会继续推进。",
+          "方法核心是给 frozen planner 叠加一个 gating policy，为每个状态选择 planning budget。",
+          "实验覆盖 real-time Pac-Man、Tetris、Snake、Speed Hex 与 Speed Go，并比较固定预算基线。",
+          "作者还验证了 learned gate 可迁移到双 GPU 的真实异步部署场景。"
+        ],
+        "model": "manual-codex-curation",
+        "updated_at": "2026-06-26T01:37:49.417Z"
+      }
+    },
     {
       "id": "2606.24322v1",
       "title": "Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees",
@@ -3467,23 +3819,21 @@
     }
   ],
   "latest_item_ids": [
-    "2606.24322v1",
-    "2606.24626v1",
-    "2606.24597v1",
-    "2606.24775v1",
-    "2606.25206v1",
-    "2606.24595v1"
+    "2606.26790v1",
+    "2606.26027v1",
+    "2606.26463v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
     "restored_from_git_history": true,
-    "total_items": 29,
-    "latest_items": 6,
+    "total_items": 32,
+    "latest_items": 3,
     "source_report_dates": {
       "2026-06-25": 6,
       "2026-06-20": 5,
       "2026-06-19": 16,
-      "2026-06-18": 16
+      "2026-06-18": 16,
+      "2026-06-26": 3
     }
   }
 }
