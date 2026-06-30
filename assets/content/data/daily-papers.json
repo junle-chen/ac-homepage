@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-26T01:37:49.417Z",
+  "updated_at": "2026-06-30T11:51:48.687Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation from live arXiv abstracts for selected high-relevance papers; non-relevant candidates are filtered out.",
+  "analysis_method": "Manual Codex curation from arXiv PDF text for selected high-relevance papers; non-relevant candidates are filtered out.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,25 +37,366 @@
     "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after manual Codex curation."
   },
   "digest": {
-    "title": "2026-06-26 Daily Paper",
-    "report_date": "2026-06-26",
+    "title": "2026-06-30 Daily Paper",
+    "report_date": "2026-06-30",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日自动化从 arXiv 初筛 16 篇候选，逐篇复核后仅保留 3 篇与 agentic RL、multi-step tool use、real-time planning budget 强相关的新论文，并补齐可发布的中文长摘要。",
+    "summary": "今日复核 6 月 26 日以来的 arXiv 候选后，保留 3 篇与 long-horizon agent memory、结构化 rollout error 和 LLM planning reliability 强相关的新论文。",
     "top_recommendations": [
-      "2606.26790v1",
-      "2606.26027v1",
-      "2606.26463v1"
+      "2606.27499v1",
+      "2606.27780v1",
+      "2606.27757v1"
     ],
     "low_priority": [
+      "2606.29126v1",
+      "2606.28955v1",
+      "2606.28781v1",
+      "2606.27632v1",
       "2606.26627v1",
       "2606.27032v1",
+      "2606.27180v1",
+      "2606.26918v1",
       "2606.25526v1",
-      "2606.24450v1"
+      "2606.25335v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-06-26 Daily Paper\n\n今日自动化从 arXiv 初筛 16 篇候选，逐篇复核后仅保留 3 篇与 agentic RL、multi-step tool use、real-time planning budget 强相关的新论文，并补齐可发布的中文长摘要。\n\n最值得读的 3 篇\n1. OPID\n- 为什么读：把 on-policy 轨迹转成层级 hindsight skill，直接缓解 multi-turn agentic RL 的 credit assignment 问题。\n2. Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It\n- 为什么读：把 tool-use RL 的失败定位到 control token 结构坍塌，并证明 interleaved SFT+RL 更稳。\n3. Finding the Time to Think: Learning Planning Budgets in Real-Time RL\n- 为什么读：把 planning budget 本身建模成可学习控制变量，直接命中 real-time agent planning。\n\n已过滤掉 privacy survey、domain-specific RL 和传统 MARL 优化类候选，因为它们和当前首页主题不够强相关。"
+    "email_body": "2026-06-30 Daily Paper\n\n今日复核 6 月 26 日以来的 arXiv 候选后，保留 3 篇与 long-horizon agent memory、结构化 rollout error 和 LLM planning reliability 强相关的新论文。\n\n最值得读的 3 篇\n1. DMV-Bench\n- 为什么读：把长程多模态 agent 的视觉记忆做成可诊断 benchmark，证明文本摘要式 memory 会丢掉未来才需要的视觉线索。\n2. Understanding Rollout Error in Graph World Models\n- 为什么读：系统分析 graph world model 的长时域误差传播，对工具图、技能图和 multi-agent planning 的可靠性有直接启发。\n3. Towards Reliable and Robust LLM Planning\n- 为什么读：把 PDDL 自然语言化、符号验证、目标识别和自修正串成闭环，适合参考 verifier-guided LLM planning。\n\n已过滤 HiComm、MCVL、HyphaeDB、Yuvion LLM、privacy survey、energy trading RL、VLM reward shaping 等候选，因为它们与当前首页主题的直接关系不足或偏水风险较高。"
   },
   "items": [
+    {
+      "id": "2606.27499v1",
+      "title": "DMV-Bench: Diagnosing Long-Horizon Multimodal Agents' Visual Memory with Incidental Cue Injection",
+      "summary": "DMV-Bench 专门诊断多模态 agent 在多会话、长程任务中能否记住未被显式提醒的视觉线索。论文提出的 DualMem 用视觉与文本双通道保存和检索记忆，实验证明视觉通道对可靠召回是核心，文本摘要式记忆会丢掉很多未来才变重要的细节。",
+      "url": "http://arxiv.org/abs/2606.27499v1",
+      "authors": [
+        "Yujin Tang",
+        "Chenming Shang",
+        "Ruize Xu",
+        "Nikhil Singh"
+      ],
+      "published": "2026-06-25",
+      "updated": "2026-06-25",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/yyyujintang/DMV-Bench",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强相关，值得细读",
+        "water_risk": "低",
+        "value_judgement": "论文直接命中 long-horizon multimodal agent、agent memory 与 planning reliability 的交叉问题，且不是只提出一个记忆模块，而是通过受控 cue 注入、跨 session recall reach、URL 精确匹配和混杂控制来诊断记忆是否真正保留视觉证据。对研究长程 agent planning 的人来说，它提供了一个很有用的评估范式：未来任务需求不可预知时，文本摘要不是充分记忆。",
+        "reason": "论文直接命中 long-horizon multimodal agent、agent memory 与 planning reliability 的交叉问题，且不是只提出一个记忆模块，而是通过受控 cue 注入、跨 session recall reach、URL 精确匹配和混杂控制来诊断记忆是否真正保留视觉证据。对研究长程 agent planning 的人来说，它提供了一个很有用的评估范式：未来任务需求不可预知时，文本摘要不是充分记忆。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yujin Tang",
+          "Chenming Shang",
+          "Ruize Xu",
+          "Nikhil Singh"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-25",
+        "paper_url": "https://arxiv.org/abs/2606.27499v1",
+        "project_url": "",
+        "repo_url": "https://github.com/yyyujintang/DMV-Bench",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接命中 long-horizon multimodal agent、agent memory 与 planning reliability 的交叉问题，且不是只提出一个记忆模块，而是通过受控 cue 注入、跨 session recall reach、URL 精确匹配和混杂控制来诊断记忆是否真正保留视觉证据。对研究长程 agent planning 的人来说，它提供了一个很有用的评估范式：未来任务需求不可预知时，文本摘要不是充分记忆。",
+        "summary": "这篇论文构造了一个家居电商环境，让 agent 在普通购物会话中浏览带有唯一视觉 cue 的商品，并在跨多个 session 清空上下文后要求其根据 cue 找回商品，从而把长程视觉记忆能力从一般网页导航能力中分离出来。它的重要性在于，很多 agent memory 系统默认把经历压缩成文本，而 DMV-Bench 显示这种压缩会丢失未来查询可能依赖的 incidental visual detail。方法上，DualMem 同时保存原图视觉表示和 caption 文本表示，检索时融合两类相似度，召回时再把图像和文本一起交给 VLM。实验信号比较清楚：纯文本记忆无法解决该任务，DualMem 稳定优于 caption baseline、M2A、WorldMM、MMA 等系统，并且在长链、不同后端和若干混杂控制下仍保持优势。阅读价值主要在 benchmark 设计和“视觉证据不要过早文本化”的系统 insight，而不仅是 DualMem 本身。",
+        "highlights": [
+          "论文直接命中 long-horizon multimodal agent、agent memory 与 planning reliability 的交叉问题，且不是只提出一个记忆模块，而是通过受控 cue 注入、跨 session recall reach、URL 精确匹配和混杂控制来诊断记忆是否真正保留视觉证据。对研究长程 agent planning 的人来说，它提供了一个很有用的评估范式：未来任务需求不可预知时，文本摘要不是充分记忆。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对一个被现有 agent memory 研究低估的问题：多模态 agent 在长程、多会话任务中是否真的记住了自己“看见过”的视觉细节，而不只是保存了可写成文本的属性。作者认为现有 benchmark 往往让视觉信息可由标题、caption、alt-text 或短程提示间接解决，难以诊断跨 session 的真实视觉记忆。",
+        "method": "论文提出 DMV-Bench：在受控家居电商环境中构造带有唯一视觉 incidental cue 的商品目录，agent 在普通购物任务中浏览商品但不会被提醒记住这些 cue；会话间清空上下文，只允许外部记忆跨会话保留信息，之后用“带某个视觉线索的商品”发起召回导航任务，并用精确 URL 匹配评分。作者还提出 DualMem，同时保存视觉 embedding 与文本 caption embedding，在检索阶段融合视觉与文本相似度，并把图像和 caption 一起注入给 VLM。",
+        "experiments": "实验比较 NoMemory、TextOnly、Caption、WorldMM、MMA、M2A 与 DualMem，并在 Gemini 2.5 Flash 和 Qwen2.5-VL-7B 两个后端上测试不同链长和长链 Monte Carlo 设置。结果显示纯文本或无记忆基线完全无法解决任务，说明 cue 泄漏控制基本成立；DualMem 在所有报告链长和两个后端上均领先，M2A 通常是第二强。消融显示视觉通道承担主要 cue 保留作用，文本通道更像查询 grounding 辅助；只用 caption 注入会明显损失，换较弱视觉编码器也会下降。作者还做了 memory bank 大小、编码位置、cluster bootstrap 与 paired cluster permutation 等检查，试图排除“记忆库更小”或“只记住最近项”等混杂因素。",
+        "research_help": "Insight：这篇论文的可迁移价值在于把 long-horizon agent memory 从“是否检索到文本事实”推进到“是否保留未被显式标注、但未来可能成为关键索引的感知线索”。对 agent planning 和多轮系统而言，它提示记忆设计不能只压缩成语言摘要，否则会丢失未来任务中不可预知的 discriminative cue；更稳健的 long-horizon reliability 可能需要保留可回放、可重编码的多模态证据，并在召回时让视觉通道承担事实定位、文本通道承担意图对齐。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移价值在于把 long-horizon agent memory 从“是否检索到文本事实”推进到“是否保留未被显式标注、但未来可能成为关键索引的感知线索”。对 agent planning 和多轮系统而言，它提示记忆设计不能只压缩成语言摘要，否则会丢失未来任务中不可预知的 discriminative cue；更稳健的 long-horizon reliability 可能需要保留可回放、可重编码的多模态证据，并在召回时让视觉通道承担事实定位、文本通道承担意图对齐。",
+        "abstract_zh": "现有 agent memory 研究主要集中在文本记忆，缺少能在交互环境中测试多模态 agent 何时必须记住视觉内容的 benchmark。论文提出 DMV-Bench，一个基于家居电商目录的交互式视觉记忆诊断基准，其中每个被访问商品图像都带有唯一的预渲染 incidental cue，agent 之后需要根据该 cue 找回对应商品并导航到正确 URL。作者受 dual-coding theory 启发提出 DualMem，同时维护视觉和语言两种记忆编码。实验显示，DualMem 在 Gemini 2.5 Flash 和 Qwen2.5-VL-7B 上、不同长程链路设置中都优于 caption baseline 和多个近期多模态 agent memory 系统，并且优势在记忆库大小、编码位置等控制下仍然存在。",
+        "full_summary": "这篇论文构造了一个家居电商环境，让 agent 在普通购物会话中浏览带有唯一视觉 cue 的商品，并在跨多个 session 清空上下文后要求其根据 cue 找回商品，从而把长程视觉记忆能力从一般网页导航能力中分离出来。它的重要性在于，很多 agent memory 系统默认把经历压缩成文本，而 DMV-Bench 显示这种压缩会丢失未来查询可能依赖的 incidental visual detail。方法上，DualMem 同时保存原图视觉表示和 caption 文本表示，检索时融合两类相似度，召回时再把图像和文本一起交给 VLM。实验信号比较清楚：纯文本记忆无法解决该任务，DualMem 稳定优于 caption baseline、M2A、WorldMM、MMA 等系统，并且在长链、不同后端和若干混杂控制下仍保持优势。阅读价值主要在 benchmark 设计和“视觉证据不要过早文本化”的系统 insight，而不仅是 DualMem 本身。",
+        "card_summary": "DMV-Bench 专门诊断多模态 agent 在多会话、长程任务中能否记住未被显式提醒的视觉线索。论文提出的 DualMem 用视觉与文本双通道保存和检索记忆，实验证明视觉通道对可靠召回是核心，文本摘要式记忆会丢掉很多未来才变重要的细节。"
+      },
+      "analysis": {
+        "motivation": "论文针对一个被现有 agent memory 研究低估的问题：多模态 agent 在长程、多会话任务中是否真的记住了自己“看见过”的视觉细节，而不只是保存了可写成文本的属性。作者认为现有 benchmark 往往让视觉信息可由标题、caption、alt-text 或短程提示间接解决，难以诊断跨 session 的真实视觉记忆。",
+        "method": "论文提出 DMV-Bench：在受控家居电商环境中构造带有唯一视觉 incidental cue 的商品目录，agent 在普通购物任务中浏览商品但不会被提醒记住这些 cue；会话间清空上下文，只允许外部记忆跨会话保留信息，之后用“带某个视觉线索的商品”发起召回导航任务，并用精确 URL 匹配评分。作者还提出 DualMem，同时保存视觉 embedding 与文本 caption embedding，在检索阶段融合视觉与文本相似度，并把图像和 caption 一起注入给 VLM。",
+        "experiments": "实验比较 NoMemory、TextOnly、Caption、WorldMM、MMA、M2A 与 DualMem，并在 Gemini 2.5 Flash 和 Qwen2.5-VL-7B 两个后端上测试不同链长和长链 Monte Carlo 设置。结果显示纯文本或无记忆基线完全无法解决任务，说明 cue 泄漏控制基本成立；DualMem 在所有报告链长和两个后端上均领先，M2A 通常是第二强。消融显示视觉通道承担主要 cue 保留作用，文本通道更像查询 grounding 辅助；只用 caption 注入会明显损失，换较弱视觉编码器也会下降。作者还做了 memory bank 大小、编码位置、cluster bootstrap 与 paired cluster permutation 等检查，试图排除“记忆库更小”或“只记住最近项”等混杂因素。",
+        "research_help": "Insight：这篇论文的可迁移价值在于把 long-horizon agent memory 从“是否检索到文本事实”推进到“是否保留未被显式标注、但未来可能成为关键索引的感知线索”。对 agent planning 和多轮系统而言，它提示记忆设计不能只压缩成语言摘要，否则会丢失未来任务中不可预知的 discriminative cue；更稳健的 long-horizon reliability 可能需要保留可回放、可重编码的多模态证据，并在召回时让视觉通道承担事实定位、文本通道承担意图对齐。",
+        "insight": "Insight：这篇论文的可迁移价值在于把 long-horizon agent memory 从“是否检索到文本事实”推进到“是否保留未被显式标注、但未来可能成为关键索引的感知线索”。对 agent planning 和多轮系统而言，它提示记忆设计不能只压缩成语言摘要，否则会丢失未来任务中不可预知的 discriminative cue；更稳健的 long-horizon reliability 可能需要保留可回放、可重编码的多模态证据，并在召回时让视觉通道承担事实定位、文本通道承担意图对齐。",
+        "abstract_zh": "现有 agent memory 研究主要集中在文本记忆，缺少能在交互环境中测试多模态 agent 何时必须记住视觉内容的 benchmark。论文提出 DMV-Bench，一个基于家居电商目录的交互式视觉记忆诊断基准，其中每个被访问商品图像都带有唯一的预渲染 incidental cue，agent 之后需要根据该 cue 找回对应商品并导航到正确 URL。作者受 dual-coding theory 启发提出 DualMem，同时维护视觉和语言两种记忆编码。实验显示，DualMem 在 Gemini 2.5 Flash 和 Qwen2.5-VL-7B 上、不同长程链路设置中都优于 caption baseline 和多个近期多模态 agent memory 系统，并且优势在记忆库大小、编码位置等控制下仍然存在。",
+        "card_summary": "DMV-Bench 专门诊断多模态 agent 在多会话、长程任务中能否记住未被显式提醒的视觉线索。论文提出的 DualMem 用视觉与文本双通道保存和检索记忆，实验证明视觉通道对可靠召回是核心，文本摘要式记忆会丢掉很多未来才变重要的细节。",
+        "full_summary": "这篇论文构造了一个家居电商环境，让 agent 在普通购物会话中浏览带有唯一视觉 cue 的商品，并在跨多个 session 清空上下文后要求其根据 cue 找回商品，从而把长程视觉记忆能力从一般网页导航能力中分离出来。它的重要性在于，很多 agent memory 系统默认把经历压缩成文本，而 DMV-Bench 显示这种压缩会丢失未来查询可能依赖的 incidental visual detail。方法上，DualMem 同时保存原图视觉表示和 caption 文本表示，检索时融合两类相似度，召回时再把图像和文本一起交给 VLM。实验信号比较清楚：纯文本记忆无法解决该任务，DualMem 稳定优于 caption baseline、M2A、WorldMM、MMA 等系统，并且在长链、不同后端和若干混杂控制下仍保持优势。阅读价值主要在 benchmark 设计和“视觉证据不要过早文本化”的系统 insight，而不仅是 DualMem 本身。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强相关，值得细读",
+        "value_reason": "论文直接命中 long-horizon multimodal agent、agent memory 与 planning reliability 的交叉问题，且不是只提出一个记忆模块，而是通过受控 cue 注入、跨 session recall reach、URL 精确匹配和混杂控制来诊断记忆是否真正保留视觉证据。对研究长程 agent planning 的人来说，它提供了一个很有用的评估范式：未来任务需求不可预知时，文本摘要不是充分记忆。",
+        "limitations": "主要局限是环境仍是合成家居电商目录，视觉 cue 也由预渲染规则注入，真实网页、真实用户长期交互和开放域视觉噪声下是否成立还需要验证。实验后端只有两个主 VLM，且融合权重主要在一个设置上调参后迁移到另一个后端，泛化性仍有限。DualMem 的方法本身也偏工程诊断型，核心创新更多在 benchmark 和问题定义；此外，caption 生成、视觉编码器和检索融合策略的选择可能影响不同模型上的绝对表现。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确说明 DMV-Bench 是交互式、多会话视觉 agent memory benchmark，商品图像中注入唯一 incidental cue，并通过 L2-leakage contract 防止 cue 出现在标题、描述、alt-text、URL 等文本通道。",
+          "评测流程会在 session 间清空 agent 的上下文，只让 memory architecture 跨边界保存信息；召回阶段要求 agent 根据视觉 cue 导航到唯一商品 URL，并用 exact URL match 作为成功标准。",
+          "实验覆盖 Gemini 2.5 Flash 与 Qwen2.5-VL-7B，比较 NoMemory、TextOnly、Caption、WorldMM、MMA、M2A 和 DualMem；结果显示 DualMem 在所有报告链长与两个后端上领先。",
+          "消融表明视觉检索和图像注入是关键，文本通道主要提供查询 grounding；caption-only 或弱视觉编码器会导致明显下降。论文还报告 memory bank size、encoding position、cluster bootstrap 和 paired cluster permutation 等稳健性分析。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-30T01:36:51.687Z"
+      }
+    },
+    {
+      "id": "2606.27780v1",
+      "title": "Understanding Rollout Error in Graph World Models",
+      "summary": "这篇论文把 graph world model 的长时域误差问题讲得比较系统，重点解释为什么 agent graph、skill graph 或工具依赖图上的局部错误会被拓扑和动态边放大。它提出 GEAF、联合节点-边误差算子和 Error-Aware GWM，对研究多轮 agent planning 的 rollout reliability 有直接参考价值，但实验仍以合成和自建图环境为主。",
+      "url": "http://arxiv.org/abs/2606.27780v1",
+      "authors": [
+        "Xinyuan Song",
+        "Zekun Cai"
+      ],
+      "published": "2026-06-26",
+      "updated": "2026-06-26",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 78,
+        "level": "高",
+        "label": "值得读，尤其适合关注 agent graph 世界模型和长时域规划可靠性的读者",
+        "water_risk": "中",
+        "value_judgement": "推荐等级为高，因为论文主题与 agent planning、long-horizon rollout、multi-turn agent graph 和 planning reliability 高度相关，而且理论框架与训练目标都能迁移到工具图、技能图、多 agent 调用树等系统。偏水风险为中，原因是论文提出的 GEAF 和联合 node-edge operator 有清晰解释力，实验信号也比较完整，但主要证据仍来自合成拓扑和自建 agent-graph testbed，真实世界任务上的增益边界没有被充分展开；此外 Error-Aware GWM 的组件组合较自然，创新性更多在系统化分析和验证，而不是一个非常出乎意料的新算法。",
+        "reason": "推荐等级为高，因为论文主题与 agent planning、long-horizon rollout、multi-turn agent graph 和 planning reliability 高度相关，而且理论框架与训练目标都能迁移到工具图、技能图、多 agent 调用树等系统。偏水风险为中，原因是论文提出的 GEAF 和联合 node-edge operator 有清晰解释力，实验信号也比较完整，但主要证据仍来自合成拓扑和自建 agent-graph testbed，真实世界任务上的增益边界没有被充分展开；此外 Error-Aware GWM 的组件组合较自然，创新性更多在系统化分析和验证，而不是一个非常出乎意料的新算法。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xinyuan Song",
+          "Zekun Cai"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-26",
+        "paper_url": "https://arxiv.org/abs/2606.27780v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "推荐等级为高，因为论文主题与 agent planning、long-horizon rollout、multi-turn agent graph 和 planning reliability 高度相关，而且理论框架与训练目标都能迁移到工具图、技能图、多 agent 调用树等系统。偏水风险为中，原因是论文提出的 GEAF 和联合 node-edge operator 有清晰解释力，实验信号也比较完整，但主要证据仍来自合成拓扑和自建 agent-graph testbed，真实世界任务上的增益边界没有被充分展开；此外 Error-Aware GWM 的组件组合较自然，创新性更多在系统化分析和验证，而不是一个非常出乎意料的新算法。",
+        "summary": "论文研究图结构世界模型在 long-horizon planning 中的 rollout error，而不是只看一步预测误差。它的关键观点是，图拓扑会改变误差传播方式：链式图可能让错误保持局部，hub、dense graph 或高谱半径结构则可能把小错误放大成全局 planning failure。方法上，作者用 GEAF 分离拓扑放大和模型放大，并在 dynamic-edge 场景中用联合 node-edge operator 描述节点预测错误与边预测错误的互相反馈。实验显示，高 GEAF 设置下 rollout error 和 planning regret 更容易随 horizon 增长，dynamic-edge 任务需要动态边训练，Error-Aware GWM 比 vanilla GCN 和简单正则更能避免长 rollout 发散。对 agentic RL 和多轮 agent 系统来说，这篇文章的价值在于把“规划可靠性”从单步 accuracy 推进到结构化误差传播分析，但真实复杂 agent workflow 的验证还不够充分。",
+        "highlights": [
+          "推荐等级为高，因为论文主题与 agent planning、long-horizon rollout、multi-turn agent graph 和 planning reliability 高度相关，而且理论框架与训练目标都能迁移到工具图、技能图、多 agent 调用树等系统。偏水风险为中，原因是论文提出的 GEAF 和联合 node-edge operator 有清晰解释力，实验信号也比较完整，但主要证据仍来自合成拓扑和自建 agent-graph testbed，真实世界任务上的增益边界没有被充分展开；此外 Error-Aware GWM 的组件组合较自然，创新性更多在系统化分析和验证，而不是一个非常出乎意料的新算法。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文关注图结构世界模型在长时域 rollout 中的误差累积问题。作者指出，很多 planning 环境并不是向量或图像，而是由 agent、工具、技能、依赖、路由和通信关系组成的图；在这种环境里，一个局部预测错误可能被拓扑放大，动态边预测还会让节点错误和边错误相互耦合。核心动机是把传统 model-based RL 里的标量 Lipschitz 误差分析扩展到图状态，从而解释为什么某些 agent graph / skill graph 在长 horizon 规划时会失稳。",
+        "method": "论文提出统一的 Graph World Model 框架，覆盖 fixed-edge 和 dynamic-edge 两类 rollout，并把动作表示为 action node 以支持节点级、边级和图级决策。理论上，作者定义 GEAF，将拓扑项 ρ(A) 与模型权重谱范数乘积分开，用来解释 fixed-edge 下的误差放大；对 dynamic-edge 场景，则引入联合 node-edge operator B，刻画节点误差、边误差及其交叉传播。方法上还提出 Error-Aware GWM，把谱正则、rollout consistency 和 critical-node weighting 合在训练目标中，试图同时控制长时域发散和保留预测精度。",
+        "experiments": "实验覆盖七类合成拓扑、fixed-edge 与 dynamic-edge simulator、agent calling-tree testbed、platform skill-graph testbed，以及部分真实图 benchmark 的范围分析。主要信号是：rollout error 和 planning regret 会随 horizon 增长，高 GEAF 拓扑更容易出现误差增长；dynamic-edge 环境中，用 dynamic-edge 训练明显优于 fixed-edge 训练；Error-Aware GWM 在 scale-free、star 等高风险拓扑上比 vanilla GCN 更稳定，并在消融中优于单独的 weight decay、gradient clipping 或 spectral norm projection。不过实验主体仍偏合成和自建环境，真实 agent planning 的外部有效性需要继续验证。",
+        "research_help": "Insight：对 agent planning / agentic RL / 多轮系统的启发是，长时域可靠性不能只看 one-step prediction loss，而要显式建模“错误沿结构传播”的机制；在 tool graph、skill graph、multi-agent calling tree 中，hub 节点和动态依赖边可能成为 rollout 崩溃的主要放大器。训练世界模型时应把 rollout consistency、关键节点加权和结构谱控制纳入目标，尤其在边会随动作改变的系统里，要把 edge prediction 当成一等动态变量，而不是固定背景结构。",
+        "recommendation": {
+          "score": 78,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对 agent planning / agentic RL / 多轮系统的启发是，长时域可靠性不能只看 one-step prediction loss，而要显式建模“错误沿结构传播”的机制；在 tool graph、skill graph、multi-agent calling tree 中，hub 节点和动态依赖边可能成为 rollout 崩溃的主要放大器。训练世界模型时应把 rollout consistency、关键节点加权和结构谱控制纳入目标，尤其在边会随动作改变的系统里，要把 edge prediction 当成一等动态变量，而不是固定背景结构。",
+        "abstract_zh": "这篇论文研究 Graph World Models 在长时域 rollout 中的误差累积，尤其是图状态由 agent、工具、技能、路由和依赖关系组成时，局部预测错误如何因图拓扑扩散或被放大。作者提出统一的 fixed-edge 与 dynamic-edge GWM 框架，并给出图值 rollout bound，将拓扑导致的放大和模型本身导致的放大分开；对动态边场景，还引入联合节点-边误差算子。基于这些分析，论文提出 Error-Aware GWM，结合谱正则、rollout consistency 和 critical-node weighting 来降低长时域发散风险。实验显示，误差和规划 regret 会随 horizon 增长，动态边训练在结构变化时很关键，Error-Aware GWM 能在保持预测精度的同时缓解长 rollout 发散；真实图 benchmark 则说明 GWM 更适合动态图 rollout 和 agent planning，而静态或稀疏预测任务中专用图模型仍有优势。",
+        "full_summary": "论文研究图结构世界模型在 long-horizon planning 中的 rollout error，而不是只看一步预测误差。它的关键观点是，图拓扑会改变误差传播方式：链式图可能让错误保持局部，hub、dense graph 或高谱半径结构则可能把小错误放大成全局 planning failure。方法上，作者用 GEAF 分离拓扑放大和模型放大，并在 dynamic-edge 场景中用联合 node-edge operator 描述节点预测错误与边预测错误的互相反馈。实验显示，高 GEAF 设置下 rollout error 和 planning regret 更容易随 horizon 增长，dynamic-edge 任务需要动态边训练，Error-Aware GWM 比 vanilla GCN 和简单正则更能避免长 rollout 发散。对 agentic RL 和多轮 agent 系统来说，这篇文章的价值在于把“规划可靠性”从单步 accuracy 推进到结构化误差传播分析，但真实复杂 agent workflow 的验证还不够充分。",
+        "card_summary": "这篇论文把 graph world model 的长时域误差问题讲得比较系统，重点解释为什么 agent graph、skill graph 或工具依赖图上的局部错误会被拓扑和动态边放大。它提出 GEAF、联合节点-边误差算子和 Error-Aware GWM，对研究多轮 agent planning 的 rollout reliability 有直接参考价值，但实验仍以合成和自建图环境为主。"
+      },
+      "analysis": {
+        "motivation": "论文关注图结构世界模型在长时域 rollout 中的误差累积问题。作者指出，很多 planning 环境并不是向量或图像，而是由 agent、工具、技能、依赖、路由和通信关系组成的图；在这种环境里，一个局部预测错误可能被拓扑放大，动态边预测还会让节点错误和边错误相互耦合。核心动机是把传统 model-based RL 里的标量 Lipschitz 误差分析扩展到图状态，从而解释为什么某些 agent graph / skill graph 在长 horizon 规划时会失稳。",
+        "method": "论文提出统一的 Graph World Model 框架，覆盖 fixed-edge 和 dynamic-edge 两类 rollout，并把动作表示为 action node 以支持节点级、边级和图级决策。理论上，作者定义 GEAF，将拓扑项 ρ(A) 与模型权重谱范数乘积分开，用来解释 fixed-edge 下的误差放大；对 dynamic-edge 场景，则引入联合 node-edge operator B，刻画节点误差、边误差及其交叉传播。方法上还提出 Error-Aware GWM，把谱正则、rollout consistency 和 critical-node weighting 合在训练目标中，试图同时控制长时域发散和保留预测精度。",
+        "experiments": "实验覆盖七类合成拓扑、fixed-edge 与 dynamic-edge simulator、agent calling-tree testbed、platform skill-graph testbed，以及部分真实图 benchmark 的范围分析。主要信号是：rollout error 和 planning regret 会随 horizon 增长，高 GEAF 拓扑更容易出现误差增长；dynamic-edge 环境中，用 dynamic-edge 训练明显优于 fixed-edge 训练；Error-Aware GWM 在 scale-free、star 等高风险拓扑上比 vanilla GCN 更稳定，并在消融中优于单独的 weight decay、gradient clipping 或 spectral norm projection。不过实验主体仍偏合成和自建环境，真实 agent planning 的外部有效性需要继续验证。",
+        "research_help": "Insight：对 agent planning / agentic RL / 多轮系统的启发是，长时域可靠性不能只看 one-step prediction loss，而要显式建模“错误沿结构传播”的机制；在 tool graph、skill graph、multi-agent calling tree 中，hub 节点和动态依赖边可能成为 rollout 崩溃的主要放大器。训练世界模型时应把 rollout consistency、关键节点加权和结构谱控制纳入目标，尤其在边会随动作改变的系统里，要把 edge prediction 当成一等动态变量，而不是固定背景结构。",
+        "insight": "Insight：对 agent planning / agentic RL / 多轮系统的启发是，长时域可靠性不能只看 one-step prediction loss，而要显式建模“错误沿结构传播”的机制；在 tool graph、skill graph、multi-agent calling tree 中，hub 节点和动态依赖边可能成为 rollout 崩溃的主要放大器。训练世界模型时应把 rollout consistency、关键节点加权和结构谱控制纳入目标，尤其在边会随动作改变的系统里，要把 edge prediction 当成一等动态变量，而不是固定背景结构。",
+        "abstract_zh": "这篇论文研究 Graph World Models 在长时域 rollout 中的误差累积，尤其是图状态由 agent、工具、技能、路由和依赖关系组成时，局部预测错误如何因图拓扑扩散或被放大。作者提出统一的 fixed-edge 与 dynamic-edge GWM 框架，并给出图值 rollout bound，将拓扑导致的放大和模型本身导致的放大分开；对动态边场景，还引入联合节点-边误差算子。基于这些分析，论文提出 Error-Aware GWM，结合谱正则、rollout consistency 和 critical-node weighting 来降低长时域发散风险。实验显示，误差和规划 regret 会随 horizon 增长，动态边训练在结构变化时很关键，Error-Aware GWM 能在保持预测精度的同时缓解长 rollout 发散；真实图 benchmark 则说明 GWM 更适合动态图 rollout 和 agent planning，而静态或稀疏预测任务中专用图模型仍有优势。",
+        "card_summary": "这篇论文把 graph world model 的长时域误差问题讲得比较系统，重点解释为什么 agent graph、skill graph 或工具依赖图上的局部错误会被拓扑和动态边放大。它提出 GEAF、联合节点-边误差算子和 Error-Aware GWM，对研究多轮 agent planning 的 rollout reliability 有直接参考价值，但实验仍以合成和自建图环境为主。",
+        "full_summary": "论文研究图结构世界模型在 long-horizon planning 中的 rollout error，而不是只看一步预测误差。它的关键观点是，图拓扑会改变误差传播方式：链式图可能让错误保持局部，hub、dense graph 或高谱半径结构则可能把小错误放大成全局 planning failure。方法上，作者用 GEAF 分离拓扑放大和模型放大，并在 dynamic-edge 场景中用联合 node-edge operator 描述节点预测错误与边预测错误的互相反馈。实验显示，高 GEAF 设置下 rollout error 和 planning regret 更容易随 horizon 增长，dynamic-edge 任务需要动态边训练，Error-Aware GWM 比 vanilla GCN 和简单正则更能避免长 rollout 发散。对 agentic RL 和多轮 agent 系统来说，这篇文章的价值在于把“规划可靠性”从单步 accuracy 推进到结构化误差传播分析，但真实复杂 agent workflow 的验证还不够充分。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其适合关注 agent graph 世界模型和长时域规划可靠性的读者",
+        "value_reason": "推荐等级为高，因为论文主题与 agent planning、long-horizon rollout、multi-turn agent graph 和 planning reliability 高度相关，而且理论框架与训练目标都能迁移到工具图、技能图、多 agent 调用树等系统。偏水风险为中，原因是论文提出的 GEAF 和联合 node-edge operator 有清晰解释力，实验信号也比较完整，但主要证据仍来自合成拓扑和自建 agent-graph testbed，真实世界任务上的增益边界没有被充分展开；此外 Error-Aware GWM 的组件组合较自然，创新性更多在系统化分析和验证，而不是一个非常出乎意料的新算法。",
+        "limitations": "主要限制包括：理论依赖固定节点集合、紧致状态空间、Lipschitz reward、线性化图距离等较强假设；实验大量依赖 synthetic topology 和 simulator，agent calling-tree / skill-graph testbed 的真实代表性仍需验证；真实图 benchmark 的结论偏范围划定，未充分证明在真实复杂 agent workflow 中优于更专门的方法；Error-Aware GWM 的三个正则项有效，但可能需要较多调参，并且对大规模动态图、异步多 agent 交互或非平稳工具环境的适用性还不明确。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要和引言明确把问题设定为 graph world model 的 long-horizon rollout error，并把应用背景连接到 multi-agent calling trees、skill graphs、tool dependencies 和 agent planning。",
+          "方法部分给出 fixed-edge 与 dynamic-edge GWM，使用 action nodes 表示节点级、边级和图级决策，并区分固定拓扑下的节点误差传播与动态边下的节点-边耦合。",
+          "理论部分提出 GEAF = ρ(A) 与模型谱范数乘积的形式，并引入 joint node-edge operator B，用来解释 dynamic-edge rollout 中节点误差和边误差的互相放大。",
+          "实验部分报告七类拓扑、FE/DE simulator、agent calling-tree 和 skill-graph testbed，并显示高 GEAF 与更快误差增长、planning regret 增长相关。运动实验和消融显示 Error-Aware GWM 在长 horizon 上比 vanilla GCN 和简单稳定化方法更能抑制发散。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-30T11:49:55.293Z"
+      }
+    },
+    {
+      "id": "2606.27757v1",
+      "title": "Towards Reliable and Robust LLM Planning: Symbolic Feedback-Driven Iterative Self-Refinement Framework",
+      "summary": "这篇论文提出用 PDDL 自然语言化、符号验证和计划识别构成闭环反馈，让 LLM 在长程规划中迭代修正不可执行或偏离目标的计划。实验显示它在 PlanBench 的 Blocksworld 和 Mystery 任务上能提升规划覆盖率，尤其对需要显式约束检查的长程任务有启发，但整体仍偏工程组合和基准内验证。",
+      "url": "http://arxiv.org/abs/2606.27757v1",
+      "authors": [
+        "Jiajing Zhang",
+        "Jiamei Jiang",
+        "Chenyang Zhang",
+        "Feifei Mo",
+        "Linjing Li",
+        "Daniel Zeng"
+      ],
+      "published": "2026-06-26",
+      "updated": "2026-06-26",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 52,
+        "level": "中",
+        "label": "值得浏览，适合关注长程规划可靠性的读者精读方法和实验部分",
+        "water_risk": "中",
+        "value_judgement": "论文主题与 agent planning、long-horizon reliability 高度相关，方法也直接围绕可验证反馈和多轮修正展开，对构建可靠 LLM planner 有实际参考价值。它的主要价值不是提出全新的规划理论，而是把 PDDL 自然语言化、VAL 式验证、目标识别和反馈提示组合成可操作闭环，并用多模型实验展示稳定收益。推荐等级为中，是因为实验信号明确但场景仍集中在 PlanBench 和经典符号规划任务，离开放动态环境、多智能体或真实 agent 任务还有距离。",
+        "reason": "论文主题与 agent planning、long-horizon reliability 高度相关，方法也直接围绕可验证反馈和多轮修正展开，对构建可靠 LLM planner 有实际参考价值。它的主要价值不是提出全新的规划理论，而是把 PDDL 自然语言化、VAL 式验证、目标识别和反馈提示组合成可操作闭环，并用多模型实验展示稳定收益。推荐等级为中，是因为实验信号明确但场景仍集中在 PlanBench 和经典符号规划任务，离开放动态环境、多智能体或真实 agent 任务还有距离。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": false,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jiajing Zhang",
+          "Jiamei Jiang",
+          "Chenyang Zhang",
+          "Feifei Mo",
+          "Linjing Li",
+          "Daniel Zeng"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-26",
+        "paper_url": "https://arxiv.org/abs/2606.27757v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文主题与 agent planning、long-horizon reliability 高度相关，方法也直接围绕可验证反馈和多轮修正展开，对构建可靠 LLM planner 有实际参考价值。它的主要价值不是提出全新的规划理论，而是把 PDDL 自然语言化、VAL 式验证、目标识别和反馈提示组合成可操作闭环，并用多模型实验展示稳定收益。推荐等级为中，是因为实验信号明确但场景仍集中在 PlanBench 和经典符号规划任务，离开放动态环境、多智能体或真实 agent 任务还有距离。",
+        "summary": "论文研究 LLM 在长程规划中为什么容易失败，并提出一个符号反馈驱动的迭代自修正框架。核心做法是先把 PDDL 领域规则转成自然语言，再让 LLM 生成计划，并用符号验证器和 plan recognizer 检查动作合法性、状态转移、目标可达性和目标偏离。错误会被转化成结构化反馈重新注入提示，使模型从盲目重试转向有针对性的修正。实验在 PlanBench 的 Blocksworld 和 Mystery 上显示，该框架能提升 GPT-4o、Claude-3.5 和 DeepSeek-R1 的规划覆盖率，可行性和最优性消融也支持符号反馈的贡献。阅读价值主要在于它把外部验证、目标识别和多轮自修正整合成一个可复用的 LLM planning reliability 模式，但新颖性更多来自系统组合而非新的规划算法。",
+        "highlights": [
+          "论文主题与 agent planning、long-horizon reliability 高度相关，方法也直接围绕可验证反馈和多轮修正展开，对构建可靠 LLM planner 有实际参考价值。它的主要价值不是提出全新的规划理论，而是把 PDDL 自然语言化、VAL 式验证、目标识别和反馈提示组合成可操作闭环，并用多模型实验展示稳定收益。推荐等级为中，是因为实验信号明确但场景仍集中在 PlanBench 和经典符号规划任务，离开放动态环境、多智能体或真实 agent 任务还有距离。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对 LLM 在长程规划中容易产生不可执行动作、违反约束、局部合理但全局失败的计划这一问题，认为纯 LLM 缺少可验证的可行性与正确性保证，而传统符号规划器虽然严谨但对自然语言和隐含约束不够灵活。因此作者希望用神经符号闭环把 PDDL 规则、符号验证和 LLM 自修正结合起来，提升长程任务中的规划可靠性与鲁棒性。",
+        "method": "方法由三部分组成：首先把 PDDL 中的动作、谓词、初始状态和目标转写成自然语言提示，降低 LLM 解析符号语法的难度；然后让 LLM 生成初始计划，并用符号验证器检查语法、语义可执行性和目标满足情况；最后把验证器发现的动作冲突、约束违反、目标偏离等错误转成 LLM 可理解的反馈，迭代生成修正版计划。额外的 plan recognizer 用于根据已生成动作序列推断最可能达成的目标，并与真实目标比较，从而提供目标可达性层面的反馈。",
+        "experiments": "实验在 PlanBench 上进行，主要覆盖 Blocksworld 和 Mystery 两类任务，并比较 GPT-4o、Claude-3.5 和 DeepSeek-R1 的 direct 与 feedback 模式。结果显示，加入符号反馈后，Blocksworld 中各模型规划覆盖率均提升，DeepSeek-R1 达到完全覆盖；Mystery 中直接生成表现很差，反馈机制对 DeepSeek-R1 的提升更明显，对 GPT-4o 和 Claude-3.5 也有小幅恢复。消融实验表明，自然语言提示能提升理解 PDDL 规则的能力，增强反馈能进一步提高可行性与最优性；规划长度分析显示，长计划越难，符号反馈相对基线越有帮助，但在长度 14 和 16 的困难实例上仍明显不足。",
+        "research_help": "Insight：这篇论文的可迁移启发在于，长程 agent planning 的可靠性不应只依赖模型自我反思，而应把外部可执行验证器、目标识别器和结构化错误反馈接入多轮修正循环。对 agentic RL 或多轮系统来说，它提示了一个有价值的训练/推理接口：把失败轨迹分解为前提不满足、状态转移错误、目标偏离和次优停止等可监督信号，再作为后续策略改进或过程奖励的来源。它也说明，在语义被扰乱的环境中，LLM 的自然语言先验会显著失效，因此 long-horizon reliability 需要显式状态追踪和符号约束，而不是只增加 token 长度。",
+        "recommendation": {
+          "score": 52,
+          "level": "低",
+          "label": "暂不优先",
+          "water_risk": "高",
+          "value_judgement": "可能偏水：主题或实验信号偏弱，除非和当前问题强相关，否则不优先。",
+          "reason": "和 long-horizon planning / multi-step task 相关。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": false,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移启发在于，长程 agent planning 的可靠性不应只依赖模型自我反思，而应把外部可执行验证器、目标识别器和结构化错误反馈接入多轮修正循环。对 agentic RL 或多轮系统来说，它提示了一个有价值的训练/推理接口：把失败轨迹分解为前提不满足、状态转移错误、目标偏离和次优停止等可监督信号，再作为后续策略改进或过程奖励的来源。它也说明，在语义被扰乱的环境中，LLM 的自然语言先验会显著失效，因此 long-horizon reliability 需要显式状态追踪和符号约束，而不是只增加 token 长度。",
+        "abstract_zh": "大语言模型在自然语言理解和生成上表现突出，但在长程决策任务中仍常生成不可行或错误的计划，带来鲁棒性和可靠性问题。论文提出一个由符号反馈驱动的迭代自修正框架，通过自然语言提示把逻辑符号映射为模型更容易理解的任务约束和语义描述。框架使用符号验证器发现计划中的错误，并把这些错误转化为可指导 LLM 修正的反馈指令，同时利用计划识别器推断目标可达性。实验结果表明，该框架能持续提升长程规划任务中的可行性和正确性，从而增强 LLM 规划的可靠性。",
+        "full_summary": "论文研究 LLM 在长程规划中为什么容易失败，并提出一个符号反馈驱动的迭代自修正框架。核心做法是先把 PDDL 领域规则转成自然语言，再让 LLM 生成计划，并用符号验证器和 plan recognizer 检查动作合法性、状态转移、目标可达性和目标偏离。错误会被转化成结构化反馈重新注入提示，使模型从盲目重试转向有针对性的修正。实验在 PlanBench 的 Blocksworld 和 Mystery 上显示，该框架能提升 GPT-4o、Claude-3.5 和 DeepSeek-R1 的规划覆盖率，可行性和最优性消融也支持符号反馈的贡献。阅读价值主要在于它把外部验证、目标识别和多轮自修正整合成一个可复用的 LLM planning reliability 模式，但新颖性更多来自系统组合而非新的规划算法。",
+        "card_summary": "这篇论文提出用 PDDL 自然语言化、符号验证和计划识别构成闭环反馈，让 LLM 在长程规划中迭代修正不可执行或偏离目标的计划。实验显示它在 PlanBench 的 Blocksworld 和 Mystery 任务上能提升规划覆盖率，尤其对需要显式约束检查的长程任务有启发，但整体仍偏工程组合和基准内验证。"
+      },
+      "analysis": {
+        "motivation": "论文针对 LLM 在长程规划中容易产生不可执行动作、违反约束、局部合理但全局失败的计划这一问题，认为纯 LLM 缺少可验证的可行性与正确性保证，而传统符号规划器虽然严谨但对自然语言和隐含约束不够灵活。因此作者希望用神经符号闭环把 PDDL 规则、符号验证和 LLM 自修正结合起来，提升长程任务中的规划可靠性与鲁棒性。",
+        "method": "方法由三部分组成：首先把 PDDL 中的动作、谓词、初始状态和目标转写成自然语言提示，降低 LLM 解析符号语法的难度；然后让 LLM 生成初始计划，并用符号验证器检查语法、语义可执行性和目标满足情况；最后把验证器发现的动作冲突、约束违反、目标偏离等错误转成 LLM 可理解的反馈，迭代生成修正版计划。额外的 plan recognizer 用于根据已生成动作序列推断最可能达成的目标，并与真实目标比较，从而提供目标可达性层面的反馈。",
+        "experiments": "实验在 PlanBench 上进行，主要覆盖 Blocksworld 和 Mystery 两类任务，并比较 GPT-4o、Claude-3.5 和 DeepSeek-R1 的 direct 与 feedback 模式。结果显示，加入符号反馈后，Blocksworld 中各模型规划覆盖率均提升，DeepSeek-R1 达到完全覆盖；Mystery 中直接生成表现很差，反馈机制对 DeepSeek-R1 的提升更明显，对 GPT-4o 和 Claude-3.5 也有小幅恢复。消融实验表明，自然语言提示能提升理解 PDDL 规则的能力，增强反馈能进一步提高可行性与最优性；规划长度分析显示，长计划越难，符号反馈相对基线越有帮助，但在长度 14 和 16 的困难实例上仍明显不足。",
+        "research_help": "Insight：这篇论文的可迁移启发在于，长程 agent planning 的可靠性不应只依赖模型自我反思，而应把外部可执行验证器、目标识别器和结构化错误反馈接入多轮修正循环。对 agentic RL 或多轮系统来说，它提示了一个有价值的训练/推理接口：把失败轨迹分解为前提不满足、状态转移错误、目标偏离和次优停止等可监督信号，再作为后续策略改进或过程奖励的来源。它也说明，在语义被扰乱的环境中，LLM 的自然语言先验会显著失效，因此 long-horizon reliability 需要显式状态追踪和符号约束，而不是只增加 token 长度。",
+        "insight": "Insight：这篇论文的可迁移启发在于，长程 agent planning 的可靠性不应只依赖模型自我反思，而应把外部可执行验证器、目标识别器和结构化错误反馈接入多轮修正循环。对 agentic RL 或多轮系统来说，它提示了一个有价值的训练/推理接口：把失败轨迹分解为前提不满足、状态转移错误、目标偏离和次优停止等可监督信号，再作为后续策略改进或过程奖励的来源。它也说明，在语义被扰乱的环境中，LLM 的自然语言先验会显著失效，因此 long-horizon reliability 需要显式状态追踪和符号约束，而不是只增加 token 长度。",
+        "abstract_zh": "大语言模型在自然语言理解和生成上表现突出，但在长程决策任务中仍常生成不可行或错误的计划，带来鲁棒性和可靠性问题。论文提出一个由符号反馈驱动的迭代自修正框架，通过自然语言提示把逻辑符号映射为模型更容易理解的任务约束和语义描述。框架使用符号验证器发现计划中的错误，并把这些错误转化为可指导 LLM 修正的反馈指令，同时利用计划识别器推断目标可达性。实验结果表明，该框架能持续提升长程规划任务中的可行性和正确性，从而增强 LLM 规划的可靠性。",
+        "card_summary": "这篇论文提出用 PDDL 自然语言化、符号验证和计划识别构成闭环反馈，让 LLM 在长程规划中迭代修正不可执行或偏离目标的计划。实验显示它在 PlanBench 的 Blocksworld 和 Mystery 任务上能提升规划覆盖率，尤其对需要显式约束检查的长程任务有启发，但整体仍偏工程组合和基准内验证。",
+        "full_summary": "论文研究 LLM 在长程规划中为什么容易失败，并提出一个符号反馈驱动的迭代自修正框架。核心做法是先把 PDDL 领域规则转成自然语言，再让 LLM 生成计划，并用符号验证器和 plan recognizer 检查动作合法性、状态转移、目标可达性和目标偏离。错误会被转化成结构化反馈重新注入提示，使模型从盲目重试转向有针对性的修正。实验在 PlanBench 的 Blocksworld 和 Mystery 上显示，该框架能提升 GPT-4o、Claude-3.5 和 DeepSeek-R1 的规划覆盖率，可行性和最优性消融也支持符号反馈的贡献。阅读价值主要在于它把外部验证、目标识别和多轮自修正整合成一个可复用的 LLM planning reliability 模式，但新颖性更多来自系统组合而非新的规划算法。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "值得浏览，适合关注长程规划可靠性的读者精读方法和实验部分",
+        "value_reason": "论文主题与 agent planning、long-horizon reliability 高度相关，方法也直接围绕可验证反馈和多轮修正展开，对构建可靠 LLM planner 有实际参考价值。它的主要价值不是提出全新的规划理论，而是把 PDDL 自然语言化、VAL 式验证、目标识别和反馈提示组合成可操作闭环，并用多模型实验展示稳定收益。推荐等级为中，是因为实验信号明确但场景仍集中在 PlanBench 和经典符号规划任务，离开放动态环境、多智能体或真实 agent 任务还有距离。",
+        "limitations": "局限在于实验域较窄，主要是 Blocksworld 和 Mystery，未充分覆盖开放环境、动态反馈环境或真实工具调用 agent。方法依赖 PDDL、符号验证器和候选目标集合，现实任务中这些结构化表示往往难以自动获得。与已有 LLM planning self-refinement、neural-symbolic planning 和 verifier-guided planning 的差异没有被非常深入地实证拆开。长计划长度 14 和 16 上性能仍弱，说明反馈闭环并未根本解决组合爆炸和长程依赖问题。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出自然语言提示机制，将 PDDL 符号规则映射为自然语言描述，以帮助 LLM 理解任务约束。",
+          "方法部分描述了 feedback-refine-guide 的闭环：LLM 生成计划，符号验证器检测错误，再把错误转成反馈提示用于下一轮修正。",
+          "识别式符号验证器同时检查语法、语义可执行性，并用 plan recognizer 比较推断目标与真实目标以发现目标偏离。",
+          "实验使用 PlanBench，比较 GPT-4o、Claude-3.5 和 DeepSeek-R1 在 direct 与 feedback 模式下的表现，并报告 Blocksworld 和 Mystery 两个领域的覆盖率提升。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-06-30T11:50:53.095Z"
+      }
+    },
     {
       "id": "2606.26790v1",
       "title": "OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning",
@@ -3819,21 +4160,33 @@
     }
   ],
   "latest_item_ids": [
-    "2606.26790v1",
-    "2606.26027v1",
-    "2606.26463v1"
+    "2606.27499v1",
+    "2606.27780v1",
+    "2606.27757v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "restored_from_git_history": true,
-    "total_items": 32,
+    "total_items": 35,
     "latest_items": 3,
     "source_report_dates": {
       "2026-06-25": 6,
       "2026-06-20": 5,
       "2026-06-19": 16,
       "2026-06-18": 16,
-      "2026-06-26": 3
-    }
+      "2026-06-26": 3,
+      "2026-06-30": 3
+    },
+    "filtered_candidate_ids": [
+      "2606.29126v1",
+      "2606.28955v1",
+      "2606.28781v1",
+      "2606.27632v1",
+      "2606.26627v1",
+      "2606.27032v1",
+      "2606.27180v1",
+      "2606.26918v1",
+      "2606.25526v1",
+      "2606.25335v1"
+    ]
   }
 }
