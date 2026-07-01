@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-30T11:51:48.687Z",
+  "updated_at": "2026-07-01T03:00:50.056Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation from arXiv PDF text for selected high-relevance papers; non-relevant candidates are filtered out.",
+  "analysis_method": "Manual Codex curation from selected full-text readings; only strongly relevant long-horizon, multi-turn, agentic RL, and agent planning papers are retained.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -34,34 +34,540 @@
       "总结",
       "亮点"
     ],
-    "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after manual Codex curation."
+    "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after selective Codex full-text reading."
   },
   "digest": {
-    "title": "2026-06-30 Daily Paper",
-    "report_date": "2026-06-30",
+    "title": "2026-07-01 Daily Paper",
+    "report_date": "2026-07-01",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日复核 6 月 26 日以来的 arXiv 候选后，保留 3 篇与 long-horizon agent memory、结构化 rollout error 和 LLM planning reliability 强相关的新论文。",
+    "summary": "今日从自动抓取的 16 篇候选中，最终保留 4 篇与 selective memory、turn-level credit assignment、active task-state memory 和 planning world model reliability 强相关的新论文。",
     "top_recommendations": [
-      "2606.27499v1",
-      "2606.27780v1",
-      "2606.27757v1"
+      "2606.31650v1",
+      "2606.31612v1",
+      "2606.29745v1"
     ],
     "low_priority": [
-      "2606.29126v1",
-      "2606.28955v1",
-      "2606.28781v1",
-      "2606.27632v1",
-      "2606.26627v1",
-      "2606.27032v1",
-      "2606.27180v1",
-      "2606.26918v1",
-      "2606.25526v1",
-      "2606.25335v1"
+      "2606.31410v1",
+      "2606.31200v1",
+      "2606.31372v1",
+      "2606.31639v1",
+      "2606.31347v1",
+      "2606.29774v1",
+      "2606.29824v1",
+      "2606.30966v1",
+      "2606.30616v1",
+      "2606.29955v1",
+      "2606.29823v1",
+      "2606.30893v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-06-30 Daily Paper\n\n今日复核 6 月 26 日以来的 arXiv 候选后，保留 3 篇与 long-horizon agent memory、结构化 rollout error 和 LLM planning reliability 强相关的新论文。\n\n最值得读的 3 篇\n1. DMV-Bench\n- 为什么读：把长程多模态 agent 的视觉记忆做成可诊断 benchmark，证明文本摘要式 memory 会丢掉未来才需要的视觉线索。\n2. Understanding Rollout Error in Graph World Models\n- 为什么读：系统分析 graph world model 的长时域误差传播，对工具图、技能图和 multi-agent planning 的可靠性有直接启发。\n3. Towards Reliable and Robust LLM Planning\n- 为什么读：把 PDDL 自然语言化、符号验证、目标识别和自修正串成闭环，适合参考 verifier-guided LLM planning。\n\n已过滤 HiComm、MCVL、HyphaeDB、Yuvion LLM、privacy survey、energy trading RL、VLM reward shaping 等候选，因为它们与当前首页主题的直接关系不足或偏水风险较高。"
+    "email_body": "2026-07-01 Daily Paper\n\n今日从自动抓取的 16 篇候选中，最终保留 4 篇与 selective memory、turn-level credit assignment、active task-state memory 和 planning world model reliability 强相关的新论文。\n\n最值得读的 3 篇\n1. ECHO: Prune to act, trace to learn with selective turn memory in agentic RL\n- 为什么读：把 long-horizon agent 的 memory selection 与 RL credit routing 绑在一起，直接解决“成功了但不知道该强化哪一段历史”的问题。\n2. What Memory Do GUI Agents Really Need? From Passive Records to Active Task-Driving States\n- 为什么读：把 GUI agent 记忆从被动日志改成显式执行状态，并用 memory-on/off RL 训练何时该依赖记忆。\n3. ECHO: Learning Epistemically Adaptive Language Agents with Turn-Level Credit\n- 为什么读：把多轮信息寻求 agent 的奖励改成 belief-conditioned turn credit，对澄清、搜索和信息增益型 agent 很有启发。\n\n另外保留 WORLDEVOLVER 作为 planning world model reliability 方向的强相关补充；过滤了 GUI 技术报告、机器人抓取、多机器人 RL、安全综述、表格 benchmark 等边界或偏题候选。"
+  },
+  "latest_item_ids": [
+    "2606.31650v1",
+    "2606.31612v1",
+    "2606.29745v1",
+    "2606.30639v1"
+  ],
+  "archive": {
+    "policy": "append_or_update_by_arxiv_id",
+    "total_items": 39,
+    "latest_items": 4,
+    "source_report_dates": {
+      "2026-06-25": 6,
+      "2026-06-20": 5,
+      "2026-06-19": 16,
+      "2026-06-18": 16,
+      "2026-06-26": 3,
+      "2026-06-30": 3,
+      "2026-07-01": 4
+    },
+    "filtered_candidate_ids": [
+      "2606.31410v1",
+      "2606.31200v1",
+      "2606.31372v1",
+      "2606.31639v1",
+      "2606.31347v1",
+      "2606.29774v1",
+      "2606.29824v1",
+      "2606.30966v1",
+      "2606.30616v1",
+      "2606.29955v1",
+      "2606.29823v1",
+      "2606.30893v1"
+    ]
   },
   "items": [
+    {
+      "id": "2606.31650v1",
+      "title": "ECHO: Prune to act, trace to learn with selective turn memory in agentic RL",
+      "summary": "ECHO 针对长程工具型 agent 的上下文压缩与 RL credit assignment 脱节问题，把每个历史回合保存为可寻址记忆，并让模型选择哪些记忆进入后续上下文。它的价值在于把 memory selection 和 outcome credit routing 连接起来，使成功答案能强化真正被复用的证据路径，而不是平均强化整条冗长轨迹。",
+      "url": "http://arxiv.org/abs/2606.31650v1",
+      "authors": [
+        "Zijun Xie",
+        "Binbin Zheng",
+        "Enlei Gong",
+        "Jihua Liu",
+        "Yuyang You",
+        "Lingfeng Liu",
+        "Jiayao Tang",
+        "Guanqun Zhao",
+        "Aoqi Hu",
+        "Zeyu Chen"
+      ],
+      "published": "2026-06-30",
+      "updated": "2026-06-30",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "值得读",
+        "water_risk": "中",
+        "value_judgement": "选题非常贴合 agentic RL 与 long-horizon planning 的核心瓶颈，方法也有清晰的机制闭环：source-indexed memory 同时服务于行动时的上下文重建和训练时的 credit routing。实验覆盖主任务、消融、零样本迁移和不同 backbone，证据链比一般 memory-agent 论文更完整。偏水风险主要来自基准和实现依赖较强，论文仍主要验证文本工具使用场景，且 final-trace approximation 可能低估深层依赖链；此外，多个对比基线是否已被充分调参、是否能在更开放环境中复现，还需要代码和后续独立验证。",
+        "reason": "选题非常贴合 agentic RL 与 long-horizon planning 的核心瓶颈，方法也有清晰的机制闭环：source-indexed memory 同时服务于行动时的上下文重建和训练时的 credit routing。实验覆盖主任务、消融、零样本迁移和不同 backbone，证据链比一般 memory-agent 论文更完整。偏水风险主要来自基准和实现依赖较强，论文仍主要验证文本工具使用场景，且 final-trace approximation 可能低估深层依赖链；此外，多个对比基线是否已被充分调参、是否能在更开放环境中复现，还需要代码和后续独立验证。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zijun Xie",
+          "Binbin Zheng",
+          "Enlei Gong",
+          "Jihua Liu",
+          "Yuyang You",
+          "Lingfeng Liu",
+          "Jiayao Tang",
+          "Guanqun Zhao",
+          "Aoqi Hu",
+          "Zeyu Chen"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-30",
+        "paper_url": "https://arxiv.org/abs/2606.31650v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "选题非常贴合 agentic RL 与 long-horizon planning 的核心瓶颈，方法也有清晰的机制闭环：source-indexed memory 同时服务于行动时的上下文重建和训练时的 credit routing。实验覆盖主任务、消融、零样本迁移和不同 backbone，证据链比一般 memory-agent 论文更完整。偏水风险主要来自基准和实现依赖较强，论文仍主要验证文本工具使用场景，且 final-trace approximation 可能低估深层依赖链；此外，多个对比基线是否已被充分调参、是否能在更开放环境中复现，还需要代码和后续独立验证。",
+        "summary": "这篇论文提出 ECHO，用于训练需要长程搜索、工具调用和证据积累的语言 agent。它批评滚动摘要等方法虽然能扩展上下文，但会丢失原始证据的可寻址性，使最终奖励难以准确强化成功决策依赖的历史回合。ECHO 的做法是为每个完成回合生成带 source index 的 compact memory，后续由策略选择相关记忆来重建有限上下文，并用这些选择记录指导正向 token-level credit assignment。实验上，ECHO 相比 GRPO 和滚动摘要基线在 BrowseComp-Plus 上更准，同时控制了回合数和轨迹体量；消融也支持 learned selection 与 traceable credit routing 都是关键因素。对于研究 long-horizon agent planning、agent memory 和 agentic RL 的人，这篇值得读，因为它把上下文管理从推理时技巧提升到了训练信号设计的一部分。",
+        "highlights": [
+          "选题非常贴合 agentic RL 与 long-horizon planning 的核心瓶颈，方法也有清晰的机制闭环：source-indexed memory 同时服务于行动时的上下文重建和训练时的 credit routing。实验覆盖主任务、消融、零样本迁移和不同 backbone，证据链比一般 memory-agent 论文更完整。偏水风险主要来自基准和实现依赖较强，论文仍主要验证文本工具使用场景，且 final-trace approximation 可能低估深层依赖链；此外，多个对比基线是否已被充分调参、是否能在更开放环境中复现，还需要代码和后续独立验证。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文抓住了长程工具型 agent 的一个真实痛点：上下文管理不只是让 rollout 不爆窗，还会影响 RL 中最终奖励如何回溯到真正有用的历史证据。作者认为截断和滚动摘要虽然能延长交互，但会把原始证据压成不可寻址状态，导致成功答案背后的证据来源难以被强化。这个问题和 multi-turn agent、agent memory、planning reliability 高度相关。",
+        "method": "ECHO 将每个完成的工具交互回合压缩成带 source-turn index 的 memory record，而不是把远程历史折叠成一个全局摘要；当上下文预算紧张时，策略模型从这些带索引的记忆中选择有用记录，和最近若干回合一起重建有限上下文。训练时，它复用同一组被选中的 source indices，把正向 outcome credit 路由到最终答案、被选中的历史证据回合、这些回合的 memory finding，以及 memory-selection action。核心贡献不是单纯做 retrieval memory，而是把“选哪些历史用于行动”和“奖励该强化哪些历史证据”绑定起来。",
+        "experiments": "主实验在 BrowseComp-Plus 上比较 GRPO、滚动摘要式 SUPO 和 ECHO；结果显示 ECHO 的验证准确率优于两者，并且相对 SUPO 使用更少的回合增长和轨迹体量。消融实验表明，学习式 memory selection 优于静态语义 top-k retrieval，traceable credit assignment 对稳定性和准确率也有明显贡献。作者还在多目标问答、代码生成、深度信息检索等零样本任务，以及 dense 与 MoE 两类 Qwen3 backbone 上报告了泛化收益，整体实验方向和论文主张比较一致。",
+        "research_help": "Insight：这篇论文最可迁移的启发是，long-horizon agent 的 memory 不应只优化“压缩后还能不能答题”，还应保留 provenance，使 RL 能知道成功决策依赖了哪些历史证据。对 agent planning 和 agentic RL 来说，显式 source-indexed reconstruction 可以把 context pruning、memory retrieval、credit assignment 统一成同一个训练接口，减少奖励误强化无效搜索或冗余推理的风险。对多轮系统可靠性而言，记忆选择本身也应作为可训练动作，并且它的选择轨迹需要能被最终 outcome 验证信号反向约束。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文最可迁移的启发是，long-horizon agent 的 memory 不应只优化“压缩后还能不能答题”，还应保留 provenance，使 RL 能知道成功决策依赖了哪些历史证据。对 agent planning 和 agentic RL 来说，显式 source-indexed reconstruction 可以把 context pruning、memory retrieval、credit assignment 统一成同一个训练接口，减少奖励误强化无效搜索或冗余推理的风险。对多轮系统可靠性而言，记忆选择本身也应作为可训练动作，并且它的选择轨迹需要能被最终 outcome 验证信号反向约束。",
+        "abstract_zh": "长程语言 agent 需要在有限上下文窗口内反复调用工具、积累证据并做出决策，而现有上下文管理方法通常通过截断、摘要或紧凑记忆状态来维持可运行性。论文指出，这些方法会让早期细粒度观察逐渐消失或被压缩，同时也让基于最终结果的 RL 难以把成功答案的 credit 回溯到原始证据。为此，作者提出 ECHO：每个完成回合被压缩成带源索引的记忆记录，策略在重建上下文时选择相关记忆，并将这些源索引用于正向 credit routing。实验显示，ECHO 在长程搜索问答上优于 GRPO 和滚动摘要基线，并在多目标问答、代码生成和深度信息检索任务上展现零样本泛化。",
+        "full_summary": "这篇论文提出 ECHO，用于训练需要长程搜索、工具调用和证据积累的语言 agent。它批评滚动摘要等方法虽然能扩展上下文，但会丢失原始证据的可寻址性，使最终奖励难以准确强化成功决策依赖的历史回合。ECHO 的做法是为每个完成回合生成带 source index 的 compact memory，后续由策略选择相关记忆来重建有限上下文，并用这些选择记录指导正向 token-level credit assignment。实验上，ECHO 相比 GRPO 和滚动摘要基线在 BrowseComp-Plus 上更准，同时控制了回合数和轨迹体量；消融也支持 learned selection 与 traceable credit routing 都是关键因素。对于研究 long-horizon agent planning、agent memory 和 agentic RL 的人，这篇值得读，因为它把上下文管理从推理时技巧提升到了训练信号设计的一部分。",
+        "card_summary": "ECHO 针对长程工具型 agent 的上下文压缩与 RL credit assignment 脱节问题，把每个历史回合保存为可寻址记忆，并让模型选择哪些记忆进入后续上下文。它的价值在于把 memory selection 和 outcome credit routing 连接起来，使成功答案能强化真正被复用的证据路径，而不是平均强化整条冗长轨迹。"
+      },
+      "analysis": {
+        "motivation": "论文抓住了长程工具型 agent 的一个真实痛点：上下文管理不只是让 rollout 不爆窗，还会影响 RL 中最终奖励如何回溯到真正有用的历史证据。作者认为截断和滚动摘要虽然能延长交互，但会把原始证据压成不可寻址状态，导致成功答案背后的证据来源难以被强化。这个问题和 multi-turn agent、agent memory、planning reliability 高度相关。",
+        "method": "ECHO 将每个完成的工具交互回合压缩成带 source-turn index 的 memory record，而不是把远程历史折叠成一个全局摘要；当上下文预算紧张时，策略模型从这些带索引的记忆中选择有用记录，和最近若干回合一起重建有限上下文。训练时，它复用同一组被选中的 source indices，把正向 outcome credit 路由到最终答案、被选中的历史证据回合、这些回合的 memory finding，以及 memory-selection action。核心贡献不是单纯做 retrieval memory，而是把“选哪些历史用于行动”和“奖励该强化哪些历史证据”绑定起来。",
+        "experiments": "主实验在 BrowseComp-Plus 上比较 GRPO、滚动摘要式 SUPO 和 ECHO；结果显示 ECHO 的验证准确率优于两者，并且相对 SUPO 使用更少的回合增长和轨迹体量。消融实验表明，学习式 memory selection 优于静态语义 top-k retrieval，traceable credit assignment 对稳定性和准确率也有明显贡献。作者还在多目标问答、代码生成、深度信息检索等零样本任务，以及 dense 与 MoE 两类 Qwen3 backbone 上报告了泛化收益，整体实验方向和论文主张比较一致。",
+        "research_help": "Insight：这篇论文最可迁移的启发是，long-horizon agent 的 memory 不应只优化“压缩后还能不能答题”，还应保留 provenance，使 RL 能知道成功决策依赖了哪些历史证据。对 agent planning 和 agentic RL 来说，显式 source-indexed reconstruction 可以把 context pruning、memory retrieval、credit assignment 统一成同一个训练接口，减少奖励误强化无效搜索或冗余推理的风险。对多轮系统可靠性而言，记忆选择本身也应作为可训练动作，并且它的选择轨迹需要能被最终 outcome 验证信号反向约束。",
+        "insight": "Insight：这篇论文最可迁移的启发是，long-horizon agent 的 memory 不应只优化“压缩后还能不能答题”，还应保留 provenance，使 RL 能知道成功决策依赖了哪些历史证据。对 agent planning 和 agentic RL 来说，显式 source-indexed reconstruction 可以把 context pruning、memory retrieval、credit assignment 统一成同一个训练接口，减少奖励误强化无效搜索或冗余推理的风险。对多轮系统可靠性而言，记忆选择本身也应作为可训练动作，并且它的选择轨迹需要能被最终 outcome 验证信号反向约束。",
+        "abstract_zh": "长程语言 agent 需要在有限上下文窗口内反复调用工具、积累证据并做出决策，而现有上下文管理方法通常通过截断、摘要或紧凑记忆状态来维持可运行性。论文指出，这些方法会让早期细粒度观察逐渐消失或被压缩，同时也让基于最终结果的 RL 难以把成功答案的 credit 回溯到原始证据。为此，作者提出 ECHO：每个完成回合被压缩成带源索引的记忆记录，策略在重建上下文时选择相关记忆，并将这些源索引用于正向 credit routing。实验显示，ECHO 在长程搜索问答上优于 GRPO 和滚动摘要基线，并在多目标问答、代码生成和深度信息检索任务上展现零样本泛化。",
+        "card_summary": "ECHO 针对长程工具型 agent 的上下文压缩与 RL credit assignment 脱节问题，把每个历史回合保存为可寻址记忆，并让模型选择哪些记忆进入后续上下文。它的价值在于把 memory selection 和 outcome credit routing 连接起来，使成功答案能强化真正被复用的证据路径，而不是平均强化整条冗长轨迹。",
+        "full_summary": "这篇论文提出 ECHO，用于训练需要长程搜索、工具调用和证据积累的语言 agent。它批评滚动摘要等方法虽然能扩展上下文，但会丢失原始证据的可寻址性，使最终奖励难以准确强化成功决策依赖的历史回合。ECHO 的做法是为每个完成回合生成带 source index 的 compact memory，后续由策略选择相关记忆来重建有限上下文，并用这些选择记录指导正向 token-level credit assignment。实验上，ECHO 相比 GRPO 和滚动摘要基线在 BrowseComp-Plus 上更准，同时控制了回合数和轨迹体量；消融也支持 learned selection 与 traceable credit routing 都是关键因素。对于研究 long-horizon agent planning、agent memory 和 agentic RL 的人，这篇值得读，因为它把上下文管理从推理时技巧提升到了训练信号设计的一部分。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读",
+        "value_reason": "选题非常贴合 agentic RL 与 long-horizon planning 的核心瓶颈，方法也有清晰的机制闭环：source-indexed memory 同时服务于行动时的上下文重建和训练时的 credit routing。实验覆盖主任务、消融、零样本迁移和不同 backbone，证据链比一般 memory-agent 论文更完整。偏水风险主要来自基准和实现依赖较强，论文仍主要验证文本工具使用场景，且 final-trace approximation 可能低估深层依赖链；此外，多个对比基线是否已被充分调参、是否能在更开放环境中复现，还需要代码和后续独立验证。",
+        "limitations": "论文自己承认 credit assignment 只使用最终重建上下文中的 source turns，不能递归追踪更深的依赖链，因此在复杂 nested dependency 任务中可能漏掉真正关键的早期证据。实验主要集中在文本型工具使用 agent，尚未证明对 GUI、具身、多 agent 场景同样有效。ECHO 还引入额外的 memory summarization 和 selection 开销，实际训练成本、索引效率和长轨迹复现稳定性需要进一步观察。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出每个完成工具回合都会写入带 source-turn pointer 的 compact memory record，并在上下文预算受限时由策略选择这些记录重建 policy context。",
+          "方法部分给出 provenance-guided token-level credit assignment：正向 credit 被路由到最终答案、被选中的历史 source turns、对应 memory findings 和 memory-selection spans。",
+          "主实验报告 ECHO 在 BrowseComp-Plus 上优于 GRPO 和 SUPO，同时相对滚动摘要基线降低 turn proliferation 与 trajectory volume。",
+          "消融实验显示静态 top-k retrieval 不如 learned selection，移除 traceable credit assignment 后准确率和稳定性下降。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-01T02:54:35.283Z"
+      },
+      "full_summary": "这篇论文提出 ECHO，用于训练需要长程搜索、工具调用和证据积累的语言 agent。它批评滚动摘要等方法虽然能扩展上下文，但会丢失原始证据的可寻址性，使最终奖励难以准确强化成功决策依赖的历史回合。ECHO 的做法是为每个完成回合生成带 source index 的 compact memory，后续由策略选择相关记忆来重建有限上下文，并用这些选择记录指导正向 token-level credit assignment。实验上，ECHO 相比 GRPO 和滚动摘要基线在 BrowseComp-Plus 上更准，同时控制了回合数和轨迹体量；消融也支持 learned selection 与 traceable credit routing 都是关键因素。对于研究 long-horizon agent planning、agent memory 和 agentic RL 的人，这篇值得读，因为它把上下文管理从推理时技巧提升到了训练信号设计的一部分。"
+    },
+    {
+      "id": "2606.31612v1",
+      "title": "What Memory Do GUI Agents Really Need? From Passive Records to Active Task-Driving States",
+      "summary": "这篇论文把 GUI agent 的记忆问题从“保存更多历史”改写为“维护可驱动下一步动作的执行状态”。ATMem 显式跟踪数据项、字段、约束和 remaining/finished/skipped 状态，并用 memory-on/off 的 RL 训练让模型学会何时依赖记忆。对 long-horizon GUI planning、agent memory 和防止重复/漏做/越界操作都很相关，值得重点读。",
+      "url": "http://arxiv.org/abs/2606.31612v1",
+      "authors": [
+        "Chen Liu",
+        "Ling Chen",
+        "Hanzhang Zhou",
+        "Xu Zhang",
+        "Quyu Kong",
+        "Panrong Tong",
+        "Wenhao Wang",
+        "Xin Yu",
+        "Steven Hoi",
+        "Yue Wang"
+      ],
+      "published": "2026-06-30",
+      "updated": "2026-06-30",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强相关，值得精读",
+        "water_risk": "中",
+        "value_judgement": "论文主题正中 agent memory、long-horizon GUI planning 和 planning reliability：它不是泛泛讨论记忆，而是明确把记忆建模为可更新的执行状态，并围绕重复操作、漏操作、约束遗忘和越界操作这些真实长程失败模式设计方法与指标。方法上 ATMem 的结构并不复杂，但和 STR-GRPO 的 memory-on/off intervention 结合后，有比较清晰的训练信号和工程落地路径。实验结果在通用 benchmark、自建困难 benchmark 和消融上形成了较完整证据链，尤其是 DataScope 的 scope-aware 评估对多轮 agent 很有启发。",
+        "reason": "论文主题正中 agent memory、long-horizon GUI planning 和 planning reliability：它不是泛泛讨论记忆，而是明确把记忆建模为可更新的执行状态，并围绕重复操作、漏操作、约束遗忘和越界操作这些真实长程失败模式设计方法与指标。方法上 ATMem 的结构并不复杂，但和 STR-GRPO 的 memory-on/off intervention 结合后，有比较清晰的训练信号和工程落地路径。实验结果在通用 benchmark、自建困难 benchmark 和消融上形成了较完整证据链，尤其是 DataScope 的 scope-aware 评估对多轮 agent 很有启发。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Chen Liu",
+          "Ling Chen",
+          "Hanzhang Zhou",
+          "Xu Zhang",
+          "Quyu Kong",
+          "Panrong Tong",
+          "Wenhao Wang",
+          "Xin Yu",
+          "Steven Hoi",
+          "Yue Wang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-30",
+        "paper_url": "https://arxiv.org/abs/2606.31612v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文主题正中 agent memory、long-horizon GUI planning 和 planning reliability：它不是泛泛讨论记忆，而是明确把记忆建模为可更新的执行状态，并围绕重复操作、漏操作、约束遗忘和越界操作这些真实长程失败模式设计方法与指标。方法上 ATMem 的结构并不复杂，但和 STR-GRPO 的 memory-on/off intervention 结合后，有比较清晰的训练信号和工程落地路径。实验结果在通用 benchmark、自建困难 benchmark 和消融上形成了较完整证据链，尤其是 DataScope 的 scope-aware 评估对多轮 agent 很有启发。",
+        "summary": "论文研究移动 GUI agent 在长程任务中如何可靠使用记忆，核心观点是被动历史记录无法稳定告诉模型当前任务进度。ATMem 将任务数据组织为层级执行状态，记录 workflow phase、全局约束、schema 字段、每个数据项内容及其执行状态，使 agent 能直接根据当前 state 选择下一步动作。STR-GRPO 进一步通过 memory-on/memory-off 对照 rollout 和记忆成本奖励，训练模型选择性使用 ATMem，而不是无条件增加上下文负担。实验显示 8B ATMem-UI 在 AndroidWorld 和 MobileWorld 上超过多个同规模或更大模型，在 DataScope 这种多 entry、强干扰、跨 app benchmark 上也取得最好的端到端结果。阅读价值主要在于它把 agent memory、planning state 和 RL 训练机制连接起来，对设计可靠的多轮 agent 系统有直接借鉴意义。",
+        "highlights": [
+          "论文主题正中 agent memory、long-horizon GUI planning 和 planning reliability：它不是泛泛讨论记忆，而是明确把记忆建模为可更新的执行状态，并围绕重复操作、漏操作、约束遗忘和越界操作这些真实长程失败模式设计方法与指标。方法上 ATMem 的结构并不复杂，但和 STR-GRPO 的 memory-on/off intervention 结合后，有比较清晰的训练信号和工程落地路径。实验结果在通用 benchmark、自建困难 benchmark 和消融上形成了较完整证据链，尤其是 DataScope 的 scope-aware 评估对多轮 agent 很有启发。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对移动 GUI agent 在长轨迹、多页面、跨应用任务中容易“记得值但不记得状态”的问题：传统 full history、轨迹摘要、自由笔记或检索式记忆主要保存过去观察，却不能稳定表示某个数据项当前是待处理、已完成、应跳过，还是受某个约束限制。作者认为 GUI 任务中的关键瓶颈不只是上下文长度或单步视觉 grounding，而是执行状态丢失导致的重复操作、漏操作和越界操作。",
+        "method": "论文提出 ATMem，把记忆从被动记录改成主动维护的任务执行状态：在 workflow 层记录 phase、remaining/completed files 和 constraints，在 schema/item 层记录字段结构、具体 item content 及 remaining/finished/skipped 状态。训练上先用 verifier-gated online rollout 合成 SFT 数据，让模型学会构造和更新 ATMem；再提出 STR-GRPO，通过同一任务的 memory-on 与 memory-off rollout 对比估计记忆通道是否真正提升完成率，并用 memory cost 惩罚无收益的记忆调用，从而学习选择性使用结构化记忆。",
+        "experiments": "实验覆盖 AndroidWorld、MobileWorld 和作者自建 DataScope。AndroidWorld 上 ATMem-UI-8B 达到 76.6% success rate，超过同规模 MAI-UI-8B，也超过更大规模 UI-TARS-2-230B；MobileWorld 上 8B 模型达到 23.3%，显示一定跨环境泛化。DataScope 专门测试多 entry、同 schema 干扰项、跨 app 数据操作，所有模型表现都很低，但 ATMem-UI 在 success、app-level progress 和 scope-aware F1 上持续优于端到端 baseline。消融显示 SFT 带来主要提升，GRPO 进一步提升，而 STR-GRPO 在提升成功率的同时显著降低记忆调用比例，支持“选择性记忆”这个设计目标。",
+        "research_help": "Insight：这篇论文对 agent planning 的可迁移启发在于，long-horizon reliability 不能只依赖长上下文、摘要或 RAG 式回忆，而需要把任务进度、对象状态、约束和可执行下一步显式外化成可更新的 state。对于多轮 agentic RL，memory-on/off intervention 是一个有价值的训练信号设计：它把“是否使用记忆”从 prompt 工程变成可被 outcome reward 校准的策略选择。对于多轮系统评测，DataScope 的 App-Level Progress 与 Scope-Aware F1 也提示终局成功率不够，需要单独度量覆盖率、越界操作和部分进展。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文对 agent planning 的可迁移启发在于，long-horizon reliability 不能只依赖长上下文、摘要或 RAG 式回忆，而需要把任务进度、对象状态、约束和可执行下一步显式外化成可更新的 state。对于多轮 agentic RL，memory-on/off intervention 是一个有价值的训练信号设计：它把“是否使用记忆”从 prompt 工程变成可被 outcome reward 校准的策略选择。对于多轮系统评测，DataScope 的 App-Level Progress 与 Scope-Aware F1 也提示终局成功率不够，需要单独度量覆盖率、越界操作和部分进展。",
+        "abstract_zh": "移动 GUI agent 越来越需要在长任务中跨页面、跨应用读取、更新和复用任务相关数据，但现有记忆方法大多只是被动积累或检索过去观察。作者指出，取回某个值并不等于知道它在当前流程中的作用，agent 仍需判断它是否该现在使用、是否已经用过、是否还在等待依赖，这在长轨迹、相似字段和干扰项中容易失效。论文提出 Active Task-Driving Memory，将任务相关信息维护为持续更新的执行状态，并用 STR-GRPO 学习何时选择性使用这种记忆。作者还构建了一个移动端 benchmark，用 App-Level Progress 和 Scope-Aware F1 分别评估跨应用进度和范围控制，并在 AndroidWorld、MobileWorld 及自建 benchmark 上报告 ATMem 对长程执行的明显提升。",
+        "full_summary": "论文研究移动 GUI agent 在长程任务中如何可靠使用记忆，核心观点是被动历史记录无法稳定告诉模型当前任务进度。ATMem 将任务数据组织为层级执行状态，记录 workflow phase、全局约束、schema 字段、每个数据项内容及其执行状态，使 agent 能直接根据当前 state 选择下一步动作。STR-GRPO 进一步通过 memory-on/memory-off 对照 rollout 和记忆成本奖励，训练模型选择性使用 ATMem，而不是无条件增加上下文负担。实验显示 8B ATMem-UI 在 AndroidWorld 和 MobileWorld 上超过多个同规模或更大模型，在 DataScope 这种多 entry、强干扰、跨 app benchmark 上也取得最好的端到端结果。阅读价值主要在于它把 agent memory、planning state 和 RL 训练机制连接起来，对设计可靠的多轮 agent 系统有直接借鉴意义。",
+        "card_summary": "这篇论文把 GUI agent 的记忆问题从“保存更多历史”改写为“维护可驱动下一步动作的执行状态”。ATMem 显式跟踪数据项、字段、约束和 remaining/finished/skipped 状态，并用 memory-on/off 的 RL 训练让模型学会何时依赖记忆。对 long-horizon GUI planning、agent memory 和防止重复/漏做/越界操作都很相关，值得重点读。"
+      },
+      "analysis": {
+        "motivation": "论文针对移动 GUI agent 在长轨迹、多页面、跨应用任务中容易“记得值但不记得状态”的问题：传统 full history、轨迹摘要、自由笔记或检索式记忆主要保存过去观察，却不能稳定表示某个数据项当前是待处理、已完成、应跳过，还是受某个约束限制。作者认为 GUI 任务中的关键瓶颈不只是上下文长度或单步视觉 grounding，而是执行状态丢失导致的重复操作、漏操作和越界操作。",
+        "method": "论文提出 ATMem，把记忆从被动记录改成主动维护的任务执行状态：在 workflow 层记录 phase、remaining/completed files 和 constraints，在 schema/item 层记录字段结构、具体 item content 及 remaining/finished/skipped 状态。训练上先用 verifier-gated online rollout 合成 SFT 数据，让模型学会构造和更新 ATMem；再提出 STR-GRPO，通过同一任务的 memory-on 与 memory-off rollout 对比估计记忆通道是否真正提升完成率，并用 memory cost 惩罚无收益的记忆调用，从而学习选择性使用结构化记忆。",
+        "experiments": "实验覆盖 AndroidWorld、MobileWorld 和作者自建 DataScope。AndroidWorld 上 ATMem-UI-8B 达到 76.6% success rate，超过同规模 MAI-UI-8B，也超过更大规模 UI-TARS-2-230B；MobileWorld 上 8B 模型达到 23.3%，显示一定跨环境泛化。DataScope 专门测试多 entry、同 schema 干扰项、跨 app 数据操作，所有模型表现都很低，但 ATMem-UI 在 success、app-level progress 和 scope-aware F1 上持续优于端到端 baseline。消融显示 SFT 带来主要提升，GRPO 进一步提升，而 STR-GRPO 在提升成功率的同时显著降低记忆调用比例，支持“选择性记忆”这个设计目标。",
+        "research_help": "Insight：这篇论文对 agent planning 的可迁移启发在于，long-horizon reliability 不能只依赖长上下文、摘要或 RAG 式回忆，而需要把任务进度、对象状态、约束和可执行下一步显式外化成可更新的 state。对于多轮 agentic RL，memory-on/off intervention 是一个有价值的训练信号设计：它把“是否使用记忆”从 prompt 工程变成可被 outcome reward 校准的策略选择。对于多轮系统评测，DataScope 的 App-Level Progress 与 Scope-Aware F1 也提示终局成功率不够，需要单独度量覆盖率、越界操作和部分进展。",
+        "insight": "Insight：这篇论文对 agent planning 的可迁移启发在于，long-horizon reliability 不能只依赖长上下文、摘要或 RAG 式回忆，而需要把任务进度、对象状态、约束和可执行下一步显式外化成可更新的 state。对于多轮 agentic RL，memory-on/off intervention 是一个有价值的训练信号设计：它把“是否使用记忆”从 prompt 工程变成可被 outcome reward 校准的策略选择。对于多轮系统评测，DataScope 的 App-Level Progress 与 Scope-Aware F1 也提示终局成功率不够，需要单独度量覆盖率、越界操作和部分进展。",
+        "abstract_zh": "移动 GUI agent 越来越需要在长任务中跨页面、跨应用读取、更新和复用任务相关数据，但现有记忆方法大多只是被动积累或检索过去观察。作者指出，取回某个值并不等于知道它在当前流程中的作用，agent 仍需判断它是否该现在使用、是否已经用过、是否还在等待依赖，这在长轨迹、相似字段和干扰项中容易失效。论文提出 Active Task-Driving Memory，将任务相关信息维护为持续更新的执行状态，并用 STR-GRPO 学习何时选择性使用这种记忆。作者还构建了一个移动端 benchmark，用 App-Level Progress 和 Scope-Aware F1 分别评估跨应用进度和范围控制，并在 AndroidWorld、MobileWorld 及自建 benchmark 上报告 ATMem 对长程执行的明显提升。",
+        "card_summary": "这篇论文把 GUI agent 的记忆问题从“保存更多历史”改写为“维护可驱动下一步动作的执行状态”。ATMem 显式跟踪数据项、字段、约束和 remaining/finished/skipped 状态，并用 memory-on/off 的 RL 训练让模型学会何时依赖记忆。对 long-horizon GUI planning、agent memory 和防止重复/漏做/越界操作都很相关，值得重点读。",
+        "full_summary": "论文研究移动 GUI agent 在长程任务中如何可靠使用记忆，核心观点是被动历史记录无法稳定告诉模型当前任务进度。ATMem 将任务数据组织为层级执行状态，记录 workflow phase、全局约束、schema 字段、每个数据项内容及其执行状态，使 agent 能直接根据当前 state 选择下一步动作。STR-GRPO 进一步通过 memory-on/memory-off 对照 rollout 和记忆成本奖励，训练模型选择性使用 ATMem，而不是无条件增加上下文负担。实验显示 8B ATMem-UI 在 AndroidWorld 和 MobileWorld 上超过多个同规模或更大模型，在 DataScope 这种多 entry、强干扰、跨 app benchmark 上也取得最好的端到端结果。阅读价值主要在于它把 agent memory、planning state 和 RL 训练机制连接起来，对设计可靠的多轮 agent 系统有直接借鉴意义。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关，值得精读",
+        "value_reason": "论文主题正中 agent memory、long-horizon GUI planning 和 planning reliability：它不是泛泛讨论记忆，而是明确把记忆建模为可更新的执行状态，并围绕重复操作、漏操作、约束遗忘和越界操作这些真实长程失败模式设计方法与指标。方法上 ATMem 的结构并不复杂，但和 STR-GRPO 的 memory-on/off intervention 结合后，有比较清晰的训练信号和工程落地路径。实验结果在通用 benchmark、自建困难 benchmark 和消融上形成了较完整证据链，尤其是 DataScope 的 scope-aware 评估对多轮 agent 很有启发。",
+        "limitations": "主要限制是 DataScope 为作者自建 benchmark，虽然设计针对性强，但任务模板、应用集合和 verifier 生成过程可能带来评估偏置，需要看代码与复现实验确认泛化性。ATMem 的结构仍依赖模型按格式正确维护状态，长轨迹下状态污染、错误 finished/skipped 标记如何恢复没有充分展开。DataScope 上绝对成功率仍然偏低，说明方法改善了进度和范围控制，但距离稳定完成复杂跨应用任务还有明显差距。此外，训练基础设施很重，128 个 Android 设备与 128 张 H20 GPU 的设置会限制复现门槛。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确指出 passive records preserve values but not their task role or status，导致重复操作、漏操作和约束遗忘。",
+          "ATMem 的结构包含 Phase、Remaining Files、Completed Files、Constraints、Schema.fields 和 ItemContent，并为 item 维护 remaining、finished、skipped 状态。",
+          "STR-GRPO 使用同一任务下 memory-on 与 memory-off rollout 的干预对比，并加入 memory-active cost，以学习选择性使用 ATMem。",
+          "AndroidWorld 上 ATMem-UI-8B 报告 76.6% success rate，高于 MAI-UI-8B 的 70.7% 和 UI-TARS-2-230B 的 73.3%。MobileWorld 上 ATMem-UI-8B 报告 23.3% success rate。自建 DataScope 中 ATMem-UI-8B 在三个难度级别的..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-01T02:55:21.995Z"
+      },
+      "full_summary": "论文研究移动 GUI agent 在长程任务中如何可靠使用记忆，核心观点是被动历史记录无法稳定告诉模型当前任务进度。ATMem 将任务数据组织为层级执行状态，记录 workflow phase、全局约束、schema 字段、每个数据项内容及其执行状态，使 agent 能直接根据当前 state 选择下一步动作。STR-GRPO 进一步通过 memory-on/memory-off 对照 rollout 和记忆成本奖励，训练模型选择性使用 ATMem，而不是无条件增加上下文负担。实验显示 8B ATMem-UI 在 AndroidWorld 和 MobileWorld 上超过多个同规模或更大模型，在 DataScope 这种多 entry、强干扰、跨 app benchmark 上也取得最好的端到端结果。阅读价值主要在于它把 agent memory、planning state 和 RL 训练机制连接起来，对设计可靠的多轮 agent 系统有直接借鉴意义。"
+    },
+    {
+      "id": "2606.29745v1",
+      "title": "ECHO: Learning Epistemically Adaptive Language Agents with Turn-Level Credit",
+      "summary": "ECHO 把多轮信息寻求 agent 的信用分配从“整条轨迹最后是否成功”改成“每一轮动作是否在当前 belief 下减少了关键不确定性”。在一个可精确计算后验的受控推理游戏中，它显著优于 GRPO、ReAct 和多个 baseline，并展示了几乎不写长推理也能自适应探索的现象。",
+      "url": "http://arxiv.org/abs/2606.29745v1",
+      "authors": [
+        "Abhijnan Nath",
+        "Nikhil Krishnaswamy"
+      ],
+      "published": "2026-06-29",
+      "updated": "2026-06-29",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "高相关必读：多轮信息寻求中的 epistemic credit assignment",
+        "water_risk": "中",
+        "value_judgement": "值得读。论文把 agentic RL 中常被模糊处理的中间步骤信用分配问题明确落到 belief update 和 posterior-sensitive reward 上，对 multi-turn agent、clarification、tool-use planning、memory 写入和 search agent 都有直接参考价值。它的理论动机清楚，实验指标也不仅看最终成功，而是细看 grounding、zero-information turn、recovery 和 calibration，这比普通 RL benchmark 更接近 long-horizon reliability 的真实痛点。偏水风险不是低，主要因为实验环境仍是人工构造的数字/线索游戏，后验可精确计算，动作空间也被 arm-question interface 结构化；因此“超过 frontier baseline”的表述在真实开放任务上不能直接外推。",
+        "reason": "值得读。论文把 agentic RL 中常被模糊处理的中间步骤信用分配问题明确落到 belief update 和 posterior-sensitive reward 上，对 multi-turn agent、clarification、tool-use planning、memory 写入和 search agent 都有直接参考价值。它的理论动机清楚，实验指标也不仅看最终成功，而是细看 grounding、zero-information turn、recovery 和 calibration，这比普通 RL benchmark 更接近 long-horizon reliability 的真实痛点。偏水风险不是低，主要因为实验环境仍是人工构造的数字/线索游戏，后验可精确计算，动作空间也被 arm-question interface 结构化；因此“超过 frontier baseline”的表述在真实开放任务上不能直接外推。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Abhijnan Nath",
+          "Nikhil Krishnaswamy"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-29",
+        "paper_url": "https://arxiv.org/abs/2606.29745v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "值得读。论文把 agentic RL 中常被模糊处理的中间步骤信用分配问题明确落到 belief update 和 posterior-sensitive reward 上，对 multi-turn agent、clarification、tool-use planning、memory 写入和 search agent 都有直接参考价值。它的理论动机清楚，实验指标也不仅看最终成功，而是细看 grounding、zero-information turn、recovery 和 calibration，这比普通 RL benchmark 更接近 long-horizon reliability 的真实痛点。偏水风险不是低，主要因为实验环境仍是人工构造的数字/线索游戏，后验可精确计算，动作空间也被 arm-question interface 结构化；因此“超过 frontier baseline”的表述在真实开放任务上不能直接外推。",
+        "summary": "这篇文章提出的核心问题是：多轮 agent 的好动作不只是与最终成功相关，而是要在当下 belief 下产生有用证据。作者用 EDP formalism 把多轮提问、观察、后验更新和下一步行动统一起来，并提出 ECHO，用 turn-level posterior-sensitive reward 替代 trajectory-level return 来训练策略。实验中的 Clue Selector Game 虽然是受控玩具环境，但它能精确追踪候选集和 belief 收缩，因此很适合验证“每轮信息增益”这种 credit assignment。结果显示，ECHO 训练的小模型在解题、减少零信息提问、失败后恢复和候选集收缩方面都明显强于 GRPO、RLOO、SFT+RL 以及显式 CoT/ReAct 提示。阅读价值很高，因为它直接击中了 long-horizon agent planning 中常见的信用分配和信息寻求可靠性问题，但其结论迁移到真实 web/tool-use agent 还需要解决近似 belief、噪声观察和开放动作空间的问题。",
+        "highlights": [
+          "值得读。论文把 agentic RL 中常被模糊处理的中间步骤信用分配问题明确落到 belief update 和 posterior-sensitive reward 上，对 multi-turn agent、clarification、tool-use planning、memory 写入和 search agent 都有直接参考价值。它的理论动机清楚，实验指标也不仅看最终成功，而是细看 grounding、zero-information turn、recovery 和 calibration，这比普通 RL benchmark 更接近 long-horizon reliability 的真实痛点。偏水风险不是低，主要因为实验环境仍是人工构造的数字/线索游戏，后验可精确计算，动作空间也被 arm-question interface 结构化；因此“超过 frontier baseline”的表述在真实开放任务上不能直接外推。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文关心的是多轮语言智能体中的“适应性”到底来自哪里：好的 agent 不是只在最后给出正确答案，而是在每一轮根据当前证据状态决定还需要问什么、查什么、验证什么。作者指出，传统 trajectory-level RL 只把最终成功回传给整条轨迹，容易无法区分哪些中间动作真正减少了不确定性，因此在长链信息寻求任务中会产生错误信用分配。",
+        "method": "论文提出 Epistemic Decision Processes，把多轮信息寻求建模为围绕隐藏任务变量的 belief-state 决策过程；每个动作产生外部观察，并更新 agent 对隐藏变量的后验。核心算法 ECHO 是一种 clipped policy-gradient 目标，但它不使用整条轨迹的总回报来给每轮动作统一分配优势，而是用 posterior-sensitive turn reward 在每个决策深度给动作分配信用，例如候选集收缩、信息增益或后验不确定性下降。理论部分证明了忽略 belief 的策略在某些长时域 EDP 中会出现随深度复合的失败，并说明仅靠总回报无法恢复每一轮的 Bayesian advantage。",
+        "experiments": "实验构造了 Clue Selector Game：agent 需要通过多轮属性问题识别隐藏数字，候选集和后验可以精确计算，因此可以直接衡量每轮问题是否真的收缩 belief。ECHO 训练 Qwen2.5-1.5B，在最终解出率、零信息轮次、候选集收缩质量、grounded recovery 和 failure 后恢复等指标上显著优于 trajectory-level GRPO、RLOO per-turn、SFT+RL 以及多种 prompting/ReAct baseline，并在该受控任务上达到或超过强 frontier baseline。一个重要实验信号是，ECHO 几乎不输出显式 reasoning text，却能通过问题选择表现出“silent exploration”，说明多轮适应性不一定来自更长的 CoT，而可能来自 belief-conditioned action policy。",
+        "research_help": "Insight：这篇论文对 agent planning 和 agentic RL 的关键启发是，长时域 agent 的训练信号应该尽量对齐“当前 belief 下这个动作是否改变了未来可规划状态”，而不是只奖励最终完成任务。对多轮澄清、工具调用、搜索式 agent 和 memory-based planning 来说，可以把每轮检索、询问、验证、写入记忆、修正计划都看成 belief update 操作，并设计局部 epistemic reward 来鼓励减少关键不确定性。它也提醒评估体系不要只看最终 success，还要看 zero-information action、recovery、calibration、grounding 和后验收缩过程，否则很容易把会说理由但不会更新策略的模型误判为可靠。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文对 agent planning 和 agentic RL 的关键启发是，长时域 agent 的训练信号应该尽量对齐“当前 belief 下这个动作是否改变了未来可规划状态”，而不是只奖励最终完成任务。对多轮澄清、工具调用、搜索式 agent 和 memory-based planning 来说，可以把每轮检索、询问、验证、写入记忆、修正计划都看成 belief update 操作，并设计局部 epistemic reward 来鼓励减少关键不确定性。它也提醒评估体系不要只看最终 success，还要看 zero-information action、recovery、calibration、grounding 和后验收缩过程，否则很容易把会说理由但不会更新策略的模型误判为可靠。",
+        "abstract_zh": "这篇论文研究语言智能体在多轮信息寻求中如何做到 epistemically adaptive，也就是根据当前已知信息和剩余不确定性来决定下一步要问什么、如何利用新证据以及何时行动。作者提出 Epistemic Decision Processes，将多轮交互建模为对隐藏任务变量的后验更新过程，并证明不考虑 belief 的策略会在长时域任务中出现严重错误累积，而只用整条轨迹总回报也不足以识别每轮动作的真实信息价值。为此，论文提出 ECHO，用 posterior-sensitive 的 turn-level reward 为每轮动作分配信用。在 Clue Selector Game 中，ECHO 相比 trajectory-level GRPO 和 prompting baseline 更好地提升了解题率、信息增益、效率、grounding、recovery 和 calibration，同时几乎不依赖显式推理文本。",
+        "full_summary": "这篇文章提出的核心问题是：多轮 agent 的好动作不只是与最终成功相关，而是要在当下 belief 下产生有用证据。作者用 EDP formalism 把多轮提问、观察、后验更新和下一步行动统一起来，并提出 ECHO，用 turn-level posterior-sensitive reward 替代 trajectory-level return 来训练策略。实验中的 Clue Selector Game 虽然是受控玩具环境，但它能精确追踪候选集和 belief 收缩，因此很适合验证“每轮信息增益”这种 credit assignment。结果显示，ECHO 训练的小模型在解题、减少零信息提问、失败后恢复和候选集收缩方面都明显强于 GRPO、RLOO、SFT+RL 以及显式 CoT/ReAct 提示。阅读价值很高，因为它直接击中了 long-horizon agent planning 中常见的信用分配和信息寻求可靠性问题，但其结论迁移到真实 web/tool-use agent 还需要解决近似 belief、噪声观察和开放动作空间的问题。",
+        "card_summary": "ECHO 把多轮信息寻求 agent 的信用分配从“整条轨迹最后是否成功”改成“每一轮动作是否在当前 belief 下减少了关键不确定性”。在一个可精确计算后验的受控推理游戏中，它显著优于 GRPO、ReAct 和多个 baseline，并展示了几乎不写长推理也能自适应探索的现象。"
+      },
+      "analysis": {
+        "motivation": "论文关心的是多轮语言智能体中的“适应性”到底来自哪里：好的 agent 不是只在最后给出正确答案，而是在每一轮根据当前证据状态决定还需要问什么、查什么、验证什么。作者指出，传统 trajectory-level RL 只把最终成功回传给整条轨迹，容易无法区分哪些中间动作真正减少了不确定性，因此在长链信息寻求任务中会产生错误信用分配。",
+        "method": "论文提出 Epistemic Decision Processes，把多轮信息寻求建模为围绕隐藏任务变量的 belief-state 决策过程；每个动作产生外部观察，并更新 agent 对隐藏变量的后验。核心算法 ECHO 是一种 clipped policy-gradient 目标，但它不使用整条轨迹的总回报来给每轮动作统一分配优势，而是用 posterior-sensitive turn reward 在每个决策深度给动作分配信用，例如候选集收缩、信息增益或后验不确定性下降。理论部分证明了忽略 belief 的策略在某些长时域 EDP 中会出现随深度复合的失败，并说明仅靠总回报无法恢复每一轮的 Bayesian advantage。",
+        "experiments": "实验构造了 Clue Selector Game：agent 需要通过多轮属性问题识别隐藏数字，候选集和后验可以精确计算，因此可以直接衡量每轮问题是否真的收缩 belief。ECHO 训练 Qwen2.5-1.5B，在最终解出率、零信息轮次、候选集收缩质量、grounded recovery 和 failure 后恢复等指标上显著优于 trajectory-level GRPO、RLOO per-turn、SFT+RL 以及多种 prompting/ReAct baseline，并在该受控任务上达到或超过强 frontier baseline。一个重要实验信号是，ECHO 几乎不输出显式 reasoning text，却能通过问题选择表现出“silent exploration”，说明多轮适应性不一定来自更长的 CoT，而可能来自 belief-conditioned action policy。",
+        "research_help": "Insight：这篇论文对 agent planning 和 agentic RL 的关键启发是，长时域 agent 的训练信号应该尽量对齐“当前 belief 下这个动作是否改变了未来可规划状态”，而不是只奖励最终完成任务。对多轮澄清、工具调用、搜索式 agent 和 memory-based planning 来说，可以把每轮检索、询问、验证、写入记忆、修正计划都看成 belief update 操作，并设计局部 epistemic reward 来鼓励减少关键不确定性。它也提醒评估体系不要只看最终 success，还要看 zero-information action、recovery、calibration、grounding 和后验收缩过程，否则很容易把会说理由但不会更新策略的模型误判为可靠。",
+        "insight": "Insight：这篇论文对 agent planning 和 agentic RL 的关键启发是，长时域 agent 的训练信号应该尽量对齐“当前 belief 下这个动作是否改变了未来可规划状态”，而不是只奖励最终完成任务。对多轮澄清、工具调用、搜索式 agent 和 memory-based planning 来说，可以把每轮检索、询问、验证、写入记忆、修正计划都看成 belief update 操作，并设计局部 epistemic reward 来鼓励减少关键不确定性。它也提醒评估体系不要只看最终 success，还要看 zero-information action、recovery、calibration、grounding 和后验收缩过程，否则很容易把会说理由但不会更新策略的模型误判为可靠。",
+        "abstract_zh": "这篇论文研究语言智能体在多轮信息寻求中如何做到 epistemically adaptive，也就是根据当前已知信息和剩余不确定性来决定下一步要问什么、如何利用新证据以及何时行动。作者提出 Epistemic Decision Processes，将多轮交互建模为对隐藏任务变量的后验更新过程，并证明不考虑 belief 的策略会在长时域任务中出现严重错误累积，而只用整条轨迹总回报也不足以识别每轮动作的真实信息价值。为此，论文提出 ECHO，用 posterior-sensitive 的 turn-level reward 为每轮动作分配信用。在 Clue Selector Game 中，ECHO 相比 trajectory-level GRPO 和 prompting baseline 更好地提升了解题率、信息增益、效率、grounding、recovery 和 calibration，同时几乎不依赖显式推理文本。",
+        "card_summary": "ECHO 把多轮信息寻求 agent 的信用分配从“整条轨迹最后是否成功”改成“每一轮动作是否在当前 belief 下减少了关键不确定性”。在一个可精确计算后验的受控推理游戏中，它显著优于 GRPO、ReAct 和多个 baseline，并展示了几乎不写长推理也能自适应探索的现象。",
+        "full_summary": "这篇文章提出的核心问题是：多轮 agent 的好动作不只是与最终成功相关，而是要在当下 belief 下产生有用证据。作者用 EDP formalism 把多轮提问、观察、后验更新和下一步行动统一起来，并提出 ECHO，用 turn-level posterior-sensitive reward 替代 trajectory-level return 来训练策略。实验中的 Clue Selector Game 虽然是受控玩具环境，但它能精确追踪候选集和 belief 收缩，因此很适合验证“每轮信息增益”这种 credit assignment。结果显示，ECHO 训练的小模型在解题、减少零信息提问、失败后恢复和候选集收缩方面都明显强于 GRPO、RLOO、SFT+RL 以及显式 CoT/ReAct 提示。阅读价值很高，因为它直接击中了 long-horizon agent planning 中常见的信用分配和信息寻求可靠性问题，但其结论迁移到真实 web/tool-use agent 还需要解决近似 belief、噪声观察和开放动作空间的问题。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "高相关必读：多轮信息寻求中的 epistemic credit assignment",
+        "value_reason": "值得读。论文把 agentic RL 中常被模糊处理的中间步骤信用分配问题明确落到 belief update 和 posterior-sensitive reward 上，对 multi-turn agent、clarification、tool-use planning、memory 写入和 search agent 都有直接参考价值。它的理论动机清楚，实验指标也不仅看最终成功，而是细看 grounding、zero-information turn、recovery 和 calibration，这比普通 RL benchmark 更接近 long-horizon reliability 的真实痛点。偏水风险不是低，主要因为实验环境仍是人工构造的数字/线索游戏，后验可精确计算，动作空间也被 arm-question interface 结构化；因此“超过 frontier baseline”的表述在真实开放任务上不能直接外推。",
+        "limitations": "主要局限是 CSG 的候选空间、后验和信息增益都可精确计算，而真实诊断、搜索、偏好澄清或工具调用任务通常没有显式可枚举的隐藏变量，也会遇到噪声、错误或对抗性信息源。实验只展示了较小模型和较短 horizon 下的效果，尚不清楚大模型是否仍同样依赖这种训练信号，或 ECHO 与强 in-context belief tracking 能否互补。另一个限制是动作空间仍有结构化 arm scaffold，距离真正开放的 tool-use/web-search agent 还有明显差距。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出 EDP，将多轮信息寻求表述为对隐藏任务变量的后验更新，并把 epistemic adaptivity 定义为 posterior-sensitive action selection。",
+          "理论结果声称 belief-agnostic policy 在某些长时域 EDP 中会出现随 horizon 复合的性能差距，并指出 trajectory-level return 不能识别 per-turn Bayesian advantage。",
+          "ECHO 的训练目标保留 clipped policy-gradient / group-relative 优化形式，但把优势归一化从整条轨迹回报改为每个决策深度上的 posterior-sensitive turn reward。",
+          "实验在 Clue Selector Game 中进行，候选集和 belief 可精确计算，主要 reward 来自候选集收缩，并额外评估 zero-elimination、grounding、recovery、calibration 等过程指标。论文报告 ECHO 相比 trajectory-level GRPO、RLOO per-turn、SFT+RL..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-01T02:58:29.166Z"
+      },
+      "full_summary": "这篇文章提出的核心问题是：多轮 agent 的好动作不只是与最终成功相关，而是要在当下 belief 下产生有用证据。作者用 EDP formalism 把多轮提问、观察、后验更新和下一步行动统一起来，并提出 ECHO，用 turn-level posterior-sensitive reward 替代 trajectory-level return 来训练策略。实验中的 Clue Selector Game 虽然是受控玩具环境，但它能精确追踪候选集和 belief 收缩，因此很适合验证“每轮信息增益”这种 credit assignment。结果显示，ECHO 训练的小模型在解题、减少零信息提问、失败后恢复和候选集收缩方面都明显强于 GRPO、RLOO、SFT+RL 以及显式 CoT/ReAct 提示。阅读价值很高，因为它直接击中了 long-horizon agent planning 中常见的信用分配和信息寻求可靠性问题，但其结论迁移到真实 web/tool-use agent 还需要解决近似 belief、噪声观察和开放动作空间的问题。"
+    },
+    {
+      "id": "2606.30639v1",
+      "title": "Self-Evolving World Models for LLM Agent Planning",
+      "summary": "这篇文章提出 WORLDEVOLVER，用外部记忆而不是参数更新来让 LLM agent 的 world model 在部署中自我修正。它把真实交互转移和预测错误沉淀为可检索经验与规则，并通过置信度过滤不可靠 foresight，整体非常贴近 long-horizon agent planning 的可靠性问题。",
+      "url": "http://arxiv.org/abs/2606.30639v1",
+      "authors": [
+        "Xuan Zhang",
+        "Wenxuan Zhang",
+        "See-Kiong Ng",
+        "Yang Deng"
+      ],
+      "published": "2026-06-29",
+      "updated": "2026-06-29",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 82,
+        "level": "高",
+        "label": "值得读，尤其适合关注 agent planning reliability 和 memory-based world model 的方向",
+        "water_risk": "中",
+        "value_judgement": "论文问题设定高度贴合 agentic RL / multi-turn / long-horizon planning：不是单纯提高 agent 反思能力，而是研究 world model foresight 何时可信、如何在线修正、如何避免误导 policy。方法虽然由检索、规则记忆和置信度过滤等相对朴素部件组成，但组合后切中实际部署问题，实验也覆盖预测质量和下游规划两类指标，结论对后续做 memory-augmented planning 或 test-time adaptation 有直接参考价值。",
+        "reason": "论文问题设定高度贴合 agentic RL / multi-turn / long-horizon planning：不是单纯提高 agent 反思能力，而是研究 world model foresight 何时可信、如何在线修正、如何避免误导 policy。方法虽然由检索、规则记忆和置信度过滤等相对朴素部件组成，但组合后切中实际部署问题，实验也覆盖预测质量和下游规划两类指标，结论对后续做 memory-augmented planning 或 test-time adaptation 有直接参考价值。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xuan Zhang",
+          "Wenxuan Zhang",
+          "See-Kiong Ng",
+          "Yang Deng"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-06-29",
+        "paper_url": "https://arxiv.org/abs/2606.30639v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文问题设定高度贴合 agentic RL / multi-turn / long-horizon planning：不是单纯提高 agent 反思能力，而是研究 world model foresight 何时可信、如何在线修正、如何避免误导 policy。方法虽然由检索、规则记忆和置信度过滤等相对朴素部件组成，但组合后切中实际部署问题，实验也覆盖预测质量和下游规划两类指标，结论对后续做 memory-augmented planning 或 test-time adaptation 有直接参考价值。",
+        "summary": "论文研究如何让 LLM agent 的 world model 在长程任务中提供更可靠的前瞻信息。核心做法不是在线微调模型，而是让系统在交互过程中积累真实转移、抽象 mismatch 规则，并只把高置信预测暴露给 agent。实验显示，WORLDEVOLVER 在文本环境中的下一状态预测明显优于多个 inference-only world model baseline，下游规划成功率也更稳定。一个重要信号是，普通 world model foresight 有时会伤害 agent，而选择性过滤和部署期记忆更新能缓解这个问题。阅读价值主要在于它把 agent memory、world model calibration 和 planning reliability 结合得比较清楚，但实验仍集中在受控文本环境，泛化到 web、代码或真实多模态环境还需要进一步验证。",
+        "highlights": [
+          "论文问题设定高度贴合 agentic RL / multi-turn / long-horizon planning：不是单纯提高 agent 反思能力，而是研究 world model foresight 何时可信、如何在线修正、如何避免误导 policy。方法虽然由检索、规则记忆和置信度过滤等相对朴素部件组成，但组合后切中实际部署问题，实验也覆盖预测质量和下游规划两类指标，结论对后续做 memory-augmented planning 或 test-time adaptation 有直接参考价值。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对 long-horizon LLM agent 中 world model 预测不可靠的问题：如果未来状态预测错误，agent 可能忽略、误用，甚至被误导；但在线用梯度更新大模型又成本高且有过度编辑、遗忘风险。因此作者提出把部署期真实交互、预测-观测 mismatch 转成可检索、可审计的上下文证据，让 world model 在不改参数的情况下随交互自我修正。",
+        "method": "方法是 WORLDEVOLVER，一个训练-free 的自演化 world model 框架。它包含三部分：Episodic Memory 记录真实的 observation-action-next observation 转移，并按动作相似性检索用于下一次模拟；Semantic Memory 将预测和真实观测的差异抽象成持久文本规则，并只保留被后续证据支持的规则；Selective Foresight 根据生成置信度过滤低可信预测，只有足够可信的 foresight 才会进入冻结 agent 的推理上下文。整体上，agent、world model 和模型参数都保持冻结，演化发生在外部记忆与提示上下文。",
+        "experiments": "实验分成 world model prediction 和 agent planning 两条线。预测实验使用 Word2World 中的 ALFWorld 和 ScienceWorld 转移数据，对比 Zero-Shot、RAWM-ϕ、ITP-I 以及消融版本，结果显示完整 WORLDEVOLVER 在三个 backbone、两个环境上整体最强，主要增益来自 episodic retrieval，semantic rules 有补充作用。规划实验在 AgentBoard 上评估 ReAct 和 ReflAct，结果表明常规 world model foresight 有时会低于无 world model baseline，而 WORLDEVOLVER 是最稳定的 world-model 方法；Selective Foresight 对较弱模型更有帮助，但对更强 planner 的增益较混合。",
+        "research_help": "Insight：这篇论文的可迁移启发是，long-horizon agent planning 里的 world model 不一定要在线改权重，部署期的真实转移和 mismatch 可以作为外部、可审计、可回滚的模型修正层。对 agentic RL 和多轮系统而言，核心不是“多想几步”，而是要把 imagined future 的可靠性显式建模，并允许系统在低置信时 abstain。它也提示 agent memory 不应只服务于 policy reuse，还可以服务于 world-model calibration，把失败预测转成后续规划时可复用的环境规律。",
+        "recommendation": {
+          "score": 82,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移启发是，long-horizon agent planning 里的 world model 不一定要在线改权重，部署期的真实转移和 mismatch 可以作为外部、可审计、可回滚的模型修正层。对 agentic RL 和多轮系统而言，核心不是“多想几步”，而是要把 imagined future 的可靠性显式建模，并允许系统在低置信时 abstain。它也提示 agent memory 不应只服务于 policy reuse，还可以服务于 world-model calibration，把失败预测转成后续规划时可复用的环境规律。",
+        "abstract_zh": "世界模型可以让长程 LLM agent 在行动前预测行动后果，但不可靠的预测可能被忽略、误用，甚至损害决策。论文提出 WORLDEVOLVER，一个自演化世界模型框架，在保持下游 agent 和所有模型参数冻结的同时，持续修订部署期上下文。该框架结合 Episodic Memory、Semantic Memory 和 Selective Foresight，分别利用真实转移、从预测错误中抽取规则，并过滤低置信预测。作者在 ALFWorld 和 ScienceWorld 上评估预测准确性和 agent 成功率，结果显示测试时记忆修订能同时提升预测质量和规划表现。",
+        "full_summary": "论文研究如何让 LLM agent 的 world model 在长程任务中提供更可靠的前瞻信息。核心做法不是在线微调模型，而是让系统在交互过程中积累真实转移、抽象 mismatch 规则，并只把高置信预测暴露给 agent。实验显示，WORLDEVOLVER 在文本环境中的下一状态预测明显优于多个 inference-only world model baseline，下游规划成功率也更稳定。一个重要信号是，普通 world model foresight 有时会伤害 agent，而选择性过滤和部署期记忆更新能缓解这个问题。阅读价值主要在于它把 agent memory、world model calibration 和 planning reliability 结合得比较清楚，但实验仍集中在受控文本环境，泛化到 web、代码或真实多模态环境还需要进一步验证。",
+        "card_summary": "这篇文章提出 WORLDEVOLVER，用外部记忆而不是参数更新来让 LLM agent 的 world model 在部署中自我修正。它把真实交互转移和预测错误沉淀为可检索经验与规则，并通过置信度过滤不可靠 foresight，整体非常贴近 long-horizon agent planning 的可靠性问题。"
+      },
+      "analysis": {
+        "motivation": "论文针对 long-horizon LLM agent 中 world model 预测不可靠的问题：如果未来状态预测错误，agent 可能忽略、误用，甚至被误导；但在线用梯度更新大模型又成本高且有过度编辑、遗忘风险。因此作者提出把部署期真实交互、预测-观测 mismatch 转成可检索、可审计的上下文证据，让 world model 在不改参数的情况下随交互自我修正。",
+        "method": "方法是 WORLDEVOLVER，一个训练-free 的自演化 world model 框架。它包含三部分：Episodic Memory 记录真实的 observation-action-next observation 转移，并按动作相似性检索用于下一次模拟；Semantic Memory 将预测和真实观测的差异抽象成持久文本规则，并只保留被后续证据支持的规则；Selective Foresight 根据生成置信度过滤低可信预测，只有足够可信的 foresight 才会进入冻结 agent 的推理上下文。整体上，agent、world model 和模型参数都保持冻结，演化发生在外部记忆与提示上下文。",
+        "experiments": "实验分成 world model prediction 和 agent planning 两条线。预测实验使用 Word2World 中的 ALFWorld 和 ScienceWorld 转移数据，对比 Zero-Shot、RAWM-ϕ、ITP-I 以及消融版本，结果显示完整 WORLDEVOLVER 在三个 backbone、两个环境上整体最强，主要增益来自 episodic retrieval，semantic rules 有补充作用。规划实验在 AgentBoard 上评估 ReAct 和 ReflAct，结果表明常规 world model foresight 有时会低于无 world model baseline，而 WORLDEVOLVER 是最稳定的 world-model 方法；Selective Foresight 对较弱模型更有帮助，但对更强 planner 的增益较混合。",
+        "research_help": "Insight：这篇论文的可迁移启发是，long-horizon agent planning 里的 world model 不一定要在线改权重，部署期的真实转移和 mismatch 可以作为外部、可审计、可回滚的模型修正层。对 agentic RL 和多轮系统而言，核心不是“多想几步”，而是要把 imagined future 的可靠性显式建模，并允许系统在低置信时 abstain。它也提示 agent memory 不应只服务于 policy reuse，还可以服务于 world-model calibration，把失败预测转成后续规划时可复用的环境规律。",
+        "insight": "Insight：这篇论文的可迁移启发是，long-horizon agent planning 里的 world model 不一定要在线改权重，部署期的真实转移和 mismatch 可以作为外部、可审计、可回滚的模型修正层。对 agentic RL 和多轮系统而言，核心不是“多想几步”，而是要把 imagined future 的可靠性显式建模，并允许系统在低置信时 abstain。它也提示 agent memory 不应只服务于 policy reuse，还可以服务于 world-model calibration，把失败预测转成后续规划时可复用的环境规律。",
+        "abstract_zh": "世界模型可以让长程 LLM agent 在行动前预测行动后果，但不可靠的预测可能被忽略、误用，甚至损害决策。论文提出 WORLDEVOLVER，一个自演化世界模型框架，在保持下游 agent 和所有模型参数冻结的同时，持续修订部署期上下文。该框架结合 Episodic Memory、Semantic Memory 和 Selective Foresight，分别利用真实转移、从预测错误中抽取规则，并过滤低置信预测。作者在 ALFWorld 和 ScienceWorld 上评估预测准确性和 agent 成功率，结果显示测试时记忆修订能同时提升预测质量和规划表现。",
+        "card_summary": "这篇文章提出 WORLDEVOLVER，用外部记忆而不是参数更新来让 LLM agent 的 world model 在部署中自我修正。它把真实交互转移和预测错误沉淀为可检索经验与规则，并通过置信度过滤不可靠 foresight，整体非常贴近 long-horizon agent planning 的可靠性问题。",
+        "full_summary": "论文研究如何让 LLM agent 的 world model 在长程任务中提供更可靠的前瞻信息。核心做法不是在线微调模型，而是让系统在交互过程中积累真实转移、抽象 mismatch 规则，并只把高置信预测暴露给 agent。实验显示，WORLDEVOLVER 在文本环境中的下一状态预测明显优于多个 inference-only world model baseline，下游规划成功率也更稳定。一个重要信号是，普通 world model foresight 有时会伤害 agent，而选择性过滤和部署期记忆更新能缓解这个问题。阅读价值主要在于它把 agent memory、world model calibration 和 planning reliability 结合得比较清楚，但实验仍集中在受控文本环境，泛化到 web、代码或真实多模态环境还需要进一步验证。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其适合关注 agent planning reliability 和 memory-based world model 的方向",
+        "value_reason": "论文问题设定高度贴合 agentic RL / multi-turn / long-horizon planning：不是单纯提高 agent 反思能力，而是研究 world model foresight 何时可信、如何在线修正、如何避免误导 policy。方法虽然由检索、规则记忆和置信度过滤等相对朴素部件组成，但组合后切中实际部署问题，实验也覆盖预测质量和下游规划两类指标，结论对后续做 memory-augmented planning 或 test-time adaptation 有直接参考价值。",
+        "limitations": "主要限制是实验域较窄，只在 ALFWorld 和 ScienceWorld 这类受控文本环境中验证，不能直接说明对 web agent、code agent、机器人或多模态任务同样有效。Selective Foresight 依赖 token-level probability 作为置信度来源，闭源 API 或不同模型上的可用性与校准稳定性都可能有问题。下游规划增益并非所有强模型设置都稳定超过无 world model baseline，说明预测准确率提升不必然转化为 policy 成功率。水文风险为中：主题很准、实验链条完整，但方法创新更多是系统组合与工程化校准，且部分收益集中在较受控的 benchmark 中。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确声称 WORLDEVOLVER 保持下游 agent 和所有模型参数冻结，只修订部署期 world-model context。",
+          "方法部分定义了 Episodic Memory、Semantic Memory 和 Selective Foresight，并给出闭环更新算法。",
+          "实验部分同时评估 Word2World 的下一观测预测质量和 AgentBoard 的下游成功率，覆盖 ALFWorld 与 ScienceWorld。",
+          "结果分析显示普通 world model baseline 有时低于无 world model agent，而 WORLDEVOLVER 在 world-model 方法中更稳定。读取价值主要来自这一 reliability 观察。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-01T02:59:20.985Z"
+      },
+      "full_summary": "论文研究如何让 LLM agent 的 world model 在长程任务中提供更可靠的前瞻信息。核心做法不是在线微调模型，而是让系统在交互过程中积累真实转移、抽象 mismatch 规则，并只把高置信预测暴露给 agent。实验显示，WORLDEVOLVER 在文本环境中的下一状态预测明显优于多个 inference-only world model baseline，下游规划成功率也更稳定。一个重要信号是，普通 world model foresight 有时会伤害 agent，而选择性过滤和部署期记忆更新能缓解这个问题。阅读价值主要在于它把 agent memory、world model calibration 和 planning reliability 结合得比较清楚，但实验仍集中在受控文本环境，泛化到 web、代码或真实多模态环境还需要进一步验证。"
+    },
     {
       "id": "2606.27499v1",
       "title": "DMV-Bench: Diagnosing Long-Horizon Multimodal Agents' Visual Memory with Incidental Cue Injection",
@@ -4158,35 +4664,5 @@
         "insight": "较大。第一，它把 deep search 和 deep research 明确区分，适合作为 agent planning / research agent 论文写作中的问题定义参考。第二，graph-grounded task formulation、trajectory rollout、multi-dimensional verification 可以借鉴到多轮 agent planning 数据生成和可靠性评测。第三，论文强调 citation-grounded report generation、file-oriented tasks、skill orchestration，这些都能补充现有只看 QA accuracy 或 retrieval success 的 agent benchmark 设计。第四，如果 agent planning 关心 agentic RL，本论文价值更多在“可验证轨迹数据与后训练任务设计”，而不是 RL credit assignment 或 online exploration 本身。"
       }
     }
-  ],
-  "latest_item_ids": [
-    "2606.27499v1",
-    "2606.27780v1",
-    "2606.27757v1"
-  ],
-  "archive": {
-    "policy": "append_or_update_by_arxiv_id",
-    "total_items": 35,
-    "latest_items": 3,
-    "source_report_dates": {
-      "2026-06-25": 6,
-      "2026-06-20": 5,
-      "2026-06-19": 16,
-      "2026-06-18": 16,
-      "2026-06-26": 3,
-      "2026-06-30": 3
-    },
-    "filtered_candidate_ids": [
-      "2606.29126v1",
-      "2606.28955v1",
-      "2606.28781v1",
-      "2606.27632v1",
-      "2606.26627v1",
-      "2606.27032v1",
-      "2606.27180v1",
-      "2606.26918v1",
-      "2606.25526v1",
-      "2606.25335v1"
-    ]
-  }
+  ]
 }
