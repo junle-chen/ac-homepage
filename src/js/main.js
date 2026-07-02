@@ -3662,18 +3662,25 @@ function bindGlassTopbar() {
 			if (isOffTopicDomain) {
 				return [];
 			}
+			const signals = Object.assign(
+				{},
+				(paper.recommendation && paper.recommendation.signals) || {},
+				(paper.brief && paper.brief.recommendation && paper.brief.recommendation.signals) || {}
+			);
 			const llmOrAgentContext = /llm|large language model|language model|coding agent|research agent|agentic large language|openclaw|qwen|webshop|alfworld|grpo|rloo/.test(rawSource);
 			const tags = [];
-			if (/agentic reinforcement learning|agentic rl|llm policy optimization|policy optimization|grpo|rloo|hindsight-informed memory policy optimization/.test(rawSource)) {
+			if (signals.agenticRl || /agentic reinforcement learning|agentic rl|llm policy optimization|policy optimization|grpo|rloo|hindsight-informed memory policy optimization/.test(rawSource)) {
 				tags.push("agentic rl");
 			}
-			if (/multi[- ]turn|turn-level|interactive replanning|multi-round/.test(rawSource) && llmOrAgentContext) {
+			if (signals.multiTurn || (/multi[- ]turn|turn-level|interactive replanning|multi-round/.test(rawSource) && llmOrAgentContext)) {
 				tags.push("multi-turn");
 			}
-			if (/long[- ]horizon|multi[- ]step|multi-step reasoning/.test(rawSource) && llmOrAgentContext) {
+			if (signals.longHorizon || (/long[- ]horizon|multi[- ]step|multi-step reasoning/.test(rawSource) && llmOrAgentContext)) {
 				tags.push("long horizon");
 			}
 			if (
+				signals.agentPlanning ||
+				((signals.reliability || signals.memory) && signals.longHorizon) ||
 				/agent planning|planning agent|llm planning|multi-agent llm planning|joint plan tensor|coding agent|research agents?|tool use|skill tree search|skill construction|orchestrat\w*.*llm|expert llms/.test(rawSource)
 			) {
 				tags.push("agent planning");
