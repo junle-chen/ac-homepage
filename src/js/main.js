@@ -3286,7 +3286,7 @@ function bindGlassTopbar() {
 		}
 
 		function getPaperDate(paper) {
-			return String(paper.published || paper.updated || "").slice(0, 10);
+			return String(paper.report_date || paper.daily_report_date || paper.published || paper.updated || "").slice(0, 10);
 		}
 
 		function getArxivPdfUrl(paper) {

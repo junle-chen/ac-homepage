@@ -401,7 +401,7 @@ function buildBrief(paper) {
 	};
 }
 
-function parseEntries(xml) {
+function parseEntries(xml, reportDate = "") {
 	return xml
 		.split("<entry>")
 		.slice(1)
@@ -423,6 +423,7 @@ function parseEntries(xml) {
 				summary,
 				url,
 				authors,
+				report_date: reportDate,
 				published: tagValue(entry, "published").slice(0, 10),
 				updated: tagValue(entry, "updated").slice(0, 10),
 				primary_category: categories[0] || "",
@@ -536,7 +537,8 @@ function buildDigest(items, updatedAt) {
 async function main() {
 	const xml = await requestText(buildUrl());
 	const updatedAt = new Date().toISOString();
-	const freshItems = parseEntries(xml)
+	const reportDate = formatHongKongDate(new Date(updatedAt));
+	const freshItems = parseEntries(xml, reportDate)
 		.filter((item) => relevanceScore(item) >= 46)
 		.sort((a, b) => {
 			const dateCompare = String(b.published).localeCompare(String(a.published));

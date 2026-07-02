@@ -162,7 +162,8 @@
         "insight": "Insight：这篇论文最可迁移的启发是，agentic RL 的 credit assignment 不该只问“这条轨迹最终赢没赢”，还要问“这一步在局部语义上扮演什么角色”。对 long-horizon planning 来说，把 exploration、infrastructure 和 regression 分开建模，能减少对无效搜索或重复操作的误强化，也更利于把 reward 设计从标量结果推进到结构化过程监督。",
         "abstract_zh": "Agentic reinforcement learning 需要给搜索、点击、编辑、导航和对象交互等 environment-facing actions 分配 credit。论文指出，标准 GRPO 会把最终 verifier outcome 统一广播到整条轨迹的 action tokens 上，因此会错误惩罚失败轨迹中的有用探索，也会错误强化成功轨迹中的冗余或回归动作。为此作者提出 TRIAGE：先用 structured judge 把 segment 标成 decisive progress、useful exploration、no-progress infrastructure 或 regression，再按角色施加 bounded process reward。实验表明，TRIAGE 在 ALFWorld、Search-QA 和 WebShop 上优于 GRPO 及多个 dense-signal baseline，并减少不必要的环境交互。",
         "full_summary": "论文关注 agentic RL 的 credit assignment 问题：在多步工具使用或环境交互中，最终 verifier reward 往往会把整条成功轨迹一起强化、把整条失败轨迹一起压低，从而错误对待中间的探索和回归动作。TRIAGE 的做法是先把每段 environment-facing action 标成 decisive progress、useful exploration、no-progress infrastructure 或 regression，再将 role-conditioned process reward 叠加到 GRPO 的 outcome advantage 上。作者还给出一个理论解释：如果 role judge 足够可靠，这种 role-conditioned correction 可以降低 advantage estimation error。实验覆盖 ALFWorld、Search-QA 和 WebShop 两个 policy backbone，结果显示成功率优于 GRPO、scalar process reward 和 outcome-supervised value baseline，并在 ALFWorld/WebShop 完成轨迹上额外减少 10.4% 和 14.8% 的环境交互回合。对做 agentic RL、tool-use planning 或 long-horizon training signal 设计的人，这篇很值得读。",
-        "card_summary": "TRIAGE 把 agentic RL 的最终成败奖励拆成 segment role credit：区分 decisive progress、useful exploration、no-progress infrastructure 和 regression，不再把整条成功/失败轨迹平均强化。它最有价值的地方是直接处理 long-horizon agent 中“失败轨迹里的有效探索”和“成功轨迹里的回归动作”这两个 credit assignment 盲点。"
+        "card_summary": "TRIAGE 把 agentic RL 的最终成败奖励拆成 segment role credit：区分 decisive progress、useful exploration、no-progress infrastructure 和 regression，不再把整条成功/失败轨迹平均强化。它最有价值的地方是直接处理 long-horizon agent 中“失败轨迹里的有效探索”和“成功轨迹里的回归动作”这两个 credit assignment 盲点。",
+        "report_date": "2026-07-02"
       },
       "analysis": {
         "motivation": "论文针对多步 agent 训练里的一个真实问题：最终 reward 只告诉你任务有没有完成，但不会告诉你中间哪些搜索、检查、点击、编辑是真正有帮助的，哪些只是冗余甚至回退。对 long-horizon agent 来说，这会让 RL 一边压制失败轨迹中的有用探索，一边错误奖励成功轨迹中的重复或回归动作。",
@@ -189,7 +190,8 @@
         "model": "codex-manual-read",
         "updated_at": "2026-07-02T01:39:52.111Z"
       },
-      "full_summary": "论文关注 agentic RL 的 credit assignment 问题：在多步工具使用或环境交互中，最终 verifier reward 往往会把整条成功轨迹一起强化、把整条失败轨迹一起压低，从而错误对待中间的探索和回归动作。TRIAGE 的做法是先把每段 environment-facing action 标成 decisive progress、useful exploration、no-progress infrastructure 或 regression，再将 role-conditioned process reward 叠加到 GRPO 的 outcome advantage 上。作者还给出一个理论解释：如果 role judge 足够可靠，这种 role-conditioned correction 可以降低 advantage estimation error。实验覆盖 ALFWorld、Search-QA 和 WebShop 两个 policy backbone，结果显示成功率优于 GRPO、scalar process reward 和 outcome-supervised value baseline，并在 ALFWorld/WebShop 完成轨迹上额外减少 10.4% 和 14.8% 的环境交互回合。对做 agentic RL、tool-use planning 或 long-horizon training signal 设计的人，这篇很值得读。"
+      "full_summary": "论文关注 agentic RL 的 credit assignment 问题：在多步工具使用或环境交互中，最终 verifier reward 往往会把整条成功轨迹一起强化、把整条失败轨迹一起压低，从而错误对待中间的探索和回归动作。TRIAGE 的做法是先把每段 environment-facing action 标成 decisive progress、useful exploration、no-progress infrastructure 或 regression，再将 role-conditioned process reward 叠加到 GRPO 的 outcome advantage 上。作者还给出一个理论解释：如果 role judge 足够可靠，这种 role-conditioned correction 可以降低 advantage estimation error。实验覆盖 ALFWorld、Search-QA 和 WebShop 两个 policy backbone，结果显示成功率优于 GRPO、scalar process reward 和 outcome-supervised value baseline，并在 ALFWorld/WebShop 完成轨迹上额外减少 10.4% 和 14.8% 的环境交互回合。对做 agentic RL、tool-use planning 或 long-horizon training signal 设计的人，这篇很值得读。",
+      "report_date": "2026-07-02"
     },
     {
       "id": "2606.31422v1",
@@ -270,7 +272,8 @@
         "insight": "Insight：这篇论文提醒我们，long-horizon planning 的问题不只是“想得够不够远”，还包括“当前脑中的世界是不是已经错了”。对 agent planning 和 stateful systems 来说，环境核对动作本身应该是 budgeted decision，而不是默认免费；同时 world-model calibration 需要区分 procedural 与 spatial belief，不同类型的 stale belief 不该共用一套 probing heuristic。",
         "abstract_zh": "长程语言 agent 不只是选择动作，还会在多步决策中携带一个私有 world model；一旦这个模型漂移，后续失败可能在真正错误动作出现前就已决定。论文研究一种直接修复机制：在执行下一步任务动作前，agent 可以花一次环境交互去核对某个 belief field，并把结果写回 world model。作者提出 EnvProbe，将环境 probing 视为稀缺的 calibration budget，并用 type-stratified 分析说明 procedural belief 与 spatial belief 的最佳 probing 策略不同。实验表明，如果 probe policy 遵循任务结构，中途引入环境证据可以降低 terminal world-model error，并在部分任务上改善 task success。",
         "full_summary": "论文研究 long-horizon language agent 在执行中携带的 private world model 何时会漂移，以及是否应该在行动前先向环境核对某个 belief field。作者提出 EnvProbe，把环境交互视作稀缺的 calibration resource：probe 可以修复 stale belief，但也会占用本可用于推进任务的步骤。方法上，它对 belief fields 打分，综合 task criticality、reported staleness、verbalized uncertainty 和 dependency role，并在预算允许时 probe 最高价值字段。理论部分把 belief-side gain 和 task-side displacement 分开建模，实验则区分 procedural belief 和 spatial belief，发现结构化信号在两类任务上都稳定，而 agent 自报 uncertainty 对 procedural fields 甚至可能是反信号。对关注 planning reliability、world-model calibration 和 memory-augmented planning 的人，这篇提供了一个很清晰的问题框架。",
-        "card_summary": "这篇论文把 long-horizon agent 的环境交互重新定义成“世界模型校准预算”：在执行下一步之前，agent 可以花一步去核对某个 belief field，而不是盲目按过时 world model 行动。它最值得读的点在于把 probing gain 和 task-action displacement 分开分析，直接对应 planning reliability 和 world-model calibration。"
+        "card_summary": "这篇论文把 long-horizon agent 的环境交互重新定义成“世界模型校准预算”：在执行下一步之前，agent 可以花一步去核对某个 belief field，而不是盲目按过时 world model 行动。它最值得读的点在于把 probing gain 和 task-action displacement 分开分析，直接对应 planning reliability 和 world-model calibration。",
+        "report_date": "2026-07-02"
       },
       "analysis": {
         "motivation": "论文抓住了长程语言 agent 的一个前置失效模式：agent 不是每一步都重新认识世界，而是带着一个隐式或显式的 world model 往前走；一旦 belief drift，后面再正确推理也可能建在错误前提上。作者关心的不是 generic information seeking，而是何时值得花一步向环境核对某个 belief field，从而在行动前校准 world model。",
@@ -297,7 +300,8 @@
         "model": "codex-manual-read",
         "updated_at": "2026-07-02T01:39:52.111Z"
       },
-      "full_summary": "论文研究 long-horizon language agent 在执行中携带的 private world model 何时会漂移，以及是否应该在行动前先向环境核对某个 belief field。作者提出 EnvProbe，把环境交互视作稀缺的 calibration resource：probe 可以修复 stale belief，但也会占用本可用于推进任务的步骤。方法上，它对 belief fields 打分，综合 task criticality、reported staleness、verbalized uncertainty 和 dependency role，并在预算允许时 probe 最高价值字段。理论部分把 belief-side gain 和 task-side displacement 分开建模，实验则区分 procedural belief 和 spatial belief，发现结构化信号在两类任务上都稳定，而 agent 自报 uncertainty 对 procedural fields 甚至可能是反信号。对关注 planning reliability、world-model calibration 和 memory-augmented planning 的人，这篇提供了一个很清晰的问题框架。"
+      "full_summary": "论文研究 long-horizon language agent 在执行中携带的 private world model 何时会漂移，以及是否应该在行动前先向环境核对某个 belief field。作者提出 EnvProbe，把环境交互视作稀缺的 calibration resource：probe 可以修复 stale belief，但也会占用本可用于推进任务的步骤。方法上，它对 belief fields 打分，综合 task criticality、reported staleness、verbalized uncertainty 和 dependency role，并在预算允许时 probe 最高价值字段。理论部分把 belief-side gain 和 task-side displacement 分开建模，实验则区分 procedural belief 和 spatial belief，发现结构化信号在两类任务上都稳定，而 agent 自报 uncertainty 对 procedural fields 甚至可能是反信号。对关注 planning reliability、world-model calibration 和 memory-augmented planning 的人，这篇提供了一个很清晰的问题框架。",
+      "report_date": "2026-07-02"
     },
     {
       "id": "2606.31650v1",
