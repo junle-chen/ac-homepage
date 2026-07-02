@@ -2712,6 +2712,33 @@ function bindGlassTopbar() {
 					.then((buffer) => bufferToHex(buffer) === OWNER_KEY_HASH);
 			}
 
+			function isRemoteMemoSourceConfigured() {
+				const realtimeConfig = window.JUNLE_REALTIME_CONFIG || {};
+				return Boolean(
+					window.JunleRealtime &&
+					realtimeConfig.supabaseUrl &&
+					realtimeConfig.supabaseAnonKey &&
+					window.supabase &&
+					window.supabase.createClient
+				);
+			}
+
+			function canSyncMemos() {
+				return Boolean(
+					window.JunleRealtime &&
+					window.JunleRealtime.canWrite &&
+					window.JunleRealtime.canWrite()
+				);
+			}
+
+			function canUseLocalMemoStorage() {
+				return !isRemoteMemoSourceConfigured();
+			}
+
+			function getRealtimeErrorMessage(error) {
+				return error && error.message ? error.message : "Realtime sync failed";
+			}
+
 		function formatDate(date) {
 			const pad = (value) => String(value).padStart(2, "0");
 			return [
@@ -2795,27 +2822,46 @@ function bindGlassTopbar() {
 			return article;
 		}
 
+			function canDeleteMemo(memo) {
+				return Boolean(
+					ownerMode &&
+					((memo.remoteId && canSyncMemos()) || (canUseLocalMemoStorage() && !memo.remoteId))
+				);
+			}
+
 			function renderMemos() {
 				const localOwnerMode = window.localStorage.getItem(OWNER_STORAGE_KEY) === "true";
 				const realtimeOwnerMode = isRealtimeOwnerEnabled();
-				ownerMode = localOwnerMode || realtimeOwnerMode;
+				const localFallbackMode = localOwnerMode && canUseLocalMemoStorage();
+				ownerMode = localFallbackMode || realtimeOwnerMode;
+				let memoStatus = "Locked";
+				if (realtimeOwnerMode) {
+					memoStatus = "GitHub owner";
+				} else if (localFallbackMode) {
+					memoStatus = "Owner unlocked";
+				} else if (isRemoteMemoSourceConfigured()) {
+					memoStatus = "GitHub owner required";
+				}
 				timeline.innerHTML = "";
 				getVisibleMemos().forEach((memo) => {
 					timeline.appendChild(createMemoEntry(memo));
 				});
 				form.hidden = !ownerMode;
-				status.textContent = ownerMode
-					? realtimeOwnerMode
-						? "GitHub owner"
-						: "Owner unlocked"
-					: "Locked";
-				ownerButton.hidden = realtimeOwnerMode;
+				status.textContent = memoStatus;
+				ownerButton.hidden = realtimeOwnerMode || isRemoteMemoSourceConfigured();
 				ownerButton.textContent = localOwnerMode ? "Lock" : "Owner";
-				ownerInput.hidden = ownerMode;
+				ownerInput.hidden = ownerMode || isRemoteMemoSourceConfigured();
 			Array.prototype.slice
 				.call(document.querySelectorAll("[data-memo-delete]"))
 				.forEach((button) => {
-					button.hidden = !ownerMode;
+					const entry = button.closest("[data-memo-card]");
+					const memo = entry
+						? {
+							id: entry.dataset.id || "",
+							remoteId: entry.dataset.remoteId || "",
+						}
+						: {};
+					button.hidden = !canDeleteMemo(memo);
 				});
 			if (datePreview) {
 				datePreview.textContent = formatDate(new Date());
@@ -2870,10 +2916,10 @@ function bindGlassTopbar() {
 					id: "local-" + now.getTime(),
 					title: titleInput.value.trim() || "Memo " + date.slice(0, 10),
 					content,
-					category: window.JunleRealtime && window.JunleRealtime.canWrite && window.JunleRealtime.canWrite() ? "live" : "local",
+					category: canSyncMemos() ? "live" : "local",
 					date,
 					priority: "normal",
-					source: window.JunleRealtime && window.JunleRealtime.canWrite && window.JunleRealtime.canWrite() ? "live" : "local",
+					source: canSyncMemos() ? "live" : "local",
 				};
 
 				function saveLocalMemo() {
@@ -2892,13 +2938,7 @@ function bindGlassTopbar() {
 					renderMemos();
 				}
 
-				if (
-					window.JunleRealtime &&
-					window.JunleRealtime.isEnabled &&
-					window.JunleRealtime.isEnabled() &&
-					window.JunleRealtime.canWrite &&
-					window.JunleRealtime.canWrite()
-				) {
+				if (canSyncMemos()) {
 					status.textContent = "Syncing memo";
 					window.JunleRealtime.addMemo(memo)
 						.then(() => {
@@ -2906,10 +2946,13 @@ function bindGlassTopbar() {
 							status.textContent = "Memo synced";
 							renderMemos();
 						})
-						.catch(() => {
-							status.textContent = "Saved locally";
-							saveLocalMemo();
+						.catch((error) => {
+							status.textContent = "Sync failed: " + getRealtimeErrorMessage(error);
 						});
+					return;
+				}
+				if (!canUseLocalMemoStorage()) {
+					status.textContent = "GitHub owner required";
 					return;
 				}
 				saveLocalMemo();
@@ -2928,9 +2971,7 @@ function bindGlassTopbar() {
 				}
 				if (
 					remoteId &&
-					window.JunleRealtime &&
-					window.JunleRealtime.canWrite &&
-					window.JunleRealtime.canWrite()
+					canSyncMemos()
 				) {
 					status.textContent = "Deleting memo";
 					window.JunleRealtime.deleteMemo(remoteId)
@@ -2940,7 +2981,11 @@ function bindGlassTopbar() {
 						})
 						.catch(() => {
 							status.textContent = "Delete failed";
-						});
+					});
+					return;
+				}
+				if (!canUseLocalMemoStorage()) {
+					status.textContent = remoteId ? "GitHub owner required" : "Static memo requires content deploy";
 					return;
 				}
 				const state = readState();
