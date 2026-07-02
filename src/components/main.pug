@@ -40,7 +40,18 @@
 		{ date: "Jul 2023", title: "AI Cloud-Based Scientific Research with Data-Driven Knowledge", org: "LAMDA, Nanjing University", detail: "Project experience." },
 		{ date: "Sept 2025 -", title: "PhD in Computer Science and Engineering (CSE)", org: "The Hong Kong University of Science and Technology", detail: "Under the guidance of Professor Xiaofang Zhou." }
 	]
-	const researchInterests = ["Large Language Models", "Long-horizon Agents", "Spatial-temporal Data"]
+	const researchInterests = [
+		{
+			stage: "Before execution",
+			title: "User Interaction",
+			description: "Deciding when and how LLM agents should clarify user intent, while avoiding unwarranted assumptions and preserving context across turns."
+		},
+		{
+			stage: "In execution",
+			title: "Environment Interaction",
+			description: "Enabling LLM agents to interact with external tools and environments during long-horizon task execution."
+		}
+	]
 	const publications = [
 		{ title: "Trip+: Benchmarking Agents in Personalized Interactive Travel Planning", authors: "Junle Chen, Wei Chen, Yehong Xu, Zhengjun Huang, Yuqian Wu, Zhoujin Tian, Kai Wang, Lei Wang, Xiaofang Zhou", venue: "arXiv preprint arXiv:2606.21169, 2026", href: "https://arxiv.org/abs/2606.21169" },
 		{ title: "M^3Exam: Benchmarking Multimodal Memory for Realistic User-Agent Interactions", authors: "Zhengjun Huang, Wenxuan Liu, Zhoujin Tian, Wei Chen, Junle Chen, Yuqian Wu, Fangyuan Zhang, Qintian Guo, Xiaofang Zhou", venue: "arXiv preprint arXiv:2606.07402, 2026", href: "https://arxiv.org/abs/2606.07402" },
@@ -143,7 +154,7 @@
 													span #{action.label}
 					article.info-card.info-about-card
 						h3 About Me
-						p.info-lead I am a first-year PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology, advised by Professor Xiaofang Zhou. My current research focuses on large language models, long-horizon agents, and spatial-temporal data.
+						p.info-lead I am a first-year PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology, advised by Professor Xiaofang Zhou. My research focuses on improving the multi-turn interaction capabilities of LLM agents, including user interaction before execution and environment interaction during long-horizon execution.
 					article.info-card
 						h3 Education
 						.info-list
@@ -157,9 +168,13 @@
 					.info-two-column
 						article.info-card
 							h3 Research Interest
-							ul.about-chip-list
+							p.research-interest-intro My research focuses on improving the multi-turn interaction capabilities of LLM agents, including:
+							ul.research-interest-list
 								each interest in researchInterests
-									li #{interest}
+									li
+										span #{interest.stage}
+										h4 #{interest.title}
+										p #{interest.description}
 						article.info-card
 							h3 Awards
 							ul.info-bullet-list
