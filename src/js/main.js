@@ -4355,7 +4355,7 @@ function bindGlassTopbar() {
 				const meta = document.createElement("div");
 				meta.className = "academic-paper-meta";
 				const authors = Array.isArray(paper.authors) ? paper.authors.slice(0, 2).join(", ") : "";
-				[paper.published, paper.primary_category, authors].filter(Boolean).forEach((value) => {
+				[getPaperDate(paper), paper.primary_category, authors].filter(Boolean).forEach((value) => {
 					const span = document.createElement("span");
 					span.textContent = value;
 					meta.appendChild(span);
