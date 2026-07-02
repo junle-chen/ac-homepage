@@ -22,8 +22,6 @@ share-img: /assets/img/path.jpg
 cover-img: /assets/img/path.jpg
 ---
 
-# zsh 进入 `/export` 卡顿排查报告
-
 ## 1. 问题概述
 
 在服务器上使用普通 zsh 进入 `/export/zxcpu2/junle` 时，shell 会出现明显卡顿：
