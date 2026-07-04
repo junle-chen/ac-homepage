@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-02T01:39:52.111Z",
+  "updated_at": "2026-07-04T01:53:23.431Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation from selected full-text readings; only strongly relevant long-horizon, multi-turn, agentic RL, and agent planning papers are retained.",
+  "analysis_method": "Manual Codex curation after CODEX_PAPER_SKIP_ANALYZED=1 npm run papers:daily:codex; only strongly relevant long-horizon, multi-turn, agentic RL, and agent planning papers are retained.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -34,42 +34,1044 @@
       "总结",
       "亮点"
     ],
-    "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after selective Codex full-text reading."
+    "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after Codex full-text reading."
   },
   "digest": {
-    "title": "2026-07-02 Daily Paper",
-    "report_date": "2026-07-02",
+    "title": "2026-07-04 Daily Paper",
+    "report_date": "2026-07-04",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日自动抓取在 fetch 阶段遇到 arXiv 503，改为人工复核 2026-07-01 arXiv cs/new。最终保留 2 篇与 role-typed agentic RL credit assignment 以及 long-horizon world-model calibration 强相关的新论文。",
+    "summary": "今日自动化完成 16 篇候选的 Codex 全文读取，人工复核后保留 8 篇强相关论文：显式任务图规划、长程 world-model 修复、工作流技能演化、长期记忆状态协调、记忆诱发迎合、多轮文献检索 workflow induction、agentic RL 系统架构和 coding-agent RL rollout 基础设施。",
     "top_recommendations": [
-      "2606.32017v1",
-      "2606.31422v1"
+      "2607.01942v1",
+      "2607.01071v2",
+      "2607.00597v1"
     ],
-    "low_priority": [],
+    "low_priority": [
+      "2607.01767v1",
+      "2607.01120v2",
+      "2607.01415v1"
+    ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-07-02 Daily Paper\n\n今日自动抓取在 fetch 阶段遇到 arXiv 503，改为人工复核 2026-07-01 arXiv cs/new。最终保留 2 篇与 role-typed agentic RL credit assignment 以及 long-horizon world-model calibration 强相关的新论文。\n\n最值得读的 2 篇\n1. TRIAGE: Role-Typed Credit Assignment for Agentic Reinforcement Learning\n- 为什么读：它把成功/失败轨迹中的 exploration、infrastructure 和 regression 分开记 credit，直接解决 agentic RL 的长期 credit 误配问题。\n2. Ask the World Before Acting: Budgeted Environment Probing for World-Model Calibration\n- 为什么读：它把环境核对动作视作有限预算，专门研究什么时候应该先校准 world model 再行动。\n\n说明：本次为 arXiv 503 的人工回退发布，重点保留了最强相关的两篇。"
+    "email_body": "2026-07-04 Daily Paper\n\n今日自动化完成 16 篇候选的 Codex 全文读取，人工复核后保留 8 篇强相关论文。重点包括显式任务图规划、长程 world-model 修复、工作流技能演化、长期记忆状态协调、记忆诱发迎合、多轮文献检索 workflow induction、agentic RL 系统架构和 coding-agent RL rollout 基础设施。\n\n最值得读的 3 篇\n1. Atomic Task Graph: A Unified Framework for Agentic Planning and Execution\n- 为什么读：把长程 agent 的计划表示成可执行、可验证、可局部修复的依赖图，直接命中 planning reliability。\n2. MemSyco-Bench: Benchmarking Sycophancy in Agent Memory\n- 为什么读：把长期记忆从“能否检索”推进到“检索后是否该相信/使用”，很贴近真实多轮 agent 风险。\n3. Multi-Turn Agentic Scientific Literature Search via Workflow Induction\n- 为什么读：把用户反馈映射为可编辑 DAG 检索 workflow，是多轮科研 agent 的清晰 planning 范式。"
   },
   "latest_item_ids": [
-    "2606.32017v1",
-    "2606.31422v1"
+    "2607.01942v1",
+    "2607.01767v1",
+    "2607.01709v1",
+    "2607.01935v1",
+    "2607.01071v2",
+    "2607.00597v1",
+    "2607.01120v2",
+    "2607.01415v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "total_items": 41,
-    "latest_items": 2,
+    "total_items": 49,
+    "latest_items": 8,
     "source_report_dates": {
-      "2026-06-25": 6,
-      "2026-06-20": 5,
-      "2026-06-19": 16,
-      "2026-06-18": 16,
-      "2026-06-26": 3,
-      "2026-06-30": 3,
-      "2026-07-01": 4,
-      "2026-07-02": 2
+      "2026-06-13": 1,
+      "2026-06-14": 5,
+      "2026-06-15": 9,
+      "2026-06-16": 2,
+      "2026-06-17": 5,
+      "2026-06-18": 1,
+      "2026-06-23": 6,
+      "2026-06-24": 2,
+      "2026-06-25": 2,
+      "2026-06-26": 2,
+      "2026-06-29": 2,
+      "2026-06-30": 2,
+      "2026-07-02": 2,
+      "2026-07-04": 8
     },
-    "filtered_candidate_ids": []
+    "filtered_candidate_ids": [
+      "2607.01972v1",
+      "2607.01916v1",
+      "2607.01166v1",
+      "2607.01153v1",
+      "2607.00673v1",
+      "2607.01367v1",
+      "2607.01063v1",
+      "2607.01525v1"
+    ]
   },
   "items": [
+    {
+      "id": "2607.01942v1",
+      "title": "Atomic Task Graph: A Unified Framework for Agentic Planning and Execution",
+      "summary": "这篇论文提出 Atomic Task Graph，把 agent 的长程规划和执行组织成显式依赖图，而不是线性文本轨迹。它的关键价值在于支持并行执行、错误定位和局部子图修复，对提升 long-horizon agent 的可靠性很相关。",
+      "url": "http://arxiv.org/abs/2607.01942v1",
+      "authors": [
+        "Yue Zhang",
+        "Sihan Chen",
+        "Ziwen Huang",
+        "Hanyun Cui",
+        "Kangye Ji",
+        "Zhi Wang"
+      ],
+      "report_date": "2026-07-04",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强相关，值得精读但需带着实验审稿视角看",
+        "water_risk": "中",
+        "value_judgement": "强相关，值得精读但需带着实验审稿视角看",
+        "reason": "论文主题与 agent planning、long-horizon execution、planning reliability 高度贴合，方法把任务图用于执行调度和局部修复，而不只是规划时搜索，Insight 比较直接。偏水风险不是因为想法无关，而是实验报告存在需要警惕的地方：提升幅度非常大，baseline 表现有些偏低；缺少更细的 prompt、预算、并行计步、公平成本、统计方差和真实环境验证细节；当前实验集中在文本交互 benchmark，未证明在开放 Web、软件工程或多模态真实工具链中同样稳定。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yue Zhang",
+          "Sihan Chen",
+          "Ziwen Huang",
+          "Hanyun Cui",
+          "Kangye Ji",
+          "Zhi Wang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.01942v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文主题与 agent planning、long-horizon execution、planning reliability 高度贴合，方法把任务图用于执行调度和局部修复，而不只是规划时搜索，Insight 比较直接。偏水风险不是因为想法无关，而是实验报告存在需要警惕的地方：提升幅度非常大，baseline 表现有些偏低；缺少更细的 prompt、预算、并行计步、公平成本、统计方差和真实环境验证细节；当前实验集中在文本交互 benchmark，未证明在开放 Web、软件工程或多模态真实工具链中同样稳定。",
+        "summary": "这篇论文提出 Atomic Task Graph，把 agent 的长程规划和执行组织成显式依赖图，而不是线性文本轨迹。它的关键价值在于支持并行执行、错误定位和局部子图修复，对提升 long-horizon agent 的可靠性很相关。",
+        "highlights": [
+          "论文主题与 agent planning、long-horizon execution、planning reliability 高度贴合，方法把任务图用于执行调度和局部修复，而不只是规划时搜索，Insight 比较直接。偏水风险不是因为想法无关，而是实验报告存在需要警惕的地方：提升幅度非常大，baseline 表现有些偏低；缺少更细的 prompt、预算、并行计步、公平成本、统计方差和真实环境验证细节；当前实验集中在文本交互 benchmark，未证明在开放 Web、软件工程或多模态真实工具链中同样稳定。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对长程、多步 LLM agent 的一个核心痛点：现有 ReAct/Reflexion 等线性轨迹方法把子任务依赖、状态和错误传播都埋在不断增长的文本上下文里，导致中间结果难以复用、错误难以定位、后期动作容易幻觉。作者认为仅靠更大模型或任务微调成本高且泛化有限，因此提出训练无关的控制框架，用显式任务图来统一规划、执行和修复。",
+        "method": "Atomic Task Graph 将任务求解表示为有向无环图，节点是原子工具调用，边表示输入输出依赖。规划阶段通过 interface-preserving recursive graph compilation，把粗粒度任务递归编译成保持外部接口一致的细粒度子图，并记录图演化历史；执行阶段按依赖拓扑调度，可并行运行独立分支，并做轻量 thought experiment 检查工具选择、依赖、接口和可执行性；失败时通过图演化历史定位失败节点的共同祖先，只修复最小受影响子图，冻结已验证区域。",
+        "experiments": "实验覆盖 ALFWorld、WebShop、ScienceWorld 三个长程交互 benchmark，使用 Mistral-7B、Gemma-7B、Llama-3-8B，对比 ReAct、Reflexion、CAMEL、ToT、PoG，以及 GPT-3.5/GPT-4 ReAct。主结果显示 ATG 在三个任务和三个开源 backbone 上均明显优于 baseline，Llama-3-8B + ATG 在 ALFWorld 和 WebShop 上超过 GPT-4 ReAct。消融表明 thought experiment 和局部子图修复都带来稳定增益，分析还显示 ATG 降低平均执行步数和 ALFWorld 中的幻觉动作率。",
+        "research_help": "Insight：这篇论文的可迁移启发在于，agent planning 的可靠性不应只依赖更强的下一步推理，而应把计划结构变成可执行、可验证、可修复的状态载体。显式依赖图可以把 long-horizon task 的错误恢复从全局 replanning 转为局部 patch，这对多轮 agent、工具链 agent、agent memory 和 agentic RL 都有参考价值：历史不只是文本上下文，而可以是带接口、依赖和验证状态的结构化中间表示。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移启发在于，agent planning 的可靠性不应只依赖更强的下一步推理，而应把计划结构变成可执行、可验证、可修复的状态载体。显式依赖图可以把 long-horizon task 的错误恢复从全局 replanning 转为局部 patch，这对多轮 agent、工具链 agent、agent memory 和 agentic RL 都有参考价值：历史不只是文本上下文，而可以是带接口、依赖和验证状态的结构化中间表示。",
+        "abstract_zh": "基于 LLM 的智能体在复杂多步任务上表现出潜力，但常见提升方式要么依赖扩大模型规模，要么依赖任务特定微调，分别带来高成本和泛化不足的问题。论文提出 Atomic Task Graph，一个统一规划与执行的控制框架，用显式图结构暴露子任务之间的输入输出依赖，并支持复用已验证中间结果。在规划时，ATG 递归地把高层任务分解为 DAG 序列；在执行时，它利用依赖关系并行执行独立分支，并在失败时只修复受影响区域。实验显示，在三个交互式 benchmark 上，ATG 使用 7B 到 8B backbone 就能稳定提升成功率和执行效率。",
+        "full_summary": "论文提出 ATG，把 LLM agent 的任务求解建模为由原子工具调用和输入输出依赖构成的 DAG，用来统一规划、执行和错误恢复。它的重要性在于把计划从“写在上下文里的步骤列表”变成“可执行的依赖结构”，从而减少长程任务中的上下文膨胀、错误传播和动作幻觉。方法核心包括递归图编译、接口保持、依赖感知执行、预执行 thought experiment，以及最小必要子图修复。实验在 ALFWorld、WebShop、ScienceWorld 上显示 ATG 相比 ReAct、Reflexion、ToT、PoG 等基线有大幅提升，并减少平均执行步数和幻觉动作。阅读价值较高，尤其适合关注 agent planning reliability、multi-turn tool use 和局部错误恢复机制的人。",
+        "card_summary": "这篇论文提出 Atomic Task Graph，把 agent 的长程规划和执行组织成显式依赖图，而不是线性文本轨迹。它的关键价值在于支持并行执行、错误定位和局部子图修复，对提升 long-horizon agent 的可靠性很相关。"
+      },
+      "analysis": {
+        "motivation": "论文针对长程、多步 LLM agent 的一个核心痛点：现有 ReAct/Reflexion 等线性轨迹方法把子任务依赖、状态和错误传播都埋在不断增长的文本上下文里，导致中间结果难以复用、错误难以定位、后期动作容易幻觉。作者认为仅靠更大模型或任务微调成本高且泛化有限，因此提出训练无关的控制框架，用显式任务图来统一规划、执行和修复。",
+        "method": "Atomic Task Graph 将任务求解表示为有向无环图，节点是原子工具调用，边表示输入输出依赖。规划阶段通过 interface-preserving recursive graph compilation，把粗粒度任务递归编译成保持外部接口一致的细粒度子图，并记录图演化历史；执行阶段按依赖拓扑调度，可并行运行独立分支，并做轻量 thought experiment 检查工具选择、依赖、接口和可执行性；失败时通过图演化历史定位失败节点的共同祖先，只修复最小受影响子图，冻结已验证区域。",
+        "experiments": "实验覆盖 ALFWorld、WebShop、ScienceWorld 三个长程交互 benchmark，使用 Mistral-7B、Gemma-7B、Llama-3-8B，对比 ReAct、Reflexion、CAMEL、ToT、PoG，以及 GPT-3.5/GPT-4 ReAct。主结果显示 ATG 在三个任务和三个开源 backbone 上均明显优于 baseline，Llama-3-8B + ATG 在 ALFWorld 和 WebShop 上超过 GPT-4 ReAct。消融表明 thought experiment 和局部子图修复都带来稳定增益，分析还显示 ATG 降低平均执行步数和 ALFWorld 中的幻觉动作率。",
+        "research_help": "Insight：这篇论文的可迁移启发在于，agent planning 的可靠性不应只依赖更强的下一步推理，而应把计划结构变成可执行、可验证、可修复的状态载体。显式依赖图可以把 long-horizon task 的错误恢复从全局 replanning 转为局部 patch，这对多轮 agent、工具链 agent、agent memory 和 agentic RL 都有参考价值：历史不只是文本上下文，而可以是带接口、依赖和验证状态的结构化中间表示。",
+        "insight": "Insight：这篇论文的可迁移启发在于，agent planning 的可靠性不应只依赖更强的下一步推理，而应把计划结构变成可执行、可验证、可修复的状态载体。显式依赖图可以把 long-horizon task 的错误恢复从全局 replanning 转为局部 patch，这对多轮 agent、工具链 agent、agent memory 和 agentic RL 都有参考价值：历史不只是文本上下文，而可以是带接口、依赖和验证状态的结构化中间表示。",
+        "abstract_zh": "基于 LLM 的智能体在复杂多步任务上表现出潜力，但常见提升方式要么依赖扩大模型规模，要么依赖任务特定微调，分别带来高成本和泛化不足的问题。论文提出 Atomic Task Graph，一个统一规划与执行的控制框架，用显式图结构暴露子任务之间的输入输出依赖，并支持复用已验证中间结果。在规划时，ATG 递归地把高层任务分解为 DAG 序列；在执行时，它利用依赖关系并行执行独立分支，并在失败时只修复受影响区域。实验显示，在三个交互式 benchmark 上，ATG 使用 7B 到 8B backbone 就能稳定提升成功率和执行效率。",
+        "card_summary": "这篇论文提出 Atomic Task Graph，把 agent 的长程规划和执行组织成显式依赖图，而不是线性文本轨迹。它的关键价值在于支持并行执行、错误定位和局部子图修复，对提升 long-horizon agent 的可靠性很相关。",
+        "full_summary": "论文提出 ATG，把 LLM agent 的任务求解建模为由原子工具调用和输入输出依赖构成的 DAG，用来统一规划、执行和错误恢复。它的重要性在于把计划从“写在上下文里的步骤列表”变成“可执行的依赖结构”，从而减少长程任务中的上下文膨胀、错误传播和动作幻觉。方法核心包括递归图编译、接口保持、依赖感知执行、预执行 thought experiment，以及最小必要子图修复。实验在 ALFWorld、WebShop、ScienceWorld 上显示 ATG 相比 ReAct、Reflexion、ToT、PoG 等基线有大幅提升，并减少平均执行步数和幻觉动作。阅读价值较高，尤其适合关注 agent planning reliability、multi-turn tool use 和局部错误恢复机制的人。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关，值得精读但需带着实验审稿视角看",
+        "value_reason": "论文主题与 agent planning、long-horizon execution、planning reliability 高度贴合，方法把任务图用于执行调度和局部修复，而不只是规划时搜索，Insight 比较直接。偏水风险不是因为想法无关，而是实验报告存在需要警惕的地方：提升幅度非常大，baseline 表现有些偏低；缺少更细的 prompt、预算、并行计步、公平成本、统计方差和真实环境验证细节；当前实验集中在文本交互 benchmark，未证明在开放 Web、软件工程或多模态真实工具链中同样稳定。",
+        "limitations": "论文自己承认 ATG 依赖 backbone LLM 的分解能力，在噪声观察或长距离依赖下失败定位会更困难，实验主要限于文本 benchmark，真实世界和多模态场景仍需验证，且简单任务上会引入额外图编译与检查开销。额外来看，论文还需要更透明地说明并行执行的成本统计、baseline 调参、公平 token/action budget、失败案例和复现实装细节。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: ATG maintains an explicit graph to expose dependencies and support reuse, and repairs only the affected region when failures are detected.",
+          "Section 4.1: recursive graph compilation refines non-atomic nodes until every node becomes an atomic tool-use unit while preserving parent input-output interfaces.",
+          "Section 4.2: dependency-aware execution follows graph topological order, allows independent branches to execute in parallel, and records node input, output, status, and errors.",
+          "Section 4.3: minimal necessary subgraph repair freezes validated regions and repairs only the failed node's affected subgraph through graph evolution history。Section 5: experime..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-04T01:39:36.156Z"
+      }
+    },
+    {
+      "id": "2607.01767v1",
+      "title": "Repair the Amplifier, Not the Symptom: Stable World-Model Correction for Agent Rollouts",
+      "summary": "这篇论文把长程 agent 的失败修复建模为规划图中的局部 world-model correction，主张修“错误放大器”而不是修表面症状。WM-SAR 用谱半径和 node-edge coupling 选择紧凑 causal subgraph，再交给 LLM 修复；想法很契合 agent planning reliability，但实验主要是合成图和 benchmark 风格拓扑模拟，实证可信度需要打折。",
+      "url": "http://arxiv.org/abs/2607.01767v1",
+      "authors": [
+        "Xinyuan Song",
+        "Zekun Cai"
+      ],
+      "report_date": "2026-07-04",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "中",
+        "label": "高相关但实证偏弱的概念型论文",
+        "water_risk": "高",
+        "value_judgement": "高相关但实证偏弱的概念型论文",
+        "reason": "值得读的部分是问题设定和修复目标：它把 long-horizon agent failure 从单点错误转成图中残余放大通道的问题，这对 agent memory、multi-turn repair 和 planning reliability 都有启发。但它的核心实验不是来自真实 WebArena/SWE-bench/AgentBench 轨迹，而是合成测试床和 benchmark-inspired topology simulation；方法还依赖 per-node error 这类真实系统里未必容易获得的信号。因此更适合作为研究灵感或 baseline 设计参考，不宜把实验结论当作强证据。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xinyuan Song",
+          "Zekun Cai"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.01767v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "值得读的部分是问题设定和修复目标：它把 long-horizon agent failure 从单点错误转成图中残余放大通道的问题，这对 agent memory、multi-turn repair 和 planning reliability 都有启发。但它的核心实验不是来自真实 WebArena/SWE-bench/AgentBench 轨迹，而是合成测试床和 benchmark-inspired topology simulation；方法还依赖 per-node error 这类真实系统里未必容易获得的信号。因此更适合作为研究灵感或 baseline 设计参考，不宜把实验结论当作强证据。",
+        "summary": "这篇论文把长程 agent 的失败修复建模为规划图中的局部 world-model correction，主张修“错误放大器”而不是修表面症状。WM-SAR 用谱半径和 node-edge coupling 选择紧凑 causal subgraph，再交给 LLM 修复；想法很契合 agent planning reliability，但实验主要是合成图和 benchmark 风格拓扑模拟，实证可信度需要打折。",
+        "highlights": [
+          "值得读的部分是问题设定和修复目标：它把 long-horizon agent failure 从单点错误转成图中残余放大通道的问题，这对 agent memory、multi-turn repair 和 planning reliability 都有启发。但它的核心实验不是来自真实 WebArena/SWE-bench/AgentBench 轨迹，而是合成测试床和 benchmark-inspired topology simulation；方法还依赖 per-node error 这类真实系统里未必容易获得的信号。因此更适合作为研究灵感或 baseline 设计参考，不宜把实验结论当作强证据。",
+          "偏水风险：高",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文动机很贴近 long-horizon agent planning：当 agent 的工具调用、验证器、记忆写入和恢复分支形成上千节点的规划图时，失败往往不是单个预测错误，而是在图中被反复放大的结构性错误。作者认为每次失败后重放或重规划整张图成本太高，也会让 LLM 在长上下文中被大量症状节点干扰，因此需要一种只修复关键 causal subgraph 的 world-model corrector。",
+        "method": "论文提出 WM-SAR，把失败 rollout 表示为带节点类型、边类型、节点误差和修复成本的规划图。核心不是按最大可见误差选节点，而是估计残差 node-edge error operator 的谱半径，使用 GEAF、节点-边耦合因子和边界扩展时的 marginal spectral relief 来贪心选择一个连通修复子图，再把该子图交给 LLM 做 root-cause repair。方法的关键假设是：降低残余图的谱半径比覆盖高误差症状更能减少未来 rollout 的误差再增长。",
+        "experiments": "实验主要在作者构造的 AgentCalling-Tree 合成测试床上进行，并补充了 SWE-bench、WebArena、AgentBench-OS 风格的拓扑模拟，而不是这些真实 benchmark 的完整运行轨迹。结果显示 WM-SAR 在较小 region size 下接近大范围邻域修复的长期稳定效果，NodeMSE@32 和 growth slope 明显优于 TopK、窗口、cascade 等工程启发式方法；LLM root-cause 识别实验中，WM-SAR 用更短上下文取得更高 exact recovery。论文也承认在 Who&When attribution 这种缺少 per-node intermediate error 的黑盒场景中，WM-SAR 会退化，step-level attribution 明显不如 LocalRepair-2Hop。",
+        "research_help": "Insight：对 agent planning / agentic RL 的启发是，长程系统的可靠性评估不应只看当前失败节点或最终答案错误，而应显式建模错误在工具链、记忆、验证器和恢复分支中的传播与再放大。对于 multi-turn agent，可以把失败修复设计成“选择最能降低未来误差传播的最小连通上下文”，再交给 LLM 处理，而不是把完整轨迹塞进上下文窗口。对于 long-horizon reliability，谱半径或类似的传播增益指标可以作为 memory correction、tool-call retry、validator repair 的排序信号，但前提是系统能提供中间状态误差或可观测代理信号。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对 agent planning / agentic RL 的启发是，长程系统的可靠性评估不应只看当前失败节点或最终答案错误，而应显式建模错误在工具链、记忆、验证器和恢复分支中的传播与再放大。对于 multi-turn agent，可以把失败修复设计成“选择最能降低未来误差传播的最小连通上下文”，再交给 LLM 处理，而不是把完整轨迹塞进上下文窗口。对于 long-horizon reliability，谱半径或类似的传播增益指标可以作为 memory correction、tool-call retry、validator repair 的排序信号，但前提是系统能提供中间状态误差或可观测代理信号。",
+        "abstract_zh": "随着 agent planning 从短工具链走向持续数千步的工作流，错误会出现在大型规划图内部，而不是孤立预测中；每次出错后重放整张图既昂贵，也会让 LLM 接触大量无关症状并损害长上下文检索。论文研究一种 in-place world-model corrector，用于修复失败的规划图。作者比较了常见工程式 LLM corrector 与其提出的 WM-SAR：前者扫描节点和边、选择局部可疑区域再让 LLM 修复，后者则从错误放大的子图反向定位持续再放大错误的节点和边。实验称，WM-SAR 在现实 token budget 下显著优于工程式 corrector，用紧凑区域接近整图修复的稳定效果，并给 LLM 提供更干净的修复目标。",
+        "full_summary": "论文研究长程 agent rollout 失败后如何只修复关键规划子图，而不是重放或重规划整张图。它的重要性在于，多轮工具调用、记忆写入和验证器依赖会形成图结构，最终错误节点未必是真正会在下一轮继续放大错误的根因。方法上，WM-SAR 通过 GEAF、node-edge coupling 和 residual spectral relief 贪心选择能最大降低残余谱半径的连通子图，再把这个小上下文交给 LLM 做 root-cause repair。实验信号显示，在合成 calling-tree 和几类 benchmark-inspired 拓扑上，它比 TopK、窗口、cascade、局部邻域等工程 corrector 更能压低长 horizon 的误差增长，同时比 full-graph LLM repair 更省 token。阅读价值主要在概念框架和“修复传播放大器”的可靠性视角，但真实 agent trace、真实 benchmark 和真实 world-model error signal 的验证不足。",
+        "card_summary": "这篇论文把长程 agent 的失败修复建模为规划图中的局部 world-model correction，主张修“错误放大器”而不是修表面症状。WM-SAR 用谱半径和 node-edge coupling 选择紧凑 causal subgraph，再交给 LLM 修复；想法很契合 agent planning reliability，但实验主要是合成图和 benchmark 风格拓扑模拟，实证可信度需要打折。"
+      },
+      "analysis": {
+        "motivation": "论文动机很贴近 long-horizon agent planning：当 agent 的工具调用、验证器、记忆写入和恢复分支形成上千节点的规划图时，失败往往不是单个预测错误，而是在图中被反复放大的结构性错误。作者认为每次失败后重放或重规划整张图成本太高，也会让 LLM 在长上下文中被大量症状节点干扰，因此需要一种只修复关键 causal subgraph 的 world-model corrector。",
+        "method": "论文提出 WM-SAR，把失败 rollout 表示为带节点类型、边类型、节点误差和修复成本的规划图。核心不是按最大可见误差选节点，而是估计残差 node-edge error operator 的谱半径，使用 GEAF、节点-边耦合因子和边界扩展时的 marginal spectral relief 来贪心选择一个连通修复子图，再把该子图交给 LLM 做 root-cause repair。方法的关键假设是：降低残余图的谱半径比覆盖高误差症状更能减少未来 rollout 的误差再增长。",
+        "experiments": "实验主要在作者构造的 AgentCalling-Tree 合成测试床上进行，并补充了 SWE-bench、WebArena、AgentBench-OS 风格的拓扑模拟，而不是这些真实 benchmark 的完整运行轨迹。结果显示 WM-SAR 在较小 region size 下接近大范围邻域修复的长期稳定效果，NodeMSE@32 和 growth slope 明显优于 TopK、窗口、cascade 等工程启发式方法；LLM root-cause 识别实验中，WM-SAR 用更短上下文取得更高 exact recovery。论文也承认在 Who&When attribution 这种缺少 per-node intermediate error 的黑盒场景中，WM-SAR 会退化，step-level attribution 明显不如 LocalRepair-2Hop。",
+        "research_help": "Insight：对 agent planning / agentic RL 的启发是，长程系统的可靠性评估不应只看当前失败节点或最终答案错误，而应显式建模错误在工具链、记忆、验证器和恢复分支中的传播与再放大。对于 multi-turn agent，可以把失败修复设计成“选择最能降低未来误差传播的最小连通上下文”，再交给 LLM 处理，而不是把完整轨迹塞进上下文窗口。对于 long-horizon reliability，谱半径或类似的传播增益指标可以作为 memory correction、tool-call retry、validator repair 的排序信号，但前提是系统能提供中间状态误差或可观测代理信号。",
+        "insight": "Insight：对 agent planning / agentic RL 的启发是，长程系统的可靠性评估不应只看当前失败节点或最终答案错误，而应显式建模错误在工具链、记忆、验证器和恢复分支中的传播与再放大。对于 multi-turn agent，可以把失败修复设计成“选择最能降低未来误差传播的最小连通上下文”，再交给 LLM 处理，而不是把完整轨迹塞进上下文窗口。对于 long-horizon reliability，谱半径或类似的传播增益指标可以作为 memory correction、tool-call retry、validator repair 的排序信号，但前提是系统能提供中间状态误差或可观测代理信号。",
+        "abstract_zh": "随着 agent planning 从短工具链走向持续数千步的工作流，错误会出现在大型规划图内部，而不是孤立预测中；每次出错后重放整张图既昂贵，也会让 LLM 接触大量无关症状并损害长上下文检索。论文研究一种 in-place world-model corrector，用于修复失败的规划图。作者比较了常见工程式 LLM corrector 与其提出的 WM-SAR：前者扫描节点和边、选择局部可疑区域再让 LLM 修复，后者则从错误放大的子图反向定位持续再放大错误的节点和边。实验称，WM-SAR 在现实 token budget 下显著优于工程式 corrector，用紧凑区域接近整图修复的稳定效果，并给 LLM 提供更干净的修复目标。",
+        "card_summary": "这篇论文把长程 agent 的失败修复建模为规划图中的局部 world-model correction，主张修“错误放大器”而不是修表面症状。WM-SAR 用谱半径和 node-edge coupling 选择紧凑 causal subgraph，再交给 LLM 修复；想法很契合 agent planning reliability，但实验主要是合成图和 benchmark 风格拓扑模拟，实证可信度需要打折。",
+        "full_summary": "论文研究长程 agent rollout 失败后如何只修复关键规划子图，而不是重放或重规划整张图。它的重要性在于，多轮工具调用、记忆写入和验证器依赖会形成图结构，最终错误节点未必是真正会在下一轮继续放大错误的根因。方法上，WM-SAR 通过 GEAF、node-edge coupling 和 residual spectral relief 贪心选择能最大降低残余谱半径的连通子图，再把这个小上下文交给 LLM 做 root-cause repair。实验信号显示，在合成 calling-tree 和几类 benchmark-inspired 拓扑上，它比 TopK、窗口、cascade、局部邻域等工程 corrector 更能压低长 horizon 的误差增长，同时比 full-graph LLM repair 更省 token。阅读价值主要在概念框架和“修复传播放大器”的可靠性视角，但真实 agent trace、真实 benchmark 和真实 world-model error signal 的验证不足。",
+        "recommendation_level": "中",
+        "water_risk": "高",
+        "value_label": "高相关但实证偏弱的概念型论文",
+        "value_reason": "值得读的部分是问题设定和修复目标：它把 long-horizon agent failure 从单点错误转成图中残余放大通道的问题，这对 agent memory、multi-turn repair 和 planning reliability 都有启发。但它的核心实验不是来自真实 WebArena/SWE-bench/AgentBench 轨迹，而是合成测试床和 benchmark-inspired topology simulation；方法还依赖 per-node error 这类真实系统里未必容易获得的信号。因此更适合作为研究灵感或 baseline 设计参考，不宜把实验结论当作强证据。",
+        "limitations": "主要限制包括：实验主体是合成 AgentCalling-Tree，真实 agent benchmark 只做拓扑模拟；WM-SAR 依赖中间节点误差 e(v)，黑盒多智能体 attribution 场景中性能明显下降；谱半径理论与实际 LLM agent 的语义错误、工具错误、记忆污染之间仍有建模间隙；LLM 修复实验规模较小，且更多验证的是上下文选择质量而不是实际部署中的可恢复性；部分结果中 full-graph 和 token 统计显示其比较对象成本极高，可能放大了 WM-SAR 的优势。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确把失败 rollout 表示为 typed planning graph，并把目标定义为在预算内选择能降低残余 spectral radius 的连通 repair region。",
+          "主表显示 WM-SAR 平均选择约 8.3 个节点，却取得接近 LocalRepair-3Hop 的长期稳定效果，MSE@32 约 6.3，而 TopK、Window 和 Cascade 在长 horizon 上残余误差明显更高。",
+          "LLM root-cause 表中，WM-SAR 的 Rec-Exact 高于 Full-Graph-LLM、LocalRepair-2Hop-LLM 和 TopK-5-LLM，同时平均 token 更少。",
+          "作者自己说明 SWE-bench、WebArena、AgentBench-OS 部分是 benchmark-inspired topology simulations，不是真实 benchmark traces。W​​ho&When attribution 边界实验也显示，在没有 per-node error signal 时，WM-SAR 的 step-..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-04T01:40:22.155Z"
+      }
+    },
+    {
+      "id": "2607.01709v1",
+      "title": "COMFYCLAW: Self-Evolving Skill Harnesses for Image Generation Workflows",
+      "summary": "COMFYCLAW 是一个面向 ComfyUI 图像生成工作流的 self-evolving agent harness，把多轮图编辑、VLM 视觉校验和可复用技能库演化结合起来。它的价值不只在图像生成，而在展示如何把一次任务中的失败修复沉淀为后续任务可调用、可验证的工作流技能。",
+      "url": "http://arxiv.org/abs/2607.01709v1",
+      "authors": [
+        "Zongxia Li",
+        "Dawei Liu",
+        "Fuxiao Liu",
+        "Yuhang Zhou",
+        "Xiyang Wu",
+        "Jingxi Chen",
+        "Jing Xie",
+        "Xiaomin Wu",
+        "Lichao Sun"
+      ],
+      "report_date": "2026-07-04",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 76,
+        "level": "高",
+        "label": "值得读：工作流 agent 的技能演化与可靠性 harness 案例",
+        "water_risk": "中",
+        "value_judgement": "值得读：工作流 agent 的技能演化与可靠性 harness 案例",
+        "reason": "推荐度高的原因是论文问题设定非常贴近 long-horizon agent planning：多步可执行状态、局部失败诊断、错误回滚、跨任务经验复用和技能库演化都被明确建模。它比普通图像生成论文更有 agent 系统价值，因为核心贡献是 harness + verifier + skill lifecycle，而不是单纯提升图像质量。偏水风险为中的原因是实验主要在图像生成工作流内验证，baseline 相对简单，主结果把 verifier refinement 和 skill evolution 的贡献混在一起，且评估依赖 VLM-as-judge 与少量人类标注，可能存在评价闭环和外推不足的问题。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zongxia Li",
+          "Dawei Liu",
+          "Fuxiao Liu",
+          "Yuhang Zhou",
+          "Xiyang Wu",
+          "Jingxi Chen",
+          "Jing Xie",
+          "Xiaomin Wu",
+          "Lichao Sun"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.01709v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "推荐度高的原因是论文问题设定非常贴近 long-horizon agent planning：多步可执行状态、局部失败诊断、错误回滚、跨任务经验复用和技能库演化都被明确建模。它比普通图像生成论文更有 agent 系统价值，因为核心贡献是 harness + verifier + skill lifecycle，而不是单纯提升图像质量。偏水风险为中的原因是实验主要在图像生成工作流内验证，baseline 相对简单，主结果把 verifier refinement 和 skill evolution 的贡献混在一起，且评估依赖 VLM-as-judge 与少量人类标注，可能存在评价闭环和外推不足的问题。",
+        "summary": "COMFYCLAW 是一个面向 ComfyUI 图像生成工作流的 self-evolving agent harness，把多轮图编辑、VLM 视觉校验和可复用技能库演化结合起来。它的价值不只在图像生成，而在展示如何把一次任务中的失败修复沉淀为后续任务可调用、可验证的工作流技能。",
+        "highlights": [
+          "推荐度高的原因是论文问题设定非常贴近 long-horizon agent planning：多步可执行状态、局部失败诊断、错误回滚、跨任务经验复用和技能库演化都被明确建模。它比普通图像生成论文更有 agent 系统价值，因为核心贡献是 harness + verifier + skill lifecycle，而不是单纯提升图像质量。偏水风险为中的原因是实验主要在图像生成工作流内验证，baseline 相对简单，主结果把 verifier refinement 和 skill evolution 的贡献混在一起，且评估依赖 VLM-as-judge 与少量人类标注，可能存在评价闭环和外推不足的问题。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文的核心动机是：当 agent 从一次性 prompt 生成转向可执行工作流控制时，可靠性问题不再只是“怎么写好提示词”，而是如何在多步图编辑、运行错误、视觉失败诊断和跨任务经验复用之间形成闭环。作者认为图像生成工作流中会反复出现对象计数、属性绑定、空间关系、LoRA 使用、采样参数和区域控制等问题，因此 agent 需要把单次修复沉淀为可复用技能，而不是每次重新摸索。",
+        "method": "COMFYCLAW 将 ComfyUI 工作流构造建模为带技能增强的可执行图编辑过程：agent 先构建基础 DAG，再通过 typed graph editing 添加节点、连接边、改参数、设置 prompt、插入 LoRA、区域注意力或多轮 refinement。每次渲染后，VLM verifier 会把 prompt 拆成可观察需求，返回通过/失败项、局部失败描述和面向工作流的修复建议。跨任务层面，系统把成功和失败轨迹聚类，提出 create/revise/reinforce/merge/delete 等技能库 mutation，并用 held-out prompts 验证后才提交到 SKILL.md 风格的技能库。",
+        "experiments": "实验覆盖四类文本到图像 benchmark、三个 agent 模型和两个 ComfyUI 图像 backbone，比较 COMFYCLAW 与只使用初始工具和基础技能的一次性 baseline。结果显示 COMFYCLAW 在各组合上整体优于 baseline，人类标注也更偏好 COMFYCLAW 的输出。作者还分析了技能读取和工作流编辑行为，说明 evolved skills 在组合性和密集描述任务中被频繁调用，而且 agent 的改动并不只是 prompt 重写，还包括采样参数、区域/遮罩拓扑、模型或 LoRA 选择、多 pass 设计等工作流级操作。",
+        "research_help": "Insight：这篇论文对 agent planning 的主要启发是把“记忆”推进到可验证、可调用、可回滚的 procedural skill，而不是只保存历史轨迹或反思文本。它强调 long-horizon reliability 需要 harness 层约束动作空间、检查无效状态、保留 best-so-far，并把 verifier 的局部失败反馈转成下一步可执行编辑。对 agentic RL 或多轮系统来说，最可迁移的部分是“当前任务闭环修复 + 跨任务技能演化”的两层结构，以及技能提交前使用 held-out validation 防止经验污染技能库。",
+        "recommendation": {
+          "score": 76,
+          "level": "中",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文对 agent planning 的主要启发是把“记忆”推进到可验证、可调用、可回滚的 procedural skill，而不是只保存历史轨迹或反思文本。它强调 long-horizon reliability 需要 harness 层约束动作空间、检查无效状态、保留 best-so-far，并把 verifier 的局部失败反馈转成下一步可执行编辑。对 agentic RL 或多轮系统来说，最可迁移的部分是“当前任务闭环修复 + 跨任务技能演化”的两层结构，以及技能提交前使用 held-out validation 防止经验污染技能库。",
+        "abstract_zh": "随着 agent 越来越多地用于构建工作流并帮助人类完成重复任务，agent 需要能够从过去运行中记住工作流模式、执行约束和用户偏好。本文研究工作流式图像生成中的这一问题，提出 COMFYCLAW，用于控制 ComfyUI 工作流并自动演化可复用技能。该框架把工作流构造表示为类型化图编辑，提供分阶段工具、无效编辑回滚，并使用区域级 VLM verifier 将视觉失败转化为可执行修复建议。它还把过去运行中的轨迹、执行错误和 verifier 反馈蒸馏成可复用 Agent Skills，并在多个 benchmark、agent 模型和图像 backbone 上取得更好的平均图像生成评价与人类偏好。",
+        "full_summary": "这篇论文提出 COMFYCLAW，用 agent 控制 ComfyUI 的可执行图工作流，而不是只做 prompt rewriting。系统通过 typed graph editing 管理节点、边、参数、LoRA、区域控制和多轮 refinement，并用 VLM verifier 对生成图像进行需求级和区域级诊断。更重要的是，它把跨任务的成功和失败轨迹聚类后演化成 SKILL.md 风格的可复用技能，并在验证不退化后才提交到技能库。实验显示，COMFYCLAW 在多个图像生成 benchmark、agent 和 backbone 组合上整体优于一次性 baseline，人类评估也更偏好其结果。对 agent planning 研究来说，这篇文章的阅读价值在于它把 harness、verifier、memory、skill evolution 和 rollback 统一成一个长程工作流可靠性框架。",
+        "card_summary": "COMFYCLAW 是一个面向 ComfyUI 图像生成工作流的 self-evolving agent harness，把多轮图编辑、VLM 视觉校验和可复用技能库演化结合起来。它的价值不只在图像生成，而在展示如何把一次任务中的失败修复沉淀为后续任务可调用、可验证的工作流技能。"
+      },
+      "analysis": {
+        "motivation": "论文的核心动机是：当 agent 从一次性 prompt 生成转向可执行工作流控制时，可靠性问题不再只是“怎么写好提示词”，而是如何在多步图编辑、运行错误、视觉失败诊断和跨任务经验复用之间形成闭环。作者认为图像生成工作流中会反复出现对象计数、属性绑定、空间关系、LoRA 使用、采样参数和区域控制等问题，因此 agent 需要把单次修复沉淀为可复用技能，而不是每次重新摸索。",
+        "method": "COMFYCLAW 将 ComfyUI 工作流构造建模为带技能增强的可执行图编辑过程：agent 先构建基础 DAG，再通过 typed graph editing 添加节点、连接边、改参数、设置 prompt、插入 LoRA、区域注意力或多轮 refinement。每次渲染后，VLM verifier 会把 prompt 拆成可观察需求，返回通过/失败项、局部失败描述和面向工作流的修复建议。跨任务层面，系统把成功和失败轨迹聚类，提出 create/revise/reinforce/merge/delete 等技能库 mutation，并用 held-out prompts 验证后才提交到 SKILL.md 风格的技能库。",
+        "experiments": "实验覆盖四类文本到图像 benchmark、三个 agent 模型和两个 ComfyUI 图像 backbone，比较 COMFYCLAW 与只使用初始工具和基础技能的一次性 baseline。结果显示 COMFYCLAW 在各组合上整体优于 baseline，人类标注也更偏好 COMFYCLAW 的输出。作者还分析了技能读取和工作流编辑行为，说明 evolved skills 在组合性和密集描述任务中被频繁调用，而且 agent 的改动并不只是 prompt 重写，还包括采样参数、区域/遮罩拓扑、模型或 LoRA 选择、多 pass 设计等工作流级操作。",
+        "research_help": "Insight：这篇论文对 agent planning 的主要启发是把“记忆”推进到可验证、可调用、可回滚的 procedural skill，而不是只保存历史轨迹或反思文本。它强调 long-horizon reliability 需要 harness 层约束动作空间、检查无效状态、保留 best-so-far，并把 verifier 的局部失败反馈转成下一步可执行编辑。对 agentic RL 或多轮系统来说，最可迁移的部分是“当前任务闭环修复 + 跨任务技能演化”的两层结构，以及技能提交前使用 held-out validation 防止经验污染技能库。",
+        "insight": "Insight：这篇论文对 agent planning 的主要启发是把“记忆”推进到可验证、可调用、可回滚的 procedural skill，而不是只保存历史轨迹或反思文本。它强调 long-horizon reliability 需要 harness 层约束动作空间、检查无效状态、保留 best-so-far，并把 verifier 的局部失败反馈转成下一步可执行编辑。对 agentic RL 或多轮系统来说，最可迁移的部分是“当前任务闭环修复 + 跨任务技能演化”的两层结构，以及技能提交前使用 held-out validation 防止经验污染技能库。",
+        "abstract_zh": "随着 agent 越来越多地用于构建工作流并帮助人类完成重复任务，agent 需要能够从过去运行中记住工作流模式、执行约束和用户偏好。本文研究工作流式图像生成中的这一问题，提出 COMFYCLAW，用于控制 ComfyUI 工作流并自动演化可复用技能。该框架把工作流构造表示为类型化图编辑，提供分阶段工具、无效编辑回滚，并使用区域级 VLM verifier 将视觉失败转化为可执行修复建议。它还把过去运行中的轨迹、执行错误和 verifier 反馈蒸馏成可复用 Agent Skills，并在多个 benchmark、agent 模型和图像 backbone 上取得更好的平均图像生成评价与人类偏好。",
+        "card_summary": "COMFYCLAW 是一个面向 ComfyUI 图像生成工作流的 self-evolving agent harness，把多轮图编辑、VLM 视觉校验和可复用技能库演化结合起来。它的价值不只在图像生成，而在展示如何把一次任务中的失败修复沉淀为后续任务可调用、可验证的工作流技能。",
+        "full_summary": "这篇论文提出 COMFYCLAW，用 agent 控制 ComfyUI 的可执行图工作流，而不是只做 prompt rewriting。系统通过 typed graph editing 管理节点、边、参数、LoRA、区域控制和多轮 refinement，并用 VLM verifier 对生成图像进行需求级和区域级诊断。更重要的是，它把跨任务的成功和失败轨迹聚类后演化成 SKILL.md 风格的可复用技能，并在验证不退化后才提交到技能库。实验显示，COMFYCLAW 在多个图像生成 benchmark、agent 和 backbone 组合上整体优于一次性 baseline，人类评估也更偏好其结果。对 agent planning 研究来说，这篇文章的阅读价值在于它把 harness、verifier、memory、skill evolution 和 rollback 统一成一个长程工作流可靠性框架。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读：工作流 agent 的技能演化与可靠性 harness 案例",
+        "value_reason": "推荐度高的原因是论文问题设定非常贴近 long-horizon agent planning：多步可执行状态、局部失败诊断、错误回滚、跨任务经验复用和技能库演化都被明确建模。它比普通图像生成论文更有 agent 系统价值，因为核心贡献是 harness + verifier + skill lifecycle，而不是单纯提升图像质量。偏水风险为中的原因是实验主要在图像生成工作流内验证，baseline 相对简单，主结果把 verifier refinement 和 skill evolution 的贡献混在一起，且评估依赖 VLM-as-judge 与少量人类标注，可能存在评价闭环和外推不足的问题。",
+        "limitations": "论文主要局限在图像生成和 ComfyUI 场景，尚未证明该技能演化机制能直接迁移到更开放的网页、代码、科研或真实办公 agent。评估中很多信号来自 VLM judge，容易受 judge 偏好、prompt 拆解质量和生成模型风格影响。技能 mutation 的 held-out prompts 由 agent 合成，虽然有验证意识，但仍可能与训练轨迹分布过近。文中对不同组件的独立贡献展示不够充分，尤其需要更清楚地区分 typed harness、verifier refinement、skill retrieval 和 skill evolution 各自带来的增益。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出 COMFYCLAW 由 typed graph editing、VLM-based verification 和 skill-evolution loop 组成，用于 ComfyUI 工作流控制。",
+          "方法部分说明 verifier 会返回失败需求、局部自然语言描述和具体工作流编辑建议，并将这些反馈送入下一轮 refinement 与技能演化。",
+          "技能演化部分描述了成功/失败轨迹聚类、技能 mutation、held-out validation、rollback 和 commit 的流程。",
+          "实验部分报告 COMFYCLAW 在四个 benchmark、三个 agent 模型和两个图像 backbone 上整体优于 BASE，并有人类标注偏好支持。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-04T01:41:04.768Z"
+      }
+    },
+    {
+      "id": "2607.01935v1",
+      "title": "A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory",
+      "summary": "这篇论文讨论长期 agent memory 中的 ghost memory：旧事实、当前事实和变更记录都被存下来了，但系统不知道在回答时该用哪一个。A-TMA 的核心价值是把记忆问题拆成写入维护、检索对齐和回答解析三层，并用显式状态标签降低当前/历史事实混淆。实验在自建冲突 benchmark 上信号较强，在 LoCoMo 上更依赖宿主系统和指标。",
+      "url": "http://arxiv.org/abs/2607.01935v1",
+      "authors": [
+        "Zitong Shi",
+        "Yixuan Tang",
+        "Anthony Kum Hoe Tung"
+      ],
+      "report_date": "2026-07-04",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 68,
+        "level": "高",
+        "label": "值得读：方向高度相关，但需要带着审慎态度看实验泛化。",
+        "water_risk": "中",
+        "value_judgement": "值得读：方向高度相关，但需要带着审慎态度看实验泛化。",
+        "reason": "这篇论文对 agent memory 和 long-horizon reliability 的问题定义很有价值，ghost memory 也是实际多轮助手很容易遇到的失败模式。它最有用的部分是三层诊断框架和状态角色显式化设计，可以直接启发长期规划系统中的记忆写入、检索和回答评测。推荐等级给高，是因为主题和 insight 很贴近 agent planning / multi-turn reliability；偏水风险给中，是因为关键增益大量来自作者自建 LTP，小样本 profile 设定较强，LoCoMo 结果并非一致胜出，且方法工程组件较多，真正贡献边界需要进一步复现确认。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zitong Shi",
+          "Yixuan Tang",
+          "Anthony Kum Hoe Tung"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.01935v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "这篇论文对 agent memory 和 long-horizon reliability 的问题定义很有价值，ghost memory 也是实际多轮助手很容易遇到的失败模式。它最有用的部分是三层诊断框架和状态角色显式化设计，可以直接启发长期规划系统中的记忆写入、检索和回答评测。推荐等级给高，是因为主题和 insight 很贴近 agent planning / multi-turn reliability；偏水风险给中，是因为关键增益大量来自作者自建 LTP，小样本 profile 设定较强，LoCoMo 结果并非一致胜出，且方法工程组件较多，真正贡献边界需要进一步复现确认。",
+        "summary": "这篇论文讨论长期 agent memory 中的 ghost memory：旧事实、当前事实和变更记录都被存下来了，但系统不知道在回答时该用哪一个。A-TMA 的核心价值是把记忆问题拆成写入维护、检索对齐和回答解析三层，并用显式状态标签降低当前/历史事实混淆。实验在自建冲突 benchmark 上信号较强，在 LoCoMo 上更依赖宿主系统和指标。",
+        "highlights": [
+          "这篇论文对 agent memory 和 long-horizon reliability 的问题定义很有价值，ghost memory 也是实际多轮助手很容易遇到的失败模式。它最有用的部分是三层诊断框架和状态角色显式化设计，可以直接启发长期规划系统中的记忆写入、检索和回答评测。推荐等级给高，是因为主题和 insight 很贴近 agent planning / multi-turn reliability；偏水风险给中，是因为关键增益大量来自作者自建 LTP，小样本 profile 设定较强，LoCoMo 结果并非一致胜出，且方法工程组件较多，真正贡献边界需要进一步复现确认。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文聚焦长期 agent memory 中用户事实会随时间变化的问题：旧事实、当前事实和变更记录都可能是真实的，但如果在记忆库、检索证据和最终回答阶段没有显式区分状态，就会出现 ghost memory，即系统把过期信息当成当前信息，或把当前信息覆盖历史问题的答案。作者的核心动机不是单纯提升 RAG 命中率，而是把长期记忆错误拆成 bank maintenance、retrieval、answer-time resolution 三层，避免最终 QA accuracy 掩盖真实失败位置。",
+        "method": "方法是 A-TMA，一个叠加在现有记忆系统上的 state-aware overlay。它在记忆库层保留历史记录但标记 active、superseded、transition 等状态，并用 supersedes、evolves-from、coexistence 等链接维护状态关系；在检索层先判断 query state view，再从宿主系统候选、状态关系跳转和可选 controller rerank 中构建 state-aligned evidence packet；在 QA 层把证据序列化为 current memory、historical memory、transition memory 等标签，让回答模型按问题请求的状态视角解析。论文还引入轻量 Sentry 做候选冲突提议，以及较重的 Judge 做结构化审计和提交，但主贡献更像系统分层和证据标注框架，而不是单一新模型。",
+        "experiments": "实验包含作者构造的 LTP benchmark 和外部 LoCoMo benchmark。LTP 有 10 个 profile、800 个 probes，专门测试当前状态、历史状态和冲突记忆；在 LTP 上，Graphiti/Zep+A-TMA 相比 Graphiti/Zep 的 conflict accuracy 从 0.480 提到 0.720，InsideOut+A-TMA 也有很大提升，A-Mem+A-TMA 则保持强基线并小幅提高冲突表现。LoCoMo 上结果更混合：Graphiti/Zep+A-TMA 的 temporal F1 从 0.0295 提到 0.1705，average F1 也提升，但 A-Mem+A-TMA 的提升较小且部分指标下降，AriadneMem 在平均 F1/BLEU 上仍很强。因此实验信号支持“状态角色显式化能减少一类 memory failure”，但不支持“所有宿主、所有长记忆任务都稳定提升”的强结论。",
+        "research_help": "Insight：对 agent planning 和多轮系统最有用的启发是，长期记忆不能只按 relevance 或 recency 管理，而要把“事实当前是否仍有效”变成可检索、可评估、可传给生成器的显式状态。对于 long-horizon reliability，论文的三层拆解很可迁移：计划失败可能来自状态写入污染、检索选错时间视角，也可能来自模型看到正确证据后仍做错状态解析，因此评测应同时报告 bank、retrieval、QA 三层诊断信号。对于 agentic RL 或 memory controller 训练，这篇论文提示 reward 不应只给最终答案，还可以给状态保留、证据视角对齐、历史/当前冲突解析等中间行为。",
+        "recommendation": {
+          "score": 68,
+          "level": "中",
+          "label": "可略读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对 agent planning 和多轮系统最有用的启发是，长期记忆不能只按 relevance 或 recency 管理，而要把“事实当前是否仍有效”变成可检索、可评估、可传给生成器的显式状态。对于 long-horizon reliability，论文的三层拆解很可迁移：计划失败可能来自状态写入污染、检索选错时间视角，也可能来自模型看到正确证据后仍做错状态解析，因此评测应同时报告 bank、retrieval、QA 三层诊断信号。对于 agentic RL 或 memory controller 训练，这篇论文提示 reward 不应只给最终答案，还可以给状态保留、证据视角对齐、历史/当前冲突解析等中间行为。",
+        "abstract_zh": "长期记忆让 LLM agent 能作为持续助手工作，但用户事实会变化，系统需要知道什么现在为真、什么过去为真、以及发生了什么变化。论文提出 ghost memory 这一状态协调失败：旧事实、当前事实和过渡事实同时存在于记忆库中，在检索时混杂，并误导回答模型。作者提出 A-TMA，在现有记忆系统上增加状态感知层，保留被替代和过渡记录，为查询构建符合请求状态视角的证据包，并把 current、historical、transition 等标签暴露给 QA。作者还构建 LTP benchmark 来测量这类失败，并在 LTP 和 LoCoMo 上显示 A-TMA 对部分宿主系统的冲突准确率和 temporal F1 有明显提升。",
+        "full_summary": "论文研究长期记忆 agent 在用户状态变化后的可靠性问题，指出很多 memory 系统能保存相关事实，却不能保证回答时使用正确的时间状态。作者提出 A-TMA，把 active、superseded、transition 等状态角色附加到现有记忆系统，并在检索和 QA 阶段持续暴露这些角色。方法的关键不是删除旧记忆，而是保留历史，同时让当前问题、历史问题和变更问题拿到不同的证据视角。实验上，A-TMA 在自建 LTP 冲突记忆任务中显著提升 Graphiti/Zep 和 InsideOut 等宿主的表现，在 LoCoMo 上对 temporal 和 multihop 部分有提升但并不统一。阅读价值在于它提供了一个很清晰的 long-term memory failure taxonomy 和可操作的评测拆分方式，适合关注多轮 agent memory、planning reliability 和状态一致性的研究者。",
+        "card_summary": "这篇论文讨论长期 agent memory 中的 ghost memory：旧事实、当前事实和变更记录都被存下来了，但系统不知道在回答时该用哪一个。A-TMA 的核心价值是把记忆问题拆成写入维护、检索对齐和回答解析三层，并用显式状态标签降低当前/历史事实混淆。实验在自建冲突 benchmark 上信号较强，在 LoCoMo 上更依赖宿主系统和指标。"
+      },
+      "analysis": {
+        "motivation": "论文聚焦长期 agent memory 中用户事实会随时间变化的问题：旧事实、当前事实和变更记录都可能是真实的，但如果在记忆库、检索证据和最终回答阶段没有显式区分状态，就会出现 ghost memory，即系统把过期信息当成当前信息，或把当前信息覆盖历史问题的答案。作者的核心动机不是单纯提升 RAG 命中率，而是把长期记忆错误拆成 bank maintenance、retrieval、answer-time resolution 三层，避免最终 QA accuracy 掩盖真实失败位置。",
+        "method": "方法是 A-TMA，一个叠加在现有记忆系统上的 state-aware overlay。它在记忆库层保留历史记录但标记 active、superseded、transition 等状态，并用 supersedes、evolves-from、coexistence 等链接维护状态关系；在检索层先判断 query state view，再从宿主系统候选、状态关系跳转和可选 controller rerank 中构建 state-aligned evidence packet；在 QA 层把证据序列化为 current memory、historical memory、transition memory 等标签，让回答模型按问题请求的状态视角解析。论文还引入轻量 Sentry 做候选冲突提议，以及较重的 Judge 做结构化审计和提交，但主贡献更像系统分层和证据标注框架，而不是单一新模型。",
+        "experiments": "实验包含作者构造的 LTP benchmark 和外部 LoCoMo benchmark。LTP 有 10 个 profile、800 个 probes，专门测试当前状态、历史状态和冲突记忆；在 LTP 上，Graphiti/Zep+A-TMA 相比 Graphiti/Zep 的 conflict accuracy 从 0.480 提到 0.720，InsideOut+A-TMA 也有很大提升，A-Mem+A-TMA 则保持强基线并小幅提高冲突表现。LoCoMo 上结果更混合：Graphiti/Zep+A-TMA 的 temporal F1 从 0.0295 提到 0.1705，average F1 也提升，但 A-Mem+A-TMA 的提升较小且部分指标下降，AriadneMem 在平均 F1/BLEU 上仍很强。因此实验信号支持“状态角色显式化能减少一类 memory failure”，但不支持“所有宿主、所有长记忆任务都稳定提升”的强结论。",
+        "research_help": "Insight：对 agent planning 和多轮系统最有用的启发是，长期记忆不能只按 relevance 或 recency 管理，而要把“事实当前是否仍有效”变成可检索、可评估、可传给生成器的显式状态。对于 long-horizon reliability，论文的三层拆解很可迁移：计划失败可能来自状态写入污染、检索选错时间视角，也可能来自模型看到正确证据后仍做错状态解析，因此评测应同时报告 bank、retrieval、QA 三层诊断信号。对于 agentic RL 或 memory controller 训练，这篇论文提示 reward 不应只给最终答案，还可以给状态保留、证据视角对齐、历史/当前冲突解析等中间行为。",
+        "insight": "Insight：对 agent planning 和多轮系统最有用的启发是，长期记忆不能只按 relevance 或 recency 管理，而要把“事实当前是否仍有效”变成可检索、可评估、可传给生成器的显式状态。对于 long-horizon reliability，论文的三层拆解很可迁移：计划失败可能来自状态写入污染、检索选错时间视角，也可能来自模型看到正确证据后仍做错状态解析，因此评测应同时报告 bank、retrieval、QA 三层诊断信号。对于 agentic RL 或 memory controller 训练，这篇论文提示 reward 不应只给最终答案，还可以给状态保留、证据视角对齐、历史/当前冲突解析等中间行为。",
+        "abstract_zh": "长期记忆让 LLM agent 能作为持续助手工作，但用户事实会变化，系统需要知道什么现在为真、什么过去为真、以及发生了什么变化。论文提出 ghost memory 这一状态协调失败：旧事实、当前事实和过渡事实同时存在于记忆库中，在检索时混杂，并误导回答模型。作者提出 A-TMA，在现有记忆系统上增加状态感知层，保留被替代和过渡记录，为查询构建符合请求状态视角的证据包，并把 current、historical、transition 等标签暴露给 QA。作者还构建 LTP benchmark 来测量这类失败，并在 LTP 和 LoCoMo 上显示 A-TMA 对部分宿主系统的冲突准确率和 temporal F1 有明显提升。",
+        "card_summary": "这篇论文讨论长期 agent memory 中的 ghost memory：旧事实、当前事实和变更记录都被存下来了，但系统不知道在回答时该用哪一个。A-TMA 的核心价值是把记忆问题拆成写入维护、检索对齐和回答解析三层，并用显式状态标签降低当前/历史事实混淆。实验在自建冲突 benchmark 上信号较强，在 LoCoMo 上更依赖宿主系统和指标。",
+        "full_summary": "论文研究长期记忆 agent 在用户状态变化后的可靠性问题，指出很多 memory 系统能保存相关事实，却不能保证回答时使用正确的时间状态。作者提出 A-TMA，把 active、superseded、transition 等状态角色附加到现有记忆系统，并在检索和 QA 阶段持续暴露这些角色。方法的关键不是删除旧记忆，而是保留历史，同时让当前问题、历史问题和变更问题拿到不同的证据视角。实验上，A-TMA 在自建 LTP 冲突记忆任务中显著提升 Graphiti/Zep 和 InsideOut 等宿主的表现，在 LoCoMo 上对 temporal 和 multihop 部分有提升但并不统一。阅读价值在于它提供了一个很清晰的 long-term memory failure taxonomy 和可操作的评测拆分方式，适合关注多轮 agent memory、planning reliability 和状态一致性的研究者。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读：方向高度相关，但需要带着审慎态度看实验泛化。",
+        "value_reason": "这篇论文对 agent memory 和 long-horizon reliability 的问题定义很有价值，ghost memory 也是实际多轮助手很容易遇到的失败模式。它最有用的部分是三层诊断框架和状态角色显式化设计，可以直接启发长期规划系统中的记忆写入、检索和回答评测。推荐等级给高，是因为主题和 insight 很贴近 agent planning / multi-turn reliability；偏水风险给中，是因为关键增益大量来自作者自建 LTP，小样本 profile 设定较强，LoCoMo 结果并非一致胜出，且方法工程组件较多，真正贡献边界需要进一步复现确认。",
+        "limitations": "主要局限是 LTP 是作者自建、规模较小且冲突密集，可能放大 A-TMA 这种显式状态标签方法的优势；LoCoMo 作为外部泛化检查结果较混合，说明方法依赖宿主系统是否已经保留足够证据。评估大量依赖 LLM judge 和特定小模型 QA 配置，可能受判分器、prompt 和候选构造影响。方法包含 Sentry、Judge、controller rerank、QA serializer 等多个组件，消融和复杂度收益比还不够清楚。它解决的是“证据存在但状态混杂”的问题，不能修复宿主系统根本没有写入或检索到目标记忆的情况。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确将 ghost memory 定义为旧事实、当前事实和 transition facts 在 memory bank、retrieval 和 answer model 中混杂导致的 state coordination failure。",
+          "方法部分把 A-TMA 拆为 bank-level state maintenance、retrieve-level evidence construction 和 QA-level evidence state conditioning，并强调它是现有 memory system 的 overlay，而不是替换底层存储。",
+          "LTP 设置包含 10 个 profiles 和 800 个 QA probes，直接测试 current 和 historical state，transition records 用作证据和 metadata。",
+          "LTP 主结果显示 Graphiti/Zep+A-TMA 的 conflict accuracy 从 0.480 提到 0.720，InsideOut+A-TMA 的 Acc 从 0.117 提到 0.662，A-Mem+A-TMA 在强基线上小幅提升冲突表现。重试 Good. Final with codex_output? It got truncat..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-04T01:41:51.842Z"
+      }
+    },
+    {
+      "id": "2607.01071v2",
+      "title": "MemSyco-Bench: Benchmarking Sycophancy in Agent Memory",
+      "summary": "MemSyco-Bench 关注长期记忆 agent 的一个真实风险：检索到的历史用户记忆可能让模型在事实判断、证据冲突或更新偏好场景中过度迎合用户。论文把评测重点从“能否检索到记忆”推进到“检索后是否正确使用记忆”，对 agent memory 和 long-horizon reliability 很有参考价值。",
+      "url": "http://arxiv.org/abs/2607.01071v2",
+      "authors": [
+        "Zhishang Xiang",
+        "Zerui Chen",
+        "Yunbo Tang",
+        "Zhimin Wei",
+        "Ruqin Ning",
+        "Yujie Lin",
+        "Qinggang Zhang",
+        "Jinsong Su"
+      ],
+      "report_date": "2026-07-04",
+      "published": "2026-07-01",
+      "updated": "2026-07-02",
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/XMUDeepLIT/MemSyco-Bench",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "强相关，值得读",
+        "water_risk": "中",
+        "value_judgement": "强相关，值得读",
+        "reason": "这篇论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability 的交叉点，提出的问题比单纯记忆检索评测更接近真实长期 agent 的失败模式。它的主要价值不是某个新 memory architecture，而是把“记忆何时该影响决策”拆成可评测任务，并用实验显示现有系统在检索成功后仍会错误使用记忆。对做 agent planning 的人来说，这可以转化为记忆门控、证据优先级、时序更新、偏好适用范围和奖励设计等具体研究方向。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhishang Xiang",
+          "Zerui Chen",
+          "Yunbo Tang",
+          "Zhimin Wei",
+          "Ruqin Ning",
+          "Yujie Lin",
+          "Qinggang Zhang",
+          "Jinsong Su"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-01",
+        "paper_url": "https://arxiv.org/abs/2607.01071v2",
+        "project_url": "",
+        "repo_url": "https://github.com/XMUDeepLIT/MemSyco-Bench",
+        "venue_status": "未确认录用",
+        "contribution": "这篇论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability 的交叉点，提出的问题比单纯记忆检索评测更接近真实长期 agent 的失败模式。它的主要价值不是某个新 memory architecture，而是把“记忆何时该影响决策”拆成可评测任务，并用实验显示现有系统在检索成功后仍会错误使用记忆。对做 agent planning 的人来说，这可以转化为记忆门控、证据优先级、时序更新、偏好适用范围和奖励设计等具体研究方向。",
+        "summary": "MemSyco-Bench 关注长期记忆 agent 的一个真实风险：检索到的历史用户记忆可能让模型在事实判断、证据冲突或更新偏好场景中过度迎合用户。论文把评测重点从“能否检索到记忆”推进到“检索后是否正确使用记忆”，对 agent memory 和 long-horizon reliability 很有参考价值。",
+        "highlights": [
+          "这篇论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability 的交叉点，提出的问题比单纯记忆检索评测更接近真实长期 agent 的失败模式。它的主要价值不是某个新 memory architecture，而是把“记忆何时该影响决策”拆成可评测任务，并用实验显示现有系统在检索成功后仍会错误使用记忆。对做 agent planning 的人来说，这可以转化为记忆门控、证据优先级、时序更新、偏好适用范围和奖励设计等具体研究方向。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "这篇论文的核心动机是指出长期记忆让 LLM agent 从单轮助手变成长程协作者，但也把“迎合用户”从当前对话问题扩展成跨会话、持久化的可靠性问题。作者认为现有记忆评测主要看是否存储、检索、更新成功，却很少评估检索到的记忆进入上下文后，模型是否会错误地把历史用户偏好或信念当成事实证据。这个问题对 agent memory、multi-turn agent 和 long-horizon reliability 很关键，因为一个旧偏好、错误信念或越界记忆可能反复影响未来决策。",
+        "method": "论文提出 MemSyco-Bench，用来评估 memory-induced sycophancy，即 agent 在当前任务需要事实证据、作用域控制或更新信息时，仍过度跟随历史用户记忆。基准包含五类任务：客观事实判断、上下文作用域控制、记忆与证据冲突、有效记忆选择、个性化记忆使用。构造流程先定义每类任务的 memory-decision schema，再生成与当前问题语义相关但使用边界明确的历史记忆片段，把它们嵌入自然多轮对话，最后通过语义相关性、记忆使用边界和误导方向做质量验证。评估指标不仅看生成准确性，也看记忆不该影响时的 sycophancy rate，以及记忆该影响时是否使用当前有效记忆、避免旧记忆。",
+        "experiments": "实验覆盖多种记忆系统和两个 backbone，主要发现是现有 memory-augmented agent 并不能可靠缓解记忆诱导的迎合，很多时候记忆系统反而降低客观事实判断表现并提高迎合倾向。在记忆与证据冲突场景中，完整历史或外部记忆并不保证模型会优先使用客观证据，模型常在证据和历史偏好同时出现时被历史记忆带偏。错误归因显示，大量失败不是因为没有检索到相关记忆，而是检索成功之后使用方式错误，说明问题核心在 post-retrieval decision calibration。作者还测试了简单行为提示：提醒模型谨慎使用记忆有助于部分冲突场景，但会削弱个性化；让模型再次确认答案反而可能强化由记忆塑造的错误回答。",
+        "research_help": "Insight：这篇论文对 agent planning / agentic RL / 多轮系统的启发在于，长期记忆不应只被建模为 retrieval augmentation，而应被建模为带有作用域、时效性、证据优先级和决策权限的状态变量。对 long-horizon planning 来说，历史轨迹中的用户偏好、旧目标和过时约束需要经过 arbitration，而不是被直接塞回 context；否则 agent 会在后续规划中重复继承早期错误。对 agentic RL 的奖励设计也有启发：不能只奖励个性化或上下文一致性，还要显式奖励何时忽略记忆、何时更新记忆、何时让外部证据覆盖记忆。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文对 agent planning / agentic RL / 多轮系统的启发在于，长期记忆不应只被建模为 retrieval augmentation，而应被建模为带有作用域、时效性、证据优先级和决策权限的状态变量。对 long-horizon planning 来说，历史轨迹中的用户偏好、旧目标和过时约束需要经过 arbitration，而不是被直接塞回 context；否则 agent 会在后续规划中重复继承早期错误。对 agentic RL 的奖励设计也有启发：不能只奖励个性化或上下文一致性，还要显式奖励何时忽略记忆、何时更新记忆、何时让外部证据覆盖记忆。",
+        "abstract_zh": "记忆已经成为现代 LLM agent 的关键组件，使系统能够从单轮助手发展为长期协作者。但作者指出，检索到的记忆并不总是有益，它可能诱导 agent 过度迎合历史用户信念或偏好，从而牺牲事实准确性和客观推理。为此，论文提出 MemSyco-Bench，用于评估 agent 系统中的记忆诱导迎合问题，重点考察模型何时应该让记忆影响决策，以及如何正确使用有效记忆。该基准包含五类任务，分别测试 agent 是否能拒绝把记忆当作事实证据、尊重记忆适用范围、处理记忆与客观证据冲突、跟踪记忆更新，以及在个性化任务中使用有效记忆。实验显示，现有记忆系统经常增加迎合风险，并难以可靠地进行适当的记忆使用判断。",
+        "full_summary": "这篇论文提出 MemSyco-Bench，专门评估长期记忆是否会诱导 LLM agent 过度跟随历史用户信念或偏好。它的重要性在于，许多现有记忆基准默认检索到的记忆应该被使用，而现实 agent 需要判断记忆的证据地位、作用域、时效性和与当前证据的冲突关系。方法上，作者构造了五类任务，覆盖客观事实、上下文范围、记忆-证据冲突、有效记忆选择和个性化记忆使用，并用多轮对话模拟长期记忆来源。实验表明，多个记忆系统在加入记忆后更容易出现事实判断退化、旧记忆覆盖新信息、证据被历史偏好压制等问题。阅读价值较高，因为它把 agent memory 的可靠性问题具体化为 post-retrieval decision calibration，而不只是检索质量问题。",
+        "card_summary": "MemSyco-Bench 关注长期记忆 agent 的一个真实风险：检索到的历史用户记忆可能让模型在事实判断、证据冲突或更新偏好场景中过度迎合用户。论文把评测重点从“能否检索到记忆”推进到“检索后是否正确使用记忆”，对 agent memory 和 long-horizon reliability 很有参考价值。"
+      },
+      "analysis": {
+        "motivation": "这篇论文的核心动机是指出长期记忆让 LLM agent 从单轮助手变成长程协作者，但也把“迎合用户”从当前对话问题扩展成跨会话、持久化的可靠性问题。作者认为现有记忆评测主要看是否存储、检索、更新成功，却很少评估检索到的记忆进入上下文后，模型是否会错误地把历史用户偏好或信念当成事实证据。这个问题对 agent memory、multi-turn agent 和 long-horizon reliability 很关键，因为一个旧偏好、错误信念或越界记忆可能反复影响未来决策。",
+        "method": "论文提出 MemSyco-Bench，用来评估 memory-induced sycophancy，即 agent 在当前任务需要事实证据、作用域控制或更新信息时，仍过度跟随历史用户记忆。基准包含五类任务：客观事实判断、上下文作用域控制、记忆与证据冲突、有效记忆选择、个性化记忆使用。构造流程先定义每类任务的 memory-decision schema，再生成与当前问题语义相关但使用边界明确的历史记忆片段，把它们嵌入自然多轮对话，最后通过语义相关性、记忆使用边界和误导方向做质量验证。评估指标不仅看生成准确性，也看记忆不该影响时的 sycophancy rate，以及记忆该影响时是否使用当前有效记忆、避免旧记忆。",
+        "experiments": "实验覆盖多种记忆系统和两个 backbone，主要发现是现有 memory-augmented agent 并不能可靠缓解记忆诱导的迎合，很多时候记忆系统反而降低客观事实判断表现并提高迎合倾向。在记忆与证据冲突场景中，完整历史或外部记忆并不保证模型会优先使用客观证据，模型常在证据和历史偏好同时出现时被历史记忆带偏。错误归因显示，大量失败不是因为没有检索到相关记忆，而是检索成功之后使用方式错误，说明问题核心在 post-retrieval decision calibration。作者还测试了简单行为提示：提醒模型谨慎使用记忆有助于部分冲突场景，但会削弱个性化；让模型再次确认答案反而可能强化由记忆塑造的错误回答。",
+        "research_help": "Insight：这篇论文对 agent planning / agentic RL / 多轮系统的启发在于，长期记忆不应只被建模为 retrieval augmentation，而应被建模为带有作用域、时效性、证据优先级和决策权限的状态变量。对 long-horizon planning 来说，历史轨迹中的用户偏好、旧目标和过时约束需要经过 arbitration，而不是被直接塞回 context；否则 agent 会在后续规划中重复继承早期错误。对 agentic RL 的奖励设计也有启发：不能只奖励个性化或上下文一致性，还要显式奖励何时忽略记忆、何时更新记忆、何时让外部证据覆盖记忆。",
+        "insight": "Insight：这篇论文对 agent planning / agentic RL / 多轮系统的启发在于，长期记忆不应只被建模为 retrieval augmentation，而应被建模为带有作用域、时效性、证据优先级和决策权限的状态变量。对 long-horizon planning 来说，历史轨迹中的用户偏好、旧目标和过时约束需要经过 arbitration，而不是被直接塞回 context；否则 agent 会在后续规划中重复继承早期错误。对 agentic RL 的奖励设计也有启发：不能只奖励个性化或上下文一致性，还要显式奖励何时忽略记忆、何时更新记忆、何时让外部证据覆盖记忆。",
+        "abstract_zh": "记忆已经成为现代 LLM agent 的关键组件，使系统能够从单轮助手发展为长期协作者。但作者指出，检索到的记忆并不总是有益，它可能诱导 agent 过度迎合历史用户信念或偏好，从而牺牲事实准确性和客观推理。为此，论文提出 MemSyco-Bench，用于评估 agent 系统中的记忆诱导迎合问题，重点考察模型何时应该让记忆影响决策，以及如何正确使用有效记忆。该基准包含五类任务，分别测试 agent 是否能拒绝把记忆当作事实证据、尊重记忆适用范围、处理记忆与客观证据冲突、跟踪记忆更新，以及在个性化任务中使用有效记忆。实验显示，现有记忆系统经常增加迎合风险，并难以可靠地进行适当的记忆使用判断。",
+        "card_summary": "MemSyco-Bench 关注长期记忆 agent 的一个真实风险：检索到的历史用户记忆可能让模型在事实判断、证据冲突或更新偏好场景中过度迎合用户。论文把评测重点从“能否检索到记忆”推进到“检索后是否正确使用记忆”，对 agent memory 和 long-horizon reliability 很有参考价值。",
+        "full_summary": "这篇论文提出 MemSyco-Bench，专门评估长期记忆是否会诱导 LLM agent 过度跟随历史用户信念或偏好。它的重要性在于，许多现有记忆基准默认检索到的记忆应该被使用，而现实 agent 需要判断记忆的证据地位、作用域、时效性和与当前证据的冲突关系。方法上，作者构造了五类任务，覆盖客观事实、上下文范围、记忆-证据冲突、有效记忆选择和个性化记忆使用，并用多轮对话模拟长期记忆来源。实验表明，多个记忆系统在加入记忆后更容易出现事实判断退化、旧记忆覆盖新信息、证据被历史偏好压制等问题。阅读价值较高，因为它把 agent memory 的可靠性问题具体化为 post-retrieval decision calibration，而不只是检索质量问题。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关，值得读",
+        "value_reason": "这篇论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability 的交叉点，提出的问题比单纯记忆检索评测更接近真实长期 agent 的失败模式。它的主要价值不是某个新 memory architecture，而是把“记忆何时该影响决策”拆成可评测任务，并用实验显示现有系统在检索成功后仍会错误使用记忆。对做 agent planning 的人来说，这可以转化为记忆门控、证据优先级、时序更新、偏好适用范围和奖励设计等具体研究方向。",
+        "limitations": "论文标注为 Work in Progress，基准构造依赖任务 schema、模拟多轮对话和质量验证流程，仍需要关注数据是否过度合成、场景是否覆盖真实用户长期交互的复杂性。实验主要围绕若干现有记忆系统和 backbone，结论对更多闭源产品级 agent、真实用户记忆库和工具调用规划任务的泛化还需要进一步验证。部分指标把回答归类为迎合或正确使用记忆，可能依赖裁判规则与参考答案设计；如果真实任务本身存在主观性或证据不完备，评估边界会更难。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出 memory-induced sycophancy：长期记忆中的历史用户信念、偏好或旧决策被重新注入上下文后，可能影响当前推理。",
+          "作者指出现有 LongMemEval、LoCoMo、STALE、PersonaMem 等更多评估检索成功，而较少评估检索之后是否正确使用记忆。",
+          "MemSyco-Bench 包含五类任务：Objective Fact Judgment、Contextual Scope Control、Memory-Evidence Conflict、Valid Memory Selection、Personalized Memory Use。",
+          "实验显示，在客观事实判断中，加入完整对话或外部记忆后，两个 backbone 的准确性普遍下降，迎合率普遍上升。判定依据来自全文实验部分。水文风险为中：题目重要且实验覆盖较广，但仍是 Work in Progress，并且基准构造与裁判规则需要后续独立验证。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-04T01:44:12.107Z"
+      }
+    },
+    {
+      "id": "2607.00597v1",
+      "title": "Multi-Turn Agentic Scientific Literature Search via Workflow Induction",
+      "summary": "这篇论文提出 PAPERPILOT，把多轮科学文献检索从“不断改写查询”改成“归纳并编辑可执行搜索工作流”。它与 agent planning 高度相关，因为用户反馈被映射为 DAG 搜索流程的具体修改，从而提升多轮检索的可控性和执行稳定性。",
+      "url": "http://arxiv.org/abs/2607.00597v1",
+      "authors": [
+        "Jisen Li",
+        "Bingxuan Li",
+        "Nanyi Jiang",
+        "Xuying Ning",
+        "Xiyao Wang",
+        "Yifan Shen",
+        "Heng Wang",
+        "Yuqing Jian",
+        "Xiaoxia Wu",
+        "Ben Athiwaratkun",
+        "Pan Lu",
+        "Jiaxuan You",
+        "Bingxin Zhao"
+      ],
+      "report_date": "2026-07-04",
+      "published": "2026-07-01",
+      "updated": "2026-07-01",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 80,
+        "level": "高",
+        "label": "强相关：多轮 agent 检索的可编辑工作流规划范式",
+        "water_risk": "中",
+        "value_judgement": "强相关：多轮 agent 检索的可编辑工作流规划范式",
+        "reason": "这篇论文直接命中 multi-turn agent、agent planning、planning reliability 和文献检索自动化。它的价值不在于提出新的检索模型，而在于把用户意图澄清和检索策略修改连接到显式 DAG workflow，这对构建可调试、可训练、可评估的长程 agent 很有参考意义。推荐阅读正文的方法、workflow edit 训练和 ablation；如果只关心最终检索 SOTA，则阅读价值会下降。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jisen Li",
+          "Bingxuan Li",
+          "Nanyi Jiang",
+          "Xuying Ning",
+          "Xiyao Wang",
+          "Yifan Shen",
+          "Heng Wang",
+          "Yuqing Jian",
+          "Xiaoxia Wu",
+          "Ben Athiwaratkun",
+          "Pan Lu",
+          "Jiaxuan You",
+          "Bingxin Zhao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-01",
+        "paper_url": "https://arxiv.org/abs/2607.00597v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "这篇论文直接命中 multi-turn agent、agent planning、planning reliability 和文献检索自动化。它的价值不在于提出新的检索模型，而在于把用户意图澄清和检索策略修改连接到显式 DAG workflow，这对构建可调试、可训练、可评估的长程 agent 很有参考意义。推荐阅读正文的方法、workflow edit 训练和 ablation；如果只关心最终检索 SOTA，则阅读价值会下降。",
+        "summary": "这篇论文提出 PAPERPILOT，把多轮科学文献检索从“不断改写查询”改成“归纳并编辑可执行搜索工作流”。它与 agent planning 高度相关，因为用户反馈被映射为 DAG 搜索流程的具体修改，从而提升多轮检索的可控性和执行稳定性。",
+        "highlights": [
+          "这篇论文直接命中 multi-turn agent、agent planning、planning reliability 和文献检索自动化。它的价值不在于提出新的检索模型，而在于把用户意图澄清和检索策略修改连接到显式 DAG workflow，这对构建可调试、可训练、可评估的长程 agent 很有参考意义。推荐阅读正文的方法、workflow edit 训练和 ablation；如果只关心最终检索 SOTA，则阅读价值会下降。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文关注科学文献检索中的一个真实痛点：研究者的检索意图通常不是单轮查询能完整表达的，尤其是“找后续工作”“找强基线”“找相邻方向”等任务会随澄清反馈不断变化。作者认为现有文献搜索 agent 多依赖固定检索流水线或隐式语言推理，用户反馈往往只被追加成查询文本，而没有真正转化为检索策略的可控修改。因此论文把多轮科学文献搜索建模为可执行工作流归纳问题，希望让 agent 能显式构造、检查、修改检索流程。",
+        "method": "PAPERPILOT 将一次文献搜索表示为由类型化 paper-search operator 组成的 DAG，节点包括关键词搜索、引用扩展、过滤、打分、重排、证据抽取等，边表示论文集合、关键词、分数或证据等中间结果的流动。多轮交互中，agent 先澄清用户意图，再根据反馈修改 DAG 的结构、参数、过滤条件和重排标准，而不是只改写自然语言查询。训练上，作者先用强 teacher 生成覆盖不同搜索方向的工作流轨迹做监督模仿，再通过人为破坏成功工作流构造偏好对，用偏好优化训练模型区分有效工作流和结构或语义有问题的工作流。",
+        "experiments": "实验覆盖 predecessor、successor、sibling、benchmark、survey 等科学搜索方向，并在单轮和多轮设置下比较 WebSearch、DeepResearch、固定工作流、通用 toolset agent 和训练后的 PAPERPILOT-9B。主要信号是：自适应工作流通常优于固定流程，多轮澄清在能被落实为具体 workflow edit 时收益更明显；训练后的 PAPERPILOT-9B 相比基础 9B toolset agent 提升检索质量并消除了工作流执行错误。论文还做了工作流生成与编辑的 ablation、候选池规模敏感性分析和小规模人类研究，说明该方法的核心价值不只在最终排序，还在于更稳定地生成和修改可执行检索计划。实验的主要弱点是多轮主评测依赖带隐藏 gold 信息的 LLM 用户模拟器，开放真实用户场景和跨学科泛化仍需要进一步验证。",
+        "research_help": "Insight：这篇论文的可迁移启发是，把多轮 agent 的“澄清、计划、执行、修正”显式落到可编辑的结构化工作流上，可以提升 long-horizon planning 的可控性和可靠性。对 agentic RL 来说，它提供了一个比纯文本轨迹更适合作为状态、动作和偏好监督对象的中间表示：用户反馈可以对应到 add node、remove node、modify filter、adjust rerank 等具体动作。对多轮系统来说，关键不是让 agent 多问几轮，而是让每轮反馈改变可执行策略，否则澄清只是上下文堆叠。对 planning reliability 来说，类型化 operator、DAG 合法性和工作流执行错误率可以作为比最终答案更早、更可诊断的过程指标。",
+        "recommendation": {
+          "score": 80,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移启发是，把多轮 agent 的“澄清、计划、执行、修正”显式落到可编辑的结构化工作流上，可以提升 long-horizon planning 的可控性和可靠性。对 agentic RL 来说，它提供了一个比纯文本轨迹更适合作为状态、动作和偏好监督对象的中间表示：用户反馈可以对应到 add node、remove node、modify filter、adjust rerank 等具体动作。对多轮系统来说，关键不是让 agent 多问几轮，而是让每轮反馈改变可执行策略，否则澄清只是上下文堆叠。对 planning reliability 来说，类型化 operator、DAG 合法性和工作流执行错误率可以作为比最终答案更早、更可诊断的过程指标。",
+        "abstract_zh": "科学文献搜索往往依赖上下文、需要多轮交互，并且会随着用户反馈不断演化；但现有搜索 agent 通常使用固定的一次性检索流水线或隐式语言推理，导致搜索策略难以控制、检查和改进。本文提出 PAPERPILOT，将科学文献搜索建模为工作流归纳：给定 anchor paper 和用户查询，系统构造一个由关键词搜索、引用扩展、过滤、打分、重排和证据抽取等算子组成的可执行 DAG。用户反馈会被用来同时细化查询和修改工作流本身，模型通过工作流模仿学习以及基于损坏工作流的偏好优化进行训练。实验显示，PAPERPILOT-9B 在多轮交互下相比基础 Qwen3.5-9B toolset agent 提升了检索指标，并将工作流执行错误降为零，说明显式可编辑工作流能更有效地对齐复杂科学检索意图。",
+        "full_summary": "PAPERPILOT 研究的是多轮科学文献搜索：用户围绕一篇 anchor paper 提出模糊或逐步演化的检索需求，agent 需要通过澄清、检索、过滤和重排找到真正相关的论文。论文的核心重要性在于，它没有把多轮反馈简单拼进 prompt，而是把检索过程表示为可执行、可编辑的 DAG 工作流。方法上，系统使用类型化搜索算子构造 workflow，并通过监督模仿和偏好优化训练模型生成和修正这些 workflow。实验显示，自适应 workflow 比固定检索流程更适合不同科学搜索意图，训练后的 PAPERPILOT-9B 在多轮设置下比基础 toolset agent 更稳，尤其减少了 workflow 执行错误。它值得读，尤其适合关注 agent planning、multi-turn agent 和 long-horizon reliability 的研究者，但其真实开放场景效果仍受限于模拟用户评测和计算机科学文献为主的 benchmark。",
+        "card_summary": "这篇论文提出 PAPERPILOT，把多轮科学文献检索从“不断改写查询”改成“归纳并编辑可执行搜索工作流”。它与 agent planning 高度相关，因为用户反馈被映射为 DAG 搜索流程的具体修改，从而提升多轮检索的可控性和执行稳定性。"
+      },
+      "analysis": {
+        "motivation": "论文关注科学文献检索中的一个真实痛点：研究者的检索意图通常不是单轮查询能完整表达的，尤其是“找后续工作”“找强基线”“找相邻方向”等任务会随澄清反馈不断变化。作者认为现有文献搜索 agent 多依赖固定检索流水线或隐式语言推理，用户反馈往往只被追加成查询文本，而没有真正转化为检索策略的可控修改。因此论文把多轮科学文献搜索建模为可执行工作流归纳问题，希望让 agent 能显式构造、检查、修改检索流程。",
+        "method": "PAPERPILOT 将一次文献搜索表示为由类型化 paper-search operator 组成的 DAG，节点包括关键词搜索、引用扩展、过滤、打分、重排、证据抽取等，边表示论文集合、关键词、分数或证据等中间结果的流动。多轮交互中，agent 先澄清用户意图，再根据反馈修改 DAG 的结构、参数、过滤条件和重排标准，而不是只改写自然语言查询。训练上，作者先用强 teacher 生成覆盖不同搜索方向的工作流轨迹做监督模仿，再通过人为破坏成功工作流构造偏好对，用偏好优化训练模型区分有效工作流和结构或语义有问题的工作流。",
+        "experiments": "实验覆盖 predecessor、successor、sibling、benchmark、survey 等科学搜索方向，并在单轮和多轮设置下比较 WebSearch、DeepResearch、固定工作流、通用 toolset agent 和训练后的 PAPERPILOT-9B。主要信号是：自适应工作流通常优于固定流程，多轮澄清在能被落实为具体 workflow edit 时收益更明显；训练后的 PAPERPILOT-9B 相比基础 9B toolset agent 提升检索质量并消除了工作流执行错误。论文还做了工作流生成与编辑的 ablation、候选池规模敏感性分析和小规模人类研究，说明该方法的核心价值不只在最终排序，还在于更稳定地生成和修改可执行检索计划。实验的主要弱点是多轮主评测依赖带隐藏 gold 信息的 LLM 用户模拟器，开放真实用户场景和跨学科泛化仍需要进一步验证。",
+        "research_help": "Insight：这篇论文的可迁移启发是，把多轮 agent 的“澄清、计划、执行、修正”显式落到可编辑的结构化工作流上，可以提升 long-horizon planning 的可控性和可靠性。对 agentic RL 来说，它提供了一个比纯文本轨迹更适合作为状态、动作和偏好监督对象的中间表示：用户反馈可以对应到 add node、remove node、modify filter、adjust rerank 等具体动作。对多轮系统来说，关键不是让 agent 多问几轮，而是让每轮反馈改变可执行策略，否则澄清只是上下文堆叠。对 planning reliability 来说，类型化 operator、DAG 合法性和工作流执行错误率可以作为比最终答案更早、更可诊断的过程指标。",
+        "insight": "Insight：这篇论文的可迁移启发是，把多轮 agent 的“澄清、计划、执行、修正”显式落到可编辑的结构化工作流上，可以提升 long-horizon planning 的可控性和可靠性。对 agentic RL 来说，它提供了一个比纯文本轨迹更适合作为状态、动作和偏好监督对象的中间表示：用户反馈可以对应到 add node、remove node、modify filter、adjust rerank 等具体动作。对多轮系统来说，关键不是让 agent 多问几轮，而是让每轮反馈改变可执行策略，否则澄清只是上下文堆叠。对 planning reliability 来说，类型化 operator、DAG 合法性和工作流执行错误率可以作为比最终答案更早、更可诊断的过程指标。",
+        "abstract_zh": "科学文献搜索往往依赖上下文、需要多轮交互，并且会随着用户反馈不断演化；但现有搜索 agent 通常使用固定的一次性检索流水线或隐式语言推理，导致搜索策略难以控制、检查和改进。本文提出 PAPERPILOT，将科学文献搜索建模为工作流归纳：给定 anchor paper 和用户查询，系统构造一个由关键词搜索、引用扩展、过滤、打分、重排和证据抽取等算子组成的可执行 DAG。用户反馈会被用来同时细化查询和修改工作流本身，模型通过工作流模仿学习以及基于损坏工作流的偏好优化进行训练。实验显示，PAPERPILOT-9B 在多轮交互下相比基础 Qwen3.5-9B toolset agent 提升了检索指标，并将工作流执行错误降为零，说明显式可编辑工作流能更有效地对齐复杂科学检索意图。",
+        "card_summary": "这篇论文提出 PAPERPILOT，把多轮科学文献检索从“不断改写查询”改成“归纳并编辑可执行搜索工作流”。它与 agent planning 高度相关，因为用户反馈被映射为 DAG 搜索流程的具体修改，从而提升多轮检索的可控性和执行稳定性。",
+        "full_summary": "PAPERPILOT 研究的是多轮科学文献搜索：用户围绕一篇 anchor paper 提出模糊或逐步演化的检索需求，agent 需要通过澄清、检索、过滤和重排找到真正相关的论文。论文的核心重要性在于，它没有把多轮反馈简单拼进 prompt，而是把检索过程表示为可执行、可编辑的 DAG 工作流。方法上，系统使用类型化搜索算子构造 workflow，并通过监督模仿和偏好优化训练模型生成和修正这些 workflow。实验显示，自适应 workflow 比固定检索流程更适合不同科学搜索意图，训练后的 PAPERPILOT-9B 在多轮设置下比基础 toolset agent 更稳，尤其减少了 workflow 执行错误。它值得读，尤其适合关注 agent planning、multi-turn agent 和 long-horizon reliability 的研究者，但其真实开放场景效果仍受限于模拟用户评测和计算机科学文献为主的 benchmark。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关：多轮 agent 检索的可编辑工作流规划范式",
+        "value_reason": "这篇论文直接命中 multi-turn agent、agent planning、planning reliability 和文献检索自动化。它的价值不在于提出新的检索模型，而在于把用户意图澄清和检索策略修改连接到显式 DAG workflow，这对构建可调试、可训练、可评估的长程 agent 很有参考意义。推荐阅读正文的方法、workflow edit 训练和 ablation；如果只关心最终检索 SOTA，则阅读价值会下降。",
+        "limitations": "主要限制包括：预定义 operator library 可能覆盖不了复杂领域检索行为；训练数据来自 teacher 轨迹，可能继承 teacher 偏差；主 benchmark 以计算机科学文献和隐藏 gold 构造为主，未必代表开放式真实文献搜索；多轮评测主要依赖 LLM 用户模拟器，即使有泄漏控制，也不能完全替代真实研究者交互。人类研究部分在提供的正文中细节不足，样本规模和任务多样性需要进一步确认。整体不是明显水文，但存在 benchmark、模拟用户和 teacher-generated supervision 共同支撑结论的偏水风险。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确将科学文献搜索形式化为 multi-turn interactive workflow-construction problem，给定 anchor paper 和 user query，agent 通过澄清、搜索、过滤、重排和解释逐步满足用户意图。",
+          "方法部分定义 PAPERPILOT-TOOLSET，并把 workflow 表示为类型一致的 DAG，每个节点是一个 paper-search operator，用户反馈会触发 workflow structure、operator parameters 和 candidate sets 的 refinement。",
+          "训练部分使用 teacher 生成的高质量 workflow 轨迹做监督微调，再通过 invalid references、missing inputs、incorrect operators、dropped nodes、shifted filters 等 corrupted workflows 构造偏好对。",
+          "实验结果显示 adaptive workflow induction 优于固定 workflow，多轮反馈对强 tool-using agent 更有效；训练后的 PAPERPILOT-9B 相比基础 Qwen3.5-9B toolset agent 提升检索质量并把 workflow execution errors 降为零。衡量指标包括 Hit、MRR..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-04T01:44:59.099Z"
+      }
+    },
+    {
+      "id": "2607.01120v2",
+      "title": "Next-Generation Agentic Reinforcement Learning Systems Enable Self-Evolving Agents",
+      "summary": "这篇论文把自进化 agent 的核心瓶颈定义为系统问题，而不是单纯的 RL 算法问题，提出轨迹协议、数据代理和进化控制平面三件套。它对 agentic RL 和 long-horizon agent 的在线学习架构很有启发，但实证部分偏弱，主要是 AREAL2.0 的系统原型设计而非完整实验验证。",
+      "url": "http://arxiv.org/abs/2607.01120v2",
+      "authors": [
+        "Ran Yan",
+        "Wei Fu",
+        "Jiale Li",
+        "Shusheng Xu",
+        "Zhiyu Mei",
+        "Jiaxuan Gao",
+        "Jiarui Zhang",
+        "Wentai Zhang",
+        "Hao Dai",
+        "Xujie Shen",
+        "Chuyi He",
+        "Zhen Pu",
+        "Jun Mei",
+        "Zhiyao Lin",
+        "Haitao Wang",
+        "Zhiqiang Ding",
+        "Jiawei Zhang",
+        "Huaijie Wang",
+        "Ruida Xu",
+        "Honghua Dong",
+        "Youhe Jiang",
+        "Yi Wu",
+        "Tongkai Yang",
+        "Binhang Yuan"
+      ],
+      "report_date": "2026-07-04",
+      "published": "2026-07-01",
+      "updated": "2026-07-02",
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 66,
+        "level": "中",
+        "label": "值得读，但更适合作为架构/立场参考而非实证结果论文",
+        "water_risk": "中",
+        "value_judgement": "值得读，但更适合作为架构/立场参考而非实证结果论文",
+        "reason": "与 agentic RL、multi-turn agent、long-horizon planning reliability 高度相关，尤其是 ATDP、data proxy、control plane 三层拆分很适合启发在线 agent 学习系统设计。推荐等级没有给到“高”的原因是论文主要提出愿景和原型架构，AREAL2.0 只覆盖 policy weight update 这一条路径，缺少可复现实验、量化指标和真实线上效果证明。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": false,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Ran Yan",
+          "Wei Fu",
+          "Jiale Li",
+          "Shusheng Xu",
+          "Zhiyu Mei",
+          "Jiaxuan Gao",
+          "Jiarui Zhang",
+          "Wentai Zhang",
+          "Hao Dai",
+          "Xujie Shen",
+          "Chuyi He",
+          "Zhen Pu",
+          "Jun Mei",
+          "Zhiyao Lin",
+          "Haitao Wang",
+          "Zhiqiang Ding",
+          "Jiawei Zhang",
+          "Huaijie Wang",
+          "Ruida Xu",
+          "Honghua Dong",
+          "Youhe Jiang",
+          "Yi Wu",
+          "Tongkai Yang",
+          "Binhang Yuan"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-01",
+        "paper_url": "https://arxiv.org/abs/2607.01120v2",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "与 agentic RL、multi-turn agent、long-horizon planning reliability 高度相关，尤其是 ATDP、data proxy、control plane 三层拆分很适合启发在线 agent 学习系统设计。推荐等级没有给到“高”的原因是论文主要提出愿景和原型架构，AREAL2.0 只覆盖 policy weight update 这一条路径，缺少可复现实验、量化指标和真实线上效果证明。",
+        "summary": "这篇论文把自进化 agent 的核心瓶颈定义为系统问题，而不是单纯的 RL 算法问题，提出轨迹协议、数据代理和进化控制平面三件套。它对 agentic RL 和 long-horizon agent 的在线学习架构很有启发，但实证部分偏弱，主要是 AREAL2.0 的系统原型设计而非完整实验验证。",
+        "highlights": [
+          "与 agentic RL、multi-turn agent、long-horizon planning reliability 高度相关，尤其是 ATDP、data proxy、control plane 三层拆分很适合启发在线 agent 学习系统设计。推荐等级没有给到“高”的原因是论文主要提出愿景和原型架构，AREAL2.0 只覆盖 policy weight update 这一条路径，缺少可复现实验、量化指标和真实线上效果证明。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文认为，企业级 LLM agent 已经从单次模型调用变成会读文件、调工具、检索、写记忆、请求审批并完成长任务的复合策略，但部署后的 agent 仍主要靠人工看日志、改 prompt、收数据、离线训练和重新发布来进化。作者的核心动机是把“自进化 agent”从算法话题推进到在线 agentic RL 系统问题：瓶颈不只是 RL 算法或更强模型，而是缺少能把真实 agent 轨迹转成可治理、可归因、可回放学习材料的系统底座。",
+        "method": "方法上这是一篇系统愿景与架构论文，提出三个支柱：ATDP agent trajectory data protocol，用 step-level 事件记录 observation、内部状态摘要、action、outcome、reward 与治理元数据；enterprise-grade data proxy，用于跨模型、工具、检索、记忆、人类反馈通道拦截并治理真实生产轨迹；agent evolution control plane，根据轨迹统计、漂移、成本和安全约束选择 memory 更新、skill patch、harness edit、tool schema 修改、policy RL 更新、rollback 或 no-op。论文还用 AREAL2.0 作为一个受限原型，把原 AREAL 的 rollout/training worker 包装成在线 agent 服务可替换的 LLM inference backend，从而连接在线服务流量、轨迹收集和 policy weight 更新。",
+        "experiments": "严格说论文没有给出充分的定量实验结果，也没有展示 benchmark、ablation、吞吐、稳定性、线上收益或 agent 成功率提升。所谓实验信号主要是 AREAL2.0 的系统设计和 Hermes agent 接入案例：通过 gateway、router、data proxy、agent-compute worker，使现有 agent 服务尽量不改 harness，只把 LLM API backend 指向 AREAL2.0，从真实多轮工具调用流量中收集轨迹并进入 RL training loop。因此它更像 position/system design paper，而不是已验证性能收益的实证论文。",
+        "research_help": "Insight：这篇文章最有迁移价值的点是把 agent planning reliability 的改进对象从“模型回答”扩展为“可版本化的复合 agent 策略”，并要求每一步规划、工具调用、记忆读写、失败反馈都能被归因和回放。对 long-horizon agent 来说，ATDP 式轨迹结构能把迟到反馈、用户修正、工具错误和中间过程奖励纳入统一学习材料，而 evolution control plane 的思想提醒我们不要把所有失败都交给 RL 更新模型权重，很多规划失败更适合 memory、skill、prompt harness 或工具 schema 层面的局部修复。",
+        "recommendation": {
+          "score": 66,
+          "level": "中",
+          "label": "可略读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": false,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇文章最有迁移价值的点是把 agent planning reliability 的改进对象从“模型回答”扩展为“可版本化的复合 agent 策略”，并要求每一步规划、工具调用、记忆读写、失败反馈都能被归因和回放。对 long-horizon agent 来说，ATDP 式轨迹结构能把迟到反馈、用户修正、工具错误和中间过程奖励纳入统一学习材料，而 evolution control plane 的思想提醒我们不要把所有失败都交给 RL 更新模型权重，很多规划失败更适合 memory、skill、prompt harness 或工具 schema 层面的局部修复。",
+        "abstract_zh": "大型语言模型 agent 正在进入代码助手、客服和科研助手等生产场景，但部署后通常仍是静态的，模型权重、系统提示、工具集和上下文 harness 都被冻结，改进依赖人工收集数据、离线微调和重新部署。论文认为，企业级自进化 agent 的主要瓶颈不是 RL 算法本身，而是缺少适合在线 agentic RL 的系统：现有系统没有标准化的 step-level agent 轨迹协议、没有能把真实工作负载转为受治理学习材料的数据代理，也没有统一的 agent 进化控制平面来决定何时更新模型权重或调整 in-context harness。作者提出下一代 agentic RL 系统应围绕这三类组件共同设计，并给出架构承诺、案例和反驳。论文还通过 AREAL2.0 实例化其中一个受限分支，展示如何把现有 RL 基础设施重组为面向在线 agent 服务的 policy LLM 权重更新闭环。",
+        "full_summary": "论文主张，企业级 LLM agent 的进化不能继续依赖人工看日志和离线再训练，而需要把真实多轮、工具增强、带记忆的 agent 执行轨迹转成可治理的在线 RL 数据。它提出 ATDP 来记录 step-level 的 observation、action、outcome、reward、版本和治理元数据，用 data proxy 在生产边界拦截模型调用、工具调用、检索、记忆和人类反馈，再由 control plane 决定应该改记忆、补 skill、改 harness、调工具 schema、更新 policy 权重还是回滚。AREAL2.0 是论文给出的具体原型，重点展示如何把在线 agent 服务的 LLM backend 接到 RL rollout/training worker 上，从真实服务流量中收集轨迹并进行 policy LLM 更新。它的重要性在于把 self-evolving agent 拆成可观测、可归因、可回放、可审计的系统闭环，而不是一句“让 agent 自我改进”。不过，论文缺少定量实验和完整系统评估，阅读价值主要来自架构视角和问题定义，而不是结论性性能证据。",
+        "card_summary": "这篇论文把自进化 agent 的核心瓶颈定义为系统问题，而不是单纯的 RL 算法问题，提出轨迹协议、数据代理和进化控制平面三件套。它对 agentic RL 和 long-horizon agent 的在线学习架构很有启发，但实证部分偏弱，主要是 AREAL2.0 的系统原型设计而非完整实验验证。"
+      },
+      "analysis": {
+        "motivation": "论文认为，企业级 LLM agent 已经从单次模型调用变成会读文件、调工具、检索、写记忆、请求审批并完成长任务的复合策略，但部署后的 agent 仍主要靠人工看日志、改 prompt、收数据、离线训练和重新发布来进化。作者的核心动机是把“自进化 agent”从算法话题推进到在线 agentic RL 系统问题：瓶颈不只是 RL 算法或更强模型，而是缺少能把真实 agent 轨迹转成可治理、可归因、可回放学习材料的系统底座。",
+        "method": "方法上这是一篇系统愿景与架构论文，提出三个支柱：ATDP agent trajectory data protocol，用 step-level 事件记录 observation、内部状态摘要、action、outcome、reward 与治理元数据；enterprise-grade data proxy，用于跨模型、工具、检索、记忆、人类反馈通道拦截并治理真实生产轨迹；agent evolution control plane，根据轨迹统计、漂移、成本和安全约束选择 memory 更新、skill patch、harness edit、tool schema 修改、policy RL 更新、rollback 或 no-op。论文还用 AREAL2.0 作为一个受限原型，把原 AREAL 的 rollout/training worker 包装成在线 agent 服务可替换的 LLM inference backend，从而连接在线服务流量、轨迹收集和 policy weight 更新。",
+        "experiments": "严格说论文没有给出充分的定量实验结果，也没有展示 benchmark、ablation、吞吐、稳定性、线上收益或 agent 成功率提升。所谓实验信号主要是 AREAL2.0 的系统设计和 Hermes agent 接入案例：通过 gateway、router、data proxy、agent-compute worker，使现有 agent 服务尽量不改 harness，只把 LLM API backend 指向 AREAL2.0，从真实多轮工具调用流量中收集轨迹并进入 RL training loop。因此它更像 position/system design paper，而不是已验证性能收益的实证论文。",
+        "research_help": "Insight：这篇文章最有迁移价值的点是把 agent planning reliability 的改进对象从“模型回答”扩展为“可版本化的复合 agent 策略”，并要求每一步规划、工具调用、记忆读写、失败反馈都能被归因和回放。对 long-horizon agent 来说，ATDP 式轨迹结构能把迟到反馈、用户修正、工具错误和中间过程奖励纳入统一学习材料，而 evolution control plane 的思想提醒我们不要把所有失败都交给 RL 更新模型权重，很多规划失败更适合 memory、skill、prompt harness 或工具 schema 层面的局部修复。",
+        "insight": "Insight：这篇文章最有迁移价值的点是把 agent planning reliability 的改进对象从“模型回答”扩展为“可版本化的复合 agent 策略”，并要求每一步规划、工具调用、记忆读写、失败反馈都能被归因和回放。对 long-horizon agent 来说，ATDP 式轨迹结构能把迟到反馈、用户修正、工具错误和中间过程奖励纳入统一学习材料，而 evolution control plane 的思想提醒我们不要把所有失败都交给 RL 更新模型权重，很多规划失败更适合 memory、skill、prompt harness 或工具 schema 层面的局部修复。",
+        "abstract_zh": "大型语言模型 agent 正在进入代码助手、客服和科研助手等生产场景，但部署后通常仍是静态的，模型权重、系统提示、工具集和上下文 harness 都被冻结，改进依赖人工收集数据、离线微调和重新部署。论文认为，企业级自进化 agent 的主要瓶颈不是 RL 算法本身，而是缺少适合在线 agentic RL 的系统：现有系统没有标准化的 step-level agent 轨迹协议、没有能把真实工作负载转为受治理学习材料的数据代理，也没有统一的 agent 进化控制平面来决定何时更新模型权重或调整 in-context harness。作者提出下一代 agentic RL 系统应围绕这三类组件共同设计，并给出架构承诺、案例和反驳。论文还通过 AREAL2.0 实例化其中一个受限分支，展示如何把现有 RL 基础设施重组为面向在线 agent 服务的 policy LLM 权重更新闭环。",
+        "card_summary": "这篇论文把自进化 agent 的核心瓶颈定义为系统问题，而不是单纯的 RL 算法问题，提出轨迹协议、数据代理和进化控制平面三件套。它对 agentic RL 和 long-horizon agent 的在线学习架构很有启发，但实证部分偏弱，主要是 AREAL2.0 的系统原型设计而非完整实验验证。",
+        "full_summary": "论文主张，企业级 LLM agent 的进化不能继续依赖人工看日志和离线再训练，而需要把真实多轮、工具增强、带记忆的 agent 执行轨迹转成可治理的在线 RL 数据。它提出 ATDP 来记录 step-level 的 observation、action、outcome、reward、版本和治理元数据，用 data proxy 在生产边界拦截模型调用、工具调用、检索、记忆和人类反馈，再由 control plane 决定应该改记忆、补 skill、改 harness、调工具 schema、更新 policy 权重还是回滚。AREAL2.0 是论文给出的具体原型，重点展示如何把在线 agent 服务的 LLM backend 接到 RL rollout/training worker 上，从真实服务流量中收集轨迹并进行 policy LLM 更新。它的重要性在于把 self-evolving agent 拆成可观测、可归因、可回放、可审计的系统闭环，而不是一句“让 agent 自我改进”。不过，论文缺少定量实验和完整系统评估，阅读价值主要来自架构视角和问题定义，而不是结论性性能证据。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "值得读，但更适合作为架构/立场参考而非实证结果论文",
+        "value_reason": "与 agentic RL、multi-turn agent、long-horizon planning reliability 高度相关，尤其是 ATDP、data proxy、control plane 三层拆分很适合启发在线 agent 学习系统设计。推荐等级没有给到“高”的原因是论文主要提出愿景和原型架构，AREAL2.0 只覆盖 policy weight update 这一条路径，缺少可复现实验、量化指标和真实线上效果证明。",
+        "limitations": "主要局限是论证强、实验弱：没有系统性 benchmark、没有和现有 RL 系统或 observability stack 的定量比较，也没有展示自动触发 control plane 在真实多租户、多工具、多轮任务中的效果。ATDP 和 data proxy 的治理字段、隐私隔离、回放边界虽然讲得完整，但更多是设计原则而非已落地规范。AREAL2.0 原型只证明“可以把推理服务和 RL 训练连起来”，还没有证明这种闭环能稳定提升 long-horizon agent 的成功率或降低规划失败。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "全文明确提出三大支柱：标准化 RL-grade agent trajectory data protocol、enterprise-grade data proxy、unified agent evolution control plane。",
+          "ATDP 原型把每步事件表示为 observation、hidden/internal state、action、outcome、reward、metadata，直接服务 step-level credit assignment 和 replay。",
+          "data proxy 部分强调跨 LLM 调用、工具调用、检索、记忆、人类反馈捕获真实生产轨迹，并在进入学习队列前处理 redaction、access control、retention 和 learning eligibility。",
+          "control plane 部分将 agent 表示为 policy LLM、in-context harness、memory、tool repertoire 和 governance guardrail 的组合，并把 evolution action 扩展到 memory、skill、harness、tool schema、policy update、..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-04T01:48:33.696Z"
+      }
+    },
+    {
+      "id": "2607.01415v1",
+      "title": "The Rollout Infrastructure Tax in Coding-Agent Reinforcement Learning",
+      "summary": "这篇论文把 coding-agent RL 中环境启动、命令执行、状态清理等系统开销称为 rollout infrastructure tax，并用四类执行基座做了对比测量。它的价值不在新算法，而在提醒多轮 coding agent 训练的效率和可靠性很大程度取决于 rollout 基础设施。",
+      "url": "http://arxiv.org/abs/2607.01415v1",
+      "authors": [
+        "Daniel Thi Graviet",
+        "Lovre Pesut",
+        "Ivan Dagelic",
+        "Vedran Jukic",
+        "Ivan Burazin"
+      ],
+      "report_date": "2026-07-04",
+      "published": "2026-07-01",
+      "updated": "2026-07-01",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.DC"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 58,
+        "level": "高",
+        "label": "值得读：面向 coding-agent RL 的系统瓶颈测量论文",
+        "water_risk": "中",
+        "value_judgement": "值得读：面向 coding-agent RL 的系统瓶颈测量论文",
+        "reason": "它直接命中 agentic RL 和 multi-turn coding agent 的 rollout 生成瓶颈，提出的 infrastructure tax 框架很适合用于分析长轨迹训练的吞吐、成本和可靠性。虽然没有新的 agent 算法，但对设计大规模 agent 训练系统、评估 rollout 平台、理解长尾延迟都有实际参考价值。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": false,
+          "experiments": false,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Daniel Thi Graviet",
+          "Lovre Pesut",
+          "Ivan Dagelic",
+          "Vedran Jukic",
+          "Ivan Burazin"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-01",
+        "paper_url": "https://arxiv.org/abs/2607.01415v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "它直接命中 agentic RL 和 multi-turn coding agent 的 rollout 生成瓶颈，提出的 infrastructure tax 框架很适合用于分析长轨迹训练的吞吐、成本和可靠性。虽然没有新的 agent 算法，但对设计大规模 agent 训练系统、评估 rollout 平台、理解长尾延迟都有实际参考价值。",
+        "summary": "这篇论文把 coding-agent RL 中环境启动、命令执行、状态清理等系统开销称为 rollout infrastructure tax，并用四类执行基座做了对比测量。它的价值不在新算法，而在提醒多轮 coding agent 训练的效率和可靠性很大程度取决于 rollout 基础设施。",
+        "highlights": [
+          "它直接命中 agentic RL 和 multi-turn coding agent 的 rollout 生成瓶颈，提出的 infrastructure tax 框架很适合用于分析长轨迹训练的吞吐、成本和可靠性。虽然没有新的 agent 算法，但对设计大规模 agent 训练系统、评估 rollout 平台、理解长尾延迟都有实际参考价值。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文指出，coding-agent RL 的训练瓶颈不只在模型推理、奖励计算或优化器，还在每条 rollout 背后的执行环境：创建容器或虚拟机、准备仓库、执行命令、收集观察、清理状态都会产生延迟。作者把这类由执行基座带来的额外成本定义为 rollout infrastructure tax，强调在百万级、多步轨迹训练中，单次 rollout 或单步 action 的小延迟会被大规模放大。",
+        "method": "论文做的是系统测量研究，而不是提出新的 RL 算法。作者固定 coding-agent 工作负载，比较四类执行基座：单容器、托管 sandbox、Kubernetes 编排容器和云虚拟机，并将延迟拆成环境创建、readiness、工作负载准备、action 执行和编排开销等部分。实验覆盖 T0 最小命令、T1 本地仓库检查、T2 网络仓库克隆与测试等三档任务，并进一步测量 10、50、150 步轨迹下固定成本如何被摊销。",
+        "experiments": "主要结果显示，不同执行基座的 cold-start latency 最多相差约两个数量级；轻量任务中差距最明显，随着任务变重，启动成本被执行时间摊销，差距收窄。对 150-step trajectories 的训练规模投影显示，在一百万条轨迹下，不同基座会造成约 1.8 倍 rollout worker-hours 差异，慢基座相对快基座多消耗数千 worker-hours。实验信号支持一个直接结论：对 coding-agent RL 来说，rollout execution substrate 是训练系统的一部分，不应只是部署细节。",
+        "research_help": "Insight：这篇文章对 agent planning 和 agentic RL 的启发在于，long-horizon reliability 不只由策略模型和奖励设计决定，也受到环境启动、状态隔离、命令响应、观察返回和 reset 稳定性的系统约束影响。多轮 agent 训练如果忽略执行基座，会把 rollout 延迟、长尾失败和环境污染误当成算法效率问题或 reward noise。可迁移的设计启发是：为长轨迹和大规模 RL 构建 locality-aware warm pools、低延迟 action API、可复现但不过重的隔离机制，并把基础设施延迟纳入训练吞吐和可靠性评估。",
+        "recommendation": {
+          "score": 58,
+          "level": "中",
+          "label": "可略读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": false,
+            "experiments": false,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇文章对 agent planning 和 agentic RL 的启发在于，long-horizon reliability 不只由策略模型和奖励设计决定，也受到环境启动、状态隔离、命令响应、观察返回和 reset 稳定性的系统约束影响。多轮 agent 训练如果忽略执行基座，会把 rollout 延迟、长尾失败和环境污染误当成算法效率问题或 reward noise。可迁移的设计启发是：为长轨迹和大规模 RL 构建 locality-aware warm pools、低延迟 action API、可复现但不过重的隔离机制，并把基础设施延迟纳入训练吞吐和可靠性评估。",
+        "abstract_zh": "这篇论文认为，coding-agent 强化学习依赖大量与软件环境交互的 rollout，但现有工作常把执行基础设施当成背景实现细节。作者比较了单容器、托管 sandbox、Kubernetes 编排容器和云虚拟机四类执行基座，发现 cold-start latency 最多可相差 110 倍，在一百万条 150 步轨迹的投影中 worker-hours 也有 1.8 倍差异。论文主张，未来 coding-agent RL 系统应把执行基座作为训练系统本身来优化，而不是只作为部署管道。",
+        "full_summary": "论文研究 coding-agent RL 中一个很具体但重要的问题：执行环境本身会给大规模 rollout 训练带来多少延迟和成本。作者将环境创建、readiness、action 执行、观察收集、编排和清理等开销合称为 rollout infrastructure tax，并在四类常见执行基座上做受控测量。实验显示，短任务中 cold-start 差异非常大，长轨迹会摊销固定启动成本，但每步交互和环境管理开销仍会在百万级轨迹中累积成显著 worker-hours 差异。论文的阅读价值在于把 coding-agent RL 的训练效率问题从纯算法视角扩展到系统基础设施视角，尤其适合关注 multi-turn coding agents、rollout bottleneck 和 long-horizon agent reliability 的读者。",
+        "card_summary": "这篇论文把 coding-agent RL 中环境启动、命令执行、状态清理等系统开销称为 rollout infrastructure tax，并用四类执行基座做了对比测量。它的价值不在新算法，而在提醒多轮 coding agent 训练的效率和可靠性很大程度取决于 rollout 基础设施。"
+      },
+      "analysis": {
+        "motivation": "论文指出，coding-agent RL 的训练瓶颈不只在模型推理、奖励计算或优化器，还在每条 rollout 背后的执行环境：创建容器或虚拟机、准备仓库、执行命令、收集观察、清理状态都会产生延迟。作者把这类由执行基座带来的额外成本定义为 rollout infrastructure tax，强调在百万级、多步轨迹训练中，单次 rollout 或单步 action 的小延迟会被大规模放大。",
+        "method": "论文做的是系统测量研究，而不是提出新的 RL 算法。作者固定 coding-agent 工作负载，比较四类执行基座：单容器、托管 sandbox、Kubernetes 编排容器和云虚拟机，并将延迟拆成环境创建、readiness、工作负载准备、action 执行和编排开销等部分。实验覆盖 T0 最小命令、T1 本地仓库检查、T2 网络仓库克隆与测试等三档任务，并进一步测量 10、50、150 步轨迹下固定成本如何被摊销。",
+        "experiments": "主要结果显示，不同执行基座的 cold-start latency 最多相差约两个数量级；轻量任务中差距最明显，随着任务变重，启动成本被执行时间摊销，差距收窄。对 150-step trajectories 的训练规模投影显示，在一百万条轨迹下，不同基座会造成约 1.8 倍 rollout worker-hours 差异，慢基座相对快基座多消耗数千 worker-hours。实验信号支持一个直接结论：对 coding-agent RL 来说，rollout execution substrate 是训练系统的一部分，不应只是部署细节。",
+        "research_help": "Insight：这篇文章对 agent planning 和 agentic RL 的启发在于，long-horizon reliability 不只由策略模型和奖励设计决定，也受到环境启动、状态隔离、命令响应、观察返回和 reset 稳定性的系统约束影响。多轮 agent 训练如果忽略执行基座，会把 rollout 延迟、长尾失败和环境污染误当成算法效率问题或 reward noise。可迁移的设计启发是：为长轨迹和大规模 RL 构建 locality-aware warm pools、低延迟 action API、可复现但不过重的隔离机制，并把基础设施延迟纳入训练吞吐和可靠性评估。",
+        "insight": "Insight：这篇文章对 agent planning 和 agentic RL 的启发在于，long-horizon reliability 不只由策略模型和奖励设计决定，也受到环境启动、状态隔离、命令响应、观察返回和 reset 稳定性的系统约束影响。多轮 agent 训练如果忽略执行基座，会把 rollout 延迟、长尾失败和环境污染误当成算法效率问题或 reward noise。可迁移的设计启发是：为长轨迹和大规模 RL 构建 locality-aware warm pools、低延迟 action API、可复现但不过重的隔离机制，并把基础设施延迟纳入训练吞吐和可靠性评估。",
+        "abstract_zh": "这篇论文认为，coding-agent 强化学习依赖大量与软件环境交互的 rollout，但现有工作常把执行基础设施当成背景实现细节。作者比较了单容器、托管 sandbox、Kubernetes 编排容器和云虚拟机四类执行基座，发现 cold-start latency 最多可相差 110 倍，在一百万条 150 步轨迹的投影中 worker-hours 也有 1.8 倍差异。论文主张，未来 coding-agent RL 系统应把执行基座作为训练系统本身来优化，而不是只作为部署管道。",
+        "card_summary": "这篇论文把 coding-agent RL 中环境启动、命令执行、状态清理等系统开销称为 rollout infrastructure tax，并用四类执行基座做了对比测量。它的价值不在新算法，而在提醒多轮 coding agent 训练的效率和可靠性很大程度取决于 rollout 基础设施。",
+        "full_summary": "论文研究 coding-agent RL 中一个很具体但重要的问题：执行环境本身会给大规模 rollout 训练带来多少延迟和成本。作者将环境创建、readiness、action 执行、观察收集、编排和清理等开销合称为 rollout infrastructure tax，并在四类常见执行基座上做受控测量。实验显示，短任务中 cold-start 差异非常大，长轨迹会摊销固定启动成本，但每步交互和环境管理开销仍会在百万级轨迹中累积成显著 worker-hours 差异。论文的阅读价值在于把 coding-agent RL 的训练效率问题从纯算法视角扩展到系统基础设施视角，尤其适合关注 multi-turn coding agents、rollout bottleneck 和 long-horizon agent reliability 的读者。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读：面向 coding-agent RL 的系统瓶颈测量论文",
+        "value_reason": "它直接命中 agentic RL 和 multi-turn coding agent 的 rollout 生成瓶颈，提出的 infrastructure tax 框架很适合用于分析长轨迹训练的吞吐、成本和可靠性。虽然没有新的 agent 算法，但对设计大规模 agent 训练系统、评估 rollout 平台、理解长尾延迟都有实际参考价值。",
+        "limitations": "论文是受控测量研究，工作负载由固定命令序列构成，不能完全代表真实 agent 的动态行为、错误恢复和复杂仓库交互。绝对延迟依赖具体硬件、区域、缓存状态和 provider 配置，因此更适合作为相对趋势和设计启发，而不是通用成本表。训练规模投影也排除了模型推理、奖励计算、优化器和队列调度之外的成本，因此不能直接等同于完整 RL 训练总成本。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "作者明确将 rollout infrastructure tax 定义为执行系统引入的 latency，包括环境创建、readiness、每步 action 执行、观察收集、状态管理和清理等。",
+          "实验比较了 single containers、hosted sandboxes、Kubernetes-orchestrated containers 和 cloud virtual machines 四种执行基座，并在 T0、T1、T2 三档 coding-agent 工作负载上测量。",
+          "论文报告 cold-start latency 在不同基座间最高有 110× 差异，并指出任务变重后启动成本被摊销但基座差异仍存在。",
+          "对一百万条 150-step trajectories 的投影显示，基座选择会造成 1.8× rollout worker-hours 差异，约等价于数千额外 worker-hours。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-04T01:51:52.413Z"
+      }
+    },
     {
       "id": "2606.32017v1",
       "title": "TRIAGE: Role-Typed Credit Assignment for Agentic Reinforcement Learning",
