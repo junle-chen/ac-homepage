@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-04T01:53:23.431Z",
+  "updated_at": "2026-07-06T02:02:14.849Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation after CODEX_PAPER_SKIP_ANALYZED=1 npm run papers:daily:codex; only strongly relevant long-horizon, multi-turn, agentic RL, and agent planning papers are retained.",
+  "analysis_method": "Manual Codex curation after CODEX_PAPER_SKIP_ANALYZED=1 npm run papers:daily:codex plus arXiv cs/new fallback scan; only strongly relevant long-horizon, multi-turn, agentic RL, and agent planning papers are retained.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,36 +37,35 @@
     "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after Codex full-text reading."
   },
   "digest": {
-    "title": "2026-07-04 Daily Paper",
-    "report_date": "2026-07-04",
+    "title": "2026-07-06 Daily Paper",
+    "report_date": "2026-07-06",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日自动化完成 16 篇候选的 Codex 全文读取，人工复核后保留 8 篇强相关论文：显式任务图规划、长程 world-model 修复、工作流技能演化、长期记忆状态协调、记忆诱发迎合、多轮文献检索 workflow induction、agentic RL 系统架构和 coding-agent RL rollout 基础设施。",
+    "summary": "今日自动化原始 16 篇候选主要重复 2026-07-04 已发布/已过滤论文；进一步扫描 arXiv Friday, 3 July 2026 cs/new 后，人工全文复核并保留 8 篇强相关新增论文，重点是 bounded-memory long-horizon agents、agent loop reliability、agentic skill-use supervision、procedural memory distillation、tool-use RLVR、programmatic world models、recurrent memory 和 contextual state continuity。",
     "top_recommendations": [
-      "2607.01942v1",
-      "2607.01071v2",
-      "2607.00597v1"
+      "2607.02255v1",
+      "2607.01480v1",
+      "2607.01531v1"
     ],
     "low_priority": [
-      "2607.01767v1",
-      "2607.01120v2",
-      "2607.01415v1"
+      "2607.01465v1",
+      "2607.01919v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-07-04 Daily Paper\n\n今日自动化完成 16 篇候选的 Codex 全文读取，人工复核后保留 8 篇强相关论文。重点包括显式任务图规划、长程 world-model 修复、工作流技能演化、长期记忆状态协调、记忆诱发迎合、多轮文献检索 workflow induction、agentic RL 系统架构和 coding-agent RL rollout 基础设施。\n\n最值得读的 3 篇\n1. Atomic Task Graph: A Unified Framework for Agentic Planning and Execution\n- 为什么读：把长程 agent 的计划表示成可执行、可验证、可局部修复的依赖图，直接命中 planning reliability。\n2. MemSyco-Bench: Benchmarking Sycophancy in Agent Memory\n- 为什么读：把长期记忆从“能否检索”推进到“检索后是否该相信/使用”，很贴近真实多轮 agent 风险。\n3. Multi-Turn Agentic Scientific Literature Search via Workflow Induction\n- 为什么读：把用户反馈映射为可编辑 DAG 检索 workflow，是多轮科研 agent 的清晰 planning 范式。"
+    "email_body": "2026-07-06 Daily Paper\n\n今日保留 8 篇强相关新增论文。最值得读的是 AgenticSTS、Procedural Memory Distillation 和 OPINE-World；它们分别对应长程 agent 的 bounded-memory contract、RLVR 训练中的跨 episode procedural memory、以及可验证程序化 world model + 交互式探索。\n\n最值得读的 3 篇\n1. AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents\n- 为什么读：把长程 agent 的记忆设计变成可预算、可消融、可复现的 contract。\n2. Procedural Memory Distillation: Online Reflection for Self-Improving Language Models\n- 为什么读：把 rollout 中的跨 episode 成功/失败模式沉淀为训练期 memory，再蒸馏进 policy。\n3. OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration\n- 为什么读：把 world-model learning、CEGIS、主动探索和 planning loop 结合得很清楚。"
   },
   "latest_item_ids": [
-    "2607.01942v1",
-    "2607.01767v1",
-    "2607.01709v1",
-    "2607.01935v1",
-    "2607.01071v2",
-    "2607.00597v1",
-    "2607.01120v2",
-    "2607.01415v1"
+    "2607.02255v1",
+    "2607.01641v1",
+    "2607.01874v1",
+    "2607.01480v1",
+    "2607.01465v1",
+    "2607.01531v1",
+    "2607.01523v1",
+    "2607.01919v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "total_items": 49,
+    "total_items": 57,
     "latest_items": 8,
     "source_report_dates": {
       "2026-06-13": 1,
@@ -82,20 +81,970 @@
       "2026-06-29": 2,
       "2026-06-30": 2,
       "2026-07-02": 2,
-      "2026-07-04": 8
+      "2026-07-04": 8,
+      "2026-07-06": 8
     },
     "filtered_candidate_ids": [
+      "2607.01942v1",
+      "2607.01767v1",
+      "2607.01709v1",
+      "2607.01935v1",
       "2607.01972v1",
       "2607.01916v1",
+      "2607.01071v2",
+      "2607.00597v1",
       "2607.01166v1",
       "2607.01153v1",
       "2607.00673v1",
+      "2607.01120v2",
       "2607.01367v1",
       "2607.01063v1",
-      "2607.01525v1"
+      "2607.01525v1",
+      "2607.01415v1",
+      "2607.01236v1",
+      "2607.01988v1",
+      "2607.01640v1",
+      "2607.01793v1",
+      "2607.01470v1",
+      "2607.01426v1"
     ]
   },
   "items": [
+    {
+      "id": "2607.02255v1",
+      "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
+      "summary": "AgenticSTS 把长程 agent 的记忆问题定义成“每一步决策允许看到什么”的 contract，而不是简单把历史全部塞进 prompt。它用 Slay the Spire 2 做数百步决策测试床，展示 typed retrieval 和 skill layer 如何让记忆层可控、可消融。",
+      "url": "http://arxiv.org/abs/2607.02255v1",
+      "authors": [
+        "Xiangchen Cheng",
+        "Yunwei Jiang",
+        "Jianwen Sun",
+        "Zizhen Li",
+        "Chuanhao Li",
+        "Xiangcheng Cao",
+        "Yihao Liu",
+        "Fanrui Zhang",
+        "Li Jin",
+        "Kaipeng Zhang"
+      ],
+      "report_date": "2026-07-06",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "强相关：长程 agent memory contract 与可复现实验平台",
+        "water_risk": "中",
+        "value_judgement": "强相关：长程 agent memory contract 与可复现实验平台",
+        "reason": "直接研究 long-horizon LLM agent 在数百步任务中应该看到什么记忆，并把 transcript、typed memory、skills 和层级 ablation 做成可复现实验平台；结论很有启发，但样本量较小，作者也明确不声称统计显著胜出。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xiangchen Cheng",
+          "Yunwei Jiang",
+          "Jianwen Sun",
+          "Zizhen Li",
+          "Chuanhao Li",
+          "Xiangcheng Cao",
+          "Yihao Liu",
+          "Fanrui Zhang",
+          "Li Jin",
+          "Kaipeng Zhang"
+        ],
+        "affiliations": "AlayaLab; Shanghai Jiao Tong University; Shanghai Innovation Institute; Nankai University; University of Science and Technology of China",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.02255v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "直接研究 long-horizon LLM agent 在数百步任务中应该看到什么记忆，并把 transcript、typed memory、skills 和层级 ablation 做成可复现实验平台；结论很有启发，但样本量较小，作者也明确不声称统计显著胜出。",
+        "summary": "这篇论文最有价值的地方是把 long-horizon agent memory 从“存什么”推进到“每次决策允许看什么”。AgenticSTS 用 typed retrieval 代替原始 transcript 累积，使上下文预算、记忆层贡献和 skill 影响都可以单独观察。实证平台选择 Slay the Spire 2，因为它需要数百步战术与战略决策，能暴露短 prompt、长期记忆和技能库之间的差异。结果显示 strategic skill layer 有方向性收益，但作者没有夸大统计显著性。适合作为研究长程 agent memory contract 和可复现实验设计的参考。",
+        "highlights": [
+          "直接研究 long-horizon LLM agent 在数百步任务中应该看到什么记忆，并把 transcript、typed memory、skills 和层级 ablation 做成可复现实验平台；结论很有启发，但样本量较小，作者也明确不声称统计显著胜出。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长程 LLM agent 常把过去观察、tool calls 和 reflection 直接累积到 prompt，短期方便但长期会造成上下文膨胀、信息混杂和难以归因。论文的动机是把 memory 变成可声明、可预算、可消融的接口，让研究者能判断哪一层经验真正影响后续决策。",
+        "method": "方法是一个 bounded-memory contract：每次决策都从当前状态和五类 typed knowledge layer 重新组装 fresh user message，不追加原始跨决策 transcript。系统在 Slay the Spire 2 中维护战斗状态、长期 run thread、经验记忆和 strategic skills，并通过条件标签、冻结快照和 bootstrap 脚本支持层级消融。",
+        "experiments": "实验发布 298 条完整轨迹和复现脚本。固定 A0 条件下，no-store baseline 为 3/10 胜，加入 triggered strategic skills 为 6/10 胜，但 Fisher exact p 约 0.37，作者把它解释为方向性证据而非显著结论；还报告跨 backbone 探针和 public accumulating-context baseline 的操作性对比。",
+        "research_help": "Insight：长程 agent 的 memory 设计应该先定义可审计的“可见性 contract”，再讨论检索或总结算法。把记忆拆成 typed layers 后，系统可以控制 token 增长、定位哪种经验有用，并避免把所有历史混成不可解释的上下文污染。",
+        "insight": "Insight：长程 agent 的 memory 设计应该先定义可审计的“可见性 contract”，再讨论检索或总结算法。把记忆拆成 typed layers 后，系统可以控制 token 增长、定位哪种经验有用，并避免把所有历史混成不可解释的上下文污染。",
+        "abstract_zh": "论文提出 AgenticSTS，一个面向长程 LLM agent 的 bounded-memory 测试床。它不把过去所有交互追加到 prompt，而是让每一步决策从类型化检索层重新组装输入，从而保持 prompt 长度有界并支持单层消融。作者在 Slay the Spire 2 中构建数百步决策任务，发布 298 条轨迹、记忆快照、prompt 和分析脚本。实验显示 skill layer 带来最大的方向性增益，但样本量不足以支持强统计结论。",
+        "full_summary": "这篇论文最有价值的地方是把 long-horizon agent memory 从“存什么”推进到“每次决策允许看什么”。AgenticSTS 用 typed retrieval 代替原始 transcript 累积，使上下文预算、记忆层贡献和 skill 影响都可以单独观察。实证平台选择 Slay the Spire 2，因为它需要数百步战术与战略决策，能暴露短 prompt、长期记忆和技能库之间的差异。结果显示 strategic skill layer 有方向性收益，但作者没有夸大统计显著性。适合作为研究长程 agent memory contract 和可复现实验设计的参考。",
+        "card_summary": "AgenticSTS 把长程 agent 的记忆问题定义成“每一步决策允许看到什么”的 contract，而不是简单把历史全部塞进 prompt。它用 Slay the Spire 2 做数百步决策测试床，展示 typed retrieval 和 skill layer 如何让记忆层可控、可消融。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强相关：长程 agent memory contract 与可复现实验平台",
+          "water_risk": "中",
+          "value_judgement": "强相关：长程 agent memory contract 与可复现实验平台",
+          "reason": "直接研究 long-horizon LLM agent 在数百步任务中应该看到什么记忆，并把 transcript、typed memory、skills 和层级 ablation 做成可复现实验平台；结论很有启发，但样本量较小，作者也明确不声称统计显著胜出。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      },
+      "analysis": {
+        "motivation": "长程 LLM agent 常把过去观察、tool calls 和 reflection 直接累积到 prompt，短期方便但长期会造成上下文膨胀、信息混杂和难以归因。论文的动机是把 memory 变成可声明、可预算、可消融的接口，让研究者能判断哪一层经验真正影响后续决策。",
+        "method": "方法是一个 bounded-memory contract：每次决策都从当前状态和五类 typed knowledge layer 重新组装 fresh user message，不追加原始跨决策 transcript。系统在 Slay the Spire 2 中维护战斗状态、长期 run thread、经验记忆和 strategic skills，并通过条件标签、冻结快照和 bootstrap 脚本支持层级消融。",
+        "experiments": "实验发布 298 条完整轨迹和复现脚本。固定 A0 条件下，no-store baseline 为 3/10 胜，加入 triggered strategic skills 为 6/10 胜，但 Fisher exact p 约 0.37，作者把它解释为方向性证据而非显著结论；还报告跨 backbone 探针和 public accumulating-context baseline 的操作性对比。",
+        "research_help": "Insight：长程 agent 的 memory 设计应该先定义可审计的“可见性 contract”，再讨论检索或总结算法。把记忆拆成 typed layers 后，系统可以控制 token 增长、定位哪种经验有用，并避免把所有历史混成不可解释的上下文污染。",
+        "insight": "Insight：长程 agent 的 memory 设计应该先定义可审计的“可见性 contract”，再讨论检索或总结算法。把记忆拆成 typed layers 后，系统可以控制 token 增长、定位哪种经验有用，并避免把所有历史混成不可解释的上下文污染。",
+        "abstract_zh": "论文提出 AgenticSTS，一个面向长程 LLM agent 的 bounded-memory 测试床。它不把过去所有交互追加到 prompt，而是让每一步决策从类型化检索层重新组装输入，从而保持 prompt 长度有界并支持单层消融。作者在 Slay the Spire 2 中构建数百步决策任务，发布 298 条轨迹、记忆快照、prompt 和分析脚本。实验显示 skill layer 带来最大的方向性增益，但样本量不足以支持强统计结论。",
+        "card_summary": "AgenticSTS 把长程 agent 的记忆问题定义成“每一步决策允许看到什么”的 contract，而不是简单把历史全部塞进 prompt。它用 Slay the Spire 2 做数百步决策测试床，展示 typed retrieval 和 skill layer 如何让记忆层可控、可消融。",
+        "full_summary": "这篇论文最有价值的地方是把 long-horizon agent memory 从“存什么”推进到“每次决策允许看什么”。AgenticSTS 用 typed retrieval 代替原始 transcript 累积，使上下文预算、记忆层贡献和 skill 影响都可以单独观察。实证平台选择 Slay the Spire 2，因为它需要数百步战术与战略决策，能暴露短 prompt、长期记忆和技能库之间的差异。结果显示 strategic skill layer 有方向性收益，但作者没有夸大统计显著性。适合作为研究长程 agent memory contract 和可复现实验设计的参考。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关：长程 agent memory contract 与可复现实验平台",
+        "value_reason": "直接研究 long-horizon LLM agent 在数百步任务中应该看到什么记忆，并把 transcript、typed memory、skills 和层级 ablation 做成可复现实验平台；结论很有启发，但样本量较小，作者也明确不声称统计显著胜出。",
+        "limitations": "主要限制是固定条件样本较小，3/10 到 6/10 的胜率差异不显著；与 accumulating-context agent 的严格 matched comparison 仍是未来工作；游戏环境虽适合长程决策，但不等同于开放 Web 或真实工具链。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: every decision is made from a fresh user message assembled by typed retrieval, with no raw cross-decision transcript appended.",
+          "Section 4: the prompt is rebuilt from five typed knowledge layers and stays bounded across arbitrary run length.",
+          "Fixed-A0 ablation: no-store baseline wins 3/10 games and adding the skill layer wins 6/10, with Fisher exact p approximately 0.37.",
+          "Release evidence: 298 completed trajectories, frozen memory/skill snapshots, prompt records, and analysis scripts."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-06T02:02:14.849Z"
+      }
+    },
+    {
+      "id": "2607.01641v1",
+      "title": "When Agents Do Not Stop: Uncovering Infinite Agentic Loops in LLM Agents",
+      "summary": "这篇论文研究 LLM agent 在 planning、tool use、状态更新和 agent handoff 中反复执行而不停机的问题。IAL-Scan 用 Agent IR 和依赖图找出缺少有效 bound 的反馈路径，是很贴近真实部署的 planning reliability 论文。",
+      "url": "http://arxiv.org/abs/2607.01641v1",
+      "authors": [
+        "Xinyi Hou",
+        "Shenao Wang",
+        "Yanjie Zhao",
+        "Haoyu Wang"
+      ],
+      "report_date": "2026-07-06",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "强相关：agent loop 可靠性问题定义清楚且实证规模大",
+        "water_risk": "低",
+        "value_judgement": "强相关：agent loop 可靠性问题定义清楚且实证规模大",
+        "reason": "论文把多轮 agent 的无限反馈路径定义为独立失效模式，并用静态分析在真实仓库中验证；它不提出 planning 算法，但对长程 agent 的终止条件、预算和状态增长控制很实用。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xinyi Hou",
+          "Shenao Wang",
+          "Yanjie Zhao",
+          "Haoyu Wang"
+        ],
+        "affiliations": "Huazhong University of Science and Technology",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.01641v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文把多轮 agent 的无限反馈路径定义为独立失效模式，并用静态分析在真实仓库中验证；它不提出 planning 算法，但对长程 agent 的终止条件、预算和状态增长控制很实用。",
+        "summary": "这篇论文从软件工程角度补上了 agent planning reliability 的一个关键空白：长程 agent 为什么会“不停”。IAL-Scan 不是运行时监控，而是在部署前静态建模 agent feedback path，并检查有效 bound 是否覆盖真正的循环路径。它覆盖八个主流 Python agent 框架，在 6,549 个真实仓库中确认 68 个无限 agent loop failure。结果说明，agentic loop 的风险通常来自 retry、parser error、validator failure、多 agent chat 或 tool-call iteration 没有被强预算约束。对构建生产 agent 和评测 planning 系统都很有参考价值。",
+        "highlights": [
+          "论文把多轮 agent 的无限反馈路径定义为独立失效模式，并用静态分析在真实仓库中验证；它不提出 planning 算法，但对长程 agent 的终止条件、预算和状态增长控制很实用。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长程 agent 的循环不是普通 while loop，而是由模型输出、工具反馈、framework 语义、retry、handoff 和外部状态共同形成。论文关注这类 Infinite Agentic Loops，因为一次请求可能被放大成长期模型调用、工具副作用、上下文增长和成本耗尽。",
+        "method": "IAL-Scan 先把 LangChain、LangGraph、CrewAI、AutoGen、LlamaIndex、OpenAI Agents SDK、Google ADK 和 Semantic Kernel 等项目抽象成 framework-independent Agent IR，再构建 Agentic Loop Dependence Graph，检查反馈路径是否能反复触达 costly 或 state-growing operation，且缺少有效 step、turn、retry、timeout 或 context bound。",
+        "experiments": "实验扫描 6,549 个至少一星的 Python LLM agent 仓库，得到 340 个静态候选；LLM-assisted pruning 后报告 74 个 potential findings，人工确认 68 个真实 IAL failures，precision 为 91.9%。消融和重复性实验显示静态候选发现稳定，LLM 主要作为负样本 pruning。",
+        "research_help": "Insight：长程 agent 的可靠性不仅是“下一步是否选对工具”，还包括每条反馈路径是否被强 bound 覆盖。agent planning 系统应把 turn limit、retry cap、context size guard 和 side-effect budget 视为计划图的一等约束，而不是部署后补丁。",
+        "insight": "Insight：长程 agent 的可靠性不仅是“下一步是否选对工具”，还包括每条反馈路径是否被强 bound 覆盖。agent planning 系统应把 turn limit、retry cap、context size guard 和 side-effect budget 视为计划图的一等约束，而不是部署后补丁。",
+        "abstract_zh": "论文定义 Infinite Agentic Loops：LLM agent 在模型调用、工具调用、workflow transition 或 agent handoff 上反复执行，且没有有效终止机制。作者提出 IAL-Scan，把不同框架的 agent 代码抽象成 Agent IR，并用 Agentic Loop Dependence Graph 恢复显式和框架诱导的反馈路径。工具检查这些路径是否反复触达高成本或状态增长操作且缺少有效 bound。大规模真实仓库评测确认了这种失效模式的普遍性。",
+        "full_summary": "这篇论文从软件工程角度补上了 agent planning reliability 的一个关键空白：长程 agent 为什么会“不停”。IAL-Scan 不是运行时监控，而是在部署前静态建模 agent feedback path，并检查有效 bound 是否覆盖真正的循环路径。它覆盖八个主流 Python agent 框架，在 6,549 个真实仓库中确认 68 个无限 agent loop failure。结果说明，agentic loop 的风险通常来自 retry、parser error、validator failure、多 agent chat 或 tool-call iteration 没有被强预算约束。对构建生产 agent 和评测 planning 系统都很有参考价值。",
+        "card_summary": "这篇论文研究 LLM agent 在 planning、tool use、状态更新和 agent handoff 中反复执行而不停机的问题。IAL-Scan 用 Agent IR 和依赖图找出缺少有效 bound 的反馈路径，是很贴近真实部署的 planning reliability 论文。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "强相关：agent loop 可靠性问题定义清楚且实证规模大",
+          "water_risk": "低",
+          "value_judgement": "强相关：agent loop 可靠性问题定义清楚且实证规模大",
+          "reason": "论文把多轮 agent 的无限反馈路径定义为独立失效模式，并用静态分析在真实仓库中验证；它不提出 planning 算法，但对长程 agent 的终止条件、预算和状态增长控制很实用。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      },
+      "analysis": {
+        "motivation": "长程 agent 的循环不是普通 while loop，而是由模型输出、工具反馈、framework 语义、retry、handoff 和外部状态共同形成。论文关注这类 Infinite Agentic Loops，因为一次请求可能被放大成长期模型调用、工具副作用、上下文增长和成本耗尽。",
+        "method": "IAL-Scan 先把 LangChain、LangGraph、CrewAI、AutoGen、LlamaIndex、OpenAI Agents SDK、Google ADK 和 Semantic Kernel 等项目抽象成 framework-independent Agent IR，再构建 Agentic Loop Dependence Graph，检查反馈路径是否能反复触达 costly 或 state-growing operation，且缺少有效 step、turn、retry、timeout 或 context bound。",
+        "experiments": "实验扫描 6,549 个至少一星的 Python LLM agent 仓库，得到 340 个静态候选；LLM-assisted pruning 后报告 74 个 potential findings，人工确认 68 个真实 IAL failures，precision 为 91.9%。消融和重复性实验显示静态候选发现稳定，LLM 主要作为负样本 pruning。",
+        "research_help": "Insight：长程 agent 的可靠性不仅是“下一步是否选对工具”，还包括每条反馈路径是否被强 bound 覆盖。agent planning 系统应把 turn limit、retry cap、context size guard 和 side-effect budget 视为计划图的一等约束，而不是部署后补丁。",
+        "insight": "Insight：长程 agent 的可靠性不仅是“下一步是否选对工具”，还包括每条反馈路径是否被强 bound 覆盖。agent planning 系统应把 turn limit、retry cap、context size guard 和 side-effect budget 视为计划图的一等约束，而不是部署后补丁。",
+        "abstract_zh": "论文定义 Infinite Agentic Loops：LLM agent 在模型调用、工具调用、workflow transition 或 agent handoff 上反复执行，且没有有效终止机制。作者提出 IAL-Scan，把不同框架的 agent 代码抽象成 Agent IR，并用 Agentic Loop Dependence Graph 恢复显式和框架诱导的反馈路径。工具检查这些路径是否反复触达高成本或状态增长操作且缺少有效 bound。大规模真实仓库评测确认了这种失效模式的普遍性。",
+        "card_summary": "这篇论文研究 LLM agent 在 planning、tool use、状态更新和 agent handoff 中反复执行而不停机的问题。IAL-Scan 用 Agent IR 和依赖图找出缺少有效 bound 的反馈路径，是很贴近真实部署的 planning reliability 论文。",
+        "full_summary": "这篇论文从软件工程角度补上了 agent planning reliability 的一个关键空白：长程 agent 为什么会“不停”。IAL-Scan 不是运行时监控，而是在部署前静态建模 agent feedback path，并检查有效 bound 是否覆盖真正的循环路径。它覆盖八个主流 Python agent 框架，在 6,549 个真实仓库中确认 68 个无限 agent loop failure。结果说明，agentic loop 的风险通常来自 retry、parser error、validator failure、多 agent chat 或 tool-call iteration 没有被强预算约束。对构建生产 agent 和评测 planning 系统都很有参考价值。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强相关：agent loop 可靠性问题定义清楚且实证规模大",
+        "value_reason": "论文把多轮 agent 的无限反馈路径定义为独立失效模式，并用静态分析在真实仓库中验证；它不提出 planning 算法，但对长程 agent 的终止条件、预算和状态增长控制很实用。",
+        "limitations": "静态分析会过近似，可能漏掉不支持语言、框架或高度自定义 scheduler；LLM pruning 有模型敏感性；自然语言语义停止条件和外部状态逻辑仍难以精确判断。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: IALs arise from interaction between agent logic, framework semantics, runtime observations, and termination mechanisms.",
+          "Method: IAL-Scan builds an Agentic Loop Dependence Graph to recover explicit and framework-induced feedback paths.",
+          "Evaluation: 6,549 LLM agent repositories, 74 potential findings, 68 confirmed failures, 91.9% precision.",
+          "Limitations: static over-approximation and incomplete support for custom semantics can cause false positives or false negatives."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-06T02:02:14.849Z"
+      }
+    },
+    {
+      "id": "2607.01874v1",
+      "title": "SkillCoach: Self-Evolving Rubrics for Evaluating and Enhancing Agentic Skill-Use",
+      "summary": "SkillCoach 认为 agent 会“碰巧完成任务”但技能使用过程可能是错的，因此用自演化 rubric 评估 skill selection、following、composition 和 reflection。它把过程质量和最终 verifier 分开，并用 rubric 过滤轨迹来改善 agentic skill-use。",
+      "url": "http://arxiv.org/abs/2607.01874v1",
+      "authors": [
+        "Jiayin Zhu",
+        "Kelong Mao",
+        "Yudong Guo",
+        "Dengbo He",
+        "Sulong Xu",
+        "Simiu Gu",
+        "Yutao Yue"
+      ],
+      "report_date": "2026-07-06",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 89,
+        "level": "高",
+        "label": "强相关：把 agent skill-use 从结果评测推进到过程监督",
+        "water_risk": "中",
+        "value_judgement": "强相关：把 agent skill-use 从结果评测推进到过程监督",
+        "reason": "论文直接针对 skill repository 中的选择、跟随、组合和反思失败，提出可演化过程 rubric；规模还不算生产级，但对多轮工具 agent 和 skill-based agent 训练很有启发。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jiayin Zhu",
+          "Kelong Mao",
+          "Yudong Guo",
+          "Dengbo He",
+          "Sulong Xu",
+          "Simiu Gu",
+          "Yutao Yue"
+        ],
+        "affiliations": "HKUST(GZ); JD.COM",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.01874v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接针对 skill repository 中的选择、跟随、组合和反思失败，提出可演化过程 rubric；规模还不算生产级，但对多轮工具 agent 和 skill-based agent 训练很有启发。",
+        "summary": "SkillCoach 关注的是 agentic skill-use 的过程质量，而不是最终是否碰巧通过 verifier。它把真实 skill repository 中常见的 distractor skill 和 overlapping workflow 纳入评测，让 agent 的选择、遵循、组合和反思错误显性化。方法通过 rollout evidence 不断 patch rubric，并用 validation gate 避免 rubric 漂移。实验显示 evolved rubric 不仅更会评估，也能筛选更好的 SFT 轨迹。对使用 Codex-style skills、工具 workflow 或企业 SOP agent 的研究很有参考价值。",
+        "highlights": [
+          "论文直接针对 skill repository 中的选择、跟随、组合和反思失败，提出可演化过程 rubric；规模还不算生产级，但对多轮工具 agent 和 skill-based agent 训练很有启发。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "随着 skill 成为 LLM agent 的可复用操作层，真实仓库会包含相互重叠的 SOP、工具流程、脚本和验证例程。只看最终成功率无法发现 agent 选错技能、跳过关键步骤、错误组合 workflow 或缺少最终检查等问题。",
+        "method": "SkillCoach 从 gold skills 和真实 rollout 中生成 skill-grounded process rubrics，并通过 evidence-grounded judging、local arbitration patches 和 validation-gated updates 持续修正。rubric 按四个维度评价 trajectory：skill selection、skill following、skill composition 和 skill-grounded reflection，同时把外部 verifier 保持为独立 outcome signal。",
+        "experiments": "在 distractor-augmented skill library 设置下，evolved rubric 改善 evaluator 质量并暴露 final accuracy 隐藏的错误。作为 SFT 数据过滤器时，Qwen3.5-4B 从 8.0% 提升到 24.0%，Qwen3.5-9B 从 14.0% 提升到 32.0%；移除 key-step following 后下降明显，说明过程维度有监督价值。",
+        "research_help": "Insight：skill-based agent 的训练信号不应只有 outcome reward。把技能使用过程拆成 selection、following、composition、reflection，可以为 agentic RL 或 SFT 提供更细粒度 credit assignment，也能解释为什么任务成功仍可能隐藏坏习惯。",
+        "insight": "Insight：skill-based agent 的训练信号不应只有 outcome reward。把技能使用过程拆成 selection、following、composition、reflection，可以为 agentic RL 或 SFT 提供更细粒度 credit assignment，也能解释为什么任务成功仍可能隐藏坏习惯。",
+        "abstract_zh": "论文提出 SkillCoach，一个自演化 rubric 框架，用于评估和提升 LLM agent 的技能使用。它从真实 rollout 中构造与具体技能绑定的过程评价标准，分别检查技能选择、步骤遵循、技能组合和基于技能的反思。外部 verifier 仍作为独立结果信号，因此系统可以区分偶然成功和高质量过程。实验显示，演化后的 rubric 能提升评测质量，也能筛选出更适合训练的轨迹。",
+        "full_summary": "SkillCoach 关注的是 agentic skill-use 的过程质量，而不是最终是否碰巧通过 verifier。它把真实 skill repository 中常见的 distractor skill 和 overlapping workflow 纳入评测，让 agent 的选择、遵循、组合和反思错误显性化。方法通过 rollout evidence 不断 patch rubric，并用 validation gate 避免 rubric 漂移。实验显示 evolved rubric 不仅更会评估，也能筛选更好的 SFT 轨迹。对使用 Codex-style skills、工具 workflow 或企业 SOP agent 的研究很有参考价值。",
+        "card_summary": "SkillCoach 认为 agent 会“碰巧完成任务”但技能使用过程可能是错的，因此用自演化 rubric 评估 skill selection、following、composition 和 reflection。它把过程质量和最终 verifier 分开，并用 rubric 过滤轨迹来改善 agentic skill-use。",
+        "recommendation": {
+          "score": 89,
+          "level": "高",
+          "label": "强相关：把 agent skill-use 从结果评测推进到过程监督",
+          "water_risk": "中",
+          "value_judgement": "强相关：把 agent skill-use 从结果评测推进到过程监督",
+          "reason": "论文直接针对 skill repository 中的选择、跟随、组合和反思失败，提出可演化过程 rubric；规模还不算生产级，但对多轮工具 agent 和 skill-based agent 训练很有启发。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      },
+      "analysis": {
+        "motivation": "随着 skill 成为 LLM agent 的可复用操作层，真实仓库会包含相互重叠的 SOP、工具流程、脚本和验证例程。只看最终成功率无法发现 agent 选错技能、跳过关键步骤、错误组合 workflow 或缺少最终检查等问题。",
+        "method": "SkillCoach 从 gold skills 和真实 rollout 中生成 skill-grounded process rubrics，并通过 evidence-grounded judging、local arbitration patches 和 validation-gated updates 持续修正。rubric 按四个维度评价 trajectory：skill selection、skill following、skill composition 和 skill-grounded reflection，同时把外部 verifier 保持为独立 outcome signal。",
+        "experiments": "在 distractor-augmented skill library 设置下，evolved rubric 改善 evaluator 质量并暴露 final accuracy 隐藏的错误。作为 SFT 数据过滤器时，Qwen3.5-4B 从 8.0% 提升到 24.0%，Qwen3.5-9B 从 14.0% 提升到 32.0%；移除 key-step following 后下降明显，说明过程维度有监督价值。",
+        "research_help": "Insight：skill-based agent 的训练信号不应只有 outcome reward。把技能使用过程拆成 selection、following、composition、reflection，可以为 agentic RL 或 SFT 提供更细粒度 credit assignment，也能解释为什么任务成功仍可能隐藏坏习惯。",
+        "insight": "Insight：skill-based agent 的训练信号不应只有 outcome reward。把技能使用过程拆成 selection、following、composition、reflection，可以为 agentic RL 或 SFT 提供更细粒度 credit assignment，也能解释为什么任务成功仍可能隐藏坏习惯。",
+        "abstract_zh": "论文提出 SkillCoach，一个自演化 rubric 框架，用于评估和提升 LLM agent 的技能使用。它从真实 rollout 中构造与具体技能绑定的过程评价标准，分别检查技能选择、步骤遵循、技能组合和基于技能的反思。外部 verifier 仍作为独立结果信号，因此系统可以区分偶然成功和高质量过程。实验显示，演化后的 rubric 能提升评测质量，也能筛选出更适合训练的轨迹。",
+        "card_summary": "SkillCoach 认为 agent 会“碰巧完成任务”但技能使用过程可能是错的，因此用自演化 rubric 评估 skill selection、following、composition 和 reflection。它把过程质量和最终 verifier 分开，并用 rubric 过滤轨迹来改善 agentic skill-use。",
+        "full_summary": "SkillCoach 关注的是 agentic skill-use 的过程质量，而不是最终是否碰巧通过 verifier。它把真实 skill repository 中常见的 distractor skill 和 overlapping workflow 纳入评测，让 agent 的选择、遵循、组合和反思错误显性化。方法通过 rollout evidence 不断 patch rubric，并用 validation gate 避免 rubric 漂移。实验显示 evolved rubric 不仅更会评估，也能筛选更好的 SFT 轨迹。对使用 Codex-style skills、工具 workflow 或企业 SOP agent 的研究很有参考价值。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关：把 agent skill-use 从结果评测推进到过程监督",
+        "value_reason": "论文直接针对 skill repository 中的选择、跟随、组合和反思失败，提出可演化过程 rubric；规模还不算生产级，但对多轮工具 agent 和 skill-based agent 训练很有启发。",
+        "limitations": "实验任务来自选定 skill benchmarks，规模小于真实持续增长的生产 skill 仓库；训练部分只覆盖离线 SFT，尚未报告 on-policy RL 或长期部署反馈。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: SkillCoach evaluates trajectories along skill selection, following, composition, and skill-grounded reflection.",
+          "Contribution: process rubrics are derived from real rollouts and refined through validation-gated local patches.",
+          "Table 4: evolved-rubric SFT improves Qwen3.5-4B from 8.0 to 24.0 and Qwen3.5-9B from 14.0 to 32.0.",
+          "Limitations: experiments are on selected skill-dependent tasks and do not report on-policy RL or long-term deployment feedback."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-06T02:02:14.849Z"
+      }
+    },
+    {
+      "id": "2607.01480v1",
+      "title": "Procedural Memory Distillation: Online Reflection for Self-Improving Language Models",
+      "summary": "PMD 把 RLVR 中反复 rollout 的经验整理成 procedural memory，再通过 self-teacher 蒸馏进模型权重。它的关键点是 memory 只用于训练期，最终模型推理时不依赖外部检索，却能吸收跨 episode 的策略和失败模式。",
+      "url": "http://arxiv.org/abs/2607.01480v1",
+      "authors": [
+        "Ye Liu",
+        "Srijan Bansal",
+        "Bo Pang",
+        "Yang Li",
+        "Zeyu Leo Liu",
+        "Yifei Ming",
+        "Zixuan Ke",
+        "Shafiq Joty",
+        "Semih Yavuz"
+      ],
+      "report_date": "2026-07-06",
+      "published": "2026-07-01",
+      "updated": "2026-07-01",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "强相关：把 rollout 经验沉淀为训练期 procedural memory",
+        "water_risk": "低",
+        "value_judgement": "强相关：把 rollout 经验沉淀为训练期 procedural memory",
+        "reason": "论文直接命中 agentic RL / RLVR 的跨 episode credit assignment：不只用单次 verifier reward，而把反复尝试中的策略、失败和模式蒸馏进模型权重，实验结果也清楚。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Ye Liu",
+          "Srijan Bansal",
+          "Bo Pang",
+          "Yang Li",
+          "Zeyu Leo Liu",
+          "Yifei Ming",
+          "Zixuan Ke",
+          "Shafiq Joty",
+          "Semih Yavuz"
+        ],
+        "affiliations": "Salesforce AI Research",
+        "date": "2026-07-01",
+        "paper_url": "https://arxiv.org/abs/2607.01480v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接命中 agentic RL / RLVR 的跨 episode credit assignment：不只用单次 verifier reward，而把反复尝试中的策略、失败和模式蒸馏进模型权重，实验结果也清楚。",
+        "summary": "PMD 是今天最贴近 agentic RL 的论文之一。它指出 RLVR 的 episode-level reward 没有充分利用同一模型在多轮训练中积累的策略和失败模式，因此引入在线 procedural memory。方法把轨迹、反思 lesson 和跨题行为模式作为 self-teacher 的上下文，再把这些指导蒸馏进 policy。实验在 SCIKNOWEVAL 与 LiveCodeBench 上都比 SDPO 有稳定增益。对研究 long-horizon credit assignment、self-improving agents 和 rollout reuse 很有参考价值。",
+        "highlights": [
+          "论文直接命中 agentic RL / RLVR 的跨 episode credit assignment：不只用单次 verifier reward，而把反复尝试中的策略、失败和模式蒸馏进模型权重，实验结果也清楚。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "RLVR 和 SDPO 通常只把每个 rollout 的 verifier 结果转成 episode-local update，浪费了跨 epoch 反复出现的程序性信息。论文希望捕捉哪些策略稳定通过、哪些失败反复出现、哪些 reasoning pattern 可复用，并把这些信号变成可内化的训练 scaffolding。",
+        "method": "PMD 在线从当前 policy 的 rollout 构建三层 procedural memory：raw experience、problem-level insight 和 cross-problem behavior。memory-conditioned self-teacher 在 on-policy distillation 中读取这些经验来指导学生；随着训练推进，程序性知识被吸收到 student weights 中，推理时不需要 memory prompt。",
+        "experiments": "实验覆盖 SCIKNOWEVAL 和 LiveCodeBench，使用 Qwen3-8B 与 OLMo3-Instruct-7B。相对 SDPO，PMD 在 SCIKNOWEVAL 上从 74.4 提到 77.2、从 69.5 提到 73.3；在 LiveCodeBench 上从 47.9 提到 51.7、从 45.0 提到 51.1。消融显示多粒度 memory 比只用 frozen external context 更稳定。",
+        "research_help": "Insight：agentic RL 不应把 rollout 当成一次性样本；长期训练中的失败、修复和成功策略本身就是 memory。把 memory 放在训练期而非推理期，可以把“会反思的 scaffold”转成模型自身能力，减少部署时检索系统负担。",
+        "insight": "Insight：agentic RL 不应把 rollout 当成一次性样本；长期训练中的失败、修复和成功策略本身就是 memory。把 memory 放在训练期而非推理期，可以把“会反思的 scaffold”转成模型自身能力，减少部署时检索系统负担。",
+        "abstract_zh": "论文提出 Procedural Memory Distillation，用于把 RLVR 训练中反复 rollout 的经验转化为可复用的程序性记忆。PMD 将记忆组织为 raw trajectories、self-reflected strategies / lessons 和跨问题行为模式，并用这些记忆条件化 self-teacher。学生模型在训练时吸收这些程序性知识，推理时不需要外部 memory。实验显示 PMD 在科学问答和代码生成基准上优于 GRPO 与 SDPO。",
+        "full_summary": "PMD 是今天最贴近 agentic RL 的论文之一。它指出 RLVR 的 episode-level reward 没有充分利用同一模型在多轮训练中积累的策略和失败模式，因此引入在线 procedural memory。方法把轨迹、反思 lesson 和跨题行为模式作为 self-teacher 的上下文，再把这些指导蒸馏进 policy。实验在 SCIKNOWEVAL 与 LiveCodeBench 上都比 SDPO 有稳定增益。对研究 long-horizon credit assignment、self-improving agents 和 rollout reuse 很有参考价值。",
+        "card_summary": "PMD 把 RLVR 中反复 rollout 的经验整理成 procedural memory，再通过 self-teacher 蒸馏进模型权重。它的关键点是 memory 只用于训练期，最终模型推理时不依赖外部检索，却能吸收跨 episode 的策略和失败模式。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强相关：把 rollout 经验沉淀为训练期 procedural memory",
+          "water_risk": "低",
+          "value_judgement": "强相关：把 rollout 经验沉淀为训练期 procedural memory",
+          "reason": "论文直接命中 agentic RL / RLVR 的跨 episode credit assignment：不只用单次 verifier reward，而把反复尝试中的策略、失败和模式蒸馏进模型权重，实验结果也清楚。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      },
+      "analysis": {
+        "motivation": "RLVR 和 SDPO 通常只把每个 rollout 的 verifier 结果转成 episode-local update，浪费了跨 epoch 反复出现的程序性信息。论文希望捕捉哪些策略稳定通过、哪些失败反复出现、哪些 reasoning pattern 可复用，并把这些信号变成可内化的训练 scaffolding。",
+        "method": "PMD 在线从当前 policy 的 rollout 构建三层 procedural memory：raw experience、problem-level insight 和 cross-problem behavior。memory-conditioned self-teacher 在 on-policy distillation 中读取这些经验来指导学生；随着训练推进，程序性知识被吸收到 student weights 中，推理时不需要 memory prompt。",
+        "experiments": "实验覆盖 SCIKNOWEVAL 和 LiveCodeBench，使用 Qwen3-8B 与 OLMo3-Instruct-7B。相对 SDPO，PMD 在 SCIKNOWEVAL 上从 74.4 提到 77.2、从 69.5 提到 73.3；在 LiveCodeBench 上从 47.9 提到 51.7、从 45.0 提到 51.1。消融显示多粒度 memory 比只用 frozen external context 更稳定。",
+        "research_help": "Insight：agentic RL 不应把 rollout 当成一次性样本；长期训练中的失败、修复和成功策略本身就是 memory。把 memory 放在训练期而非推理期，可以把“会反思的 scaffold”转成模型自身能力，减少部署时检索系统负担。",
+        "insight": "Insight：agentic RL 不应把 rollout 当成一次性样本；长期训练中的失败、修复和成功策略本身就是 memory。把 memory 放在训练期而非推理期，可以把“会反思的 scaffold”转成模型自身能力，减少部署时检索系统负担。",
+        "abstract_zh": "论文提出 Procedural Memory Distillation，用于把 RLVR 训练中反复 rollout 的经验转化为可复用的程序性记忆。PMD 将记忆组织为 raw trajectories、self-reflected strategies / lessons 和跨问题行为模式，并用这些记忆条件化 self-teacher。学生模型在训练时吸收这些程序性知识，推理时不需要外部 memory。实验显示 PMD 在科学问答和代码生成基准上优于 GRPO 与 SDPO。",
+        "card_summary": "PMD 把 RLVR 中反复 rollout 的经验整理成 procedural memory，再通过 self-teacher 蒸馏进模型权重。它的关键点是 memory 只用于训练期，最终模型推理时不依赖外部检索，却能吸收跨 episode 的策略和失败模式。",
+        "full_summary": "PMD 是今天最贴近 agentic RL 的论文之一。它指出 RLVR 的 episode-level reward 没有充分利用同一模型在多轮训练中积累的策略和失败模式，因此引入在线 procedural memory。方法把轨迹、反思 lesson 和跨题行为模式作为 self-teacher 的上下文，再把这些指导蒸馏进 policy。实验在 SCIKNOWEVAL 与 LiveCodeBench 上都比 SDPO 有稳定增益。对研究 long-horizon credit assignment、self-improving agents 和 rollout reuse 很有参考价值。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强相关：把 rollout 经验沉淀为训练期 procedural memory",
+        "value_reason": "论文直接命中 agentic RL / RLVR 的跨 episode credit assignment：不只用单次 verifier reward，而把反复尝试中的策略、失败和模式蒸馏进模型权重，实验结果也清楚。",
+        "limitations": "实验集中在可验证科学问答和代码生成，尚未覆盖真实交互式工具环境；memory 生成和 teacher 质量可能影响结果；论文没有证明在开放长程 agent 任务中同样有效。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: PMD converts cross-episode signals into reusable procedural memory and distills it into policy weights.",
+          "Method: memory has experience, insight, and behavior levels and conditions an on-policy self-teacher.",
+          "Results: PMD improves over SDPO on SCIKNOWEVAL and LiveCodeBench for Qwen3-8B and OLMo3-Instruct-7B.",
+          "Conclusion: final student does not depend on external retrieval at inference time."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-06T02:02:14.849Z"
+      }
+    },
+    {
+      "id": "2607.01465v1",
+      "title": "Beyond Next-Token Prediction: An RLVR Proof of Concept for Tool-Use Agents on Atlassian Workflows",
+      "summary": "这篇论文把 RLVR 用在 Jira / Confluence 风格的企业 API workflow 上，让小模型学习正确的 tool-call 顺序和 nested arguments。它是窄场景 proof of concept，但很好地说明 tool-use agent 可以从可验证环境反馈中学习，而不只是 next-token imitation。",
+      "url": "http://arxiv.org/abs/2607.01465v1",
+      "authors": [
+        "Karthikeya Aditya Vissa",
+        "Sankalp Mane",
+        "Ananya Mantravadi",
+        "Harshit Rajgarhia",
+        "Abhishek Mukherji"
+      ],
+      "report_date": "2026-07-06",
+      "published": "2026-07-01",
+      "updated": "2026-07-01",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "强相关但范围窄：企业 API tool-use RLVR proof of concept",
+        "water_risk": "中",
+        "value_judgement": "强相关但范围窄：企业 API tool-use RLVR proof of concept",
+        "reason": "论文直接把 RLVR 用到 stateful API tool-use agent，奖励可从工具轨迹验证；但环境是手工合成的 Jira / Confluence 子集，reward crafting 扩展性和场景覆盖都有限。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Karthikeya Aditya Vissa",
+          "Sankalp Mane",
+          "Ananya Mantravadi",
+          "Harshit Rajgarhia",
+          "Abhishek Mukherji"
+        ],
+        "affiliations": "Centific",
+        "date": "2026-07-01",
+        "paper_url": "https://arxiv.org/abs/2607.01465v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接把 RLVR 用到 stateful API tool-use agent，奖励可从工具轨迹验证；但环境是手工合成的 Jira / Confluence 子集，reward crafting 扩展性和场景覆盖都有限。",
+        "summary": "这篇论文的价值在于把 agentic RL 从通用聊天或数学题推到具体 API workflow。它构建了可验证的 Jira / Confluence 工具环境，用 trace-based reward 约束参数、调用顺序和验证行为。结果显示小模型经过 GRPO 后可以在多个任务中接近满分，特别是 Confluence page creation 的提升很大。它不是大规模 benchmark，也不是通用 tool-use 解法，但为“可验证企业工作流 + 小模型 RL”提供了清晰原型。",
+        "highlights": [
+          "论文直接把 RLVR 用到 stateful API tool-use agent，奖励可从工具轨迹验证；但环境是手工合成的 Jira / Confluence 子集，reward crafting 扩展性和场景覆盖都有限。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "企业 SaaS agent 的失败往往不是语言不流畅，而是 endpoint、参数、调用顺序或验证步骤错了。next-token 目标难以约束这些 silent failures，因此论文测试能否用完全来自工具轨迹的 verifiable rewards 训练小模型。",
+        "method": "作者构建五个模拟 Jira REST v3 与 Confluence v2 的 synthetic environments，保留 schema fidelity、stateful parent-child constraint 和 per-batch reset。reward 从 tool-call trace 计算，分解为参数正确性、validate-mutate-verify 结构 bonus，以及 hallucinated / duplicate call penalty；训练使用 GRPO。",
+        "experiments": "在四个 reward 非退化场景中，RL-trained policy 将平均 reward 从 prompted 4B baseline 的 0.35-0.92 提升到 0.95-1.00，其中 Confluence page creation 从 0.35 到 1.00。作者明确指出 ticket-transition 场景 reward 已饱和，且手工设计 verifiable reward 不易扩展。",
+        "research_help": "Insight：agentic RL 最容易落地的切入点可能是窄 API 环境：状态可模拟、成功可检查、工具轨迹可评分。对真实 tool-use agent，关键不是“会不会调用工具”，而是把 endpoint schema、顺序约束和后置验证转成可优化的环境反馈。",
+        "insight": "Insight：agentic RL 最容易落地的切入点可能是窄 API 环境：状态可模拟、成功可检查、工具轨迹可评分。对真实 tool-use agent，关键不是“会不会调用工具”，而是把 endpoint schema、顺序约束和后置验证转成可优化的环境反馈。",
+        "abstract_zh": "论文研究 RLVR 是否能改善企业 SaaS workflow 中的 tool-use agent。作者构建了五个模拟 Jira 和 Confluence API 的环境，奖励完全由工具调用轨迹计算，不依赖真人标签或 learned judge。实验在 Qwen 小模型上显示，GRPO 训练能显著提升多个非饱和场景的 reward。论文定位为 proof of concept，并强调手工 reward 和窄 API 覆盖是主要限制。",
+        "full_summary": "这篇论文的价值在于把 agentic RL 从通用聊天或数学题推到具体 API workflow。它构建了可验证的 Jira / Confluence 工具环境，用 trace-based reward 约束参数、调用顺序和验证行为。结果显示小模型经过 GRPO 后可以在多个任务中接近满分，特别是 Confluence page creation 的提升很大。它不是大规模 benchmark，也不是通用 tool-use 解法，但为“可验证企业工作流 + 小模型 RL”提供了清晰原型。",
+        "card_summary": "这篇论文把 RLVR 用在 Jira / Confluence 风格的企业 API workflow 上，让小模型学习正确的 tool-call 顺序和 nested arguments。它是窄场景 proof of concept，但很好地说明 tool-use agent 可以从可验证环境反馈中学习，而不只是 next-token imitation。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "强相关但范围窄：企业 API tool-use RLVR proof of concept",
+          "water_risk": "中",
+          "value_judgement": "强相关但范围窄：企业 API tool-use RLVR proof of concept",
+          "reason": "论文直接把 RLVR 用到 stateful API tool-use agent，奖励可从工具轨迹验证；但环境是手工合成的 Jira / Confluence 子集，reward crafting 扩展性和场景覆盖都有限。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      },
+      "analysis": {
+        "motivation": "企业 SaaS agent 的失败往往不是语言不流畅，而是 endpoint、参数、调用顺序或验证步骤错了。next-token 目标难以约束这些 silent failures，因此论文测试能否用完全来自工具轨迹的 verifiable rewards 训练小模型。",
+        "method": "作者构建五个模拟 Jira REST v3 与 Confluence v2 的 synthetic environments，保留 schema fidelity、stateful parent-child constraint 和 per-batch reset。reward 从 tool-call trace 计算，分解为参数正确性、validate-mutate-verify 结构 bonus，以及 hallucinated / duplicate call penalty；训练使用 GRPO。",
+        "experiments": "在四个 reward 非退化场景中，RL-trained policy 将平均 reward 从 prompted 4B baseline 的 0.35-0.92 提升到 0.95-1.00，其中 Confluence page creation 从 0.35 到 1.00。作者明确指出 ticket-transition 场景 reward 已饱和，且手工设计 verifiable reward 不易扩展。",
+        "research_help": "Insight：agentic RL 最容易落地的切入点可能是窄 API 环境：状态可模拟、成功可检查、工具轨迹可评分。对真实 tool-use agent，关键不是“会不会调用工具”，而是把 endpoint schema、顺序约束和后置验证转成可优化的环境反馈。",
+        "insight": "Insight：agentic RL 最容易落地的切入点可能是窄 API 环境：状态可模拟、成功可检查、工具轨迹可评分。对真实 tool-use agent，关键不是“会不会调用工具”，而是把 endpoint schema、顺序约束和后置验证转成可优化的环境反馈。",
+        "abstract_zh": "论文研究 RLVR 是否能改善企业 SaaS workflow 中的 tool-use agent。作者构建了五个模拟 Jira 和 Confluence API 的环境，奖励完全由工具调用轨迹计算，不依赖真人标签或 learned judge。实验在 Qwen 小模型上显示，GRPO 训练能显著提升多个非饱和场景的 reward。论文定位为 proof of concept，并强调手工 reward 和窄 API 覆盖是主要限制。",
+        "card_summary": "这篇论文把 RLVR 用在 Jira / Confluence 风格的企业 API workflow 上，让小模型学习正确的 tool-call 顺序和 nested arguments。它是窄场景 proof of concept，但很好地说明 tool-use agent 可以从可验证环境反馈中学习，而不只是 next-token imitation。",
+        "full_summary": "这篇论文的价值在于把 agentic RL 从通用聊天或数学题推到具体 API workflow。它构建了可验证的 Jira / Confluence 工具环境，用 trace-based reward 约束参数、调用顺序和验证行为。结果显示小模型经过 GRPO 后可以在多个任务中接近满分，特别是 Confluence page creation 的提升很大。它不是大规模 benchmark，也不是通用 tool-use 解法，但为“可验证企业工作流 + 小模型 RL”提供了清晰原型。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关但范围窄：企业 API tool-use RLVR proof of concept",
+        "value_reason": "论文直接把 RLVR 用到 stateful API tool-use agent，奖励可从工具轨迹验证；但环境是手工合成的 Jira / Confluence 子集，reward crafting 扩展性和场景覆盖都有限。",
+        "limitations": "环境是合成 API 子集，只有五个场景；verifiable rewards 需要手工设计且扩展性存疑；一个场景 reward 饱和，说明任务难度与奖励形状还不稳定。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: rewards are computed entirely from the tool-call trace with no live API, learned judge, or human label.",
+          "Method: environments emulate Jira REST v3 and Confluence v2 endpoints with stateful constraints.",
+          "Results: four non-degenerate scenarios improve to 0.95-1.00 average reward, with Confluence page creation 0.35 to 1.00.",
+          "Limitations: hand-crafting verifiable rewards does not scale beyond the handful of endpoints reported."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-06T02:02:14.849Z"
+      }
+    },
+    {
+      "id": "2607.01531v1",
+      "title": "OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration",
+      "summary": "OPINE-World 让 LLM agent 在线学习 object-centric programmatic world model，并用模型做规划。它通过“行动 agent + 代码合成 agent”的 hypothesis-and-test loop，在 ARC-AGI-3 上展示了交互式 world model 学习对规划效率的价值。",
+      "url": "http://arxiv.org/abs/2607.01531v1",
+      "authors": [
+        "David Courtis",
+        "Wenhao Li",
+        "Scott Sanner"
+      ],
+      "report_date": "2026-07-06",
+      "published": "2026-07-01",
+      "updated": "2026-07-01",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 93,
+        "level": "高",
+        "label": "强相关：交互式探索与程序化 world model 结合得很清楚",
+        "water_risk": "中",
+        "value_judgement": "强相关：交互式探索与程序化 world model 结合得很清楚",
+        "reason": "论文直接研究 agent 如何从交互中学习可规划的 world model，并用 ontology error 指导探索；实验结果强，但单次游戏评测、无方差估计和确定性可观察假设需要注意。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "David Courtis",
+          "Wenhao Li",
+          "Scott Sanner"
+        ],
+        "affiliations": "University of Toronto",
+        "date": "2026-07-01",
+        "paper_url": "https://arxiv.org/abs/2607.01531v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接研究 agent 如何从交互中学习可规划的 world model，并用 ontology error 指导探索；实验结果强，但单次游戏评测、无方差估计和确定性可观察假设需要注意。",
+        "summary": "OPINE-World 是一篇很贴近 agent planning 的 world-model 论文。它不把 world model 作为黑箱神经预测器，而是让 LLM 合成可执行代码，并用交互反例不断修正。ontology error 让 agent 知道哪些对象类型还没学清楚，从而把探索预算用在模型最不确定的地方。ARC-AGI-3 结果显示程序化模型能显著提升行动效率。限制是环境假设偏确定、单 run 无方差、planner 规模仍有限。",
+        "highlights": [
+          "论文直接研究 agent 如何从交互中学习可规划的 world model，并用 ontology error 指导探索；实验结果强，但单次游戏评测、无方差估计和确定性可观察假设需要注意。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "agent 要适应未知任务，需要从交互中学到环境如何变化。神经 world model 数据需求高且迁移弱；程序化 world model 更可验证、可复用，但过去多依赖结构化状态和给定对象词表，难以扩展到像素环境。",
+        "method": "OPINE-World 使用两个协作 LLM agent：一个在环境中行动和收集 transition，另一个把 object-centric transition rules 合成为代码，并通过 replay verification 与 CEGIS 修正。系统用 Bayesian ontology error 衡量对象类型划分是否足够，优先探索高不确定对象，再用验证后的程序模型做 bounded forward planning。",
+        "experiments": "实验在 ARC-AGI-3 public evaluation set 的 25 个游戏上运行，每个游戏在线单次评测、无 per-game training。OPINE-World 解出 20/25 个游戏、160/183 个 level，action-efficiency score 为 78.4；强 single-agent baseline 为 63.8 和 14/25。作者承认单 run 无方差，部分组件难以单独消融。",
+        "research_help": "Insight：对 long-horizon planning 来说，world model 的价值不只是预测下一帧，而是提供可验证、可搜索、可反例修正的程序状态转移。用 ontology error 主动选择探索对象，等价于把“学什么模型”纳入 agent planning loop。",
+        "insight": "Insight：对 long-horizon planning 来说，world model 的价值不只是预测下一帧，而是提供可验证、可搜索、可反例修正的程序状态转移。用 ontology error 主动选择探索对象，等价于把“学什么模型”纳入 agent planning loop。",
+        "abstract_zh": "论文提出 OPINE-World，一个从交互中学习 object-centric programmatic world model 的 LLM agent。系统包含行动 agent 和模型合成 agent，前者探索环境，后者用代码表示转移规则并通过 replay verification 修正。作者提出 ontology error 来衡量对象类型假设是否充分，并据此引导探索。在 ARC-AGI-3 上，OPINE-World 无需 per-game training 解出多数游戏。",
+        "full_summary": "OPINE-World 是一篇很贴近 agent planning 的 world-model 论文。它不把 world model 作为黑箱神经预测器，而是让 LLM 合成可执行代码，并用交互反例不断修正。ontology error 让 agent 知道哪些对象类型还没学清楚，从而把探索预算用在模型最不确定的地方。ARC-AGI-3 结果显示程序化模型能显著提升行动效率。限制是环境假设偏确定、单 run 无方差、planner 规模仍有限。",
+        "card_summary": "OPINE-World 让 LLM agent 在线学习 object-centric programmatic world model，并用模型做规划。它通过“行动 agent + 代码合成 agent”的 hypothesis-and-test loop，在 ARC-AGI-3 上展示了交互式 world model 学习对规划效率的价值。",
+        "recommendation": {
+          "score": 93,
+          "level": "高",
+          "label": "强相关：交互式探索与程序化 world model 结合得很清楚",
+          "water_risk": "中",
+          "value_judgement": "强相关：交互式探索与程序化 world model 结合得很清楚",
+          "reason": "论文直接研究 agent 如何从交互中学习可规划的 world model，并用 ontology error 指导探索；实验结果强，但单次游戏评测、无方差估计和确定性可观察假设需要注意。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      },
+      "analysis": {
+        "motivation": "agent 要适应未知任务，需要从交互中学到环境如何变化。神经 world model 数据需求高且迁移弱；程序化 world model 更可验证、可复用，但过去多依赖结构化状态和给定对象词表，难以扩展到像素环境。",
+        "method": "OPINE-World 使用两个协作 LLM agent：一个在环境中行动和收集 transition，另一个把 object-centric transition rules 合成为代码，并通过 replay verification 与 CEGIS 修正。系统用 Bayesian ontology error 衡量对象类型划分是否足够，优先探索高不确定对象，再用验证后的程序模型做 bounded forward planning。",
+        "experiments": "实验在 ARC-AGI-3 public evaluation set 的 25 个游戏上运行，每个游戏在线单次评测、无 per-game training。OPINE-World 解出 20/25 个游戏、160/183 个 level，action-efficiency score 为 78.4；强 single-agent baseline 为 63.8 和 14/25。作者承认单 run 无方差，部分组件难以单独消融。",
+        "research_help": "Insight：对 long-horizon planning 来说，world model 的价值不只是预测下一帧，而是提供可验证、可搜索、可反例修正的程序状态转移。用 ontology error 主动选择探索对象，等价于把“学什么模型”纳入 agent planning loop。",
+        "insight": "Insight：对 long-horizon planning 来说，world model 的价值不只是预测下一帧，而是提供可验证、可搜索、可反例修正的程序状态转移。用 ontology error 主动选择探索对象，等价于把“学什么模型”纳入 agent planning loop。",
+        "abstract_zh": "论文提出 OPINE-World，一个从交互中学习 object-centric programmatic world model 的 LLM agent。系统包含行动 agent 和模型合成 agent，前者探索环境，后者用代码表示转移规则并通过 replay verification 修正。作者提出 ontology error 来衡量对象类型假设是否充分，并据此引导探索。在 ARC-AGI-3 上，OPINE-World 无需 per-game training 解出多数游戏。",
+        "card_summary": "OPINE-World 让 LLM agent 在线学习 object-centric programmatic world model，并用模型做规划。它通过“行动 agent + 代码合成 agent”的 hypothesis-and-test loop，在 ARC-AGI-3 上展示了交互式 world model 学习对规划效率的价值。",
+        "full_summary": "OPINE-World 是一篇很贴近 agent planning 的 world-model 论文。它不把 world model 作为黑箱神经预测器，而是让 LLM 合成可执行代码，并用交互反例不断修正。ontology error 让 agent 知道哪些对象类型还没学清楚，从而把探索预算用在模型最不确定的地方。ARC-AGI-3 结果显示程序化模型能显著提升行动效率。限制是环境假设偏确定、单 run 无方差、planner 规模仍有限。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关：交互式探索与程序化 world model 结合得很清楚",
+        "value_reason": "论文直接研究 agent 如何从交互中学习可规划的 world model，并用 ontology error 指导探索；实验结果强，但单次游戏评测、无方差估计和确定性可观察假设需要注意。",
+        "limitations": "假设状态和动作在某种表示下决定下一状态，隐藏状态会削弱信号；对象感知与类型划分由系统推断，可能出错；planner 是 bounded forward search；每个游戏只运行一次，没有方差估计。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: OPINE-World couples an acting agent and a model-synthesizing agent with replay verification and model-based planning.",
+          "Method: ontology error is a Bayesian measure of object-type adequacy used to steer exploration.",
+          "Evaluation: ARC-AGI-3 public set, 20 of 25 games solved and action-efficiency score 78.4 without per-game training.",
+          "Limitations: observable-Markov scope, inferred perception, planner scale, and single run per game."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-06T02:02:14.849Z"
+      }
+    },
+    {
+      "id": "2607.01523v1",
+      "title": "Multi-Head Recurrent Memory Agents",
+      "summary": "这篇论文指出 recurrent memory agent 的主要瓶颈不是 capture，而是 retained information 会被后续更新覆盖。Multi-Head Recurrent Memory 把单块记忆拆成多个独立 heads，每步只更新一个 head，从结构上降低长上下文遗忘。",
+      "url": "http://arxiv.org/abs/2607.01523v1",
+      "authors": [
+        "Jiatong Li",
+        "Samuel Yeh",
+        "Sharon Li"
+      ],
+      "report_date": "2026-07-06",
+      "published": "2026-07-01",
+      "updated": "2026-07-01",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "高",
+        "label": "强相关：长上下文 agent memory 的结构性 retention 修复",
+        "water_risk": "低",
+        "value_judgement": "强相关：长上下文 agent memory 的结构性 retention 修复",
+        "reason": "论文直接诊断 recurrent memory agent 在超长上下文中的 retention failure，并给出训练无关的多头记忆结构；更偏 memory architecture，但对 long-horizon agent 很实用。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jiatong Li",
+          "Samuel Yeh",
+          "Sharon Li"
+        ],
+        "affiliations": "University of Wisconsin-Madison",
+        "date": "2026-07-01",
+        "paper_url": "https://arxiv.org/abs/2607.01523v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接诊断 recurrent memory agent 在超长上下文中的 retention failure，并给出训练无关的多头记忆结构；更偏 memory architecture，但对 long-horizon agent 很实用。",
+        "summary": "MHM 是一篇偏基础但很实用的 agent memory 论文。它指出 recurrent memory agent 的失败不在于完全没捕捉到信息，而在于长时间更新后旧信息被单块记忆覆盖。方法把 memory 拆成多个 heads，并用选择性更新减少 overwrite pressure。实验显示在 896K token 等极长上下文下 retention 大幅提升。它对任何需要跨长文档、多轮会话或长期任务保留状态的 agent 都有参考价值。",
+        "highlights": [
+          "论文直接诊断 recurrent memory agent 在超长上下文中的 retention failure，并给出训练无关的多头记忆结构；更偏 memory architecture，但对 long-horizon agent 很实用。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "recurrent memory 让 LLM 可以处理任意长上下文，但把所有信息压进单个 text block 时，每次更新都可能覆盖之前保留的关键信息。论文希望把 retention 从模型行为问题转成 memory architecture 问题。",
+        "method": "MHM 将 memory state 表示为多个独立 text heads，并采用 select-then-update：每个 chunk 只选择一个 head 更新，未选中的 heads 被结构性保护。轻量实现 MHM-LRU 使用 least-recently-updated 选择策略，保证 head 使用均衡且不增加 token overhead。",
+        "experiments": "作者先用 capture-retention decomposition 证明 memory retention rate 与端到端准确率高度相关。长上下文实验覆盖 100K 到 1M tokens；在 RULER-HQA 896K tokens 上，MHM-LRU 将 memory retention rate 从低于 30% 提升到 73.96%，并跨模型规模和任务类型提升准确率。",
+        "research_help": "Insight：长程 agent memory 不能只靠更好的摘要 prompt；如果 memory 写入结构允许任意更新覆盖全局状态，遗忘是必然的。多头记忆把“不要覆盖所有东西”做成架构约束，对多轮研究 agent、文档 agent 和长期任务规划都有直接启发。",
+        "insight": "Insight：长程 agent memory 不能只靠更好的摘要 prompt；如果 memory 写入结构允许任意更新覆盖全局状态，遗忘是必然的。多头记忆把“不要覆盖所有东西”做成架构约束，对多轮研究 agent、文档 agent 和长期任务规划都有直接启发。",
+        "abstract_zh": "论文研究 recurrent memory agents 在极长上下文中的可靠性问题。作者把表现分解为 memory capture 和 memory retention，并发现 retention 是主瓶颈。为此提出 Multi-Head Recurrent Memory，将记忆拆分为多个独立 heads，并在每步只更新一个 head，保护其他 heads 免于覆盖。MHM-LRU 是一个零额外 token 的简单实例，在长上下文 benchmark 上显著提升 retention 和准确率。",
+        "full_summary": "MHM 是一篇偏基础但很实用的 agent memory 论文。它指出 recurrent memory agent 的失败不在于完全没捕捉到信息，而在于长时间更新后旧信息被单块记忆覆盖。方法把 memory 拆成多个 heads，并用选择性更新减少 overwrite pressure。实验显示在 896K token 等极长上下文下 retention 大幅提升。它对任何需要跨长文档、多轮会话或长期任务保留状态的 agent 都有参考价值。",
+        "card_summary": "这篇论文指出 recurrent memory agent 的主要瓶颈不是 capture，而是 retained information 会被后续更新覆盖。Multi-Head Recurrent Memory 把单块记忆拆成多个独立 heads，每步只更新一个 head，从结构上降低长上下文遗忘。",
+        "recommendation": {
+          "score": 88,
+          "level": "高",
+          "label": "强相关：长上下文 agent memory 的结构性 retention 修复",
+          "water_risk": "低",
+          "value_judgement": "强相关：长上下文 agent memory 的结构性 retention 修复",
+          "reason": "论文直接诊断 recurrent memory agent 在超长上下文中的 retention failure，并给出训练无关的多头记忆结构；更偏 memory architecture，但对 long-horizon agent 很实用。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      },
+      "analysis": {
+        "motivation": "recurrent memory 让 LLM 可以处理任意长上下文，但把所有信息压进单个 text block 时，每次更新都可能覆盖之前保留的关键信息。论文希望把 retention 从模型行为问题转成 memory architecture 问题。",
+        "method": "MHM 将 memory state 表示为多个独立 text heads，并采用 select-then-update：每个 chunk 只选择一个 head 更新，未选中的 heads 被结构性保护。轻量实现 MHM-LRU 使用 least-recently-updated 选择策略，保证 head 使用均衡且不增加 token overhead。",
+        "experiments": "作者先用 capture-retention decomposition 证明 memory retention rate 与端到端准确率高度相关。长上下文实验覆盖 100K 到 1M tokens；在 RULER-HQA 896K tokens 上，MHM-LRU 将 memory retention rate 从低于 30% 提升到 73.96%，并跨模型规模和任务类型提升准确率。",
+        "research_help": "Insight：长程 agent memory 不能只靠更好的摘要 prompt；如果 memory 写入结构允许任意更新覆盖全局状态，遗忘是必然的。多头记忆把“不要覆盖所有东西”做成架构约束，对多轮研究 agent、文档 agent 和长期任务规划都有直接启发。",
+        "insight": "Insight：长程 agent memory 不能只靠更好的摘要 prompt；如果 memory 写入结构允许任意更新覆盖全局状态，遗忘是必然的。多头记忆把“不要覆盖所有东西”做成架构约束，对多轮研究 agent、文档 agent 和长期任务规划都有直接启发。",
+        "abstract_zh": "论文研究 recurrent memory agents 在极长上下文中的可靠性问题。作者把表现分解为 memory capture 和 memory retention，并发现 retention 是主瓶颈。为此提出 Multi-Head Recurrent Memory，将记忆拆分为多个独立 heads，并在每步只更新一个 head，保护其他 heads 免于覆盖。MHM-LRU 是一个零额外 token 的简单实例，在长上下文 benchmark 上显著提升 retention 和准确率。",
+        "card_summary": "这篇论文指出 recurrent memory agent 的主要瓶颈不是 capture，而是 retained information 会被后续更新覆盖。Multi-Head Recurrent Memory 把单块记忆拆成多个独立 heads，每步只更新一个 head，从结构上降低长上下文遗忘。",
+        "full_summary": "MHM 是一篇偏基础但很实用的 agent memory 论文。它指出 recurrent memory agent 的失败不在于完全没捕捉到信息，而在于长时间更新后旧信息被单块记忆覆盖。方法把 memory 拆成多个 heads，并用选择性更新减少 overwrite pressure。实验显示在 896K token 等极长上下文下 retention 大幅提升。它对任何需要跨长文档、多轮会话或长期任务保留状态的 agent 都有参考价值。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强相关：长上下文 agent memory 的结构性 retention 修复",
+        "value_reason": "论文直接诊断 recurrent memory agent 在超长上下文中的 retention failure，并给出训练无关的多头记忆结构；更偏 memory architecture，但对 long-horizon agent 很实用。",
+        "limitations": "实验中 head 数量固定；方法仍依赖底层 LLM 对更新指令的执行质量；主要评测是长上下文 QA / retrieval 类任务，还需验证在真实工具执行和规划环境中的效果。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: retention collapses because existing designs maintain memory as a monolithic text block.",
+          "Method: exactly one head is selected for update while remaining heads are structurally shielded from overwriting.",
+          "Results: on RULER-HQA at 896K tokens, MHM-LRU improves memory retention rate from less than 30% to 73.96%.",
+          "Conclusion: architectural optimization is a practical path toward reliable long-context recurrent memory."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-06T02:02:14.849Z"
+      }
+    },
+    {
+      "id": "2607.01919v1",
+      "title": "ElephantAgent: Contextual State Continuity in Agentic Systems",
+      "summary": "ElephantAgent 把 agent 的 tool state 和 memory 视为 planning 前必须验证的 contextual state。它用线性化 ledger、digest 和 trusted hardware 检查状态连续性，防止工具描述或记忆被 out-of-band poisoning。",
+      "url": "http://arxiv.org/abs/2607.01919v1",
+      "authors": [
+        "Jiankai Jin",
+        "Xiangzheng Zhang",
+        "Zhao Liu",
+        "Wenzhuo Xu",
+        "Dongdong Yang",
+        "Deyue Zhang",
+        "Quanchen Zou"
+      ],
+      "report_date": "2026-07-06",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 83,
+        "level": "高",
+        "label": "强相关但偏安全系统：保护 agent planning 所依赖的上下文状态",
+        "water_risk": "中",
+        "value_judgement": "强相关但偏安全系统：保护 agent planning 所依赖的上下文状态",
+        "reason": "论文聚焦 tool descriptor 和 persistent memory 被篡改后如何影响 agent planning，提出 contextual state continuity；它更偏安全协议和可信执行系统，但问题正中长期 agent 的状态可靠性。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jiankai Jin",
+          "Xiangzheng Zhang",
+          "Zhao Liu",
+          "Wenzhuo Xu",
+          "Dongdong Yang",
+          "Deyue Zhang",
+          "Quanchen Zou"
+        ],
+        "affiliations": "arXiv metadata 未提供；正文未在首页处清晰列出统一单位",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.01919v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文聚焦 tool descriptor 和 persistent memory 被篡改后如何影响 agent planning，提出 contextual state continuity；它更偏安全协议和可信执行系统，但问题正中长期 agent 的状态可靠性。",
+        "summary": "ElephantAgent 从安全角度讨论了长期 agent planning 的状态基础：工具描述和记忆如果被静默篡改，后续所有规划都可能被带偏。它把关键上下文状态纳入可验证 ledger，每次执行前检查本地状态是否延续自最新授权版本。方法偏系统安全，涉及 Nimble、TEE 和 MCP 原型，不是新的 planning algorithm。阅读价值在于提醒 agent memory / tool state 应该具备状态连续性和审计恢复能力。",
+        "highlights": [
+          "论文聚焦 tool descriptor 和 persistent memory 被篡改后如何影响 agent planning，提出 contextual state continuity；它更偏安全协议和可信执行系统，但问题正中长期 agent 的状态可靠性。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "agent 越依赖外部工具和长期记忆，越容易被 tool poisoning 或 memory poisoning 影响计划与执行。现有系统通常允许关键上下文在 session 外被修改而不被 agent 察觉，导致 agent 在错误状态上做规划。",
+        "method": "ElephantAgent 定义 contextual state 为安全关键的 tool state 和 memory 子集，并加入 ContextGuard 与 StateContinuityModule。每次处理 query 前，ContextGuard 重新计算本地状态 digest，并与 SCM 中最新授权 digest 比对；SCM 通过 Nimble-backed linearizable ledger 和 TDX remote attestation 维护授权状态转移。",
+        "experiments": "作者在 MCP agent 原型上评估 EmailTriage、CodeBugFix 和 CalendarScheduling 等任务。结果显示 contextual state protection 只引入很小任务开销；附加 attested MCP server 模式下，server tool invocation overhead 约为 1.12x 到 1.22x。论文还给出形式化安全分析和历史可追溯恢复机制。",
+        "research_help": "Insight：长期 agent 的 memory 和 tool registry 不能只是可变 prompt 附件，而应是带授权历史的状态机。对 planning reliability 来说，先验证“我基于什么状态在计划”与选择下一步动作同样重要。",
+        "insight": "Insight：长期 agent 的 memory 和 tool registry 不能只是可变 prompt 附件，而应是带授权历史的状态机。对 planning reliability 来说，先验证“我基于什么状态在计划”与选择下一步动作同样重要。",
+        "abstract_zh": "论文提出 ElephantAgent，用 contextual state continuity 防御 agentic systems 中的 tool poisoning 和 memory poisoning。系统将 tool state 和 memory 中安全关键的部分视为 contextual state，并在每次 query 前验证其 digest 是否与最新授权状态一致。StateContinuityModule 维护线性化授权状态 ledger，并结合 trusted hardware 提供远程证明。实验显示该协议可用于 MCP agent，并带来较小运行开销。",
+        "full_summary": "ElephantAgent 从安全角度讨论了长期 agent planning 的状态基础：工具描述和记忆如果被静默篡改，后续所有规划都可能被带偏。它把关键上下文状态纳入可验证 ledger，每次执行前检查本地状态是否延续自最新授权版本。方法偏系统安全，涉及 Nimble、TEE 和 MCP 原型，不是新的 planning algorithm。阅读价值在于提醒 agent memory / tool state 应该具备状态连续性和审计恢复能力。",
+        "card_summary": "ElephantAgent 把 agent 的 tool state 和 memory 视为 planning 前必须验证的 contextual state。它用线性化 ledger、digest 和 trusted hardware 检查状态连续性，防止工具描述或记忆被 out-of-band poisoning。",
+        "recommendation": {
+          "score": 83,
+          "level": "高",
+          "label": "强相关但偏安全系统：保护 agent planning 所依赖的上下文状态",
+          "water_risk": "中",
+          "value_judgement": "强相关但偏安全系统：保护 agent planning 所依赖的上下文状态",
+          "reason": "论文聚焦 tool descriptor 和 persistent memory 被篡改后如何影响 agent planning，提出 contextual state continuity；它更偏安全协议和可信执行系统，但问题正中长期 agent 的状态可靠性。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        }
+      },
+      "analysis": {
+        "motivation": "agent 越依赖外部工具和长期记忆，越容易被 tool poisoning 或 memory poisoning 影响计划与执行。现有系统通常允许关键上下文在 session 外被修改而不被 agent 察觉，导致 agent 在错误状态上做规划。",
+        "method": "ElephantAgent 定义 contextual state 为安全关键的 tool state 和 memory 子集，并加入 ContextGuard 与 StateContinuityModule。每次处理 query 前，ContextGuard 重新计算本地状态 digest，并与 SCM 中最新授权 digest 比对；SCM 通过 Nimble-backed linearizable ledger 和 TDX remote attestation 维护授权状态转移。",
+        "experiments": "作者在 MCP agent 原型上评估 EmailTriage、CodeBugFix 和 CalendarScheduling 等任务。结果显示 contextual state protection 只引入很小任务开销；附加 attested MCP server 模式下，server tool invocation overhead 约为 1.12x 到 1.22x。论文还给出形式化安全分析和历史可追溯恢复机制。",
+        "research_help": "Insight：长期 agent 的 memory 和 tool registry 不能只是可变 prompt 附件，而应是带授权历史的状态机。对 planning reliability 来说，先验证“我基于什么状态在计划”与选择下一步动作同样重要。",
+        "insight": "Insight：长期 agent 的 memory 和 tool registry 不能只是可变 prompt 附件，而应是带授权历史的状态机。对 planning reliability 来说，先验证“我基于什么状态在计划”与选择下一步动作同样重要。",
+        "abstract_zh": "论文提出 ElephantAgent，用 contextual state continuity 防御 agentic systems 中的 tool poisoning 和 memory poisoning。系统将 tool state 和 memory 中安全关键的部分视为 contextual state，并在每次 query 前验证其 digest 是否与最新授权状态一致。StateContinuityModule 维护线性化授权状态 ledger，并结合 trusted hardware 提供远程证明。实验显示该协议可用于 MCP agent，并带来较小运行开销。",
+        "card_summary": "ElephantAgent 把 agent 的 tool state 和 memory 视为 planning 前必须验证的 contextual state。它用线性化 ledger、digest 和 trusted hardware 检查状态连续性，防止工具描述或记忆被 out-of-band poisoning。",
+        "full_summary": "ElephantAgent 从安全角度讨论了长期 agent planning 的状态基础：工具描述和记忆如果被静默篡改，后续所有规划都可能被带偏。它把关键上下文状态纳入可验证 ledger，每次执行前检查本地状态是否延续自最新授权版本。方法偏系统安全，涉及 Nimble、TEE 和 MCP 原型，不是新的 planning algorithm。阅读价值在于提醒 agent memory / tool state 应该具备状态连续性和审计恢复能力。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关但偏安全系统：保护 agent planning 所依赖的上下文状态",
+        "value_reason": "论文聚焦 tool descriptor 和 persistent memory 被篡改后如何影响 agent planning，提出 contextual state continuity；它更偏安全协议和可信执行系统，但问题正中长期 agent 的状态可靠性。",
+        "limitations": "协议主要防 out-of-band state tampering；对于网页内容等 in-band semantic abuse 只能依赖历史追溯与恢复；实现依赖 trusted hardware 和 ledger 假设，工程部署成本高于普通 agent memory。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract: ElephantAgent enforces Contextual State Continuity for tool state and memory before planning and execution.",
+          "Method: ContextGuard recomputes local contextual-state digest and verifies it against the latest authorized digest.",
+          "Implementation: SCM uses a Nimble-backed linearizable ledger and TDX-adapted remote attestation.",
+          "Conclusion: contextual state protection introduces very small task overheads and can be applied to MCP or CLI-based agentic systems."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-06T02:02:14.849Z"
+      }
+    },
     {
       "id": "2607.01942v1",
       "title": "Atomic Task Graph: A Unified Framework for Agentic Planning and Execution",
