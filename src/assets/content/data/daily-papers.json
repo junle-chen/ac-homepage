@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T02:02:14.849Z",
+  "updated_at": "2026-07-07T01:42:21.461Z",
   "source": "arxiv",
   "analysis_method": "Manual Codex curation after CODEX_PAPER_SKIP_ANALYZED=1 npm run papers:daily:codex plus arXiv cs/new fallback scan; only strongly relevant long-horizon, multi-turn, agentic RL, and agent planning papers are retained.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
@@ -37,31 +37,19 @@
     "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after Codex full-text reading."
   },
   "digest": {
-    "title": "2026-07-06 Daily Paper",
-    "report_date": "2026-07-06",
+    "title": "2026-07-07 Daily Paper",
+    "report_date": "2026-07-07",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日自动化原始 16 篇候选主要重复 2026-07-04 已发布/已过滤论文；进一步扫描 arXiv Friday, 3 July 2026 cs/new 后，人工全文复核并保留 8 篇强相关新增论文，重点是 bounded-memory long-horizon agents、agent loop reliability、agentic skill-use supervision、procedural memory distillation、tool-use RLVR、programmatic world models、recurrent memory 和 contextual state continuity。",
+    "summary": "今日保留 1 篇强相关新增论文：ASK in the Dark。它研究部分可观测 RL policy 何时向小语言模型求助，核心价值在于把 LLM 从全程控制器降级为不确定性触发的轨迹记忆顾问，并用地图、访问历史、动作历史和子任务信息改善高熵状态下的决策可靠性。",
     "top_recommendations": [
-      "2607.02255v1",
-      "2607.01480v1",
-      "2607.01531v1"
+      "2607.02686v1"
     ],
-    "low_priority": [
-      "2607.01465v1",
-      "2607.01919v1"
-    ],
+    "low_priority": [],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-07-06 Daily Paper\n\n今日保留 8 篇强相关新增论文。最值得读的是 AgenticSTS、Procedural Memory Distillation 和 OPINE-World；它们分别对应长程 agent 的 bounded-memory contract、RLVR 训练中的跨 episode procedural memory、以及可验证程序化 world model + 交互式探索。\n\n最值得读的 3 篇\n1. AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents\n- 为什么读：把长程 agent 的记忆设计变成可预算、可消融、可复现的 contract。\n2. Procedural Memory Distillation: Online Reflection for Self-Improving Language Models\n- 为什么读：把 rollout 中的跨 episode 成功/失败模式沉淀为训练期 memory，再蒸馏进 policy。\n3. OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration\n- 为什么读：把 world-model learning、CEGIS、主动探索和 planning loop 结合得很清楚。"
+    "email_body": "2026-07-07 Daily Paper\n\n今日保留 1 篇强相关新增论文：ASK in the Dark: Uncertainty-Gated LLM Assistance under Partial Observability。\n\n为什么读：它把部分可观测 RL 中的 LLM assistance 设计成不确定性门控的外部顾问，而不是让语言模型全程接管。作者显示 vanilla ASK 失败主要是因为 prompt 缺少轨迹上下文；ASK+加入地图、访问历史、动作历史和子任务信息后，小模型也能在高不确定状态提供有效纠错。对 agent planning / agent memory 的启发是：可靠的 LLM 辅助不只是换大模型，而是设计何时求助、给什么历史，以及让模型在哪些高风险状态介入。"
   },
   "latest_item_ids": [
-    "2607.02255v1",
-    "2607.01641v1",
-    "2607.01874v1",
-    "2607.01480v1",
-    "2607.01465v1",
-    "2607.01531v1",
-    "2607.01523v1",
-    "2607.01919v1"
+    "2607.02686v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
@@ -110,6 +98,123 @@
     ]
   },
   "items": [
+    {
+      "id": "2607.02686v1",
+      "title": "ASK in the Dark: Uncertainty-Gated LLM Assistance under Partial Observability",
+      "summary": "Reinforcement learning agents operating under partial observability must act on incomplete information, making them natural candidates for guidance from small language models (SLMs) that carry broad reasoning priors. Yet integrating SLM guidance into this setting has proven difficult: across all test environments, vanilla uncertainty-gated approaches achieve an overwrite rate at or near zero, meaning the SLM almost never contributes an independent action. We trace this failure to the bare egocentric prompt, which provides insufficient context for genuine reasoning, and identify it as a context problem rather than a capacity problem. We propose ASK+, which supplies the SLM with trajectory-aware context (a partially revealed map, visited positions, and action history) and structured chain-of-thought reasoning, converting it from a passive redundancy check into a more informative consultant that occasionally corrects the policy. We further establish that the predictive entropy signal used for selective querying measures action uncertainty rather than state uncertainty and remains informative in POMDPs, making uncertainty-gated assistance viable beyond fully observable settings. The stateful prompt drives substantial gains: on DoorKey, where vanilla ASK matches PPO (both 89%), ASK+ reaches 93% success; on FourRooms, success climbs from 53% to 70%; on HigherLower, accuracy reaches 73.7%, matching the SLM-only upper bound. Across all environments, Qwen3.5-2B matches or exceeds Qwen3.5-4B, confirming that prompt design and selective gating dominate the impact of model scale, enabling guidance without large models.",
+      "url": "http://arxiv.org/abs/2607.02686v1",
+      "authors": [
+        "Juarez Monteiro",
+        "Nathan Gavenski",
+        "Guilherme Lima",
+        "Francisco Galuppo",
+        "Odinaldo Rodrigues",
+        "Adriano Veloso"
+      ],
+      "report_date": "2026-07-07",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 66,
+        "level": "高",
+        "label": "值得读：不确定性门控的轨迹记忆顾问框架",
+        "water_risk": "中",
+        "value_judgement": "这篇论文和 agent planning / partial observability / planning reliability 的相关度很高，最有价值的点是把语言模型从 autonomous planner 降级为高不确定状态下的 context-aware consultant，并用 overwrite rate 诊断 prompt 是否真的让模型形成独立判断。它的结论对多轮 agent 系统很实用：历史状态、局部 affordance 和任务阶段信息往往比更大模型更重要。",
+        "reason": "这篇论文和 agent planning / partial observability / planning reliability 的相关度很高，最有价值的点是把语言模型从 autonomous planner 降级为高不确定状态下的 context-aware consultant，并用 overwrite rate 诊断 prompt 是否真的让模型形成独立判断。它的结论对多轮 agent 系统很实用：历史状态、局部 affordance 和任务阶段信息往往比更大模型更重要。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": false,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Juarez Monteiro",
+          "Nathan Gavenski",
+          "Guilherme Lima",
+          "Francisco Galuppo",
+          "Odinaldo Rodrigues",
+          "Adriano Veloso"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-02",
+        "paper_url": "https://arxiv.org/abs/2607.02686v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "这篇论文和 agent planning / partial observability / planning reliability 的相关度很高，最有价值的点是把语言模型从 autonomous planner 降级为高不确定状态下的 context-aware consultant，并用 overwrite rate 诊断 prompt 是否真的让模型形成独立判断。它的结论对多轮 agent 系统很实用：历史状态、局部 affordance 和任务阶段信息往往比更大模型更重要。",
+        "summary": "这篇论文研究部分可观测环境下，RL agent 如何选择性地向小语言模型求助，以提升规划和决策可靠性。作者指出 vanilla ASK 在 POMDP 中几乎不会真正覆盖 PPO 动作，因为只给当前第一视角观测会让 SLM 缺少空间和历史上下文。ASK+通过不确定性门控保留 PPO 的局部任务能力，并在高熵状态把部分地图、访问轨迹、动作历史和子任务信息交给 SLM。实验在 FourRooms、DoorKey 和 HigherLower 上显示，ASK+对空间导航和顺序子任务最有帮助，对纯记忆/计数任务提升较窄。阅读价值在于它把 agent memory、uncertainty gating 和 LLM-as-consultant 组合成一个清晰可测的框架，但实验仍偏 toy benchmark，机制证据和强基线还不够。",
+        "highlights": [
+          "这篇论文和 agent planning / partial observability / planning reliability 的相关度很高，最有价值的点是把语言模型从 autonomous planner 降级为高不确定状态下的 context-aware consultant，并用 overwrite rate 诊断 prompt 是否真的让模型形成独立判断。它的结论对多轮 agent 系统很实用：历史状态、局部 affordance 和任务阶段信息往往比更大模型更重要。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文关注部分可观测环境中 RL policy 何时该向小语言模型求助的问题。作者认为 vanilla ASK 在 POMDP 中失败的核心不是模型太小，而是只给 SLM 当前第一视角观测，缺少地图、历史动作和访问轨迹，导致语言模型只能复读 PPO 建议，无法形成独立纠错。这个动机与 agent memory、long-horizon planning reliability 和不确定性触发式外部辅助高度相关。",
+        "method": "方法是 ASK+：保留 ASK 的 MC Dropout 预测熵门控，当 PPO policy 的总预测熵超过阈值时才查询 SLM，否则直接执行 PPO 动作。关键改动在 prompt：向 SLM 提供部分揭示地图、已访问位置、动作历史、局部动作预览、任务子目标等轨迹状态，并在部分设置中加入受限的 reasoning/rationale。作者还强调该熵信号衡量的是动作不确定性而非完整状态不确定性，因此在部分可观测设置中仍可作为选择性查询信号。",
+        "experiments": "实验覆盖 MiniGrid FourRooms、MiniGrid DoorKey-8x8 和 POPGym HigherLower，分别对应空间 grounding、顺序子任务和记忆型决策。主结果显示 ASK+ 在 FourRooms 将成功率从 PPO/ASK 的约五成提升到七成左右，在 DoorKey 小幅超过 PPO 和 ASK，在 HigherLower 主要是接近 SLM-only 上界但提升较窄。消融显示不同环境依赖不同 prompt 组件：FourRooms 更吃 reasoning budget，DoorKey 更吃 stateful memory，HigherLower 更吃计数型 enriched features。阈值和 PPO checkpoint 消融支持一个有用结论：门控强度会随 policy 质量变化，弱 policy 时查询更多，强 policy 时更少查询。",
+        "research_help": "Insight：这篇文章的可迁移启发是，把语言模型放进 agent planning 系统时，不应默认让它全程接管，也不应只给单步 observation；更可靠的结构是由基础 policy 处理常规局部动作，由不确定性门控触发一个带轨迹记忆、局部可行动作预览和任务阶段信息的外部推理模块。对 long-horizon reliability 来说，核心不是单纯扩大模型，而是设计何时求助、给什么历史、让模型在哪些高不确定状态介入。它也提醒多轮 agent 的 memory 需要是任务可用的状态摘要，而不是泛泛的对话历史。",
+        "recommendation": {
+          "score": 66,
+          "level": "中",
+          "label": "可略读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；包含 agent memory、stateful 或 personalized agent 信号。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": false,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇文章的可迁移启发是，把语言模型放进 agent planning 系统时，不应默认让它全程接管，也不应只给单步 observation；更可靠的结构是由基础 policy 处理常规局部动作，由不确定性门控触发一个带轨迹记忆、局部可行动作预览和任务阶段信息的外部推理模块。对 long-horizon reliability 来说，核心不是单纯扩大模型，而是设计何时求助、给什么历史、让模型在哪些高不确定状态介入。它也提醒多轮 agent 的 memory 需要是任务可用的状态摘要，而不是泛泛的对话历史。",
+        "abstract_zh": "在部分可观测环境中，强化学习智能体只能基于不完整信息行动，因此看似适合借助带有广泛推理先验的小语言模型。然而作者发现，原始的 uncertainty-gated ASK 在这些环境中几乎不会让语言模型产生独立覆盖动作，原因是 prompt 只包含狭窄的第一视角观测，缺少真正推理所需的上下文。论文提出 ASK+，给小语言模型提供轨迹感知上下文，包括部分地图、访问位置、动作历史和结构化推理，从而让它从被动确认器变成偶尔能纠正 policy 的顾问。实验表明，预测熵门控在 POMDP 中仍有信息量，且 ASK+ 在多个环境中优于 PPO 和原始 ASK；同时 2B 模型可匹配或超过 4B 模型，说明 prompt 和门控比模型规模更关键。",
+        "full_summary": "这篇论文研究部分可观测环境下，RL agent 如何选择性地向小语言模型求助，以提升规划和决策可靠性。作者指出 vanilla ASK 在 POMDP 中几乎不会真正覆盖 PPO 动作，因为只给当前第一视角观测会让 SLM 缺少空间和历史上下文。ASK+通过不确定性门控保留 PPO 的局部任务能力，并在高熵状态把部分地图、访问轨迹、动作历史和子任务信息交给 SLM。实验在 FourRooms、DoorKey 和 HigherLower 上显示，ASK+对空间导航和顺序子任务最有帮助，对纯记忆/计数任务提升较窄。阅读价值在于它把 agent memory、uncertainty gating 和 LLM-as-consultant 组合成一个清晰可测的框架，但实验仍偏 toy benchmark，机制证据和强基线还不够。",
+        "card_summary": "ASK+把小语言模型作为部分可观测 RL policy 的不确定性触发顾问，而不是全程控制器。它的核心发现是，原始 ASK 失败主要因为缺少轨迹上下文；加入地图、访问历史和动作历史后，小模型也能在部分高不确定状态提供有效纠错。"
+      },
+      "analysis": {
+        "motivation": "论文关注部分可观测环境中 RL policy 何时该向小语言模型求助的问题。作者认为 vanilla ASK 在 POMDP 中失败的核心不是模型太小，而是只给 SLM 当前第一视角观测，缺少地图、历史动作和访问轨迹，导致语言模型只能复读 PPO 建议，无法形成独立纠错。这个动机与 agent memory、long-horizon planning reliability 和不确定性触发式外部辅助高度相关。",
+        "method": "方法是 ASK+：保留 ASK 的 MC Dropout 预测熵门控，当 PPO policy 的总预测熵超过阈值时才查询 SLM，否则直接执行 PPO 动作。关键改动在 prompt：向 SLM 提供部分揭示地图、已访问位置、动作历史、局部动作预览、任务子目标等轨迹状态，并在部分设置中加入受限的 reasoning/rationale。作者还强调该熵信号衡量的是动作不确定性而非完整状态不确定性，因此在部分可观测设置中仍可作为选择性查询信号。",
+        "experiments": "实验覆盖 MiniGrid FourRooms、MiniGrid DoorKey-8x8 和 POPGym HigherLower，分别对应空间 grounding、顺序子任务和记忆型决策。主结果显示 ASK+ 在 FourRooms 将成功率从 PPO/ASK 的约五成提升到七成左右，在 DoorKey 小幅超过 PPO 和 ASK，在 HigherLower 主要是接近 SLM-only 上界但提升较窄。消融显示不同环境依赖不同 prompt 组件：FourRooms 更吃 reasoning budget，DoorKey 更吃 stateful memory，HigherLower 更吃计数型 enriched features。阈值和 PPO checkpoint 消融支持一个有用结论：门控强度会随 policy 质量变化，弱 policy 时查询更多，强 policy 时更少查询。",
+        "research_help": "Insight：这篇文章的可迁移启发是，把语言模型放进 agent planning 系统时，不应默认让它全程接管，也不应只给单步 observation；更可靠的结构是由基础 policy 处理常规局部动作，由不确定性门控触发一个带轨迹记忆、局部可行动作预览和任务阶段信息的外部推理模块。对 long-horizon reliability 来说，核心不是单纯扩大模型，而是设计何时求助、给什么历史、让模型在哪些高不确定状态介入。它也提醒多轮 agent 的 memory 需要是任务可用的状态摘要，而不是泛泛的对话历史。",
+        "insight": "Insight：这篇文章的可迁移启发是，把语言模型放进 agent planning 系统时，不应默认让它全程接管，也不应只给单步 observation；更可靠的结构是由基础 policy 处理常规局部动作，由不确定性门控触发一个带轨迹记忆、局部可行动作预览和任务阶段信息的外部推理模块。对 long-horizon reliability 来说，核心不是单纯扩大模型，而是设计何时求助、给什么历史、让模型在哪些高不确定状态介入。它也提醒多轮 agent 的 memory 需要是任务可用的状态摘要，而不是泛泛的对话历史。",
+        "abstract_zh": "在部分可观测环境中，强化学习智能体只能基于不完整信息行动，因此看似适合借助带有广泛推理先验的小语言模型。然而作者发现，原始的 uncertainty-gated ASK 在这些环境中几乎不会让语言模型产生独立覆盖动作，原因是 prompt 只包含狭窄的第一视角观测，缺少真正推理所需的上下文。论文提出 ASK+，给小语言模型提供轨迹感知上下文，包括部分地图、访问位置、动作历史和结构化推理，从而让它从被动确认器变成偶尔能纠正 policy 的顾问。实验表明，预测熵门控在 POMDP 中仍有信息量，且 ASK+ 在多个环境中优于 PPO 和原始 ASK；同时 2B 模型可匹配或超过 4B 模型，说明 prompt 和门控比模型规模更关键。",
+        "card_summary": "ASK+把小语言模型作为部分可观测 RL policy 的不确定性触发顾问，而不是全程控制器。它的核心发现是，原始 ASK 失败主要因为缺少轨迹上下文；加入地图、访问历史和动作历史后，小模型也能在部分高不确定状态提供有效纠错。",
+        "full_summary": "这篇论文研究部分可观测环境下，RL agent 如何选择性地向小语言模型求助，以提升规划和决策可靠性。作者指出 vanilla ASK 在 POMDP 中几乎不会真正覆盖 PPO 动作，因为只给当前第一视角观测会让 SLM 缺少空间和历史上下文。ASK+通过不确定性门控保留 PPO 的局部任务能力，并在高熵状态把部分地图、访问轨迹、动作历史和子任务信息交给 SLM。实验在 FourRooms、DoorKey 和 HigherLower 上显示，ASK+对空间导航和顺序子任务最有帮助，对纯记忆/计数任务提升较窄。阅读价值在于它把 agent memory、uncertainty gating 和 LLM-as-consultant 组合成一个清晰可测的框架，但实验仍偏 toy benchmark，机制证据和强基线还不够。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读：不确定性门控的轨迹记忆顾问框架",
+        "value_reason": "这篇论文和 agent planning / partial observability / planning reliability 的相关度很高，最有价值的点是把语言模型从 autonomous planner 降级为高不确定状态下的 context-aware consultant，并用 overwrite rate 诊断 prompt 是否真的让模型形成独立判断。它的结论对多轮 agent 系统很实用：历史状态、局部 affordance 和任务阶段信息往往比更大模型更重要。",
+        "limitations": "主要限制是环境较小且偏离真实长程任务，FourRooms、DoorKey 和 HigherLower 都是受控 toy benchmark；HigherLower 的 prompt 给了剩余牌计数，和 memoryless PPO 存在信息不对称，因此不能简单解释为同等信息条件下的规划提升。论文缺少与 recurrent policy、belief-state policy、显式 planner 或更强 memory baseline 的充分比较，也没有深入分析错误查询位置、错误覆盖动作和 stale memory 误导问题。所谓 rationale/CoT 的机制证据也较弱，更多是 prompt 组件消融，而不是可验证推理过程。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "原文摘要和结论都指出 vanilla ASK 在三个部分可观测环境中的 overwrite rate 接近零，作者据此把失败归因为 bare egocentric prompt 的上下文瓶颈。",
+          "ASK+ 的方法部分明确使用 MC Dropout 的总预测熵作为门控信号，并在触发时把当前观测、PPO 建议和 episodic state 组成 prompt 查询 SLM。",
+          "主实验表明 ASK+ 在 FourRooms 和 DoorKey 上取得最明显收益，HigherLower 中提升较窄但接近 SLM-only 表现。",
+          "prompt 消融显示 FourRooms、DoorKey 和 HigherLower 分别受益于不同组件，说明轨迹上下文、派生特征和受限推理预算不是单一万能技巧。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-07T01:35:09.194Z"
+      }
+    },
     {
       "id": "2607.02255v1",
       "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
