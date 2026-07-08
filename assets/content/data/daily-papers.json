@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-07T01:42:21.461Z",
+  "updated_at": "2026-07-08T01:48:38.803Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation after CODEX_PAPER_SKIP_ANALYZED=1 npm run papers:daily:codex plus arXiv cs/new fallback scan; only strongly relevant long-horizon, multi-turn, agentic RL, and agent planning papers are retained.",
+  "analysis_method": "Manual Codex curation after CODEX_PAPER_SKIP_ANALYZED=1 npm run papers:daily:codex; only strongly relevant long-horizon, multi-turn, agentic RL, agent memory, and agent planning papers are retained after full-text reading.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,40 +37,54 @@
     "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after Codex full-text reading."
   },
   "digest": {
-    "title": "2026-07-07 Daily Paper",
-    "report_date": "2026-07-07",
+    "title": "2026-07-08 Daily Paper",
+    "report_date": "2026-07-08",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日保留 1 篇强相关新增论文：ASK in the Dark。它研究部分可观测 RL policy 何时向小语言模型求助，核心价值在于把 LLM 从全程控制器降级为不确定性触发的轨迹记忆顾问，并用地图、访问历史、动作历史和子任务信息改善高熵状态下的决策可靠性。",
+    "summary": "今日保留 8 篇强相关新增论文，集中在长程 agent 训练、上下文压缩、记忆管理、失败重试、progress credit、memory 安全与 harness 自演化。重点是 TurnOPD、CompactionRL、ProGPO、SelfMem、PivoARL、FARMA、HASE 和 PLACEMEM。",
     "top_recommendations": [
-      "2607.02686v1"
+      "2607.05804v1",
+      "2607.05378v1",
+      "2607.04242v1"
     ],
-    "low_priority": [],
+    "low_priority": [
+      "2607.03935v1",
+      "2607.04089v1"
+    ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-07-07 Daily Paper\n\n今日保留 1 篇强相关新增论文：ASK in the Dark: Uncertainty-Gated LLM Assistance under Partial Observability。\n\n为什么读：它把部分可观测 RL 中的 LLM assistance 设计成不确定性门控的外部顾问，而不是让语言模型全程接管。作者显示 vanilla ASK 失败主要是因为 prompt 缺少轨迹上下文；ASK+加入地图、访问历史、动作历史和子任务信息后，小模型也能在高不确定状态提供有效纠错。对 agent planning / agent memory 的启发是：可靠的 LLM 辅助不只是换大模型，而是设计何时求助、给什么历史，以及让模型在哪些高风险状态介入。"
+    "email_body": "2026-07-08 Daily Paper\n\n今日保留 8 篇强相关新增论文：TurnOPD、CompactionRL、ProGPO、SelfMem、PivoARL、FARMA、HASE 和 PLACEMEM。\n\n为什么读：今天的主线很集中，都是长程 agentic RL / 多轮系统的训练与可靠性问题。TurnOPD 把 OPD 的 rollout 深度和 KL 监督改成 turn-aware 预算分配；CompactionRL 把上下文压缩本身纳入 RL 训练；ProGPO 用 progress signal 改善长程多轮 agent 的 step-level credit；SelfMem 和 PLACEMEM 分别从策略自优化和系统控制面角度处理长期记忆；PivoARL 把失败恢复定位到 pivotal step；FARMA 说明 reasoning trace 记忆会成为新的攻击面；HASE 则把 prompt、memory、retrieval、validator 等 harness 也纳入 agentic RL 的演化对象。"
   },
   "latest_item_ids": [
-    "2607.02686v1"
+    "2607.05804v1",
+    "2607.05378v1",
+    "2607.04242v1",
+    "2607.03726v1",
+    "2607.03702v1",
+    "2607.05029v1",
+    "2607.03935v1",
+    "2607.04089v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "total_items": 57,
+    "total_items": 66,
     "latest_items": 8,
     "source_report_dates": {
-      "2026-06-13": 1,
-      "2026-06-14": 5,
-      "2026-06-15": 9,
-      "2026-06-16": 2,
-      "2026-06-17": 5,
-      "2026-06-18": 1,
-      "2026-06-23": 6,
-      "2026-06-24": 2,
+      "2026-07-08": 8,
+      "2026-07-07": 1,
+      "2026-07-06": 8,
+      "2026-07-04": 8,
+      "2026-07-02": 2,
+      "2026-06-30": 2,
+      "2026-06-29": 2,
       "2026-06-25": 2,
       "2026-06-26": 2,
-      "2026-06-29": 2,
-      "2026-06-30": 2,
-      "2026-07-02": 2,
-      "2026-07-04": 8,
-      "2026-07-06": 8
+      "2026-06-24": 2,
+      "2026-06-23": 6,
+      "2026-06-17": 5,
+      "2026-06-16": 2,
+      "2026-06-15": 9,
+      "2026-06-18": 1,
+      "2026-06-14": 5,
+      "2026-06-13": 1
     },
     "filtered_candidate_ids": [
       "2607.01942v1",
@@ -94,10 +108,924 @@
       "2607.01640v1",
       "2607.01793v1",
       "2607.01470v1",
-      "2607.01426v1"
+      "2607.01426v1",
+      "2607.05957v1",
+      "2607.05939v1",
+      "2607.05773v1",
+      "2607.04710v1",
+      "2607.05179v1",
+      "2607.05553v1",
+      "2607.05577v1",
+      "2607.04470v1"
     ]
   },
   "items": [
+    {
+      "id": "2607.05804v1",
+      "title": "TurnOPD: Making On-Policy Distillation Turn-Aware for Efficient Long-Horizon Agent Training",
+      "summary": "On-policy distillation (OPD) trains a student policy by matching a stronger teacher on the student's own trajectories, offering a promising framework for language agent training. However, its application to long-horizon agentic tasks remains insufficiently explored. We identify two key inefficiencies in vanilla agent OPD: (1) full-horizon rollouts often waste wall-clock resources on tail turns that provide weak and noisy KL supervision, and (2) trajectory-level KL objectives concentrate most of the loss on shallow tokens, leaving deeper decision turns under-trained once initial behaviors are aligned. To address these challenges, we propose TurnOPD, a turn-level budgeting strategy for efficient on-policy distillation of long-horizon agents. TurnOPD consists of two budget controllers: adaptive rollout-depth budgeting, which uses probe-based turn statistics to determine rollout length, and progressive turn-normalized loss budgeting, which gradually shifts KL weighting from token-level to turn-balanced supervision. Experiments on ALFWorld, WebShop, and Multi-Hop Search with task-specialized teacher models show that TurnOPD achieves superior validation accuracy under equal wall-clock training budgets and advances the accuracy--time frontier beyond vanilla OPD.",
+      "url": "http://arxiv.org/abs/2607.05804v1",
+      "authors": [
+        "Yuhang Zhou",
+        "Kai Zheng",
+        "Haoling Li",
+        "Dengyun Peng",
+        "Can Xu",
+        "Jingjing Chen"
+      ],
+      "report_date": "2026-07-08",
+      "published": "2026-07-07",
+      "updated": "2026-07-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 60,
+        "level": "高",
+        "label": "长程 agent OPD 的 turn-aware 预算分配方法",
+        "water_risk": "低",
+        "value_judgement": "值得读。论文问题定义非常贴近 long-horizon agent training，方法改动克制，诊断、机制解释、消融和多任务实验之间能闭环。它的主要价值不只是提出 TurnOPD，而是把 OPD 中平均 KL、rollout horizon、loss normalization 这些常被默认处理的细节重新解释为 turn-level budget allocation 问题，对 agentic RL 和 planning reliability 都有直接参考价值。偏水风险低，因为论文有清楚的失败模式诊断、可复现的控制器设计、组件消融和覆盖敏感性分析；不过还不是一个通用 agent RL 框架，更像是对 OPD 训练管线的有效工程化改良。",
+        "reason": "值得读。论文问题定义非常贴近 long-horizon agent training，方法改动克制，诊断、机制解释、消融和多任务实验之间能闭环。它的主要价值不只是提出 TurnOPD，而是把 OPD 中平均 KL、rollout horizon、loss normalization 这些常被默认处理的细节重新解释为 turn-level budget allocation 问题，对 agentic RL 和 planning reliability 都有直接参考价值。偏水风险低，因为论文有清楚的失败模式诊断、可复现的控制器设计、组件消融和覆盖敏感性分析；不过还不是一个通用 agent RL 框架，更像是对 OPD 训练管线的有效工程化改良。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yuhang Zhou",
+          "Kai Zheng",
+          "Haoling Li",
+          "Dengyun Peng",
+          "Can Xu",
+          "Jingjing Chen"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-07",
+        "paper_url": "https://arxiv.org/abs/2607.05804v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "值得读。论文问题定义非常贴近 long-horizon agent training，方法改动克制，诊断、机制解释、消融和多任务实验之间能闭环。它的主要价值不只是提出 TurnOPD，而是把 OPD 中平均 KL、rollout horizon、loss normalization 这些常被默认处理的细节重新解释为 turn-level budget allocation 问题，对 agentic RL 和 planning reliability 都有直接参考价值。偏水风险低，因为论文有清楚的失败模式诊断、可复现的控制器设计、组件消融和覆盖敏感性分析；不过还不是一个通用 agent RL 框架，更像是对 OPD 训练管线的有效工程化改良。",
+        "summary": "这篇论文把 OPD 用在长程 agent 训练时的低效拆成两个预算问题：外部是 rollout 采多远，内部是 KL loss 分给哪些 turn。作者通过 turn-level KL、成功失败轨迹分离度、loss share 等诊断说明，标准 OPD 的平均 KL 不足以反映深层策略差异，浅层 token 会长期占据大部分优化预算。TurnOPD 的核心是用 probe 估计有效监督深度和成功覆盖下界，自适应截断 rollout，同时把 KL loss 从 token-level 逐步混合到 turn-level 平衡。实验和消融显示，它不是简单地少采样，而是把节省计算和深层监督补偿结合起来，因此在长程 embodied planning、web navigation 和 multi-hop search 上都有更好的效率信号。对 agent planning 研究来说，这篇文章值得读，因为它给出了一个很清晰的 turn-aware 训练诊断框架。",
+        "highlights": [
+          "值得读。论文问题定义非常贴近 long-horizon agent training，方法改动克制，诊断、机制解释、消融和多任务实验之间能闭环。它的主要价值不只是提出 TurnOPD，而是把 OPD 中平均 KL、rollout horizon、loss normalization 这些常被默认处理的细节重新解释为 turn-level budget allocation 问题，对 agentic RL 和 planning reliability 都有直接参考价值。偏水风险低，因为论文有清楚的失败模式诊断、可复现的控制器设计、组件消融和覆盖敏感性分析；不过还不是一个通用 agent RL 框架，更像是对 OPD 训练管线的有效工程化改良。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对长程语言智能体的 on-policy distillation 低效问题：标准 OPD 把多轮交互轨迹近似成一段扁平 token 序列，固定采完整 horizon，并用 trajectory-level KL 平均监督。作者指出这会带来两个错配：一是深层 tail turn 往往 survivor 少、KL 信号弱或噪声大，继续 rollout 浪费 wall-clock；二是浅层 turn token 多且 KL 大，优化损失集中在早期行为，深层关键决策在浅层行为对齐后仍得不到足够训练。这个动机和 long-horizon agent training 高度相关，尤其切中“训练预算应该按 turn/decision 分配，而不是按 token 分配”的问题。",
+        "method": "TurnOPD 是一个很窄但有效的改动：保留 OPD 框架，只在 rollout 深度和 KL loss 聚合上做 turn-aware budgeting。第一部分是 adaptive rollout-depth controller，用周期性 full-depth probe 估计 survivor-weighted KL centroid 和成功轨迹 completion-depth coverage floor，再取二者较大值作为训练 rollout cap。第二部分是 progressive turn-normalized loss budgeting，把 KL 聚合从 token/trajectory-level 逐步线性混合到 turn-balanced supervision，让训练后期更多关注深层 decision turn。方法优点是没有引入复杂新训练目标，主要是改变“采多远”和“loss 怎么分”的预算分配。",
+        "experiments": "实验覆盖 ALFWorld、WebShop 和 Multi-Hop Search，学生模型由更强的任务专用 GRPO teacher 蒸馏。结果显示 TurnOPD 在相同 wall-clock 预算下整体优于 vanilla OPD 和 TCOD-F2B，并且通常能同时提高验证准确率和缩短训练时间。消融比较清楚：adaptive depth 主要贡献效率，但单独使用不一定提升准确率；linear turn-normalized KL 主要改善优化；二者组合给出最好的 accuracy-time tradeoff。KL normalization 和 coverage floor 的敏感性实验也支持作者的核心论点，即深层 turn 不能一开始硬等权，但训练后期需要逐步补足监督。",
+        "research_help": "Insight：这篇论文的可迁移启发是，long-horizon agent 的训练单位应显式建模为 turn-conditioned decision，而不是 flat token。对于 agentic RL 或多轮系统，rollout 预算、credit assignment、distillation loss 都可以按 turn 的 survivor coverage、信号质量和任务完成覆盖来动态分配。它也提醒我们，后期 KL 变小不一定代表策略真的对齐，可能只是学生生成上下文把下一步分布压缩到模板化 continuation，因此 planning reliability 的诊断应结合 outcome separation、coverage 和深层决策表现，而不能只看平均 token KL。",
+        "recommendation": {
+          "score": 60,
+          "level": "中",
+          "label": "可略读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移启发是，long-horizon agent 的训练单位应显式建模为 turn-conditioned decision，而不是 flat token。对于 agentic RL 或多轮系统，rollout 预算、credit assignment、distillation loss 都可以按 turn 的 survivor coverage、信号质量和任务完成覆盖来动态分配。它也提醒我们，后期 KL 变小不一定代表策略真的对齐，可能只是学生生成上下文把下一步分布压缩到模板化 continuation，因此 planning reliability 的诊断应结合 outcome separation、coverage 和深层决策表现，而不能只看平均 token KL。",
+        "abstract_zh": "本文研究 on-policy distillation 在长程语言智能体训练中的低效问题。作者发现，标准 OPD 的完整 horizon rollout 会在尾部 turn 上浪费计算，而 trajectory-level KL 又会让大部分监督集中在浅层 token，导致深层决策训练不足。为此，论文提出 TurnOPD，通过自适应 rollout 深度控制和逐步 turn-normalized KL loss，把采样和优化预算按交互 turn 重新分配。实验在 ALFWorld、WebShop 和 Multi-Hop Search 上表明，TurnOPD 在相同 wall-clock 训练预算下取得更好的验证准确率，并推进了 accuracy-time frontier。",
+        "full_summary": "这篇论文把 OPD 用在长程 agent 训练时的低效拆成两个预算问题：外部是 rollout 采多远，内部是 KL loss 分给哪些 turn。作者通过 turn-level KL、成功失败轨迹分离度、loss share 等诊断说明，标准 OPD 的平均 KL 不足以反映深层策略差异，浅层 token 会长期占据大部分优化预算。TurnOPD 的核心是用 probe 估计有效监督深度和成功覆盖下界，自适应截断 rollout，同时把 KL loss 从 token-level 逐步混合到 turn-level 平衡。实验和消融显示，它不是简单地少采样，而是把节省计算和深层监督补偿结合起来，因此在长程 embodied planning、web navigation 和 multi-hop search 上都有更好的效率信号。对 agent planning 研究来说，这篇文章值得读，因为它给出了一个很清晰的 turn-aware 训练诊断框架。",
+        "card_summary": "TurnOPD 关注长程 agent OPD 中一个很实际的问题：固定采完整轨迹且按 token 平均 KL，会把训练预算浪费在低价值尾部或过度集中在浅层 turn。它用自适应 rollout 深度和逐步 turn-balanced KL，把监督预算挪向更有用的交互阶段，在多个 agent benchmark 上改善了准确率与训练时间的权衡。"
+      },
+      "analysis": {
+        "motivation": "论文针对长程语言智能体的 on-policy distillation 低效问题：标准 OPD 把多轮交互轨迹近似成一段扁平 token 序列，固定采完整 horizon，并用 trajectory-level KL 平均监督。作者指出这会带来两个错配：一是深层 tail turn 往往 survivor 少、KL 信号弱或噪声大，继续 rollout 浪费 wall-clock；二是浅层 turn token 多且 KL 大，优化损失集中在早期行为，深层关键决策在浅层行为对齐后仍得不到足够训练。这个动机和 long-horizon agent training 高度相关，尤其切中“训练预算应该按 turn/decision 分配，而不是按 token 分配”的问题。",
+        "method": "TurnOPD 是一个很窄但有效的改动：保留 OPD 框架，只在 rollout 深度和 KL loss 聚合上做 turn-aware budgeting。第一部分是 adaptive rollout-depth controller，用周期性 full-depth probe 估计 survivor-weighted KL centroid 和成功轨迹 completion-depth coverage floor，再取二者较大值作为训练 rollout cap。第二部分是 progressive turn-normalized loss budgeting，把 KL 聚合从 token/trajectory-level 逐步线性混合到 turn-balanced supervision，让训练后期更多关注深层 decision turn。方法优点是没有引入复杂新训练目标，主要是改变“采多远”和“loss 怎么分”的预算分配。",
+        "experiments": "实验覆盖 ALFWorld、WebShop 和 Multi-Hop Search，学生模型由更强的任务专用 GRPO teacher 蒸馏。结果显示 TurnOPD 在相同 wall-clock 预算下整体优于 vanilla OPD 和 TCOD-F2B，并且通常能同时提高验证准确率和缩短训练时间。消融比较清楚：adaptive depth 主要贡献效率，但单独使用不一定提升准确率；linear turn-normalized KL 主要改善优化；二者组合给出最好的 accuracy-time tradeoff。KL normalization 和 coverage floor 的敏感性实验也支持作者的核心论点，即深层 turn 不能一开始硬等权，但训练后期需要逐步补足监督。",
+        "research_help": "Insight：这篇论文的可迁移启发是，long-horizon agent 的训练单位应显式建模为 turn-conditioned decision，而不是 flat token。对于 agentic RL 或多轮系统，rollout 预算、credit assignment、distillation loss 都可以按 turn 的 survivor coverage、信号质量和任务完成覆盖来动态分配。它也提醒我们，后期 KL 变小不一定代表策略真的对齐，可能只是学生生成上下文把下一步分布压缩到模板化 continuation，因此 planning reliability 的诊断应结合 outcome separation、coverage 和深层决策表现，而不能只看平均 token KL。",
+        "insight": "Insight：这篇论文的可迁移启发是，long-horizon agent 的训练单位应显式建模为 turn-conditioned decision，而不是 flat token。对于 agentic RL 或多轮系统，rollout 预算、credit assignment、distillation loss 都可以按 turn 的 survivor coverage、信号质量和任务完成覆盖来动态分配。它也提醒我们，后期 KL 变小不一定代表策略真的对齐，可能只是学生生成上下文把下一步分布压缩到模板化 continuation，因此 planning reliability 的诊断应结合 outcome separation、coverage 和深层决策表现，而不能只看平均 token KL。",
+        "abstract_zh": "本文研究 on-policy distillation 在长程语言智能体训练中的低效问题。作者发现，标准 OPD 的完整 horizon rollout 会在尾部 turn 上浪费计算，而 trajectory-level KL 又会让大部分监督集中在浅层 token，导致深层决策训练不足。为此，论文提出 TurnOPD，通过自适应 rollout 深度控制和逐步 turn-normalized KL loss，把采样和优化预算按交互 turn 重新分配。实验在 ALFWorld、WebShop 和 Multi-Hop Search 上表明，TurnOPD 在相同 wall-clock 训练预算下取得更好的验证准确率，并推进了 accuracy-time frontier。",
+        "card_summary": "TurnOPD 关注长程 agent OPD 中一个很实际的问题：固定采完整轨迹且按 token 平均 KL，会把训练预算浪费在低价值尾部或过度集中在浅层 turn。它用自适应 rollout 深度和逐步 turn-balanced KL，把监督预算挪向更有用的交互阶段，在多个 agent benchmark 上改善了准确率与训练时间的权衡。",
+        "full_summary": "这篇论文把 OPD 用在长程 agent 训练时的低效拆成两个预算问题：外部是 rollout 采多远，内部是 KL loss 分给哪些 turn。作者通过 turn-level KL、成功失败轨迹分离度、loss share 等诊断说明，标准 OPD 的平均 KL 不足以反映深层策略差异，浅层 token 会长期占据大部分优化预算。TurnOPD 的核心是用 probe 估计有效监督深度和成功覆盖下界，自适应截断 rollout，同时把 KL loss 从 token-level 逐步混合到 turn-level 平衡。实验和消融显示，它不是简单地少采样，而是把节省计算和深层监督补偿结合起来，因此在长程 embodied planning、web navigation 和 multi-hop search 上都有更好的效率信号。对 agent planning 研究来说，这篇文章值得读，因为它给出了一个很清晰的 turn-aware 训练诊断框架。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "长程 agent OPD 的 turn-aware 预算分配方法",
+        "value_reason": "值得读。论文问题定义非常贴近 long-horizon agent training，方法改动克制，诊断、机制解释、消融和多任务实验之间能闭环。它的主要价值不只是提出 TurnOPD，而是把 OPD 中平均 KL、rollout horizon、loss normalization 这些常被默认处理的细节重新解释为 turn-level budget allocation 问题，对 agentic RL 和 planning reliability 都有直接参考价值。偏水风险低，因为论文有清楚的失败模式诊断、可复现的控制器设计、组件消融和覆盖敏感性分析；不过还不是一个通用 agent RL 框架，更像是对 OPD 训练管线的有效工程化改良。",
+        "limitations": "局限主要有四点：第一，teacher 都是任务专用 GRPO teacher，结论对更弱 teacher、通用 teacher 或非蒸馏式 RL 训练的外推仍需验证。第二，实验任务虽然覆盖 embodied、web 和 search，但仍是相对标准化 benchmark，离真实开放式长程电脑使用还有距离。第三，自适应深度依赖周期性 full-depth probe 和若干阈值/coverage 设定，工程收益可能受环境耗时结构影响。第四，论文把 raw KL 作为可观测监督价值 proxy，同时又指出 KL 会被上下文压缩污染，这个张力没有完全解决，只是通过 coverage 与 progressive weighting 做了实用规避。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要明确提出两个低效来源：完整 horizon rollout 在 tail turns 上浪费资源，trajectory-level KL 让 shallow tokens 占据大部分 loss。",
+          "诊断部分显示深层 turn 的 KL outcome separation 会变弱甚至反转，并用 contamination-compression 机制解释 raw KL 不能直接等同策略差异。",
+          "loss allocation 审计显示 vanilla OPD 的 KL loss 主要集中在早期 turn，deepest third 只得到很少 loss budget。",
+          "方法部分提出两个预算控制器：adaptive rollout-depth budgeting 和 progressive turn-normalized loss budgeting。实验与消融显示前者主要节省 wall-clock，后者改善深层监督分配，组合效果最好。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-08T01:34:21.718Z"
+      }
+    },
+    {
+      "id": "2607.05378v1",
+      "title": "CompactionRL: Reinforcement Learning with Context Compaction for Long-Horizon Agents",
+      "summary": "Long-horizon agentic LLMs are increasingly limited by finite context windows, as extended interaction trajectories can exceed the maximum context length before a task is completed. Context compaction offers a natural solution by summarizing previous interaction states and continuing the rollout under a compressed context, but incorporating compaction into reinforcement learning remains underexplored. We propose CompactionRL, a reinforcement learning strategy to train long-horizon agentic LLMs with context compaction. Our approach jointly optimizes task execution and summary generation with token-level loss normalization and cross-trajectory generalized advantage estimation. This design enables the LLM agents to learn from compacted long-horizon trajectories. We train CompactionRL on top of open models and observe consistent performance gains on agentic coding tasks. CompactionRL enables the open GLM-4.5-Air model (106B-A30B) to achieve Pass@1 scores of 66.8% on SWE-bench Verified and 24.5% on Terminal-Bench 2.0, with absolute gains of 7.0 and 3.1 points, respectively. Built upon GLM-4.7-Flash (30B-A3B), CompactionRL improves Pass@1 by 5.5 and 6.8 points, reaching 56.0% on SWE-bench Verified and 20.2% on Terminal-Bench 2.0, respectively. CompactionRL is thus deployed in the RL pipeline for training the open GLM-5.2 model (750B-A40B).",
+      "url": "http://arxiv.org/abs/2607.05378v1",
+      "authors": [
+        "Yujiang Li",
+        "Zhenyu Hou",
+        "Yi Jing",
+        "Jie Tang",
+        "Yuxiao Dong"
+      ],
+      "report_date": "2026-07-08",
+      "published": "2026-07-06",
+      "updated": "2026-07-06",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 72,
+        "level": "高",
+        "label": "强相关：可学习上下文压缩用于长程 agentic RL",
+        "water_risk": "中",
+        "value_judgement": "这篇论文直接命中 agentic RL、multi-turn agent、long-horizon planning 和 agent memory 的交叉点，核心问题不是泛泛做摘要，而是让摘要成为长程决策轨迹中的可训练动作。方法设计针对压缩场景的真实训练问题，包括变长 segment、摘要与执行共享奖励、token 级权重偏差和跨段信用分配。实验不只是主表提升，还包含摘要质量、摘要训练、token-level loss、cross-trajectory GAE 和压缩触发任务子集的分析，因此比单纯 benchmark 报分更有研究参考价值。",
+        "reason": "这篇论文直接命中 agentic RL、multi-turn agent、long-horizon planning 和 agent memory 的交叉点，核心问题不是泛泛做摘要，而是让摘要成为长程决策轨迹中的可训练动作。方法设计针对压缩场景的真实训练问题，包括变长 segment、摘要与执行共享奖励、token 级权重偏差和跨段信用分配。实验不只是主表提升，还包含摘要质量、摘要训练、token-level loss、cross-trajectory GAE 和压缩触发任务子集的分析，因此比单纯 benchmark 报分更有研究参考价值。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": false,
+          "experiments": false,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yujiang Li",
+          "Zhenyu Hou",
+          "Yi Jing",
+          "Jie Tang",
+          "Yuxiao Dong"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-06",
+        "paper_url": "https://arxiv.org/abs/2607.05378v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "这篇论文直接命中 agentic RL、multi-turn agent、long-horizon planning 和 agent memory 的交叉点，核心问题不是泛泛做摘要，而是让摘要成为长程决策轨迹中的可训练动作。方法设计针对压缩场景的真实训练问题，包括变长 segment、摘要与执行共享奖励、token 级权重偏差和跨段信用分配。实验不只是主表提升，还包含摘要质量、摘要训练、token-level loss、cross-trajectory GAE 和压缩触发任务子集的分析，因此比单纯 benchmark 报分更有研究参考价值。",
+        "summary": "CompactionRL 解决的是长程 LLM agent 在固定上下文预算下如何继续执行并从超长轨迹中学习的问题。方法上，它让模型在上下文快满时自己生成摘要，用摘要加最近交互重建上下文，并把摘要 token 与执行 token 一起用最终任务奖励做 PPO 训练。论文的技术重点是处理压缩后轨迹段数不固定、段长不均和跨段信用分配失真，因此引入 token-level loss normalization 与 cross-trajectory GAE。实验集中在代码类长程 agent benchmark，显示 CompactionRL 在 compacted inference 下相对 base 和普通 PPO 有稳定增益，且摘要训练本身是有效因素。阅读价值较高，因为它把 agent memory/summary 从系统启发式推进到 RL policy optimization，并给出了较清晰的训练与消融证据。",
+        "highlights": [
+          "这篇论文直接命中 agentic RL、multi-turn agent、long-horizon planning 和 agent memory 的交叉点，核心问题不是泛泛做摘要，而是让摘要成为长程决策轨迹中的可训练动作。方法设计针对压缩场景的真实训练问题，包括变长 segment、摘要与执行共享奖励、token 级权重偏差和跨段信用分配。实验不只是主表提升，还包含摘要质量、摘要训练、token-level loss、cross-trajectory GAE 和压缩触发任务子集的分析，因此比单纯 benchmark 报分更有研究参考价值。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长程 LLM agent 在软件工程、终端任务和网页交互中会不断累积工具输出、错误信息、推理轨迹和中间状态，固定上下文窗口很容易在任务完成前耗尽。仅扩大上下文长度成本高，也不能保证模型有效利用长序列信息。论文的核心动机是把 context compaction 从推理时启发式摘要，提升为 RL 训练中可学习、可优化的决策过程，因为摘要一旦替代原始历史，就会直接决定后续动作能看到什么信息。",
+        "method": "CompactionRL 在 rollout 收集阶段监控剩余上下文预算，接近阈值时由同一个可训练策略生成摘要，并用系统提示、原始任务、摘要和最近若干轮交互重建新上下文继续执行。训练时把普通执行 token 和摘要 token 都纳入 PPO 目标，并共享最终任务奖励，不额外设计摘要质量奖励。为适配被压缩切开的轨迹，论文使用 token-level loss normalization 避免不同段数和长度带来的权重偏差，并用 cross-trajectory GAE 按后续 token 距离修正跨压缩边界的信用分配。",
+        "experiments": "实验主要在 agentic coding 场景上进行，包括 SWE-bench Verified 的 200 个随机样本和完整 Terminal-Bench 2.0，并在 GLM-4.7-Flash 与 GLM-4.5-Air 两个尺度上比较 base、无压缩 PPO、长上下文 PPO、CompactionRL 及去掉摘要训练/token-level loss/cross-trajectory GAE 的变体。主结果显示，在 compacted inference 设置下，CompactionRL 对 GLM-4.7-Flash 在 SWE-bench Verified 和 Terminal-Bench 2.0 上分别提升 5.5 和 6.8 个百分点，对 GLM-4.5-Air 分别提升 7.0 和 3.1 个百分点。消融显示，摘要训练、token-level loss normalization 和 cross-trajectory GAE 都有贡献，其中去掉 token-level loss 的退化最大。行为分析还显示 CompactionRL 在触发压缩的任务子集上准确率最高，并能生成更长、更细节化的摘要。",
+        "research_help": "Insight：这篇论文的可迁移启发是，long-horizon agent 的记忆压缩不应只被视为推理时工程补丁，而可以作为策略的一部分接受任务级奖励训练；对于 agent planning 和多轮系统，关键不只是“压缩得短”，而是压缩后的状态是否保留后续规划、调试和恢复执行所需的信息。它也提示 agentic RL 中的信用分配需要跨越 memory/summary 边界，否则早期摘要和后续成功之间的因果距离会被错误缩短。对 long-horizon reliability 来说，训练时暴露模型于压缩后状态，并直接优化摘要 token，可能比单纯加长 context 或外接固定 summarizer 更稳。",
+        "recommendation": {
+          "score": 72,
+          "level": "中",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": false,
+            "experiments": false,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移启发是，long-horizon agent 的记忆压缩不应只被视为推理时工程补丁，而可以作为策略的一部分接受任务级奖励训练；对于 agent planning 和多轮系统，关键不只是“压缩得短”，而是压缩后的状态是否保留后续规划、调试和恢复执行所需的信息。它也提示 agentic RL 中的信用分配需要跨越 memory/summary 边界，否则早期摘要和后续成功之间的因果距离会被错误缩短。对 long-horizon reliability 来说，训练时暴露模型于压缩后状态，并直接优化摘要 token，可能比单纯加长 context 或外接固定 summarizer 更稳。",
+        "abstract_zh": "长程 agentic LLM 受限于有限上下文窗口，长时间交互轨迹常常在任务完成前超过最大上下文长度。上下文压缩可以把先前交互状态摘要后继续执行，但如何把这种压缩纳入强化学习训练仍探索不足。论文提出 CompactionRL，同时优化任务执行和摘要生成，并通过 token 级损失归一化与跨轨迹 GAE 让模型能从被压缩切分的长程轨迹中学习。在开放模型上，CompactionRL 在 SWE-bench Verified 和 Terminal-Bench 2.0 等 agentic coding 任务中带来稳定提升，并被用于更大 GLM-5.2 模型的 RL 训练流程。",
+        "full_summary": "CompactionRL 解决的是长程 LLM agent 在固定上下文预算下如何继续执行并从超长轨迹中学习的问题。方法上，它让模型在上下文快满时自己生成摘要，用摘要加最近交互重建上下文，并把摘要 token 与执行 token 一起用最终任务奖励做 PPO 训练。论文的技术重点是处理压缩后轨迹段数不固定、段长不均和跨段信用分配失真，因此引入 token-level loss normalization 与 cross-trajectory GAE。实验集中在代码类长程 agent benchmark，显示 CompactionRL 在 compacted inference 下相对 base 和普通 PPO 有稳定增益，且摘要训练本身是有效因素。阅读价值较高，因为它把 agent memory/summary 从系统启发式推进到 RL policy optimization，并给出了较清晰的训练与消融证据。",
+        "card_summary": "这篇论文提出 CompactionRL，把长程 agent 的上下文摘要压缩纳入强化学习训练，而不是只在推理时临时做摘要。它在 SWE-bench Verified 和 Terminal-Bench 2.0 上显示压缩感知训练能显著提升 compacted inference 表现，尤其适合关注长程 agent 记忆、规划连续性和上下文预算可靠性的人读。"
+      },
+      "analysis": {
+        "motivation": "长程 LLM agent 在软件工程、终端任务和网页交互中会不断累积工具输出、错误信息、推理轨迹和中间状态，固定上下文窗口很容易在任务完成前耗尽。仅扩大上下文长度成本高，也不能保证模型有效利用长序列信息。论文的核心动机是把 context compaction 从推理时启发式摘要，提升为 RL 训练中可学习、可优化的决策过程，因为摘要一旦替代原始历史，就会直接决定后续动作能看到什么信息。",
+        "method": "CompactionRL 在 rollout 收集阶段监控剩余上下文预算，接近阈值时由同一个可训练策略生成摘要，并用系统提示、原始任务、摘要和最近若干轮交互重建新上下文继续执行。训练时把普通执行 token 和摘要 token 都纳入 PPO 目标，并共享最终任务奖励，不额外设计摘要质量奖励。为适配被压缩切开的轨迹，论文使用 token-level loss normalization 避免不同段数和长度带来的权重偏差，并用 cross-trajectory GAE 按后续 token 距离修正跨压缩边界的信用分配。",
+        "experiments": "实验主要在 agentic coding 场景上进行，包括 SWE-bench Verified 的 200 个随机样本和完整 Terminal-Bench 2.0，并在 GLM-4.7-Flash 与 GLM-4.5-Air 两个尺度上比较 base、无压缩 PPO、长上下文 PPO、CompactionRL 及去掉摘要训练/token-level loss/cross-trajectory GAE 的变体。主结果显示，在 compacted inference 设置下，CompactionRL 对 GLM-4.7-Flash 在 SWE-bench Verified 和 Terminal-Bench 2.0 上分别提升 5.5 和 6.8 个百分点，对 GLM-4.5-Air 分别提升 7.0 和 3.1 个百分点。消融显示，摘要训练、token-level loss normalization 和 cross-trajectory GAE 都有贡献，其中去掉 token-level loss 的退化最大。行为分析还显示 CompactionRL 在触发压缩的任务子集上准确率最高，并能生成更长、更细节化的摘要。",
+        "research_help": "Insight：这篇论文的可迁移启发是，long-horizon agent 的记忆压缩不应只被视为推理时工程补丁，而可以作为策略的一部分接受任务级奖励训练；对于 agent planning 和多轮系统，关键不只是“压缩得短”，而是压缩后的状态是否保留后续规划、调试和恢复执行所需的信息。它也提示 agentic RL 中的信用分配需要跨越 memory/summary 边界，否则早期摘要和后续成功之间的因果距离会被错误缩短。对 long-horizon reliability 来说，训练时暴露模型于压缩后状态，并直接优化摘要 token，可能比单纯加长 context 或外接固定 summarizer 更稳。",
+        "insight": "Insight：这篇论文的可迁移启发是，long-horizon agent 的记忆压缩不应只被视为推理时工程补丁，而可以作为策略的一部分接受任务级奖励训练；对于 agent planning 和多轮系统，关键不只是“压缩得短”，而是压缩后的状态是否保留后续规划、调试和恢复执行所需的信息。它也提示 agentic RL 中的信用分配需要跨越 memory/summary 边界，否则早期摘要和后续成功之间的因果距离会被错误缩短。对 long-horizon reliability 来说，训练时暴露模型于压缩后状态，并直接优化摘要 token，可能比单纯加长 context 或外接固定 summarizer 更稳。",
+        "abstract_zh": "长程 agentic LLM 受限于有限上下文窗口，长时间交互轨迹常常在任务完成前超过最大上下文长度。上下文压缩可以把先前交互状态摘要后继续执行，但如何把这种压缩纳入强化学习训练仍探索不足。论文提出 CompactionRL，同时优化任务执行和摘要生成，并通过 token 级损失归一化与跨轨迹 GAE 让模型能从被压缩切分的长程轨迹中学习。在开放模型上，CompactionRL 在 SWE-bench Verified 和 Terminal-Bench 2.0 等 agentic coding 任务中带来稳定提升，并被用于更大 GLM-5.2 模型的 RL 训练流程。",
+        "card_summary": "这篇论文提出 CompactionRL，把长程 agent 的上下文摘要压缩纳入强化学习训练，而不是只在推理时临时做摘要。它在 SWE-bench Verified 和 Terminal-Bench 2.0 上显示压缩感知训练能显著提升 compacted inference 表现，尤其适合关注长程 agent 记忆、规划连续性和上下文预算可靠性的人读。",
+        "full_summary": "CompactionRL 解决的是长程 LLM agent 在固定上下文预算下如何继续执行并从超长轨迹中学习的问题。方法上，它让模型在上下文快满时自己生成摘要，用摘要加最近交互重建上下文，并把摘要 token 与执行 token 一起用最终任务奖励做 PPO 训练。论文的技术重点是处理压缩后轨迹段数不固定、段长不均和跨段信用分配失真，因此引入 token-level loss normalization 与 cross-trajectory GAE。实验集中在代码类长程 agent benchmark，显示 CompactionRL 在 compacted inference 下相对 base 和普通 PPO 有稳定增益，且摘要训练本身是有效因素。阅读价值较高，因为它把 agent memory/summary 从系统启发式推进到 RL policy optimization，并给出了较清晰的训练与消融证据。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关：可学习上下文压缩用于长程 agentic RL",
+        "value_reason": "这篇论文直接命中 agentic RL、multi-turn agent、long-horizon planning 和 agent memory 的交叉点，核心问题不是泛泛做摘要，而是让摘要成为长程决策轨迹中的可训练动作。方法设计针对压缩场景的真实训练问题，包括变长 segment、摘要与执行共享奖励、token 级权重偏差和跨段信用分配。实验不只是主表提升，还包含摘要质量、摘要训练、token-level loss、cross-trajectory GAE 和压缩触发任务子集的分析，因此比单纯 benchmark 报分更有研究参考价值。",
+        "limitations": "主要局限是实验几乎都集中在代码和终端类任务，尚不清楚对网页、多模态、开放式规划或非验证奖励环境是否同样有效。SWE-bench Verified 使用 200 个随机样本而非完整集，且只报告两次评估均值，统计稳健性有限。方法在关闭压缩的 single-window 设置下并不稳定提升，说明训练和测试强依赖 compacted inference。cross-trajectory GAE 仍是对完整轨迹信用分配的近似，早期摘要跨多次压缩边界的长期影响可能没有被完全建模。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确指出 CompactionRL 将 context compaction 纳入 rollout collection，并在上下文接近阈值时由策略生成 summary 后继续执行。",
+          "方法部分说明 execution segments 和 summarization segments 共享同一个最终 task reward，且 summary tokens 来自同一可训练 policy。",
+          "主实验表显示 CompactionRL 在 GLM-4.7-Flash 和 GLM-4.5-Air 的 compacted evaluation 上均优于 base 与普通 PPO。",
+          "消融表显示去掉 summary training、token-level loss normalization 或 cross-trajectory GAE 都会降低 compacted inference 表现。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-08T01:38:33.347Z"
+      }
+    },
+    {
+      "id": "2607.04242v1",
+      "title": "Progress- and Reliability-Oriented Group Policy Optimization for Agentic Reinforcement Learning",
+      "summary": "Group-based reinforcement learning (RL) has become an effective paradigm for improving large language model agents on long-horizon interactive tasks. To obtain finer-grained policy updates than trajectory-level optimization, recent work has moved toward step-level group-based RL, where intermediate steps are grouped and compared within a rollout batch. However, step-level advantage estimation is sensitive to how groups are formed: grouping by broad state keys improves coverage but may compare actions taken under different histories, while enforcing historical consistency yields fairer comparisons at the cost of fragmented groups and missing peer-comparison signal. In this paper, we propose ProGPO (Progress- and Reliability-Oriented Group Policy Optimization), a learned-critic-free method for context-consistent step-level learning. ProGPO keeps exact-prefix action comparison, and complements sparse peer comparisons with transition credit derived from rollout-based state potentials. To estimate these potentials reliably, ProGPO combines semantic expansion with inverse-variance fusion across history depths. We evaluate ProGPO on two challenging agentic tasks, ALFWorld and WebShop, with Qwen2.5-1.5B-Instruct. Results show that ProGPO improves over matched agentic RL baselines under comparable computational overhead, and additional Qwen2.5-3B-Instruct experiments further test the scalability of the proposed method.",
+      "url": "http://arxiv.org/abs/2607.04242v1",
+      "authors": [
+        "Mingxuan Fan",
+        "Peiyang Liu"
+      ],
+      "report_date": "2026-07-08",
+      "published": "2026-07-05",
+      "updated": "2026-07-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "值得读，尤其适合 agentic RL 信用分配方向",
+        "water_risk": "中",
+        "value_judgement": "主题与 agentic RL、multi-turn agent、long-horizon planning 高度相关，问题定义具体，方法抓住了历史一致比较与信号稀疏之间的核心冲突。价值主要在 insight 和训练目标设计：它给出了一种不训练 critic 的 progress credit 方案，可作为后续 agent planning RL 的基线或可拆组件。水文风险不是低，因为实验范围较窄，模型规模偏小，部分对照来自 prior reports 而非完全匹配设置，且 transition credit 本身不是因果估计。",
+        "reason": "主题与 agentic RL、multi-turn agent、long-horizon planning 高度相关，问题定义具体，方法抓住了历史一致比较与信号稀疏之间的核心冲突。价值主要在 insight 和训练目标设计：它给出了一种不训练 critic 的 progress credit 方案，可作为后续 agent planning RL 的基线或可拆组件。水文风险不是低，因为实验范围较窄，模型规模偏小，部分对照来自 prior reports 而非完全匹配设置，且 transition credit 本身不是因果估计。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Mingxuan Fan",
+          "Peiyang Liu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-05",
+        "paper_url": "https://arxiv.org/abs/2607.04242v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "主题与 agentic RL、multi-turn agent、long-horizon planning 高度相关，问题定义具体，方法抓住了历史一致比较与信号稀疏之间的核心冲突。价值主要在 insight 和训练目标设计：它给出了一种不训练 critic 的 progress credit 方案，可作为后续 agent planning RL 的基线或可拆组件。水文风险不是低，因为实验范围较窄，模型规模偏小，部分对照来自 prior reports 而非完全匹配设置，且 transition credit 本身不是因果估计。",
+        "summary": "论文讨论的是长程 agent RL 中 step-level group optimization 的信用分配问题：宽松分组会产生不公平比较，严格历史一致分组又会让许多步骤没有学习信号。ProGPO 的做法是保留 exact-prefix peer comparison 来估计动作相对优势，再用状态潜势差作为 transition credit 来补充“是否向目标推进”的信号。状态潜势来自同一批 rollout 的非参数统计，并通过语义近邻扩展和逆方差多深度融合提高稳定性，因此不需要额外 critic 或 reward model。实验在 ALFWorld 和 WebShop 上显示它相对匹配的 GRPO/GiGPO/HGPO baseline 有更好的整体信号，消融也支持两个 potential 稳定化组件的作用。阅读价值在于它直接处理 multi-turn agent 的历史一致性和稀疏信用问题，但结论仍主要受限于两个标准环境和较小模型规模。",
+        "highlights": [
+          "主题与 agentic RL、multi-turn agent、long-horizon planning 高度相关，问题定义具体，方法抓住了历史一致比较与信号稀疏之间的核心冲突。价值主要在 insight 和训练目标设计：它给出了一种不训练 critic 的 progress credit 方案，可作为后续 agent planning RL 的基线或可拆组件。水文风险不是低，因为实验范围较窄，模型规模偏小，部分对照来自 prior reports 而非完全匹配设置，且 transition credit 本身不是因果估计。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对长程多轮 agent RL 的一个真实痛点：轨迹级 GRPO 类方法给每一步同一个延迟奖励，信用分配太粗；而 step-level 分组比较虽然更细，但如果只按当前状态分组，会把不同历史下的动作放在一起比较，优势估计不公平。若强制历史前缀一致，分组又会变小，很多步骤没有可比较 peer，学习信号变稀疏。",
+        "method": "ProGPO 的核心是把“动作相对比较”和“状态进展估计”拆开：动作优势只在 exact-prefix 一致的组内比较，保持上下文公平；对缺少 peer 信号的步骤，用 rollout 统计得到非参数 state potential，并用下一状态与当前状态的 potential 差作为 transition credit。为降低 potential 估计噪声，论文加入语义近邻扩展和基于样本量、回报方差的多历史深度融合；整体不训练 learned critic，也不额外采样 rollout。",
+        "experiments": "实验主要在 ALFWorld 和 WebShop 上，用 Qwen2.5-Instruct 小模型做匹配比较，基线包括 GRPO、GiGPO、HGPO，并补充了更大一点模型的 ALFWorld 趋势实验。结果显示 ProGPO 在匹配 RL baseline 中整体更强，尤其在终局成功率上相对 GiGPO/HGPO 有提升；机制诊断表明 transition credit 能补上一部分 prefix-consistent peer comparison 缺失的步骤。消融实验也支持语义扩展和可靠性融合对 state-potential 质量有贡献。",
+        "research_help": "Insight：这篇文章最可迁移的点是把多轮 agent 的信用分配分成“可公平比较的动作选择”和“是否推动状态进展”两类信号，避免为了获得密集监督而牺牲历史一致性。对 agent planning 和 long-horizon reliability 来说，它提示我们可以用 rollout 内的状态潜势表来近似进展，而不是立刻训练一个 critic；但这种进展信号应被视为批内估计，不应直接当作动作因果贡献。对多轮系统训练，semantic expansion 也值得借鉴，但必须加不确定性或可靠性门控，否则相似状态可能只是表面相似。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇文章最可迁移的点是把多轮 agent 的信用分配分成“可公平比较的动作选择”和“是否推动状态进展”两类信号，避免为了获得密集监督而牺牲历史一致性。对 agent planning 和 long-horizon reliability 来说，它提示我们可以用 rollout 内的状态潜势表来近似进展，而不是立刻训练一个 critic；但这种进展信号应被视为批内估计，不应直接当作动作因果贡献。对多轮系统训练，semantic expansion 也值得借鉴，但必须加不确定性或可靠性门控，否则相似状态可能只是表面相似。",
+        "abstract_zh": "本文研究长程交互式 agent 任务中的 group-based RL，指出现有 step-level 方法在分组方式上存在两难：宽松按状态分组会比较不同历史下的动作，而严格保持历史一致又会导致分组碎片化、peer 比较信号不足。作者提出 ProGPO，一种不依赖 learned critic 的上下文一致 step-level 学习方法，保留 exact-prefix 动作比较，并用 rollout 统计得到的 state potential 差补充 transition credit。为更可靠地估计 state potential，方法结合语义扩展和跨历史深度的逆方差融合。论文在 ALFWorld 和 WebShop 上用 Qwen2.5-Instruct 模型评估，报告其在相近计算开销下优于匹配的 agentic RL baseline，并用更大模型补充验证扩展趋势。",
+        "full_summary": "论文讨论的是长程 agent RL 中 step-level group optimization 的信用分配问题：宽松分组会产生不公平比较，严格历史一致分组又会让许多步骤没有学习信号。ProGPO 的做法是保留 exact-prefix peer comparison 来估计动作相对优势，再用状态潜势差作为 transition credit 来补充“是否向目标推进”的信号。状态潜势来自同一批 rollout 的非参数统计，并通过语义近邻扩展和逆方差多深度融合提高稳定性，因此不需要额外 critic 或 reward model。实验在 ALFWorld 和 WebShop 上显示它相对匹配的 GRPO/GiGPO/HGPO baseline 有更好的整体信号，消融也支持两个 potential 稳定化组件的作用。阅读价值在于它直接处理 multi-turn agent 的历史一致性和稀疏信用问题，但结论仍主要受限于两个标准环境和较小模型规模。",
+        "card_summary": "这篇论文提出 ProGPO，用于长程多轮 agent RL 中更公平、更密集的 step-level 信用分配。它保留历史前缀一致的动作比较，同时用 rollout-derived state potential 提供进展信号，适合关注 agent planning reliability 的读者。"
+      },
+      "analysis": {
+        "motivation": "论文针对长程多轮 agent RL 的一个真实痛点：轨迹级 GRPO 类方法给每一步同一个延迟奖励，信用分配太粗；而 step-level 分组比较虽然更细，但如果只按当前状态分组，会把不同历史下的动作放在一起比较，优势估计不公平。若强制历史前缀一致，分组又会变小，很多步骤没有可比较 peer，学习信号变稀疏。",
+        "method": "ProGPO 的核心是把“动作相对比较”和“状态进展估计”拆开：动作优势只在 exact-prefix 一致的组内比较，保持上下文公平；对缺少 peer 信号的步骤，用 rollout 统计得到非参数 state potential，并用下一状态与当前状态的 potential 差作为 transition credit。为降低 potential 估计噪声，论文加入语义近邻扩展和基于样本量、回报方差的多历史深度融合；整体不训练 learned critic，也不额外采样 rollout。",
+        "experiments": "实验主要在 ALFWorld 和 WebShop 上，用 Qwen2.5-Instruct 小模型做匹配比较，基线包括 GRPO、GiGPO、HGPO，并补充了更大一点模型的 ALFWorld 趋势实验。结果显示 ProGPO 在匹配 RL baseline 中整体更强，尤其在终局成功率上相对 GiGPO/HGPO 有提升；机制诊断表明 transition credit 能补上一部分 prefix-consistent peer comparison 缺失的步骤。消融实验也支持语义扩展和可靠性融合对 state-potential 质量有贡献。",
+        "research_help": "Insight：这篇文章最可迁移的点是把多轮 agent 的信用分配分成“可公平比较的动作选择”和“是否推动状态进展”两类信号，避免为了获得密集监督而牺牲历史一致性。对 agent planning 和 long-horizon reliability 来说，它提示我们可以用 rollout 内的状态潜势表来近似进展，而不是立刻训练一个 critic；但这种进展信号应被视为批内估计，不应直接当作动作因果贡献。对多轮系统训练，semantic expansion 也值得借鉴，但必须加不确定性或可靠性门控，否则相似状态可能只是表面相似。",
+        "insight": "Insight：这篇文章最可迁移的点是把多轮 agent 的信用分配分成“可公平比较的动作选择”和“是否推动状态进展”两类信号，避免为了获得密集监督而牺牲历史一致性。对 agent planning 和 long-horizon reliability 来说，它提示我们可以用 rollout 内的状态潜势表来近似进展，而不是立刻训练一个 critic；但这种进展信号应被视为批内估计，不应直接当作动作因果贡献。对多轮系统训练，semantic expansion 也值得借鉴，但必须加不确定性或可靠性门控，否则相似状态可能只是表面相似。",
+        "abstract_zh": "本文研究长程交互式 agent 任务中的 group-based RL，指出现有 step-level 方法在分组方式上存在两难：宽松按状态分组会比较不同历史下的动作，而严格保持历史一致又会导致分组碎片化、peer 比较信号不足。作者提出 ProGPO，一种不依赖 learned critic 的上下文一致 step-level 学习方法，保留 exact-prefix 动作比较，并用 rollout 统计得到的 state potential 差补充 transition credit。为更可靠地估计 state potential，方法结合语义扩展和跨历史深度的逆方差融合。论文在 ALFWorld 和 WebShop 上用 Qwen2.5-Instruct 模型评估，报告其在相近计算开销下优于匹配的 agentic RL baseline，并用更大模型补充验证扩展趋势。",
+        "card_summary": "这篇论文提出 ProGPO，用于长程多轮 agent RL 中更公平、更密集的 step-level 信用分配。它保留历史前缀一致的动作比较，同时用 rollout-derived state potential 提供进展信号，适合关注 agent planning reliability 的读者。",
+        "full_summary": "论文讨论的是长程 agent RL 中 step-level group optimization 的信用分配问题：宽松分组会产生不公平比较，严格历史一致分组又会让许多步骤没有学习信号。ProGPO 的做法是保留 exact-prefix peer comparison 来估计动作相对优势，再用状态潜势差作为 transition credit 来补充“是否向目标推进”的信号。状态潜势来自同一批 rollout 的非参数统计，并通过语义近邻扩展和逆方差多深度融合提高稳定性，因此不需要额外 critic 或 reward model。实验在 ALFWorld 和 WebShop 上显示它相对匹配的 GRPO/GiGPO/HGPO baseline 有更好的整体信号，消融也支持两个 potential 稳定化组件的作用。阅读价值在于它直接处理 multi-turn agent 的历史一致性和稀疏信用问题，但结论仍主要受限于两个标准环境和较小模型规模。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其适合 agentic RL 信用分配方向",
+        "value_reason": "主题与 agentic RL、multi-turn agent、long-horizon planning 高度相关，问题定义具体，方法抓住了历史一致比较与信号稀疏之间的核心冲突。价值主要在 insight 和训练目标设计：它给出了一种不训练 critic 的 progress credit 方案，可作为后续 agent planning RL 的基线或可拆组件。水文风险不是低，因为实验范围较窄，模型规模偏小，部分对照来自 prior reports 而非完全匹配设置，且 transition credit 本身不是因果估计。",
+        "limitations": "局限包括：实验只覆盖 ALFWorld 和 WebShop，开放网页、多模态、更大模型上的泛化还不清楚；state potential 依赖 batch 内状态复现和表征质量，语义近邻可能把行为价值不同的状态混在一起；transition credit 只能表示批内估计的进展，不等价于动作的因果贡献；关键超参数和 rollout group size 的系统扫参不足；WebShop 上成功率和任务分数信号并不完全一致，说明方法对终局完成和部分进展的影响可能不同。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确指出 step-level grouping 的两难：只按当前 observation 分组会混合不同历史，而 prefix-consistent grouping 会导致小组或无 peer 信号。",
+          "方法部分说明 ProGPO 将 exact-prefix action comparison 与 rollout-derived state potentials 分离，并用 state potential 差构造 transition credit。",
+          "论文声称 semantic expansion 只用于 state-potential estimation，action advantage 仍保持 exact-prefix comparison。",
+          "实验部分在 ALFWorld 和 WebShop 上比较 GRPO、GiGPO、HGPO、ProGPO，并报告 ProGPO 在匹配本地 rerun 中整体领先。章内机制诊断和消融显示 transition credit、semantic expansion、reliability fusion 对信号覆盖和训练结果有贡献。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-08T01:39:59.564Z"
+      }
+    },
+    {
+      "id": "2607.03726v1",
+      "title": "SelfMem: Self-Optimizing Memory for AI Agents",
+      "summary": "While current AI agents support increasingly long context windows, tool use, and skill execution for long-horizon tasks, they still require memory systems to effectively leverage historical experience. Existing memory frameworks typically rely on fixed storage, retrieval, and summarization mechanisms, which can be rigid across different tasks and often require manual tuning. To address this limitation, we propose SelfMem, a self-optimizing memory framework. Inspired by prior work on self-improving AI, we follow the principle of \"teaching an agent to fish rather than giving it a fish.\" Instead of forcing the model to follow a predefined memory strategy or format, SelfMem provides an environment with memory tools and feedback signals that allow the agent to explore, evaluate, and refine its own memory strategy. Our results show that SelfMem consistently outperforms retrieval, compression, and agent-memory baselines on BEAM across conversation scales from 100K to 1M tokens. Compared with the strongest baseline, SelfMem improves the official score by 48.7%, 40.8%, and 41.9% at 100K, 500K, and 1M, respectively. Further question-type analysis shows broad robustness across diverse memory demands, and our optimization study shows that model-guided strategy refinement further improves performance.",
+      "url": "http://arxiv.org/abs/2607.03726v1",
+      "authors": [
+        "Shu Yang",
+        "Junchao Wu",
+        "Derek F. Wong",
+        "Di Wang"
+      ],
+      "report_date": "2026-07-08",
+      "published": "2026-07-04",
+      "updated": "2026-07-04",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "值得读，尤其适合长期记忆与 agent planning 方向",
+        "water_risk": "中",
+        "value_judgement": "推荐的主要原因是问题切中 long-horizon agent 的真实瓶颈：历史信息并非越多越好，关键在于如何把稳定状态、易变事实、检索线索和原始证据分层管理。方法设计简洁，实验覆盖多个强相关 memory baseline，且结果不仅看平均表现，也看问题类型、成本和策略优化。偏水风险为中，是因为方法更像 prompt/tool harness 和策略优化框架，算法新意不算深；同时核心证据主要来自 BEAM，一个 benchmark 和一套共享实现可能不足以证明广泛部署优势。",
+        "reason": "推荐的主要原因是问题切中 long-horizon agent 的真实瓶颈：历史信息并非越多越好，关键在于如何把稳定状态、易变事实、检索线索和原始证据分层管理。方法设计简洁，实验覆盖多个强相关 memory baseline，且结果不仅看平均表现，也看问题类型、成本和策略优化。偏水风险为中，是因为方法更像 prompt/tool harness 和策略优化框架，算法新意不算深；同时核心证据主要来自 BEAM，一个 benchmark 和一套共享实现可能不足以证明广泛部署优势。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Shu Yang",
+          "Junchao Wu",
+          "Derek F. Wong",
+          "Di Wang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-04",
+        "paper_url": "https://arxiv.org/abs/2607.03726v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "推荐的主要原因是问题切中 long-horizon agent 的真实瓶颈：历史信息并非越多越好，关键在于如何把稳定状态、易变事实、检索线索和原始证据分层管理。方法设计简洁，实验覆盖多个强相关 memory baseline，且结果不仅看平均表现，也看问题类型、成本和策略优化。偏水风险为中，是因为方法更像 prompt/tool harness 和策略优化框架，算法新意不算深；同时核心证据主要来自 BEAM，一个 benchmark 和一套共享实现可能不足以证明广泛部署优势。",
+        "summary": "这篇文章提出 SelfMem，用于解决长程多轮 agent 中历史信息难以被稳定、低成本利用的问题。它不预设固定 memory schema，而是保留原始 transcript 作为事实源，并让 agent 通过读、写、review、自测等工具决定如何组织记忆。实验在 BEAM 上比较了 RAG、压缩、MemGPT、A-Mem、Mem0 等方法，SelfMem 在不同上下文尺度和多数问题类型上都表现最好，同时成本低于若干复杂 memory pipeline。论文的重要性在于把“记忆策略”本身变成可优化对象，而不是只优化检索器或摘要器。阅读价值较高，但需要注意其实验集中在单一 benchmark 和特定模型/评测协议下，真实开放环境中的泛化还需要更多验证。",
+        "highlights": [
+          "推荐的主要原因是问题切中 long-horizon agent 的真实瓶颈：历史信息并非越多越好，关键在于如何把稳定状态、易变事实、检索线索和原始证据分层管理。方法设计简洁，实验覆盖多个强相关 memory baseline，且结果不仅看平均表现，也看问题类型、成本和策略优化。偏水风险为中，是因为方法更像 prompt/tool harness 和策略优化框架，算法新意不算深；同时核心证据主要来自 BEAM，一个 benchmark 和一套共享实现可能不足以证明广泛部署优势。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长上下文、工具使用和多步执行并不能自动解决长期交互中的记忆问题；固定的检索、压缩或摘要策略往往难以适配不同任务，且需要人工调参。论文的核心动机是把记忆管理从预设流水线变成 agent 可探索、可审查、可修订的过程，让模型学习什么该存、什么该压缩、什么该回查原始 transcript。",
+        "method": "SelfMem 保留原始对话 transcript 作为不可变事实源，同时给 agent 一个可写的 memory workspace 和一组读写、审查、自测工具。agent 可以用只读 SQL/manifest 检查历史对话，写入或合并记忆，调用 review 工具检查来源支持、过时事实、矛盾和可检索性，再根据反馈修订记忆。方法重点不是提出复杂新模型，而是把 memory policy 本身暴露为可优化的自然语言策略，并用质量、token、成本、缓存和诊断反馈引导 agent 在准确性与成本之间取舍。",
+        "experiments": "实验主要在 BEAM 长期记忆 benchmark 上进行，覆盖从较短到百万 token 级别的对话历史，并与 RAG、full context、compression、LoCoMo、ReadAgent、MemoryBank、MemGPT、A-Mem、Mem0 等基线比较。结果显示 SelfMem 在所有评测尺度上取得最高官方表现，并且在多数问题类型上领先，尤其对信息抽取、知识更新、多会话推理、偏好跟随、摘要和时间推理更有优势。论文还做了策略优化分析，说明仅用训练侧聚合反馈和工具诊断，memory strategy 可以进一步改进；不过评估仍集中在 BEAM，跨 benchmark、跨模型和真实部署的证据还不够充分。",
+        "research_help": "Insight：这篇论文对 agent planning 和多轮系统的启发在于，长期可靠性不一定只靠更长 context 或更强 retriever，而可以把“如何维护任务状态”本身变成 agent 可操作、可审查、可迭代优化的策略空间。对 long-horizon planning 来说，原始轨迹应保留为事实源，压缩记忆只保存稳定偏好、长期约束、实体关系和检索线索，易变细节在回答时回查证据。对 agentic RL 或自改进 agent，SelfMem 提供了一个轻量范式：不直接学习权重，而通过工具反馈、诊断和策略说明来优化中间状态管理。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文对 agent planning 和多轮系统的启发在于，长期可靠性不一定只靠更长 context 或更强 retriever，而可以把“如何维护任务状态”本身变成 agent 可操作、可审查、可迭代优化的策略空间。对 long-horizon planning 来说，原始轨迹应保留为事实源，压缩记忆只保存稳定偏好、长期约束、实体关系和检索线索，易变细节在回答时回查证据。对 agentic RL 或自改进 agent，SelfMem 提供了一个轻量范式：不直接学习权重，而通过工具反馈、诊断和策略说明来优化中间状态管理。",
+        "abstract_zh": "当前 AI agent 虽然拥有更长上下文、工具调用和长程任务执行能力，但仍需要有效的记忆系统来利用历史经验。现有记忆框架通常依赖固定的存储、检索和摘要机制，在不同任务上较僵硬，也常需要人工调参。SelfMem 提出一种自优化记忆框架，不强制模型遵循预定义记忆格式，而是提供记忆工具和反馈信号，让 agent 自己探索、评估和改进记忆策略。实验显示，SelfMem 在 BEAM 的不同长对话尺度上持续优于检索、压缩和 agent memory 基线，并且问题类型分析显示其对多种记忆需求有较强鲁棒性。",
+        "full_summary": "这篇文章提出 SelfMem，用于解决长程多轮 agent 中历史信息难以被稳定、低成本利用的问题。它不预设固定 memory schema，而是保留原始 transcript 作为事实源，并让 agent 通过读、写、review、自测等工具决定如何组织记忆。实验在 BEAM 上比较了 RAG、压缩、MemGPT、A-Mem、Mem0 等方法，SelfMem 在不同上下文尺度和多数问题类型上都表现最好，同时成本低于若干复杂 memory pipeline。论文的重要性在于把“记忆策略”本身变成可优化对象，而不是只优化检索器或摘要器。阅读价值较高，但需要注意其实验集中在单一 benchmark 和特定模型/评测协议下，真实开放环境中的泛化还需要更多验证。",
+        "card_summary": "SelfMem 把长期记忆管理从固定检索或摘要流水线，改成 agent 自己读 transcript、写 memory、审查质量并修订策略的过程。它在 BEAM 长期对话记忆评测上明显优于多类基线，尤其适合关注多轮 agent、长期状态维护和 planning reliability 的读者。"
+      },
+      "analysis": {
+        "motivation": "长上下文、工具使用和多步执行并不能自动解决长期交互中的记忆问题；固定的检索、压缩或摘要策略往往难以适配不同任务，且需要人工调参。论文的核心动机是把记忆管理从预设流水线变成 agent 可探索、可审查、可修订的过程，让模型学习什么该存、什么该压缩、什么该回查原始 transcript。",
+        "method": "SelfMem 保留原始对话 transcript 作为不可变事实源，同时给 agent 一个可写的 memory workspace 和一组读写、审查、自测工具。agent 可以用只读 SQL/manifest 检查历史对话，写入或合并记忆，调用 review 工具检查来源支持、过时事实、矛盾和可检索性，再根据反馈修订记忆。方法重点不是提出复杂新模型，而是把 memory policy 本身暴露为可优化的自然语言策略，并用质量、token、成本、缓存和诊断反馈引导 agent 在准确性与成本之间取舍。",
+        "experiments": "实验主要在 BEAM 长期记忆 benchmark 上进行，覆盖从较短到百万 token 级别的对话历史，并与 RAG、full context、compression、LoCoMo、ReadAgent、MemoryBank、MemGPT、A-Mem、Mem0 等基线比较。结果显示 SelfMem 在所有评测尺度上取得最高官方表现，并且在多数问题类型上领先，尤其对信息抽取、知识更新、多会话推理、偏好跟随、摘要和时间推理更有优势。论文还做了策略优化分析，说明仅用训练侧聚合反馈和工具诊断，memory strategy 可以进一步改进；不过评估仍集中在 BEAM，跨 benchmark、跨模型和真实部署的证据还不够充分。",
+        "research_help": "Insight：这篇论文对 agent planning 和多轮系统的启发在于，长期可靠性不一定只靠更长 context 或更强 retriever，而可以把“如何维护任务状态”本身变成 agent 可操作、可审查、可迭代优化的策略空间。对 long-horizon planning 来说，原始轨迹应保留为事实源，压缩记忆只保存稳定偏好、长期约束、实体关系和检索线索，易变细节在回答时回查证据。对 agentic RL 或自改进 agent，SelfMem 提供了一个轻量范式：不直接学习权重，而通过工具反馈、诊断和策略说明来优化中间状态管理。",
+        "insight": "Insight：这篇论文对 agent planning 和多轮系统的启发在于，长期可靠性不一定只靠更长 context 或更强 retriever，而可以把“如何维护任务状态”本身变成 agent 可操作、可审查、可迭代优化的策略空间。对 long-horizon planning 来说，原始轨迹应保留为事实源，压缩记忆只保存稳定偏好、长期约束、实体关系和检索线索，易变细节在回答时回查证据。对 agentic RL 或自改进 agent，SelfMem 提供了一个轻量范式：不直接学习权重，而通过工具反馈、诊断和策略说明来优化中间状态管理。",
+        "abstract_zh": "当前 AI agent 虽然拥有更长上下文、工具调用和长程任务执行能力，但仍需要有效的记忆系统来利用历史经验。现有记忆框架通常依赖固定的存储、检索和摘要机制，在不同任务上较僵硬，也常需要人工调参。SelfMem 提出一种自优化记忆框架，不强制模型遵循预定义记忆格式，而是提供记忆工具和反馈信号，让 agent 自己探索、评估和改进记忆策略。实验显示，SelfMem 在 BEAM 的不同长对话尺度上持续优于检索、压缩和 agent memory 基线，并且问题类型分析显示其对多种记忆需求有较强鲁棒性。",
+        "card_summary": "SelfMem 把长期记忆管理从固定检索或摘要流水线，改成 agent 自己读 transcript、写 memory、审查质量并修订策略的过程。它在 BEAM 长期对话记忆评测上明显优于多类基线，尤其适合关注多轮 agent、长期状态维护和 planning reliability 的读者。",
+        "full_summary": "这篇文章提出 SelfMem，用于解决长程多轮 agent 中历史信息难以被稳定、低成本利用的问题。它不预设固定 memory schema，而是保留原始 transcript 作为事实源，并让 agent 通过读、写、review、自测等工具决定如何组织记忆。实验在 BEAM 上比较了 RAG、压缩、MemGPT、A-Mem、Mem0 等方法，SelfMem 在不同上下文尺度和多数问题类型上都表现最好，同时成本低于若干复杂 memory pipeline。论文的重要性在于把“记忆策略”本身变成可优化对象，而不是只优化检索器或摘要器。阅读价值较高，但需要注意其实验集中在单一 benchmark 和特定模型/评测协议下，真实开放环境中的泛化还需要更多验证。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其适合长期记忆与 agent planning 方向",
+        "value_reason": "推荐的主要原因是问题切中 long-horizon agent 的真实瓶颈：历史信息并非越多越好，关键在于如何把稳定状态、易变事实、检索线索和原始证据分层管理。方法设计简洁，实验覆盖多个强相关 memory baseline，且结果不仅看平均表现，也看问题类型、成本和策略优化。偏水风险为中，是因为方法更像 prompt/tool harness 和策略优化框架，算法新意不算深；同时核心证据主要来自 BEAM，一个 benchmark 和一套共享实现可能不足以证明广泛部署优势。",
+        "limitations": "主要局限是评估范围偏窄，实验集中在 BEAM，尚未证明在更多 long-horizon benchmark、不同模型家族、真实用户多轮任务和生产环境中的稳定性。策略优化实验只在较小尺度上展示，尚未充分验证到更长历史下是否同样有效。基线虽然放在统一 harness 中比较，但部分方法的生产级实现可能有不同效率和效果，公平性仍需谨慎看待。此外，SelfMem 依赖模型自己判断何时写、删、合并和审查记忆，错误诊断或过度压缩可能带来隐性失忆和事实漂移。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确描述 SelfMem 保留 raw transcript 作为不可变事实源，并通过 transcript-read、memory-write、memory-review、self-test 等工具让 agent 管理 memory workspace。",
+          "实验部分报告 SelfMem 在 BEAM 的多个长对话尺度上领先 RAG、compression、LoCoMo、ReadAgent、MemoryBank、MemGPT、A-Mem 和 Mem0。",
+          "问题类型分析显示 SelfMem 在多数 BEAM 问题类型上表现最好，覆盖信息抽取、知识更新、多会话推理、偏好跟随、摘要和时间推理等记忆需求。",
+          "优化分析显示，基于训练侧聚合反馈和 memory/tool 诊断生成的策略说明，可以进一步改善 held-out 表现。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-08T01:45:22.651Z"
+      }
+    },
+    {
+      "id": "2607.03702v1",
+      "title": "Agent Reinforcement Learning via Pivotal-Aware Self-Feedback Retry",
+      "summary": "Large language model (LLM) agents have shown strong decision-making capabilities in long-horizon interactive tasks, yet they still struggle to effectively leverage failed trajectories: full retries incur high interaction costs, while experience retrieval tends to dilute critical experience signals. To address this, we propose PivoARL, a self-feedback retry framework for experience exploitation in LLM agents. PivoARL identifies the pivotal erroneous turn through structured reflection and performs local retry only from the corresponding pivotal state, thereby reusing the correct prefix and reducing redundant interactions. From an information-gain perspective, we further show that pivotal retry concentrates useful experience signals near the error boundary, mitigating the signal dilution caused by state-agnostic experience utilization. Based on this insight, we design a pivotal-aware credit assignment mechanism that rewards correct prefixes while isolating erroneous suffixes, and optimize reflection quality through implicit reflection returns. We conduct a systematic evaluation on 4 agent tasks and 7 search-based QA benchmarks. Results show that PivoARL achieves significant improvements on Pass@2/3 across all tasks, with an average gain of about 11.5\\% over MetaRL. Moreover, benefiting from contrastive preference signals induced by pivotal turns, PivoARL also consistently improves Pass@1 on over 80\\% of the tasks. On Minesweeper environment, PivoARL improves over GiGPO by more than 45\\% and reduces interaction turns by about 42\\% on average compared with full-retry methods. Code is available at https://github.com/yuki-younai/PivoARL.",
+      "url": "http://arxiv.org/abs/2607.03702v1",
+      "authors": [
+        "Weiyang Guo",
+        "Zesheng Shi",
+        "Longhui Zhang",
+        "Zeen Zhu",
+        "Min Zhang",
+        "Jing Li"
+      ],
+      "report_date": "2026-07-08",
+      "published": "2026-07-04",
+      "updated": "2026-07-04",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/yuki-younai/PivoARL",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "值得读，偏方法论文，相关性很强",
+        "water_risk": "中",
+        "value_judgement": "论文切中了长程 agentic RL 的真实难点：失败经验不是整条都有用，关键在于定位错误边界并避免错误信用传播。方法设计简单直接，和 agent planning、self-reflection retry、agent memory、multi-turn credit assignment 都有清晰连接；实验覆盖面也比单一小游戏或单一 QA 设置更充分。偏水风险不是低，主要因为信息增益理论部分假设较强，部分论证更像直觉形式化；实验主要基于小模型、模拟环境和构造式搜索任务，离真实复杂工具 agent 仍有距离。",
+        "reason": "论文切中了长程 agentic RL 的真实难点：失败经验不是整条都有用，关键在于定位错误边界并避免错误信用传播。方法设计简单直接，和 agent planning、self-reflection retry、agent memory、multi-turn credit assignment 都有清晰连接；实验覆盖面也比单一小游戏或单一 QA 设置更充分。偏水风险不是低，主要因为信息增益理论部分假设较强，部分论证更像直觉形式化；实验主要基于小模型、模拟环境和构造式搜索任务，离真实复杂工具 agent 仍有距离。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": true
+        }
+      },
+      "brief": {
+        "authors": [
+          "Weiyang Guo",
+          "Zesheng Shi",
+          "Longhui Zhang",
+          "Zeen Zhu",
+          "Min Zhang",
+          "Jing Li"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-04",
+        "paper_url": "https://arxiv.org/abs/2607.03702v1",
+        "project_url": "",
+        "repo_url": "https://github.com/yuki-younai/PivoARL",
+        "venue_status": "未确认录用",
+        "contribution": "论文切中了长程 agentic RL 的真实难点：失败经验不是整条都有用，关键在于定位错误边界并避免错误信用传播。方法设计简单直接，和 agent planning、self-reflection retry、agent memory、multi-turn credit assignment 都有清晰连接；实验覆盖面也比单一小游戏或单一 QA 设置更充分。偏水风险不是低，主要因为信息增益理论部分假设较强，部分论证更像直觉形式化；实验主要基于小模型、模拟环境和构造式搜索任务，离真实复杂工具 agent 仍有距离。",
+        "summary": "PivoARL 解决的是长程多轮 agent 中失败经验如何被高效利用的问题：失败轨迹里常包含大量正确前缀，直接全局反思或完整重试都会浪费信号或成本。方法核心是用结构化自反馈找出最早关键错误轮次，并从该状态开始重生成后续动作，同时复用此前正确上下文。训练上，论文设计了 pivotal-aware credit assignment，使成功重试的收益能传回正确前缀，但不会奖励错误后缀；反思模块也通过后续 retry 成败获得隐式优化信号。实验覆盖 agent 环境和搜索问答，显示 PivoARL 在多次 rollout、训练效率和部分首轮成功指标上相对多类 baseline 有稳定优势。阅读价值较高，尤其适合关注 long-horizon planning reliability、agent memory 使用方式和 agentic RL 信用分配的人。",
+        "highlights": [
+          "论文切中了长程 agentic RL 的真实难点：失败经验不是整条都有用，关键在于定位错误边界并避免错误信用传播。方法设计简单直接，和 agent planning、self-reflection retry、agent memory、multi-turn credit assignment 都有清晰连接；实验覆盖面也比单一小游戏或单一 QA 设置更充分。偏水风险不是低，主要因为信息增益理论部分假设较强，部分论证更像直觉形式化；实验主要基于小模型、模拟环境和构造式搜索任务，离真实复杂工具 agent 仍有距离。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对长程交互型 LLM agent 的一个核心痛点：失败轨迹里往往既有正确前缀，也有导致失败的关键错误步。完全重试会浪费交互成本，而把整条失败经验作为记忆或全局反思又会稀释真正有用的错误信号，并可能把失败后的负反馈错误分配给原本正确的早期决策。这个问题与 multi-turn agent、long-horizon planning 和 agentic RL 的训练稳定性高度相关。",
+        "method": "论文提出 PivoARL：失败后先用结构化自反思定位最早的 pivotal erroneous turn，并从该关键状态局部重试，复用此前正确前缀。训练上，它引入 pivotal-aware credit assignment：正确前缀可以接收后续成功重试带来的跨 episode 信用，而关键错误点之后的错误后缀被隔离，避免拿到误导性正奖励。反思本身也通过后续重试回报获得隐式奖励，从而让模型学习生成更准确的错误定位与 retry 指导。",
+        "experiments": "实验覆盖四类 agent 环境以及七个 search-based QA benchmark，并与 GRPO、GiGPO、GSPO、记忆增强 RL、MetaRL、Search-R1、ZeroSearch、StepSearch 等方法比较。主结果显示 PivoARL 在多次尝试指标上整体领先，尤其在 Minesweeper 这类需要局部逻辑修正的环境中收益明显；搜索问答任务上也大多优于经典 agentic search 与 reflect-retry baseline。消融实验支持三个组件的作用：反思注入、pivotal 局部重试、以及信用隔离都对最终表现有贡献，其中信用隔离对避免错误后缀被奖励尤其关键。",
+        "research_help": "Insight：这篇论文最有迁移价值的点不是“再试一次”，而是把失败恢复建模为错误边界定位问题；对 agent planning 和 long-horizon reliability 来说，可以把轨迹切成可复用前缀与需重规划后缀，并在训练或日志分析时只把后续成功信用传给真正可继承的决策。它也提示多轮系统里的 memory 不应只是检索整段经验，而应围绕状态、错误边界和可操作修正形成局部化信号。对 agentic RL，pivotal isolation 是一个值得借鉴的 credit assignment 设计，可减少稀疏终局奖励在长轨迹中污染正确早期动作的问题。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": true
+          }
+        },
+        "insight": "Insight：这篇论文最有迁移价值的点不是“再试一次”，而是把失败恢复建模为错误边界定位问题；对 agent planning 和 long-horizon reliability 来说，可以把轨迹切成可复用前缀与需重规划后缀，并在训练或日志分析时只把后续成功信用传给真正可继承的决策。它也提示多轮系统里的 memory 不应只是检索整段经验，而应围绕状态、错误边界和可操作修正形成局部化信号。对 agentic RL，pivotal isolation 是一个值得借鉴的 credit assignment 设计，可减少稀疏终局奖励在长轨迹中污染正确早期动作的问题。",
+        "abstract_zh": "大型语言模型 agent 在长程交互任务中已有较强决策能力，但仍难以有效利用失败轨迹：完整重试成本高，经验检索又容易稀释关键信号。论文提出 PivoARL，通过结构化反思识别导致失败的关键错误轮次，并只从该 pivotal state 开始局部重试，以复用正确前缀、减少冗余交互。作者从信息增益角度解释，pivotal retry 能把有用经验集中在错误边界附近，并设计了面向关键点的信用分配机制来奖励正确前缀、隔离错误后缀。实验显示，该方法在多个 agent 任务和 search-based QA benchmark 上提升多次尝试表现，并在部分任务上降低交互成本、改善首轮成功率。",
+        "full_summary": "PivoARL 解决的是长程多轮 agent 中失败经验如何被高效利用的问题：失败轨迹里常包含大量正确前缀，直接全局反思或完整重试都会浪费信号或成本。方法核心是用结构化自反馈找出最早关键错误轮次，并从该状态开始重生成后续动作，同时复用此前正确上下文。训练上，论文设计了 pivotal-aware credit assignment，使成功重试的收益能传回正确前缀，但不会奖励错误后缀；反思模块也通过后续 retry 成败获得隐式优化信号。实验覆盖 agent 环境和搜索问答，显示 PivoARL 在多次 rollout、训练效率和部分首轮成功指标上相对多类 baseline 有稳定优势。阅读价值较高，尤其适合关注 long-horizon planning reliability、agent memory 使用方式和 agentic RL 信用分配的人。",
+        "card_summary": "这篇论文提出 PivoARL，让 agent 在失败后先定位关键错误步，再从该状态局部重试，而不是整条轨迹重来。它对长程 agentic RL 的价值在于把经验利用、反思和信用分配都围绕“错误边界”组织起来，实验信号较强，但理论论证和真实复杂工具场景验证仍需谨慎看待。"
+      },
+      "analysis": {
+        "motivation": "论文针对长程交互型 LLM agent 的一个核心痛点：失败轨迹里往往既有正确前缀，也有导致失败的关键错误步。完全重试会浪费交互成本，而把整条失败经验作为记忆或全局反思又会稀释真正有用的错误信号，并可能把失败后的负反馈错误分配给原本正确的早期决策。这个问题与 multi-turn agent、long-horizon planning 和 agentic RL 的训练稳定性高度相关。",
+        "method": "论文提出 PivoARL：失败后先用结构化自反思定位最早的 pivotal erroneous turn，并从该关键状态局部重试，复用此前正确前缀。训练上，它引入 pivotal-aware credit assignment：正确前缀可以接收后续成功重试带来的跨 episode 信用，而关键错误点之后的错误后缀被隔离，避免拿到误导性正奖励。反思本身也通过后续重试回报获得隐式奖励，从而让模型学习生成更准确的错误定位与 retry 指导。",
+        "experiments": "实验覆盖四类 agent 环境以及七个 search-based QA benchmark，并与 GRPO、GiGPO、GSPO、记忆增强 RL、MetaRL、Search-R1、ZeroSearch、StepSearch 等方法比较。主结果显示 PivoARL 在多次尝试指标上整体领先，尤其在 Minesweeper 这类需要局部逻辑修正的环境中收益明显；搜索问答任务上也大多优于经典 agentic search 与 reflect-retry baseline。消融实验支持三个组件的作用：反思注入、pivotal 局部重试、以及信用隔离都对最终表现有贡献，其中信用隔离对避免错误后缀被奖励尤其关键。",
+        "research_help": "Insight：这篇论文最有迁移价值的点不是“再试一次”，而是把失败恢复建模为错误边界定位问题；对 agent planning 和 long-horizon reliability 来说，可以把轨迹切成可复用前缀与需重规划后缀，并在训练或日志分析时只把后续成功信用传给真正可继承的决策。它也提示多轮系统里的 memory 不应只是检索整段经验，而应围绕状态、错误边界和可操作修正形成局部化信号。对 agentic RL，pivotal isolation 是一个值得借鉴的 credit assignment 设计，可减少稀疏终局奖励在长轨迹中污染正确早期动作的问题。",
+        "insight": "Insight：这篇论文最有迁移价值的点不是“再试一次”，而是把失败恢复建模为错误边界定位问题；对 agent planning 和 long-horizon reliability 来说，可以把轨迹切成可复用前缀与需重规划后缀，并在训练或日志分析时只把后续成功信用传给真正可继承的决策。它也提示多轮系统里的 memory 不应只是检索整段经验，而应围绕状态、错误边界和可操作修正形成局部化信号。对 agentic RL，pivotal isolation 是一个值得借鉴的 credit assignment 设计，可减少稀疏终局奖励在长轨迹中污染正确早期动作的问题。",
+        "abstract_zh": "大型语言模型 agent 在长程交互任务中已有较强决策能力，但仍难以有效利用失败轨迹：完整重试成本高，经验检索又容易稀释关键信号。论文提出 PivoARL，通过结构化反思识别导致失败的关键错误轮次，并只从该 pivotal state 开始局部重试，以复用正确前缀、减少冗余交互。作者从信息增益角度解释，pivotal retry 能把有用经验集中在错误边界附近，并设计了面向关键点的信用分配机制来奖励正确前缀、隔离错误后缀。实验显示，该方法在多个 agent 任务和 search-based QA benchmark 上提升多次尝试表现，并在部分任务上降低交互成本、改善首轮成功率。",
+        "card_summary": "这篇论文提出 PivoARL，让 agent 在失败后先定位关键错误步，再从该状态局部重试，而不是整条轨迹重来。它对长程 agentic RL 的价值在于把经验利用、反思和信用分配都围绕“错误边界”组织起来，实验信号较强，但理论论证和真实复杂工具场景验证仍需谨慎看待。",
+        "full_summary": "PivoARL 解决的是长程多轮 agent 中失败经验如何被高效利用的问题：失败轨迹里常包含大量正确前缀，直接全局反思或完整重试都会浪费信号或成本。方法核心是用结构化自反馈找出最早关键错误轮次，并从该状态开始重生成后续动作，同时复用此前正确上下文。训练上，论文设计了 pivotal-aware credit assignment，使成功重试的收益能传回正确前缀，但不会奖励错误后缀；反思模块也通过后续 retry 成败获得隐式优化信号。实验覆盖 agent 环境和搜索问答，显示 PivoARL 在多次 rollout、训练效率和部分首轮成功指标上相对多类 baseline 有稳定优势。阅读价值较高，尤其适合关注 long-horizon planning reliability、agent memory 使用方式和 agentic RL 信用分配的人。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，偏方法论文，相关性很强",
+        "value_reason": "论文切中了长程 agentic RL 的真实难点：失败经验不是整条都有用，关键在于定位错误边界并避免错误信用传播。方法设计简单直接，和 agent planning、self-reflection retry、agent memory、multi-turn credit assignment 都有清晰连接；实验覆盖面也比单一小游戏或单一 QA 设置更充分。偏水风险不是低，主要因为信息增益理论部分假设较强，部分论证更像直觉形式化；实验主要基于小模型、模拟环境和构造式搜索任务，离真实复杂工具 agent 仍有距离。",
+        "limitations": "主要限制是 pivotal turn 的定位本身依赖模型反思质量，一旦错误定位，局部重试可能复用有问题的前缀或从错误位置开始修复。实验虽覆盖多个 benchmark，但很多环境仍是受控任务，真实网页、多工具、多约束任务中的状态可恢复性和错误边界可判定性更复杂。理论部分对全局经验信号稀释的刻画较理想化，未充分证明真实模型分布下的信息增益形式。训练也需要多 episode retry 和反思生成，虽然减少交互轮次，但总体训练系统复杂度高于普通单 rollout RL。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出失败轨迹中完整重试成本高、经验检索会稀释关键信号，这是方法动机的核心。",
+          "方法部分给出 structured reflection、pivotal turn index、从 pivotal state 局部重试、复用正确 prefix 的完整流程。",
+          "信用分配部分将正确前缀和错误后缀分开处理，避免后续成功 retry 的正信用泄漏到导致失败的 suffix。",
+          "实验部分报告了四个 agent 环境和七个 search-based QA benchmark，并包含与 RL、memory-augmented RL、reflect-retry RL、agentic search 方法的比较。消融结果显示去掉 reflection、pivotal retry 或 isolation 都会削弱效果。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-08T01:46:13.672Z"
+      }
+    },
+    {
+      "id": "2607.05029v1",
+      "title": "Your Agent's Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses",
+      "summary": "Persistent memory has enabled large language model (LLM) agents to store factual knowledge, prior decisions, reasoning histories, tool usage information, and context. While this has improved the agent's functionality and continuity across tasks, it has also introduced a new attack surface: the agent's own reasoning history. In this paper, we introduce the Forged Amplifying Rationale Memory Attack (FARMA), which poisons an agent's remembered reasoning rather than its factual knowledge. It inserts forged reasoning traces using evasive language that bypasses keyword-based defenses, then amplifies them through self-referential reinforcement that defeats consensus-based defenses. To address FARMA, we introduce SENTINEL, a layered defense pipeline to detect forged reasoning entries. Its central component is the Reasoning Guard that structurally analyzes candidate entries for forgery using five weighted signals. We evaluate FARMA and SENTINEL across multiple agents and different LLM models with 50 trials and show that FARMA achieves an attack success rate of up to 100% under baseline conditions and is capable of defeating defense mechanisms like keyword filter and A-MemGuard. Our evaluation also shows that SENTINEL reduces FARMA's attack success rate to as low as 0% with no false positives observed across 326 benign agent traces. Our work demonstrates the need to protect not only an agent's retrieved content but also the integrity of its reasoning history.",
+      "url": "http://arxiv.org/abs/2607.05029v1",
+      "authors": [
+        "Neeraj Karamchandani",
+        "Piyush Nagasubramaniam",
+        "Sencun Zhu",
+        "Dinghao Wu"
+      ],
+      "report_date": "2026-07-08",
+      "published": "2026-07-06",
+      "updated": "2026-07-06",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 76,
+        "level": "高",
+        "label": "高相关：agent memory 安全与 long-horizon planning reliability",
+        "water_risk": "中",
+        "value_judgement": "这篇论文直接命中 agent memory、multi-turn agent 和 planning reliability：它说明长期记忆中的历史 rationale 会成为未来行动的 planning prior，一旦被伪造，agent 可能不是因为被提示注入，而是因为“相信自己的过去判断”而做错事。方法虽然偏启发式，但攻击建模清晰，和 agentic RL 中的经验记忆、反思轨迹、成功案例回放都有迁移关系。值得读，尤其适合思考多轮系统中 memory write path、provenance、execution evidence 和 reasoning trace verification 的设计。",
+        "reason": "这篇论文直接命中 agent memory、multi-turn agent 和 planning reliability：它说明长期记忆中的历史 rationale 会成为未来行动的 planning prior，一旦被伪造，agent 可能不是因为被提示注入，而是因为“相信自己的过去判断”而做错事。方法虽然偏启发式，但攻击建模清晰，和 agentic RL 中的经验记忆、反思轨迹、成功案例回放都有迁移关系。值得读，尤其适合思考多轮系统中 memory write path、provenance、execution evidence 和 reasoning trace verification 的设计。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Neeraj Karamchandani",
+          "Piyush Nagasubramaniam",
+          "Sencun Zhu",
+          "Dinghao Wu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-06",
+        "paper_url": "https://arxiv.org/abs/2607.05029v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "这篇论文直接命中 agent memory、multi-turn agent 和 planning reliability：它说明长期记忆中的历史 rationale 会成为未来行动的 planning prior，一旦被伪造，agent 可能不是因为被提示注入，而是因为“相信自己的过去判断”而做错事。方法虽然偏启发式，但攻击建模清晰，和 agentic RL 中的经验记忆、反思轨迹、成功案例回放都有迁移关系。值得读，尤其适合思考多轮系统中 memory write path、provenance、execution evidence 和 reasoning trace verification 的设计。",
+        "summary": "论文研究的是 LLM agent 持久记忆中的 reasoning trace 被伪造后，会如何影响未来规划和安全决策。作者提出 FARMA：攻击者不直接命令 agent 跳过验证，而是写入看似来自 agent 自身的历史决策日志，声称验证、检查或比较已经完成，再通过多条相互引用的伪造记录制造先例和共识。为防御这一点，论文提出 SENTINEL，在记忆写入阶段用轻量过滤加 Reasoning Guard 检测伪造推理条目，并把 reasoning-like general memory 也纳入检查，避免攻击者绕开专门的 reasoning store。实验信号显示，FARMA 对 EHR 这种二元安全决策场景尤其危险，关键词过滤和共识偏差防御不足以阻止它，而 SENTINEL 的主要效果来自 Reasoning Guard。阅读价值在于它明确指出 agent 的“记忆化推理”本身就是规划可靠性的关键攻击面，不过论文也承认当前防御是启发式的，在自适应 paraphrase 攻击和真实多 agent 共享记忆环境下仍需要更强验证。",
+        "highlights": [
+          "这篇论文直接命中 agent memory、multi-turn agent 和 planning reliability：它说明长期记忆中的历史 rationale 会成为未来行动的 planning prior，一旦被伪造，agent 可能不是因为被提示注入，而是因为“相信自己的过去判断”而做错事。方法虽然偏启发式，但攻击建模清晰，和 agentic RL 中的经验记忆、反思轨迹、成功案例回放都有迁移关系。值得读，尤其适合思考多轮系统中 memory write path、provenance、execution evidence 和 reasoning trace verification 的设计。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文指出，带持久记忆的 LLM agent 不只会保存事实和外部知识，也会保存决策日志、中间 rationale、自我反思等“自己曾经如何推理”的记录。这样的记忆能提升连续任务和长程规划效率，但也让 agent 可能把伪造的历史推理当作自身先前判断，从而跳过本应重新执行的验证、安全检查或信息核对。作者的核心动机是把攻击面从传统的检索语料/事实记忆中毒，推进到 reasoning history integrity，即保护 agent 记忆中“我以前已经验证过”的依据是否真实。",
+        "method": "论文提出 FARMA 攻击：先用规避关键词的语言向 reasoning store 注入看似正常的决策日志，例如声称上游已完成验证；再通过 amplification entries 不断引用先前伪造日志，制造“多次历史运行都一致”的先例感，使伪造内容更容易被检索并成为共识。防御方面提出 SENTINEL，一个写入时过滤管线，包含关键词、来源/污点、风险模式等轻量层，核心是 Reasoning Guard，用 provenance anomaly、自引用不匹配、可疑模式密度、夸张一致性声明、结构异常等信号判断一条记忆是否像伪造 reasoning trace。",
+        "experiments": "实验覆盖 EHR、ReAct-QA、RAP 三类 agent 场景，以及 GPT-4o-mini、GPT-4o、Llama 3.3 70B 等模型。结果显示 FARMA 在二元安全决策更强的 EHR 场景中尤其有效，能绕过关键词过滤和 A-MemGuard 这类共识偏差防御；在 ReAct-QA 和 RAP 中，由于当前任务证据更多、决策结构更复杂，攻击效果较弱但仍有影响。SENTINEL 在这些设置中显著降低攻击成功，消融显示真正承重的是 Reasoning Guard，其他层更多是防御简单变体。论文还报告在一批 benign agent traces 上没有观察到误报，但样本规模和环境仍偏实验室设置。",
+        "research_help": "Insight：这篇论文对 agent planning 和 long-horizon reliability 的启发是，长期记忆不能只做内容安全或事实可信度检查，还要把“推理记录是否真由 agent 完成”作为一等安全对象。多轮系统里，planning trace、reflection、decision log 一旦可被写入和检索，就会变成未来规划的隐式控制通道；可靠 agent 需要在写入时绑定来源、执行证据和任务状态，而不是在检索时默认相信历史 rationale。对 agentic RL / memory-based improvement 来说，经验回放、反思记忆、成功轨迹缓存都可能被伪造为奖励信号或先例，训练和执行系统都应区分真实执行经验、外部声明和生成式自述。",
+        "recommendation": {
+          "score": 76,
+          "level": "中",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文对 agent planning 和 long-horizon reliability 的启发是，长期记忆不能只做内容安全或事实可信度检查，还要把“推理记录是否真由 agent 完成”作为一等安全对象。多轮系统里，planning trace、reflection、decision log 一旦可被写入和检索，就会变成未来规划的隐式控制通道；可靠 agent 需要在写入时绑定来源、执行证据和任务状态，而不是在检索时默认相信历史 rationale。对 agentic RL / memory-based improvement 来说，经验回放、反思记忆、成功轨迹缓存都可能被伪造为奖励信号或先例，训练和执行系统都应区分真实执行经验、外部声明和生成式自述。",
+        "abstract_zh": "持久记忆让 LLM agent 能保存事实、历史决策、推理过程、工具使用信息和上下文，从而提升跨任务连续性，但也引入了新的攻击面：agent 自己的推理历史。论文提出 FARMA，一种不篡改事实知识、而是伪造 reasoning trace 的记忆中毒攻击，它使用规避关键词的语言写入伪造决策日志，并通过自引用放大让这些伪造记录看起来像稳定共识。作者进一步提出 SENTINEL 防御管线，其中 Reasoning Guard 通过多个结构信号检测伪造推理条目。实验显示 FARMA 能绕过关键词过滤和 A-MemGuard 等防御，而 SENTINEL 在实验设置中能大幅压低攻击成功，并且在 benign traces 上未观察到误报。",
+        "full_summary": "论文研究的是 LLM agent 持久记忆中的 reasoning trace 被伪造后，会如何影响未来规划和安全决策。作者提出 FARMA：攻击者不直接命令 agent 跳过验证，而是写入看似来自 agent 自身的历史决策日志，声称验证、检查或比较已经完成，再通过多条相互引用的伪造记录制造先例和共识。为防御这一点，论文提出 SENTINEL，在记忆写入阶段用轻量过滤加 Reasoning Guard 检测伪造推理条目，并把 reasoning-like general memory 也纳入检查，避免攻击者绕开专门的 reasoning store。实验信号显示，FARMA 对 EHR 这种二元安全决策场景尤其危险，关键词过滤和共识偏差防御不足以阻止它，而 SENTINEL 的主要效果来自 Reasoning Guard。阅读价值在于它明确指出 agent 的“记忆化推理”本身就是规划可靠性的关键攻击面，不过论文也承认当前防御是启发式的，在自适应 paraphrase 攻击和真实多 agent 共享记忆环境下仍需要更强验证。",
+        "card_summary": "这篇论文把 agent memory 安全的重点从“检索到什么事实”推进到“agent 是否真的做过它记得自己做过的推理”。FARMA 伪造历史 reasoning trace，让 agent 误以为安全验证已完成；SENTINEL 则用结构化 Reasoning Guard 在写入时拦截这类伪造记忆。很值得做 agent memory、多轮规划可靠性和安全防御的人阅读，但其实验仍偏模拟，防御对自适应改写攻击并不稳。"
+      },
+      "analysis": {
+        "motivation": "论文指出，带持久记忆的 LLM agent 不只会保存事实和外部知识，也会保存决策日志、中间 rationale、自我反思等“自己曾经如何推理”的记录。这样的记忆能提升连续任务和长程规划效率，但也让 agent 可能把伪造的历史推理当作自身先前判断，从而跳过本应重新执行的验证、安全检查或信息核对。作者的核心动机是把攻击面从传统的检索语料/事实记忆中毒，推进到 reasoning history integrity，即保护 agent 记忆中“我以前已经验证过”的依据是否真实。",
+        "method": "论文提出 FARMA 攻击：先用规避关键词的语言向 reasoning store 注入看似正常的决策日志，例如声称上游已完成验证；再通过 amplification entries 不断引用先前伪造日志，制造“多次历史运行都一致”的先例感，使伪造内容更容易被检索并成为共识。防御方面提出 SENTINEL，一个写入时过滤管线，包含关键词、来源/污点、风险模式等轻量层，核心是 Reasoning Guard，用 provenance anomaly、自引用不匹配、可疑模式密度、夸张一致性声明、结构异常等信号判断一条记忆是否像伪造 reasoning trace。",
+        "experiments": "实验覆盖 EHR、ReAct-QA、RAP 三类 agent 场景，以及 GPT-4o-mini、GPT-4o、Llama 3.3 70B 等模型。结果显示 FARMA 在二元安全决策更强的 EHR 场景中尤其有效，能绕过关键词过滤和 A-MemGuard 这类共识偏差防御；在 ReAct-QA 和 RAP 中，由于当前任务证据更多、决策结构更复杂，攻击效果较弱但仍有影响。SENTINEL 在这些设置中显著降低攻击成功，消融显示真正承重的是 Reasoning Guard，其他层更多是防御简单变体。论文还报告在一批 benign agent traces 上没有观察到误报，但样本规模和环境仍偏实验室设置。",
+        "research_help": "Insight：这篇论文对 agent planning 和 long-horizon reliability 的启发是，长期记忆不能只做内容安全或事实可信度检查，还要把“推理记录是否真由 agent 完成”作为一等安全对象。多轮系统里，planning trace、reflection、decision log 一旦可被写入和检索，就会变成未来规划的隐式控制通道；可靠 agent 需要在写入时绑定来源、执行证据和任务状态，而不是在检索时默认相信历史 rationale。对 agentic RL / memory-based improvement 来说，经验回放、反思记忆、成功轨迹缓存都可能被伪造为奖励信号或先例，训练和执行系统都应区分真实执行经验、外部声明和生成式自述。",
+        "insight": "Insight：这篇论文对 agent planning 和 long-horizon reliability 的启发是，长期记忆不能只做内容安全或事实可信度检查，还要把“推理记录是否真由 agent 完成”作为一等安全对象。多轮系统里，planning trace、reflection、decision log 一旦可被写入和检索，就会变成未来规划的隐式控制通道；可靠 agent 需要在写入时绑定来源、执行证据和任务状态，而不是在检索时默认相信历史 rationale。对 agentic RL / memory-based improvement 来说，经验回放、反思记忆、成功轨迹缓存都可能被伪造为奖励信号或先例，训练和执行系统都应区分真实执行经验、外部声明和生成式自述。",
+        "abstract_zh": "持久记忆让 LLM agent 能保存事实、历史决策、推理过程、工具使用信息和上下文，从而提升跨任务连续性，但也引入了新的攻击面：agent 自己的推理历史。论文提出 FARMA，一种不篡改事实知识、而是伪造 reasoning trace 的记忆中毒攻击，它使用规避关键词的语言写入伪造决策日志，并通过自引用放大让这些伪造记录看起来像稳定共识。作者进一步提出 SENTINEL 防御管线，其中 Reasoning Guard 通过多个结构信号检测伪造推理条目。实验显示 FARMA 能绕过关键词过滤和 A-MemGuard 等防御，而 SENTINEL 在实验设置中能大幅压低攻击成功，并且在 benign traces 上未观察到误报。",
+        "card_summary": "这篇论文把 agent memory 安全的重点从“检索到什么事实”推进到“agent 是否真的做过它记得自己做过的推理”。FARMA 伪造历史 reasoning trace，让 agent 误以为安全验证已完成；SENTINEL 则用结构化 Reasoning Guard 在写入时拦截这类伪造记忆。很值得做 agent memory、多轮规划可靠性和安全防御的人阅读，但其实验仍偏模拟，防御对自适应改写攻击并不稳。",
+        "full_summary": "论文研究的是 LLM agent 持久记忆中的 reasoning trace 被伪造后，会如何影响未来规划和安全决策。作者提出 FARMA：攻击者不直接命令 agent 跳过验证，而是写入看似来自 agent 自身的历史决策日志，声称验证、检查或比较已经完成，再通过多条相互引用的伪造记录制造先例和共识。为防御这一点，论文提出 SENTINEL，在记忆写入阶段用轻量过滤加 Reasoning Guard 检测伪造推理条目，并把 reasoning-like general memory 也纳入检查，避免攻击者绕开专门的 reasoning store。实验信号显示，FARMA 对 EHR 这种二元安全决策场景尤其危险，关键词过滤和共识偏差防御不足以阻止它，而 SENTINEL 的主要效果来自 Reasoning Guard。阅读价值在于它明确指出 agent 的“记忆化推理”本身就是规划可靠性的关键攻击面，不过论文也承认当前防御是启发式的，在自适应 paraphrase 攻击和真实多 agent 共享记忆环境下仍需要更强验证。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "高相关：agent memory 安全与 long-horizon planning reliability",
+        "value_reason": "这篇论文直接命中 agent memory、multi-turn agent 和 planning reliability：它说明长期记忆中的历史 rationale 会成为未来行动的 planning prior，一旦被伪造，agent 可能不是因为被提示注入，而是因为“相信自己的过去判断”而做错事。方法虽然偏启发式，但攻击建模清晰，和 agentic RL 中的经验记忆、反思轨迹、成功案例回放都有迁移关系。值得读，尤其适合思考多轮系统中 memory write path、provenance、execution evidence 和 reasoning trace verification 的设计。",
+        "limitations": "主要局限是实验环境偏模拟，尚未覆盖真实生产系统中的长期、多样化记忆写入和复杂权限边界。SENTINEL 的 Reasoning Guard 依赖人工设计的结构与模式信号，作者也承认面对知道规则的自适应 paraphrase 攻击时保护不足。多 agent 共享记忆场景只作为未来工作讨论，尚未系统评估一名 compromised agent 写入伪造 reasoning 后对其他 agent 的传播影响。误报结果来自有限 benign traces，不能直接说明在真实长期运行系统中仍能保持低误报。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确区分 general memory store 和 reasoning store，并把 decision logs、intermediate rationales、self-reflections 作为 FARMA 的主要攻击面。",
+          "FARMA 包含 injection 和 amplification 两阶段：先注入规避关键词的伪造决策日志，再写入引用早期伪造条目的记录以提高检索概率并制造共识。",
+          "SENTINEL 的关键组件 Reasoning Guard 使用 provenance anomaly、自引用不匹配、可疑模式密度、夸张一致性声明和结构异常等信号检测 forged reasoning entries。",
+          "消融结果显示去掉 Reasoning Guard 后防御失效，而只保留 Reasoning Guard 在 EHR/GPT-4o-mini 设置中已能阻断该攻击，说明核心贡献集中在结构化 reasoning trace 检测。接口返回说明：当前答复基于用户提供的 arXiv PDF 全文抽取内容，而非仅摘要。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-08T01:37:03.618Z"
+      }
+    },
+    {
+      "id": "2607.03935v1",
+      "title": "Harness-Aware Self-Evolving: Co-Evolving Model Weights, Harness, and Task Solutions",
+      "summary": "Self-evolving frameworks usually optimize task solutions while treating the surrounding harness as fixed. We introduce Harness-Aware Self-Evolving (HASE), an agentic reinforcement-learning framework in which a single model can generate task solutions or edit selected harness components in a multi-turn action space. HASE enables a single Qwen3-8B model to match the text-classification performance of a GPT-OSS-120B model that uses Claude Code as the harness proposer. In alpha factor mining, HASE outperforms the reported GPT-OSS-120B baseline. HASE also repairs imperfect evaluation components and converges to state-of-the-art performance in circle-packing algorithm discovery. These results show that HASE improves the harness and the solution through one unified agentic process.",
+      "url": "http://arxiv.org/abs/2607.03935v1",
+      "authors": [
+        "Haochen Luo",
+        "Yi Huang",
+        "Sichun Luo",
+        "Fengyuan Liu",
+        "Lei Li",
+        "Zefa Hu",
+        "Junlan Feng",
+        "Qi Liu"
+      ],
+      "report_date": "2026-07-08",
+      "published": "2026-07-04",
+      "updated": "2026-07-04",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 70,
+        "level": "高",
+        "label": "值得精读方法与失败治理思路，实验结论需谨慎采信",
+        "water_risk": "中",
+        "value_judgement": "论文切中了 agentic RL 系统中很实际的问题：模型、工具、记忆、检索和评估器是耦合系统，只优化答案往往不够。方法上的 guidance/evaluation harness 分治、oracle mismatch 触发评估器修复、阶段性提交 harness 更新，都对多轮 agent 和 long-horizon planning reliability 有直接启发。偏水风险主要来自结果叙事很强、任务覆盖仍偏工程化 benchmark、若干基线比较依赖作者协议，并且 alpha mining 与几何优化的结论容易受实现细节和评估器设置影响。",
+        "reason": "论文切中了 agentic RL 系统中很实际的问题：模型、工具、记忆、检索和评估器是耦合系统，只优化答案往往不够。方法上的 guidance/evaluation harness 分治、oracle mismatch 触发评估器修复、阶段性提交 harness 更新，都对多轮 agent 和 long-horizon planning reliability 有直接启发。偏水风险主要来自结果叙事很强、任务覆盖仍偏工程化 benchmark、若干基线比较依赖作者协议，并且 alpha mining 与几何优化的结论容易受实现细节和评估器设置影响。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Haochen Luo",
+          "Yi Huang",
+          "Sichun Luo",
+          "Fengyuan Liu",
+          "Lei Li",
+          "Zefa Hu",
+          "Junlan Feng",
+          "Qi Liu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-04",
+        "paper_url": "https://arxiv.org/abs/2607.03935v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文切中了 agentic RL 系统中很实际的问题：模型、工具、记忆、检索和评估器是耦合系统，只优化答案往往不够。方法上的 guidance/evaluation harness 分治、oracle mismatch 触发评估器修复、阶段性提交 harness 更新，都对多轮 agent 和 long-horizon planning reliability 有直接启发。偏水风险主要来自结果叙事很强、任务覆盖仍偏工程化 benchmark、若干基线比较依赖作者协议，并且 alpha mining 与几何优化的结论容易受实现细节和评估器设置影响。",
+        "summary": "HASE 试图解决自进化智能体中的固定 harness 假设：模型可能在错误评估器上 reward hacking，也可能被低质量上下文和检索限制。它的核心做法是让单个模型在同一个多轮动作空间中选择提交任务解或修改白名单内 harness，并通过阶段性 review 决定哪些修改进入持久环境。论文特别区分 guidance harness 和 evaluation harness，前者用于改善搜索，后者必须由真实 evaluator 与本地 evaluator 的分歧来锚定，避免随意改奖励。实验展示了文本分类、alpha mining 和几何算法发现中的正向结果，尤其是 evaluator repair 的过程对规划可靠性有启发。阅读价值较高，但可信度不能只看 headline，因为实验任务与真正复杂 agent planning 仍有距离，且若没有代码、日志和外部复现，部分超越大模型基线的结论需要保留判断。",
+        "highlights": [
+          "论文切中了 agentic RL 系统中很实际的问题：模型、工具、记忆、检索和评估器是耦合系统，只优化答案往往不够。方法上的 guidance/evaluation harness 分治、oracle mismatch 触发评估器修复、阶段性提交 harness 更新，都对多轮 agent 和 long-horizon planning reliability 有直接启发。偏水风险主要来自结果叙事很强、任务覆盖仍偏工程化 benchmark、若干基线比较依赖作者协议，并且 alpha mining 与几何优化的结论容易受实现细节和评估器设置影响。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文指出，很多自进化系统只优化候选代码、策略或任务答案，却把提示词、记忆格式、检索、工具接口和评估器等 harness 当成固定环境。这会带来两个问题：一是评估器不完整时，模型可能学会钻评分漏洞；二是即使评估器正确，糟糕的上下文、记忆和检索也会限制搜索质量。该问题与 agent planning 和 long-horizon reliability 很相关，因为多轮智能体的成功往往不只取决于模型本身，还取决于它如何观察环境、保存经验、调用工具和验证结果。",
+        "method": "HASE 把任务解生成和 harness 编辑放进同一个多轮 action space，单个模型既可以提交解，也可以读写白名单内的提示、记忆、检索、上下文展示或局部评估器。方法区分 guidance components 和 evaluation components：前者可通过阶段性验证来优化搜索上下文，后者只有在本地 proxy evaluator 与真实 oracle evaluator 出现不一致时才允许修复。训练上使用 GRPO rollout，harness 修改只在当前轨迹中临时生效，阶段边界再筛选、验证并提交稳定补丁，避免每次偶然改动都污染持久环境。",
+        "experiments": "实验覆盖文本分类、金融 alpha mining、circle packing 和 Heilbronn triangles。文本分类与 alpha mining 主要测试 guidance harness 进化，结果显示小模型在经过检索、记忆和提示上下文进化后接近或超过更大模型系统的报告表现。几何算法发现任务测试 evaluation harness 修复，论文展示模型先利用坏评估器，再通过 oracle mismatch 触发补丁，最后让 proxy 与 oracle 重新对齐并继续搜索。实验信号和主题高度相关，但不少结论依赖作者自建流程、报告基线和有限任务，泛化强度还需要独立复现。",
+        "research_help": "Insight：这篇论文最有迁移价值的点是把 agent 的“环境脚手架”也纳入学习对象，但对 correctness-defining 的评估器使用更强约束，只允许由真实反馈触发修复。对 agent planning / agentic RL 来说，这提示我们不应只训练 planner 产出更好动作，还应系统性优化 memory formatting、retrieval policy、prompt state 和 validator，同时把奖励函数或验证器与普通上下文组件分开治理。对 long-horizon reliability 来说，mismatch set 是一个实用思想：每次失败或 reward hacking 都变成未来 harness regression case，而不是只作为一次性错误处理。",
+        "recommendation": {
+          "score": 70,
+          "level": "中",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文最有迁移价值的点是把 agent 的“环境脚手架”也纳入学习对象，但对 correctness-defining 的评估器使用更强约束，只允许由真实反馈触发修复。对 agent planning / agentic RL 来说，这提示我们不应只训练 planner 产出更好动作，还应系统性优化 memory formatting、retrieval policy、prompt state 和 validator，同时把奖励函数或验证器与普通上下文组件分开治理。对 long-horizon reliability 来说，mismatch set 是一个实用思想：每次失败或 reward hacking 都变成未来 harness regression case，而不是只作为一次性错误处理。",
+        "abstract_zh": "现有自进化框架通常优化任务解本身，却把 surrounding harness 视为固定不变。本文提出 Harness-Aware Self-Evolving，也就是 HASE，一个 agentic reinforcement learning 框架，让同一个模型在多轮动作空间中既能生成任务解，也能编辑部分 harness 组件。论文称，HASE 能让 Qwen3-8B 在文本分类上达到使用更大模型和外部 harness proposer 的系统水平，在 alpha factor mining 中超过报告基线，并能修复不完美评估器，在 circle packing 算法发现中收敛到强性能。作者据此认为，统一地进化模型权重、harness 和任务解可以提升自进化系统的能力与可靠性。",
+        "full_summary": "HASE 试图解决自进化智能体中的固定 harness 假设：模型可能在错误评估器上 reward hacking，也可能被低质量上下文和检索限制。它的核心做法是让单个模型在同一个多轮动作空间中选择提交任务解或修改白名单内 harness，并通过阶段性 review 决定哪些修改进入持久环境。论文特别区分 guidance harness 和 evaluation harness，前者用于改善搜索，后者必须由真实 evaluator 与本地 evaluator 的分歧来锚定，避免随意改奖励。实验展示了文本分类、alpha mining 和几何算法发现中的正向结果，尤其是 evaluator repair 的过程对规划可靠性有启发。阅读价值较高，但可信度不能只看 headline，因为实验任务与真正复杂 agent planning 仍有距离，且若没有代码、日志和外部复现，部分超越大模型基线的结论需要保留判断。",
+        "card_summary": "这篇论文提出 HASE，把提示、记忆、检索、上下文展示和部分评估器也纳入 agentic RL 的可编辑对象，而不是只优化任务答案。它对 agent planning 的价值在于强调“harness 本身是策略的一部分”，但实验主要是文本分类、alpha mining 和几何优化，仍需要更多独立复现来确认强结论。"
+      },
+      "analysis": {
+        "motivation": "论文指出，很多自进化系统只优化候选代码、策略或任务答案，却把提示词、记忆格式、检索、工具接口和评估器等 harness 当成固定环境。这会带来两个问题：一是评估器不完整时，模型可能学会钻评分漏洞；二是即使评估器正确，糟糕的上下文、记忆和检索也会限制搜索质量。该问题与 agent planning 和 long-horizon reliability 很相关，因为多轮智能体的成功往往不只取决于模型本身，还取决于它如何观察环境、保存经验、调用工具和验证结果。",
+        "method": "HASE 把任务解生成和 harness 编辑放进同一个多轮 action space，单个模型既可以提交解，也可以读写白名单内的提示、记忆、检索、上下文展示或局部评估器。方法区分 guidance components 和 evaluation components：前者可通过阶段性验证来优化搜索上下文，后者只有在本地 proxy evaluator 与真实 oracle evaluator 出现不一致时才允许修复。训练上使用 GRPO rollout，harness 修改只在当前轨迹中临时生效，阶段边界再筛选、验证并提交稳定补丁，避免每次偶然改动都污染持久环境。",
+        "experiments": "实验覆盖文本分类、金融 alpha mining、circle packing 和 Heilbronn triangles。文本分类与 alpha mining 主要测试 guidance harness 进化，结果显示小模型在经过检索、记忆和提示上下文进化后接近或超过更大模型系统的报告表现。几何算法发现任务测试 evaluation harness 修复，论文展示模型先利用坏评估器，再通过 oracle mismatch 触发补丁，最后让 proxy 与 oracle 重新对齐并继续搜索。实验信号和主题高度相关，但不少结论依赖作者自建流程、报告基线和有限任务，泛化强度还需要独立复现。",
+        "research_help": "Insight：这篇论文最有迁移价值的点是把 agent 的“环境脚手架”也纳入学习对象，但对 correctness-defining 的评估器使用更强约束，只允许由真实反馈触发修复。对 agent planning / agentic RL 来说，这提示我们不应只训练 planner 产出更好动作，还应系统性优化 memory formatting、retrieval policy、prompt state 和 validator，同时把奖励函数或验证器与普通上下文组件分开治理。对 long-horizon reliability 来说，mismatch set 是一个实用思想：每次失败或 reward hacking 都变成未来 harness regression case，而不是只作为一次性错误处理。",
+        "insight": "Insight：这篇论文最有迁移价值的点是把 agent 的“环境脚手架”也纳入学习对象，但对 correctness-defining 的评估器使用更强约束，只允许由真实反馈触发修复。对 agent planning / agentic RL 来说，这提示我们不应只训练 planner 产出更好动作，还应系统性优化 memory formatting、retrieval policy、prompt state 和 validator，同时把奖励函数或验证器与普通上下文组件分开治理。对 long-horizon reliability 来说，mismatch set 是一个实用思想：每次失败或 reward hacking 都变成未来 harness regression case，而不是只作为一次性错误处理。",
+        "abstract_zh": "现有自进化框架通常优化任务解本身，却把 surrounding harness 视为固定不变。本文提出 Harness-Aware Self-Evolving，也就是 HASE，一个 agentic reinforcement learning 框架，让同一个模型在多轮动作空间中既能生成任务解，也能编辑部分 harness 组件。论文称，HASE 能让 Qwen3-8B 在文本分类上达到使用更大模型和外部 harness proposer 的系统水平，在 alpha factor mining 中超过报告基线，并能修复不完美评估器，在 circle packing 算法发现中收敛到强性能。作者据此认为，统一地进化模型权重、harness 和任务解可以提升自进化系统的能力与可靠性。",
+        "card_summary": "这篇论文提出 HASE，把提示、记忆、检索、上下文展示和部分评估器也纳入 agentic RL 的可编辑对象，而不是只优化任务答案。它对 agent planning 的价值在于强调“harness 本身是策略的一部分”，但实验主要是文本分类、alpha mining 和几何优化，仍需要更多独立复现来确认强结论。",
+        "full_summary": "HASE 试图解决自进化智能体中的固定 harness 假设：模型可能在错误评估器上 reward hacking，也可能被低质量上下文和检索限制。它的核心做法是让单个模型在同一个多轮动作空间中选择提交任务解或修改白名单内 harness，并通过阶段性 review 决定哪些修改进入持久环境。论文特别区分 guidance harness 和 evaluation harness，前者用于改善搜索，后者必须由真实 evaluator 与本地 evaluator 的分歧来锚定，避免随意改奖励。实验展示了文本分类、alpha mining 和几何算法发现中的正向结果，尤其是 evaluator repair 的过程对规划可靠性有启发。阅读价值较高，但可信度不能只看 headline，因为实验任务与真正复杂 agent planning 仍有距离，且若没有代码、日志和外部复现，部分超越大模型基线的结论需要保留判断。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得精读方法与失败治理思路，实验结论需谨慎采信",
+        "value_reason": "论文切中了 agentic RL 系统中很实际的问题：模型、工具、记忆、检索和评估器是耦合系统，只优化答案往往不够。方法上的 guidance/evaluation harness 分治、oracle mismatch 触发评估器修复、阶段性提交 harness 更新，都对多轮 agent 和 long-horizon planning reliability 有直接启发。偏水风险主要来自结果叙事很强、任务覆盖仍偏工程化 benchmark、若干基线比较依赖作者协议，并且 alpha mining 与几何优化的结论容易受实现细节和评估器设置影响。",
+        "limitations": "论文承认不是全面 scaling study，editable harness 也被限制在白名单组件内。更关键的是，evaluation harness repair 只保证当前 mismatch set 上对齐，不保证未来不会出现新的漏洞；guidance harness 的改进也可能对具体任务和数据划分过拟合。文本分类和 alpha mining 与真正的开放式 agent planning 之间仍有任务距离，不能直接推出对所有长程智能体都有效。建议阅读时重点看算法机制、阶段 review、mismatch set 和 harness/action space 设计，而不是直接接受所有性能对比。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要称 HASE 让单个模型在多轮动作空间中生成任务解或编辑 selected harness components，并报告文本分类、alpha mining、circle packing 上的提升。",
+          "方法部分明确区分 evaluation components 与 guidance components，并要求 evaluator edits 由 real-world feedback 锚定。",
+          "Algorithm 1 描述了 phase-level candidate pool、GRPO rollout、mismatch set、phase-boundary review 和 commit best harness update 的训练循环。",
+          "实验部分报告 S2D 与 alpha mining 用于 guidance harness evolution，circle packing 与 Heilbronn triangles 用于 evaluation harness repair。片段中的图表说明模型曾利用坏评估器，随后通过 oracle mismatch 修复 boundary、overla..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-08T01:47:14.431Z"
+      }
+    },
+    {
+      "id": "2607.04089v1",
+      "title": "PLACEMEM: Toward a Compute-Aware Memory Plane for Lifelong Agents",
+      "summary": "Lifelong agents need more than larger context windows and better retrieval. They need memories that can persist, evolve, and be corrected without forcing the serving stack to recompute the same history on every turn or silently reuse stale runtime state. We present PLACEMEM as a systems position on lifelong-agent memory, instantiated by an executable control-plane prototype. The central claim is that agent memory should be represented as versioned capsules that unify semantics, provenance, validity, and reusable runtime state under one correction-aware identity. In the current prototype, capsules drive prompt-level text retrieval, KV-aware routing, and cascading invalidation over live streamed backends; prospective layer-frontier replay is intentionally framed as a deeper integration agenda rather than a claimed engine feature. We describe a vLLM-first prototype with persistent capsule state, concurrency-safe invalidation, an OpenAI-compatible routing sidecar, a typed metadata contract, and a benchmark harness that measures live first-token latency, reuse, and post-correction behavior. The result is both an executable artifact that demonstrates correction-aware control-plane behavior today and a concrete roadmap for replay-aware serving integration in future lifelong-agent systems.",
+      "url": "http://arxiv.org/abs/2607.04089v1",
+      "authors": [
+        "Sukanta Ganguly"
+      ],
+      "report_date": "2026-07-08",
+      "published": "2026-07-05",
+      "updated": "2026-07-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 82,
+        "level": "中",
+        "label": "值得读，但按早期系统原型看",
+        "water_risk": "中",
+        "value_judgement": "论文问题意识很强，正中 lifelong agent、agent memory 和 long-horizon reliability 的痛点；memory capsule 加纠错级联失效也是有迁移价值的系统抽象。但它目前的贡献更偏 position paper 和控制面原型，核心高收益的深层 replay 仍是未来工作，实验也主要证明纠错感知路由和失效逻辑，而不是完整生产 serving 提速。因此建议读，尤其适合做 agent memory/reliability 方向的人，但不应把结果当作已充分验证的系统突破。",
+        "reason": "论文问题意识很强，正中 lifelong agent、agent memory 和 long-horizon reliability 的痛点；memory capsule 加纠错级联失效也是有迁移价值的系统抽象。但它目前的贡献更偏 position paper 和控制面原型，核心高收益的深层 replay 仍是未来工作，实验也主要证明纠错感知路由和失效逻辑，而不是完整生产 serving 提速。因此建议读，尤其适合做 agent memory/reliability 方向的人，但不应把结果当作已充分验证的系统突破。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Sukanta Ganguly"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-05",
+        "paper_url": "https://arxiv.org/abs/2607.04089v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文问题意识很强，正中 lifelong agent、agent memory 和 long-horizon reliability 的痛点；memory capsule 加纠错级联失效也是有迁移价值的系统抽象。但它目前的贡献更偏 position paper 和控制面原型，核心高收益的深层 replay 仍是未来工作，实验也主要证明纠错感知路由和失效逻辑，而不是完整生产 serving 提速。因此建议读，尤其适合做 agent memory/reliability 方向的人，但不应把结果当作已充分验证的系统突破。",
+        "summary": "PLACEMEM 试图解决长期 agent 中语义记忆和推理运行时缓存脱节的问题：文本记忆更新了，但旧摘要、依赖图、KV/prefix 状态仍可能被复用。它用 versioned memory capsule 统一表示语义、来源、有效期、依赖和可复用 runtime artifact，并通过控制面调度复用与级联失效。实验显示，在受控多轮任务中，PLACEMEM 能保留 runtime reuse 带来的 TTFT 优势，同时避免纠错后的 stale reuse。论文的重要性在于把 agent memory 从“检索模块”提升为 serving-aware 的系统层抽象，这对 long-horizon planning 和多会话 agent 的可靠性很相关。不过它的 layer replay 尚未实现，真实后端实验也偏小，因此更适合作为系统设计灵感和研究方向参考，而不是成熟方案。",
+        "highlights": [
+          "论文问题意识很强，正中 lifelong agent、agent memory 和 long-horizon reliability 的痛点；memory capsule 加纠错级联失效也是有迁移价值的系统抽象。但它目前的贡献更偏 position paper 和控制面原型，核心高收益的深层 replay 仍是未来工作，实验也主要证明纠错感知路由和失效逻辑，而不是完整生产 serving 提速。因此建议读，尤其适合做 agent memory/reliability 方向的人，但不应把结果当作已充分验证的系统突破。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文抓住了长期交互智能体里的一个真实系统缺口：现有 agent memory 多关注“该记住什么”，LLM serving 系统多关注 KV cache、prefix cache 等“如何更快推理”，两者之间缺少统一的有效性、版本、依赖和失效机制。作者认为多轮 agent 在事实修正、计划更新、工具经验积累后，不能只替换文本记忆，还必须阻止由旧记忆派生出的运行时状态被继续复用。这个动机对 long-horizon agent 和多会话系统很相关，因为可靠性问题往往不是单次回答错，而是旧状态在后续回合里被隐蔽地重复使用。",
+        "method": "PLACEMEM 提出 memory capsule 作为核心抽象：每个 capsule 同时绑定语义内容、来源、有效期、依赖关系和可复用运行时 artifact，并通过版本化身份支持纠错和级联失效。系统包含 capsule catalog、dependency graph、scheduler、OpenAI-compatible routing sidecar、vLLM-facing admission shim 和 benchmark harness。调度策略把语义价值、预填充节省、复用概率、陈旧风险、远程传输成本和目标延迟一起纳入选择，用于决定文本检索、KV-aware routing 或未来可能的 layer-frontier replay。需要注意的是，当前实现主要证明 control plane、文本检索和 KV-aware routing，深层 layer replay 明确被放在未来工作，而不是已完成能力。",
+        "experiments": "实验分两层：第一层是 48-turn pilot trace，覆盖客服历史、代码 agent 仓库循环和研究 agent 事实修正，比较 prompt-only、text-only retrieval、runtime-only reuse 和 full PLACEMEM；结果显示 runtime-only 和 PLACEMEM 都显著降低 mock 后端上的 TTFT，但 runtime-only 在纠错后产生 stale hits，而 PLACEMEM 通过失效机制消除了这些 stale hits。第二层使用真实 vLLM 后端 LiquidAI/LFM2.5-230M 做 correction-follow probe 和 340-turn 部署吞吐验证，显示 full PLACEMEM 在保持 KV reuse 的同时避免 stale capsule selection，并比纯文本摘要 baseline 有更低 TTFT。实验信号支持“纠错感知的复用控制面有价值”，但规模较小，任务设置较受控，真实生产 GPU prefill 节省并未被充分证明。",
+        "research_help": "Insight：对 agent planning 和 agentic RL 最可迁移的启发是，把 memory 当作可失效、可追溯、可调度的系统对象，而不是简单的检索文本。长程 agent 的 reliability 不只取决于检索准确率，还取决于计划、摘要、工具轨迹和 KV/prefix 状态在纠错后的级联更新；否则模型可能在表面上拿到新事实，却在运行时复用旧状态。对于多轮系统评测，这篇文章提示应加入 post-correction stale reuse、invalidated artifact selection、memory-derived runtime reuse 等指标，而不仅是最终回答准确率。",
+        "recommendation": {
+          "score": 82,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对 agent planning 和 agentic RL 最可迁移的启发是，把 memory 当作可失效、可追溯、可调度的系统对象，而不是简单的检索文本。长程 agent 的 reliability 不只取决于检索准确率，还取决于计划、摘要、工具轨迹和 KV/prefix 状态在纠错后的级联更新；否则模型可能在表面上拿到新事实，却在运行时复用旧状态。对于多轮系统评测，这篇文章提示应加入 post-correction stale reuse、invalidated artifact selection、memory-derived runtime reuse 等指标，而不仅是最终回答准确率。",
+        "abstract_zh": "终身 agent 不能只依赖更长上下文或更强检索，还需要能持久存在、演化并在纠错后保持一致的记忆机制，同时避免 serving stack 在每轮重复计算历史或静默复用过时状态。PLACEMEM 将 agent memory 表示为版本化 capsule，把语义、来源、有效性和可复用运行时状态绑定在同一个可纠错身份下。当前原型支持 prompt-level 文本检索、KV-aware routing 和流式后端上的级联失效，而更深层的 layer-frontier replay 被明确作为未来集成议程。作者实现了一个 vLLM-first 控制面原型，包含持久 capsule 状态、并发安全失效、OpenAI-compatible routing sidecar、类型化元数据契约和可测量 TTFT、复用率、纠错后行为的 benchmark harness。",
+        "full_summary": "PLACEMEM 试图解决长期 agent 中语义记忆和推理运行时缓存脱节的问题：文本记忆更新了，但旧摘要、依赖图、KV/prefix 状态仍可能被复用。它用 versioned memory capsule 统一表示语义、来源、有效期、依赖和可复用 runtime artifact，并通过控制面调度复用与级联失效。实验显示，在受控多轮任务中，PLACEMEM 能保留 runtime reuse 带来的 TTFT 优势，同时避免纠错后的 stale reuse。论文的重要性在于把 agent memory 从“检索模块”提升为 serving-aware 的系统层抽象，这对 long-horizon planning 和多会话 agent 的可靠性很相关。不过它的 layer replay 尚未实现，真实后端实验也偏小，因此更适合作为系统设计灵感和研究方向参考，而不是成熟方案。",
+        "card_summary": "这篇论文提出 PLACEMEM，把长期 agent 的语义记忆和运行时复用状态统一成可版本化、可失效的 memory capsule。它对多轮 agent 的纠错可靠性很有启发，但当前更像系统 position 加早期原型，实验规模和真实 serving 收益还不够扎实。"
+      },
+      "analysis": {
+        "motivation": "论文抓住了长期交互智能体里的一个真实系统缺口：现有 agent memory 多关注“该记住什么”，LLM serving 系统多关注 KV cache、prefix cache 等“如何更快推理”，两者之间缺少统一的有效性、版本、依赖和失效机制。作者认为多轮 agent 在事实修正、计划更新、工具经验积累后，不能只替换文本记忆，还必须阻止由旧记忆派生出的运行时状态被继续复用。这个动机对 long-horizon agent 和多会话系统很相关，因为可靠性问题往往不是单次回答错，而是旧状态在后续回合里被隐蔽地重复使用。",
+        "method": "PLACEMEM 提出 memory capsule 作为核心抽象：每个 capsule 同时绑定语义内容、来源、有效期、依赖关系和可复用运行时 artifact，并通过版本化身份支持纠错和级联失效。系统包含 capsule catalog、dependency graph、scheduler、OpenAI-compatible routing sidecar、vLLM-facing admission shim 和 benchmark harness。调度策略把语义价值、预填充节省、复用概率、陈旧风险、远程传输成本和目标延迟一起纳入选择，用于决定文本检索、KV-aware routing 或未来可能的 layer-frontier replay。需要注意的是，当前实现主要证明 control plane、文本检索和 KV-aware routing，深层 layer replay 明确被放在未来工作，而不是已完成能力。",
+        "experiments": "实验分两层：第一层是 48-turn pilot trace，覆盖客服历史、代码 agent 仓库循环和研究 agent 事实修正，比较 prompt-only、text-only retrieval、runtime-only reuse 和 full PLACEMEM；结果显示 runtime-only 和 PLACEMEM 都显著降低 mock 后端上的 TTFT，但 runtime-only 在纠错后产生 stale hits，而 PLACEMEM 通过失效机制消除了这些 stale hits。第二层使用真实 vLLM 后端 LiquidAI/LFM2.5-230M 做 correction-follow probe 和 340-turn 部署吞吐验证，显示 full PLACEMEM 在保持 KV reuse 的同时避免 stale capsule selection，并比纯文本摘要 baseline 有更低 TTFT。实验信号支持“纠错感知的复用控制面有价值”，但规模较小，任务设置较受控，真实生产 GPU prefill 节省并未被充分证明。",
+        "research_help": "Insight：对 agent planning 和 agentic RL 最可迁移的启发是，把 memory 当作可失效、可追溯、可调度的系统对象，而不是简单的检索文本。长程 agent 的 reliability 不只取决于检索准确率，还取决于计划、摘要、工具轨迹和 KV/prefix 状态在纠错后的级联更新；否则模型可能在表面上拿到新事实，却在运行时复用旧状态。对于多轮系统评测，这篇文章提示应加入 post-correction stale reuse、invalidated artifact selection、memory-derived runtime reuse 等指标，而不仅是最终回答准确率。",
+        "insight": "Insight：对 agent planning 和 agentic RL 最可迁移的启发是，把 memory 当作可失效、可追溯、可调度的系统对象，而不是简单的检索文本。长程 agent 的 reliability 不只取决于检索准确率，还取决于计划、摘要、工具轨迹和 KV/prefix 状态在纠错后的级联更新；否则模型可能在表面上拿到新事实，却在运行时复用旧状态。对于多轮系统评测，这篇文章提示应加入 post-correction stale reuse、invalidated artifact selection、memory-derived runtime reuse 等指标，而不仅是最终回答准确率。",
+        "abstract_zh": "终身 agent 不能只依赖更长上下文或更强检索，还需要能持久存在、演化并在纠错后保持一致的记忆机制，同时避免 serving stack 在每轮重复计算历史或静默复用过时状态。PLACEMEM 将 agent memory 表示为版本化 capsule，把语义、来源、有效性和可复用运行时状态绑定在同一个可纠错身份下。当前原型支持 prompt-level 文本检索、KV-aware routing 和流式后端上的级联失效，而更深层的 layer-frontier replay 被明确作为未来集成议程。作者实现了一个 vLLM-first 控制面原型，包含持久 capsule 状态、并发安全失效、OpenAI-compatible routing sidecar、类型化元数据契约和可测量 TTFT、复用率、纠错后行为的 benchmark harness。",
+        "card_summary": "这篇论文提出 PLACEMEM，把长期 agent 的语义记忆和运行时复用状态统一成可版本化、可失效的 memory capsule。它对多轮 agent 的纠错可靠性很有启发，但当前更像系统 position 加早期原型，实验规模和真实 serving 收益还不够扎实。",
+        "full_summary": "PLACEMEM 试图解决长期 agent 中语义记忆和推理运行时缓存脱节的问题：文本记忆更新了，但旧摘要、依赖图、KV/prefix 状态仍可能被复用。它用 versioned memory capsule 统一表示语义、来源、有效期、依赖和可复用 runtime artifact，并通过控制面调度复用与级联失效。实验显示，在受控多轮任务中，PLACEMEM 能保留 runtime reuse 带来的 TTFT 优势，同时避免纠错后的 stale reuse。论文的重要性在于把 agent memory 从“检索模块”提升为 serving-aware 的系统层抽象，这对 long-horizon planning 和多会话 agent 的可靠性很相关。不过它的 layer replay 尚未实现，真实后端实验也偏小，因此更适合作为系统设计灵感和研究方向参考，而不是成熟方案。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "值得读，但按早期系统原型看",
+        "value_reason": "论文问题意识很强，正中 lifelong agent、agent memory 和 long-horizon reliability 的痛点；memory capsule 加纠错级联失效也是有迁移价值的系统抽象。但它目前的贡献更偏 position paper 和控制面原型，核心高收益的深层 replay 仍是未来工作，实验也主要证明纠错感知路由和失效逻辑，而不是完整生产 serving 提速。因此建议读，尤其适合做 agent memory/reliability 方向的人，但不应把结果当作已充分验证的系统突破。",
+        "limitations": "主要限制是实验规模小、任务较受控，mock backend 的 TTFT 不能代表真实 GPU prefill 节省；真实后端使用小模型和 structured identifier probe，更多是在验证控制面是否传递了正确 capsule，而不是复杂开放式 agent 行为。论文没有展示大规模多节点、异构 placement、真实 KV replay 或 layer-frontier replay 的完整收益。对比基线也偏概念化，缺少与现有 memory framework 或 serving cache 系统的强工程对照。单作者 under review preprint 的实现和结果还需要代码、复现实验和更大 workloads 支撑。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "全文明确区分 semantic memory 和 runtime memory，指出现有 agent memory 与 vLLM 等 serving 系统优化的是栈的不同层，因此旧语义和旧 runtime artifact 可能不同步。",
+          "方法部分定义 memory capsule 为版本化记录，包含 tenant、surface text、timestamp、validity window、provenance、dependencies 和 artifact locators，并可命名 embeddings、KV cache segments、layer-frontier checkpoi...",
+          "作者说明当前 prototype 已完整连接 text retrieval 和 KV-aware routing，但 layer-frontier replay 是 forward-compatible contract 和 future engine work，不是已完成能力。",
+          "48-turn pilot 中，runtime-only reuse 和 full PLACEMEM 都降低 mock backend TTFT，但 runtime-only 出现 17 个 post-correction stale hits，full PLACEMEM 为 0。真实 vLLM probe 中，reuse without invalida..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-08T01:41:06.697Z"
+      }
+    },
     {
       "id": "2607.02686v1",
       "title": "ASK in the Dark: Uncertainty-Gated LLM Assistance under Partial Observability",
