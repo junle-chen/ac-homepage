@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-08T01:48:38.803Z",
+  "updated_at": "2026-07-09T01:46:27.378Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation after CODEX_PAPER_SKIP_ANALYZED=1 npm run papers:daily:codex; only strongly relevant long-horizon, multi-turn, agentic RL, agent memory, and agent planning papers are retained after full-text reading.",
+  "analysis_method": "Codex CLI paper reading from arXiv PDF text when extractable; fallback entries are marked as abstract.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -18,7 +18,7 @@
     "reinforcement learning agent"
   ],
   "automation_contract": {
-    "runner": "CODEX_PAPER_SKIP_ANALYZED=1 npm run papers:daily:codex",
+    "runner": "npm run papers:daily:codex",
     "email_title_template": "YYYY-MM-DD Daily Paper",
     "fields": [
       "作者",
@@ -34,40 +34,49 @@
       "总结",
       "亮点"
     ],
-    "codex_reader": "This automation keeps only strongly relevant papers and writes short card summaries plus fuller detail-page analyses after Codex full-text reading."
+    "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-07-08 Daily Paper",
-    "report_date": "2026-07-08",
-    "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日保留 8 篇强相关新增论文，集中在长程 agent 训练、上下文压缩、记忆管理、失败重试、progress credit、memory 安全与 harness 自演化。重点是 TurnOPD、CompactionRL、ProGPO、SelfMem、PivoARL、FARMA、HASE 和 PLACEMEM。",
+    "title": "2026-07-09 Daily Paper",
+    "report_date": "2026-07-09",
+    "focus": "agentic RL、long-horizon agent optimization、trajectory reliability、agent memory security",
+    "summary": "今日从 16 篇候选中保留 4 篇强相关论文：两篇聚焦 agentic RL 训练稳定性，一篇聚焦长程轨迹根因定位，一篇聚焦长期记忆中毒与防御。其余候选多为机器人、通用 MARL、领域 RL 或平台演示，未达到 Daily Paper 发布阈值。",
     "top_recommendations": [
-      "2607.05804v1",
-      "2607.05378v1",
-      "2607.04242v1"
+      "2607.07508v1",
+      "2607.07178v1",
+      "2607.07702v1",
+      "2607.06595v1"
     ],
     "low_priority": [
-      "2607.03935v1",
-      "2607.04089v1"
+      "2607.06990v1",
+      "2607.07403v1",
+      "2607.07029v1",
+      "2607.06880v1",
+      "2607.06563v1",
+      "2607.05957v1",
+      "2607.05939v1",
+      "2607.06854v1",
+      "2607.05773v1",
+      "2607.04710v1",
+      "2607.05179v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-07-08 Daily Paper\n\n今日保留 8 篇强相关新增论文：TurnOPD、CompactionRL、ProGPO、SelfMem、PivoARL、FARMA、HASE 和 PLACEMEM。\n\n为什么读：今天的主线很集中，都是长程 agentic RL / 多轮系统的训练与可靠性问题。TurnOPD 把 OPD 的 rollout 深度和 KL 监督改成 turn-aware 预算分配；CompactionRL 把上下文压缩本身纳入 RL 训练；ProGPO 用 progress signal 改善长程多轮 agent 的 step-level credit；SelfMem 和 PLACEMEM 分别从策略自优化和系统控制面角度处理长期记忆；PivoARL 把失败恢复定位到 pivotal step；FARMA 说明 reasoning trace 记忆会成为新的攻击面；HASE 则把 prompt、memory、retrieval、validator 等 harness 也纳入 agentic RL 的演化对象。"
+    "email_body": ""
   },
   "latest_item_ids": [
-    "2607.05804v1",
-    "2607.05378v1",
-    "2607.04242v1",
-    "2607.03726v1",
-    "2607.03702v1",
-    "2607.05029v1",
-    "2607.03935v1",
-    "2607.04089v1"
+    "2607.07508v1",
+    "2607.07178v1",
+    "2607.07702v1",
+    "2607.06595v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "total_items": 66,
-    "latest_items": 8,
+    "fresh_items": 16,
+    "total_items": 70,
+    "previous_items": 66,
+    "latest_items": 4,
     "source_report_dates": {
+      "2026-07-09": 4,
       "2026-07-08": 8,
       "2026-07-07": 1,
       "2026-07-06": 8,
@@ -87,39 +96,479 @@
       "2026-06-13": 1
     },
     "filtered_candidate_ids": [
-      "2607.01942v1",
-      "2607.01767v1",
-      "2607.01709v1",
-      "2607.01935v1",
-      "2607.01972v1",
-      "2607.01916v1",
-      "2607.01071v2",
-      "2607.00597v1",
-      "2607.01166v1",
-      "2607.01153v1",
-      "2607.00673v1",
-      "2607.01120v2",
-      "2607.01367v1",
-      "2607.01063v1",
-      "2607.01525v1",
-      "2607.01415v1",
-      "2607.01236v1",
-      "2607.01988v1",
-      "2607.01640v1",
-      "2607.01793v1",
-      "2607.01470v1",
-      "2607.01426v1",
+      "2607.06990v1",
+      "2607.07403v1",
+      "2607.07029v1",
+      "2607.06880v1",
+      "2607.06563v1",
       "2607.05957v1",
       "2607.05939v1",
+      "2607.06854v1",
       "2607.05773v1",
       "2607.04710v1",
-      "2607.05179v1",
-      "2607.05553v1",
-      "2607.05577v1",
-      "2607.04470v1"
+      "2607.05179v1"
     ]
   },
   "items": [
+    {
+      "id": "2607.07508v1",
+      "title": "Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning",
+      "summary": "提出 Single-rollout Asynchronous Optimization，用单条轨迹异步更新替代 GRPO 式组内等待，缓解长程 agentic RL 的吞吐和 off-policy 矛盾。论文还讨论 token-level clipping、value critic 和 observation 边界处理，对训练 coding / reasoning agent 的稳定性很有参考价值。",
+      "url": "http://arxiv.org/abs/2607.07508v1",
+      "authors": [
+        "Zhenyu Hou",
+        "Yujiang Li",
+        "Jie Tang",
+        "Yuxiao Dong"
+      ],
+      "report_date": "2026-07-09",
+      "published": "2026-07-08",
+      "updated": "2026-07-08",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "值得读",
+        "water_risk": "中",
+        "value_judgement": "这篇论文与 agentic RL、multi-turn agent 和 long-horizon planning 的训练稳定性高度相关，提出的问题是真实存在的，方法也不是单点技巧，而是围绕异步单轨迹训练、off-policy 控制、critic 稳定性和多轮 observation 边界形成了一套较完整方案。推荐读的重点不只是 SAO 这个算法名，而是它把 GRPO 在异步 agent 场景里的结构性不匹配讲得比较清楚，并给出可迁移的工程设计。",
+        "reason": "这篇论文与 agentic RL、multi-turn agent 和 long-horizon planning 的训练稳定性高度相关，提出的问题是真实存在的，方法也不是单点技巧，而是围绕异步单轨迹训练、off-policy 控制、critic 稳定性和多轮 observation 边界形成了一套较完整方案。推荐读的重点不只是 SAO 这个算法名，而是它把 GRPO 在异步 agent 场景里的结构性不匹配讲得比较清楚，并给出可迁移的工程设计。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhenyu Hou",
+          "Yujiang Li",
+          "Jie Tang",
+          "Yuxiao Dong"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-08",
+        "paper_url": "https://arxiv.org/abs/2607.07508v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "这篇论文与 agentic RL、multi-turn agent 和 long-horizon planning 的训练稳定性高度相关，提出的问题是真实存在的，方法也不是单点技巧，而是围绕异步单轨迹训练、off-policy 控制、critic 稳定性和多轮 observation 边界形成了一套较完整方案。推荐读的重点不只是 SAO 这个算法名，而是它把 GRPO 在异步 agent 场景里的结构性不匹配讲得比较清楚，并给出可迁移的工程设计。",
+        "summary": "论文关注长轨迹 agentic RL 中同步训练等待慢 rollout、异步训练又容易 off-policy 的矛盾。SAO 的核心是每个 prompt 只生成一条 trajectory，完成后立即训练，并用 rollout logprob 直接计算 token-level importance ratio，再通过严格双侧 clipping/masking 抑制 policy lag 带来的不稳定。为了让单 rollout 不至于方差过高，作者重新引入并强化 value model，包括更频繁的 critic 更新、冻结 attention 的 value 训练，以及面向多轮 agent 轨迹的 skip-observation GAE。实验在数学工具推理、SWE-Bench Verified 和模拟在线偏好切换中都显示 SAO 优于 GRPO/GRPO+DIS，并通过消融支持各个设计的必要性。阅读价值较高，因为它直接讨论了 agentic RL 训练系统中“异步效率”和“长期可靠优化”之间的实际冲突。",
+        "highlights": [
+          "这篇论文与 agentic RL、multi-turn agent 和 long-horizon planning 的训练稳定性高度相关，提出的问题是真实存在的，方法也不是单点技巧，而是围绕异步单轨迹训练、off-policy 控制、critic 稳定性和多轮 observation 边界形成了一套较完整方案。推荐读的重点不只是 SAO 这个算法名，而是它把 GRPO 在异步 agent 场景里的结构性不匹配讲得比较清楚，并给出可迁移的工程设计。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对长轨迹 agentic RL 的异步训练问题：同步批量 RL 会被长尾 rollout 拖慢，而异步 RL 虽提升吞吐，却引入 policy lag、off-policy 漂移和训练不稳定。作者认为 GRPO 的组内采样天然不适合异步 agent 任务，因为一组样本必须等待最慢轨迹完成，且在线/交互环境往往只能给每个 prompt 一条轨迹反馈。",
+        "method": "提出 Single-rollout Asynchronous Optimization（SAO）：每个 prompt 只采一条 rollout，完成后立即进入训练，避免 group-wise 等待和额外 off-policy。稳定性上使用 rollout 阶段保存的 token logprob 直接做重要性比率，并用双侧 token-level clipping/masking 把偏离 trust region 的 token 从梯度中屏蔽。为降低单 rollout 的高方差，作者训练 value model，并采用 critic 比 actor 更新更频繁、value model 冻结 attention 只更新 MoE/投影，以及跳过 observation token 的 token-level GAE，使优势估计跨 action-to-action 边界传播而不把环境反馈 token 当作模型动作。",
+        "experiments": "实验覆盖数学工具推理和 agentic coding：AIME2025、BeyondAIME、HMMT Nov 2025、IMOAnswerBench 和 SWE-Bench Verified。SAO 在 Qwen3-30B-A3B 系列设置上相对 SFT、GRPO 和 GRPO+DIS 均有提升，并报告能稳定训练约 1000 step；标准 GRPO 在约 160 step 出现 collapse。消融显示 DIS、single-rollout value critic、faster value update、冻结 attention、token-level 而非 step-level GAE 都对性能或稳定性有贡献。在线学习模拟中，SAO 在写作风格偏好切换后比 running-mean baseline 更快恢复，说明 value-based 单轨迹更新对非平稳反馈更合适。",
+        "research_help": "Insight：对 long-horizon agentic RL 的关键启发是，异步系统的瓶颈不只是吞吐，而是 rollout 到达顺序造成的 off-policy 和优势估计错配；把每条轨迹作为可立即训练的单元，再用 token-level 行为概率和严格 clipping 控制 policy lag，是一种比组内相对奖励更适合在线 agent 环境的设计。对多轮系统而言，环境 observation 不应被当作模型生成动作直接参与 GAE 传播，优势估计需要显式尊重 action/observation 边界。对 planning reliability 来说，价值模型质量可能是单 rollout agent RL 的核心稳定器，critic 更新频率和冻结策略比复杂的新目标函数更实用。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对 long-horizon agentic RL 的关键启发是，异步系统的瓶颈不只是吞吐，而是 rollout 到达顺序造成的 off-policy 和优势估计错配；把每条轨迹作为可立即训练的单元，再用 token-level 行为概率和严格 clipping 控制 policy lag，是一种比组内相对奖励更适合在线 agent 环境的设计。对多轮系统而言，环境 observation 不应被当作模型生成动作直接参与 GAE 传播，优势估计需要显式尊重 action/observation 边界。对 planning reliability 来说，价值模型质量可能是单 rollout agent RL 的核心稳定器，critic 更新频率和冻结策略比复杂的新目标函数更实用。",
+        "abstract_zh": "强化学习正成为大语言模型后训练的重要方法，但传统同步、批量交错的 RL 流水线在长程 agentic 任务上效率较低。异步 RL 可以在 rollout 到达时立即更新模型，却会带来 off-policy 和训练稳定性问题，尤其是 GRPO 的组内采样不适合异步 agent 训练。本文提出 SAO，用单 rollout 采样替代组内采样，并结合 value model 训练设计来降低 off-policy、提升泛化。作者还引入严格的双侧 token-level clipping 来稳定优化，并在 agentic coding、数学推理和模拟在线学习中报告优于 GRPO 及其变体的表现。",
+        "full_summary": "论文关注长轨迹 agentic RL 中同步训练等待慢 rollout、异步训练又容易 off-policy 的矛盾。SAO 的核心是每个 prompt 只生成一条 trajectory，完成后立即训练，并用 rollout logprob 直接计算 token-level importance ratio，再通过严格双侧 clipping/masking 抑制 policy lag 带来的不稳定。为了让单 rollout 不至于方差过高，作者重新引入并强化 value model，包括更频繁的 critic 更新、冻结 attention 的 value 训练，以及面向多轮 agent 轨迹的 skip-observation GAE。实验在数学工具推理、SWE-Bench Verified 和模拟在线偏好切换中都显示 SAO 优于 GRPO/GRPO+DIS，并通过消融支持各个设计的必要性。阅读价值较高，因为它直接讨论了 agentic RL 训练系统中“异步效率”和“长期可靠优化”之间的实际冲突。",
+        "card_summary": "这篇论文提出 SAO，把 agentic RL 从 GRPO 式组内采样改成单 rollout 异步更新，并用 token-level clipping、value model 和跳过 observation 的 GAE 来稳定训练。它和长程 agent、多轮工具调用、在线环境适配高度相关，实验信号较强，但异步效率和大规模部署细节仍需要更多独立验证。"
+      },
+      "analysis": {
+        "motivation": "论文针对长轨迹 agentic RL 的异步训练问题：同步批量 RL 会被长尾 rollout 拖慢，而异步 RL 虽提升吞吐，却引入 policy lag、off-policy 漂移和训练不稳定。作者认为 GRPO 的组内采样天然不适合异步 agent 任务，因为一组样本必须等待最慢轨迹完成，且在线/交互环境往往只能给每个 prompt 一条轨迹反馈。",
+        "method": "提出 Single-rollout Asynchronous Optimization（SAO）：每个 prompt 只采一条 rollout，完成后立即进入训练，避免 group-wise 等待和额外 off-policy。稳定性上使用 rollout 阶段保存的 token logprob 直接做重要性比率，并用双侧 token-level clipping/masking 把偏离 trust region 的 token 从梯度中屏蔽。为降低单 rollout 的高方差，作者训练 value model，并采用 critic 比 actor 更新更频繁、value model 冻结 attention 只更新 MoE/投影，以及跳过 observation token 的 token-level GAE，使优势估计跨 action-to-action 边界传播而不把环境反馈 token 当作模型动作。",
+        "experiments": "实验覆盖数学工具推理和 agentic coding：AIME2025、BeyondAIME、HMMT Nov 2025、IMOAnswerBench 和 SWE-Bench Verified。SAO 在 Qwen3-30B-A3B 系列设置上相对 SFT、GRPO 和 GRPO+DIS 均有提升，并报告能稳定训练约 1000 step；标准 GRPO 在约 160 step 出现 collapse。消融显示 DIS、single-rollout value critic、faster value update、冻结 attention、token-level 而非 step-level GAE 都对性能或稳定性有贡献。在线学习模拟中，SAO 在写作风格偏好切换后比 running-mean baseline 更快恢复，说明 value-based 单轨迹更新对非平稳反馈更合适。",
+        "research_help": "Insight：对 long-horizon agentic RL 的关键启发是，异步系统的瓶颈不只是吞吐，而是 rollout 到达顺序造成的 off-policy 和优势估计错配；把每条轨迹作为可立即训练的单元，再用 token-level 行为概率和严格 clipping 控制 policy lag，是一种比组内相对奖励更适合在线 agent 环境的设计。对多轮系统而言，环境 observation 不应被当作模型生成动作直接参与 GAE 传播，优势估计需要显式尊重 action/observation 边界。对 planning reliability 来说，价值模型质量可能是单 rollout agent RL 的核心稳定器，critic 更新频率和冻结策略比复杂的新目标函数更实用。",
+        "insight": "Insight：对 long-horizon agentic RL 的关键启发是，异步系统的瓶颈不只是吞吐，而是 rollout 到达顺序造成的 off-policy 和优势估计错配；把每条轨迹作为可立即训练的单元，再用 token-level 行为概率和严格 clipping 控制 policy lag，是一种比组内相对奖励更适合在线 agent 环境的设计。对多轮系统而言，环境 observation 不应被当作模型生成动作直接参与 GAE 传播，优势估计需要显式尊重 action/observation 边界。对 planning reliability 来说，价值模型质量可能是单 rollout agent RL 的核心稳定器，critic 更新频率和冻结策略比复杂的新目标函数更实用。",
+        "abstract_zh": "强化学习正成为大语言模型后训练的重要方法，但传统同步、批量交错的 RL 流水线在长程 agentic 任务上效率较低。异步 RL 可以在 rollout 到达时立即更新模型，却会带来 off-policy 和训练稳定性问题，尤其是 GRPO 的组内采样不适合异步 agent 训练。本文提出 SAO，用单 rollout 采样替代组内采样，并结合 value model 训练设计来降低 off-policy、提升泛化。作者还引入严格的双侧 token-level clipping 来稳定优化，并在 agentic coding、数学推理和模拟在线学习中报告优于 GRPO 及其变体的表现。",
+        "card_summary": "这篇论文提出 SAO，把 agentic RL 从 GRPO 式组内采样改成单 rollout 异步更新，并用 token-level clipping、value model 和跳过 observation 的 GAE 来稳定训练。它和长程 agent、多轮工具调用、在线环境适配高度相关，实验信号较强，但异步效率和大规模部署细节仍需要更多独立验证。",
+        "full_summary": "论文关注长轨迹 agentic RL 中同步训练等待慢 rollout、异步训练又容易 off-policy 的矛盾。SAO 的核心是每个 prompt 只生成一条 trajectory，完成后立即训练，并用 rollout logprob 直接计算 token-level importance ratio，再通过严格双侧 clipping/masking 抑制 policy lag 带来的不稳定。为了让单 rollout 不至于方差过高，作者重新引入并强化 value model，包括更频繁的 critic 更新、冻结 attention 的 value 训练，以及面向多轮 agent 轨迹的 skip-observation GAE。实验在数学工具推理、SWE-Bench Verified 和模拟在线偏好切换中都显示 SAO 优于 GRPO/GRPO+DIS，并通过消融支持各个设计的必要性。阅读价值较高，因为它直接讨论了 agentic RL 训练系统中“异步效率”和“长期可靠优化”之间的实际冲突。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读",
+        "value_reason": "这篇论文与 agentic RL、multi-turn agent 和 long-horizon planning 的训练稳定性高度相关，提出的问题是真实存在的，方法也不是单点技巧，而是围绕异步单轨迹训练、off-policy 控制、critic 稳定性和多轮 observation 边界形成了一套较完整方案。推荐读的重点不只是 SAO 这个算法名，而是它把 GRPO 在异步 agent 场景里的结构性不匹配讲得比较清楚，并给出可迁移的工程设计。",
+        "limitations": "主要不足是异步训练的效率收益没有像稳定性和精度那样被充分量化，很多结论依赖 Qwen3-30B-A3B、特定 TIR/OpenHands 设置和作者自有训练基础设施。在线学习实验是模拟风格偏好切换，和真实用户反馈、复杂环境非平稳性还有距离。部分强性能结果、GLM-5.2 管线部署声明和未来/近期引用体系需要独立复现确认，因此偏水风险不是低。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确指出同步 batch RL 在长 rollout agentic/coding 任务中会被 straggler 拖慢，而异步 RL 会引入 policy lag 和 off-policy 稳定性问题。",
+          "方法部分给出 SAO 的三个关键设计：single-rollout sampling、direct double-sided token-level importance sampling，以及 skip-observation token-level GAE。",
+          "主实验表明 SAO 在 AIME2025、BeyondAIME、HMMT、IMOAnswerBench 和 SWE-Bench Verified 上均超过 GRPO 或 GRPO+DIS，并报告 GRPO 在训练早期 collapse。",
+          "消融实验显示 faster value update、frozen-attention value training、DIS 和 token-level action granularity 都影响最终性能或训练稳定性。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-09T01:33:59.742Z"
+      }
+    },
+    {
+      "id": "2607.07178v1",
+      "title": "Entropy Pacing Policy Optimization for Multi-Task Agentic Reinforcement Learning",
+      "summary": "提出 EPPO，把多任务 agentic RL 的不稳定归因到不同任务的探索-利用节奏错位。方法用任务级 entropy pacing 动态调整 GRPO clipping，提供了一个轻量但有诊断价值的多任务 agent 训练控制思路。",
+      "url": "http://arxiv.org/abs/2607.07178v1",
+      "authors": [
+        "Zetian Hu",
+        "Shunyu Liu",
+        "Junjie Zhang",
+        "Yongcheng Jing",
+        "Ting-En Lin",
+        "Yongbin Li",
+        "Dacheng Tao"
+      ],
+      "report_date": "2026-07-09",
+      "published": "2026-07-08",
+      "updated": "2026-07-08",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "值得读，尤其适合关注多任务 agent RL 训练稳定性的人",
+        "water_risk": "中",
+        "value_judgement": "论文主题高度贴合 agentic RL、multi-turn agent 和 long-horizon planning reliability，问题定义清楚，方法简单可复用，实验也不只给最终分数，还分析了 entropy dynamics、learning curve 和 ablation。它的价值主要在 insight 和训练诊断视角：多任务 agent 的失败可能来自任务学习节奏错位，而不是单纯能力不足或 reward normalization 问题。",
+        "reason": "论文主题高度贴合 agentic RL、multi-turn agent 和 long-horizon planning reliability，问题定义清楚，方法简单可复用，实验也不只给最终分数，还分析了 entropy dynamics、learning curve 和 ablation。它的价值主要在 insight 和训练诊断视角：多任务 agent 的失败可能来自任务学习节奏错位，而不是单纯能力不足或 reward normalization 问题。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zetian Hu",
+          "Shunyu Liu",
+          "Junjie Zhang",
+          "Yongcheng Jing",
+          "Ting-En Lin",
+          "Yongbin Li",
+          "Dacheng Tao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-08",
+        "paper_url": "https://arxiv.org/abs/2607.07178v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文主题高度贴合 agentic RL、multi-turn agent 和 long-horizon planning reliability，问题定义清楚，方法简单可复用，实验也不只给最终分数，还分析了 entropy dynamics、learning curve 和 ablation。它的价值主要在 insight 和训练诊断视角：多任务 agent 的失败可能来自任务学习节奏错位，而不是单纯能力不足或 reward normalization 问题。",
+        "summary": "这篇论文研究 multi-task agentic RL 中共享 LLM policy 的训练不稳定问题，重点不是单任务能力，而是多个异构长程任务同时训练时的节奏冲突。作者观察到 AgentRL/GRPO 训练中会出现任务间 entropy 排序频繁翻转和后期 entropy spike，说明一些任务已经收敛而另一些任务仍在探索，彼此通过共享参数干扰。EPPO 的核心做法是用每个任务的 EMA entropy 构造相对 pacing 信号，并动态调整 GRPO clipping range，再用 entropy 上升趋势约束抑制振荡。实验显示 EPPO 在五任务和三任务设置下平均成功率优于 AgentRL，并且 ablation 支持 task-wise clip 和 trend constraint 都有贡献。阅读价值较高，因为它把 multi-task agent RL 的稳定性问题具体化为可观测的 entropy dynamics，并给出一个低侵入的训练控制方法。",
+        "highlights": [
+          "论文主题高度贴合 agentic RL、multi-turn agent 和 long-horizon planning reliability，问题定义清楚，方法简单可复用，实验也不只给最终分数，还分析了 entropy dynamics、learning curve 和 ablation。它的价值主要在 insight 和训练诊断视角：多任务 agent 的失败可能来自任务学习节奏错位，而不是单纯能力不足或 reward normalization 问题。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文动机明确且贴合 agentic RL：现有 LLM agent 强化学习多集中在单任务，而真实部署需要一个共享策略同时处理 OS、数据库、KG、ALFWorld、WebShop 等异构多轮任务。作者抓住的核心问题不是简单的梯度尺度不平衡，而是不同任务的探索到利用节奏不同：简单任务过早低熵收敛，困难任务仍需探索，两者通过共享参数互相扰动，导致 entropy crossover 和后期 entropy spike。这个问题对 long-horizon multi-task agent 训练有实际意义。",
+        "method": "方法是 EPPO，在 GRPO/AgentRL 框架里把全局固定 clipping range 换成任务级动态 clipping。它用每个任务的 EMA policy entropy 构造 entropy collapse ratio，再按任务间相对 z-score 调整 clip：低熵过快收敛的任务收紧更新，高熵欠探索的任务放宽更新；同时加入 entropy 上升时的 trend constraint 来抑制后期振荡。方法优点是改动很小，只需要任务级统计和替换 clipping bound；弱点是 entropy 仍只是探索状态的代理变量，理论分析更多是机制解释而非强保证。",
+        "experiments": "实验覆盖 AgentBench 的五个多轮交互任务：OS、DB、KG、ALFWorld、WebShop，并比较 AgentRL、DCPO、BAPO 等 RL baseline。五任务结果中 EPPO 平均成功率 54.3，高于 AgentRL 的 51.6，主要增益来自 DB、OS、WebShop，ALFWorld 小幅提升，KG 略低于 AgentRL。三任务、多 backbone、RLOO 变体、reasoning benchmark 和 ablation 都给了辅助信号，说明方法不是只在单一设置有效；但总体增益不算巨大，且作者复现 AgentRL 与原论文结果有差异，实验可信度需要带着保留看。",
+        "research_help": "Insight：这篇论文的可迁移启发是，多任务 agentic RL 的不稳定不一定只来自 reward scale 或梯度冲突，也可能来自各任务在长程探索-利用轨迹上的相位错位。对 agent planning 和 multi-turn system，训练监控不应只看平均 reward/pass rate，还应记录每个任务的 entropy、collapse speed、late-stage rebound 和任务间排序翻转。对 long-horizon reliability，一个轻量的任务级 pacing controller 可能比全局 KL/entropy bonus 更适合处理异构环境，因为它允许不同任务保留不同更新步幅。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文的可迁移启发是，多任务 agentic RL 的不稳定不一定只来自 reward scale 或梯度冲突，也可能来自各任务在长程探索-利用轨迹上的相位错位。对 agent planning 和 multi-turn system，训练监控不应只看平均 reward/pass rate，还应记录每个任务的 entropy、collapse speed、late-stage rebound 和任务间排序翻转。对 long-horizon reliability，一个轻量的任务级 pacing controller 可能比全局 KL/entropy bonus 更适合处理异构环境，因为它允许不同任务保留不同更新步幅。",
+        "abstract_zh": "近期强化学习在复杂 agentic LLM 任务中显示出潜力，但现有工作多关注单任务，而实际部署需要能同时解决多类任务的通用 agent。论文指出，多任务 agentic RL 中存在探索-利用节奏不匹配：简单任务可能过早收敛到低熵策略并影响困难任务学习，困难任务的探索性更新又可能扰动已收敛任务。作者提出 Entropy Pacing Policy Optimization，用任务级 entropy 感知的动态 clipping 替代 GRPO 的固定 clipping，让过度自信任务更新更保守、欠探索任务更新更充分。多任务 agentic benchmark 实验显示，EPPO 相比若干 baseline 有更好的平均表现和更稳定的 entropy 动态。",
+        "full_summary": "这篇论文研究 multi-task agentic RL 中共享 LLM policy 的训练不稳定问题，重点不是单任务能力，而是多个异构长程任务同时训练时的节奏冲突。作者观察到 AgentRL/GRPO 训练中会出现任务间 entropy 排序频繁翻转和后期 entropy spike，说明一些任务已经收敛而另一些任务仍在探索，彼此通过共享参数干扰。EPPO 的核心做法是用每个任务的 EMA entropy 构造相对 pacing 信号，并动态调整 GRPO clipping range，再用 entropy 上升趋势约束抑制振荡。实验显示 EPPO 在五任务和三任务设置下平均成功率优于 AgentRL，并且 ablation 支持 task-wise clip 和 trend constraint 都有贡献。阅读价值较高，因为它把 multi-task agent RL 的稳定性问题具体化为可观测的 entropy dynamics，并给出一个低侵入的训练控制方法。",
+        "card_summary": "这篇论文提出 EPPO，用任务级 entropy pacing 解决多任务 agentic RL 中不同任务探索-利用节奏不一致的问题。方法是在 GRPO 中替换固定 clipping range，让低熵过快收敛的任务慢下来、仍需探索的任务获得更大更新空间，实验在多类交互式 agent benchmark 上取得小到中等幅度提升。"
+      },
+      "analysis": {
+        "motivation": "论文动机明确且贴合 agentic RL：现有 LLM agent 强化学习多集中在单任务，而真实部署需要一个共享策略同时处理 OS、数据库、KG、ALFWorld、WebShop 等异构多轮任务。作者抓住的核心问题不是简单的梯度尺度不平衡，而是不同任务的探索到利用节奏不同：简单任务过早低熵收敛，困难任务仍需探索，两者通过共享参数互相扰动，导致 entropy crossover 和后期 entropy spike。这个问题对 long-horizon multi-task agent 训练有实际意义。",
+        "method": "方法是 EPPO，在 GRPO/AgentRL 框架里把全局固定 clipping range 换成任务级动态 clipping。它用每个任务的 EMA policy entropy 构造 entropy collapse ratio，再按任务间相对 z-score 调整 clip：低熵过快收敛的任务收紧更新，高熵欠探索的任务放宽更新；同时加入 entropy 上升时的 trend constraint 来抑制后期振荡。方法优点是改动很小，只需要任务级统计和替换 clipping bound；弱点是 entropy 仍只是探索状态的代理变量，理论分析更多是机制解释而非强保证。",
+        "experiments": "实验覆盖 AgentBench 的五个多轮交互任务：OS、DB、KG、ALFWorld、WebShop，并比较 AgentRL、DCPO、BAPO 等 RL baseline。五任务结果中 EPPO 平均成功率 54.3，高于 AgentRL 的 51.6，主要增益来自 DB、OS、WebShop，ALFWorld 小幅提升，KG 略低于 AgentRL。三任务、多 backbone、RLOO 变体、reasoning benchmark 和 ablation 都给了辅助信号，说明方法不是只在单一设置有效；但总体增益不算巨大，且作者复现 AgentRL 与原论文结果有差异，实验可信度需要带着保留看。",
+        "research_help": "Insight：这篇论文的可迁移启发是，多任务 agentic RL 的不稳定不一定只来自 reward scale 或梯度冲突，也可能来自各任务在长程探索-利用轨迹上的相位错位。对 agent planning 和 multi-turn system，训练监控不应只看平均 reward/pass rate，还应记录每个任务的 entropy、collapse speed、late-stage rebound 和任务间排序翻转。对 long-horizon reliability，一个轻量的任务级 pacing controller 可能比全局 KL/entropy bonus 更适合处理异构环境，因为它允许不同任务保留不同更新步幅。",
+        "insight": "Insight：这篇论文的可迁移启发是，多任务 agentic RL 的不稳定不一定只来自 reward scale 或梯度冲突，也可能来自各任务在长程探索-利用轨迹上的相位错位。对 agent planning 和 multi-turn system，训练监控不应只看平均 reward/pass rate，还应记录每个任务的 entropy、collapse speed、late-stage rebound 和任务间排序翻转。对 long-horizon reliability，一个轻量的任务级 pacing controller 可能比全局 KL/entropy bonus 更适合处理异构环境，因为它允许不同任务保留不同更新步幅。",
+        "abstract_zh": "近期强化学习在复杂 agentic LLM 任务中显示出潜力，但现有工作多关注单任务，而实际部署需要能同时解决多类任务的通用 agent。论文指出，多任务 agentic RL 中存在探索-利用节奏不匹配：简单任务可能过早收敛到低熵策略并影响困难任务学习，困难任务的探索性更新又可能扰动已收敛任务。作者提出 Entropy Pacing Policy Optimization，用任务级 entropy 感知的动态 clipping 替代 GRPO 的固定 clipping，让过度自信任务更新更保守、欠探索任务更新更充分。多任务 agentic benchmark 实验显示，EPPO 相比若干 baseline 有更好的平均表现和更稳定的 entropy 动态。",
+        "card_summary": "这篇论文提出 EPPO，用任务级 entropy pacing 解决多任务 agentic RL 中不同任务探索-利用节奏不一致的问题。方法是在 GRPO 中替换固定 clipping range，让低熵过快收敛的任务慢下来、仍需探索的任务获得更大更新空间，实验在多类交互式 agent benchmark 上取得小到中等幅度提升。",
+        "full_summary": "这篇论文研究 multi-task agentic RL 中共享 LLM policy 的训练不稳定问题，重点不是单任务能力，而是多个异构长程任务同时训练时的节奏冲突。作者观察到 AgentRL/GRPO 训练中会出现任务间 entropy 排序频繁翻转和后期 entropy spike，说明一些任务已经收敛而另一些任务仍在探索，彼此通过共享参数干扰。EPPO 的核心做法是用每个任务的 EMA entropy 构造相对 pacing 信号，并动态调整 GRPO clipping range，再用 entropy 上升趋势约束抑制振荡。实验显示 EPPO 在五任务和三任务设置下平均成功率优于 AgentRL，并且 ablation 支持 task-wise clip 和 trend constraint 都有贡献。阅读价值较高，因为它把 multi-task agent RL 的稳定性问题具体化为可观测的 entropy dynamics，并给出一个低侵入的训练控制方法。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读，尤其适合关注多任务 agent RL 训练稳定性的人",
+        "value_reason": "论文主题高度贴合 agentic RL、multi-turn agent 和 long-horizon planning reliability，问题定义清楚，方法简单可复用，实验也不只给最终分数，还分析了 entropy dynamics、learning curve 和 ablation。它的价值主要在 insight 和训练诊断视角：多任务 agent 的失败可能来自任务学习节奏错位，而不是单纯能力不足或 reward normalization 问题。",
+        "limitations": "主要风险是实验增益偏温和，五任务平均只从 AgentRL 的 51.6 提到 54.3，且 KG 任务略有下降；DCPO/BAPO 在这里表现很差，是否公平适配多任务 agentic RL 需要进一步确认。作者承认复现 AgentRL 与原论文有差异，且硬件、代码修改和异步训练随机性都可能影响比较。理论部分对 clipping boundedness 和 trend constraint 的论证较弱，更多是合理性说明，不能证明 entropy pacing 必然提升多任务泛化。任务集合仍集中在 AgentBench 风格环境，离真实开放式 agent 部署还有距离。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "全文 Introduction 明确提出 multi-task agentic RL 中的 exploration-exploitation pace mismatch，并把 entropy crossover 和 late-stage entropy spike 作为关键现象。",
+          "Method 部分给出 EPPO：EMA entropy、entropy collapse ratio、任务间 z-score pacing、动态 clipping range 和 entropy 上升时的 trend constraint。",
+          "Table 1 显示五任务训练中 EPPO 平均成功率 54.3，高于 AgentRL 51.6；主要提升来自 DB、OS、WebShop，KG 略降。",
+          "Table 4 ablation 显示去掉 task-wise clip 或 trend constraint 后五任务平均表现明显下降，支持两个组件都不是纯装饰。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-09T01:34:45.180Z"
+      }
+    },
+    {
+      "id": "2607.07702v1",
+      "title": "From Noisy Traces to Root Causes: Structural Trajectory Analysis and Causal Extraction for Agent Optimization",
+      "summary": "提出 STRACE，从长程 agent 的 noisy execution traces 中筛出代表性失败，并用结构化依赖图做因果切片和根因模块定位。它对多轮 agent 的 failure analysis、prompt/policy 优化和轨迹压缩都有直接启发。",
+      "url": "http://arxiv.org/abs/2607.07702v1",
+      "authors": [
+        "Ying Chang",
+        "Jiahang Xu",
+        "Xuan Feng",
+        "Chenyuan Yang",
+        "Peng Cheng",
+        "Yuqing Yang"
+      ],
+      "report_date": "2026-07-09",
+      "published": "2026-07-08",
+      "updated": "2026-07-08",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/moomight/STRACE",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 78,
+        "level": "高",
+        "label": "值得读",
+        "water_risk": "中",
+        "value_judgement": "推荐读，尤其适合关注 agent planning、multi-turn agent 和 long-horizon reliability 的研究。论文问题定义清楚，方法抓住了长程轨迹优化的核心瓶颈：不是缺少失败日志，而是缺少可归因、可压缩、可迁移的失败证据。实验覆盖问答、网页交互和形式化验证三类任务，并有消融和案例支持“结构建模 + 轨迹筛选 + 因果定位”的必要性。不过偏水风险不能评为低，因为依赖图由 LLM 从仓库文本推断，因果定位本身仍可能受 optimizer 语义判断影响；部分 benchmark 设置、训练测试规模和 prompt 注入细节也需要代码复现后才能完全确认。",
+        "reason": "推荐读，尤其适合关注 agent planning、multi-turn agent 和 long-horizon reliability 的研究。论文问题定义清楚，方法抓住了长程轨迹优化的核心瓶颈：不是缺少失败日志，而是缺少可归因、可压缩、可迁移的失败证据。实验覆盖问答、网页交互和形式化验证三类任务，并有消融和案例支持“结构建模 + 轨迹筛选 + 因果定位”的必要性。不过偏水风险不能评为低，因为依赖图由 LLM 从仓库文本推断，因果定位本身仍可能受 optimizer 语义判断影响；部分 benchmark 设置、训练测试规模和 prompt 注入细节也需要代码复现后才能完全确认。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Ying Chang",
+          "Jiahang Xu",
+          "Xuan Feng",
+          "Chenyuan Yang",
+          "Peng Cheng",
+          "Yuqing Yang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-08",
+        "paper_url": "https://arxiv.org/abs/2607.07702v1",
+        "project_url": "",
+        "repo_url": "https://github.com/moomight/STRACE",
+        "venue_status": "未确认录用",
+        "contribution": "推荐读，尤其适合关注 agent planning、multi-turn agent 和 long-horizon reliability 的研究。论文问题定义清楚，方法抓住了长程轨迹优化的核心瓶颈：不是缺少失败日志，而是缺少可归因、可压缩、可迁移的失败证据。实验覆盖问答、网页交互和形式化验证三类任务，并有消融和案例支持“结构建模 + 轨迹筛选 + 因果定位”的必要性。不过偏水风险不能评为低，因为依赖图由 LLM 从仓库文本推断，因果定位本身仍可能受 optimizer 语义判断影响；部分 benchmark 设置、训练测试规模和 prompt 注入细节也需要代码复现后才能完全确认。",
+        "summary": "这篇论文提出 STRACE，用于从 noisy execution traces 中提取可用于优化 long-horizon agent 的高信噪比证据。它的关键思想是失败显现节点不等于根因节点，因此不能只看最后报错、最近窗口或全文轨迹，而要基于模块依赖图进行批量失败筛选和单轨迹因果定位。方法上，STRACE 构造文本 Execution Dependency Graph，挖掘高频且严重的失败模式，选择代表性 trace，再用 backward slicing 抽出 causal slice，并把归纳出的修正规则注入根因模块的 prompt。实验在 HotpotQA、WebArena、VeruSAGE-Bench 上都超过基线，尤其在形式化验证 agent 的 VeruSAGE-Bench 上相对 BaseAgent 有较大成功率提升。阅读价值主要在于它把 agent 优化中的 context management、failure clustering 和 structural credit assignment 放进了一个实用 pipeline，对多模块 agent 的可靠性优化很有参考意义。",
+        "highlights": [
+          "推荐读，尤其适合关注 agent planning、multi-turn agent 和 long-horizon reliability 的研究。论文问题定义清楚，方法抓住了长程轨迹优化的核心瓶颈：不是缺少失败日志，而是缺少可归因、可压缩、可迁移的失败证据。实验覆盖问答、网页交互和形式化验证三类任务，并有消融和案例支持“结构建模 + 轨迹筛选 + 因果定位”的必要性。不过偏水风险不能评为低，因为依赖图由 LLM 从仓库文本推断，因果定位本身仍可能受 optimizer 语义判断影响；部分 benchmark 设置、训练测试规模和 prompt 注入细节也需要代码复现后才能完全确认。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对 long-horizon agent 优化中的两个实际痛点：批量执行轨迹冗余且异质，直接拿失败样本做反思优化容易浪费上下文并过拟合低价值失败；单条轨迹又包含大量无关步骤，截断或滑窗会丢掉远距离但因果关键的上游证据。作者的核心判断是，agent 失败显现的位置往往不是根因位置，因此优化器需要先做结构化诊断和因果定位，再改 prompt 或 policy。",
+        "method": "STRACE 把执行日志从线性文本改成带结构先验的因果证据。它先用 LLM 从 agent 代码、配置、prompt、工具接口等构造文本形式的 Execution Dependency Graph，记录模块之间的数据依赖和控制依赖；再对批量轨迹做 failure pattern mining，用严重性和结构路径模式筛选代表性失败；随后在单条轨迹内从失败显现节点反向切片，抽取 causal slice 并定位 root-cause module；最后把同一根因模块的失败切片归纳成可复用自然语言规则，只注入对应模块的 instruction。",
+        "experiments": "实验覆盖 HotpotQA、WebArena 和 VeruSAGE-Bench。STRACE 在 HotpotQA 上达到 68.5% EM，高于 GEPA 的 64.4%；在 WebArena 总成功率为 23.7%，相对 BaseAgent 提升 12.9 个百分点；在更长程、更领域化的 VeruSAGE-Bench 上从 42.5% 提升到 58.5%，高于 GEPA 的 47.2%。消融显示去掉结构建模、轨迹筛选或因果定位都会降低效果或增加成本，案例分析也展示了部分失败会从表面报错模块被重映射到上游 root-cause 模块。",
+        "research_help": "Insight：这篇文章对 agent planning 和 agentic RL 的启发在于，长程系统的优化信号不应只绑定到最终失败或最近几步，而应先建立模块级依赖，再做跨时间的因果 credit assignment。对于多轮 agent 和 long-horizon reliability，最可迁移的是“先筛代表性失败，再在失败内做 backward causal slicing，再只更新根因模块”的流程，它能减少 noisy trace 对反思优化的误导。对于 agent memory 和 harness optimization，这种方法也提示 memory、planner、router、executor 的错误应分开归因，避免把下游崩溃误修成局部 patch。",
+        "recommendation": {
+          "score": 78,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇文章对 agent planning 和 agentic RL 的启发在于，长程系统的优化信号不应只绑定到最终失败或最近几步，而应先建立模块级依赖，再做跨时间的因果 credit assignment。对于多轮 agent 和 long-horizon reliability，最可迁移的是“先筛代表性失败，再在失败内做 backward causal slicing，再只更新根因模块”的流程，它能减少 noisy trace 对反思优化的误导。对于 agent memory 和 harness optimization，这种方法也提示 memory、planner、router、executor 的错误应分开归因，避免把下游崩溃误修成局部 patch。",
+        "abstract_zh": "长程 agent 的优化越来越依赖反思机制，让 LLM 诊断失败并改进策略，但真实执行轨迹通常冗余、异质且噪声很高，直接使用会低效并可能过拟合低价值失败。本文提出 STRACE，通过批量层面的失败模式挖掘筛掉冗余轨迹，并在单条轨迹内基于文本依赖图做因果定位，去除非因果步骤并找出真正根因模块。该框架把执行日志视为结构化因果证据，而不是单纯线性文本，从而为优化器提供高信噪比上下文。实验显示 STRACE 在 HotpotQA、WebArena 和 VeruSAGE-Bench 上优于多种上下文过滤和 prompt optimization 基线，其中在 VeruSAGE-Bench 上把成功率从 42.5% 提升到 58.5%。",
+        "full_summary": "这篇论文提出 STRACE，用于从 noisy execution traces 中提取可用于优化 long-horizon agent 的高信噪比证据。它的关键思想是失败显现节点不等于根因节点，因此不能只看最后报错、最近窗口或全文轨迹，而要基于模块依赖图进行批量失败筛选和单轨迹因果定位。方法上，STRACE 构造文本 Execution Dependency Graph，挖掘高频且严重的失败模式，选择代表性 trace，再用 backward slicing 抽出 causal slice，并把归纳出的修正规则注入根因模块的 prompt。实验在 HotpotQA、WebArena、VeruSAGE-Bench 上都超过基线，尤其在形式化验证 agent 的 VeruSAGE-Bench 上相对 BaseAgent 有较大成功率提升。阅读价值主要在于它把 agent 优化中的 context management、failure clustering 和 structural credit assignment 放进了一个实用 pipeline，对多模块 agent 的可靠性优化很有参考意义。",
+        "card_summary": "STRACE 试图解决长程 agent 反思优化中的“轨迹太长、噪声太多、根因太远”问题。它先筛选代表性失败，再用依赖图做反向因果切片，把优化集中到真正出错的上游模块，在 WebArena 和 VeruSAGE-Bench 上给出明显收益。"
+      },
+      "analysis": {
+        "motivation": "论文针对 long-horizon agent 优化中的两个实际痛点：批量执行轨迹冗余且异质，直接拿失败样本做反思优化容易浪费上下文并过拟合低价值失败；单条轨迹又包含大量无关步骤，截断或滑窗会丢掉远距离但因果关键的上游证据。作者的核心判断是，agent 失败显现的位置往往不是根因位置，因此优化器需要先做结构化诊断和因果定位，再改 prompt 或 policy。",
+        "method": "STRACE 把执行日志从线性文本改成带结构先验的因果证据。它先用 LLM 从 agent 代码、配置、prompt、工具接口等构造文本形式的 Execution Dependency Graph，记录模块之间的数据依赖和控制依赖；再对批量轨迹做 failure pattern mining，用严重性和结构路径模式筛选代表性失败；随后在单条轨迹内从失败显现节点反向切片，抽取 causal slice 并定位 root-cause module；最后把同一根因模块的失败切片归纳成可复用自然语言规则，只注入对应模块的 instruction。",
+        "experiments": "实验覆盖 HotpotQA、WebArena 和 VeruSAGE-Bench。STRACE 在 HotpotQA 上达到 68.5% EM，高于 GEPA 的 64.4%；在 WebArena 总成功率为 23.7%，相对 BaseAgent 提升 12.9 个百分点；在更长程、更领域化的 VeruSAGE-Bench 上从 42.5% 提升到 58.5%，高于 GEPA 的 47.2%。消融显示去掉结构建模、轨迹筛选或因果定位都会降低效果或增加成本，案例分析也展示了部分失败会从表面报错模块被重映射到上游 root-cause 模块。",
+        "research_help": "Insight：这篇文章对 agent planning 和 agentic RL 的启发在于，长程系统的优化信号不应只绑定到最终失败或最近几步，而应先建立模块级依赖，再做跨时间的因果 credit assignment。对于多轮 agent 和 long-horizon reliability，最可迁移的是“先筛代表性失败，再在失败内做 backward causal slicing，再只更新根因模块”的流程，它能减少 noisy trace 对反思优化的误导。对于 agent memory 和 harness optimization，这种方法也提示 memory、planner、router、executor 的错误应分开归因，避免把下游崩溃误修成局部 patch。",
+        "insight": "Insight：这篇文章对 agent planning 和 agentic RL 的启发在于，长程系统的优化信号不应只绑定到最终失败或最近几步，而应先建立模块级依赖，再做跨时间的因果 credit assignment。对于多轮 agent 和 long-horizon reliability，最可迁移的是“先筛代表性失败，再在失败内做 backward causal slicing，再只更新根因模块”的流程，它能减少 noisy trace 对反思优化的误导。对于 agent memory 和 harness optimization，这种方法也提示 memory、planner、router、executor 的错误应分开归因，避免把下游崩溃误修成局部 patch。",
+        "abstract_zh": "长程 agent 的优化越来越依赖反思机制，让 LLM 诊断失败并改进策略，但真实执行轨迹通常冗余、异质且噪声很高，直接使用会低效并可能过拟合低价值失败。本文提出 STRACE，通过批量层面的失败模式挖掘筛掉冗余轨迹，并在单条轨迹内基于文本依赖图做因果定位，去除非因果步骤并找出真正根因模块。该框架把执行日志视为结构化因果证据，而不是单纯线性文本，从而为优化器提供高信噪比上下文。实验显示 STRACE 在 HotpotQA、WebArena 和 VeruSAGE-Bench 上优于多种上下文过滤和 prompt optimization 基线，其中在 VeruSAGE-Bench 上把成功率从 42.5% 提升到 58.5%。",
+        "card_summary": "STRACE 试图解决长程 agent 反思优化中的“轨迹太长、噪声太多、根因太远”问题。它先筛选代表性失败，再用依赖图做反向因果切片，把优化集中到真正出错的上游模块，在 WebArena 和 VeruSAGE-Bench 上给出明显收益。",
+        "full_summary": "这篇论文提出 STRACE，用于从 noisy execution traces 中提取可用于优化 long-horizon agent 的高信噪比证据。它的关键思想是失败显现节点不等于根因节点，因此不能只看最后报错、最近窗口或全文轨迹，而要基于模块依赖图进行批量失败筛选和单轨迹因果定位。方法上，STRACE 构造文本 Execution Dependency Graph，挖掘高频且严重的失败模式，选择代表性 trace，再用 backward slicing 抽出 causal slice，并把归纳出的修正规则注入根因模块的 prompt。实验在 HotpotQA、WebArena、VeruSAGE-Bench 上都超过基线，尤其在形式化验证 agent 的 VeruSAGE-Bench 上相对 BaseAgent 有较大成功率提升。阅读价值主要在于它把 agent 优化中的 context management、failure clustering 和 structural credit assignment 放进了一个实用 pipeline，对多模块 agent 的可靠性优化很有参考意义。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读",
+        "value_reason": "推荐读，尤其适合关注 agent planning、multi-turn agent 和 long-horizon reliability 的研究。论文问题定义清楚，方法抓住了长程轨迹优化的核心瓶颈：不是缺少失败日志，而是缺少可归因、可压缩、可迁移的失败证据。实验覆盖问答、网页交互和形式化验证三类任务，并有消融和案例支持“结构建模 + 轨迹筛选 + 因果定位”的必要性。不过偏水风险不能评为低，因为依赖图由 LLM 从仓库文本推断，因果定位本身仍可能受 optimizer 语义判断影响；部分 benchmark 设置、训练测试规模和 prompt 注入细节也需要代码复现后才能完全确认。",
+        "limitations": "主要局限是 STRACE 需要能看到目标 agent 的代码、prompt、工具接口、配置和执行日志，不适合纯黑盒 agent。依赖图不是严格静态分析图，而是 LLM 构造的文本边列表，因此存在噪声边、漏边和模型偏差。因果定位虽然比截断更合理，但仍是语义推断，不等同于形式化因果证明。实验主要验证 prompt/harness 层面的优化，对真实线上 agent、隐私敏感 trace、动态工具环境和大规模持续学习场景的稳定性还需要更多证据。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "Abstract 明确提出 STRACE 在 batch level 挖掘失败模式、过滤冗余轨迹，并在单条 trace 内通过 textual dependency graph 做 causal localization。",
+          "Introduction 指出 full trajectory 会引入噪声，short truncation 会丢掉远距离因果依赖，错误显现节点常常不是根因节点。",
+          "Methods 第 3 节描述四阶段流程：Structural Modeling、Failure Pattern Mining and Trace Filtering、Causal Localization、Inductive Policy Optimization。",
+          "Table 1 显示 STRACE 在 HotpotQA、WebArena 和 VeruSAGE-Bench 上均取得最高整体结果，VeruSAGE-Bench 从 42.5% 提升到 58.5%。画图 4 和第 4.4 节展示了从 manifest node 重映射到 upstream root-cause node 的案例。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-09T01:35:34.846Z"
+      }
+    },
+    {
+      "id": "2607.06595v1",
+      "title": "When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents",
+      "summary": "研究长期记忆型 LLM agent 的 memory poisoning：攻击者先让恶意信息被写入记忆，再在未来正常任务中触发错误行动。论文提出写入和检索双阶段防御 AM-Sentry，直接命中 agent memory 与 long-horizon reliability。",
+      "url": "http://arxiv.org/abs/2607.06595v1",
+      "authors": [
+        "George Torres",
+        "Sharad Shrestha",
+        "Satyajayant Misra"
+      ],
+      "report_date": "2026-07-09",
+      "published": "2026-07-06",
+      "updated": "2026-07-06",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 90,
+        "level": "高",
+        "label": "强相关，值得精读",
+        "water_risk": "低",
+        "value_judgement": "论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability：它讨论的不是单轮 prompt injection，而是恶意信息进入长期记忆后在未来任务中被检索并影响行动策略。方法设计清晰，攻击模型比直接改记忆库更贴近真实部署，实验覆盖多个 agent 架构和模型，并提出了可实现的双阶段防御。虽然实验环境偏 synthetic，但问题定义、攻击路径和防御思路都对实际 agent planning 系统有迁移价值。",
+        "reason": "论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability：它讨论的不是单轮 prompt injection，而是恶意信息进入长期记忆后在未来任务中被检索并影响行动策略。方法设计清晰，攻击模型比直接改记忆库更贴近真实部署，实验覆盖多个 agent 架构和模型，并提出了可实现的双阶段防御。虽然实验环境偏 synthetic，但问题定义、攻击路径和防御思路都对实际 agent planning 系统有迁移价值。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "George Torres",
+          "Sharad Shrestha",
+          "Satyajayant Misra"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-06",
+        "paper_url": "https://arxiv.org/abs/2607.06595v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability：它讨论的不是单轮 prompt injection，而是恶意信息进入长期记忆后在未来任务中被检索并影响行动策略。方法设计清晰，攻击模型比直接改记忆库更贴近真实部署，实验覆盖多个 agent 架构和模型，并提出了可实现的双阶段防御。虽然实验环境偏 synthetic，但问题定义、攻击路径和防御思路都对实际 agent planning 系统有迁移价值。",
+        "summary": "论文研究带长期记忆的个人助理 agent 在处理不可信邮件、日历等输入时的记忆中毒风险。核心攻击 GhostWriter 分为写入和激活两步：恶意内容先被 agent 当作有用信息保存，之后在用户提出正常请求时被检索进上下文，导致错误收件人、信息泄露、越权操作等行为。作者还提出 AM-Sentry，在记忆保存前判断来源、效用、敏感性和指令风险，并在检索后再次筛掉可疑记忆，形成双阶段防护。实验覆盖五种记忆 agent 和四个 LLM，显示无防御时攻击注入几乎普遍成功，激活率也足够高，说明这不是边缘问题。阅读价值在于它把 memory governance 从“提升召回/效用”推进到“规划可靠性和安全边界”，尤其适合关注 long-horizon agent 与 memory-augmented planning 的研究者。",
+        "highlights": [
+          "论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability：它讨论的不是单轮 prompt injection，而是恶意信息进入长期记忆后在未来任务中被检索并影响行动策略。方法设计清晰，攻击模型比直接改记忆库更贴近真实部署，实验覆盖多个 agent 架构和模型，并提出了可实现的双阶段防御。虽然实验环境偏 synthetic，但问题定义、攻击路径和防御思路都对实际 agent planning 系统有迁移价值。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文关注带长期记忆的个人助理类 LLM agent：这类系统会读取邮件、日历、文档等不可信输入，并把有用信息写入跨会话记忆。作者指出，现有 memory agent 多强调召回和任务连续性，但缺少安全导向的记忆治理，因此攻击者无需直接访问 agent 或记忆库，只要通过普通邮件/日历内容诱导 agent 存下恶意事实或指令，就可能在未来 benign query 中触发错误行为。",
+        "method": "作者提出 GhostWriter 攻击，将攻击拆成 injection 和 activation 两阶段：先把隐藏或伪装的攻击 payload 放入邮件/日历等输入，让 agent 的 ingestion function 将其保存为长期记忆；之后当用户提出相关正常请求时，检索模块把中毒记忆放入上下文，从而影响 agent 行为。防御方面提出 AM-Sentry，包括写入阶段的 memory-saving policy 和读取阶段的 retrieval screen；policy 有不同严格度配置，用 LLM judge 加非 LLM 规则判断来源可信度、未来效用、敏感性、是否含行为指令等，retrieval screen 在记忆进入上下文前过滤不相关、含指令、来源不可信或与可信信息矛盾的条目。",
+        "experiments": "实验把 A-Mem、Mem0、ExpeL、Letta/MemGPT、MemoryOS 五类记忆 agent 适配到统一的个人助理场景，并在 GPT-5.4-mini、DeepSeek-V4-Flash、Gemini-2.5-Flash、Llama 3.1 8B 上测试。作者构造了包含邮件、日历、会议和信息更新的五天 synthetic workweek memory snapshot，并设计 recall、evolved-event recall、工具调用任务等效用测试。GhostWriter 在无防御下达到约 98% 的平均注入成功率和约 60% 的平均激活率；Mem0 和 ExpeL 因会转换原始输入而相对不易保存完整 payload，ExpeL 的轨迹式记忆也降低了把中毒内容当作权威事实使用的概率。AM-Sentry 被用于比较不同写入 policy 和 retrieval screen 组合，论文声称能显著降低攻击成功率，同时尽量保留 agent utility。",
+        "research_help": "Insight：这篇论文对 agent planning 和 long-horizon reliability 的关键启发是，长期记忆不只是上下文压缩或经验复用模块，也会成为跨回合、跨任务的持久攻击面；因此 planner 在检索过去信息时不能默认 memory 是可信事实或可执行经验。对多轮 agent 系统来说，记忆写入和记忆读取都需要显式的 provenance、trust、instruction-vs-data 区分和冲突检测，否则一次不可信输入可能在很久之后污染计划。对 agentic RL / planning 训练也有迁移价值：如果 agent 从历史 trajectory、reflection 或 user-specific facts 中学习，安全评估应覆盖“存入什么、何时取出、取出后是否改变 action policy”，而不只是单轮 prompt injection。",
+        "recommendation": {
+          "score": 90,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文对 agent planning 和 long-horizon reliability 的关键启发是，长期记忆不只是上下文压缩或经验复用模块，也会成为跨回合、跨任务的持久攻击面；因此 planner 在检索过去信息时不能默认 memory 是可信事实或可执行经验。对多轮 agent 系统来说，记忆写入和记忆读取都需要显式的 provenance、trust、instruction-vs-data 区分和冲突检测，否则一次不可信输入可能在很久之后污染计划。对 agentic RL / planning 训练也有迁移价值：如果 agent 从历史 trajectory、reflection 或 user-specific facts 中学习，安全评估应覆盖“存入什么、何时取出、取出后是否改变 action policy”，而不只是单轮 prompt injection。",
+        "abstract_zh": "个人 AI agent 可以借助工具访问邮件、管理日历甚至推送代码；加入长期记忆后，它们能跨会话记住任务相关细节，减少对超长上下文窗口的依赖。论文指出，个人助理类 agent 同时具备对话记忆和行动规划能力，又会处理敏感信息和不可信来源，因此产生了新的记忆中毒风险。作者提出 GhostWriter 攻击：攻击者先通过隐藏 payload 让 agent 保存中毒记忆，再在未来正常请求中触发检索，使该记忆改变 agent 行为。实验显示该攻击在多种先进 agent 上注入率接近 98%、平均激活率约 60%；作者进一步提出 AM-Sentry，通过记忆保存策略和检索过滤显著降低攻击成功率并保留效用。",
+        "full_summary": "论文研究带长期记忆的个人助理 agent 在处理不可信邮件、日历等输入时的记忆中毒风险。核心攻击 GhostWriter 分为写入和激活两步：恶意内容先被 agent 当作有用信息保存，之后在用户提出正常请求时被检索进上下文，导致错误收件人、信息泄露、越权操作等行为。作者还提出 AM-Sentry，在记忆保存前判断来源、效用、敏感性和指令风险，并在检索后再次筛掉可疑记忆，形成双阶段防护。实验覆盖五种记忆 agent 和四个 LLM，显示无防御时攻击注入几乎普遍成功，激活率也足够高，说明这不是边缘问题。阅读价值在于它把 memory governance 从“提升召回/效用”推进到“规划可靠性和安全边界”，尤其适合关注 long-horizon agent 与 memory-augmented planning 的研究者。",
+        "card_summary": "这篇论文把长期记忆 agent 的安全问题讲得很具体：攻击者不需要控制 agent，只要通过邮件或日历让它“记住”错误事实或指令，就可能在未来正常任务中触发错误行动。它提出 GhostWriter 攻击和 AM-Sentry 防御，对研究 agent memory、长期规划可靠性和多轮工具调用安全都很值得读。"
+      },
+      "analysis": {
+        "motivation": "论文关注带长期记忆的个人助理类 LLM agent：这类系统会读取邮件、日历、文档等不可信输入，并把有用信息写入跨会话记忆。作者指出，现有 memory agent 多强调召回和任务连续性，但缺少安全导向的记忆治理，因此攻击者无需直接访问 agent 或记忆库，只要通过普通邮件/日历内容诱导 agent 存下恶意事实或指令，就可能在未来 benign query 中触发错误行为。",
+        "method": "作者提出 GhostWriter 攻击，将攻击拆成 injection 和 activation 两阶段：先把隐藏或伪装的攻击 payload 放入邮件/日历等输入，让 agent 的 ingestion function 将其保存为长期记忆；之后当用户提出相关正常请求时，检索模块把中毒记忆放入上下文，从而影响 agent 行为。防御方面提出 AM-Sentry，包括写入阶段的 memory-saving policy 和读取阶段的 retrieval screen；policy 有不同严格度配置，用 LLM judge 加非 LLM 规则判断来源可信度、未来效用、敏感性、是否含行为指令等，retrieval screen 在记忆进入上下文前过滤不相关、含指令、来源不可信或与可信信息矛盾的条目。",
+        "experiments": "实验把 A-Mem、Mem0、ExpeL、Letta/MemGPT、MemoryOS 五类记忆 agent 适配到统一的个人助理场景，并在 GPT-5.4-mini、DeepSeek-V4-Flash、Gemini-2.5-Flash、Llama 3.1 8B 上测试。作者构造了包含邮件、日历、会议和信息更新的五天 synthetic workweek memory snapshot，并设计 recall、evolved-event recall、工具调用任务等效用测试。GhostWriter 在无防御下达到约 98% 的平均注入成功率和约 60% 的平均激活率；Mem0 和 ExpeL 因会转换原始输入而相对不易保存完整 payload，ExpeL 的轨迹式记忆也降低了把中毒内容当作权威事实使用的概率。AM-Sentry 被用于比较不同写入 policy 和 retrieval screen 组合，论文声称能显著降低攻击成功率，同时尽量保留 agent utility。",
+        "research_help": "Insight：这篇论文对 agent planning 和 long-horizon reliability 的关键启发是，长期记忆不只是上下文压缩或经验复用模块，也会成为跨回合、跨任务的持久攻击面；因此 planner 在检索过去信息时不能默认 memory 是可信事实或可执行经验。对多轮 agent 系统来说，记忆写入和记忆读取都需要显式的 provenance、trust、instruction-vs-data 区分和冲突检测，否则一次不可信输入可能在很久之后污染计划。对 agentic RL / planning 训练也有迁移价值：如果 agent 从历史 trajectory、reflection 或 user-specific facts 中学习，安全评估应覆盖“存入什么、何时取出、取出后是否改变 action policy”，而不只是单轮 prompt injection。",
+        "insight": "Insight：这篇论文对 agent planning 和 long-horizon reliability 的关键启发是，长期记忆不只是上下文压缩或经验复用模块，也会成为跨回合、跨任务的持久攻击面；因此 planner 在检索过去信息时不能默认 memory 是可信事实或可执行经验。对多轮 agent 系统来说，记忆写入和记忆读取都需要显式的 provenance、trust、instruction-vs-data 区分和冲突检测，否则一次不可信输入可能在很久之后污染计划。对 agentic RL / planning 训练也有迁移价值：如果 agent 从历史 trajectory、reflection 或 user-specific facts 中学习，安全评估应覆盖“存入什么、何时取出、取出后是否改变 action policy”，而不只是单轮 prompt injection。",
+        "abstract_zh": "个人 AI agent 可以借助工具访问邮件、管理日历甚至推送代码；加入长期记忆后，它们能跨会话记住任务相关细节，减少对超长上下文窗口的依赖。论文指出，个人助理类 agent 同时具备对话记忆和行动规划能力，又会处理敏感信息和不可信来源，因此产生了新的记忆中毒风险。作者提出 GhostWriter 攻击：攻击者先通过隐藏 payload 让 agent 保存中毒记忆，再在未来正常请求中触发检索，使该记忆改变 agent 行为。实验显示该攻击在多种先进 agent 上注入率接近 98%、平均激活率约 60%；作者进一步提出 AM-Sentry，通过记忆保存策略和检索过滤显著降低攻击成功率并保留效用。",
+        "card_summary": "这篇论文把长期记忆 agent 的安全问题讲得很具体：攻击者不需要控制 agent，只要通过邮件或日历让它“记住”错误事实或指令，就可能在未来正常任务中触发错误行动。它提出 GhostWriter 攻击和 AM-Sentry 防御，对研究 agent memory、长期规划可靠性和多轮工具调用安全都很值得读。",
+        "full_summary": "论文研究带长期记忆的个人助理 agent 在处理不可信邮件、日历等输入时的记忆中毒风险。核心攻击 GhostWriter 分为写入和激活两步：恶意内容先被 agent 当作有用信息保存，之后在用户提出正常请求时被检索进上下文，导致错误收件人、信息泄露、越权操作等行为。作者还提出 AM-Sentry，在记忆保存前判断来源、效用、敏感性和指令风险，并在检索后再次筛掉可疑记忆，形成双阶段防护。实验覆盖五种记忆 agent 和四个 LLM，显示无防御时攻击注入几乎普遍成功，激活率也足够高，说明这不是边缘问题。阅读价值在于它把 memory governance 从“提升召回/效用”推进到“规划可靠性和安全边界”，尤其适合关注 long-horizon agent 与 memory-augmented planning 的研究者。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强相关，值得精读",
+        "value_reason": "论文直接命中 agent memory、multi-turn agent 和 long-horizon reliability：它讨论的不是单轮 prompt injection，而是恶意信息进入长期记忆后在未来任务中被检索并影响行动策略。方法设计清晰，攻击模型比直接改记忆库更贴近真实部署，实验覆盖多个 agent 架构和模型，并提出了可实现的双阶段防御。虽然实验环境偏 synthetic，但问题定义、攻击路径和防御思路都对实际 agent planning 系统有迁移价值。",
+        "limitations": "主要局限是实验基于模拟个人助理工作周和统一 wrapper，真实企业邮箱、日历、代码 agent 环境中的噪声、权限系统、用户审核流程和组织策略可能改变攻击与防御效果。AM-Sentry 依赖 LLM judge 和阈值规则，面对自适应攻击者、模型误判、成本/延迟约束时还需要更强验证。论文中的 agent 适配和 MemoryOS 修改可能影响不同架构的自然表现；此外，防御对复杂事实更新、合法但冲突的信息、以及长期记忆清理策略的影响仍需更多评估。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确提出 GhostWriter，由 injection 和 activation 两阶段组成：先通过邮件等不可信工具输入污染记忆，再在未来 benign prompt 中被检索并改变行为。",
+          "实验设置覆盖 A-Mem、Mem0、ExpeL、Letta/MemGPT、MemoryOS 五种 agent，以及 GPT-5.4-mini、DeepSeek-V4-Flash、Gemini-2.5-Flash、Llama 3.1 8B 四个模型。",
+          "作者报告 GhostWriter 平均注入成功率约 98%，平均激活率约 60%；ExpeL 因轨迹式记忆较少把中毒内容当作权威事实，表现相对更稳。",
+          "AM-Sentry 包含 memory-saving policy 和 retrieval screen，分别在写入和读取阶段检查来源可信度、效用、敏感性、行为指令、矛盾信息和不可信外部声明。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-09T01:43:17.242Z"
+      }
+    },
     {
       "id": "2607.05804v1",
       "title": "TurnOPD: Making On-Policy Distillation Turn-Aware for Efficient Long-Horizon Agent Training",
