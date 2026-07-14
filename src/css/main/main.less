@@ -1315,6 +1315,44 @@ a.about-action-button:focus {
 	margin-top: 34px;
 }
 
+.template-star-row {
+	display: flex;
+	justify-content: center;
+	margin-top: 16px;
+}
+
+.template-star-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 34px;
+	padding: 6px 12px;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	background: var(--card-bg);
+	box-shadow: 0 9px 24px rgba(0, 0, 0, 0.07);
+	color: var(--muted);
+	font-size: 0.78rem;
+	font-weight: 800;
+	transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.template-star-button:hover,
+.template-star-button:focus {
+	transform: translateY(-1px);
+	border-color: #e3b341;
+	background: var(--card-strong);
+	color: var(--text);
+	outline: none;
+}
+
+.template-star-icon {
+	width: 16px;
+	height: 16px;
+	fill: #e3b341;
+	filter: drop-shadow(0 2px 4px rgba(227, 179, 65, 0.28));
+}
+
 .info-page {
 	min-width: 0;
 }
@@ -2415,6 +2453,51 @@ a.about-action-button:focus {
 			.paper-date-button span:last-child {
 				color: var(--subtle);
 				font-size: 0.7rem;
+			}
+
+			.paper-date-pagination {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				padding-top: 2px;
+			}
+
+			.paper-date-page-button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 34px;
+				min-height: 32px;
+				padding: 4px;
+				border: 1px solid var(--line);
+				border-radius: 8px;
+				background: var(--card-bg);
+				color: var(--text);
+				font: inherit;
+				font-weight: 900;
+				cursor: pointer;
+			}
+
+			.paper-date-page-button:hover:not(:disabled),
+			.paper-date-page-button:focus:not(:disabled) {
+				border-color: var(--accent);
+				background: var(--card-strong);
+				color: var(--accent);
+				outline: none;
+			}
+
+			.paper-date-page-button:disabled {
+				opacity: 0.35;
+				cursor: default;
+			}
+
+			.paper-date-page-status {
+				min-width: 54px;
+				color: var(--muted);
+				font-size: 0.74rem;
+				font-weight: 800;
+				text-align: center;
 			}
 
 				.academic-section-head {
@@ -4580,11 +4663,21 @@ a.about-action-button:focus {
 			gap: 10px;
 		}
 
-		.category-strip {
-			flex-wrap: nowrap;
-			overflow-x: auto;
-			padding-bottom: 4px;
-		}
+			.category-strip {
+				flex-wrap: nowrap;
+				overflow-x: auto;
+				padding-bottom: 4px;
+			}
+
+			.category-strip.paper-date-list {
+				display: grid;
+				overflow: visible;
+				padding-bottom: 0;
+			}
+
+			.paper-date-list .paper-date-button {
+				width: 100%;
+			}
 
 		.academic-controls {
 			grid-template-columns: 1fr;

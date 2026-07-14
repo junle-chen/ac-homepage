@@ -3064,6 +3064,7 @@ function bindGlassTopbar() {
 		const DAILY_DELETE_PREFIX = "deleted:";
 		let allItems = [];
 		let selectedDate = "";
+		let datePageIndex = 0;
 		let selectedCategory = "";
 		let sortOrder = window.localStorage.getItem(SORT_STORAGE_KEY) || "desc";
 		let starredDailyKeys = loadDailyStarredKeys();
@@ -3927,6 +3928,9 @@ function bindGlassTopbar() {
 					counts[date] = (counts[date] || 0) + 1;
 				}
 			});
+			const dates = Object.keys(counts).sort((a, b) => b.localeCompare(a));
+			const pagination = window.HomepageDatePagination.paginateDates(dates, datePageIndex, 5);
+			datePageIndex = pagination.pageIndex;
 			dateList.innerHTML = "";
 			const totalCount = Object.keys(counts).reduce((sum, date) => sum + counts[date], 0);
 			const allButton = document.createElement("button");
@@ -3941,9 +3945,7 @@ function bindGlassTopbar() {
 			allButton.appendChild(allDateLabel);
 			allButton.appendChild(allCountLabel);
 			dateList.appendChild(allButton);
-			Object.keys(counts)
-				.sort((a, b) => b.localeCompare(a))
-				.forEach((date) => {
+			pagination.items.forEach((date) => {
 					const button = document.createElement("button");
 					button.type = "button";
 					button.className = "paper-date-button";
@@ -3957,6 +3959,36 @@ function bindGlassTopbar() {
 					button.appendChild(countLabel);
 					dateList.appendChild(button);
 				});
+			if (pagination.showPagination) {
+				const controls = document.createElement("div");
+				controls.className = "paper-date-pagination";
+
+				const previous = document.createElement("button");
+				previous.type = "button";
+				previous.className = "paper-date-page-button";
+				previous.dataset.paperDatePage = "-1";
+				previous.setAttribute("aria-label", "Show newer Daily Paper dates");
+				previous.textContent = "←";
+				previous.disabled = !pagination.canPrevious;
+
+				const status = document.createElement("span");
+				status.className = "paper-date-page-status";
+				status.textContent = `${pagination.pageNumber} / ${pagination.totalPages}`;
+				status.setAttribute("aria-live", "polite");
+
+				const next = document.createElement("button");
+				next.type = "button";
+				next.className = "paper-date-page-button";
+				next.dataset.paperDatePage = "1";
+				next.setAttribute("aria-label", "Show older Daily Paper dates");
+				next.textContent = "→";
+				next.disabled = !pagination.canNext;
+
+				controls.appendChild(previous);
+				controls.appendChild(status);
+				controls.appendChild(next);
+				dateList.appendChild(controls);
+			}
 		}
 
 		function renderRail(items) {
@@ -4536,6 +4568,12 @@ function bindGlassTopbar() {
 
 		if (dateList) {
 			dateList.addEventListener("click", (event) => {
+				const pageButton = event.target.closest("[data-paper-date-page]");
+				if (pageButton && !pageButton.disabled) {
+					datePageIndex += Number(pageButton.dataset.paperDatePage) || 0;
+					renderDateList();
+					return;
+				}
 				const button = event.target.closest("[data-paper-date-button]");
 				if (!button) {
 					return;
