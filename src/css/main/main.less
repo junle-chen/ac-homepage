@@ -2324,6 +2324,10 @@ a.about-action-button:focus {
 				position: relative;
 			}
 
+			#daily-paper .academic-section-head {
+				padding-top: 16px;
+			}
+
 			.academic-section[hidden] {
 				display: none !important;
 			}
@@ -2460,11 +2464,13 @@ a.about-action-button:focus {
 			}
 
 			.paper-date-pagination {
+				position: absolute;
+				top: 18px;
+				right: 18px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				gap: 12px;
-				padding-top: 2px;
 			}
 
 			.paper-date-page-button {
@@ -2497,9 +2503,6 @@ a.about-action-button:focus {
 			}
 
 			.paper-date-page-status {
-				position: absolute;
-				top: 18px;
-				right: 18px;
 				min-width: 54px;
 				color: var(--muted);
 				font-size: 0.74rem;
