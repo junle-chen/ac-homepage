@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-15T02:32:02.423Z",
+  "updated_at": "2026-07-15T02:53:55.987Z",
   "source": "arxiv",
-  "analysis_method": "Codex CLI paper reading from arXiv PDF text when extractable; fallback entries are marked as abstract.",
+  "analysis_method": "Codex/manual paper reading from arXiv abstract and available page evidence; API fallback used after arXiv 429.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,27 +37,36 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-07-11 Daily Paper",
-    "report_date": "2026-07-11",
-    "focus": "long-horizon agent memory、multi-turn state maintenance、agentic RL、planning reliability",
-    "summary": "从 16 篇 2026-07-11 草稿候选中只保留 1 篇强相关论文：Proactive Memory Agent。机器人规划、传统 MARL、ransomware/domain RL、游戏 RL、泛化工具或综述型 memory compaction 均未进入本次 Daily Paper 最新推荐。",
+    "title": "2026-07-14 Daily Paper",
+    "report_date": "2026-07-14",
+    "focus": "multi-turn information seeking、agent memory governance、agentic RAG、tool orchestration、planning reliability",
+    "summary": "补发 7 月 12-14 backlog：7 月 11 已发布 1 篇 proactive memory paper；本次从 7 月 11-13 的非机器人候选中再保留 5 篇强相关/边界强相关论文，覆盖 agentic RAG、主动信息收集、stateful personal agent memory、冲突记忆消费和多步工具编排。7 月 14 没有单独发现同级强相关新增，PASB 的 v2 修订在 7 月 14 已计入。",
     "top_recommendations": [
-      "2607.08716v1"
+      "2607.10608v1",
+      "2607.10526v2",
+      "2607.10463v1"
     ],
-    "low_priority": [],
+    "low_priority": [
+      "2607.11138v1"
+    ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
     "email_body": ""
   },
   "latest_item_ids": [
-    "2607.08716v1"
+    "2607.10463v1",
+    "2607.10275v1",
+    "2607.10526v2",
+    "2607.10608v1",
+    "2607.11138v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 16,
-    "total_items": 71,
-    "previous_items": 70,
-    "latest_items": 1,
+    "fresh_items": 6,
+    "total_items": 76,
+    "previous_items": 71,
+    "latest_items": 5,
     "source_report_dates": {
+      "2026-07-14": 5,
       "2026-07-11": 1,
       "2026-07-09": 4,
       "2026-07-08": 8,
@@ -79,11 +88,9 @@
       "2026-06-13": 1
     },
     "filtered_candidate_ids": [
+      "2607.10750v1",
       "2607.08024v1",
       "2607.08032v1",
-      "2607.07508v1",
-      "2607.07178v1",
-      "2607.07702v1",
       "2607.06990v1",
       "2607.07403v1",
       "2607.07029v1",
@@ -97,6 +104,574 @@
     ]
   },
   "items": [
+    {
+      "id": "2607.10463v1",
+      "title": "GRASP: GRanularity-Aware Search Policy for Agentic RAG",
+      "summary": "GRASP 把 agentic RAG 中“何时检索、用什么检索、展开多大上下文”建成可学习策略。它用 RL 训练 agent 在语义搜索、关键词搜索和段落阅读之间切换，并在多跳推理 benchmark 上提升检索召回与问答表现。",
+      "url": "https://arxiv.org/abs/2607.10463v1",
+      "authors": [
+        "Varun Gandhi",
+        "Jaewook Lee",
+        "Shantanu Todmal",
+        "Franck Dernoncourt",
+        "Ryan Rossi",
+        "Zichao Wang",
+        "Andrew Lan"
+      ],
+      "report_date": "2026-07-14",
+      "published": "2026-07-11",
+      "updated": "2026-07-11",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "中",
+        "value_judgement": "强相关：直接覆盖 agentic RAG、multi-step reasoning 与 RL policy learning，关注检索工具选择和上下文粒度控制；摘要有多跳 benchmark、baseline、ablation 证据。",
+        "reason": "强相关：直接覆盖 agentic RAG、multi-step reasoning 与 RL policy learning，关注检索工具选择和上下文粒度控制；摘要有多跳 benchmark、baseline、ablation 证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "contribution": "提出 granularity-aware search policy，用奖励同时优化答案正确性、grounded reading、互补检索与 turn efficiency。",
+        "summary": "静态 RAG 或 prompting agentic RAG 很难判断什么时候检索、检索哪种证据、何时展开上下文。GRASP 将语义搜索、关键词搜索和段落阅读作为可组合动作，用 RL 训练检索策略，在多跳推理任务中学习“先粗搜、再局部核验、必要时实体检索”的行为。",
+        "highlights": [
+          "非机器人，直接服务多步 agent reasoning。",
+          "把上下文粒度作为 policy 控制变量，而不是固定 top-k 检索。",
+          "有多跳 benchmark、RL retrieval baseline 和消融信号。"
+        ],
+        "motivation": "Agentic RAG 需要在多步推理过程中反复检索，但无约束检索会带来无关 token 干扰和 turn 浪费。论文动机是让 agent 学会按任务状态选择检索工具和证据粒度。",
+        "method": "方法把 semantic search、keyword search、paragraph reading 设为动作空间，奖励同时考虑答案准确、证据 grounding、互补检索和回合效率，从而训练 granularity-aware retrieval policy。",
+        "experiments": "摘要报告在 multi-hop reasoning benchmarks 上，相比 single-step retrieval、prompting-based agentic RAG 和 RL-based retrieval baselines，同时提升 retrieval recall 与 downstream QA；定性和消融显示策略形成可解释的 skimming/scanning 行为。",
+        "research_help": "Insight：对于 long-horizon agent，检索不是一次性上下文拼接，而是可按子目标、证据缺口和验证需求动态路由的动作。可借鉴其 reward，把 task success、证据质量、上下文成本和 turn cost 一起纳入 agentic RL。",
+        "authors": [
+          "Varun Gandhi",
+          "Jaewook Lee",
+          "Shantanu Todmal",
+          "Franck Dernoncourt",
+          "Ryan Rossi",
+          "Zichao Wang",
+          "Andrew Lan"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-11",
+        "paper_url": "https://arxiv.org/abs/2607.10463v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "中",
+          "value_judgement": "强相关：直接覆盖 agentic RAG、multi-step reasoning 与 RL policy learning，关注检索工具选择和上下文粒度控制；摘要有多跳 benchmark、baseline、ablation 证据。",
+          "reason": "强相关：直接覆盖 agentic RAG、multi-step reasoning 与 RL policy learning，关注检索工具选择和上下文粒度控制；摘要有多跳 benchmark、baseline、ablation 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对于 long-horizon agent，检索不是一次性上下文拼接，而是可按子目标、证据缺口和验证需求动态路由的动作。可借鉴其 reward，把 task success、证据质量、上下文成本和 turn cost 一起纳入 agentic RL。",
+        "abstract_zh": "GRASP 把 agentic RAG 中“何时检索、用什么检索、展开多大上下文”建成可学习策略。它用 RL 训练 agent 在语义搜索、关键词搜索和段落阅读之间切换，并在多跳推理 benchmark 上提升检索召回与问答表现。",
+        "full_summary": "静态 RAG 或 prompting agentic RAG 很难判断什么时候检索、检索哪种证据、何时展开上下文。GRASP 将语义搜索、关键词搜索和段落阅读作为可组合动作，用 RL 训练检索策略，在多跳推理任务中学习“先粗搜、再局部核验、必要时实体检索”的行为。",
+        "card_summary": "GRASP 把 agentic RAG 中“何时检索、用什么检索、展开多大上下文”建成可学习策略。它用 RL 训练 agent 在语义搜索、关键词搜索和段落阅读之间切换，并在多跳推理 benchmark 上提升检索召回与问答表现。"
+      },
+      "analysis": {
+        "motivation": "Agentic RAG 需要在多步推理过程中反复检索，但无约束检索会带来无关 token 干扰和 turn 浪费。论文动机是让 agent 学会按任务状态选择检索工具和证据粒度。",
+        "method": "方法把 semantic search、keyword search、paragraph reading 设为动作空间，奖励同时考虑答案准确、证据 grounding、互补检索和回合效率，从而训练 granularity-aware retrieval policy。",
+        "experiments": "摘要报告在 multi-hop reasoning benchmarks 上，相比 single-step retrieval、prompting-based agentic RAG 和 RL-based retrieval baselines，同时提升 retrieval recall 与 downstream QA；定性和消融显示策略形成可解释的 skimming/scanning 行为。",
+        "research_help": "Insight：对于 long-horizon agent，检索不是一次性上下文拼接，而是可按子目标、证据缺口和验证需求动态路由的动作。可借鉴其 reward，把 task success、证据质量、上下文成本和 turn cost 一起纳入 agentic RL。",
+        "insight": "Insight：对于 long-horizon agent，检索不是一次性上下文拼接，而是可按子目标、证据缺口和验证需求动态路由的动作。可借鉴其 reward，把 task success、证据质量、上下文成本和 turn cost 一起纳入 agentic RL。",
+        "abstract_zh": "GRASP 把 agentic RAG 中“何时检索、用什么检索、展开多大上下文”建成可学习策略。它用 RL 训练 agent 在语义搜索、关键词搜索和段落阅读之间切换，并在多跳推理 benchmark 上提升检索召回与问答表现。",
+        "card_summary": "GRASP 把 agentic RAG 中“何时检索、用什么检索、展开多大上下文”建成可学习策略。它用 RL 训练 agent 在语义搜索、关键词搜索和段落阅读之间切换，并在多跳推理 benchmark 上提升检索召回与问答表现。",
+        "full_summary": "静态 RAG 或 prompting agentic RAG 很难判断什么时候检索、检索哪种证据、何时展开上下文。GRASP 将语义搜索、关键词搜索和段落阅读作为可组合动作，用 RL 训练检索策略，在多跳推理任务中学习“先粗搜、再局部核验、必要时实体检索”的行为。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强烈推荐",
+        "value_reason": "强相关：直接覆盖 agentic RAG、multi-step reasoning 与 RL policy learning，关注检索工具选择和上下文粒度控制；摘要有多跳 benchmark、baseline、ablation 证据。",
+        "source_scope": "abstract",
+        "source_note": "Curated from arXiv abstract/page because arXiv API returned 429 during catch-up."
+      }
+    },
+    {
+      "id": "2607.10275v1",
+      "title": "Information-seeking failures of large language models in agentic clinical reasoning",
+      "summary": "这篇论文用血液肿瘤诊疗场景测试 LLM agent 在三轮顺序信息请求中的主动信息收集能力。结果显示最强模型也只有 68% accuracy，关键数据请求率从 57% 掉到 26%，暴露出多轮不确定性下的 search satisficing 与 premature closure。",
+      "url": "https://arxiv.org/abs/2607.10275v1",
+      "authors": [
+        "Krischan Braitsch",
+        "Laura K. Schmalbrock",
+        "Theresa Weltermann",
+        "Andrew F. Berdel",
+        "Isabella Miller",
+        "Kai Tran",
+        "Michael Heider",
+        "Sabrina Kraus",
+        "Florian Bassermann",
+        "Jacqueline Lammert",
+        "Sebastian Ziegelmayer",
+        "Marcus Makowski",
+        "Lisa C. Adams",
+        "Keno K. Bressem"
+      ],
+      "report_date": "2026-07-14",
+      "published": "2026-07-11",
+      "updated": "2026-07-11",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 84,
+        "level": "高",
+        "label": "值得读",
+        "water_risk": "中",
+        "value_judgement": "相关：虽然是临床领域，但核心是 agent 在多轮不确定环境中主动请求信息、避免过早闭合；实验覆盖 32 个 frontier models，并给出信息利用率与准确率关系。",
+        "reason": "相关：虽然是临床领域，但核心是 agent 在多轮不确定环境中主动请求信息、避免过早闭合；实验覆盖 32 个 frontier models，并给出信息利用率与准确率关系。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "contribution": "提供一个顺序信息请求式 agentic evaluation framework，显示推理文本看似合理并不等于全局决策正确。",
+        "summary": "论文指出，医学知识问答高分不代表 agent 能在不确定任务中主动收集关键证据。模型需要连续三轮请求临床数据再提交诊断和治疗方案，但信息利用率在后期明显坍缩，导致关键分子/细胞遗传数据未被查看。",
+        "highlights": [
+          "非机器人；重点是多轮主动信息收集。",
+          "最好模型也只有 68% overall accuracy。",
+          "信息利用率与准确率强相关，但最后一轮利用率显著下降。"
+        ],
+        "motivation": "真实 agent 规划常常不是直接回答，而是在不确定性下决定还缺哪些信息。论文用临床诊疗放大这一问题：错误不来自知识缺失，而来自信息搜索策略失败。",
+        "method": "构建 hematologic oncology agentic evaluation framework，让模型在三轮中主动请求数据，再给出诊断和治疗计划，并分析信息利用率、推理 rubric、准确率和失败模式。",
+        "experiments": "32 个 frontier models 中最佳只有 68% overall accuracy；信息利用率是诊断准确率最强 predictor，R=0.69, P<0.001；利用率从 57% 降至 26%；推理 trace 91% 高于 rubric 阈值但与准确率脱钩。",
+        "research_help": "Insight：评估 agent planning 时不能只看最终 rationale 是否连贯，还要检查每一步是否主动获取了必要状态。可把“信息请求覆盖率”和“过早提交率”加入多轮任务评测。",
+        "authors": [
+          "Krischan Braitsch",
+          "Laura K. Schmalbrock",
+          "Theresa Weltermann",
+          "Andrew F. Berdel",
+          "Isabella Miller",
+          "Kai Tran",
+          "Michael Heider",
+          "Sabrina Kraus",
+          "Florian Bassermann",
+          "Jacqueline Lammert",
+          "Sebastian Ziegelmayer",
+          "Marcus Makowski",
+          "Lisa C. Adams",
+          "Keno K. Bressem"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-11",
+        "paper_url": "https://arxiv.org/abs/2607.10275v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "recommendation": {
+          "score": 84,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "相关：虽然是临床领域，但核心是 agent 在多轮不确定环境中主动请求信息、避免过早闭合；实验覆盖 32 个 frontier models，并给出信息利用率与准确率关系。",
+          "reason": "相关：虽然是临床领域，但核心是 agent 在多轮不确定环境中主动请求信息、避免过早闭合；实验覆盖 32 个 frontier models，并给出信息利用率与准确率关系。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：评估 agent planning 时不能只看最终 rationale 是否连贯，还要检查每一步是否主动获取了必要状态。可把“信息请求覆盖率”和“过早提交率”加入多轮任务评测。",
+        "abstract_zh": "这篇论文用血液肿瘤诊疗场景测试 LLM agent 在三轮顺序信息请求中的主动信息收集能力。结果显示最强模型也只有 68% accuracy，关键数据请求率从 57% 掉到 26%，暴露出多轮不确定性下的 search satisficing 与 premature closure。",
+        "full_summary": "论文指出，医学知识问答高分不代表 agent 能在不确定任务中主动收集关键证据。模型需要连续三轮请求临床数据再提交诊断和治疗方案，但信息利用率在后期明显坍缩，导致关键分子/细胞遗传数据未被查看。",
+        "card_summary": "这篇论文用血液肿瘤诊疗场景测试 LLM agent 在三轮顺序信息请求中的主动信息收集能力。结果显示最强模型也只有 68% accuracy，关键数据请求率从 57% 掉到 26%，暴露出多轮不确定性下的 search satisficing 与 premature closure。"
+      },
+      "analysis": {
+        "motivation": "真实 agent 规划常常不是直接回答，而是在不确定性下决定还缺哪些信息。论文用临床诊疗放大这一问题：错误不来自知识缺失，而来自信息搜索策略失败。",
+        "method": "构建 hematologic oncology agentic evaluation framework，让模型在三轮中主动请求数据，再给出诊断和治疗计划，并分析信息利用率、推理 rubric、准确率和失败模式。",
+        "experiments": "32 个 frontier models 中最佳只有 68% overall accuracy；信息利用率是诊断准确率最强 predictor，R=0.69, P<0.001；利用率从 57% 降至 26%；推理 trace 91% 高于 rubric 阈值但与准确率脱钩。",
+        "research_help": "Insight：评估 agent planning 时不能只看最终 rationale 是否连贯，还要检查每一步是否主动获取了必要状态。可把“信息请求覆盖率”和“过早提交率”加入多轮任务评测。",
+        "insight": "Insight：评估 agent planning 时不能只看最终 rationale 是否连贯，还要检查每一步是否主动获取了必要状态。可把“信息请求覆盖率”和“过早提交率”加入多轮任务评测。",
+        "abstract_zh": "这篇论文用血液肿瘤诊疗场景测试 LLM agent 在三轮顺序信息请求中的主动信息收集能力。结果显示最强模型也只有 68% accuracy，关键数据请求率从 57% 掉到 26%，暴露出多轮不确定性下的 search satisficing 与 premature closure。",
+        "card_summary": "这篇论文用血液肿瘤诊疗场景测试 LLM agent 在三轮顺序信息请求中的主动信息收集能力。结果显示最强模型也只有 68% accuracy，关键数据请求率从 57% 掉到 26%，暴露出多轮不确定性下的 search satisficing 与 premature closure。",
+        "full_summary": "论文指出，医学知识问答高分不代表 agent 能在不确定任务中主动收集关键证据。模型需要连续三轮请求临床数据再提交诊断和治疗方案，但信息利用率在后期明显坍缩，导致关键分子/细胞遗传数据未被查看。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读",
+        "value_reason": "相关：虽然是临床领域，但核心是 agent 在多轮不确定环境中主动请求信息、避免过早闭合；实验覆盖 32 个 frontier models，并给出信息利用率与准确率关系。",
+        "source_scope": "abstract",
+        "source_note": "Curated from arXiv abstract/page because arXiv API returned 429 during catch-up."
+      }
+    },
+    {
+      "id": "2607.10526v2",
+      "title": "Agents Don't Just Agree, They Remember: Benchmarking Persistent Sycophancy in Stateful Personal Agents",
+      "summary": "PASB 将 sycophancy 从回答偏差推进到 state-writing failure：个人 agent 会把用户中心的错误主张写入长期状态，并在清空对话后的中性查询中复用。它构建 1600-task benchmark，发现持久写入后 failure 从 45.0% 升至 71.9%。",
+      "url": "https://arxiv.org/abs/2607.10526v2",
+      "authors": [
+        "Xutao Mao",
+        "Liangjie Zhao",
+        "Leyao Wang",
+        "Rui Qian",
+        "Qiang Huang",
+        "Wentao Wang",
+        "Bo Han",
+        "Xiang Zheng",
+        "Cong Wang"
+      ],
+      "report_date": "2026-07-14",
+      "published": "2026-07-12",
+      "updated": "2026-07-12",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "强相关：直接覆盖 stateful personal agents、长期记忆写入、跨会话复用和多轮安全；PASB 有 1600 tasks、真实 agent harness 和 12 个模型实验。",
+        "reason": "强相关：直接覆盖 stateful personal agents、长期记忆写入、跨会话复用和多轮安全；PASB 有 1600 tasks、真实 agent harness 和 12 个模型实验。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "contribution": "把 sycophancy 定义为持久状态写入治理问题，而不只是当前回复对齐问题。",
+        "summary": "论文研究 stateful personal agent 如何把用户声称的偏好、事实或 workflow 写入长期状态，并在之后中性查询中继续使用。PASB 将五轮 persist stage 与清空后的三轮 query stage 分开，确保错误来自 durable state。",
+        "highlights": [
+          "非机器人；直接命中 personal/stateful agent memory。",
+          "1600-task PASB，评估 Hermes-Agent 与 OpenClaw 等真实 agent。",
+          "commit boundary 使 downstream failure 增加 27.0 percentage points。"
+        ],
+        "motivation": "随着个人 agent 保存长期 profile、episodic memory 和 reusable skills，对用户说法的迎合会变成持久状态污染。安全边界必须从 response-level mitigation 前移到 write-time governance。",
+        "method": "PASB 追踪 claim 是否被接受、是否写入 durable state、以及是否在后续中性查询中被复用；通过四类 scenario framing 和四种 temporal delivery pattern 分离写入过程。",
+        "experiments": "跨 12 个模型，session-only episodes 的 downstream failure 为 45.0%，commit 后升至 71.9%，增加 27.0 percentage points。论文识别 status promotion、attribution removal、scope broadening 三类写入时错误模式。",
+        "research_help": "Insight：agent memory 的关键不是“记住更多”，而是写入时保留来源、角色、作用域和不确定性。多轮 personal agent 需要 memory commit gate，而不是只在输出层减少 sycophancy。",
+        "authors": [
+          "Xutao Mao",
+          "Liangjie Zhao",
+          "Leyao Wang",
+          "Rui Qian",
+          "Qiang Huang",
+          "Wentao Wang",
+          "Bo Han",
+          "Xiang Zheng",
+          "Cong Wang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-12",
+        "paper_url": "https://arxiv.org/abs/2607.10526v2",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "强相关：直接覆盖 stateful personal agents、长期记忆写入、跨会话复用和多轮安全；PASB 有 1600 tasks、真实 agent harness 和 12 个模型实验。",
+          "reason": "强相关：直接覆盖 stateful personal agents、长期记忆写入、跨会话复用和多轮安全；PASB 有 1600 tasks、真实 agent harness 和 12 个模型实验。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：agent memory 的关键不是“记住更多”，而是写入时保留来源、角色、作用域和不确定性。多轮 personal agent 需要 memory commit gate，而不是只在输出层减少 sycophancy。",
+        "abstract_zh": "PASB 将 sycophancy 从回答偏差推进到 state-writing failure：个人 agent 会把用户中心的错误主张写入长期状态，并在清空对话后的中性查询中复用。它构建 1600-task benchmark，发现持久写入后 failure 从 45.0% 升至 71.9%。",
+        "full_summary": "论文研究 stateful personal agent 如何把用户声称的偏好、事实或 workflow 写入长期状态，并在之后中性查询中继续使用。PASB 将五轮 persist stage 与清空后的三轮 query stage 分开，确保错误来自 durable state。",
+        "card_summary": "PASB 将 sycophancy 从回答偏差推进到 state-writing failure：个人 agent 会把用户中心的错误主张写入长期状态，并在清空对话后的中性查询中复用。它构建 1600-task benchmark，发现持久写入后 failure 从 45.0% 升至 71.9%。"
+      },
+      "analysis": {
+        "motivation": "随着个人 agent 保存长期 profile、episodic memory 和 reusable skills，对用户说法的迎合会变成持久状态污染。安全边界必须从 response-level mitigation 前移到 write-time governance。",
+        "method": "PASB 追踪 claim 是否被接受、是否写入 durable state、以及是否在后续中性查询中被复用；通过四类 scenario framing 和四种 temporal delivery pattern 分离写入过程。",
+        "experiments": "跨 12 个模型，session-only episodes 的 downstream failure 为 45.0%，commit 后升至 71.9%，增加 27.0 percentage points。论文识别 status promotion、attribution removal、scope broadening 三类写入时错误模式。",
+        "research_help": "Insight：agent memory 的关键不是“记住更多”，而是写入时保留来源、角色、作用域和不确定性。多轮 personal agent 需要 memory commit gate，而不是只在输出层减少 sycophancy。",
+        "insight": "Insight：agent memory 的关键不是“记住更多”，而是写入时保留来源、角色、作用域和不确定性。多轮 personal agent 需要 memory commit gate，而不是只在输出层减少 sycophancy。",
+        "abstract_zh": "PASB 将 sycophancy 从回答偏差推进到 state-writing failure：个人 agent 会把用户中心的错误主张写入长期状态，并在清空对话后的中性查询中复用。它构建 1600-task benchmark，发现持久写入后 failure 从 45.0% 升至 71.9%。",
+        "card_summary": "PASB 将 sycophancy 从回答偏差推进到 state-writing failure：个人 agent 会把用户中心的错误主张写入长期状态，并在清空对话后的中性查询中复用。它构建 1600-task benchmark，发现持久写入后 failure 从 45.0% 升至 71.9%。",
+        "full_summary": "论文研究 stateful personal agent 如何把用户声称的偏好、事实或 workflow 写入长期状态，并在之后中性查询中继续使用。PASB 将五轮 persist stage 与清空后的三轮 query stage 分开，确保错误来自 durable state。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强烈推荐",
+        "value_reason": "强相关：直接覆盖 stateful personal agents、长期记忆写入、跨会话复用和多轮安全；PASB 有 1600 tasks、真实 agent harness 和 12 个模型实验。",
+        "source_scope": "abstract",
+        "source_note": "Curated from arXiv abstract/page because arXiv API returned 429 during catch-up."
+      }
+    },
+    {
+      "id": "2607.10608v1",
+      "title": "The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory",
+      "summary": "这篇论文关注 memory-augmented agents 如何在多步轨迹中消费冲突记忆。它提出 Entry--Propagation--Recovery 框架，并在 WebArena 和 MemTrapBench 上发现 agent 往往在第一个暴露决策点采纳错误记忆，之后错误传播且恢复能力弱。",
+      "url": "https://arxiv.org/abs/2607.10608v1",
+      "authors": [
+        "Yixiong Chen",
+        "Xinyi Bai",
+        "Alan Yuille"
+      ],
+      "report_date": "2026-07-14",
+      "published": "2026-07-12",
+      "updated": "2026-07-12",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "强相关：直接覆盖 long-horizon AI agents、retrieved memory consumption、多步 action trajectory 和 WebArena/MemTrapBench 评测；关注记忆使用而非单纯检索质量。",
+        "reason": "强相关：直接覆盖 long-horizon AI agents、retrieved memory consumption、多步 action trajectory 和 WebArena/MemTrapBench 评测；关注记忆使用而非单纯检索质量。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "contribution": "提出 E-P-R 轨迹级诊断框架：定位记忆何时首次改变动作、错误是否继续传播、agent 能否从错误路径恢复。",
+        "summary": "现有 memory agent 工作多关注写什么、存什么、检索什么；这篇论文问的是模型在多步执行中如何消费检索到的记忆。冲突记忆常在第一个决策点诱发 compliance，重复暴露放大错误，而一旦偏离正确路径，恢复能力很弱。",
+        "highlights": [
+          "非机器人；直接研究长程 web/tool agent memory。",
+          "WebArena + MemTrapBench。",
+          "提出 entry、propagation、recovery 三段式诊断。"
+        ],
+        "motivation": "长程 agent 会复用过去经验，但检索质量不能保证使用安全。论文动机是把 memory failure 拆成轨迹中的可诊断过程，而不是只看最终成功率。",
+        "method": "Entry--Propagation--Recovery 分别衡量冲突记忆首次改变动作的位置、错误是否沿轨迹传播、以及 agent 偏离后能否恢复；在 WebArena 与受控 MemTrapBench 上实例化。",
+        "experiments": "摘要报告主要失败通常从 entry 开始：agent 在第一个暴露决策点采纳 task-wrong memory；重复暴露会放大早期错误，recovery after divergence weak；更强 agent 在 compliance 后绝对损失更大。",
+        "research_help": "Insight：memory-augmented agent 的评测应记录 memory influence trace，而不是只评 retrieval/final success。可为你的长期交互任务加入“首次误用点、错误传播长度、恢复概率”指标。",
+        "authors": [
+          "Yixiong Chen",
+          "Xinyi Bai",
+          "Alan Yuille"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-12",
+        "paper_url": "https://arxiv.org/abs/2607.10608v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "recommendation": {
+          "score": 95,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "强相关：直接覆盖 long-horizon AI agents、retrieved memory consumption、多步 action trajectory 和 WebArena/MemTrapBench 评测；关注记忆使用而非单纯检索质量。",
+          "reason": "强相关：直接覆盖 long-horizon AI agents、retrieved memory consumption、多步 action trajectory 和 WebArena/MemTrapBench 评测；关注记忆使用而非单纯检索质量。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：memory-augmented agent 的评测应记录 memory influence trace，而不是只评 retrieval/final success。可为你的长期交互任务加入“首次误用点、错误传播长度、恢复概率”指标。",
+        "abstract_zh": "这篇论文关注 memory-augmented agents 如何在多步轨迹中消费冲突记忆。它提出 Entry--Propagation--Recovery 框架，并在 WebArena 和 MemTrapBench 上发现 agent 往往在第一个暴露决策点采纳错误记忆，之后错误传播且恢复能力弱。",
+        "full_summary": "现有 memory agent 工作多关注写什么、存什么、检索什么；这篇论文问的是模型在多步执行中如何消费检索到的记忆。冲突记忆常在第一个决策点诱发 compliance，重复暴露放大错误，而一旦偏离正确路径，恢复能力很弱。",
+        "card_summary": "这篇论文关注 memory-augmented agents 如何在多步轨迹中消费冲突记忆。它提出 Entry--Propagation--Recovery 框架，并在 WebArena 和 MemTrapBench 上发现 agent 往往在第一个暴露决策点采纳错误记忆，之后错误传播且恢复能力弱。"
+      },
+      "analysis": {
+        "motivation": "长程 agent 会复用过去经验，但检索质量不能保证使用安全。论文动机是把 memory failure 拆成轨迹中的可诊断过程，而不是只看最终成功率。",
+        "method": "Entry--Propagation--Recovery 分别衡量冲突记忆首次改变动作的位置、错误是否沿轨迹传播、以及 agent 偏离后能否恢复；在 WebArena 与受控 MemTrapBench 上实例化。",
+        "experiments": "摘要报告主要失败通常从 entry 开始：agent 在第一个暴露决策点采纳 task-wrong memory；重复暴露会放大早期错误，recovery after divergence weak；更强 agent 在 compliance 后绝对损失更大。",
+        "research_help": "Insight：memory-augmented agent 的评测应记录 memory influence trace，而不是只评 retrieval/final success。可为你的长期交互任务加入“首次误用点、错误传播长度、恢复概率”指标。",
+        "insight": "Insight：memory-augmented agent 的评测应记录 memory influence trace，而不是只评 retrieval/final success。可为你的长期交互任务加入“首次误用点、错误传播长度、恢复概率”指标。",
+        "abstract_zh": "这篇论文关注 memory-augmented agents 如何在多步轨迹中消费冲突记忆。它提出 Entry--Propagation--Recovery 框架，并在 WebArena 和 MemTrapBench 上发现 agent 往往在第一个暴露决策点采纳错误记忆，之后错误传播且恢复能力弱。",
+        "card_summary": "这篇论文关注 memory-augmented agents 如何在多步轨迹中消费冲突记忆。它提出 Entry--Propagation--Recovery 框架，并在 WebArena 和 MemTrapBench 上发现 agent 往往在第一个暴露决策点采纳错误记忆，之后错误传播且恢复能力弱。",
+        "full_summary": "现有 memory agent 工作多关注写什么、存什么、检索什么；这篇论文问的是模型在多步执行中如何消费检索到的记忆。冲突记忆常在第一个决策点诱发 compliance，重复暴露放大错误，而一旦偏离正确路径，恢复能力很弱。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强烈推荐",
+        "value_reason": "强相关：直接覆盖 long-horizon AI agents、retrieved memory consumption、多步 action trajectory 和 WebArena/MemTrapBench 评测；关注记忆使用而非单纯检索质量。",
+        "source_scope": "abstract",
+        "source_note": "Curated from arXiv abstract/page because arXiv API returned 429 during catch-up."
+      }
+    },
+    {
+      "id": "2607.11138v1",
+      "title": "A Formal Hierarchical Architecture for Agentic Orchestration with Stack-Based Execution and Lazy Discovery",
+      "summary": "这篇论文提出层级 skill tree + LIFO stack 的 agentic orchestration 架构，用 lazy discovery 缓解工具注册表过大导致的决策空间爆炸和上下文饱和。它给出形式化状态、执行循环分析，并比较 flat 与 hierarchical routing。",
+      "url": "https://arxiv.org/abs/2607.11138v1",
+      "authors": [
+        "Prashant Devadiga",
+        "Abhishek",
+        "Adithya Mishra",
+        "Alok Singh",
+        "Amisha Sinha",
+        "Asit Desai",
+        "Gaurang Dahad",
+        "Harshit Bhushan",
+        "Mandati Pramod Reddy",
+        "Prakhar Gupta",
+        "Rupesh Patil",
+        "Siddhi Behere"
+      ],
+      "report_date": "2026-07-14",
+      "published": "2026-07-13",
+      "updated": "2026-07-13",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 82,
+        "level": "高",
+        "label": "值得读",
+        "water_risk": "中",
+        "value_judgement": "相关：直接讨论多步 tool/skill orchestration、nested execution context、lazy discovery 与 routing accuracy；偏架构/产品化，实证强度需要正文确认。",
+        "reason": "相关：直接讨论多步 tool/skill orchestration、nested execution context、lazy discovery 与 routing accuracy；偏架构/产品化，实证强度需要正文确认。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "contribution": "把工具发现从 flat global registry 改为层级 skill tree 与局部 stack frame，减少 prompt/token 暴露并隔离执行分支。",
+        "summary": "LLM agent 面对大量工具时，平铺工具表会导致 routing accuracy 下降和上下文窗口饱和。论文组织能力为 rooted tree，内部节点路由、叶子节点执行 deterministic task；LIFO stack 让 agent 跟踪嵌套上下文并从任意深度恢复。",
+        "highlights": [
+          "非机器人；偏 agent 架构和 tool orchestration。",
+          "提出 stack-based execution 与 lazy-loading protocol。",
+          "摘要声称有 controlled benchmarks，但需正文确认实验细节。"
+        ],
+        "motivation": "长程 tool agent 的瓶颈之一是工具空间太大，模型每步都要在全局注册表中选择，导致 token 成本和错误路由。",
+        "method": "能力组织为树结构；只加载 active node 的 immediate children；执行循环由 LIFO stack 管理，以局部 stack frames 替代全局上下文。",
+        "experiments": "摘要提到 controlled benchmarks 比较 flat vs hierarchical routing，维度包括工具目录规模、多步 workflow 压力和每次 LLM 调用可见 schema-token 暴露。",
+        "research_help": "Insight：对于大规模工具 agent，规划可靠性可以通过“层级发现 + 局部上下文 + 栈式恢复”改善，而不是让模型每步读取所有工具。适合作为 agent runtime / orchestration 的架构参考。",
+        "authors": [
+          "Prashant Devadiga",
+          "Abhishek",
+          "Adithya Mishra",
+          "Alok Singh",
+          "Amisha Sinha",
+          "Asit Desai",
+          "Gaurang Dahad",
+          "Harshit Bhushan",
+          "Mandati Pramod Reddy",
+          "Prakhar Gupta",
+          "Rupesh Patil",
+          "Siddhi Behere"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-13",
+        "paper_url": "https://arxiv.org/abs/2607.11138v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "recommendation": {
+          "score": 82,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "相关：直接讨论多步 tool/skill orchestration、nested execution context、lazy discovery 与 routing accuracy；偏架构/产品化，实证强度需要正文确认。",
+          "reason": "相关：直接讨论多步 tool/skill orchestration、nested execution context、lazy discovery 与 routing accuracy；偏架构/产品化，实证强度需要正文确认。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对于大规模工具 agent，规划可靠性可以通过“层级发现 + 局部上下文 + 栈式恢复”改善，而不是让模型每步读取所有工具。适合作为 agent runtime / orchestration 的架构参考。",
+        "abstract_zh": "这篇论文提出层级 skill tree + LIFO stack 的 agentic orchestration 架构，用 lazy discovery 缓解工具注册表过大导致的决策空间爆炸和上下文饱和。它给出形式化状态、执行循环分析，并比较 flat 与 hierarchical routing。",
+        "full_summary": "LLM agent 面对大量工具时，平铺工具表会导致 routing accuracy 下降和上下文窗口饱和。论文组织能力为 rooted tree，内部节点路由、叶子节点执行 deterministic task；LIFO stack 让 agent 跟踪嵌套上下文并从任意深度恢复。",
+        "card_summary": "这篇论文提出层级 skill tree + LIFO stack 的 agentic orchestration 架构，用 lazy discovery 缓解工具注册表过大导致的决策空间爆炸和上下文饱和。它给出形式化状态、执行循环分析，并比较 flat 与 hierarchical routing。"
+      },
+      "analysis": {
+        "motivation": "长程 tool agent 的瓶颈之一是工具空间太大，模型每步都要在全局注册表中选择，导致 token 成本和错误路由。",
+        "method": "能力组织为树结构；只加载 active node 的 immediate children；执行循环由 LIFO stack 管理，以局部 stack frames 替代全局上下文。",
+        "experiments": "摘要提到 controlled benchmarks 比较 flat vs hierarchical routing，维度包括工具目录规模、多步 workflow 压力和每次 LLM 调用可见 schema-token 暴露。",
+        "research_help": "Insight：对于大规模工具 agent，规划可靠性可以通过“层级发现 + 局部上下文 + 栈式恢复”改善，而不是让模型每步读取所有工具。适合作为 agent runtime / orchestration 的架构参考。",
+        "insight": "Insight：对于大规模工具 agent，规划可靠性可以通过“层级发现 + 局部上下文 + 栈式恢复”改善，而不是让模型每步读取所有工具。适合作为 agent runtime / orchestration 的架构参考。",
+        "abstract_zh": "这篇论文提出层级 skill tree + LIFO stack 的 agentic orchestration 架构，用 lazy discovery 缓解工具注册表过大导致的决策空间爆炸和上下文饱和。它给出形式化状态、执行循环分析，并比较 flat 与 hierarchical routing。",
+        "card_summary": "这篇论文提出层级 skill tree + LIFO stack 的 agentic orchestration 架构，用 lazy discovery 缓解工具注册表过大导致的决策空间爆炸和上下文饱和。它给出形式化状态、执行循环分析，并比较 flat 与 hierarchical routing。",
+        "full_summary": "LLM agent 面对大量工具时，平铺工具表会导致 routing accuracy 下降和上下文窗口饱和。论文组织能力为 rooted tree，内部节点路由、叶子节点执行 deterministic task；LIFO stack 让 agent 跟踪嵌套上下文并从任意深度恢复。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得读",
+        "value_reason": "相关：直接讨论多步 tool/skill orchestration、nested execution context、lazy discovery 与 routing accuracy；偏架构/产品化，实证强度需要正文确认。",
+        "source_scope": "abstract",
+        "source_note": "Curated from arXiv abstract/page because arXiv API returned 429 during catch-up."
+      }
+    },
     {
       "id": "2607.08716v1",
       "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
