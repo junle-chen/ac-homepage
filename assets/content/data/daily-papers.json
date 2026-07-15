@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09T01:46:27.378Z",
+  "updated_at": "2026-07-15T02:32:02.423Z",
   "source": "arxiv",
   "analysis_method": "Codex CLI paper reading from arXiv PDF text when extractable; fallback entries are marked as abstract.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
@@ -37,45 +37,28 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-07-09 Daily Paper",
-    "report_date": "2026-07-09",
-    "focus": "agentic RL、long-horizon agent optimization、trajectory reliability、agent memory security",
-    "summary": "今日从 16 篇候选中保留 4 篇强相关论文：两篇聚焦 agentic RL 训练稳定性，一篇聚焦长程轨迹根因定位，一篇聚焦长期记忆中毒与防御。其余候选多为机器人、通用 MARL、领域 RL 或平台演示，未达到 Daily Paper 发布阈值。",
+    "title": "2026-07-11 Daily Paper",
+    "report_date": "2026-07-11",
+    "focus": "long-horizon agent memory、multi-turn state maintenance、agentic RL、planning reliability",
+    "summary": "从 16 篇 2026-07-11 草稿候选中只保留 1 篇强相关论文：Proactive Memory Agent。机器人规划、传统 MARL、ransomware/domain RL、游戏 RL、泛化工具或综述型 memory compaction 均未进入本次 Daily Paper 最新推荐。",
     "top_recommendations": [
-      "2607.07508v1",
-      "2607.07178v1",
-      "2607.07702v1",
-      "2607.06595v1"
+      "2607.08716v1"
     ],
-    "low_priority": [
-      "2607.06990v1",
-      "2607.07403v1",
-      "2607.07029v1",
-      "2607.06880v1",
-      "2607.06563v1",
-      "2607.05957v1",
-      "2607.05939v1",
-      "2607.06854v1",
-      "2607.05773v1",
-      "2607.04710v1",
-      "2607.05179v1"
-    ],
+    "low_priority": [],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
     "email_body": ""
   },
   "latest_item_ids": [
-    "2607.07508v1",
-    "2607.07178v1",
-    "2607.07702v1",
-    "2607.06595v1"
+    "2607.08716v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
     "fresh_items": 16,
-    "total_items": 70,
-    "previous_items": 66,
-    "latest_items": 4,
+    "total_items": 71,
+    "previous_items": 70,
+    "latest_items": 1,
     "source_report_dates": {
+      "2026-07-11": 1,
       "2026-07-09": 4,
       "2026-07-08": 8,
       "2026-07-07": 1,
@@ -84,32 +67,156 @@
       "2026-07-02": 2,
       "2026-06-30": 2,
       "2026-06-29": 2,
-      "2026-06-25": 2,
       "2026-06-26": 2,
+      "2026-06-25": 2,
       "2026-06-24": 2,
       "2026-06-23": 6,
+      "2026-06-18": 1,
       "2026-06-17": 5,
       "2026-06-16": 2,
       "2026-06-15": 9,
-      "2026-06-18": 1,
       "2026-06-14": 5,
       "2026-06-13": 1
     },
     "filtered_candidate_ids": [
+      "2607.08024v1",
+      "2607.08032v1",
+      "2607.07508v1",
+      "2607.07178v1",
+      "2607.07702v1",
       "2607.06990v1",
       "2607.07403v1",
       "2607.07029v1",
       "2607.06880v1",
+      "2607.07753v1",
       "2607.06563v1",
       "2607.05957v1",
       "2607.05939v1",
       "2607.06854v1",
-      "2607.05773v1",
-      "2607.04710v1",
-      "2607.05179v1"
+      "2607.05773v1"
     ]
   },
   "items": [
+    {
+      "id": "2607.08716v1",
+      "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
+      "summary": "长程任务中，早期约束、失败经验和环境事实常被轨迹淹没，导致后续动作不再受其约束。论文提出并行的 proactive memory agent，维护结构化记忆并选择何时注入短提醒；在 Terminal-Bench 2.0 与 τ2-Bench 上提升多种行动模型的通过率。",
+      "url": "http://arxiv.org/abs/2607.08716v1",
+      "authors": [
+        "Yifan Wu",
+        "Lizhu Zhang",
+        "Yuhang Zhou",
+        "Mingyi Wang",
+        "Bo Peng",
+        "Serena Li",
+        "Xiangjun Fan",
+        "Zhuokai Zhao"
+      ],
+      "report_date": "2026-07-11",
+      "published": "2026-07-09",
+      "updated": "2026-07-09",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "中",
+        "value_judgement": "强相关：直接讨论长程 agent 的状态衰减、选择性记忆干预和 agentic RL 训练，且有 Terminal-Bench 2.0、τ2-Bench 与 SFT/GRPO 消融证据。",
+        "reason": "强相关：直接讨论长程 agent 的状态衰减、选择性记忆干预和 agentic RL 训练，且有 Terminal-Bench 2.0、τ2-Bench 与 SFT/GRPO 消融证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yifan Wu",
+          "Lizhu Zhang",
+          "Yuhang Zhou",
+          "Mingyi Wang",
+          "Bo Peng",
+          "Serena Li",
+          "Xiangjun Fan",
+          "Zhuokai Zhao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-09",
+        "paper_url": "https://arxiv.org/abs/2607.08716v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接讨论长程 agent 的状态衰减、选择性记忆干预和 agentic RL 训练，且有 Terminal-Bench 2.0、τ2-Bench 与 SFT/GRPO 消融证据。",
+        "summary": "这篇论文把长程 agent 的失败归结为“行为状态衰减”：关键信息仍在轨迹里，但不再影响后续动作。方法是在不改动行动模型的情况下并行运行一个记忆智能体，维护任务事实、环境知识、失败尝试和开放问题，并决定下一步前是否注入短提醒。实验显示该机制在 Terminal-Bench 2.0 与 τ2-Bench 上稳定提升 pass@1，消融也说明选择性提醒优于全量暴露、固定每步提醒和普通检索。",
+        "highlights": [
+          "强相关：长程 agent、状态维护、选择性记忆干预和 agentic RL 训练直接命中 Daily Paper 范围。",
+          "实验包含 Terminal-Bench 2.0、τ2-Bench、Mem0/always-on/advisor 等消融，以及开放权重记忆策略的 SFT/GRPO 初步结果。",
+          "偏水风险：中；结论有配对任务和消融支撑，但仍需注意样本规模、pass@1 方差和额外调用成本。"
+        ],
+        "motivation": "长程智能体即使保留了历史轨迹，也会在后续决策中遗忘早期约束、环境事实、失败尝试和未完成子目标；论文将这种“信息仍存在但不再影响行为”的现象定义为行为状态衰减。作者认为关键不只是存储或检索记忆，而是判断何时应让记忆重新进入控制回路，避免遗漏与过度干预两类问题。",
+        "method": "在不改动行动智能体的前提下，额外部署一个记忆智能体，并以固定间隔查看最近8条轨迹与当前记忆库。第一阶段通过受限工具维护结构化记忆库：私有进度状态、相对稳定的知识事实、以及尝试—结果/诊断等过程性记忆；第二阶段在“输出简短且有依据的提醒”和“保持静默”之间选择，提醒仅临时注入下一次行动调用。作者还以提示式记忆智能体生成轨迹，对Qwen3.5-27B记忆模型做SFT，再用GRPO校准何时介入。",
+        "experiments": "在Terminal-Bench 2.0的85个有效配对任务上，Sonnet 4.5行动智能体从37.6%提升至45.9%，Opus 4.6从43.5%提升至45.9%。在278个τ2-Bench任务上，Sonnet 4.5的任务加权通过率从55.0%提升至61.8%，Opus 4.6从66.2%提升至68.7%；收益随领域变化，较弱模型获益更大。消融显示，完整的“记忆维护+选择性提醒”在领域均衡的宏平均上最好；全量暴露记忆库、无条件每步注入、无持久记忆的顾问式提示与Mem0检索均较弱或更不稳定。开放权重实验中，未经训练的记忆模型会损害SETA表现，而SFT和GRPO后提升验证奖励，并在未见的Terminal-Bench上将冻结行动模型从37.6%提升到41.1%。",
+        "research_help": "Insight：将记忆设计为带“静默”动作的干预策略，比把检索结果持续塞入上下文更适合长程可靠性；可把任务约束、已验证环境事实、失败原因与开放子目标分开维护，并在状态改变前做短暂、可追溯的再激活。对多轮系统，干预质量应按是否避免重复失败、是否恢复策略约束、是否减少无谓验证来评估，而非只评估召回率。对agentic RL，稀疏终局奖励下可优先识别影响后续成败的关键转折轮，再训练“何时提醒/何时沉默”的策略。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "中",
+          "value_judgement": "强相关：直接讨论长程 agent 的状态衰减、选择性记忆干预和 agentic RL 训练，且有 Terminal-Bench 2.0、τ2-Bench 与 SFT/GRPO 消融证据。",
+          "reason": "强相关：直接讨论长程 agent 的状态衰减、选择性记忆干预和 agentic RL 训练，且有 Terminal-Bench 2.0、τ2-Bench 与 SFT/GRPO 消融证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：将记忆设计为带“静默”动作的干预策略，比把检索结果持续塞入上下文更适合长程可靠性；可把任务约束、已验证环境事实、失败原因与开放子目标分开维护，并在状态改变前做短暂、可追溯的再激活。对多轮系统，干预质量应按是否避免重复失败、是否恢复策略约束、是否减少无谓验证来评估，而非只评估召回率。对agentic RL，稀疏终局奖励下可优先识别影响后续成败的关键转折轮，再训练“何时提醒/何时沉默”的策略。",
+        "abstract_zh": "长程任务中，与决策相关的状态分散在不断增长的轨迹中，行动智能体常无法在需要时重新利用这些信息。论文提出一个与未修改行动智能体并行运行的记忆智能体：它维护结构化记忆库，并决定是注入有依据的提醒还是保持静默。在 Terminal-Bench 2.0 和 τ2-Bench 上，该方法提高了不同强度行动智能体的 pass@1，消融表明选择性干预优于被动暴露记忆、始终注入、仅顾问式指导和通用检索。",
+        "full_summary": "这篇论文关注长程任务中一个很实际的可靠性问题：早期已知的约束、诊断和失败经验虽然仍在轨迹里，却逐渐不再约束后续动作。它提出独立于行动模型的记忆智能体，先维护包含任务事实、环境知识、失败尝试和开放问题的结构化状态，再决定下一步前是否给行动模型一个短提醒。核心贡献是把记忆从被动检索改造成带显式“静默”选择的干预策略，从而控制何时重激活执行状态。Terminal-Bench与τ2-Bench的结果显示，这一机制在弱、强行动模型上均有收益，且全量记忆暴露、固定每步提醒和无持久记忆的顾问方案不能同样稳定地覆盖各领域。阅读价值很高，因为它给出了可落地的记忆接口、针对“何时介入”的关键消融，以及从提示式教师到开放权重SFT/GRPO策略的初步迁移证据。",
+        "card_summary": "论文把长程智能体的遗忘问题重新表述为“何时让记忆影响下一步行动”的控制问题，而非单纯扩大上下文或做检索。其并行记忆智能体维护结构化执行状态，并选择性注入提醒，在终端执行和多轮工具交互基准上都有较稳定增益。"
+      },
+      "analysis": {
+        "motivation": "长程智能体即使保留了历史轨迹，也会在后续决策中遗忘早期约束、环境事实、失败尝试和未完成子目标；论文将这种“信息仍存在但不再影响行为”的现象定义为行为状态衰减。作者认为关键不只是存储或检索记忆，而是判断何时应让记忆重新进入控制回路，避免遗漏与过度干预两类问题。",
+        "method": "在不改动行动智能体的前提下，额外部署一个记忆智能体，并以固定间隔查看最近8条轨迹与当前记忆库。第一阶段通过受限工具维护结构化记忆库：私有进度状态、相对稳定的知识事实、以及尝试—结果/诊断等过程性记忆；第二阶段在“输出简短且有依据的提醒”和“保持静默”之间选择，提醒仅临时注入下一次行动调用。作者还以提示式记忆智能体生成轨迹，对Qwen3.5-27B记忆模型做SFT，再用GRPO校准何时介入。",
+        "experiments": "在Terminal-Bench 2.0的85个有效配对任务上，Sonnet 4.5行动智能体从37.6%提升至45.9%，Opus 4.6从43.5%提升至45.9%。在278个τ2-Bench任务上，Sonnet 4.5的任务加权通过率从55.0%提升至61.8%，Opus 4.6从66.2%提升至68.7%；收益随领域变化，较弱模型获益更大。消融显示，完整的“记忆维护+选择性提醒”在领域均衡的宏平均上最好；全量暴露记忆库、无条件每步注入、无持久记忆的顾问式提示与Mem0检索均较弱或更不稳定。开放权重实验中，未经训练的记忆模型会损害SETA表现，而SFT和GRPO后提升验证奖励，并在未见的Terminal-Bench上将冻结行动模型从37.6%提升到41.1%。",
+        "research_help": "Insight：将记忆设计为带“静默”动作的干预策略，比把检索结果持续塞入上下文更适合长程可靠性；可把任务约束、已验证环境事实、失败原因与开放子目标分开维护，并在状态改变前做短暂、可追溯的再激活。对多轮系统，干预质量应按是否避免重复失败、是否恢复策略约束、是否减少无谓验证来评估，而非只评估召回率。对agentic RL，稀疏终局奖励下可优先识别影响后续成败的关键转折轮，再训练“何时提醒/何时沉默”的策略。",
+        "insight": "Insight：将记忆设计为带“静默”动作的干预策略，比把检索结果持续塞入上下文更适合长程可靠性；可把任务约束、已验证环境事实、失败原因与开放子目标分开维护，并在状态改变前做短暂、可追溯的再激活。对多轮系统，干预质量应按是否避免重复失败、是否恢复策略约束、是否减少无谓验证来评估，而非只评估召回率。对agentic RL，稀疏终局奖励下可优先识别影响后续成败的关键转折轮，再训练“何时提醒/何时沉默”的策略。",
+        "abstract_zh": "长程任务中，与决策相关的状态分散在不断增长的轨迹中，行动智能体常无法在需要时重新利用这些信息。论文将任务要求、环境事实、既往尝试、诊断和未完成子目标不再影响决策的现象称为行为状态衰减。作者提出一个与未修改行动智能体并行运行的记忆智能体：它维护结构化记忆库，并决定是注入有依据的提醒还是保持静默。在Terminal-Bench 2.0和τ2-Bench上，该方法提高了不同强度行动智能体的pass@1，消融表明选择性干预优于被动暴露记忆、始终注入、仅顾问式指导和通用检索；作者还初步展示了可用SFT与GRPO训练开放权重记忆策略。",
+        "card_summary": "论文把长程智能体的遗忘问题重新表述为“何时让记忆影响下一步行动”的控制问题，而非单纯扩大上下文或做检索。其并行记忆智能体维护结构化执行状态，并选择性注入提醒，在终端执行和多轮工具交互基准上都有较稳定增益。",
+        "full_summary": "这篇论文关注长程任务中一个很实际的可靠性问题：早期已知的约束、诊断和失败经验虽然仍在轨迹里，却逐渐不再约束后续动作。它提出独立于行动模型的记忆智能体，先维护包含任务事实、环境知识、失败尝试和开放问题的结构化状态，再决定下一步前是否给行动模型一个短提醒。核心贡献是把记忆从被动检索改造成带显式“静默”选择的干预策略，从而控制何时重激活执行状态。Terminal-Bench与τ2-Bench的结果显示，这一机制在弱、强行动模型上均有收益，且全量记忆暴露、固定每步提醒和无持久记忆的顾问方案不能同样稳定地覆盖各领域。阅读价值很高，因为它给出了可落地的记忆接口、针对“何时介入”的关键消融，以及从提示式教师到开放权重SFT/GRPO策略的初步迁移证据。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得优先阅读",
+        "value_reason": "问题定义与agent planning、multi-turn状态维护及长程可靠性高度贴合；方法并非只换一个记忆库，而是明确检验了选择性干预、静默动作和持久执行状态各自的作用，并在两类长程基准及不同模型强度上给出结果。偏水风险为中等：主结论有配对任务和消融支撑，但主要评测仍是单次pass@1，Terminal-Bench有效任务数较小且排除了4个Docker失败任务，固定每步调用也未充分分析成本、方差与触发策略的影响。",
+        "limitations": "记忆智能体在主实验中每一步都调用，实际部署的延迟与推理成本可能较高，且尚未证明固定频率优于事件触发。强行动模型上的绝对增益较小，部分领域无提升；始终注入在τ2-Bench微平均上还略高于完整系统，作者将其归因于预期运行方差但未报告多随机种子或置信区间。记忆提醒仍可能把推测当事实、重复已知信息或诱发额外验证，说明干预校准尚未解决；开放权重训练只展示了有限的跨基准迁移，未测试联合训练行动与记忆策略。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "引言与方法将核心问题界定为“行为状态衰减”，并采用“结构化记忆维护 + 提醒/静默”的两阶段并行架构。",
+          "表1报告Terminal-Bench 2.0与τ2-Bench上两种行动模型均提升，Sonnet 4.5的增益尤为明显。",
+          "表2至表4比较被动全库暴露、始终注入、无记忆顾问和Mem0，并给出SFT/GRPO训练记忆策略的初步迁移结果。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-11T03:49:56.017Z"
+      }
+    },
     {
       "id": "2607.07508v1",
       "title": "Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning",
