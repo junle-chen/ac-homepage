@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-15T02:53:55.987Z",
+  "updated_at": "2026-07-16T01:46:09.821Z",
   "source": "arxiv",
-  "analysis_method": "Codex/manual paper reading from arXiv abstract and available page evidence; API fallback used after arXiv 429.",
+  "analysis_method": "Codex CLI full-text paper reading from arXiv PDF text plus manual curation against the homepage Daily Paper scope.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,35 +37,35 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-07-14 Daily Paper",
-    "report_date": "2026-07-14",
-    "focus": "multi-turn information seeking、agent memory governance、agentic RAG、tool orchestration、planning reliability",
-    "summary": "补发 7 月 12-14 backlog：7 月 11 已发布 1 篇 proactive memory paper；本次从 7 月 11-13 的非机器人候选中再保留 5 篇强相关/边界强相关论文，覆盖 agentic RAG、主动信息收集、stateful personal agent memory、冲突记忆消费和多步工具编排。7 月 14 没有单独发现同级强相关新增，PASB 的 v2 修订在 7 月 14 已计入。",
+    "title": "2026-07-16 Daily Paper",
+    "report_date": "2026-07-16",
+    "focus": "agentic RL credit assignment, repository-level agent planning, enterprise agent memory, evidence-state QA agents",
+    "summary": "今日从 16 篇 arXiv 候选中保留 4 篇强相关论文：1 篇直接解决长程 tool-use agent 的 turn-level credit assignment，1 篇面向仓库级漏洞检测的 planner/explorer agent，1 篇企业长时程 agent memory substrate，1 篇用显式证据状态控制多模态 QA agent 的系统。机器人、AUV、车联网、通用 MARL/XRL、遥感/电路等领域较窄或主题偏离的候选已过滤。",
     "top_recommendations": [
-      "2607.10608v1",
-      "2607.10526v2",
-      "2607.10463v1"
+      "2607.13988v1",
+      "2607.13157v1",
+      "2607.11433v1"
     ],
     "low_priority": [
-      "2607.11138v1"
+      "2607.13439v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
     "email_body": ""
   },
   "latest_item_ids": [
-    "2607.10463v1",
-    "2607.10275v1",
-    "2607.10526v2",
-    "2607.10608v1",
-    "2607.11138v1"
+    "2607.13988v1",
+    "2607.13439v1",
+    "2607.13157v1",
+    "2607.11433v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 6,
-    "total_items": 76,
-    "previous_items": 71,
-    "latest_items": 5,
+    "fresh_items": 16,
+    "total_items": 80,
+    "previous_items": 76,
+    "latest_items": 4,
     "source_report_dates": {
+      "2026-07-16": 4,
       "2026-07-14": 5,
       "2026-07-11": 1,
       "2026-07-09": 4,
@@ -76,14 +76,14 @@
       "2026-07-02": 2,
       "2026-06-30": 2,
       "2026-06-29": 2,
-      "2026-06-26": 2,
       "2026-06-25": 2,
+      "2026-06-26": 2,
       "2026-06-24": 2,
       "2026-06-23": 6,
-      "2026-06-18": 1,
       "2026-06-17": 5,
       "2026-06-16": 2,
       "2026-06-15": 9,
+      "2026-06-18": 1,
       "2026-06-14": 5,
       "2026-06-13": 1
     },
@@ -100,10 +100,503 @@
       "2607.05957v1",
       "2607.05939v1",
       "2607.06854v1",
-      "2607.05773v1"
+      "2607.05773v1",
+      "2607.13818v1",
+      "2607.13655v1",
+      "2607.13880v1",
+      "2607.12924v2",
+      "2607.12497v1",
+      "2607.12861v1",
+      "2607.13220v1",
+      "2607.11377v1",
+      "2607.11744v1",
+      "2607.11338v1",
+      "2607.11607v1",
+      "2607.11084v1"
     ]
   },
   "items": [
+    {
+      "id": "2607.13988v1",
+      "title": "TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents",
+      "summary": "Multi-turn agents solve complex tasks through extended sequences of tool interactions before producing a final answer, making credit assignment a fundamental challenge during post-training. Outcome rewards provide reliable supervision for short-horizon reasoning, but become sparse and high-variance as trajectories grow to tens or hundreds of tool calls. They can also be misleading: a failed rollout may contain many useful actions that move the agent closer to the goal, yet outcome-only training assigns them the same negative advantage as the eventual mistake. We propose TRACE (Turn-level Reward Assignment via Credit Estimation), a dense credit-assignment method for agentic reinforcement learning. TRACE represents rollouts as state transitions at tool-call boundaries, obtains gold-answer log-probabilities from a frozen reference model, transforms them into log-ratio state values, and derives per-action rewards as Temporal-Difference changes in those values. This requires no additional critic or process-label training, and its one-step log-ratio TD component telescopes across redundant tool calls. On long-horizon complex search, TRACE substantially improves base-model tool-use ability using pure RL, without a cold-start supervised fine-tuning stage, an agentic mid-training stage, or training on live-web data. On the closed-web BrowseComp-Plus benchmark, it raises Qwen3-4B from $7.2$ to $35.6$ and Qwen3-30B-A3B from $8.4$ to $42.6$. The learned search behavior also transfers to open-web benchmarks, and the learning curves show earlier improvement and faster convergence during RL training.",
+      "url": "http://arxiv.org/abs/2607.13988v1",
+      "authors": [
+        "Leitian Tao",
+        "Baolin Peng",
+        "Wenlin Yao",
+        "Tao Ge",
+        "Hao Cheng",
+        "Mike Hang Wang",
+        "Jianfeng Gao",
+        "Sharon Li"
+      ],
+      "report_date": "2026-07-16",
+      "published": "2026-07-15",
+      "updated": "2026-07-15",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "问题直击 agentic RL 的长程信用分配，方法结构简洁且与终局 verifier 明确耦合；在相同模型、数据和工具接口下相对多种 RL 基线有一致增益，也展示了跨检索环境与语言的迁移。风险在于状态价值依赖训练时已知的 gold answer 及冻结模型的概率代理，实验集中于合成训练与短答案搜索，部分消融为单次运行，因此其对更开放、结构化的 agent planning 任务是否稳定仍待复现。",
+        "reason": "问题直击 agentic RL 的长程信用分配，方法结构简洁且与终局 verifier 明确耦合；在相同模型、数据和工具接口下相对多种 RL 基线有一致增益，也展示了跨检索环境与语言的迁移。风险在于状态价值依赖训练时已知的 gold answer 及冻结模型的概率代理，实验集中于合成训练与短答案搜索，部分消融为单次运行，因此其对更开放、结构化的 agent planning 任务是否稳定仍待复现。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Leitian Tao",
+          "Baolin Peng",
+          "Wenlin Yao",
+          "Tao Ge",
+          "Hao Cheng",
+          "Mike Hang Wang",
+          "Jianfeng Gao",
+          "Sharon Li"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-15",
+        "paper_url": "https://arxiv.org/abs/2607.13988v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "问题直击 agentic RL 的长程信用分配，方法结构简洁且与终局 verifier 明确耦合；在相同模型、数据和工具接口下相对多种 RL 基线有一致增益，也展示了跨检索环境与语言的迁移。风险在于状态价值依赖训练时已知的 gold answer 及冻结模型的概率代理，实验集中于合成训练与短答案搜索，部分消融为单次运行，因此其对更开放、结构化的 agent planning 任务是否稳定仍待复现。",
+        "summary": "本文提出 TRACE，解决长程工具智能体只依赖最终成败奖励时，难以判断每一步检索、打开和定位操作是否真正有价值的问题。其核心是冻结一个参考模型，用轨迹各前缀条件下正确答案的可生成性估计局部状态价值，并以相邻价值的对数比变化为工具调用分配信用。方法同时保留 GRPO 的终局可验证奖励，因而局部“更像答案”的信号不会单独决定训练目标；有限 K-step 回传则把后续证据的收益适度传给早期检索动作。受控比较显示，它在闭卷长程搜索、开放网页检索和中文深搜基准上普遍优于 GRPO、GSPO 与 GiGRPO，并呈现更早的学习提升。阅读价值在于它给出了一种无需过程标注或训练 critic 的可操作长程 credit-assignment 配方，但当前证据主要覆盖短、可验证答案的搜索任务，对代码修复、开放式规划等长结构输出的可靠性仍未充分验证。",
+        "highlights": [
+          "问题直击 agentic RL 的长程信用分配，方法结构简洁且与终局 verifier 明确耦合；在相同模型、数据和工具接口下相对多种 RL 基线有一致增益，也展示了跨检索环境与语言的迁移。风险在于状态价值依赖训练时已知的 gold answer 及冻结模型的概率代理，实验集中于合成训练与短答案搜索，部分消融为单次运行，因此其对更开放、结构化的 agent planning 任务是否稳定仍待复现。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长轨迹工具调用的终局奖励既稀疏又高方差：失败轨迹中可能包含有效检索，成功轨迹中也可能夹杂冗余操作，导致 outcome-only RL 无法准确区分每一步对最终答案的贡献。TRACE旨在在不引入过程标注、强评审模型或额外 critic 的前提下，为工具调用级决策提供更密的、仍受最终可验证答案约束的训练信号。",
+        "method": "将每条轨迹按工具调用边界切分为前缀状态；冻结的参考模型计算给定前缀时生成 gold answer 的平均对数概率，并将其转为相对初始“答案不确定性缺口”的对数比状态值。相邻状态值之差构成一步 TD credit，正值表示该工具动作及其观测使正确答案更可预测；再用有限窗口的 K-step 回传处理延迟生效的检索动作，并与 GRPO 的终局 outcome advantage 混合优化。该设计的单步项具有望远镜求和性质，理论上不会因插入冗余中间调用而累计获得额外总信用。",
+        "experiments": "在基于 OpenResearcher 离线语料构造的长链检索训练环境中，作者以 Qwen3-4B 和 Qwen3-30B-A3B 为骨干，最多允许 60 次工具调用，并与同条件的 GRPO、GSPO、GiGRPO 比较。闭卷网页 BrowseComp-Plus 上，TRACE 将 4B 从基础模型的 7.2 提升至 35.6，将 30B-A3B 从 8.4 提升至 42.6；相对 GRPO，四基准平均值分别由 29.5 提升至 34.0、由 32.5 提升至 38.1。开放网页 BrowseComp、GAIA、xbench-DeepSearch 也有迁移增益，学习曲线显示更早起效、更快收敛；消融支持对数比 credit、适中的 turn-level 权重和中等 K-step 回传。需要注意，多数受控消融仅为单次训练，未报告方差调整后的结论。",
+        "research_help": "Insight：对长程 agent planning，可把“当前历史是否让可验证目标更容易被推出”作为局部进展势函数，而不是把整条轨迹统一奖惩。对多轮工具系统，K-step credit 表明早期搜索、选择与定位操作的价值常需由后续证据显现，奖励传播窗口应有限以避免把无关后续噪声倒灌给前序决策。对 planning reliability，终局 verifier 仍应保留为全局锚点；局部进展信号宜作为辅助项，而非替代最终正确性。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对长程 agent planning，可把“当前历史是否让可验证目标更容易被推出”作为局部进展势函数，而不是把整条轨迹统一奖惩。对多轮工具系统，K-step credit 表明早期搜索、选择与定位操作的价值常需由后续证据显现，奖励传播窗口应有限以避免把无关后续噪声倒灌给前序决策。对 planning reliability，终局 verifier 仍应保留为全局锚点；局部进展信号宜作为辅助项，而非替代最终正确性。",
+        "abstract_zh": "多轮智能体在经历大量工具交互后才给出最终答案，因此后训练中的信用分配尤为困难；随着轨迹变长，终局奖励会变得稀疏、高方差，并会错罚失败轨迹中实际有帮助的动作。TRACE 提出一种面向 agentic RL 的稠密回报分配方法：在工具调用边界将轨迹表示为状态转移，用冻结参考模型对正确答案的对数概率构造对数比状态值，并以相邻状态值的 TD 变化作为逐动作奖励。该方法不需要额外 critic 或过程标签训练，其一步对数比 TD 项可在冗余工具调用间望远镜消去。长程复杂搜索实验表明，TRACE 仅依赖 RL 即可显著提升基础模型的工具使用能力，并在闭卷网页与开放网页基准上展现迁移和更快收敛。",
+        "full_summary": "本文提出 TRACE，解决长程工具智能体只依赖最终成败奖励时，难以判断每一步检索、打开和定位操作是否真正有价值的问题。其核心是冻结一个参考模型，用轨迹各前缀条件下正确答案的可生成性估计局部状态价值，并以相邻价值的对数比变化为工具调用分配信用。方法同时保留 GRPO 的终局可验证奖励，因而局部“更像答案”的信号不会单独决定训练目标；有限 K-step 回传则把后续证据的收益适度传给早期检索动作。受控比较显示，它在闭卷长程搜索、开放网页检索和中文深搜基准上普遍优于 GRPO、GSPO 与 GiGRPO，并呈现更早的学习提升。阅读价值在于它给出了一种无需过程标注或训练 critic 的可操作长程 credit-assignment 配方，但当前证据主要覆盖短、可验证答案的搜索任务，对代码修复、开放式规划等长结构输出的可靠性仍未充分验证。",
+        "card_summary": "TRACE 用冻结参考模型衡量每次工具交互是否让正确答案更容易生成，并把这种局部进展转成逐回合 TD 奖励，再与终局验证奖励共同训练。它针对长程检索中“有用步骤被失败终局一并惩罚”的核心问题，在两种 Qwen3 骨干及多个深度搜索基准上均优于 outcome-only RL。"
+      },
+      "analysis": {
+        "motivation": "长轨迹工具调用的终局奖励既稀疏又高方差：失败轨迹中可能包含有效检索，成功轨迹中也可能夹杂冗余操作，导致 outcome-only RL 无法准确区分每一步对最终答案的贡献。TRACE旨在在不引入过程标注、强评审模型或额外 critic 的前提下，为工具调用级决策提供更密的、仍受最终可验证答案约束的训练信号。",
+        "method": "将每条轨迹按工具调用边界切分为前缀状态；冻结的参考模型计算给定前缀时生成 gold answer 的平均对数概率，并将其转为相对初始“答案不确定性缺口”的对数比状态值。相邻状态值之差构成一步 TD credit，正值表示该工具动作及其观测使正确答案更可预测；再用有限窗口的 K-step 回传处理延迟生效的检索动作，并与 GRPO 的终局 outcome advantage 混合优化。该设计的单步项具有望远镜求和性质，理论上不会因插入冗余中间调用而累计获得额外总信用。",
+        "experiments": "在基于 OpenResearcher 离线语料构造的长链检索训练环境中，作者以 Qwen3-4B 和 Qwen3-30B-A3B 为骨干，最多允许 60 次工具调用，并与同条件的 GRPO、GSPO、GiGRPO 比较。闭卷网页 BrowseComp-Plus 上，TRACE 将 4B 从基础模型的 7.2 提升至 35.6，将 30B-A3B 从 8.4 提升至 42.6；相对 GRPO，四基准平均值分别由 29.5 提升至 34.0、由 32.5 提升至 38.1。开放网页 BrowseComp、GAIA、xbench-DeepSearch 也有迁移增益，学习曲线显示更早起效、更快收敛；消融支持对数比 credit、适中的 turn-level 权重和中等 K-step 回传。需要注意，多数受控消融仅为单次训练，未报告方差调整后的结论。",
+        "research_help": "Insight：对长程 agent planning，可把“当前历史是否让可验证目标更容易被推出”作为局部进展势函数，而不是把整条轨迹统一奖惩。对多轮工具系统，K-step credit 表明早期搜索、选择与定位操作的价值常需由后续证据显现，奖励传播窗口应有限以避免把无关后续噪声倒灌给前序决策。对 planning reliability，终局 verifier 仍应保留为全局锚点；局部进展信号宜作为辅助项，而非替代最终正确性。",
+        "insight": "Insight：对长程 agent planning，可把“当前历史是否让可验证目标更容易被推出”作为局部进展势函数，而不是把整条轨迹统一奖惩。对多轮工具系统，K-step credit 表明早期搜索、选择与定位操作的价值常需由后续证据显现，奖励传播窗口应有限以避免把无关后续噪声倒灌给前序决策。对 planning reliability，终局 verifier 仍应保留为全局锚点；局部进展信号宜作为辅助项，而非替代最终正确性。",
+        "abstract_zh": "多轮智能体在经历大量工具交互后才给出最终答案，因此后训练中的信用分配尤为困难；随着轨迹变长，终局奖励会变得稀疏、高方差，并会错罚失败轨迹中实际有帮助的动作。TRACE 提出一种面向 agentic RL 的稠密回报分配方法：在工具调用边界将轨迹表示为状态转移，用冻结参考模型对正确答案的对数概率构造对数比状态值，并以相邻状态值的 TD 变化作为逐动作奖励。该方法不需要额外 critic 或过程标签训练，其一步对数比 TD 项可在冗余工具调用间望远镜消去。长程复杂搜索实验表明，TRACE 仅依赖 RL 即可显著提升基础模型的工具使用能力，并在闭卷网页与开放网页基准上展现迁移和更快收敛。",
+        "card_summary": "TRACE 用冻结参考模型衡量每次工具交互是否让正确答案更容易生成，并把这种局部进展转成逐回合 TD 奖励，再与终局验证奖励共同训练。它针对长程检索中“有用步骤被失败终局一并惩罚”的核心问题，在两种 Qwen3 骨干及多个深度搜索基准上均优于 outcome-only RL。",
+        "full_summary": "本文提出 TRACE，解决长程工具智能体只依赖最终成败奖励时，难以判断每一步检索、打开和定位操作是否真正有价值的问题。其核心是冻结一个参考模型，用轨迹各前缀条件下正确答案的可生成性估计局部状态价值，并以相邻价值的对数比变化为工具调用分配信用。方法同时保留 GRPO 的终局可验证奖励，因而局部“更像答案”的信号不会单独决定训练目标；有限 K-step 回传则把后续证据的收益适度传给早期检索动作。受控比较显示，它在闭卷长程搜索、开放网页检索和中文深搜基准上普遍优于 GRPO、GSPO 与 GiGRPO，并呈现更早的学习提升。阅读价值在于它给出了一种无需过程标注或训练 critic 的可操作长程 credit-assignment 配方，但当前证据主要覆盖短、可验证答案的搜索任务，对代码修复、开放式规划等长结构输出的可靠性仍未充分验证。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得精读",
+        "value_reason": "问题直击 agentic RL 的长程信用分配，方法结构简洁且与终局 verifier 明确耦合；在相同模型、数据和工具接口下相对多种 RL 基线有一致增益，也展示了跨检索环境与语言的迁移。风险在于状态价值依赖训练时已知的 gold answer 及冻结模型的概率代理，实验集中于合成训练与短答案搜索，部分消融为单次运行，因此其对更开放、结构化的 agent planning 任务是否稳定仍待复现。",
+        "limitations": "参考模型对 gold answer 的条件概率未必等同于真实任务进展，尤其在答案长、可接受解多或用户偏好未完全形式化时可能失真。训练与核心评测聚焦可精确验证的搜索问答，尚未证明能直接迁移到代码代理、多文件产物、开放式交互或长期记忆管理。外部深度研究系统的比较并非同数据、同训练流程的受控比较；受控消融多为单次训练，统计稳健性有限。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文将工具调用边界的前缀状态用冻结参考模型对正确答案的条件对数概率评分，并以对数比状态值的 TD 差分分配逐回合信用。",
+          "在同一骨干、浏览器接口、训练数据与终局奖励的受控设置下，TRACE 在两种 Qwen3 规模上均优于 GRPO、GSPO 和 GiGRPO。",
+          "作者明确限定方法当前主要适用于具有紧凑、可验证答案的长程搜索；长结构或开放式输出需要替代性的状态价值目标。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-16T01:34:12.751Z"
+      }
+    },
+    {
+      "id": "2607.13439v1",
+      "title": "DREA: Decoupled Reasoning and Exploration Agents for Repository-Level Vulnerability Detection",
+      "summary": "Large language models (LLMs) are increasingly applied to vulnerability detection due to their strong code comprehension capabilities, but most existing approaches rely on isolated functions or context extracted by fixed program-analysis rules. These methods cannot adaptively explore repository-level dependencies to gather sufficient context when vulnerabilities span multiple functions or files, compromising detection reliability. We present DREA (Decoupled Reasoning and Exploration Agents), a hypothesis-driven framework for repository-level vulnerability detection. DREA decouples reasoning from exploration through two collaborating agents: a planning agent backed by an advanced LLM that forms vulnerability hypotheses and directs the investigation, and an explorer agent powered by a lightweight model that retrieves repository-level context on demand. Goal-directed context acquisition is the primary source of detection improvement in this design, while offloading token-heavy exploration to the local model keeps inference economically tractable. To support evaluation, we construct RepoPairBench, a repository-grounded benchmark of validated Python vulnerability-fix pairs from real-world projects. Beyond binary detection accuracy, we introduce a reasoning correctness evaluation to assess whether a model's rationale matches the documented vulnerability mechanism. Across three LLMs, DREA improves Pair-Correctness from 19-26% to 30-42% while offloading over 93% of tokens to the explorer, reducing estimated billable API cost by a factor of 16-48. Reasoning correctness analysis further reveals that 26-55% of true positives, for both DREA and the function-only baseline, are correct predictions supported by flawed rationales, identifying security reasoning quality as a shared bottleneck for current LLMs.",
+      "url": "http://arxiv.org/abs/2607.13439v1",
+      "authors": [
+        "Mingyang Sun",
+        "Guozhu Meng"
+      ],
+      "report_date": "2026-07-16",
+      "published": "2026-07-15",
+      "updated": "2026-07-15",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 86,
+        "level": "中",
+        "label": "对多智能体长程取证与可靠性评估有参考价值",
+        "water_risk": "中",
+        "value_judgement": "工作与 agentic RL 不直接相关，但其 Planner–Explorer 解耦、假设驱动探索、结构化证据回传及 Lucky Hit 诊断，能迁移到多轮 agent planning 和 long-horizon reliability 设计。实验对照和消融较完整，但数据集只有 100 个 Python 漏洞—修复对，部分细粒度结论样本较少。",
+        "reason": "工作与 agentic RL 不直接相关，但其 Planner–Explorer 解耦、假设驱动探索、结构化证据回传及 Lucky Hit 诊断，能迁移到多轮 agent planning 和 long-horizon reliability 设计。实验对照和消融较完整，但数据集只有 100 个 Python 漏洞—修复对，部分细粒度结论样本较少。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Mingyang Sun",
+          "Guozhu Meng"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-15",
+        "paper_url": "https://arxiv.org/abs/2607.13439v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "工作与 agentic RL 不直接相关，但其 Planner–Explorer 解耦、假设驱动探索、结构化证据回传及 Lucky Hit 诊断，能迁移到多轮 agent planning 和 long-horizon reliability 设计。实验对照和消融较完整，但数据集只有 100 个 Python 漏洞—修复对，部分细粒度结论样本较少。",
+        "summary": "这篇论文研究跨文件漏洞往往无法由目标函数独立判断的问题，并将代码审计建模为围绕漏洞假设展开的多轮取证过程。DREA 让 Planner 决定需要查找哪些调用关系、校验逻辑或权限策略，再让本地 Explorer 负责仓库导航和结构化证据回传，最后由 Planner 形成判定与理由。作者在 100 组 Python CVE 漏洞—修复对上比较仅函数、整文件、单智能体和双智能体设置，双智能体在三种骨干模型上均取得更高的配对正确率。消融结果支持其核心主张：定向、结构化的探索比无差别扩大上下文或简单赋予工具访问更有效，也将大部分 token 成本移出付费推理模型。论文尤其有价值的一点是将结论正确与推理正确分开评估，显示大量真阳性并不真正理解漏洞根因；不过基准规模较小且仅覆盖 Python，结论仍需在更广泛代码生态中验证。",
+        "highlights": [
+          "工作与 agentic RL 不直接相关，但其 Planner–Explorer 解耦、假设驱动探索、结构化证据回传及 Lucky Hit 诊断，能迁移到多轮 agent planning 和 long-horizon reliability 设计。实验对照和消融较完整，但数据集只有 100 个 Python 漏洞—修复对，部分细粒度结论样本较少。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有 LLM 漏洞检测多只看单个函数，或按固定规则补充上下文，难以发现跨函数、跨文件的授权、数据流和配置问题。论文将真实代码审计视为“先提出漏洞假设、再按需取证”的过程，目标是在不把整仓代码塞给昂贵模型的前提下提升仓库级检测可靠性。",
+        "method": "提出 DREA 双智能体框架：强推理模型担任 Planner，从目标函数形成漏洞假设、规划下一步证据需求并作最终判定；轻量本地 Explorer 用 ls、glob、grep、read_file 等只读工具在仓库中导航，返回仓库上下文、代码证据和安全线索。作者构建 RepoPairBench，包含 2021–2025 年 Python CVE 的 100 组漏洞—修复函数对，并以修复前后对应的仓库快照评估；同时用 CVE、修复 diff、CWE 与模型理由核验解释是否真正符合漏洞机制，将“标签答对但理由错误”定义为 Lucky Hit。",
+        "experiments": "在 RepoPairBench 的 200 个实例上，DREA 相比相同骨干的仅函数基线，三种模型的配对正确率均提升：DeepSeek-V3.2 从 19% 到 42%，GLM-4.7 从 26% 到 34%，GPT-5.2 从 21% 到 30%。消融显示，给单模型整文件或直接工具访问都不如 Planner–Explorer 分工，说明收益不只是更多上下文；Explorer 承担 93.7%–97.9% token，估计将付费 API 成本降至单模型方案的约 1/16–1/48。另一方面，26%–55% 的真阳性属于 Lucky Hit，更多探索 token 与预测正确性还呈弱负相关，表明瓶颈逐渐转向证据综合与安全推理质量。",
+        "research_help": "Insight：长程智能体不应把“规划判断”和“环境探索”混为同一上下文流。由高能力 Planner 维护可修订假设、把检索任务拆成有目标的证据请求，再由低成本 Explorer 执行环境交互并返回结构化、可追溯的观察，可同时降低上下文过载与交互成本。评估也应分离结果正确性与过程/理由可靠性：仅凭最终成功率会掩盖 Lucky Hit；对多轮系统可加入证据与任务机制的一致性判定，并将异常长轨迹视为困难信号而非自动追加交互预算的理由。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长程智能体不应把“规划判断”和“环境探索”混为同一上下文流。由高能力 Planner 维护可修订假设、把检索任务拆成有目标的证据请求，再由低成本 Explorer 执行环境交互并返回结构化、可追溯的观察，可同时降低上下文过载与交互成本。评估也应分离结果正确性与过程/理由可靠性：仅凭最终成功率会掩盖 Lucky Hit；对多轮系统可加入证据与任务机制的一致性判定，并将异常长轨迹视为困难信号而非自动追加交互预算的理由。",
+        "abstract_zh": "大语言模型已被用于漏洞检测，但多数方法只分析孤立函数，或依赖固定规则抽取上下文，因此难以在漏洞跨越多个函数或文件时自适应收集足够证据。本文提出 DREA，通过一个负责安全推理与规划的强模型和一个负责按需检索仓库上下文的轻量探索模型，将推理与探索解耦。作者构建了包含真实 Python 漏洞修复对的 RepoPairBench，并引入理由正确性评估，判断模型解释是否与已记录的漏洞机制一致。实验表明，DREA 提升配对检测正确率，同时将大部分 token 探索工作转移给本地轻量模型；分析还发现许多正确检测结论由错误理由支撑，安全推理质量仍是共同瓶颈。",
+        "full_summary": "这篇论文研究跨文件漏洞往往无法由目标函数独立判断的问题，并将代码审计建模为围绕漏洞假设展开的多轮取证过程。DREA 让 Planner 决定需要查找哪些调用关系、校验逻辑或权限策略，再让本地 Explorer 负责仓库导航和结构化证据回传，最后由 Planner 形成判定与理由。作者在 100 组 Python CVE 漏洞—修复对上比较仅函数、整文件、单智能体和双智能体设置，双智能体在三种骨干模型上均取得更高的配对正确率。消融结果支持其核心主张：定向、结构化的探索比无差别扩大上下文或简单赋予工具访问更有效，也将大部分 token 成本移出付费推理模型。论文尤其有价值的一点是将结论正确与推理正确分开评估，显示大量真阳性并不真正理解漏洞根因；不过基准规模较小且仅覆盖 Python，结论仍需在更广泛代码生态中验证。",
+        "card_summary": "DREA 将仓库级漏洞分析拆成“强模型提出并更新假设”与“轻量模型按需检索证据”，避免固定上下文检索和单智能体上下文膨胀。在 Python CVE 修复对基准上，它提高了配对检测正确率并显著降低付费模型 token，但也揭示不少正确标签只是理由错误的 Lucky Hit。"
+      },
+      "analysis": {
+        "motivation": "现有 LLM 漏洞检测多只看单个函数，或按固定规则补充上下文，难以发现跨函数、跨文件的授权、数据流和配置问题。论文将真实代码审计视为“先提出漏洞假设、再按需取证”的过程，目标是在不把整仓代码塞给昂贵模型的前提下提升仓库级检测可靠性。",
+        "method": "提出 DREA 双智能体框架：强推理模型担任 Planner，从目标函数形成漏洞假设、规划下一步证据需求并作最终判定；轻量本地 Explorer 用 ls、glob、grep、read_file 等只读工具在仓库中导航，返回仓库上下文、代码证据和安全线索。作者构建 RepoPairBench，包含 2021–2025 年 Python CVE 的 100 组漏洞—修复函数对，并以修复前后对应的仓库快照评估；同时用 CVE、修复 diff、CWE 与模型理由核验解释是否真正符合漏洞机制，将“标签答对但理由错误”定义为 Lucky Hit。",
+        "experiments": "在 RepoPairBench 的 200 个实例上，DREA 相比相同骨干的仅函数基线，三种模型的配对正确率均提升：DeepSeek-V3.2 从 19% 到 42%，GLM-4.7 从 26% 到 34%，GPT-5.2 从 21% 到 30%。消融显示，给单模型整文件或直接工具访问都不如 Planner–Explorer 分工，说明收益不只是更多上下文；Explorer 承担 93.7%–97.9% token，估计将付费 API 成本降至单模型方案的约 1/16–1/48。另一方面，26%–55% 的真阳性属于 Lucky Hit，更多探索 token 与预测正确性还呈弱负相关，表明瓶颈逐渐转向证据综合与安全推理质量。",
+        "research_help": "Insight：长程智能体不应把“规划判断”和“环境探索”混为同一上下文流。由高能力 Planner 维护可修订假设、把检索任务拆成有目标的证据请求，再由低成本 Explorer 执行环境交互并返回结构化、可追溯的观察，可同时降低上下文过载与交互成本。评估也应分离结果正确性与过程/理由可靠性：仅凭最终成功率会掩盖 Lucky Hit；对多轮系统可加入证据与任务机制的一致性判定，并将异常长轨迹视为困难信号而非自动追加交互预算的理由。",
+        "insight": "Insight：长程智能体不应把“规划判断”和“环境探索”混为同一上下文流。由高能力 Planner 维护可修订假设、把检索任务拆成有目标的证据请求，再由低成本 Explorer 执行环境交互并返回结构化、可追溯的观察，可同时降低上下文过载与交互成本。评估也应分离结果正确性与过程/理由可靠性：仅凭最终成功率会掩盖 Lucky Hit；对多轮系统可加入证据与任务机制的一致性判定，并将异常长轨迹视为困难信号而非自动追加交互预算的理由。",
+        "abstract_zh": "大语言模型已被用于漏洞检测，但多数方法只分析孤立函数，或依赖固定规则抽取上下文，因此难以在漏洞跨越多个函数或文件时自适应收集足够证据。本文提出 DREA，通过一个负责安全推理与规划的强模型和一个负责按需检索仓库上下文的轻量探索模型，将推理与探索解耦。作者构建了包含真实 Python 漏洞修复对的 RepoPairBench，并引入理由正确性评估，判断模型解释是否与已记录的漏洞机制一致。实验表明，DREA 提升配对检测正确率，同时将大部分 token 探索工作转移给本地轻量模型；分析还发现许多正确检测结论由错误理由支撑，安全推理质量仍是共同瓶颈。",
+        "card_summary": "DREA 将仓库级漏洞分析拆成“强模型提出并更新假设”与“轻量模型按需检索证据”，避免固定上下文检索和单智能体上下文膨胀。在 Python CVE 修复对基准上，它提高了配对检测正确率并显著降低付费模型 token，但也揭示不少正确标签只是理由错误的 Lucky Hit。",
+        "full_summary": "这篇论文研究跨文件漏洞往往无法由目标函数独立判断的问题，并将代码审计建模为围绕漏洞假设展开的多轮取证过程。DREA 让 Planner 决定需要查找哪些调用关系、校验逻辑或权限策略，再让本地 Explorer 负责仓库导航和结构化证据回传，最后由 Planner 形成判定与理由。作者在 100 组 Python CVE 漏洞—修复对上比较仅函数、整文件、单智能体和双智能体设置，双智能体在三种骨干模型上均取得更高的配对正确率。消融结果支持其核心主张：定向、结构化的探索比无差别扩大上下文或简单赋予工具访问更有效，也将大部分 token 成本移出付费推理模型。论文尤其有价值的一点是将结论正确与推理正确分开评估，显示大量真阳性并不真正理解漏洞根因；不过基准规模较小且仅覆盖 Python，结论仍需在更广泛代码生态中验证。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "对多智能体长程取证与可靠性评估有参考价值",
+        "value_reason": "工作与 agentic RL 不直接相关，但其 Planner–Explorer 解耦、假设驱动探索、结构化证据回传及 Lucky Hit 诊断，能迁移到多轮 agent planning 和 long-horizon reliability 设计。实验对照和消融较完整，但数据集只有 100 个 Python 漏洞—修复对，部分细粒度结论样本较少。",
+        "limitations": "论文的主要实证范围是 100 组公开 CVE 关联的 Python 修复对，CWE 子类样本仅约 3–13 组，跨语言、长尾漏洞和真实部署泛化尚未验证。理由质量依赖 GPT-4.1 裁判，虽有 50 例专家标注校验，但仍可能受到裁判模型与有限人工样本的影响；修复版本被标为 benign 只表示原始 CVE 机制已修复，不等于代码不存在其他安全问题。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文将系统拆为 Planner 负责漏洞假设、探索规划和最终判定，Explorer 负责只读仓库导航与结构化证据返回。",
+          "RepoPairBench 包含 100 组 2021–2025 年 Python CVE 漏洞—修复对，并以修复前后仓库快照进行配对评估。",
+          "结果报告 DREA 的 Pair-Correctness 在三种骨干上从 19%–26% 提升到 30%–42%，且 93% 以上 token 由本地 Explorer 承担。",
+          "理由正确性分析显示，26%–55% 真阳性是 Lucky Hits：结论正确但漏洞机制解释错误。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-16T01:36:35.831Z"
+      }
+    },
+    {
+      "id": "2607.13157v1",
+      "title": "Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents",
+      "summary": "Agent memory is a systems problem for long-horizon agents. Practical deployments require retention of task state across extended conversations, recovery of user-specific facts and preferences across sessions, and accumulation of procedural knowledge from prior outcomes. These requirements extend beyond document retrieval: a memory layer must determine which interactions become durable state, how that state is scoped, how it is retrieved under latency constraints, and how it is revised or removed over time. This report studies Oracle Agent Memory as a database-native memory substrate built on Oracle Database. Three themes organize the discussion: memory as a lifecycle spanning ingestion, extraction, consolidation, retrieval, summarization, and revision or removal; a layered architecture that separates an active memory core from a passive memory-store interface with explicit scope control across users, agents, and threads; and evaluation methodology in which downstream task accuracy is complemented by memory-centric measures such as evidence retrieval, recall, latency, and estimated token use. The report summarizes LongMemEval results, reaching 93.8% accuracy, compares Oracle Agent Memory against flat-history baselines, using about 10.7x fewer tokens, and published or reported external baselines where available, and closes with implementation-oriented appendix material covering setup, thread lifecycle, and search semantics.",
+      "url": "http://arxiv.org/abs/2607.13157v1",
+      "authors": [
+        "Richmond Alake",
+        "Cesare Bernardis",
+        "Paul Cayet",
+        "Luca Engel",
+        "Damien Hilloulin",
+        "Sungpack Hong",
+        "Allen Hosler",
+        "Nickolas Kavantzas",
+        "Ingo Kossyk",
+        "Son Le",
+        "Rhicheek Patra",
+        "Kartik Talamadupula",
+        "Valentin Venzin"
+      ],
+      "report_date": "2026-07-16",
+      "published": "2026-07-14",
+      "updated": "2026-07-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "高相关的工程型记忆系统论文",
+        "water_risk": "中",
+        "value_judgement": "与 agent memory、multi-turn agent、long-horizon reliability 和 planning state 管理直接相关，且覆盖作用域隔离、记忆生命周期、程序性记忆、检索质量与上下文成本等落地问题。风险在于它更像 Oracle 生态的系统报告，核心结果多为作者自报，实验配置和对照的完全复现信息不足。",
+        "reason": "与 agent memory、multi-turn agent、long-horizon reliability 和 planning state 管理直接相关，且覆盖作用域隔离、记忆生命周期、程序性记忆、检索质量与上下文成本等落地问题。风险在于它更像 Oracle 生态的系统报告，核心结果多为作者自报，实验配置和对照的完全复现信息不足。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Richmond Alake",
+          "Cesare Bernardis",
+          "Paul Cayet",
+          "Luca Engel",
+          "Damien Hilloulin",
+          "Sungpack Hong",
+          "Allen Hosler",
+          "Nickolas Kavantzas",
+          "Ingo Kossyk",
+          "Son Le",
+          "Rhicheek Patra",
+          "Kartik Talamadupula",
+          "Valentin Venzin"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-14",
+        "paper_url": "https://arxiv.org/abs/2607.13157v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "与 agent memory、multi-turn agent、long-horizon reliability 和 planning state 管理直接相关，且覆盖作用域隔离、记忆生命周期、程序性记忆、检索质量与上下文成本等落地问题。风险在于它更像 Oracle 生态的系统报告，核心结果多为作者自报，实验配置和对照的完全复现信息不足。",
+        "summary": "论文提出 Oracle Agent Memory：以数据库为持久化、向量检索和治理底座，为长时程 Agent 管理对话状态、用户偏好和历史执行经验。其关键不只是检索历史文本，而是把记忆建模为“写入—抽取—整合—摘要—检索—修订/删除”的生命周期，并以用户、Agent、线程三层作用域约束可见性。架构上，主动层负责摘要、上下文卡、自动抽取和检索编排，被动层以统一记录模型保存原始消息与长期记忆，从而兼顾证据保留和紧凑提示上下文。实验显示该系统在 LongMemEval 的特定高配设置下取得 93.8% 准确率，并在脚本化长对话中明显降低估算输入 token；但多会话推理仍是相对薄弱项，且实验细节、外部基线和成本结论的可复现性有限。若关注多轮 Agent 的长期状态、记忆隔离和规划可靠性，这篇系统设计与评估框架值得细读。",
+        "highlights": [
+          "与 agent memory、multi-turn agent、long-horizon reliability 和 planning state 管理直接相关，且覆盖作用域隔离、记忆生命周期、程序性记忆、检索质量与上下文成本等落地问题。风险在于它更像 Oracle 生态的系统报告，核心结果多为作者自报，实验配置和对照的完全复现信息不足。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文将长时程 Agent 的记忆视为系统问题：不仅要保存对话，还要在跨会话场景中维护任务状态、用户偏好和从执行结果中沉淀的程序性经验，同时处理作用域、更新、遗忘、延迟与企业治理。",
+        "method": "提出以 Oracle Database 为底座的分层记忆基座：主动记忆层负责消息同步、记忆抽取、摘要、上下文卡与检索编排；被动存储层提供持久化和作用域检索。系统区分工作记忆、长期事实记忆与程序/经验记忆，以 user、agent、thread 为一等作用域，并通过关系表、JSON、向量索引保存原始消息和提炼后的记忆；支持自动抽取与显式写入、摘要压缩和语义检索。",
+        "experiments": "在 LongMemEval 上，文中报告特定配置下整体准确率为 93.8%，多会话推理是较弱类别（88.0%）。在 80 轮脚本对话中，系统估算每轮输入约 1,300 token，而平铺全历史约 13,900 token；与全历史基线的成对比较中记忆系统胜出更多。还报告了摘要阈值、提示缓存权衡及 BEAM 压力测试；不过这些结果依赖具体模型、提示、检索预算和裁判设置，部分外部基线并非同配置复现。",
+        "research_help": "Insight：长程规划系统应把“保存什么、在何种 user/agent/thread 作用域下可取回、何时修订或删除”作为显式策略，而不是把完整历史直接塞入上下文。对多轮可靠性而言，稳定的指令和工具定义宜保留在缓存友好的前缀，将易变的摘要、检索记忆和最新状态放在后部；同时分别评估任务正确率、证据召回、延迟、token 增长、更新冲突和拒答能力。程序性记忆尤其需要从执行结果中谨慎抽取并保留证据链，避免把噪声反馈固化为未来规划规则。",
+        "recommendation": {
+          "score": 96,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长程规划系统应把“保存什么、在何种 user/agent/thread 作用域下可取回、何时修订或删除”作为显式策略，而不是把完整历史直接塞入上下文。对多轮可靠性而言，稳定的指令和工具定义宜保留在缓存友好的前缀，将易变的摘要、检索记忆和最新状态放在后部；同时分别评估任务正确率、证据召回、延迟、token 增长、更新冲突和拒答能力。程序性记忆尤其需要从执行结果中谨慎抽取并保留证据链，避免把噪声反馈固化为未来规划规则。",
+        "abstract_zh": "Agent 记忆是长时程智能体中的系统性问题：实际部署既要在长对话中保留任务状态，也要跨会话找回用户事实与偏好，并从既往结果累积程序性知识。论文认为这超出了文档检索范畴，记忆层还必须决定哪些交互成为持久状态、其作用域为何、如何在延迟约束下检索，以及如何随时间修订或删除。文章以 Oracle Database 上的 Oracle Agent Memory 为对象，围绕记忆生命周期、主动记忆核心与被动存储接口分层架构，以及兼顾下游准确率、证据检索、召回、延迟和 token 使用量的评估方法展开。文中报告 LongMemEval 93.8% 准确率、相对平铺历史约少 10.7 倍 token，并附带实现、线程生命周期与检索语义材料。",
+        "full_summary": "论文提出 Oracle Agent Memory：以数据库为持久化、向量检索和治理底座，为长时程 Agent 管理对话状态、用户偏好和历史执行经验。其关键不只是检索历史文本，而是把记忆建模为“写入—抽取—整合—摘要—检索—修订/删除”的生命周期，并以用户、Agent、线程三层作用域约束可见性。架构上，主动层负责摘要、上下文卡、自动抽取和检索编排，被动层以统一记录模型保存原始消息与长期记忆，从而兼顾证据保留和紧凑提示上下文。实验显示该系统在 LongMemEval 的特定高配设置下取得 93.8% 准确率，并在脚本化长对话中明显降低估算输入 token；但多会话推理仍是相对薄弱项，且实验细节、外部基线和成本结论的可复现性有限。若关注多轮 Agent 的长期状态、记忆隔离和规划可靠性，这篇系统设计与评估框架值得细读。",
+        "card_summary": "这是一篇面向企业长时程 Agent 的记忆系统报告，将工作记忆、跨会话事实记忆和程序性经验记忆统一到数据库原生的生命周期与作用域管理中。它的价值在于把摘要、抽取、检索、修订、权限与成本放在同一系统设计里，并给出多轮记忆基准上的较强结果，但结论仍主要来自厂商自报配置。"
+      },
+      "analysis": {
+        "motivation": "论文将长时程 Agent 的记忆视为系统问题：不仅要保存对话，还要在跨会话场景中维护任务状态、用户偏好和从执行结果中沉淀的程序性经验，同时处理作用域、更新、遗忘、延迟与企业治理。",
+        "method": "提出以 Oracle Database 为底座的分层记忆基座：主动记忆层负责消息同步、记忆抽取、摘要、上下文卡与检索编排；被动存储层提供持久化和作用域检索。系统区分工作记忆、长期事实记忆与程序/经验记忆，以 user、agent、thread 为一等作用域，并通过关系表、JSON、向量索引保存原始消息和提炼后的记忆；支持自动抽取与显式写入、摘要压缩和语义检索。",
+        "experiments": "在 LongMemEval 上，文中报告特定配置下整体准确率为 93.8%，多会话推理是较弱类别（88.0%）。在 80 轮脚本对话中，系统估算每轮输入约 1,300 token，而平铺全历史约 13,900 token；与全历史基线的成对比较中记忆系统胜出更多。还报告了摘要阈值、提示缓存权衡及 BEAM 压力测试；不过这些结果依赖具体模型、提示、检索预算和裁判设置，部分外部基线并非同配置复现。",
+        "research_help": "Insight：长程规划系统应把“保存什么、在何种 user/agent/thread 作用域下可取回、何时修订或删除”作为显式策略，而不是把完整历史直接塞入上下文。对多轮可靠性而言，稳定的指令和工具定义宜保留在缓存友好的前缀，将易变的摘要、检索记忆和最新状态放在后部；同时分别评估任务正确率、证据召回、延迟、token 增长、更新冲突和拒答能力。程序性记忆尤其需要从执行结果中谨慎抽取并保留证据链，避免把噪声反馈固化为未来规划规则。",
+        "insight": "Insight：长程规划系统应把“保存什么、在何种 user/agent/thread 作用域下可取回、何时修订或删除”作为显式策略，而不是把完整历史直接塞入上下文。对多轮可靠性而言，稳定的指令和工具定义宜保留在缓存友好的前缀，将易变的摘要、检索记忆和最新状态放在后部；同时分别评估任务正确率、证据召回、延迟、token 增长、更新冲突和拒答能力。程序性记忆尤其需要从执行结果中谨慎抽取并保留证据链，避免把噪声反馈固化为未来规划规则。",
+        "abstract_zh": "Agent 记忆是长时程智能体中的系统性问题：实际部署既要在长对话中保留任务状态，也要跨会话找回用户事实与偏好，并从既往结果累积程序性知识。论文认为这超出了文档检索范畴，记忆层还必须决定哪些交互成为持久状态、其作用域为何、如何在延迟约束下检索，以及如何随时间修订或删除。文章以 Oracle Database 上的 Oracle Agent Memory 为对象，围绕记忆生命周期、主动记忆核心与被动存储接口分层架构，以及兼顾下游准确率、证据检索、召回、延迟和 token 使用量的评估方法展开。文中报告 LongMemEval 93.8% 准确率、相对平铺历史约少 10.7 倍 token，并附带实现、线程生命周期与检索语义材料。",
+        "card_summary": "这是一篇面向企业长时程 Agent 的记忆系统报告，将工作记忆、跨会话事实记忆和程序性经验记忆统一到数据库原生的生命周期与作用域管理中。它的价值在于把摘要、抽取、检索、修订、权限与成本放在同一系统设计里，并给出多轮记忆基准上的较强结果，但结论仍主要来自厂商自报配置。",
+        "full_summary": "论文提出 Oracle Agent Memory：以数据库为持久化、向量检索和治理底座，为长时程 Agent 管理对话状态、用户偏好和历史执行经验。其关键不只是检索历史文本，而是把记忆建模为“写入—抽取—整合—摘要—检索—修订/删除”的生命周期，并以用户、Agent、线程三层作用域约束可见性。架构上，主动层负责摘要、上下文卡、自动抽取和检索编排，被动层以统一记录模型保存原始消息与长期记忆，从而兼顾证据保留和紧凑提示上下文。实验显示该系统在 LongMemEval 的特定高配设置下取得 93.8% 准确率，并在脚本化长对话中明显降低估算输入 token；但多会话推理仍是相对薄弱项，且实验细节、外部基线和成本结论的可复现性有限。若关注多轮 Agent 的长期状态、记忆隔离和规划可靠性，这篇系统设计与评估框架值得细读。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "高相关的工程型记忆系统论文",
+        "value_reason": "与 agent memory、multi-turn agent、long-horizon reliability 和 planning state 管理直接相关，且覆盖作用域隔离、记忆生命周期、程序性记忆、检索质量与上下文成本等落地问题。风险在于它更像 Oracle 生态的系统报告，核心结果多为作者自报，实验配置和对照的完全复现信息不足。",
+        "limitations": "论文明确承认结果是特定模型、嵌入器、检索预算、提示和裁判配置下的测量，不能直接视为通用能力上限；部分外部基线仅作报告值比较而非同条件复现。LongMemEval 的多会话推理最低，BEAM 10M 压力测试中多会话推理和事件排序表现也较弱，说明超长轨迹中的跨会话整合与时间顺序仍是瓶颈。程序性记忆的可靠抽取、噪声/对抗反馈防护、冲突消解和自动遗忘仍多停留在设计目标或未来扩展层面。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "全文将记忆定义为包含抽取、整合、检索、摘要、修订与删除的生命周期，并区分工作、事实和程序/经验记忆。",
+          "架构以主动记忆核心和被动记忆存储接口分层，显式使用 user、agent、thread 作用域及精确匹配控制。",
+          "文中报告 LongMemEval 469/500、93.8% 准确率，最低类别为多会话推理 88.0%，并强调结果依赖具体评测配置。",
+          "80 轮比较中，文中估算 Agent Memory 约 1,300 输入 token、平铺历史约 13,900；BEAM 10M 测试则暴露多会话推理、事件排序与高 token 消耗等问题。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-16T01:37:54.638Z"
+      }
+    },
+    {
+      "id": "2607.11433v1",
+      "title": "Omni-Decision: A Progressive Evidence-State Agent System for Omni-Modal QA",
+      "summary": "Omni-modal evidence-seeking QA requires agents to answer questions whose evidence is sparsely distributed across videos, audio, images, web pages, and computation results. Existing agentic multimodal systems often leave evidence in scratchpads, tool trajectories, or free-form histories, making it difficult to track what has been grounded, what remains missing, and when the evidence is sufficient to answer. We propose Omni-Decision, a training-free evidence-state system that turns omni-modal QA into a query-scoped evidence-closure process. For each query, Omni-Decision maintains a structured evidence state containing confirmed evidence, unresolved conflicts, fact and computation dependencies, and open evidence needs. A shared state view conditions planning, evidence acquisition, validation, repair, and finalization. Heterogeneous observations from media, web, computation, and verification modules are normalized, judged, and committed through deterministic state updates. This design enables targeted evidence acquisition, preserves sparse cross-modal cues, and provides inspectable control over repair and stopping. Omni-Decision achieves 45.6% accuracy on OmniGAIA and 58.3% on WorldSense, improving over the baselines by +27.3 and +30.2 percentage points, respectively. No-state ablations and trajectory audits further support the role of explicit evidence-state control in multi-step omni-modal evidence seeking.",
+      "url": "http://arxiv.org/abs/2607.11433v1",
+      "authors": [
+        "Ming Ma",
+        "Yi Zhu",
+        "Yiran Zhong",
+        "Feida Zhu",
+        "Weigao Sun",
+        "Junhan Shi",
+        "Lingrui Mei",
+        "Tianming Yang",
+        "Steven Hoi"
+      ],
+      "report_date": "2026-07-16",
+      "published": "2026-07-13",
+      "updated": "2026-07-13",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 84,
+        "level": "高",
+        "label": "值得优先阅读",
+        "water_risk": "中",
+        "value_judgement": "问题设定与 agent planning、长程可靠性高度相关，且方法提供了可直接复用的状态接口、写入约束和停止条件，而非泛泛的多 agent 编排。实验包含跨任务迁移、后端替换、去状态诊断和轨迹审计，证据链比只报最终准确率更完整；不过比较依赖特定强模型与工具栈，状态消融只覆盖固定子集，运行成本也明显高于 base agent，因此应将性能结论视为有力但仍待更全面复现的系统证据。",
+        "reason": "问题设定与 agent planning、长程可靠性高度相关，且方法提供了可直接复用的状态接口、写入约束和停止条件，而非泛泛的多 agent 编排。实验包含跨任务迁移、后端替换、去状态诊断和轨迹审计，证据链比只报最终准确率更完整；不过比较依赖特定强模型与工具栈，状态消融只覆盖固定子集，运行成本也明显高于 base agent，因此应将性能结论视为有力但仍待更全面复现的系统证据。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Ming Ma",
+          "Yi Zhu",
+          "Yiran Zhong",
+          "Feida Zhu",
+          "Weigao Sun",
+          "Junhan Shi",
+          "Lingrui Mei",
+          "Tianming Yang",
+          "Steven Hoi"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-13",
+        "paper_url": "https://arxiv.org/abs/2607.11433v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "问题设定与 agent planning、长程可靠性高度相关，且方法提供了可直接复用的状态接口、写入约束和停止条件，而非泛泛的多 agent 编排。实验包含跨任务迁移、后端替换、去状态诊断和轨迹审计，证据链比只报最终准确率更完整；不过比较依赖特定强模型与工具栈，状态消融只覆盖固定子集，运行成本也明显高于 base agent，因此应将性能结论视为有力但仍待更全面复现的系统证据。",
+        "summary": "这篇论文提出 Omni-Decision，试图解决多模态、多跳问答中证据散落于媒体、网页与计算工具、而 agent 又容易在长轨迹里遗失任务状态的问题。其核心不是训练新模型或增加角色，而是以查询级结构化状态统一承载已确认的证据、未解决冲突、外部事实和计算依赖，以及仍待满足的证据需求。规划、验证、修复和最终回答都读取该状态，工具产出只能通过标准化 reducer 写回；回答必须满足所有需求闭合、依赖完成且无冲突。文中在 OmniGAIA 上报告明显优于其受控 agent 基线的结果，并用去状态消融提供了显式状态带来额外收益的信号；WorldSense 的迁移结果说明该接口并非只适用于开放网页检索。对长程 agent 而言，最有价值的是把“是否继续找证据、修复还是停止”转成可检查的状态条件，但其结果也受感知后端和工具调用成本影响，尚缺少更强的成本—准确率与重复运行证据。",
+        "highlights": [
+          "问题设定与 agent planning、长程可靠性高度相关，且方法提供了可直接复用的状态接口、写入约束和停止条件，而非泛泛的多 agent 编排。实验包含跨任务迁移、后端替换、去状态诊断和轨迹审计，证据链比只报最终准确率更完整；不过比较依赖特定强模型与工具栈，状态消融只覆盖固定子集，运行成本也明显高于 base agent，因此应将性能结论视为有力但仍待更全面复现的系统证据。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文聚焦跨视频、音频、图像、网页与计算结果的多跳问答：关键证据稀疏地分散在不同模态中，且系统需要持续判断已确认内容、待补事实、冲突与何时可安全作答。作者认为单纯扩大上下文或保留自由形式轨迹，无法可靠地维护这些面向当前问题的证据关系，因此将问题重述为“证据闭合”的状态维护与控制问题。",
+        "method": "Omni-Decision 是一个免训练的推理时系统，围绕每个问题维护查询范围内的显式证据状态：已确认证据、未解决冲突、外部事实与计算依赖、开放证据需求。规划器、工具、批评器和最终回答模块都读取同一份状态摘要；工具输出先被标准化，只有 reducer 能按确定性的字段更新规则写入状态。系统根据未闭合槽位选择感知、检索、浏览、计算或验证动作；只有开放需求为空、依赖完成且无冲突时才允许完成，否则在无可推进动作时返回证据不足。",
+        "experiments": "在 OmniGAIA 的 360 个样本上，系统报告 45.6% 准确率，高于同文复现实验中的官方 base agent 18.3% 与 OmniAgent 25.5%。固定 120 个样本的去状态消融中，默认配置从 41.7% 降至 32.5%，表明增益并非仅来自规划器或感知后端；但该消融规模较小，未给出多次运行方差。迁移到封闭式音视频选择题 WorldSense 时达到 58.3%，低于最强原生端到端参考模型 65.5%；轨迹审计显示错误案例常已完成部分证据链，但仍会卡在感知、检索、计算或停止判断。",
+        "research_help": "Insight：把长期任务中的工作记忆实现为“可读、受控写入、可验证”的任务级证据账本，可让规划、工具调用、反思、修复与停止共享同一事实边界。对于多轮或长程 agent，关键不是累积更多轨迹文本，而是显式记录未完成槽位、依赖、来源与冲突，并把最终行动或回答绑定到闭合条件。该范式也提示可将可靠性评估从最终成败扩展到证据覆盖、冲突定位、未闭合依赖和恰当弃答。",
+        "recommendation": {
+          "score": 84,
+          "level": "高",
+          "label": "值得读",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：把长期任务中的工作记忆实现为“可读、受控写入、可验证”的任务级证据账本，可让规划、工具调用、反思、修复与停止共享同一事实边界。对于多轮或长程 agent，关键不是累积更多轨迹文本，而是显式记录未完成槽位、依赖、来源与冲突，并把最终行动或回答绑定到闭合条件。该范式也提示可将可靠性评估从最终成败扩展到证据覆盖、冲突定位、未闭合依赖和恰当弃答。",
+        "abstract_zh": "全模态证据检索式问答需要智能体整合视频、音频、图像、网页和计算结果中稀疏分布的证据。现有多模态智能体常把证据留在 scratchpad、工具轨迹或自由文本历史中，难以追踪哪些事实已经落地、哪些信息仍缺失，以及证据何时足以回答。本文提出免训练的 Omni-Decision，将任务建模为面向查询的证据闭合过程，并维护确认事实、未解冲突、事实和计算依赖及开放证据需求组成的结构化状态。共享状态驱动规划、证据获取、验证、修复和最终作答，异构观察经标准化和确定性更新后写入状态。系统在 OmniGAIA 与 WorldSense 上分别达到 45.6% 和 58.3% 准确率，作者还通过去状态消融和轨迹审计支持显式证据状态控制的作用。",
+        "full_summary": "这篇论文提出 Omni-Decision，试图解决多模态、多跳问答中证据散落于媒体、网页与计算工具、而 agent 又容易在长轨迹里遗失任务状态的问题。其核心不是训练新模型或增加角色，而是以查询级结构化状态统一承载已确认的证据、未解决冲突、外部事实和计算依赖，以及仍待满足的证据需求。规划、验证、修复和最终回答都读取该状态，工具产出只能通过标准化 reducer 写回；回答必须满足所有需求闭合、依赖完成且无冲突。文中在 OmniGAIA 上报告明显优于其受控 agent 基线的结果，并用去状态消融提供了显式状态带来额外收益的信号；WorldSense 的迁移结果说明该接口并非只适用于开放网页检索。对长程 agent 而言，最有价值的是把“是否继续找证据、修复还是停止”转成可检查的状态条件，但其结果也受感知后端和工具调用成本影响，尚缺少更强的成本—准确率与重复运行证据。",
+        "card_summary": "Omni-Decision 将多模态 agent 的核心控制对象从自由工具轨迹改为任务级“证据状态”，显式追踪已证实事实、缺口、依赖与冲突，并用闭合条件决定何时作答。它在 OmniGAIA 上相对文中基线有较大提升，值得关注其对长程证据搜集和可靠停止的系统设计启发。"
+      },
+      "analysis": {
+        "motivation": "论文聚焦跨视频、音频、图像、网页与计算结果的多跳问答：关键证据稀疏地分散在不同模态中，且系统需要持续判断已确认内容、待补事实、冲突与何时可安全作答。作者认为单纯扩大上下文或保留自由形式轨迹，无法可靠地维护这些面向当前问题的证据关系，因此将问题重述为“证据闭合”的状态维护与控制问题。",
+        "method": "Omni-Decision 是一个免训练的推理时系统，围绕每个问题维护查询范围内的显式证据状态：已确认证据、未解决冲突、外部事实与计算依赖、开放证据需求。规划器、工具、批评器和最终回答模块都读取同一份状态摘要；工具输出先被标准化，只有 reducer 能按确定性的字段更新规则写入状态。系统根据未闭合槽位选择感知、检索、浏览、计算或验证动作；只有开放需求为空、依赖完成且无冲突时才允许完成，否则在无可推进动作时返回证据不足。",
+        "experiments": "在 OmniGAIA 的 360 个样本上，系统报告 45.6% 准确率，高于同文复现实验中的官方 base agent 18.3% 与 OmniAgent 25.5%。固定 120 个样本的去状态消融中，默认配置从 41.7% 降至 32.5%，表明增益并非仅来自规划器或感知后端；但该消融规模较小，未给出多次运行方差。迁移到封闭式音视频选择题 WorldSense 时达到 58.3%，低于最强原生端到端参考模型 65.5%；轨迹审计显示错误案例常已完成部分证据链，但仍会卡在感知、检索、计算或停止判断。",
+        "research_help": "Insight：把长期任务中的工作记忆实现为“可读、受控写入、可验证”的任务级证据账本，可让规划、工具调用、反思、修复与停止共享同一事实边界。对于多轮或长程 agent，关键不是累积更多轨迹文本，而是显式记录未完成槽位、依赖、来源与冲突，并把最终行动或回答绑定到闭合条件。该范式也提示可将可靠性评估从最终成败扩展到证据覆盖、冲突定位、未闭合依赖和恰当弃答。",
+        "insight": "Insight：把长期任务中的工作记忆实现为“可读、受控写入、可验证”的任务级证据账本，可让规划、工具调用、反思、修复与停止共享同一事实边界。对于多轮或长程 agent，关键不是累积更多轨迹文本，而是显式记录未完成槽位、依赖、来源与冲突，并把最终行动或回答绑定到闭合条件。该范式也提示可将可靠性评估从最终成败扩展到证据覆盖、冲突定位、未闭合依赖和恰当弃答。",
+        "abstract_zh": "全模态证据检索式问答需要智能体整合视频、音频、图像、网页和计算结果中稀疏分布的证据。现有多模态智能体常把证据留在 scratchpad、工具轨迹或自由文本历史中，难以追踪哪些事实已经落地、哪些信息仍缺失，以及证据何时足以回答。本文提出免训练的 Omni-Decision，将任务建模为面向查询的证据闭合过程，并维护确认事实、未解冲突、事实和计算依赖及开放证据需求组成的结构化状态。共享状态驱动规划、证据获取、验证、修复和最终作答，异构观察经标准化和确定性更新后写入状态。系统在 OmniGAIA 与 WorldSense 上分别达到 45.6% 和 58.3% 准确率，作者还通过去状态消融和轨迹审计支持显式证据状态控制的作用。",
+        "card_summary": "Omni-Decision 将多模态 agent 的核心控制对象从自由工具轨迹改为任务级“证据状态”，显式追踪已证实事实、缺口、依赖与冲突，并用闭合条件决定何时作答。它在 OmniGAIA 上相对文中基线有较大提升，值得关注其对长程证据搜集和可靠停止的系统设计启发。",
+        "full_summary": "这篇论文提出 Omni-Decision，试图解决多模态、多跳问答中证据散落于媒体、网页与计算工具、而 agent 又容易在长轨迹里遗失任务状态的问题。其核心不是训练新模型或增加角色，而是以查询级结构化状态统一承载已确认的证据、未解决冲突、外部事实和计算依赖，以及仍待满足的证据需求。规划、验证、修复和最终回答都读取该状态，工具产出只能通过标准化 reducer 写回；回答必须满足所有需求闭合、依赖完成且无冲突。文中在 OmniGAIA 上报告明显优于其受控 agent 基线的结果，并用去状态消融提供了显式状态带来额外收益的信号；WorldSense 的迁移结果说明该接口并非只适用于开放网页检索。对长程 agent 而言，最有价值的是把“是否继续找证据、修复还是停止”转成可检查的状态条件，但其结果也受感知后端和工具调用成本影响，尚缺少更强的成本—准确率与重复运行证据。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得优先阅读",
+        "value_reason": "问题设定与 agent planning、长程可靠性高度相关，且方法提供了可直接复用的状态接口、写入约束和停止条件，而非泛泛的多 agent 编排。实验包含跨任务迁移、后端替换、去状态诊断和轨迹审计，证据链比只报最终准确率更完整；不过比较依赖特定强模型与工具栈，状态消融只覆盖固定子集，运行成本也明显高于 base agent，因此应将性能结论视为有力但仍待更全面复现的系统证据。",
+        "limitations": "论文不学习状态表示或策略，低层感知、检索质量和预算分配仍是主要瓶颈；在 OmniGAIA 上平均工具请求显著增加，缺少统一的时延、成本与准确率权衡。关键消融在 120 个固定样本上进行，主结果仅固定配置单次运行，未报告跨随机种子稳定性。人工进度审计样本有限，且独立模型审计对错误案例给出更宽松的进度判断，说明过程指标会受评审标准影响。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "方法部分明确将证据状态划分为已确认证据 E、冲突 C、事实/计算依赖 F 与开放需求 U，并规定 reducer 为唯一写入者。",
+          "OmniGAIA 主表报告 Omni-Decision 为 45.56%，同文 OmniGAIA base 为 18.33%、OmniAgent 为 25.51%；固定子集去状态后默认配置从 41.67% 降至 32.50%。",
+          "WorldSense 表报告 Omni-Decision 为 58.32%，而最强公开端到端参考 Gemini-3.1-Pro-Preview 为 65.50%。",
+          "附录显示 Omni-Decision 在 OmniGAIA 上记录 4,038 次工具请求、平均每题 11.22 次，高于 base agent 的平均 2.45 次。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-07-16T01:42:02.109Z"
+      }
+    },
     {
       "id": "2607.10463v1",
       "title": "GRASP: GRanularity-Aware Search Policy for Agentic RAG",
