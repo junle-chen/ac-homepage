@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-16T01:46:09.821Z",
+  "updated_at": "2026-07-28T12:00:12.937404Z",
   "source": "arxiv",
-  "analysis_method": "Codex CLI full-text paper reading from arXiv PDF text plus manual curation against the homepage Daily Paper scope.",
+  "analysis_method": "Codex manual catch-up curation from arXiv HTML/abstract/PDF metadata, prior automation screening, and selected full-text evidence for 2026-07-17 through 2026-07-28 backlog.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,34 +37,50 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-07-16 Daily Paper",
-    "report_date": "2026-07-16",
-    "focus": "agentic RL credit assignment, repository-level agent planning, enterprise agent memory, evidence-state QA agents",
-    "summary": "今日从 16 篇 arXiv 候选中保留 4 篇强相关论文：1 篇直接解决长程 tool-use agent 的 turn-level credit assignment，1 篇面向仓库级漏洞检测的 planner/explorer agent，1 篇企业长时程 agent memory substrate，1 篇用显式证据状态控制多模态 QA agent 的系统。机器人、AUV、车联网、通用 MARL/XRL、遥感/电路等领域较窄或主题偏离的候选已过滤。",
+    "title": "2026-07-28 Daily Paper Catch-up",
+    "report_date": "2026-07-28",
+    "focus": "backfill 2026-07-17 to 2026-07-28: agentic RL, clarification, multi-turn tool-use, live environments, workflow repair, long-term memory, reliability",
+    "summary": "补发布 2026-07-17 至 2026-07-28 期间被本地 metadata-first 草稿阻塞的 Daily Paper。已丢弃宽泛自动初筛草稿，保留 18 篇与 long-horizon agent planning、multi-turn interaction、agentic RL、工具/环境执行和长期记忆强相关的论文；放疗、AUV、遥感、普通 RL/模型压缩等弱相关候选未纳入。",
     "top_recommendations": [
-      "2607.13988v1",
-      "2607.13157v1",
-      "2607.11433v1"
+      "2607.22165v1",
+      "2607.20536v1",
+      "2607.22520v1"
     ],
     "low_priority": [
-      "2607.13439v1"
+      "2607.22393v1",
+      "2607.14145v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
     "email_body": ""
   },
   "latest_item_ids": [
-    "2607.13988v1",
-    "2607.13439v1",
-    "2607.13157v1",
-    "2607.11433v1"
+    "2607.14777v1",
+    "2607.14171v1",
+    "2607.14145v1",
+    "2607.20064v2",
+    "2607.20536v1",
+    "2607.21143v2",
+    "2607.21217v1",
+    "2607.20531v1",
+    "2607.21557v2",
+    "2607.20999v1",
+    "2607.20982v1",
+    "2607.20482v1",
+    "2607.22520v1",
+    "2607.22465v2",
+    "2607.22165v1",
+    "2607.22393v1",
+    "2607.21596v1",
+    "2607.21962v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 16,
-    "total_items": 80,
-    "previous_items": 76,
-    "latest_items": 4,
+    "fresh_items": 18,
+    "total_items": 98,
+    "previous_items": 80,
+    "latest_items": 18,
     "source_report_dates": {
+      "2026-07-28": 18,
       "2026-07-16": 4,
       "2026-07-14": 5,
       "2026-07-11": 1,
@@ -76,46 +92,1428 @@
       "2026-07-02": 2,
       "2026-06-30": 2,
       "2026-06-29": 2,
-      "2026-06-25": 2,
       "2026-06-26": 2,
+      "2026-06-25": 2,
       "2026-06-24": 2,
       "2026-06-23": 6,
+      "2026-06-18": 1,
       "2026-06-17": 5,
       "2026-06-16": 2,
       "2026-06-15": 9,
-      "2026-06-18": 1,
       "2026-06-14": 5,
       "2026-06-13": 1
     },
     "filtered_candidate_ids": [
-      "2607.10750v1",
-      "2607.08024v1",
-      "2607.08032v1",
-      "2607.06990v1",
-      "2607.07403v1",
-      "2607.07029v1",
-      "2607.06880v1",
-      "2607.07753v1",
-      "2607.06563v1",
-      "2607.05957v1",
-      "2607.05939v1",
-      "2607.06854v1",
-      "2607.05773v1",
+      "2607.15001v1",
+      "2607.14870v1",
+      "2607.14688v1",
+      "2607.14485v1",
       "2607.13818v1",
       "2607.13655v1",
       "2607.13880v1",
       "2607.12924v2",
       "2607.12497v1",
       "2607.12861v1",
-      "2607.13220v1",
-      "2607.11377v1",
-      "2607.11744v1",
-      "2607.11338v1",
-      "2607.11607v1",
-      "2607.11084v1"
+      "2607.21653v1",
+      "2607.21760v1",
+      "2607.22445v1"
     ]
   },
   "items": [
+    {
+      "id": "2607.14777v1",
+      "title": "SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning",
+      "summary": "Large language models are increasingly trained as interactive agents for long-horizon tasks involving multi-turn interaction, tool use, and environment feedback. Outcome-based reinforcement learning (RL) provides a practical optimization paradigm, but its sparse trajectory-level rewards offer limited guidance on intermediate decisions, leaving a supervision gap between episode-level outcomes and token-level policy learning. We propose SEED (SElf-Evolving On-Policy Distillation), a self-evolving framework that converts completed on-policy trajectories into training-time hindsight skills and distills their behavioral effect back into the policy model. SEED first fine-tunes the policy to analyze completed trajectories and generate natural-language skills that capture reusable workflows, decisive observations, or failure-avoidance rules. During RL, the current policy both collects trajectories and serves as the analyzer that extracts hindsight skills from them. Policy updates therefore improve subsequent decision making and skill analysis together, allowing hindsight supervision to evolve with the policy. SEED then re-scores the sampled actions under ordinary and skill-augmented contexts, converting the skill-induced probability shift into a dense token-level on-policy distillation signal. This signal is jointly optimized with outcome-based RL, keeping the auxiliary supervision aligned with the current trajectory distribution. Extensive experiments on text-based and vision-based agentic tasks show that SEED consistently improves performance and sample efficiency, exhibiting robust generalization to unseen scenarios. Our code is available at this https URL.",
+      "url": "http://arxiv.org/abs/2607.14777v1",
+      "authors": [
+        "Jinyang Wu",
+        "Shuo Yang",
+        "Zhengxi Lu",
+        "Fan Zhang",
+        "Yuhao Shen",
+        "Lang Feng",
+        "Haoran Luo",
+        "Zheng Lian",
+        "Shuai Zhang",
+        "Zhengqi Wen",
+        "Jianhua Tao"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-16",
+      "updated": "2026-07-16",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "https://jinyangwu.github.io/seed",
+      "repo_url": "https://github.com/jinyangwu/SEED",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "SEED把长程交互轨迹转成 hindsight skill，再把技能对动作概率的影响蒸馏回 on-policy RL，直接服务 agentic RL 的 credit assignment 与技能复用。",
+        "reason": "SEED把长程交互轨迹转成 hindsight skill，再把技能对动作概率的影响蒸馏回 on-policy RL，直接服务 agentic RL 的 credit assignment 与技能复用。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jinyang Wu",
+          "Shuo Yang",
+          "Zhengxi Lu",
+          "Fan Zhang",
+          "Yuhao Shen",
+          "Lang Feng",
+          "Haoran Luo",
+          "Zheng Lian",
+          "Shuai Zhang",
+          "Zhengqi Wen",
+          "Jianhua Tao"
+        ],
+        "affiliations": "论文首页未检索到标准单位；需打开作者页或正文确认。",
+        "date": "2026-07-16",
+        "paper_url": "https://arxiv.org/abs/2607.14777v1",
+        "project_url": "https://jinyangwu.github.io/seed",
+        "repo_url": "https://github.com/jinyangwu/SEED",
+        "venue_status": "未确认录用",
+        "contribution": "SEED把长程交互轨迹转成 hindsight skill，再把技能对动作概率的影响蒸馏回 on-policy RL，直接服务 agentic RL 的 credit assignment 与技能复用。",
+        "summary": "SEED 把成功或失败后的交互轨迹转成 hindsight skill，并把这些技能对动作选择的影响蒸馏回当前策略。它适合关注 agentic RL 中稀疏终局奖励、工具环境反馈和可复用经验如何进入训练的人。",
+        "highlights": [
+          "对 agentic RL 的启发是：可把执行后的轨迹解释变成训练时的密集辅助信号，而不是只依赖最终成败。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "长程工具 agent 的终局奖励太稀疏，单靠 outcome RL 很难知道哪些中间观察、技能和动作真正推动了任务完成。",
+        "method": "方法先让当前策略从已完成轨迹中提炼自然语言技能，再比较普通上下文和 skill-augmented 上下文下采样动作的概率差，把这个差异作为 token-level on-policy distillation 信号与 outcome RL 联合训练。",
+        "experiments": "摘要声称在文本和视觉 agentic tasks 上提升性能与样本效率，并开放项目页、代码和模型资源；后续应重点检查任务覆盖和 hindsight skill 是否会引入偏置。",
+        "research_help": "对 agentic RL 的启发是：可把执行后的轨迹解释变成训练时的密集辅助信号，而不是只依赖最终成败。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "长程工具 agent 的终局奖励太稀疏，单靠 outcome RL 很难知道哪些中间观察、技能和动作真正推动了任务完成。",
+        "method": "方法先让当前策略从已完成轨迹中提炼自然语言技能，再比较普通上下文和 skill-augmented 上下文下采样动作的概率差，把这个差异作为 token-level on-policy distillation 信号与 outcome RL 联合训练。",
+        "experiments": "摘要声称在文本和视觉 agentic tasks 上提升性能与样本效率，并开放项目页、代码和模型资源；后续应重点检查任务覆盖和 hindsight skill 是否会引入偏置。",
+        "research_help": "对 agentic RL 的启发是：可把执行后的轨迹解释变成训练时的密集辅助信号，而不是只依赖最终成败。"
+      }
+    },
+    {
+      "id": "2607.14171v1",
+      "title": "Branching Policy Optimization: Sandbox-Native Language Agent Reinforcement Learning",
+      "summary": "Reinforcement learning has emerged as the dominant paradigm for training large language model (LLM) agents that interact with executable sandboxes. State-of-the-art algorithms such as PPO, RLOO, and GRPO inherit their rollout topology from RLHF: for each prompt, N independent trajectories are sampled from the initial state, and an advantage is computed by subtracting a group baseline. This design ignores a defining property of agent sandboxes. They are deterministic, snapshottable, and resumable from any intermediate state. We argue that this property enables a fundamentally different rollout topology: rather than N independent trees of depth T, one can construct a single tree of N leaves whose siblings share prefixes, and therefore share variance. We instantiate this idea as Branching Policy Optimization (BPO), a sandbox-native RL algorithm that (i) adaptively snapshots the sandbox at high-entropy decision points along a backbone trajectory, (ii) forks K alternative actions per branch point and rolls out each to termination, and (iii) computes per-step advantages from sibling returns rather than from independent prompts. We prove this estimator is unbiased and has strictly lower variance than the trajectory-level baseline, with the reduction equal to the prefix-explained portion of return variance. On WebShop, ALFWorld, and SWE-bench Verified with Qwen2.5-7B and Llama-3.1-8B backbones, BPO improves success by 3.6--6.1 absolute points over GRPO and RLOO at matched compute, halves gradient-norm variance, and matches the best baseline using 38% fewer policy updates.",
+      "url": "http://arxiv.org/abs/2607.14171v1",
+      "authors": [
+        "Bowei He",
+        "Yankai Chen",
+        "Xiaokun Zhang",
+        "Xue Liu"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-15",
+      "updated": "2026-07-15",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "BPO利用 sandbox 可快照、可恢复的性质，在同一轨迹中从中间状态分叉采样，贴近代码/工具 agent 的真实执行结构。",
+        "reason": "BPO利用 sandbox 可快照、可恢复的性质，在同一轨迹中从中间状态分叉采样，贴近代码/工具 agent 的真实执行结构。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Bowei He",
+          "Yankai Chen",
+          "Xiaokun Zhang",
+          "Xue Liu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-15",
+        "paper_url": "https://arxiv.org/abs/2607.14171v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "BPO利用 sandbox 可快照、可恢复的性质，在同一轨迹中从中间状态分叉采样，贴近代码/工具 agent 的真实执行结构。",
+        "summary": "Branching Policy Optimization 把语言 agent 的 RL rollout 从“每次从初始状态重跑”改成可从 sandbox 中间状态分叉。这个设定对可恢复执行环境里的 credit assignment、探索效率和失败定位很有启发。",
+        "highlights": [
+          "对长程执行训练的启发是：环境快照本身可以成为 RL 算法设计的一等接口。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "现有 PPO/RLOO/GRPO 继承了 RLHF 的独立 rollout 拓扑，没有利用 executable sandbox 的 deterministic、snapshottable、resumable 特性。",
+        "method": "方法从中间环境状态分叉出多个候选后续轨迹，用共享前缀和分叉结果估计优势，从而更高效地比较同一局部决策的不同后果。",
+        "experiments": "摘要强调面向可执行 sandbox 的 agent RL；需要精读正文确认它在代码、工具或其他环境中的 baseline、成本和稳定性。",
+        "research_help": "对长程执行训练的启发是：环境快照本身可以成为 RL 算法设计的一等接口。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "现有 PPO/RLOO/GRPO 继承了 RLHF 的独立 rollout 拓扑，没有利用 executable sandbox 的 deterministic、snapshottable、resumable 特性。",
+        "method": "方法从中间环境状态分叉出多个候选后续轨迹，用共享前缀和分叉结果估计优势，从而更高效地比较同一局部决策的不同后果。",
+        "experiments": "摘要强调面向可执行 sandbox 的 agent RL；需要精读正文确认它在代码、工具或其他环境中的 baseline、成本和稳定性。",
+        "research_help": "对长程执行训练的启发是：环境快照本身可以成为 RL 算法设计的一等接口。"
+      }
+    },
+    {
+      "id": "2607.14145v1",
+      "title": "ToolAnchor: Anchoring Counterfactual Context to Boost Agentic Tool-use Capability",
+      "summary": "Tool-augmented large language model agents excel at long-horizon tasks, yet they are typically post-trained on fixed toolsets. When tasks demand new tools, these agents struggle to incorporate them effectively, and retraining from scratch is often impractical. We identify the core obstacle in such toolset expansion problem as behavioral inertia: the tendency of agents to fall back on familiar tools and established reasoning patterns despite having access to new ones. We demonstrate that injecting counterfactual anchor contexts at critical decision points can break this inertia, recovering failed trajectories by eliciting suppressed agent capabilities. To scale this insight, we propose ToolAnchor, a framework that uses teacher models to hypothesize these counterfactual contexts, verifies them via student rollouts, and internalizes the successful interventions through agentic post-training. Extensive evaluations across general AI assistant (GAIA), textual search (BrowseComp), and visual search (VDR-Bench) tasks demonstrate that ToolAnchor consistently exhibits competitive performance under expanded toolsets. Our work bridges the gap between static post-training and dynamic adaptation, charting a new path for scalable agentic reinforcement learning.",
+      "url": "http://arxiv.org/abs/2607.14145v1",
+      "authors": [
+        "Weiting Liu",
+        "Jieyi Bi",
+        "Wanqi Zhou",
+        "Jianfeng Feng",
+        "Yining Ma",
+        "Ai Han",
+        "Wenlian Lu"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-14",
+      "updated": "2026-07-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "中",
+        "label": "有价值",
+        "water_risk": "中",
+        "value_judgement": "ToolAnchor关注新工具加入后 agent 的 behavioral inertia，和工具集合扩展、反事实上下文、工具选择泛化直接相关。",
+        "reason": "ToolAnchor关注新工具加入后 agent 的 behavioral inertia，和工具集合扩展、反事实上下文、工具选择泛化直接相关。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Weiting Liu",
+          "Jieyi Bi",
+          "Wanqi Zhou",
+          "Jianfeng Feng",
+          "Yining Ma",
+          "Ai Han",
+          "Wenlian Lu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-14",
+        "paper_url": "https://arxiv.org/abs/2607.14145v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "ToolAnchor关注新工具加入后 agent 的 behavioral inertia，和工具集合扩展、反事实上下文、工具选择泛化直接相关。",
+        "summary": "ToolAnchor 研究 tool-augmented agent 在加入新工具后仍倾向使用旧工具的问题。它把反事实工具上下文作为锚点，试图改善长程工具使用中的工具选择迁移。",
+        "highlights": [
+          "对 tool/environment interaction 的启发是：工具可用性变化本身应被纳入规划状态，而不是假设工具集固定。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "工具 agent 往往在固定工具集上训练，一旦加入新工具就会继续沿用熟悉工具和旧推理路径。",
+        "method": "方法通过构造 counterfactual context 来锚定新工具的使用条件，缓解 agent 对旧工具和旧模式的惯性。",
+        "experiments": "摘要强调提升新工具扩展场景的 agentic tool-use capability；需要看正文中任务是否足够真实、是否只是提示工程收益。",
+        "research_help": "对 tool/environment interaction 的启发是：工具可用性变化本身应被纳入规划状态，而不是假设工具集固定。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "工具 agent 往往在固定工具集上训练，一旦加入新工具就会继续沿用熟悉工具和旧推理路径。",
+        "method": "方法通过构造 counterfactual context 来锚定新工具的使用条件，缓解 agent 对旧工具和旧模式的惯性。",
+        "experiments": "摘要强调提升新工具扩展场景的 agentic tool-use capability；需要看正文中任务是否足够真实、是否只是提示工程收益。",
+        "research_help": "对 tool/environment interaction 的启发是：工具可用性变化本身应被纳入规划状态，而不是假设工具集固定。"
+      }
+    },
+    {
+      "id": "2607.20064v2",
+      "title": "PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning",
+      "summary": "Long-horizon tasks require sustained perception, reasoning, and exploration, and are a persistent challenge for large language model (LLM) agents. This gap is reflected in their limited performance on continual learning benchmarks such as ARC-AGI-3, especially when models are evaluated out of the box. Various agent harnesses have been proposed to close this gap, and each commits to a strategy for handling long sequences of observations, i.e., what information to save from the environment and how to load it into model context, a choice we argue is particularly consequential. Existing methods for context management face a significant tradeoff, as preserving more information makes retrieving relevant details less tractable. We propose PRO-LONG, a minimal context management framework built around programmatic memory for LLM agents in long-horizon, exploratory settings. PRO-LONG addresses the tradeoff by keeping a complete, structured interaction log and capitalizing on recent progress in coding agents to search this history efficiently. On the full ARC-AGI-3 public game set, PRO-LONG improves over a base coding agent by an average of 18.0 percentage points across frontier models, and matches or exceeds state-of-the-art specialized harnesses (up to 76.1% pass@1) while using 4.2-5.8x fewer tokens. With Fable 5, PRO-LONG achieves 97.4% best@2 at a total cost of \\$1,750. Relevant code and logs are available at this https URL.",
+      "url": "http://arxiv.org/abs/2607.20064v2",
+      "authors": [
+        "Alexis Fox",
+        "Junlin Wang",
+        "Paul Rosu",
+        "Bhuwan Dhingra"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-22",
+      "updated": "2026-07-22",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/alexisfox7/PRO-LONG",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "PRO-LONG把长程任务中的观察保存、程序化检索和状态压缩做成显式 memory harness，正对 long-horizon reasoning。",
+        "reason": "PRO-LONG把长程任务中的观察保存、程序化检索和状态压缩做成显式 memory harness，正对 long-horizon reasoning。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Alexis Fox",
+          "Junlin Wang",
+          "Paul Rosu",
+          "Bhuwan Dhingra"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-22",
+        "paper_url": "https://arxiv.org/abs/2607.20064v2",
+        "project_url": "",
+        "repo_url": "https://github.com/alexisfox7/PRO-LONG",
+        "venue_status": "未确认录用",
+        "contribution": "PRO-LONG把长程任务中的观察保存、程序化检索和状态压缩做成显式 memory harness，正对 long-horizon reasoning。",
+        "summary": "PRO-LONG 关注 LLM agent 在长程任务中如何保存和调用环境观察。它把 memory 设计从普通摘要推进到可程序化查询的轨迹结构，适合用于长程推理和持续探索任务。",
+        "highlights": [
+          "对 long-horizon agent 的启发是：memory harness 的数据结构和查询 API 会显著影响规划能力。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "长程任务需要持续感知、推理和探索，但模型原生上下文难以承载大量观察序列。",
+        "method": "方法把环境观察组织成可由程序检索和操作的 memory 结构，让 agent 在长轨迹中显式保存、查询和压缩信息。",
+        "experiments": "摘要以 ARC-AGI-3 等持续学习/长程 benchmark 为背景；需要注意其 repo 在此前运行中曾有可访问性问题，复现前应重新确认。",
+        "research_help": "对 long-horizon agent 的启发是：memory harness 的数据结构和查询 API 会显著影响规划能力。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "长程任务需要持续感知、推理和探索，但模型原生上下文难以承载大量观察序列。",
+        "method": "方法把环境观察组织成可由程序检索和操作的 memory 结构，让 agent 在长轨迹中显式保存、查询和压缩信息。",
+        "experiments": "摘要以 ARC-AGI-3 等持续学习/长程 benchmark 为背景；需要注意其 repo 在此前运行中曾有可访问性问题，复现前应重新确认。",
+        "research_help": "对 long-horizon agent 的启发是：memory harness 的数据结构和查询 API 会显著影响规划能力。"
+      }
+    },
+    {
+      "id": "2607.20536v1",
+      "title": "AppWorld-UL: Benchmarking Diverse Agent-User Interactions for Tool-Use",
+      "summary": "Tool-use agents that address day-to-day digital tasks such as ordering groceries must not only operate applications, but also interact with the user, e.g., to ask clarification questions, prompt for confirmation, and inform the user when the instruction is infeasible. However, current benchmarks for evaluating agent-user interactions do not capture the diversity of such interactions. Further, they operate in small environments with few, often non-state-changing, APIs. To address this gap, we introduce AppWorld-UL, a ``user-in-the-loop'' benchmark of 516 challenging tasks requiring diverse agent-user interactions. Building upon the AppWorld framework with 9 popular simulated apps like Amazon and Spotify, we systematically modify original tasks to introduce ambiguities and constraints that necessitate various types of agent-user interaction. User behavior is simulated by an LLM prompted to respond with carefully designed knowledge boundaries, offering more reliable simulation than the unconstrained or overly rigid alternatives used in prior work. Our evaluation reveals that a state-of-the-art LLM, Claude Opus 4.7, achieves only 48.6% success on AppWorld-UL, and only 35.7% on the harder, compositional subset. On the stricter, scenario-level metric, compositional task performance drops to only 21.3%. Our analysis reveals that correct user-interaction is crucial for success. This demonstrates the benchmark's difficulty and its potential to advance research on user-in-the-loop tool-use agents.",
+      "url": "http://arxiv.org/abs/2607.20536v1",
+      "authors": [
+        "Junzhi Chen",
+        "Harsh Trivedi",
+        "Jane Pan",
+        "Michael JQ Zhang",
+        "Tejas Srinivasan",
+        "Niranjan Balasubramanian",
+        "Ashish Sabharwal"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-10",
+      "updated": "2026-07-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "https://appworld.dev/appworld-ul",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 97,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "AppWorld-UL把工具执行和用户交互合在一起，覆盖澄清、确认、不可行说明和有状态 API，强相关 multi-turn agent-user interaction。",
+        "reason": "AppWorld-UL把工具执行和用户交互合在一起，覆盖澄清、确认、不可行说明和有状态 API，强相关 multi-turn agent-user interaction。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Junzhi Chen",
+          "Harsh Trivedi",
+          "Jane Pan",
+          "Michael JQ Zhang",
+          "Tejas Srinivasan",
+          "Niranjan Balasubramanian",
+          "Ashish Sabharwal"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-10",
+        "paper_url": "https://arxiv.org/abs/2607.20536v1",
+        "project_url": "https://appworld.dev/appworld-ul",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "AppWorld-UL把工具执行和用户交互合在一起，覆盖澄清、确认、不可行说明和有状态 API，强相关 multi-turn agent-user interaction。",
+        "summary": "AppWorld-UL 把日常数字任务里的工具调用和用户交互放到同一个 benchmark 中。它要求 agent 在执行应用 API 的同时澄清需求、请求确认、处理不可行指令，非常适合评估多轮用户交互型 tool-use agent。",
+        "highlights": [
+          "对 clarification 与 tool-use 结合的启发是：用户沟通不应独立于工具状态，而应嵌入任务执行循环。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "现有 agent-user interaction benchmark 环境小、API 少，且常不包含真实状态变化，无法反映日常工具任务。",
+        "method": "方法扩展 AppWorld 风格环境，加入多样用户交互类型、有状态工具 API 和执行前/执行中的沟通需求。",
+        "experiments": "摘要指出 benchmark 覆盖 ordering groceries 等日常任务，并提供项目页；应重点看任务类型、用户模拟器和评测是否稳定。",
+        "research_help": "对 clarification 与 tool-use 结合的启发是：用户沟通不应独立于工具状态，而应嵌入任务执行循环。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "现有 agent-user interaction benchmark 环境小、API 少，且常不包含真实状态变化，无法反映日常工具任务。",
+        "method": "方法扩展 AppWorld 风格环境，加入多样用户交互类型、有状态工具 API 和执行前/执行中的沟通需求。",
+        "experiments": "摘要指出 benchmark 覆盖 ordering groceries 等日常任务，并提供项目页；应重点看任务类型、用户模拟器和评测是否稳定。",
+        "research_help": "对 clarification 与 tool-use 结合的启发是：用户沟通不应独立于工具状态，而应嵌入任务执行循环。"
+      }
+    },
+    {
+      "id": "2607.21143v2",
+      "title": "One More Turn, Less Regret: A Regret-Based Multi-Turn Benchmark for LLMs' Clarification Policies",
+      "summary": "Ambiguous user requests make clarification a sequential decision problem for conversational LLM assistants: they must decide whether to ask, what to ask, when to stop, and when to answer. We introduce RegretBench, a multi-turn benchmark that evaluates clarification as policy behavior rather than isolated question quality. RegretBench provides a hidden-intent formulation of ambiguity, supports free-form interaction grounded in semantic-state tracking, and introduces a regret-based objective that measures how much value a model loses relative to a reference clarification policy. Experiments on open-domain QA and product recommendation scenarios show that final success alone is insufficient, as models with similar accuracy can differ substantially in efficiency, robustness to user behaviors, and stopping decisions. By jointly measuring intent resolution, interaction cost, ineffective clarification, and regret, RegretBench reveals whether models clarify usefully and efficiently. Our results show that effective clarification requires more than plausible questions: models must ask the right question at the right time and stop once the user's intended meaning is clear.",
+      "url": "http://arxiv.org/abs/2607.21143v2",
+      "authors": [
+        "Minh Ngoc Ta",
+        "My Anh Tran Nguyen",
+        "Duong D. Nguyen",
+        "Yuxia Wang",
+        "Preslav Nakov"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-23",
+      "updated": "2026-07-23",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "RegretBench把澄清建模为多轮策略问题，关注何时问、问什么、何时停止，比单轮问题质量评测更贴近真实 assistant。",
+        "reason": "RegretBench把澄清建模为多轮策略问题，关注何时问、问什么、何时停止，比单轮问题质量评测更贴近真实 assistant。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Minh Ngoc Ta",
+          "My Anh Tran Nguyen",
+          "Duong D. Nguyen",
+          "Yuxia Wang",
+          "Preslav Nakov"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-23",
+        "paper_url": "https://arxiv.org/abs/2607.21143v2",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "RegretBench把澄清建模为多轮策略问题，关注何时问、问什么、何时停止，比单轮问题质量评测更贴近真实 assistant。",
+        "summary": "RegretBench 把 ambiguous request 下的澄清行为看作序列决策，而不是单个好问题生成。它用 hidden intent、semantic-state tracking 和 regret objective 评估 LLM 何时追问、问什么、何时回答。",
+        "highlights": [
+          "对 Before execution 的启发是：澄清应作为 policy 学习/评测问题，而不是一次性 prompt 规则。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "含糊用户请求下，assistant 需要在追问成本和错误回答风险之间做多轮决策。",
+        "method": "方法构造 hidden-intent ambiguity 设置，允许自由形式交互，并用 regret 目标度量澄清策略相对最优行为的损失。",
+        "experiments": "摘要显示它评估 clarification policy behavior；需要查看用户模拟、hidden intent 设计和 regret 计算是否稳健。",
+        "research_help": "对 Before execution 的启发是：澄清应作为 policy 学习/评测问题，而不是一次性 prompt 规则。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "含糊用户请求下，assistant 需要在追问成本和错误回答风险之间做多轮决策。",
+        "method": "方法构造 hidden-intent ambiguity 设置，允许自由形式交互，并用 regret 目标度量澄清策略相对最优行为的损失。",
+        "experiments": "摘要显示它评估 clarification policy behavior；需要查看用户模拟、hidden intent 设计和 regret 计算是否稳健。",
+        "research_help": "对 Before execution 的启发是：澄清应作为 policy 学习/评测问题，而不是一次性 prompt 规则。"
+      }
+    },
+    {
+      "id": "2607.21217v1",
+      "title": "ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders",
+      "summary": "The recent emergence of vibe-coding workflows is changing what coding agents are expected to do. Instead of merely completing code under fully specified instructions, agents are increasingly expected to transform incomplete product intent into working software by combining various abilities including planning, requirement clarification, tool use, debugging, and repository-level construction. Yet existing benchmarks have not fully caught up with this shift, evaluating agents on static, fully specified tasks. In this paper, we introduce ICAE-Bench, a benchmark for evaluating coding agents under interactive project-building settings. The basic idea is to start from a fuzzy product requirement, simulating the dynamic paradigm with an automated User Agent. To make this setting both realistic and evaluable, ICAE-Bench introduces three key designs. First, to avoid the ambiguity of unconstrained fuzzy requirements, each task derives ambiguity from a precise real open-source repository with executable behavior. Second, to ensure high-quality and reproducible user simulation, ICAE-Bench grounds interaction through User Agent Data, allowing the User Agent to reveal hidden constraints without inventing new requirements or leaking implementation artifacts. Third, to evaluate open-ended repositories fairly, ICAE-Bench uses standardized black-box tests together with multi-dimensional diagnostics, including functional correctness, semantic and API similarity, structural fidelity, design quality, and interaction quality.",
+      "url": "http://arxiv.org/abs/2607.21217v1",
+      "authors": [
+        "Zhongyuan Peng",
+        "Dan Huang",
+        "Chuyu Zhang",
+        "Caijun Xu",
+        "Changyi Xiao",
+        "Shibo Hong",
+        "David Lo",
+        "Lin Qiu",
+        "Xuezhi Cao",
+        "Jiyuan He",
+        "Yixin Cao"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-23",
+      "updated": "2026-07-23",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/ALEX-nlp/ICAE-EVAL",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "低",
+        "value_judgement": "ICAE-Bench把 coding agents 评为 interactive project builders，覆盖不完整需求、规划、澄清、工具使用、调试和仓库构建。",
+        "reason": "ICAE-Bench把 coding agents 评为 interactive project builders，覆盖不完整需求、规划、澄清、工具使用、调试和仓库构建。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhongyuan Peng",
+          "Dan Huang",
+          "Chuyu Zhang",
+          "Caijun Xu",
+          "Changyi Xiao",
+          "Shibo Hong",
+          "David Lo",
+          "Lin Qiu",
+          "Xuezhi Cao",
+          "Jiyuan He",
+          "Yixin Cao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-23",
+        "paper_url": "https://arxiv.org/abs/2607.21217v1",
+        "project_url": "",
+        "repo_url": "https://github.com/ALEX-nlp/ICAE-EVAL",
+        "venue_status": "未确认录用",
+        "contribution": "ICAE-Bench把 coding agents 评为 interactive project builders，覆盖不完整需求、规划、澄清、工具使用、调试和仓库构建。",
+        "summary": "ICAE-Bench 面向 vibe-coding 时代的 coding agent，把任务设成从不完整产品意图到可运行项目的交互式构建。它比静态代码补全更贴近真实软件 agent 的需求澄清、规划、调试和仓库级执行。",
+        "highlights": [
+          "对代码 agent 研究的启发是：需求澄清和仓库执行必须合并评测。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "coding agent 正从补全代码转向根据不完整意图构建项目，静态 benchmark 无法覆盖这一变化。",
+        "method": "方法构建 interactive project builder 评测，让 agent 在多轮需求、工具、调试和仓库构建中完成软件任务。",
+        "experiments": "摘要显示公开代码仓库；应重点检查 project-level 任务是否有真实运行验证和失败分类。",
+        "research_help": "对代码 agent 研究的启发是：需求澄清和仓库执行必须合并评测。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "coding agent 正从补全代码转向根据不完整意图构建项目，静态 benchmark 无法覆盖这一变化。",
+        "method": "方法构建 interactive project builder 评测，让 agent 在多轮需求、工具、调试和仓库构建中完成软件任务。",
+        "experiments": "摘要显示公开代码仓库；应重点检查 project-level 任务是否有真实运行验证和失败分类。",
+        "research_help": "对代码 agent 研究的启发是：需求澄清和仓库执行必须合并评测。"
+      }
+    },
+    {
+      "id": "2607.20531v1",
+      "title": "DynamicMCPBench: A Trace-Grounded, Effect-Scored Benchmark for LLM Agents over Live MCP Servers",
+      "summary": "Large language model (LLM) agents are increasingly deployed over Model Context Protocol (MCP) servers, yet the benchmarks used to evaluate them score the final answer or a fixed \"ground-truth\" list of tools, both of which are fragile once the underlying data is live and stateful. We present DynamicMCPBench, a reusable framework rather than a fixed dataset. A practitioner can run it on their own MCP servers to test models on their own tasks, or let it collect servers automatically to measure a model's general ability to solve agentic tasks. Given the servers and any set of models, it generates realistic goals, pursues each one live to record a successful trajectory, distills that trajectory into path-agnostic effect checkpoints, and scores an agent on whether it reproduces those effects, never on the final answer. To show what the framework reveals, we run it at scale: 24 models over 121 servers and 750 tasks spread evenly over 15 task categories (50 each), where each category targets a distinct tool-use challenge of the generated questions. Each task is scored by pass^3: it counts as solved only if all three independent attempts succeed. Even the strongest agents solve only about half of the tasks, 31% of tasks are solved by no model at all, and accuracy collapses as the required tool chain grows longer (from 39% on the shortest chains to 13% on the longest). A human validation study confirms the automatic scoring is reliable (chance-corrected agreement of 0.76). DynamicMCPBench thus turns benchmark construction into something practitioners can rerun on their own servers and models, while exposing a consistent inability of current agents to handle long, multi-step agentic tasks.",
+      "url": "http://arxiv.org/abs/2607.20531v1",
+      "authors": [
+        "Jerzy Kamiński",
+        "Ilya Galyukshev",
+        "Artem Kuznetsov",
+        "Sergey Chuprin",
+        "Kirill Redko",
+        "Aidar Shumbalov",
+        "Anna Kalyuzhnaya"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-10",
+      "updated": "2026-07-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "低",
+        "value_judgement": "DynamicMCPBench直接测 live MCP servers 上的 trace 和 effect，避免只看 final answer 或固定 tool list。",
+        "reason": "DynamicMCPBench直接测 live MCP servers 上的 trace 和 effect，避免只看 final answer 或固定 tool list。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jerzy Kamiński",
+          "Ilya Galyukshev",
+          "Artem Kuznetsov",
+          "Sergey Chuprin",
+          "Kirill Redko",
+          "Aidar Shumbalov",
+          "Anna Kalyuzhnaya"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-10",
+        "paper_url": "https://arxiv.org/abs/2607.20531v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "DynamicMCPBench直接测 live MCP servers 上的 trace 和 effect，避免只看 final answer 或固定 tool list。",
+        "summary": "DynamicMCPBench 面向真实 MCP server 上的 LLM agent，评估的不只是最终答案或工具列表，而是 trace 与实际 effect。它适合研究 live、stateful 工具环境里的执行可靠性。",
+        "highlights": [
+          "对 tool/environment interaction 的启发是：评测应绑定真实副作用和状态变化。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "MCP server 背后的数据和状态是动态的，固定答案或固定工具序列无法稳定评估 agent。",
+        "method": "方法让 benchmark 可接入实际 MCP servers，基于执行轨迹和状态效果进行评分。",
+        "experiments": "摘要强调可复用框架而非固定数据集；需看 effect scoring 的通用性和服务器自动收集流程。",
+        "research_help": "对 tool/environment interaction 的启发是：评测应绑定真实副作用和状态变化。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "MCP server 背后的数据和状态是动态的，固定答案或固定工具序列无法稳定评估 agent。",
+        "method": "方法让 benchmark 可接入实际 MCP servers，基于执行轨迹和状态效果进行评分。",
+        "experiments": "摘要强调可复用框架而非固定数据集；需看 effect scoring 的通用性和服务器自动收集流程。",
+        "research_help": "对 tool/environment interaction 的启发是：评测应绑定真实副作用和状态变化。"
+      }
+    },
+    {
+      "id": "2607.21557v2",
+      "title": "OpenForgeRL: Train Harness-native Agents in Any Environment",
+      "summary": "Modern AI agents rely on elaborate inference harnesses such as Claude Code, Codex, and OpenClaw to drive multi-turn reasoning, tool use, and access to external systems. While powerful, these complex harnesses also make agents hard to train end-to-end with open infrastructure, whose SFT/RL stacks cannot natively express stateful, multi-process harness inference. To address this, we present OpenForgeRL, an open-source framework for training harness-based agents end-to-end in diverse environments. OpenForgeRL achieves this with a lightweight proxy that serves the harness's model calls while recording them as training data for a standard RL codebase (e.g., veRL), and a Kubernetes orchestrator that runs each rollout in its own remote container, together enabling training on any harness in any environment at scale. By decoupling training and inference, OpenForgeRL allows researchers to easily train, study, and improve agents directly in the real harnesses and environments they are deployed with. We validate our framework across diverse, complex harnesses and environments, spanning tool/claw-based agents and multimodal GUI browser- and computer-use agents. Using only hundreds to a few thousand tasks, OpenForgeClaw reaches 31.7 pass^3 and 55.9 pass@3 on ClawEval and 33.7 on QwenClawBench. OpenForgeGUI reaches 37.7 on OSWorld-Verified, 63.0 on Online-Mind2Web, and 72.3 on WebVoyager. Both outperform open baselines of similar size on nearly all benchmarks, and in the GUI setting match or surpass models several times larger. Beyond benchmarks, we analyze how harness choice (e.g., ZeroClaw, OpenClaw, Codex) and RL shape agent behavior. We find that some harnesses are substantially harder to learn than others, and that RL improves agentic reliability, such as self-verification, tool coverage, and completing multi-step plans, though critical abilities such as error recovery remain weak.",
+      "url": "http://arxiv.org/abs/2607.21557v2",
+      "authors": [
+        "Xiao Yu",
+        "Baolin Peng",
+        "Ruize Xu",
+        "Hao Zou",
+        "Qianhui Wu",
+        "Hao Cheng",
+        "Wenlin Yao",
+        "Nikhil Singh",
+        "Zhou Yu",
+        "Jianfeng Gao"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-23",
+      "updated": "2026-07-23",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "OpenForgeRL试图把 Claude Code/Codex/OpenClaw 这类复杂 harness 纳入端到端 RL 训练，触及实际 agent 训练基础设施。",
+        "reason": "OpenForgeRL试图把 Claude Code/Codex/OpenClaw 这类复杂 harness 纳入端到端 RL 训练，触及实际 agent 训练基础设施。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xiao Yu",
+          "Baolin Peng",
+          "Ruize Xu",
+          "Hao Zou",
+          "Qianhui Wu",
+          "Hao Cheng",
+          "Wenlin Yao",
+          "Nikhil Singh",
+          "Zhou Yu",
+          "Jianfeng Gao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-23",
+        "paper_url": "https://arxiv.org/abs/2607.21557v2",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "OpenForgeRL试图把 Claude Code/Codex/OpenClaw 这类复杂 harness 纳入端到端 RL 训练，触及实际 agent 训练基础设施。",
+        "summary": "OpenForgeRL 关注如何训练 harness-native agent，而不是只训练裸模型。它把多轮推理、工具调用和外部系统访问组成的复杂 harness 变成可端到端 RL 的对象。",
+        "highlights": [
+          "对 agentic RL 工程的启发是：训练对象应包括 harness 状态机和工具接口，而不只是 LM call。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "现代 agent 的能力很大一部分来自复杂 inference harness，但主流 SFT/RL stack 很难表达 stateful multi-process harness inference。",
+        "method": "方法提供一个可在多环境中训练 harness-based agents 的开源框架，使策略学习直接作用于实际执行 harness。",
+        "experiments": "摘要声称支持 Claude Code、Codex、OpenClaw 式 harness；需检查开放程度、环境覆盖和训练稳定性。",
+        "research_help": "对 agentic RL 工程的启发是：训练对象应包括 harness 状态机和工具接口，而不只是 LM call。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "现代 agent 的能力很大一部分来自复杂 inference harness，但主流 SFT/RL stack 很难表达 stateful multi-process harness inference。",
+        "method": "方法提供一个可在多环境中训练 harness-based agents 的开源框架，使策略学习直接作用于实际执行 harness。",
+        "experiments": "摘要声称支持 Claude Code、Codex、OpenClaw 式 harness；需检查开放程度、环境覆盖和训练稳定性。",
+        "research_help": "对 agentic RL 工程的启发是：训练对象应包括 harness 状态机和工具接口，而不只是 LM call。"
+      }
+    },
+    {
+      "id": "2607.20999v1",
+      "title": "Workflow-Localized Mechanism Learning: Attribution-Guided Repair and Knowledge Reuse for Structured Agent Skills",
+      "summary": "Agent Skills package reusable procedural knowledge as external artifacts for frozen language-model agents, yet existing optimizers do not jointly resolve where a failure occurs in a workflow, which mechanism caused it, and how relevant knowledge from third-party Skills should be reused locally. We introduce Workflow-Localized Mechanism Learning (WML). Its Node--Mechanism Attribution identifies the failed workflow node, implicated mechanisms, and smallest valid edit target, routing single-mechanism defects to L3 resources and relational defects across mechanisms to L2 composition protocols. A six-module Workflow-Guided Skill Optimization (WGSO) loop then selects provenance- and scope-aware third-party knowledge, applies bounded patches, evaluates candidates, and stores verified outcomes in optimizer-side memory. On SpreadsheetBench, WML reaches 90.33 +/- 1.53 and 74.67 +/- 3.51 Hard Accuracy with DeepSeek and Qwen3.6-Flash, respectively; without additional optimization, the learned Skills transfer to WikiTableQuestions with 84.00 +/- 2.00 and 83.00 +/- 2.00 Denotation Accuracy. On Compiler-Supported50, WML attains both the highest hard-PASS rate and the lowest cost per successful task; compiled execution sharply reduces tokens and calls relative to a direct SkillAgent while retaining most of its successful tasks. Code and artifacts are available at this https URL.",
+      "url": "http://arxiv.org/abs/2607.20999v1",
+      "authors": [
+        "Zibin Lin",
+        "Shengli Zhang",
+        "Taotao Wang",
+        "Yihan Xia",
+        "Deen Ma",
+        "Guofu Liao"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-23",
+      "updated": "2026-07-23",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 93,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "WML把 workflow 中失败节点、失败机制和局部修复目标显式定位，服务结构化 agent skills 的可靠复用。",
+        "reason": "WML把 workflow 中失败节点、失败机制和局部修复目标显式定位，服务结构化 agent skills 的可靠复用。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zibin Lin",
+          "Shengli Zhang",
+          "Taotao Wang",
+          "Yihan Xia",
+          "Deen Ma",
+          "Guofu Liao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-23",
+        "paper_url": "https://arxiv.org/abs/2607.20999v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "WML把 workflow 中失败节点、失败机制和局部修复目标显式定位，服务结构化 agent skills 的可靠复用。",
+        "summary": "Workflow-Localized Mechanism Learning 研究 agent skill 失败后如何定位具体 workflow 节点和机制，并在局部复用第三方 skill 知识进行修复。它比整体重写 workflow 更适合长程 agent 的可控修复。",
+        "highlights": [
+          "对 workflow repair 的启发是：失败定位粒度决定了 skill 复用是否可靠。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "外部 skill 可以复用过程知识，但失败后常不清楚是哪个节点、哪个机制、哪个 edit target 出问题。",
+        "method": "方法用 Node-Mechanism Attribution 找到失败节点、机制和最小有效修改范围，再做 attribution-guided repair 和知识复用。",
+        "experiments": "摘要给出结构化 skill 优化设定；需要看实验是否跨任务、跨 skill source 稳定。",
+        "research_help": "对 workflow repair 的启发是：失败定位粒度决定了 skill 复用是否可靠。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "外部 skill 可以复用过程知识，但失败后常不清楚是哪个节点、哪个机制、哪个 edit target 出问题。",
+        "method": "方法用 Node-Mechanism Attribution 找到失败节点、机制和最小有效修改范围，再做 attribution-guided repair 和知识复用。",
+        "experiments": "摘要给出结构化 skill 优化设定；需要看实验是否跨任务、跨 skill source 稳定。",
+        "research_help": "对 workflow repair 的启发是：失败定位粒度决定了 skill 复用是否可靠。"
+      }
+    },
+    {
+      "id": "2607.20982v1",
+      "title": "GuardianAgentBench: Where Agents Fail and How to Guard Them",
+      "summary": "As large language model agents increasingly operate autonomously with access to tools and external environments, ensuring their safe and reliable behavior becomes critical. We present GuardianAgentBench (GABench), a benchmark of 580 scenarios across six domains evaluated on three production-ready frameworks: LangChain, LlamaIndex, and Vectara. The benchmark incorporates rigorous multi-stage validation and five adversarial attack modes. Experiments with six state-of-the-art models reveal that even the strongest configuration achieves only 74.8% overall accuracy and expose two distinct failure regimes: stronger models under-call required tools, while weaker models mis-select and over-call tools. Performance degrades monotonically with both tool-set size and sequential turn depth, with long-horizon planning proving the steeper bottleneck. Our guardrail implementation consistently outperforms system-prompt-based defenses across all models, recovering 19.9% of failures at a false positive rate of just 0.5%. These results demonstrate that execution-time structural intervention improves safety without disrupting correct agent behavior.",
+      "url": "http://arxiv.org/abs/2607.20982v1",
+      "authors": [
+        "Vishal Ishwar Naik",
+        "Chenyu Xu",
+        "Donna Dong",
+        "Hussein Hassan",
+        "Abhishek Pradhan",
+        "Ofer Mendelevitch",
+        "Tallat Shafat",
+        "Humayun Irshad"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-23",
+      "updated": "2026-07-23",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "GuardianAgentBench用多域、多框架和攻击模式分析 agent 失败与 guardrail，有助于可靠执行和风险评测。",
+        "reason": "GuardianAgentBench用多域、多框架和攻击模式分析 agent 失败与 guardrail，有助于可靠执行和风险评测。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Vishal Ishwar Naik",
+          "Chenyu Xu",
+          "Donna Dong",
+          "Hussein Hassan",
+          "Abhishek Pradhan",
+          "Ofer Mendelevitch",
+          "Tallat Shafat",
+          "Humayun Irshad"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-23",
+        "paper_url": "https://arxiv.org/abs/2607.20982v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "GuardianAgentBench用多域、多框架和攻击模式分析 agent 失败与 guardrail，有助于可靠执行和风险评测。",
+        "summary": "GuardianAgentBench 收集 580 个场景，跨 LangChain、LlamaIndex、Vectara 等框架分析工具 agent 的失败和防护。它适合作为 agent guardrail、失败分类和执行可靠性的 benchmark 参考。",
+        "highlights": [
+          "对 reliability 的启发是：guardrail benchmark 应覆盖 agent 框架层，而不只是模型输出层。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "agent 越来越多地自主访问工具和外部环境，安全可靠行为需要跨框架、跨场景评估。",
+        "method": "方法构建多域场景、多阶段验证和多种 adversarial attack modes，并比较生产框架上的模型表现。",
+        "experiments": "摘要报告 580 scenarios、六个领域、三种框架和六个模型；应进一步检查场景是否贴近真实任务。",
+        "research_help": "对 reliability 的启发是：guardrail benchmark 应覆盖 agent 框架层，而不只是模型输出层。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "agent 越来越多地自主访问工具和外部环境，安全可靠行为需要跨框架、跨场景评估。",
+        "method": "方法构建多域场景、多阶段验证和多种 adversarial attack modes，并比较生产框架上的模型表现。",
+        "experiments": "摘要报告 580 scenarios、六个领域、三种框架和六个模型；应进一步检查场景是否贴近真实任务。",
+        "research_help": "对 reliability 的启发是：guardrail benchmark 应覆盖 agent 框架层，而不只是模型输出层。"
+      }
+    },
+    {
+      "id": "2607.20482v1",
+      "title": "PersonaTrail: Benchmarking Personalized Web Agents through Browsing Trails",
+      "summary": "Recent advances in large language models have enabled web agents to autonomously execute complex tasks. In practice, users frequently provide underspecified instructions, requiring agents to infer the missing context from their raw browsing histories. Existing benchmarks fail to capture this form of personalization, as they either restrict tasks to fully explicit prompts or abstract web interaction history into simplified forms. To bridge this gap, we introduce PersonaTrail, a benchmark for personalized web agents operating in a managed open web environment. By leveraging realistic browsing trajectories as user history, PersonaTrail evaluates an agent's ability to infer user preferences and recall information from past browsing sessions. We further propose Preference-Aware Contextual Memory (PACMem), a framework that decomposes raw browsing histories into two types of structured memory: factual memories that summarize individual sessions and preference memories that distill recurring behavioral patterns. At inference time, the agent retrieves the most relevant entries from these memories to guide personalized navigation. Extensive experiments show that PACMem consistently outperforms existing memory-based baselines on both tasks.",
+      "url": "http://arxiv.org/abs/2607.20482v1",
+      "authors": [
+        "Seungbin Yang",
+        "Chaewoon Ki",
+        "Dohyun Lee",
+        "Jaegul Choo",
+        "ChaeHun Park"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-05-30",
+      "updated": "2026-05-30",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 93,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "低",
+        "value_judgement": "PersonaTrail把用户浏览轨迹作为个性化 web agent 的上下文来源，直接覆盖 underspecified instruction 与 stateful personalization。",
+        "reason": "PersonaTrail把用户浏览轨迹作为个性化 web agent 的上下文来源，直接覆盖 underspecified instruction 与 stateful personalization。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Seungbin Yang",
+          "Chaewoon Ki",
+          "Dohyun Lee",
+          "Jaegul Choo",
+          "ChaeHun Park"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-05-30",
+        "paper_url": "https://arxiv.org/abs/2607.20482v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "PersonaTrail把用户浏览轨迹作为个性化 web agent 的上下文来源，直接覆盖 underspecified instruction 与 stateful personalization。",
+        "summary": "PersonaTrail 让 web agent 从用户真实浏览轨迹中推断未明说的需求和偏好。它把 underspecified instruction、personalization 和 web execution 结合起来，适合研究长期用户状态如何影响规划。",
+        "highlights": [
+          "对 state tracking 的启发是：用户历史不应被压缩成简单 profile，原始行为轨迹可能影响任务执行。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "用户给 web agent 的指令常常不完整，需要从原始浏览历史中推断缺失上下文。",
+        "method": "方法构建 browsing trails 驱动的 personalized web-agent benchmark，让任务依赖历史中的偏好和约束。",
+        "experiments": "摘要强调填补现有 benchmark 对 raw browsing history 的缺失；需要看轨迹真实性与隐私处理。",
+        "research_help": "对 state tracking 的启发是：用户历史不应被压缩成简单 profile，原始行为轨迹可能影响任务执行。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "用户给 web agent 的指令常常不完整，需要从原始浏览历史中推断缺失上下文。",
+        "method": "方法构建 browsing trails 驱动的 personalized web-agent benchmark，让任务依赖历史中的偏好和约束。",
+        "experiments": "摘要强调填补现有 benchmark 对 raw browsing history 的缺失；需要看轨迹真实性与隐私处理。",
+        "research_help": "对 state tracking 的启发是：用户历史不应被压缩成简单 profile，原始行为轨迹可能影响任务执行。"
+      }
+    },
+    {
+      "id": "2607.22520v1",
+      "title": "The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents",
+      "summary": "Adding procedural skills to an LLM agent is typically evaluated by average improvement in task success. However, this metric hides an important cost: skills can also make agents worse. We measure both sides by comparing agents with and without skills across nearly 6,000 runs spanning two office automation benchmarks and three model harness stacks. This allows us to distinguish two outcomes. A regression is a task solved without skills but failed after skills are added. A residual failure is a task that fails both with and without skills. We find that regressions are substantial enough that the best performing skills outperform others primarily by regressing less, not by gaining more. We identify three causes of regression: (i) skill description osmosis, a skill changes an agent's behavior simply by being present in context, even when it is never invoked; (ii) grounding displacement, a skill's prescribed procedure overrides how the agent interprets its inputs; and (iii) verification displacement, where the procedure suppresses checks the agent would otherwise perform on its outputs. Analysing persistent failures reveals the same underlying pattern. Existing skills overemphasize procedural guidance the stage least often responsible for failure while under supporting grounding and verification, the dominant sources of remaining errors. After correcting evaluation artifacts and studying traces, we find many regressions and persistent failures recoverable through better grounding and verification. Procedural skills should be evaluated by decomposing their net effect into gains and regressions, not by aggregate improvement alone. We identify three regression modes skills should avoid, and find that reliability depends more on grounding and verification than on procedural skill choice.",
+      "url": "http://arxiv.org/abs/2607.22520v1",
+      "authors": [
+        "Darshan Tank",
+        "Baran Nama"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-24",
+      "updated": "2026-07-24",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/sentient-agi/meta-skill-creator",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "The Regression Tax指出技能可能让 agent 退步，并拆出 grounding/verification displacement，是 skill-based agent 可靠性必读。",
+        "reason": "The Regression Tax指出技能可能让 agent 退步，并拆出 grounding/verification displacement，是 skill-based agent 可靠性必读。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Darshan Tank",
+          "Baran Nama"
+        ],
+        "affiliations": "Sentient Labs",
+        "date": "2026-07-24",
+        "paper_url": "https://arxiv.org/abs/2607.22520v1",
+        "project_url": "",
+        "repo_url": "https://github.com/sentient-agi/meta-skill-creator",
+        "venue_status": "未确认录用",
+        "contribution": "The Regression Tax指出技能可能让 agent 退步，并拆出 grounding/verification displacement，是 skill-based agent 可靠性必读。",
+        "summary": "The Regression Tax 不只看技能是否平均提升 agent 成功率，而是专门分析技能导致原本能做对的任务失败。它揭示 skill description、grounding 和 verification 被覆盖时会引入可靠性回归。",
+        "highlights": [
+          "对长程可靠性的启发是：skill library 需要单独度量负迁移和验证损失。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "procedural skills 通常按平均收益评估，但这会隐藏技能引入的 regressions。",
+        "method": "方法在近 6000 次 office automation 运行中比较有无技能的表现，把新增失败拆成 regression 与 residual failure，并归因到描述渗透、grounding displacement 和 verification displacement。",
+        "experiments": "摘要给出大规模运行和多 harness stack；应看 benchmark 任务和技能生成方式是否代表真实生产 agent。",
+        "research_help": "对长程可靠性的启发是：skill library 需要单独度量负迁移和验证损失。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "procedural skills 通常按平均收益评估，但这会隐藏技能引入的 regressions。",
+        "method": "方法在近 6000 次 office automation 运行中比较有无技能的表现，把新增失败拆成 regression 与 residual failure，并归因到描述渗透、grounding displacement 和 verification displacement。",
+        "experiments": "摘要给出大规模运行和多 harness stack；应看 benchmark 任务和技能生成方式是否代表真实生产 agent。",
+        "research_help": "对长程可靠性的启发是：skill library 需要单独度量负迁移和验证损失。"
+      }
+    },
+    {
+      "id": "2607.22465v2",
+      "title": "TRACE-ROUTER: Task-Consistent and Adaptive Online Routing for Agentic AI",
+      "summary": "Routing to select large language models (LLMs) with different cost-quality trade-offs has become a fundamental deployment feature of enterprise AI. Existing routers, primarily make independent routing decisions for each LLM call. However, agentic applications execute as long-horizon workflows whose quality is determined only by a delayed, task-level outcome. This mismatch prevents per-call routers from correctly attributing feedback to individual routing decisions. Towards mitigating this, we present TRACE-Router, a task-level routing framework that aligns routing with the unit of supervision. TRACE-Router assigns each task to a model once at admission using a contextual bandit, pins all subsequent LLM calls to the selected backend, and updates its policy using the task's terminal reward, jointly accounting for accuracy and latency. By leveraging delayed task feedback, TRACE-Router learns routing policies that adapt to the workload while avoiding explicit task-complexity estimation. Across three agentic benchmarks, TRACE-Router consistently improves the accuracy-latency trade-off, achieving non-dominated Pareto frontier points. On tau2-Bench, it outperforms latency-matched interpolation between individual models by 7-8 accuracy points, while on Terminal-Bench it achieves 7.1 higher accuracy points than the strongest single model baseline with 36% lower latency.",
+      "url": "http://arxiv.org/abs/2607.22465v2",
+      "authors": [
+        "Ritik Raj",
+        "Souvik Kundu",
+        "Sarbartha Banerjee",
+        "Dheemanth Joshi",
+        "Ishita Vohra",
+        "Tushar Krishna"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-24",
+      "updated": "2026-07-24",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "TRACE-Router把模型路由从单次 LLM call 提升到 task-level，解决长程 workflow 终局反馈下的 credit assignment 错位。",
+        "reason": "TRACE-Router把模型路由从单次 LLM call 提升到 task-level，解决长程 workflow 终局反馈下的 credit assignment 错位。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Ritik Raj",
+          "Souvik Kundu",
+          "Sarbartha Banerjee",
+          "Dheemanth Joshi",
+          "Ishita Vohra",
+          "Tushar Krishna"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-24",
+        "paper_url": "https://arxiv.org/abs/2607.22465v2",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "TRACE-Router把模型路由从单次 LLM call 提升到 task-level，解决长程 workflow 终局反馈下的 credit assignment 错位。",
+        "summary": "TRACE-Router 认为 agentic workflow 的成败是任务级终局结果，逐调用选择模型会破坏全局一致性。它用 task-level routing 和 delayed reward 学习准确率-延迟权衡。",
+        "highlights": [
+          "对执行系统的启发是：routing、成本控制和可靠性应按任务轨迹而非单次调用优化。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "agent 任务由多次 LLM call、工具调用和环境转移组成，质量只在终局可见，per-call routing 难以归因。",
+        "method": "方法在任务 admission 时选择并固定 backend，用 contextual bandit 根据终局 reward 更新路由策略。",
+        "experiments": "摘要报告在 tau2-Bench 和 Terminal-Bench 上改善 accuracy-latency Pareto；需看对不同任务复杂度的鲁棒性。",
+        "research_help": "对执行系统的启发是：routing、成本控制和可靠性应按任务轨迹而非单次调用优化。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "agent 任务由多次 LLM call、工具调用和环境转移组成，质量只在终局可见，per-call routing 难以归因。",
+        "method": "方法在任务 admission 时选择并固定 backend，用 contextual bandit 根据终局 reward 更新路由策略。",
+        "experiments": "摘要报告在 tau2-Bench 和 Terminal-Bench 上改善 accuracy-latency Pareto；需看对不同任务复杂度的鲁棒性。",
+        "research_help": "对执行系统的启发是：routing、成本控制和可靠性应按任务轨迹而非单次调用优化。"
+      }
+    },
+    {
+      "id": "2607.22165v1",
+      "title": "DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents",
+      "summary": "LLM-based database agents show promise, but differing task scopes, testbeds, and metrics hinder comparison. We identify four gaps between evaluation and production operations: live-environment fidelity (multi-turn read-write interaction with a running database); observation-space scale and complexity (causal diagnosis across thousands of time series, business logs, and concurrent activity); solution-space openness (multiple remediations with different operational trade-offs); and scenario complexity and coverage (faults cascading across internal mechanisms and operational domains). We present DBA-Bench, a benchmark addressing these gaps through production fidelity, outcome-first evaluation, and controlled scenario reproducibility. It uses instrumented PostgreSQL environments with active workloads, persistent state, and multi-source observations; defines success by measurable recovery or fault elimination under safety constraints; and restores snapshots with scenario-specific checks before each run. The benchmark contains 106 scenarios across seven task domains, with two public difficulty labels based on reference-path diagnostic depth and environmental complexity. We evaluate nine baseline groups, including six foundation-model systems, two GPT-5.5-backed database agents, and a Human DBA reference. Across 848 automated runs, Diagnosis, Outcome, and Safe Pass rates are 32.7%, 19.6%, and 12.4%; the best automated baseline reaches 17.9% Safe Pass versus 93.4% for the Human DBA reference. Automated Safe Pass falls from 19.6% on Easy scenarios to 7.6% on Hard scenarios, underscoring the difficulty of safe end-to-end remediation.",
+      "url": "http://arxiv.org/abs/2607.22165v1",
+      "authors": [
+        "Junming Chen",
+        "Junyang Jiang",
+        "Xu Chen",
+        "Zibo Liang",
+        "Kai Zheng"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-24",
+      "updated": "2026-07-24",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/TanJI-C/DBA-Bench",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 97,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "DBA-Bench提供有运行数据库、active workload、多源观测和安全恢复指标的生产保真 agent benchmark。",
+        "reason": "DBA-Bench提供有运行数据库、active workload、多源观测和安全恢复指标的生产保真 agent benchmark。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Junming Chen",
+          "Junyang Jiang",
+          "Xu Chen",
+          "Zibo Liang",
+          "Kai Zheng"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-24",
+        "paper_url": "https://arxiv.org/abs/2607.22165v1",
+        "project_url": "",
+        "repo_url": "https://github.com/TanJI-C/DBA-Bench",
+        "venue_status": "未确认录用",
+        "contribution": "DBA-Bench提供有运行数据库、active workload、多源观测和安全恢复指标的生产保真 agent benchmark。",
+        "summary": "DBA-Bench 把数据库运维 agent 放进运行中的 PostgreSQL 环境，有 active workload、persistent state、多源观测和开放式修复方案。它非常适合研究执行监控、错误恢复和 outcome-first agent 评测。",
+        "highlights": [
+          "对 environment interaction 的启发是：真实 agent benchmark 应评估环境状态是否恢复，而不是文本解释是否正确。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "现有数据库 agent 评测与生产运维之间有 live-environment fidelity、observation-space、solution-space 和复杂场景覆盖缺口。",
+        "method": "方法构建可复现的 instrumented PostgreSQL 场景，以故障消除、恢复效果和安全约束作为主评估目标。",
+        "experiments": "摘要报告 106 scenarios、7 个任务域和 848 automated runs；应优先精读任务设计和安全指标。",
+        "research_help": "对 environment interaction 的启发是：真实 agent benchmark 应评估环境状态是否恢复，而不是文本解释是否正确。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "现有数据库 agent 评测与生产运维之间有 live-environment fidelity、observation-space、solution-space 和复杂场景覆盖缺口。",
+        "method": "方法构建可复现的 instrumented PostgreSQL 场景，以故障消除、恢复效果和安全约束作为主评估目标。",
+        "experiments": "摘要报告 106 scenarios、7 个任务域和 848 automated runs；应优先精读任务设计和安全指标。",
+        "research_help": "对 environment interaction 的启发是：真实 agent benchmark 应评估环境状态是否恢复，而不是文本解释是否正确。"
+      }
+    },
+    {
+      "id": "2607.22393v1",
+      "title": "SceneActBench: Can Agents Act on the 3D Scenes They See?",
+      "summary": "Vision-language model (VLM) agents increasingly use tools to act on 3D scenes rather than only describe them. Existing 3D benchmarks score textual responses or single-object operations, leaving agent action on complete multi-object 3D scenes under evaluated. We present SceneActBench, a benchmark for visually conditioned action across five 3D tasks under a unified agent-environment loop. Given PNG images or sampled video frames and, where applicable, supplied 3D assets, an agent acts on a 3D environment. We evaluate each final output against hidden ground truth with task-specific geometric metrics. SceneActBench comprises five tasks built from 210 source instances, yielding 520 task cases including paired input conditions. Every task runs through one fixed agent loop to keep the comparison fair. Across eleven proprietary VLM configurations, Overall scores span 38.6-50.2, and none performs consistently well across tasks. We further analyse where and how failures manifest.",
+      "url": "http://arxiv.org/abs/2607.22393v1",
+      "authors": [
+        "Yifei Zhao",
+        "Xiangxin Zhou",
+        "Wenhao Yang",
+        "Jiaqi Tang",
+        "Pu Jian",
+        "Huanjin Yao",
+        "Jiarui Yao",
+        "Haowei Lin",
+        "Chunchao Guo",
+        "Zhuo Chen",
+        "Wenkai Lyu",
+        "Jianzhu Ma",
+        "Xueqian Wang",
+        "Wenxi Zhu"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-24",
+      "updated": "2026-07-24",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "https://feinaldo2.github.io/sceneactbench-project-page/",
+      "repo_url": "https://github.com/Feinaldo2/SceneActBench",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "中",
+        "label": "有价值",
+        "water_risk": "中",
+        "value_judgement": "SceneActBench把 VLM agent 放到 3D 场景行动循环中，适合环境交互评测，但偏视觉/3D，和文本 agent planning 稍远。",
+        "reason": "SceneActBench把 VLM agent 放到 3D 场景行动循环中，适合环境交互评测，但偏视觉/3D，和文本 agent planning 稍远。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yifei Zhao",
+          "Xiangxin Zhou",
+          "Wenhao Yang",
+          "Jiaqi Tang",
+          "Pu Jian",
+          "Huanjin Yao",
+          "Jiarui Yao",
+          "Haowei Lin",
+          "Chunchao Guo",
+          "Zhuo Chen",
+          "Wenkai Lyu",
+          "Jianzhu Ma",
+          "Xueqian Wang",
+          "Wenxi Zhu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-24",
+        "paper_url": "https://arxiv.org/abs/2607.22393v1",
+        "project_url": "https://feinaldo2.github.io/sceneactbench-project-page/",
+        "repo_url": "https://github.com/Feinaldo2/SceneActBench",
+        "venue_status": "未确认录用",
+        "contribution": "SceneActBench把 VLM agent 放到 3D 场景行动循环中，适合环境交互评测，但偏视觉/3D，和文本 agent planning 稍远。",
+        "summary": "SceneActBench 评估 VLM agent 是否能在完整 3D 场景中执行行动，而不是只描述看到的对象。它对环境行动、隐藏几何评分和统一 agent loop 有参考价值。",
+        "highlights": [
+          "对 environment interaction 的启发是：最终状态指标比中间文本更能暴露 agent 行动失败。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "现有 3D benchmark 多评文本回答或单对象操作，难以评估 agent 对完整多对象场景的行动能力。",
+        "method": "方法构建五类 3D task，让 agent 基于图像/视频帧和资产操作场景，并用隐藏几何指标评估最终输出。",
+        "experiments": "摘要报告 520 task cases 和 11 个 proprietary VLM 配置；需要注意该方向偏视觉具身。",
+        "research_help": "对 environment interaction 的启发是：最终状态指标比中间文本更能暴露 agent 行动失败。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "现有 3D benchmark 多评文本回答或单对象操作，难以评估 agent 对完整多对象场景的行动能力。",
+        "method": "方法构建五类 3D task，让 agent 基于图像/视频帧和资产操作场景，并用隐藏几何指标评估最终输出。",
+        "experiments": "摘要报告 520 task cases 和 11 个 proprietary VLM 配置；需要注意该方向偏视觉具身。",
+        "research_help": "对 environment interaction 的启发是：最终状态指标比中间文本更能暴露 agent 行动失败。"
+      }
+    },
+    {
+      "id": "2607.21596v1",
+      "title": "FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills",
+      "summary": "Large language model agents increasingly solve complex tasks by constructing inference-time workflows that combine reasoning, tool use, and code execution. While such workflows enable flexible problem solving, the useful procedures discovered during execution are often transient: they help solve the current task but are not retained in a form that can systematically benefit future tasks. We present FlowEvo, a training-free framework that compiles successful traces into reusable skill records. Each record pairs a callable artifact with auxiliary structured guidance, and admission applies interface, replay, and safety checks where feasible. These skill records persist in a skill bank at inference time. FlowEvo is organized around three coupled mechanisms: (1)~workflow-to-skill compilation, which extracts reusable executable artifacts from successful traces; (2)~skill-to-workflow feedback, which retrieves accumulated skills to support future problem solving through either direct execution or structured context injection; and (3)~skill curation, which monitors downstream utility and suppresses skills that cause negative transfer. Through this workflow--skill--workflow feedback loop, FlowEvo enables agents to accumulate and refine task-solving capability over time without updating model parameters. Experiments on benchmarks spanning interactive environments (ALFWorld) and code/math generation (HumanEval, GSM8K) show that FlowEvo achieves the best accuracy-cost tradeoff among the evaluated baselines under our implementation settings. On ALFWorld, FlowEvo achieves an 82.8\\% success rate, 23.6 percentage points above the strongest baseline, while its average token usage per episode is less than half that of the most efficient baseline. Controlled ablations confirm that each mechanism contributes to the overall result. The code is public at this https URL.",
+      "url": "http://arxiv.org/abs/2607.21596v1",
+      "authors": [
+        "Zeyu Ren",
+        "Ling Yue",
+        "Ran Li",
+        "Yishu Wang",
+        "Shengxiang Xu",
+        "Hanmo Liu",
+        "Shaowu Pan",
+        "Shimin Di"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-04-18",
+      "updated": "2026-04-18",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/DEFENSE-SEU/FlowEvo",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "FlowEvo把成功 workflow 编译成可执行 skill record，并有 replay/interface/safety checks 与负迁移抑制。",
+        "reason": "FlowEvo把成功 workflow 编译成可执行 skill record，并有 replay/interface/safety checks 与负迁移抑制。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zeyu Ren",
+          "Ling Yue",
+          "Ran Li",
+          "Yishu Wang",
+          "Shengxiang Xu",
+          "Hanmo Liu",
+          "Shaowu Pan",
+          "Shimin Di"
+        ],
+        "affiliations": "Southeast University；Rensselaer Polytechnic Institute；HKUST",
+        "date": "2026-04-18",
+        "paper_url": "https://arxiv.org/abs/2607.21596v1",
+        "project_url": "",
+        "repo_url": "https://github.com/DEFENSE-SEU/FlowEvo",
+        "venue_status": "未确认录用",
+        "contribution": "FlowEvo把成功 workflow 编译成可执行 skill record，并有 replay/interface/safety checks 与负迁移抑制。",
+        "summary": "FlowEvo 让 agent 把成功执行轨迹编译成可复用的 executable skill，并在后续任务中检索、执行或注入上下文。它适合研究 workflow 经验如何长期积累且不破坏可靠性。",
+        "highlights": [
+          "对 agent planning 的启发是：可执行 skill 必须有接口和 replay 约束，不能只存自然语言经验。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "复杂任务执行中发现的有用 procedure 往往只服务当前任务，不能系统性迁移到未来任务。",
+        "method": "方法包含 workflow-to-skill compilation、skill-to-workflow feedback 和 skill curation，并对 skill admission 做 interface、replay、安全检查。",
+        "experiments": "摘要提到 ALFWorld、HumanEval、GSM8K，并报告 ALFWorld 82.8% success；需验证实现细节和 baseline。",
+        "research_help": "对 agent planning 的启发是：可执行 skill 必须有接口和 replay 约束，不能只存自然语言经验。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "复杂任务执行中发现的有用 procedure 往往只服务当前任务，不能系统性迁移到未来任务。",
+        "method": "方法包含 workflow-to-skill compilation、skill-to-workflow feedback 和 skill curation，并对 skill admission 做 interface、replay、安全检查。",
+        "experiments": "摘要提到 ALFWorld、HumanEval、GSM8K，并报告 ALFWorld 82.8% success；需验证实现细节和 baseline。",
+        "research_help": "对 agent planning 的启发是：可执行 skill 必须有接口和 replay 约束，不能只存自然语言经验。"
+      }
+    },
+    {
+      "id": "2607.21962v1",
+      "title": "Ground Truth First: A Longitudinal Evaluation Instrument for Agent Memory, and the Tenure Crossover in Memory-Architecture Rankings",
+      "summary": "Benchmarks for LLM-agent memory typically generate conversations first and extract answer keys afterwards -- with documented label-error and contamination problems -- and they overwhelmingly measure short interaction histories. We invert the pipeline: a seeded life-script sampler emits facts with validity intervals, volatility classes, and source channels before any text exists; an LLM renderer writes chat and email from per-event fact manifests; a fidelity verifier confirms every planted fact; and questions are instantiated mechanically from the script, so gold answers are script-valid by construction and separately validated for answerability. The synthetic, fictionalized corpus (~380 questions, 15 types) embeds features absent from the benchmarks we survey: per-fact validity intervals, sent/received trust distinctions, injection probes in a benign harness, and as-of-date question sets. Benchmarking five memory architectures against a no-memory control (fixed answerer, versioned LLM judge, three replicates, two horizons), we find backend rankings invert with history length: the budgeted curated-map memory that leads at three weeks loses recall of evicted content by nine weeks (96% to 72%) while a provenance-typed graph rises to 90%; the inversion is positive for all six users under complete cross-family re-judging (exact p=0.031). A full-rendered-history baseline ties or exceeds the best memory system at the short horizon but shows no judge-independent advantage at nine weeks, at about twice the read cost. Write-stage quality strongly correlates with downstream quality (weakly-written facts fail 24% vs 2%), and injection resistance tracked whether provenance boundaries survive representation. A layered architecture performs best among the memory systems in both regimes (96.8% short-horizon) and is released as Veracium, an open-source library, with the corpus generator and harness.",
+      "url": "http://arxiv.org/abs/2607.21962v1",
+      "authors": [
+        "Quentin Spencer"
+      ],
+      "report_date": "2026-07-28",
+      "published": "2026-07-24",
+      "updated": "2026-07-24",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/veracium-ai/Veracium",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 93,
+        "level": "高",
+        "label": "值得精读",
+        "water_risk": "中",
+        "value_judgement": "Ground Truth First用带有效期和来源的 life script 评测长期 agent memory，能避免短历史 benchmark 误判 memory 架构。",
+        "reason": "Ground Truth First用带有效期和来源的 life script 评测长期 agent memory，能避免短历史 benchmark 误判 memory 架构。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Quentin Spencer"
+        ],
+        "affiliations": "Independent Researcher",
+        "date": "2026-07-24",
+        "paper_url": "https://arxiv.org/abs/2607.21962v1",
+        "project_url": "",
+        "repo_url": "https://github.com/veracium-ai/Veracium",
+        "venue_status": "未确认录用",
+        "contribution": "Ground Truth First用带有效期和来源的 life script 评测长期 agent memory，能避免短历史 benchmark 误判 memory 架构。",
+        "summary": "Ground Truth First 先生成带有效期、波动类别和来源渠道的事实脚本，再渲染聊天/邮件和问题。它直接服务长期 personal agent 的 state tracking、as-of-date 查询和 memory architecture 评测。",
+        "highlights": [
+          "对长期 agent 的启发是：事实有效期、来源边界和 as-of-date 语义必须进入记忆评测。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要、PDF 首页/链接与自动化历史筛选记录"
+        ],
+        "motivation": "现有 agent memory benchmark 常先生成对话再抽答案，且多测短历史，容易有标签错误和污染。",
+        "method": "方法反转流程：先生成 ground-truth life script，再渲染交互文本、验证 planted facts，并机械生成 answerable questions。",
+        "experiments": "摘要报告五种 memory architecture、两个时间 horizon 和 ranking inversion；需要看 judge 鲁棒性和 synthetic 偏差。",
+        "research_help": "对长期 agent 的启发是：事实有效期、来源边界和 as-of-date 语义必须进入记忆评测。",
+        "limitations": "这是 2026-07-17 至 2026-07-28 backlog 补发布，优先基于摘要、PDF 首页链接和既有自动化筛选证据；后续可对最高优先级论文继续逐篇全文精读。"
+      },
+      "analysis": {
+        "motivation": "现有 agent memory benchmark 常先生成对话再抽答案，且多测短历史，容易有标签错误和污染。",
+        "method": "方法反转流程：先生成 ground-truth life script，再渲染交互文本、验证 planted facts，并机械生成 answerable questions。",
+        "experiments": "摘要报告五种 memory architecture、两个时间 horizon 和 ranking inversion；需要看 judge 鲁棒性和 synthetic 偏差。",
+        "research_help": "对长期 agent 的启发是：事实有效期、来源边界和 as-of-date 语义必须进入记忆评测。"
+      }
+    },
     {
       "id": "2607.13988v1",
       "title": "TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents",
