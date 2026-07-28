@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T12:00:12.937404Z",
+  "updated_at": "2026-07-28T12:30:00.000000Z",
   "source": "arxiv",
   "analysis_method": "Codex manual catch-up curation from arXiv HTML/abstract/PDF metadata, prior automation screening, and selected full-text evidence for 2026-07-17 through 2026-07-28 backlog.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
@@ -37,35 +37,22 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-07-28 Daily Paper Catch-up",
+    "title": "2026-07-28 Daily Paper",
     "report_date": "2026-07-28",
-    "focus": "backfill 2026-07-17 to 2026-07-28: agentic RL, clarification, multi-turn tool-use, live environments, workflow repair, long-term memory, reliability",
-    "summary": "补发布 2026-07-17 至 2026-07-28 期间被本地 metadata-first 草稿阻塞的 Daily Paper。已丢弃宽泛自动初筛草稿，保留 18 篇与 long-horizon agent planning、multi-turn interaction、agentic RL、工具/环境执行和长期记忆强相关的论文；放疗、AUV、遥感、普通 RL/模型压缩等弱相关候选未纳入。",
+    "focus": "agent workflow regression, production database agents, adaptive routing, multimodal/scene agents, self-evolving workflows, agent memory reliability",
+    "summary": "补齐 2026-07-17 至 2026-07-28 期间缺失的网页日报日期，并将最新日报恢复为 2026-07-28 批次。7/18-7/23 与 7/26-7/27 没有被记录为高相关新增日报；本页只展示存在高相关论文的日期。",
     "top_recommendations": [
       "2607.22165v1",
-      "2607.20536v1",
-      "2607.22520v1"
+      "2607.22520v1",
+      "2607.21962v1"
     ],
     "low_priority": [
-      "2607.22393v1",
-      "2607.14145v1"
+      "2607.22393v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
     "email_body": ""
   },
   "latest_item_ids": [
-    "2607.14777v1",
-    "2607.14171v1",
-    "2607.14145v1",
-    "2607.20064v2",
-    "2607.20536v1",
-    "2607.21143v2",
-    "2607.21217v1",
-    "2607.20531v1",
-    "2607.21557v2",
-    "2607.20999v1",
-    "2607.20982v1",
-    "2607.20482v1",
     "2607.22520v1",
     "2607.22465v2",
     "2607.22165v1",
@@ -75,12 +62,15 @@
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 18,
+    "fresh_items": 6,
     "total_items": 98,
     "previous_items": 80,
-    "latest_items": 18,
+    "latest_items": 6,
     "source_report_dates": {
-      "2026-07-28": 18,
+      "2026-07-28": 6,
+      "2026-07-25": 8,
+      "2026-07-24": 1,
+      "2026-07-17": 3,
       "2026-07-16": 4,
       "2026-07-14": 5,
       "2026-07-11": 1,
@@ -117,7 +107,13 @@
       "2607.21653v1",
       "2607.21760v1",
       "2607.22445v1"
-    ]
+    ],
+    "backfilled_report_dates": {
+      "2026-07-17": 3,
+      "2026-07-24": 1,
+      "2026-07-25": 8,
+      "2026-07-28": 6
+    }
   },
   "items": [
     {
@@ -138,7 +134,7 @@
         "Zhengqi Wen",
         "Jianhua Tao"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-17",
       "published": "2026-07-16",
       "updated": "2026-07-16",
       "primary_category": "cs.AI",
@@ -217,7 +213,7 @@
         "Xiaokun Zhang",
         "Xue Liu"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-17",
       "published": "2026-07-15",
       "updated": "2026-07-15",
       "primary_category": "cs.AI",
@@ -292,7 +288,7 @@
         "Ai Han",
         "Wenlian Lu"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-17",
       "published": "2026-07-14",
       "updated": "2026-07-14",
       "primary_category": "cs.AI",
@@ -367,7 +363,7 @@
         "Paul Rosu",
         "Bhuwan Dhingra"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-24",
       "published": "2026-07-22",
       "updated": "2026-07-22",
       "primary_category": "cs.AI",
@@ -442,7 +438,7 @@
         "Niranjan Balasubramanian",
         "Ashish Sabharwal"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-25",
       "published": "2026-07-10",
       "updated": "2026-07-10",
       "primary_category": "cs.AI",
@@ -518,7 +514,7 @@
         "Yuxia Wang",
         "Preslav Nakov"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-25",
       "published": "2026-07-23",
       "updated": "2026-07-23",
       "primary_category": "cs.AI",
@@ -598,7 +594,7 @@
         "Jiyuan He",
         "Yixin Cao"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-25",
       "published": "2026-07-23",
       "updated": "2026-07-23",
       "primary_category": "cs.AI",
@@ -680,7 +676,7 @@
         "Aidar Shumbalov",
         "Anna Kalyuzhnaya"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-25",
       "published": "2026-07-10",
       "updated": "2026-07-10",
       "primary_category": "cs.AI",
@@ -761,7 +757,7 @@
         "Zhou Yu",
         "Jianfeng Gao"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-25",
       "published": "2026-07-23",
       "updated": "2026-07-23",
       "primary_category": "cs.AI",
@@ -841,7 +837,7 @@
         "Deen Ma",
         "Guofu Liao"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-25",
       "published": "2026-07-23",
       "updated": "2026-07-23",
       "primary_category": "cs.AI",
@@ -919,7 +915,7 @@
         "Tallat Shafat",
         "Humayun Irshad"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-25",
       "published": "2026-07-23",
       "updated": "2026-07-23",
       "primary_category": "cs.AI",
@@ -996,7 +992,7 @@
         "Jaegul Choo",
         "ChaeHun Park"
       ],
-      "report_date": "2026-07-28",
+      "report_date": "2026-07-25",
       "published": "2026-05-30",
       "updated": "2026-05-30",
       "primary_category": "cs.AI",
