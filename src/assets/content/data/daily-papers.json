@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-31T01:50:51.950Z",
+  "updated_at": "2026-08-01T01:46:39.860Z",
   "source": "arxiv",
-  "analysis_method": "Codex CLI full-text paper reading and strict manual curation for long-horizon planning, multi-turn agents, agentic RL, and agent planning.",
+  "analysis_method": "Codex CLI full-text paper reading and strict manual curation for long-horizon planning, multi-turn agents, agentic RL, agent memory, and agent planning.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,34 +37,32 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-07-31 Daily Paper",
-    "report_date": "2026-07-31",
-    "focus": "long-horizon planning, multi-turn/search agents, agentic RL, and stateful agent planning reliability",
-    "summary": "今日从 16 篇 arXiv 候选中完成全文阅读后保留 5 篇强相关论文。重点是长期记忆回滚与事务边界、多轮 agentic RL 的位置级自蒸馏、动作后果监督以及终局奖励下的回合级信用分配。",
+    "title": "2026-08-01 Daily Paper",
+    "report_date": "2026-08-01",
+    "focus": "long-horizon agent memory, personalized agent state, hierarchical planning, and replanning reliability",
+    "summary": "今日从 16 篇候选中保留 3 篇强相关新增论文。重点是文件系统式长期 agent memory、个性化 agent 的层级用户理解，以及受控层级规划与重规划频率对可靠性的影响。",
     "top_recommendations": [
-      "2607.28026v1",
-      "2607.27973v1",
-      "2607.27773v1"
+      "2607.26637v1",
+      "2607.27056v1",
+      "2607.28410v1"
     ],
     "low_priority": [
-      "2607.27834v1"
+      "2607.28410v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-07-31 Daily Paper\n\n从 16 篇候选中全文阅读后保留 5 篇强相关论文，聚焦 agent memory reliability、multi-turn agentic RL 和 long-horizon credit assignment。\n\n最值得读的 3 篇\n- Contrastive Reinforced Policy Optimization via Privileged Self-Distillation：CRPO 将多轮智能体自蒸馏改写成位置级对比优化，用熵差区分应模仿和应远离的特权教师信号，重点解决长程交互里的局部信用分配与暴露偏差。\n- TAPO: Transition-Aware Policy Optimization for LLM Agents：TAPO 把 rollout 中的下一观察作为辅助监督，让策略在训练阶段学习动作后果表征；方法轻量，并在 WebShop 与 ALFWorld 上给出一致增益。\n- ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory：ChronoMem 为长期记忆加入语义版本控制和确定性快照回滚，特别适合思考多轮 agent 在错误写入、概念漂移和事后暴露下的状态恢复问题。\n\n其余保留\n- MemTxn: A Transaction Boundary for Source-Supported Updates and Complete-State Recovery in Agent Memory：MemTxn 将写入准入、冲突版本可见性和故障恢复拆成可审计的治理边界，对长期 agent memory 的状态污染问题很有参考价值。\n- Group-Reflective Self-Distillation for Agentic Reinforcement Learning：GRSD 让策略对同一任务的成功与失败轨迹做组内对照反思，并把差异转成受约束的回合级优势调节。\n\n剔除的间接候选：2607.27699v1, 2607.27703v1, 2607.28002v1, 2607.27967v1, 2607.27494v1, 2607.27056v1, 2607.26637v1, 2607.26697v1"
+    "email_body": "2026-08-01 Daily Paper\n\n从 16 篇候选中全文审查后保留 3 篇强相关新增论文，聚焦 long-horizon agent memory、个性化 agent 状态理解和受控层级规划。\n\n最值得读的 3 篇\n- Filesystem-Based Memory for LLM Agents：系统比较文件系统记忆的组织、检索、经验提炼和长期退化，提醒我们漂亮目录树不等于更可靠的跨轮 agent memory。\n- Setoka：把个性化 agent 的用户理解拆成四层，测试异构长期数据上的事实检索、事件关联、行为聚合和人格泛化，适合用来分析长期用户状态的失效边界。\n- Can Large Language Models Execute Parent Orders?：窄域金融任务，但 Planner/Executor 分层、TWAP 基准锚定和重规划频率分析对 agent planning reliability 有明确启发。\n\n剔除的间接候选：2607.27699v1, 2607.27703v1, 2607.28002v1, 2607.27967v1, 2607.27494v1。旧的 7 月 30/31 已发布论文未重复改日期或重新发布。"
   },
   "latest_item_ids": [
-    "2607.27773v1",
-    "2607.28026v1",
-    "2607.27973v1",
-    "2607.27834v1",
-    "2607.28076v1"
+    "2607.26637v1",
+    "2607.27056v1",
+    "2607.28410v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 5,
-    "total_items": 113,
-    "previous_items": 108,
-    "latest_items": 5,
+    "fresh_items": 3,
+    "total_items": 116,
+    "previous_items": 113,
+    "latest_items": 3,
     "source_report_dates": {
       "2026-07-28": 6,
       "2026-07-25": 8,
@@ -92,7 +90,8 @@
       "2026-06-14": 5,
       "2026-06-13": 1,
       "2026-07-30": 10,
-      "2026-07-31": 5
+      "2026-07-31": 5,
+      "2026-08-01": 3
     },
     "filtered_candidate_ids": [
       "2607.15001v1",
@@ -108,8 +107,6 @@
       "2607.21653v1",
       "2607.21760v1",
       "2607.22445v1",
-      "2607.27056v1",
-      "2607.26637v1",
       "2607.26697v1",
       "2607.26760v1",
       "2607.23933v1",
@@ -121,34 +118,31 @@
       "2607.27494v1"
     ],
     "filtered_today": {
-      "date": "2026-07-31",
+      "date": "2026-08-01",
       "candidate_count": 16,
       "kept_ids": [
-        "2607.27773v1",
-        "2607.28026v1",
-        "2607.27973v1",
-        "2607.27834v1",
-        "2607.28076v1"
+        "2607.26637v1",
+        "2607.27056v1",
+        "2607.28410v1"
       ],
       "dropped_ids": [
         "2607.27699v1",
         "2607.27703v1",
         "2607.28002v1",
         "2607.27967v1",
-        "2607.27494v1",
-        "2607.27056v1",
-        "2607.26637v1",
-        "2607.26697v1"
+        "2607.27494v1"
       ],
       "old_seen_ids": [
+        "2607.27773v1",
+        "2607.28026v1",
+        "2607.27973v1",
+        "2607.27834v1",
+        "2607.28076v1",
         "2607.26712v1",
         "2607.27080v1",
-        "2607.27056v1",
-        "2607.26656v1",
-        "2607.26637v1",
-        "2607.26697v1"
+        "2607.26656v1"
       ],
-      "criteria": "Kept only papers strongly related to long-horizon planning, multi-turn/search agents, agentic RL, or agent planning/stateful reliability. Previously filtered or older candidates were not re-promoted."
+      "criteria": "Kept only papers strongly related to long-horizon planning, multi-turn agents, agentic RL, agent memory, or agent planning/stateful reliability. Old already-published items were not re-dated or republished; indirect robotics, SVG, base-station MARL, embodied spatial reasoning, and generic embodied MARL candidates were filtered."
     },
     "backfilled_report_dates": {
       "2026-07-17": 3,
@@ -158,6 +152,391 @@
     }
   },
   "items": [
+    {
+      "id": "2607.26637v1",
+      "title": "Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability",
+      "summary": "论文系统研究长期 LLM agent 常用的文件系统记忆：目录组织、检索、经验提炼和随时间退化并不等价于更好回答。它把记忆管理、搜索和执行拆开评测，结论对 long-horizon agent memory 的维护成本、分类漂移和工具接口设计很有参考价值。",
+      "url": "http://arxiv.org/abs/2607.26637v1",
+      "authors": [
+        "Sizhe Zhou",
+        "Sheldon Yu",
+        "Hui Wei",
+        "Junda Wu",
+        "Siru Ouyang",
+        "Yizhu Jiao",
+        "Shijia Pan",
+        "Julian McAuley",
+        "Yu Zhang",
+        "Tong Yu",
+        "Jiawei Han"
+      ],
+      "report_date": "2026-08-01",
+      "published": "2026-07-29",
+      "updated": "2026-07-29",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "高",
+        "label": "强相关：长期 agent memory 的组织与退化评测",
+        "water_risk": "低",
+        "value_judgement": "直接研究 LLM agent 的持久文件系统记忆、组织演化和下游使用，适合精读。",
+        "reason": "覆盖 long-horizon agent memory、跨轮经验维护、检索成本、分类漂移和工具接口影响；实验比较多种记忆形态与管理/搜索/执行角色。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Sizhe Zhou",
+          "Sheldon Yu",
+          "Hui Wei",
+          "Junda Wu",
+          "Siru Ouyang",
+          "Yizhu Jiao",
+          "Shijia Pan",
+          "Julian McAuley",
+          "Yu Zhang",
+          "Tong Yu",
+          "Jiawei Han"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-29",
+        "paper_url": "https://arxiv.org/abs/2607.26637v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "覆盖 long-horizon agent memory、跨轮经验维护、检索成本、分类漂移和工具接口影响；实验比较多种记忆形态与管理/搜索/执行角色。",
+        "summary": "论文研究长期 LLM agent 中日益常见、却缺乏系统验证的文件系统记忆方案，并将事实记忆与程序性技能放进统一存储框架。其核心设计把记忆管理、检索和任务执行拆成三个角色，以便分别分析写入质量、读取能力和经验迁移效果。跨长对话与具身任务的实验显示，没有一种记忆形态在所有场景中稳定占优，精心组织的目录也不会自动带来更正确的回答。组织化更可信的价值在于减少大型记忆库的检索成本，而原始轨迹和提炼技能的优劣取决于执行 agent 是否有能力自行消化经验。论文还发现，多数管理 agent 的分类纪律会随存储增长而减弱，工具接口本身也会显著改变记忆形态，因此它对 long-horizon agent 的记忆维护与可靠性设计具有较高阅读价值。",
+        "highlights": [
+          "直接研究 LLM agent 的持久文件系统记忆、组织演化和下游使用，适合精读。",
+          "偏水风险：低",
+          "论文与 agent memory、multi-turn interaction 和 long-horizon reliability 直接相关，贡献不只是提出新结构，而是用多种记忆形态、模型能力、工具接口和增长过程检验文件系统记忆的基本假设。其负面结论尤其有价值：更强组织不等于更高正确性，管理能力、搜索能力和执行器能力应分开评估。实验设计覆盖事实性与程序性记忆，并同时报告质量、成本和存储健康度，因此不像仅靠概念包装的工作；偏水风险较低。",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长期运行的 LLM agent 越来越常把记忆保存为由 Markdown 文件组成的目录树，但现有研究主要设计专用记忆结构，很少检验文件系统这一实际默认方案的两个核心假设：agent 能否持续整理不断增长、冲突和过期的记忆，以及这种整理是否真的改善下游表现。论文因此把文件系统记忆从工程惯例转化为可系统研究的设计空间。",
+        "method": "论文将共享记忆系统拆分为管理、搜索和执行三类角色：管理 agent 负责增量写入、合并与重组，搜索 agent 负责基于文件结构检索并返回带来源的答案，执行 agent 则提供任务轨迹并消费从经验中提炼的技能。作者在长对话记忆与具身任务中，对比无记忆、原始分块检索、逐段原样保存、仅增加文件夹结构、重组记忆以及 agent 自主维护等方案，并控制记忆规模、管理与搜索模型能力、工具接口及执行 agent 强度。评估同时覆盖答案或任务质量、引用支持、构建与检索成本，以及记忆随时间增长时的结构健康度。",
+        "experiments": "实验覆盖 LoCoMo、PersonaMem、REALTALK 等长对话数据和 ALFWorld 程序性技能任务。结果没有支持“组织得越好，答案就越好”这一简单假设：不同数据集和执行 agent 强度下，原样日志、轻量文件夹组织、重组存储与整理后的技能各有胜负，作者测到的 agent 也没有仅凭更强组织直接获得更高答案正确性。组织最稳定的收益是降低大规模材料的检索开销；与此同时，多数管理 agent 的分类结构会随记忆增长而退化，只有能力最强的管理模型较稳定地维持组织约束。工具接口并非中性包装，替换工具集本身就会显著改变目录粒度、合并方式和最终效果。",
+        "research_help": "Insight：长期 agent 记忆不应把“形成漂亮目录树”当作最终目标，而应分别优化信息保真、检索成本和下游可用性，并持续监测重复、过期事实、分类漂移与早期经验是否仍被保留。对多轮与 long-horizon 系统，可将记忆管理、检索和执行拆成独立能力进行评测，因为增强写入模型不一定改善回答，而增强搜索模型可能更直接有效。对 agentic RL 和经验学习，记忆表示应匹配执行 agent 的能力：强执行器可能从原始轨迹中获益，弱执行器则更需要经过提炼的任务级指导。工具设计也是规划可靠性的控制变量，因而工具集、维护策略和记忆结构应联合设计，而不能把文件系统视为被动存储层。",
+        "recommendation": {
+          "score": 88,
+          "level": "高",
+          "label": "强相关：长期 agent memory 的组织与退化评测",
+          "water_risk": "低",
+          "value_judgement": "直接研究 LLM agent 的持久文件系统记忆、组织演化和下游使用，适合精读。",
+          "reason": "覆盖 long-horizon agent memory、跨轮经验维护、检索成本、分类漂移和工具接口影响；实验比较多种记忆形态与管理/搜索/执行角色。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长期 agent 记忆不应把“形成漂亮目录树”当作最终目标，而应分别优化信息保真、检索成本和下游可用性，并持续监测重复、过期事实、分类漂移与早期经验是否仍被保留。对多轮与 long-horizon 系统，可将记忆管理、检索和执行拆成独立能力进行评测，因为增强写入模型不一定改善回答，而增强搜索模型可能更直接有效。对 agentic RL 和经验学习，记忆表示应匹配执行 agent 的能力：强执行器可能从原始轨迹中获益，弱执行器则更需要经过提炼的任务级指导。工具设计也是规划可靠性的控制变量，因而工具集、维护策略和记忆结构应联合设计，而不能把文件系统视为被动存储层。",
+        "abstract_zh": "部署中的 LLM agent 越来越多地使用由 Markdown 文件和目录组成的文件系统保存长期记忆，但这种默认介质能否在记忆增长、冲突和过期时保持良好组织，以及组织本身是否有价值，尚未得到系统检验。论文提出由管理、搜索和执行三类角色共享一个记忆文件系统的框架，并统一表示事实性记忆与从任务轨迹提炼出的技能。作者在长对话和具身任务上改变记忆形态、数据规模、工具接口以及管理和搜索模型能力，同时评估质量、成本与存储健康度。实验表明，组织化最可靠的收益是节省大规模材料的检索成本，但多数 agent 的组织质量会随增长下降，且没有证据表明组织本身能提高答案质量；工具集的变化也足以显著重塑记忆结构。",
+        "full_summary": "论文研究长期 LLM agent 中日益常见、却缺乏系统验证的文件系统记忆方案，并将事实记忆与程序性技能放进统一存储框架。其核心设计把记忆管理、检索和任务执行拆成三个角色，以便分别分析写入质量、读取能力和经验迁移效果。跨长对话与具身任务的实验显示，没有一种记忆形态在所有场景中稳定占优，精心组织的目录也不会自动带来更正确的回答。组织化更可信的价值在于减少大型记忆库的检索成本，而原始轨迹和提炼技能的优劣取决于执行 agent 是否有能力自行消化经验。论文还发现，多数管理 agent 的分类纪律会随存储增长而减弱，工具接口本身也会显著改变记忆形态，因此它对 long-horizon agent 的记忆维护与可靠性设计具有较高阅读价值。",
+        "card_summary": "这篇论文系统检验了 LLM agent 用文件系统维护长期记忆时，目录组织能否持续以及是否真正改善下游效果。核心结论是：组织化主要节省大规模检索成本，却不会自动提高答案质量；记忆结构还强烈依赖管理模型、执行器能力和工具接口。"
+      },
+      "analysis": {
+        "motivation": "长期运行的 LLM agent 越来越常把记忆保存为由 Markdown 文件组成的目录树，但现有研究主要设计专用记忆结构，很少检验文件系统这一实际默认方案的两个核心假设：agent 能否持续整理不断增长、冲突和过期的记忆，以及这种整理是否真的改善下游表现。论文因此把文件系统记忆从工程惯例转化为可系统研究的设计空间。",
+        "method": "论文将共享记忆系统拆分为管理、搜索和执行三类角色：管理 agent 负责增量写入、合并与重组，搜索 agent 负责基于文件结构检索并返回带来源的答案，执行 agent 则提供任务轨迹并消费从经验中提炼的技能。作者在长对话记忆与具身任务中，对比无记忆、原始分块检索、逐段原样保存、仅增加文件夹结构、重组记忆以及 agent 自主维护等方案，并控制记忆规模、管理与搜索模型能力、工具接口及执行 agent 强度。评估同时覆盖答案或任务质量、引用支持、构建与检索成本，以及记忆随时间增长时的结构健康度。",
+        "experiments": "实验覆盖 LoCoMo、PersonaMem、REALTALK 等长对话数据和 ALFWorld 程序性技能任务。结果没有支持“组织得越好，答案就越好”这一简单假设：不同数据集和执行 agent 强度下，原样日志、轻量文件夹组织、重组存储与整理后的技能各有胜负，作者测到的 agent 也没有仅凭更强组织直接获得更高答案正确性。组织最稳定的收益是降低大规模材料的检索开销；与此同时，多数管理 agent 的分类结构会随记忆增长而退化，只有能力最强的管理模型较稳定地维持组织约束。工具接口并非中性包装，替换工具集本身就会显著改变目录粒度、合并方式和最终效果。",
+        "research_help": "Insight：长期 agent 记忆不应把“形成漂亮目录树”当作最终目标，而应分别优化信息保真、检索成本和下游可用性，并持续监测重复、过期事实、分类漂移与早期经验是否仍被保留。对多轮与 long-horizon 系统，可将记忆管理、检索和执行拆成独立能力进行评测，因为增强写入模型不一定改善回答，而增强搜索模型可能更直接有效。对 agentic RL 和经验学习，记忆表示应匹配执行 agent 的能力：强执行器可能从原始轨迹中获益，弱执行器则更需要经过提炼的任务级指导。工具设计也是规划可靠性的控制变量，因而工具集、维护策略和记忆结构应联合设计，而不能把文件系统视为被动存储层。",
+        "insight": "Insight：长期 agent 记忆不应把“形成漂亮目录树”当作最终目标，而应分别优化信息保真、检索成本和下游可用性，并持续监测重复、过期事实、分类漂移与早期经验是否仍被保留。对多轮与 long-horizon 系统，可将记忆管理、检索和执行拆成独立能力进行评测，因为增强写入模型不一定改善回答，而增强搜索模型可能更直接有效。对 agentic RL 和经验学习，记忆表示应匹配执行 agent 的能力：强执行器可能从原始轨迹中获益，弱执行器则更需要经过提炼的任务级指导。工具设计也是规划可靠性的控制变量，因而工具集、维护策略和记忆结构应联合设计，而不能把文件系统视为被动存储层。",
+        "abstract_zh": "部署中的 LLM agent 越来越多地使用由 Markdown 文件和目录组成的文件系统保存长期记忆，但这种默认介质能否在记忆增长、冲突和过期时保持良好组织，以及组织本身是否有价值，尚未得到系统检验。论文提出由管理、搜索和执行三类角色共享一个记忆文件系统的框架，并统一表示事实性记忆与从任务轨迹提炼出的技能。作者在长对话和具身任务上改变记忆形态、数据规模、工具接口以及管理和搜索模型能力，同时评估质量、成本与存储健康度。实验表明，组织化最可靠的收益是节省大规模材料的检索成本，但多数 agent 的组织质量会随增长下降，且没有证据表明组织本身能提高答案质量；工具集的变化也足以显著重塑记忆结构。",
+        "card_summary": "这篇论文系统检验了 LLM agent 用文件系统维护长期记忆时，目录组织能否持续以及是否真正改善下游效果。核心结论是：组织化主要节省大规模检索成本，却不会自动提高答案质量；记忆结构还强烈依赖管理模型、执行器能力和工具接口。",
+        "full_summary": "论文研究长期 LLM agent 中日益常见、却缺乏系统验证的文件系统记忆方案，并将事实记忆与程序性技能放进统一存储框架。其核心设计把记忆管理、检索和任务执行拆成三个角色，以便分别分析写入质量、读取能力和经验迁移效果。跨长对话与具身任务的实验显示，没有一种记忆形态在所有场景中稳定占优，精心组织的目录也不会自动带来更正确的回答。组织化更可信的价值在于减少大型记忆库的检索成本，而原始轨迹和提炼技能的优劣取决于执行 agent 是否有能力自行消化经验。论文还发现，多数管理 agent 的分类纪律会随存储增长而减弱，工具接口本身也会显著改变记忆形态，因此它对 long-horizon agent 的记忆维护与可靠性设计具有较高阅读价值。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "高相关、值得精读",
+        "value_reason": "论文与 agent memory、multi-turn interaction 和 long-horizon reliability 直接相关，贡献不只是提出新结构，而是用多种记忆形态、模型能力、工具接口和增长过程检验文件系统记忆的基本假设。其负面结论尤其有价值：更强组织不等于更高正确性，管理能力、搜索能力和执行器能力应分开评估。实验设计覆盖事实性与程序性记忆，并同时报告质量、成本和存储健康度，因此不像仅靠概念包装的工作；偏水风险较低。",
+        "limitations": "实验范围仍有限：长对话部分样本规模不大，部分结果可能受到评测噪声和单次存储构建随机性的影响；不同长度的数据层级并非只改变规模，因而尺度比较存在混杂。技能实验集中在 ALFWorld，尚不能代表代码、网页操作或真实长期助理任务。作者观察到的增长周期仍短于跨月或跨年的部署场景，也没有证明文件系统组织能够直接提高答案质量。部分管理、搜索和评审依赖同一模型系列，可能限制结论向其他模型与工具生态的外推。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文正式定义了管理 agent、搜索 agent 与执行 agent 围绕同一文件系统协作的角色契约，并统一处理声明式记忆和程序性技能。",
+          "主实验对比原始分块检索、逐会话原样保存、文件夹组织、保真或压缩式重组以及 agent 自主维护等记忆形态。",
+          "长对话实验表明，没有一种存储形态在各数据集上始终获得最高正确性，组织化的稳定收益主要体现在大型材料的检索经济性。",
+          "增长实验显示记忆内容在所测范围内仍能保持有用，但多数管理 agent 对分类体系约束的遵循会随规模增长而退化。比较不同工具接口时，仅改变工具集就能显著改变文件分片、合并和层级结构。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-01T01:44:30.584Z"
+      }
+    },
+    {
+      "id": "2607.27056v1",
+      "title": "Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Data",
+      "summary": "Setoka 把个性化 agent 的用户理解拆成语义记忆、情景记忆、行为模式和人格特质四层，并用异构消息、日历、联系人和图数据测试跨记录推理。它的价值在于暴露长期用户记忆从事实检索到高层抽象的失效位置，而不是只报告检索命中。",
+      "url": "http://arxiv.org/abs/2607.27056v1",
+      "authors": [
+        "Lingyang Zeng",
+        "Guangze Chen",
+        "Kaichen Yu",
+        "Zhicheng Pan",
+        "Siyang Weng",
+        "Zirui Hu",
+        "Xiangyun Du",
+        "Hailin He",
+        "Rong Zhang",
+        "Chengcheng Yang",
+        "Kai Huang",
+        "Xuan Zhou"
+      ],
+      "report_date": "2026-08-01",
+      "published": "2026-07-29",
+      "updated": "2026-07-29",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 84,
+        "level": "高",
+        "label": "强相关：个性化 agent 的层级用户理解基准",
+        "water_risk": "中",
+        "value_judgement": "问题直接落在长期个性化 agent memory 与跨源状态理解，但数据为合成用户，外推需谨慎。",
+        "reason": "把用户理解拆成语义、情景、行为模式和人格特质四层，评估异构长期记录上的检索、关联、聚合与泛化。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Lingyang Zeng",
+          "Guangze Chen",
+          "Kaichen Yu",
+          "Zhicheng Pan",
+          "Siyang Weng",
+          "Zirui Hu",
+          "Xiangyun Du",
+          "Hailin He",
+          "Rong Zhang",
+          "Chengcheng Yang",
+          "Kai Huang",
+          "Xuan Zhou"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-29",
+        "paper_url": "https://arxiv.org/abs/2607.27056v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "把用户理解拆成语义、情景、行为模式和人格特质四层，评估异构长期记录上的检索、关联、聚合与泛化。",
+        "summary": "这篇论文提出 Setoka，目标是衡量个性化代理是否真正理解用户，而不只是从历史记录中找回显式事实。其核心是把用户理解拆成语义记忆、情景记忆、行为模式和人格特质四层，并让每一层对应更宽的证据范围与更复杂的推理操作。作者利用心理测量统计、BFI-2 量表和事件生成树构造 10 个合成用户，再从统一事件派生多种异构记录，以保持跨数据源一致性。实验中，系统表现随抽象层级提升持续下降，直接数据库查询适合精确事实查找，而时间邻近记忆和图结构分别对事件整合及高层归纳更有帮助。论文的价值在于提供了分析记忆系统失败位置的层级框架，但它尚不能证明这些结论能直接推广到真实用户和真实长期交互。",
+        "highlights": [
+          "问题直接落在长期个性化 agent memory 与跨源状态理解，但数据为合成用户，外推需谨慎。",
+          "偏水风险：中",
+          "论文与 agent memory、跨轮状态整合和长期可靠性高度相关，且四层框架比单纯的事实召回评测更有诊断价值。它提供了较清晰的生成流程、证据层级和系统对比，实验信号也一致支持“检索增强不足以解决高层用户理解”。不过，实证基础完全来自 10 个合成用户，行为和人格真值由同一套自上而下生成机制定义，高层任务可能在一定程度上是在恢复生成器植入的结构，而非验证真实用户理解；因此值得读，但证据强度尚不足以给出高推荐。",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有 agent memory 基准大多考查从对话历史中找回显式事实，难以判断个性化代理能否跨消息、日历、联系人和社交图等异构数据，逐步形成对用户经历、行为规律和人格特征的深层理解。论文试图把“记住事实”与“理解用户”区分开，并评估证据范围扩大、时间跨度增长和抽象层级提升后，记忆系统的可靠性如何退化。",
+        "method": "Setoka 将用户理解划分为语义记忆、情景记忆、行为模式和人格特质四层，分别对应选择、关联、聚合与泛化操作。其数据流水线先依据心理测量统计联合采样 Big Five 人格，再通过 BFI-2 条目映射出行为模式，随后用事件生成树展开长期时间线，并以事件为唯一事实源生成消息、日历、联系人和图关系等异构记录。测试时，记忆系统需要针对不同层级检索并整合最小证据集，再回答相应问题。",
+        "experiments": "作者生成了 10 个合成用户，每个用户包含约两个月、约 1600 条记录、23 种 schema 和约 1426 个问题，并测试 3 个语言模型与 5 个记忆系统，以及直接查询数据库的基线。结果显示，平均表现随抽象层级单调下降：单记录事实查询相对容易，跨记录事件关联明显变难，长期行为聚合与人格推断更弱。DBQuery 在强模型的语义记忆查询上占优，但跨记录任务退化明显；MemMachine 的情景记忆表现最好，图结构系统在行为模式和人格任务中相对占优。人格任务的高回答率并不代表高能力，因为模型可以在证据不足时持续猜测。",
+        "research_help": "Insight：长期代理记忆不应只保存可检索的事实，还需要显式维护事件关联、时间聚合和跨类别抽象等不同层级的表示，并根据任务选择相应证据粒度。对 long-horizon reliability 而言，应把检索失败、跨记录关联失败、统计聚合错误和无依据泛化分开评测，同时联合报告准确性与拒答行为，避免把高回答率误判为可靠性。该层级化思想也可迁移到 agent planning：规划前的用户约束恢复、跨轮状态整合和稳定偏好推断应分别建立可追踪证据链，而不能直接从零散历史跳到高层结论。",
+        "recommendation": {
+          "score": 84,
+          "level": "高",
+          "label": "强相关：个性化 agent 的层级用户理解基准",
+          "water_risk": "中",
+          "value_judgement": "问题直接落在长期个性化 agent memory 与跨源状态理解，但数据为合成用户，外推需谨慎。",
+          "reason": "把用户理解拆成语义、情景、行为模式和人格特质四层，评估异构长期记录上的检索、关联、聚合与泛化。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长期代理记忆不应只保存可检索的事实，还需要显式维护事件关联、时间聚合和跨类别抽象等不同层级的表示，并根据任务选择相应证据粒度。对 long-horizon reliability 而言，应把检索失败、跨记录关联失败、统计聚合错误和无依据泛化分开评测，同时联合报告准确性与拒答行为，避免把高回答率误判为可靠性。该层级化思想也可迁移到 agent planning：规划前的用户约束恢复、跨轮状态整合和稳定偏好推断应分别建立可追踪证据链，而不能直接从零散历史跳到高层结论。",
+        "abstract_zh": "个性化代理既需要从记忆中检索用户明确表达的事实，也需要从长期记录中推断更抽象的个人特征，但现有基准主要关注对话历史中的显式信息检索。Setoka 面向异构数据上的层级用户理解，将能力划分为语义记忆、情景记忆、行为模式和人格特质四个层级。作者设计了基于心理测量学的数据生成流程，用于大规模合成连贯且保护隐私的用户记录与问题。对 3 个语言模型和 5 个记忆系统的评测表明，系统在语义事实检索上相对较好，但随着任务转向跨来源事件整合、长期行为归纳和人格推断，表现持续下降。",
+        "full_summary": "这篇论文提出 Setoka，目标是衡量个性化代理是否真正理解用户，而不只是从历史记录中找回显式事实。其核心是把用户理解拆成语义记忆、情景记忆、行为模式和人格特质四层，并让每一层对应更宽的证据范围与更复杂的推理操作。作者利用心理测量统计、BFI-2 量表和事件生成树构造 10 个合成用户，再从统一事件派生多种异构记录，以保持跨数据源一致性。实验中，系统表现随抽象层级提升持续下降，直接数据库查询适合精确事实查找，而时间邻近记忆和图结构分别对事件整合及高层归纳更有帮助。论文的价值在于提供了分析记忆系统失败位置的层级框架，但它尚不能证明这些结论能直接推广到真实用户和真实长期交互。",
+        "card_summary": "Setoka 用四级能力框架评测个性化代理能否从异构长期记录中由事实检索逐步走向事件关联、行为归纳和人格推断。实验揭示现有记忆系统的主要瓶颈已不只是检索，而是跨来源整合、长时间聚合和有证据约束的抽象。"
+      },
+      "analysis": {
+        "motivation": "现有 agent memory 基准大多考查从对话历史中找回显式事实，难以判断个性化代理能否跨消息、日历、联系人和社交图等异构数据，逐步形成对用户经历、行为规律和人格特征的深层理解。论文试图把“记住事实”与“理解用户”区分开，并评估证据范围扩大、时间跨度增长和抽象层级提升后，记忆系统的可靠性如何退化。",
+        "method": "Setoka 将用户理解划分为语义记忆、情景记忆、行为模式和人格特质四层，分别对应选择、关联、聚合与泛化操作。其数据流水线先依据心理测量统计联合采样 Big Five 人格，再通过 BFI-2 条目映射出行为模式，随后用事件生成树展开长期时间线，并以事件为唯一事实源生成消息、日历、联系人和图关系等异构记录。测试时，记忆系统需要针对不同层级检索并整合最小证据集，再回答相应问题。",
+        "experiments": "作者生成了 10 个合成用户，每个用户包含约两个月、约 1600 条记录、23 种 schema 和约 1426 个问题，并测试 3 个语言模型与 5 个记忆系统，以及直接查询数据库的基线。结果显示，平均表现随抽象层级单调下降：单记录事实查询相对容易，跨记录事件关联明显变难，长期行为聚合与人格推断更弱。DBQuery 在强模型的语义记忆查询上占优，但跨记录任务退化明显；MemMachine 的情景记忆表现最好，图结构系统在行为模式和人格任务中相对占优。人格任务的高回答率并不代表高能力，因为模型可以在证据不足时持续猜测。",
+        "research_help": "Insight：长期代理记忆不应只保存可检索的事实，还需要显式维护事件关联、时间聚合和跨类别抽象等不同层级的表示，并根据任务选择相应证据粒度。对 long-horizon reliability 而言，应把检索失败、跨记录关联失败、统计聚合错误和无依据泛化分开评测，同时联合报告准确性与拒答行为，避免把高回答率误判为可靠性。该层级化思想也可迁移到 agent planning：规划前的用户约束恢复、跨轮状态整合和稳定偏好推断应分别建立可追踪证据链，而不能直接从零散历史跳到高层结论。",
+        "insight": "Insight：长期代理记忆不应只保存可检索的事实，还需要显式维护事件关联、时间聚合和跨类别抽象等不同层级的表示，并根据任务选择相应证据粒度。对 long-horizon reliability 而言，应把检索失败、跨记录关联失败、统计聚合错误和无依据泛化分开评测，同时联合报告准确性与拒答行为，避免把高回答率误判为可靠性。该层级化思想也可迁移到 agent planning：规划前的用户约束恢复、跨轮状态整合和稳定偏好推断应分别建立可追踪证据链，而不能直接从零散历史跳到高层结论。",
+        "abstract_zh": "个性化代理既需要从记忆中检索用户明确表达的事实，也需要从长期记录中推断更抽象的个人特征，但现有基准主要关注对话历史中的显式信息检索。Setoka 面向异构数据上的层级用户理解，将能力划分为语义记忆、情景记忆、行为模式和人格特质四个层级。作者设计了基于心理测量学的数据生成流程，用于大规模合成连贯且保护隐私的用户记录与问题。对 3 个语言模型和 5 个记忆系统的评测表明，系统在语义事实检索上相对较好，但随着任务转向跨来源事件整合、长期行为归纳和人格推断，表现持续下降。",
+        "card_summary": "Setoka 用四级能力框架评测个性化代理能否从异构长期记录中由事实检索逐步走向事件关联、行为归纳和人格推断。实验揭示现有记忆系统的主要瓶颈已不只是检索，而是跨来源整合、长时间聚合和有证据约束的抽象。",
+        "full_summary": "这篇论文提出 Setoka，目标是衡量个性化代理是否真正理解用户，而不只是从历史记录中找回显式事实。其核心是把用户理解拆成语义记忆、情景记忆、行为模式和人格特质四层，并让每一层对应更宽的证据范围与更复杂的推理操作。作者利用心理测量统计、BFI-2 量表和事件生成树构造 10 个合成用户，再从统一事件派生多种异构记录，以保持跨数据源一致性。实验中，系统表现随抽象层级提升持续下降，直接数据库查询适合精确事实查找，而时间邻近记忆和图结构分别对事件整合及高层归纳更有帮助。论文的价值在于提供了分析记忆系统失败位置的层级框架，但它尚不能证明这些结论能直接推广到真实用户和真实长期交互。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "高相关：agent memory 与 long-horizon reliability",
+        "value_reason": "论文与 agent memory、跨轮状态整合和长期可靠性高度相关，且四层框架比单纯的事实召回评测更有诊断价值。它提供了较清晰的生成流程、证据层级和系统对比，实验信号也一致支持“检索增强不足以解决高层用户理解”。不过，实证基础完全来自 10 个合成用户，行为和人格真值由同一套自上而下生成机制定义，高层任务可能在一定程度上是在恢复生成器植入的结构，而非验证真实用户理解；因此值得读，但证据强度尚不足以给出高推荐。",
+        "limitations": "数据仅覆盖 10 个合成用户和约两个月记录，缺少真实、多年期及持续变化的用户交互验证。人格、行为、事件和问题由同一条生成链构造，存在构念闭环与生成器偏差，心理量表分数到数字行为的映射也未被真实用户数据验证。语义、情景和行为任务依赖单一 LLM judge，人格任务只评估 10 名用户间的排序，统计稳定性有限。论文比较了多类记忆系统，但没有充分隔离检索、表示、生成模型和序列化方式各自造成的误差，也未深入讨论从私人数据推断人格所带来的同意、隐私和误判风险。“首个”层级异构用户理解基准是作者的主张，仅凭所提供全文无法独立穷尽核验。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文将用户理解定义为四层：semantic memory、episodic memory、behavior pattern 和 personality trait，并分别形式化为 selection、linking、aggregation 与 generalization。",
+          "数据集包含 10 个合成用户；每个用户约有两个月、约 1600 条异构记录、23 种 schema、约 364K tokens 和约 1426 个问题。",
+          "主实验比较了 3 个语言模型、5 个记忆系统及 DBQuery 基线；层级平均表现从语义记忆到人格特质持续下降。",
+          "DBQuery 在强模型的单记录语义查询中领先，但跨记录情景任务明显退化；MemMachine 获得最佳情景记忆结果，图结构系统在行为模式和人格层相对占优。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-01T01:43:29.474Z"
+      }
+    },
+    {
+      "id": "2607.28410v1",
+      "title": "Can Large Language Models Execute Parent Orders?",
+      "summary": "PACE 用 Planner/Executor 两层 LLM 决策执行金融母订单，并把输出限制为相对 TWAP 的受控残差。对 agent planning 更有用的是它展示了基准策略锚定、长短期分层和重规划频率的权衡：短窗口频繁重规划会注入噪声，长窗口重规划才更可能补救初始计划。",
+      "url": "http://arxiv.org/abs/2607.28410v1",
+      "authors": [
+        "Zane Shen",
+        "Xinli Xu",
+        "Guangyi Zhang",
+        "Jialong Chen",
+        "Jinsong Zhou",
+        "Cong Chen",
+        "Guibao Shen",
+        "Dongyu Yan",
+        "Luozhou Wang",
+        "Zhen Yang"
+      ],
+      "report_date": "2026-08-01",
+      "published": "2026-07-30",
+      "updated": "2026-07-30",
+      "primary_category": "cs.CE",
+      "categories": [
+        "cs.CE",
+        "cs.CL",
+        "q-fin.TR"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 78,
+        "level": "高",
+        "label": "值得读：受控层级规划和重规划可靠性案例",
+        "water_risk": "中",
+        "value_judgement": "金融订单执行是窄域任务，但 Planner/Executor 分层、基准策略锚定和重规划频率分析对 agent planning 有明确启发。",
+        "reason": "研究 LLM 在多步资源分配与短期执行中的分层计划、受限残差控制和周期性重规划，不是通用 agent 框架但与 planning reliability 强相关。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zane Shen",
+          "Xinli Xu",
+          "Guangyi Zhang",
+          "Jialong Chen",
+          "Jinsong Zhou",
+          "Cong Chen",
+          "Guibao Shen",
+          "Dongyu Yan",
+          "Luozhou Wang",
+          "Zhen Yang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-30",
+        "paper_url": "https://arxiv.org/abs/2607.28410v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "研究 LLM 在多步资源分配与短期执行中的分层计划、受限残差控制和周期性重规划，不是通用 agent 框架但与 planning reliability 强相关。",
+        "summary": "这篇论文研究的不是“交易什么”，而是让 LLM 决定一笔大额订单应在何时、以多大数量逐步执行。PACE 由长期 Planner 和短期 Executor 组成，并把二者的输出限制为相对 TWAP 的受控调整，从而兼顾适应性与完成约束。一个月深交所 Level-1 数据的回测显示，最佳版本在主动和被动报单设置中均优于 TWAP、Almgren–Chriss、XGBoost 和 LSTM，模块消融也支持两层结构各自有效。更值得 agent 研究关注的是，短窗口中的频繁重规划反而降低表现，而长窗口中的重规划有所帮助，说明重规划并非越频繁越可靠。论文提供了有价值的层级规划案例，但随机生成订单、简化成交机制、缺少完整市场冲击与实盘验证，使其经济结论仍只能视为初步证据。",
+        "highlights": [
+          "金融订单执行是窄域任务，但 Planner/Executor 分层、基准策略锚定和重规划频率分析对 agent planning 有明确启发。",
+          "偏水风险：中",
+          "论文与 long-horizon planning 和 planning reliability 高度相关：它明确分离长期计划与短期执行，使用基准策略约束 LLM 动作，并实证比较一次规划和动态重规划。方法、消融和行为分析形成了较完整的证据链，适合研究多轮 agent 如何在噪声环境中维持计划并局部纠偏。不过其显著收益主要来自单月、单市场的离线回测，最强结果也依赖特定模型，不能据此认定已经解决真实订单执行问题。",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "大额母订单若一次性成交，容易暴露交易意图并产生市场冲击；传统执行策略依赖固定成交量或价格模型，学习型策略又需要面向特定状态、动作和奖励重新训练。论文因此研究：LLM 能否仅凭历史行情与任务约束，在推理时完成从长期分配到短期调整的订单执行。",
+        "method": "论文提出 PACE，将母订单执行拆成两层：Planner 根据执行前历史、订单约束和 TWAP 基准，为若干固定时间槽生成长期趋势判断、分配偏好及置信度；Executor 每分钟结合近期行情、长期意图和当前进度，对 TWAP 数量进行离散增减。两层输出均与 TWAP 加权融合，并由超参数限制偏离幅度，以降低 LLM 对噪声过度反应以及无法完成订单的风险。论文还测试一次规划与周期性重规划，发现重规划只在较长执行窗口中有益。",
+        "experiments": "作者在 2026 年 4 月深圳证券交易所 Level-1 数据上随机生成 1680 个母订单，对比 TWAP、Almgren–Chriss、XGBoost 和 LSTM，并考察主动与被动报单。最佳 PACE 版本相对 TWAP 分别改善 1.02 和 1.07 个基点，相对最强基线改善 0.65 和 0.71 个基点，且所有策略均完成全部订单；DS-v4-f 的 bootstrap 区间为正，GPT-5.4 的结果更接近显著性边界。消融显示 Planner 和 Executor 都有贡献，长短期分层在高、低波动组均优于机器学习基线；但评估仅覆盖单一市场的一个月，回测撮合、订单生成和成本建模较简化，尚无真实交易验证。",
+        "research_help": "Insight：PACE 的关键启发不是让 LLM 直接输出完整动作序列，而是用稳定基准策略充当安全锚点，让长期规划器只决定粗粒度资源分配，短期执行器只做受限残差修正。这种“基准策略＋分层残差控制”可迁移到长时程 agent：高层维护跨阶段意图，低层根据新观测局部调整，同时限制单步偏移以降低错误累积。论文关于重规划的结果尤其重要——频繁重规划在短任务中会破坏既有节奏并注入噪声，而在长任务中才可能弥补初始计划失效，因此 replanning 应由剩余时域、环境漂移和证据强度共同触发。模型置信度与实际表现相关的现象可用于选择保守或激进执行幅度，但目前只是相关性证据，不能直接当作可靠的自我校准机制。",
+        "recommendation": {
+          "score": 78,
+          "level": "高",
+          "label": "值得读：受控层级规划和重规划可靠性案例",
+          "water_risk": "中",
+          "value_judgement": "金融订单执行是窄域任务，但 Planner/Executor 分层、基准策略锚定和重规划频率分析对 agent planning 有明确启发。",
+          "reason": "研究 LLM 在多步资源分配与短期执行中的分层计划、受限残差控制和周期性重规划，不是通用 agent 框架但与 planning reliability 强相关。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：PACE 的关键启发不是让 LLM 直接输出完整动作序列，而是用稳定基准策略充当安全锚点，让长期规划器只决定粗粒度资源分配，短期执行器只做受限残差修正。这种“基准策略＋分层残差控制”可迁移到长时程 agent：高层维护跨阶段意图，低层根据新观测局部调整，同时限制单步偏移以降低错误累积。论文关于重规划的结果尤其重要——频繁重规划在短任务中会破坏既有节奏并注入噪声，而在长任务中才可能弥补初始计划失效，因此 replanning 应由剩余时域、环境漂移和证据强度共同触发。模型置信度与实际表现相关的现象可用于选择保守或激进执行幅度，但目前只是相关性证据，不能直接当作可靠的自我校准机制。",
+        "abstract_zh": "母订单执行需要把大额订单拆成小额订单，以降低交易成本和市场冲击，但传统方法依赖预设市场假设，学习型方法则通常需要任务专用训练。论文提出 PACE，将任务分为长期规划与短期执行，无需显式价格模型或专门训练。深圳证券交易所 Level-1 数据上的回测显示，PACE 优于 TWAP、Almgren–Chriss 和学习型基线，最佳结果超过最强基线 0.65 个基点。行为分析发现，模型置信度越高时表现越好，并倾向于提前执行而非拖延到截止时间，说明 LLM 可能为人类交易员提供互补的执行决策。",
+        "full_summary": "这篇论文研究的不是“交易什么”，而是让 LLM 决定一笔大额订单应在何时、以多大数量逐步执行。PACE 由长期 Planner 和短期 Executor 组成，并把二者的输出限制为相对 TWAP 的受控调整，从而兼顾适应性与完成约束。一个月深交所 Level-1 数据的回测显示，最佳版本在主动和被动报单设置中均优于 TWAP、Almgren–Chriss、XGBoost 和 LSTM，模块消融也支持两层结构各自有效。更值得 agent 研究关注的是，短窗口中的频繁重规划反而降低表现，而长窗口中的重规划有所帮助，说明重规划并非越频繁越可靠。论文提供了有价值的层级规划案例，但随机生成订单、简化成交机制、缺少完整市场冲击与实盘验证，使其经济结论仍只能视为初步证据。",
+        "card_summary": "PACE 用 LLM 将母订单执行拆成长期时间槽规划与分钟级局部调整，并以 TWAP 作为受控锚点。回测结果优于静态和学习型基线，其对分层执行、受限重规划和长时程可靠性很有启发，但真实市场有效性仍受简化撮合与短测试周期限制。"
+      },
+      "analysis": {
+        "motivation": "大额母订单若一次性成交，容易暴露交易意图并产生市场冲击；传统执行策略依赖固定成交量或价格模型，学习型策略又需要面向特定状态、动作和奖励重新训练。论文因此研究：LLM 能否仅凭历史行情与任务约束，在推理时完成从长期分配到短期调整的订单执行。",
+        "method": "论文提出 PACE，将母订单执行拆成两层：Planner 根据执行前历史、订单约束和 TWAP 基准，为若干固定时间槽生成长期趋势判断、分配偏好及置信度；Executor 每分钟结合近期行情、长期意图和当前进度，对 TWAP 数量进行离散增减。两层输出均与 TWAP 加权融合，并由超参数限制偏离幅度，以降低 LLM 对噪声过度反应以及无法完成订单的风险。论文还测试一次规划与周期性重规划，发现重规划只在较长执行窗口中有益。",
+        "experiments": "作者在 2026 年 4 月深圳证券交易所 Level-1 数据上随机生成 1680 个母订单，对比 TWAP、Almgren–Chriss、XGBoost 和 LSTM，并考察主动与被动报单。最佳 PACE 版本相对 TWAP 分别改善 1.02 和 1.07 个基点，相对最强基线改善 0.65 和 0.71 个基点，且所有策略均完成全部订单；DS-v4-f 的 bootstrap 区间为正，GPT-5.4 的结果更接近显著性边界。消融显示 Planner 和 Executor 都有贡献，长短期分层在高、低波动组均优于机器学习基线；但评估仅覆盖单一市场的一个月，回测撮合、订单生成和成本建模较简化，尚无真实交易验证。",
+        "research_help": "Insight：PACE 的关键启发不是让 LLM 直接输出完整动作序列，而是用稳定基准策略充当安全锚点，让长期规划器只决定粗粒度资源分配，短期执行器只做受限残差修正。这种“基准策略＋分层残差控制”可迁移到长时程 agent：高层维护跨阶段意图，低层根据新观测局部调整，同时限制单步偏移以降低错误累积。论文关于重规划的结果尤其重要——频繁重规划在短任务中会破坏既有节奏并注入噪声，而在长任务中才可能弥补初始计划失效，因此 replanning 应由剩余时域、环境漂移和证据强度共同触发。模型置信度与实际表现相关的现象可用于选择保守或激进执行幅度，但目前只是相关性证据，不能直接当作可靠的自我校准机制。",
+        "insight": "Insight：PACE 的关键启发不是让 LLM 直接输出完整动作序列，而是用稳定基准策略充当安全锚点，让长期规划器只决定粗粒度资源分配，短期执行器只做受限残差修正。这种“基准策略＋分层残差控制”可迁移到长时程 agent：高层维护跨阶段意图，低层根据新观测局部调整，同时限制单步偏移以降低错误累积。论文关于重规划的结果尤其重要——频繁重规划在短任务中会破坏既有节奏并注入噪声，而在长任务中才可能弥补初始计划失效，因此 replanning 应由剩余时域、环境漂移和证据强度共同触发。模型置信度与实际表现相关的现象可用于选择保守或激进执行幅度，但目前只是相关性证据，不能直接当作可靠的自我校准机制。",
+        "abstract_zh": "母订单执行需要把大额订单拆成小额订单，以降低交易成本和市场冲击，但传统方法依赖预设市场假设，学习型方法则通常需要任务专用训练。论文提出 PACE，将任务分为长期规划与短期执行，无需显式价格模型或专门训练。深圳证券交易所 Level-1 数据上的回测显示，PACE 优于 TWAP、Almgren–Chriss 和学习型基线，最佳结果超过最强基线 0.65 个基点。行为分析发现，模型置信度越高时表现越好，并倾向于提前执行而非拖延到截止时间，说明 LLM 可能为人类交易员提供互补的执行决策。",
+        "card_summary": "PACE 用 LLM 将母订单执行拆成长期时间槽规划与分钟级局部调整，并以 TWAP 作为受控锚点。回测结果优于静态和学习型基线，其对分层执行、受限重规划和长时程可靠性很有启发，但真实市场有效性仍受简化撮合与短测试周期限制。",
+        "full_summary": "这篇论文研究的不是“交易什么”，而是让 LLM 决定一笔大额订单应在何时、以多大数量逐步执行。PACE 由长期 Planner 和短期 Executor 组成，并把二者的输出限制为相对 TWAP 的受控调整，从而兼顾适应性与完成约束。一个月深交所 Level-1 数据的回测显示，最佳版本在主动和被动报单设置中均优于 TWAP、Almgren–Chriss、XGBoost 和 LSTM，模块消融也支持两层结构各自有效。更值得 agent 研究关注的是，短窗口中的频繁重规划反而降低表现，而长窗口中的重规划有所帮助，说明重规划并非越频繁越可靠。论文提供了有价值的层级规划案例，但随机生成订单、简化成交机制、缺少完整市场冲击与实盘验证，使其经济结论仍只能视为初步证据。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "高相关：受控分层规划与重规划可靠性",
+        "value_reason": "论文与 long-horizon planning 和 planning reliability 高度相关：它明确分离长期计划与短期执行，使用基准策略约束 LLM 动作，并实证比较一次规划和动态重规划。方法、消融和行为分析形成了较完整的证据链，适合研究多轮 agent 如何在噪声环境中维持计划并局部纠偏。不过其显著收益主要来自单月、单市场的离线回测，最强结果也依赖特定模型，不能据此认定已经解决真实订单执行问题。",
+        "limitations": "数据仅来自深交所 2026 年 4 月，订单从固定起点随机生成，测试窗口和市场覆盖都很有限。回测只使用 Level-1 行情，撮合规则没有充分模拟排队位置、延迟、手续费、滑点、完整盘口以及策略自身造成的市场冲击；被动订单还依赖最后一分钟扫单。XGBoost 和 LSTM 仅做下一分钟方向预测，未覆盖更强的深度强化学习或工业级执行系统，因此“超过学习型方法”的外推范围有限。论文把约 1 个基点的回测优势线性换算为大型基金年度节省，但这种估算忽略容量、冲击和部署摩擦，应谨慎看待。置信度与收益、提前交易与人类拖延之间的比较属于相关性和行为类比，并未证明因果关系或模型置信度已校准。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "方法部分给出 Planner 的时间槽偏好与置信度、Executor 的分钟级调整，以及二者相对 TWAP 的受控融合公式。",
+          "主结果表显示，最佳 DS-v4-f 版本在主动和被动报单下相对 TWAP 分别改善 1.02 和 1.07 个基点，相对对应最强基线改善 0.65 和 0.71 个基点。",
+          "模块消融中，移除 Planner 或 Executor 后结果均下降，说明长期分配与短期调整都提供了增益。",
+          "重规划实验显示，10–40 分钟订单由一次规划的 -1.99 降至 -2.50，而 50–60 分钟订单由 -2.78 改善至 -2.48，支持按任务时域选择重规划。合理推测这反映了更新收益与噪声注入之间的权衡。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-01T01:40:21.347Z"
+      }
+    },
     {
       "id": "2607.27773v1",
       "title": "ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory",
