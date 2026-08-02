@@ -1,27 +1,56 @@
-# Academic Homepage Template
+# ⭐ Academic Homepage Template
 
-If you like this template or wish to use it, please consider giving this repository a star.
+> A static academic homepage and research workspace for notes, memos, paper reading, and lightweight realtime interactions.
 
-- Live demo: [https://junle.site](https://junle.site)
-- Repository: [junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage)
+If you like this template or wish to use it, please consider giving this repository a ⭐ star.
 
-Academic Homepage Template is a static academic homepage and research workspace. It supports profile pages, notes, memos, paper-reading summaries, Daily Paper tracking, Zotero paper lists, Giscus comments, and Supabase-backed realtime state without requiring a custom backend server.
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-222?logo=github)](https://pages.github.com/)
+[![Supabase](https://img.shields.io/badge/Realtime-Supabase-3FCF8E?logo=supabase&logoColor=white)](https://supabase.com/)
+[![Giscus](https://img.shields.io/badge/Comments-Giscus-7C3AED)](https://giscus.app/)
+[![License: LGPL-3.0](https://img.shields.io/badge/License-LGPL--3.0-blue.svg)](LICENSE)
 
-## Screenshots
+- 🌐 Live demo: [https://junle.site](https://junle.site)
+- 🧩 Repository: [junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage)
+- ⭐ Like it? Star the repo and adapt it for your own academic homepage.
 
-### About / Profile
+## ✨ What You Get
+
+| Area | What it provides |
+| --- | --- |
+| 👤 `About` | Profile, research interests, selected publications, contact links, and workspace entry points. |
+| 📝 `Notes` | In-site Markdown reader with search, categories, archive state, outline, images, and MathJax. |
+| 💬 `Memos` | Timeline-style notes with owner-only realtime writes. |
+| 📚 `Academic` | Daily Paper, paper list, stars, paper details, reading summaries, and text export. |
+| ⚡ `Realtime` | Shared memo, paper-star, Zotero-star, and note-archive state through Supabase. |
+| 💭 `Comments` | Giscus comments backed by GitHub Discussions. |
+| 🚀 `Deploy` | Static build for GitHub Pages and optional custom domain. |
+
+## 🧭 Template Map
+
+Use this repository as a template if you want:
+
+- a homepage that feels like a working research desk instead of a plain CV page
+- long-form notes that render inside the site rather than as raw Markdown
+- a paper-reading dashboard for daily arXiv tracking and Zotero exports
+- optional realtime state for memos, stars, and archived notes
+- optional GitHub Discussions comments for notes
+- static hosting without maintaining a backend server
+
+## 🖼️ Screenshots
+
+### 👤 About / Profile
 
 ![About view](src/assets/screenshots/homepage-about.png)
 
 The About screen works as the entry point for a compact academic profile, research interests, selected publications, contact links, and quick access to the workspace sections.
 
-### Memos
+### 💬 Memos
 
 ![Memos view](src/assets/screenshots/homepage-memos.png)
 
 Memos provide a timeline-style writing area. Public visitors can read published memos, while the configured owner can sign in with GitHub to add or delete memos. Supabase realtime keeps open browser sessions synchronized.
 
-### Academic
+### 📚 Academic
 
 ![Academic view](src/assets/screenshots/homepage-academic.png)
 
@@ -30,35 +59,58 @@ The Academic section contains two research-reading views:
 - `Daily Paper`: curated arXiv paper tracking with stars, short summaries, long reading notes, and exportable text.
 - `Paper List`: a longer-term paper list generated from a Zotero or local library export.
 
-### Notes Reader
+### 📝 Notes Reader
 
 ![Notes reader](src/assets/screenshots/homepage-note-reader.png)
 
 Notes open inside the site reader instead of jumping to raw Markdown files. The reader supports rendered Markdown, images, MathJax, a right-side outline, archive state, and Giscus comments.
 
-## Features
+## ⚡ Quick Start
 
-- `About`: academic profile, research interests, links, selected publications, and workspace entry points.
-- `Notes`: in-site Markdown reader with search, categories, archive state, outline, images, and MathJax.
-- `Memos`: timeline-style notes with owner-only realtime writes.
-- `Academic`: Daily Paper, paper list, stars, paper details, reading summaries, and text export.
-- `Realtime`: shared memo, paper-star, Zotero-star, and note-archive state through Supabase.
-- `Comments`: Giscus comments backed by GitHub Discussions.
-- `Deployment`: static build for GitHub Pages and optional custom domain.
+```bash
+npm install
+npm run build
+npm run dev
+```
 
-## Configure The Template
+`npm run build` generates `dist/`. `npm run dev` starts the gulp watcher and previews from `dist`.
 
-1. Edit `config.json` for the page title, description, intro text, avatar, profile links, and WebGL background setting.
-2. Replace `src/assets/avatar.png` with your own avatar.
-3. Edit `src/assets/content/pages/aboutme.md` for the About page content.
-4. Add long-form notes under `src/assets/content/notes/`.
-5. Update paper data in:
-   - `src/assets/content/data/daily-papers.json`
-   - `src/assets/content/data/zotero-paper-list.json`
-6. Configure Supabase only if you want shared realtime memos, stars, and archive state.
-7. Configure Giscus only if you want GitHub Discussions comments.
+If you use pnpm and see `Ignored build scripts`, approve the dependency build scripts as prompted:
 
-## Realtime Architecture
+```bash
+pnpm install
+pnpm approve-builds
+pnpm run build
+pnpm run dev
+```
+
+## 🛠️ Make It Yours
+
+Start with these files when turning the template into your own homepage:
+
+| File or folder | What to change |
+| --- | --- |
+| `config.json` | Page title, description, intro text, avatar, profile links, and WebGL background switch. |
+| `src/assets/avatar.png` | Replace with your own avatar. |
+| `src/assets/content/pages/aboutme.md` | About page content. |
+| `src/assets/content/notes/` | Long-form Markdown notes. |
+| `src/assets/content/data/daily-papers.json` | Daily Paper data. |
+| `src/assets/content/data/zotero-paper-list.json` | Paper List data. |
+| `src/js/realtime-config.js` | Supabase public config and owner GitHub identity. |
+| `supabase/homepage-realtime.sql` | Supabase tables, RLS policies, owner checks, and realtime publication. |
+| `src/js/main.js` | Giscus config and frontend interaction logic. |
+
+## 🔌 Optional Integrations
+
+| Integration | Required? | Purpose |
+| --- | --- | --- |
+| Supabase | Optional | Shared realtime memos, paper stars, Zotero stars, and note archive state. |
+| GitHub OAuth | Optional | Owner login for write permissions through Supabase Auth. |
+| Giscus | Optional | GitHub Discussions comments for notes. |
+| GitHub Pages | Recommended | Static hosting and custom domain deployment. |
+| Zotero export | Optional | Populate the long-term Paper List view. |
+
+## 🧱 Realtime Architecture
 
 The site is statically hosted. Dynamic state is handled by Supabase Auth, Supabase Postgres, and Supabase Realtime:
 
@@ -74,41 +126,22 @@ flowchart LR
 
 ### Frontend Entry Points
 
-- `src/components/scripts.pug`
-  - loads `@supabase/supabase-js@2`
-  - loads `js/realtime-config.js`
-  - loads `js/main.js`
-
-- `src/js/realtime-config.js`
-  - `supabaseUrl`: Supabase project URL
-  - `supabaseAnonKey`: public publishable anon key
-  - `ownerGithubIds`: GitHub numeric ids allowed to write
-  - `ownerGithubLogins`: GitHub logins allowed to write
-  - `redirectTo`: OAuth return URL for the current page
-
-- `src/js/main.js`
-  - creates the realtime store
-  - exposes login, logout, memo, and reaction operations through `window.JunleRealtime`
-  - updates UI modules through events such as `memos` and `reactions:daily_paper`
+| File | Role |
+| --- | --- |
+| `src/components/scripts.pug` | Loads `@supabase/supabase-js@2`, `js/realtime-config.js`, and `js/main.js`. |
+| `src/js/realtime-config.js` | Stores the public Supabase URL, anon key, owner GitHub ids/logins, and OAuth redirect URL. |
+| `src/js/main.js` | Creates the realtime store, exposes the frontend realtime API, and updates UI modules through events. |
 
 ### Supabase Tables
 
 The full schema is in `supabase/homepage-realtime.sql`.
 
-`site_memos` stores timeline memos:
+| Table | Purpose |
+| --- | --- |
+| `site_memos` | Stores timeline memos with title, content, category, priority, source, owner id, timestamps, and a soft-delete field. |
+| `site_reactions` | Stores shared state for `daily_paper`, `zotero_paper`, and `note_archive` items. |
 
-- `id`: memo uuid
-- `title`, `content`, `category`, `priority`, `source`
-- `created_by`: Supabase auth user id
-- `created_at`, `updated_at`
-- `deleted_at`: reserved soft-delete field
-
-`site_reactions` stores shared UI state:
-
-- `item_type`: `daily_paper`, `zotero_paper`, or `note_archive`
-- `item_key`: stable item key from the site data
-- `active`: whether the state is enabled
-- `unique (item_type, item_key)`: one state row per item
+`site_reactions` uses `unique (item_type, item_key)`, so each paper or note has one stable state row.
 
 ### Auth And RLS
 
@@ -129,10 +162,12 @@ The Supabase anon key can be public in frontend code because writes are controll
 
 The frontend subscribes to Supabase `postgres_changes` events:
 
-- `site_memos`: reloads the memo timeline after insert, update, or delete events.
-- `site_reactions` with `item_type = daily_paper`: syncs Daily Paper stars.
-- `site_reactions` with `item_type = zotero_paper`: syncs Paper List stars.
-- `site_reactions` with `item_type = note_archive`: syncs archived note state.
+| Channel target | UI behavior |
+| --- | --- |
+| `site_memos` | Reloads the memo timeline after insert, update, or delete events. |
+| `site_reactions` + `daily_paper` | Syncs Daily Paper stars. |
+| `site_reactions` + `zotero_paper` | Syncs Paper List stars. |
+| `site_reactions` + `note_archive` | Syncs archived note state. |
 
 When one signed-in owner updates a memo or star, other open browser sessions receive a realtime event and reload the current state.
 
@@ -145,7 +180,7 @@ If Supabase is not configured, the network is unavailable, or the visitor is not
 - write actions become read-only or fall back to local `localStorage` state
 - the UI can show `Local mode`, `Live read-only`, `Signed in read-only`, or `Live owner`
 
-## Configure Supabase
+## 🧩 Configure Supabase
 
 1. Create a Supabase project.
 2. Copy the Project URL and publishable anon key.
@@ -172,7 +207,7 @@ window.JUNLE_REALTIME_CONFIG = {
 
 8. Update the allowed owner ids/logins in `supabase/homepage-realtime.sql` before running it.
 
-## Configure Giscus
+## 💭 Configure Giscus
 
 Giscus uses GitHub Discussions as the comment backend. The config lives in `GISCUS_CONFIG` inside `src/js/main.js`.
 
@@ -189,40 +224,7 @@ Required setup:
 
 Each note uses its own `data-comment-term`, so every note gets a separate discussion thread.
 
-## Local Development
-
-```bash
-npm install
-npm run build
-npm run dev
-```
-
-If you use pnpm and see `Ignored build scripts`, approve the dependency build scripts as prompted:
-
-```bash
-pnpm install
-pnpm approve-builds
-pnpm run build
-pnpm run dev
-```
-
-`npm run build` generates `dist/`. `npm run dev` starts the gulp watcher and previews from `dist`.
-
-## Project Structure
-
-- `config.json`: page title, description, intro button, profile links, avatar, and WebGL background switch.
-- `src/components/`: Pug templates.
-- `src/css/`: LESS styles.
-- `src/js/main.js`: page interactions, note reader, Giscus, and realtime store.
-- `src/js/realtime-config.js`: public Supabase config.
-- `src/assets/content/notes/`: long-form Markdown notes.
-- `src/assets/content/pages/`: in-site Markdown pages.
-- `src/assets/content/data/daily-papers.json`: Daily Paper data.
-- `src/assets/content/data/zotero-paper-list.json`: Paper List data.
-- `supabase/homepage-realtime.sql`: Supabase tables, RLS policies, and realtime publication.
-- `dist/`: generated static site.
-
-## Deploy
+## 🚀 Deploy
 
 ```bash
 npm run build
@@ -236,7 +238,23 @@ GitHub Pages settings:
 - Custom domain: optional
 - Enforce HTTPS: enabled
 
-## Websites And Services Used
+## 📁 Project Structure
+
+| Path | Description |
+| --- | --- |
+| `config.json` | Homepage config and profile links. |
+| `src/components/` | Pug templates. |
+| `src/css/` | LESS styles. |
+| `src/js/main.js` | Page interactions, note reader, Giscus, and realtime store. |
+| `src/js/realtime-config.js` | Public Supabase config. |
+| `src/assets/content/notes/` | Long-form Markdown notes. |
+| `src/assets/content/pages/` | In-site Markdown pages. |
+| `src/assets/content/data/daily-papers.json` | Daily Paper data. |
+| `src/assets/content/data/zotero-paper-list.json` | Paper List data. |
+| `supabase/homepage-realtime.sql` | Supabase schema, RLS policies, and realtime publication. |
+| `dist/` | Generated static site. |
+
+## 🌐 Websites And Services Used
 
 | Website or project | Use |
 | --- | --- |
@@ -247,6 +265,7 @@ GitHub Pages settings:
 | [arXiv](https://arxiv.org/) | Paper metadata and paper links for Daily Paper and Paper List content. |
 | [Zotero](https://www.zotero.org/) | Local paper-library export source. |
 | [jsDelivr](https://www.jsdelivr.com/) | Runtime CDN for frontend libraries. |
+| [Shields.io](https://shields.io/) | README badges. |
 | [anime.js](https://animejs.com/) | Animation timing and transitions. |
 | [MathJax](https://www.mathjax.org/) | LaTeX rendering for notes and paper details. |
 | [Supabase JS](https://supabase.com/docs/reference/javascript/introduction) | Browser client for Auth and Realtime. |
@@ -256,6 +275,6 @@ GitHub Pages settings:
 | [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll) | Historical imported notes-site assets. |
 | [bootstrap-social](https://github.com/lipis/bootstrap-social) | Historical imported social-button CSS asset. |
 
-## License And Attribution
+## 📄 License And Attribution
 
 The reusable website source code keeps the upstream `LGPL-3.0-only` license from [SimonAKing/HomePage](https://github.com/SimonAKing/HomePage). Keep `LICENSE`, `NOTICE.md`, and `ATTRIBUTION.md` when redistributing the code.
