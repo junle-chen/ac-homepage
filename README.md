@@ -1,166 +1,193 @@
-# Junle Chen HomePage
+# Academic Homepage Template
 
-Junle Chen 的个人研究主页和轻量知识工作台，用来整理 notes、memos、daily papers、Zotero paper list 和研究链接。
+If you like this template or wish to use it, please consider giving this repository a star.
 
-- Website: [https://junle.site](https://junle.site)
+- Live demo: [https://junle.site](https://junle.site)
 - Repository: [junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage)
-- Maintainer: Junle Chen
+
+Academic Homepage Template is a static academic homepage and research workspace. It supports profile pages, notes, memos, paper-reading summaries, Daily Paper tracking, Zotero paper lists, Giscus comments, and Supabase-backed realtime state without requiring a custom backend server.
 
 ## Screenshots
 
-### About / Workspace
+### About / Profile
 
 ![About view](src/assets/screenshots/homepage-about.png)
 
-About 页面是站点入口，说明这个网页是个人 research workspace：用于长期记录 notes、bugs、papers、daily arXiv tracking，以及 agent planning / agentic RL / long-horizon planning 相关研究工作流。
+The About screen works as the entry point for a compact academic profile, research interests, selected publications, contact links, and quick access to the workspace sections.
 
 ### Memos
 
 ![Memos view](src/assets/screenshots/homepage-memos.png)
 
-Memos 是时间线式的快速记录区。访客可以读取公开 memo；owner 通过 GitHub 登录后可以新增、删除 memo，并通过 Supabase realtime 在多个浏览器之间同步。
+Memos provide a timeline-style writing area. Public visitors can read published memos, while the configured owner can sign in with GitHub to add or delete memos. Supabase realtime keeps open browser sessions synchronized.
 
 ### Academic
 
 ![Academic view](src/assets/screenshots/homepage-academic.png)
 
-Academic 面板包含两个主要视图：
+The Academic section contains two research-reading views:
 
-- `Daily Paper`: 每日 arXiv agent paper 阅读、筛选、星标和详细解读。
-- `Paper List`: 从 Zotero/Planning 文献库导出的 paper list，用于长期整理候选论文。
+- `Daily Paper`: curated arXiv paper tracking with stars, short summaries, long reading notes, and exportable text.
+- `Paper List`: a longer-term paper list generated from a Zotero or local library export.
 
 ### Notes Reader
 
 ![Notes reader](src/assets/screenshots/homepage-note-reader.png)
 
-Notes 在站内 reader 中打开，不跳转到裸 Markdown 文件。Reader 支持正文渲染、图片、MathJax、右侧 outline 和 Giscus comments。
+Notes open inside the site reader instead of jumping to raw Markdown files. The reader supports rendered Markdown, images, MathJax, a right-side outline, archive state, and Giscus comments.
 
 ## Features
 
-- `About`: 个人介绍、研究方向和站点入口。
-- `Notes`: Markdown notes/pages 的站内阅读器，支持搜索、分类、归档状态、目录和 MathJax。
-- `Memos`: 面向快速记录的 timeline，支持 GitHub owner 登录后的实时写入。
-- `Academic`: Daily Paper、Paper List、论文星标、论文摘要、详情 modal 和导出文本。
-- `Realtime`: Supabase 保存共享 memos、paper stars、Zotero stars 和 note archive 状态。
-- `Comments`: Giscus 基于 GitHub Discussions 为文章提供评论。
-- `Deployment`: GitHub Pages + custom domain `junle.site`。
+- `About`: academic profile, research interests, links, selected publications, and workspace entry points.
+- `Notes`: in-site Markdown reader with search, categories, archive state, outline, images, and MathJax.
+- `Memos`: timeline-style notes with owner-only realtime writes.
+- `Academic`: Daily Paper, paper list, stars, paper details, reading summaries, and text export.
+- `Realtime`: shared memo, paper-star, Zotero-star, and note-archive state through Supabase.
+- `Comments`: Giscus comments backed by GitHub Discussions.
+- `Deployment`: static build for GitHub Pages and optional custom domain.
+
+## Configure The Template
+
+1. Edit `config.json` for the page title, description, intro text, avatar, profile links, and WebGL background setting.
+2. Replace `src/assets/avatar.png` with your own avatar.
+3. Edit `src/assets/content/pages/aboutme.md` for the About page content.
+4. Add long-form notes under `src/assets/content/notes/`.
+5. Update paper data in:
+   - `src/assets/content/data/daily-papers.json`
+   - `src/assets/content/data/zotero-paper-list.json`
+6. Configure Supabase only if you want shared realtime memos, stars, and archive state.
+7. Configure Giscus only if you want GitHub Discussions comments.
 
 ## Realtime Architecture
 
-这个站点本身是静态站点，动态状态由 Supabase + GitHub OAuth 提供。核心目标是：不引入后端服务器，也能让 memo、paper star、archive 状态在多设备和多浏览器之间共享。
+The site is statically hosted. Dynamic state is handled by Supabase Auth, Supabase Postgres, and Supabase Realtime:
+
+```mermaid
+flowchart LR
+  Browser["Browser UI"] --> Store["Realtime store in src/js/main.js"]
+  Store --> Auth["Supabase Auth with GitHub OAuth"]
+  Store --> DB["Supabase Postgres"]
+  DB --> RT["Supabase Realtime postgres_changes"]
+  RT --> Store
+  Store --> UI["Memos, stars, archive state"]
+```
 
 ### Frontend Entry Points
 
 - `src/components/scripts.pug`
-  - 加载 `@supabase/supabase-js@2`
-  - 加载 `js/realtime-config.js`
-  - 加载主脚本 `js/main.js`
+  - loads `@supabase/supabase-js@2`
+  - loads `js/realtime-config.js`
+  - loads `js/main.js`
 
 - `src/js/realtime-config.js`
   - `supabaseUrl`: Supabase project URL
-  - `supabaseAnonKey`: 前端可公开的 publishable anon key
-  - `ownerGithubIds`: 允许写入的 GitHub numeric id
-  - `ownerGithubLogins`: 允许写入的 GitHub login
-  - `redirectTo`: GitHub OAuth 返回当前页面
+  - `supabaseAnonKey`: public publishable anon key
+  - `ownerGithubIds`: GitHub numeric ids allowed to write
+  - `ownerGithubLogins`: GitHub logins allowed to write
+  - `redirectTo`: OAuth return URL for the current page
 
 - `src/js/main.js`
-  - `createJunleRealtimeStore()` 封装 realtime store
-  - `window.JunleRealtime` 暴露登录、登出、读写 memo、读写 reaction 的接口
-  - UI 组件通过 `on("memos")`、`on("reactions:daily_paper")` 等事件更新页面
+  - creates the realtime store
+  - exposes login, logout, memo, and reaction operations through `window.JunleRealtime`
+  - updates UI modules through events such as `memos` and `reactions:daily_paper`
 
 ### Supabase Tables
 
-SQL schema 在 `supabase/homepage-realtime.sql`。
+The full schema is in `supabase/homepage-realtime.sql`.
 
-`site_memos` 保存 live memo：
+`site_memos` stores timeline memos:
 
 - `id`: memo uuid
 - `title`, `content`, `category`, `priority`, `source`
 - `created_by`: Supabase auth user id
 - `created_at`, `updated_at`
-- `deleted_at`: 预留软删除字段
+- `deleted_at`: reserved soft-delete field
 
-`site_reactions` 保存共享状态：
+`site_reactions` stores shared UI state:
 
-- `item_type`: `daily_paper` / `zotero_paper` / `note_archive`
-- `item_key`: 站内 item 的稳定 key
-- `active`: 当前状态是否开启
-- `unique (item_type, item_key)`: 同一 item 只有一条状态记录
+- `item_type`: `daily_paper`, `zotero_paper`, or `note_archive`
+- `item_key`: stable item key from the site data
+- `active`: whether the state is enabled
+- `unique (item_type, item_key)`: one state row per item
 
 ### Auth And RLS
 
-Supabase 使用 GitHub OAuth 登录。SQL 中的 `public.is_homepage_owner()` 会检查 JWT 里的 GitHub identity：
+Supabase uses GitHub OAuth for owner login. The SQL helper `public.is_homepage_owner()` checks GitHub identity values from the Supabase JWT. Configure your own owner ids and logins in both:
 
-- GitHub numeric id: `108796659`
-- GitHub login: `junle-chen`
-- The SQL accepts common Supabase GitHub metadata keys: `provider_id`, `sub`, `user_id`, `user_name`, `preferred_username`, `nickname`, and `name`.
+- `src/js/realtime-config.js`
+- `supabase/homepage-realtime.sql`
 
-Row Level Security 策略是：
+The intended Row Level Security behavior is:
 
-- 访客可以读取公开 memo 和 reaction。
-- 只有 owner 可以 insert/update/delete memo。
-- 只有 owner 可以 insert/update/delete reaction。
+- visitors can read published memos and reactions
+- only configured owners can insert, update, or delete memos
+- only configured owners can insert, update, or delete reactions
 
-这意味着 anon key 可以放在前端仓库里；真正的写入权限由 Supabase Auth + RLS 控制。GitHub OAuth client secret 不能放进仓库，只能配置在 Supabase/GitHub 后台。
+The Supabase anon key can be public in frontend code because writes are controlled by Auth and RLS. Keep GitHub OAuth client secrets, deployment tokens, and other private credentials outside the repository.
 
 ### Realtime Subscriptions
 
-前端使用 Supabase `postgres_changes` 订阅：
+The frontend subscribes to Supabase `postgres_changes` events:
 
-- `homepage-site-memos`: 监听 `site_memos` 的 insert/update/delete，然后重新加载 memo timeline。
-- `homepage-site-reactions-daily_paper`: 监听 Daily Paper 星标/删除状态。
-- `homepage-site-reactions-zotero_paper`: 监听 Zotero Paper 星标状态。
-- `homepage-site-reactions-note_archive`: 监听 note archive 状态。
+- `site_memos`: reloads the memo timeline after insert, update, or delete events.
+- `site_reactions` with `item_type = daily_paper`: syncs Daily Paper stars.
+- `site_reactions` with `item_type = zotero_paper`: syncs Paper List stars.
+- `site_reactions` with `item_type = note_archive`: syncs archived note state.
 
-当某个浏览器写入一条 memo 或 star 状态后，其他已打开的浏览器会收到 Supabase realtime 事件，并重新读取当前状态。
+When one signed-in owner updates a memo or star, other open browser sessions receive a realtime event and reload the current state.
 
 ### Local Fallback
 
-如果 Supabase 未配置、网络不可用或用户未登录：
+If Supabase is not configured, the network is unavailable, or the visitor is not signed in:
 
-- 站点仍能作为静态站点正常阅读。
-- Memos 和 stars 会降级到只读或本地 `localStorage` 状态。
-- UI 状态会显示 `Local mode`、`Live read-only`、`Signed in read-only` 或 `Live owner`。
+- the static site still loads normally
+- public content remains readable
+- write actions become read-only or fall back to local `localStorage` state
+- the UI can show `Local mode`, `Live read-only`, `Signed in read-only`, or `Live owner`
 
-## Configure Realtime
+## Configure Supabase
 
-1. 在 Supabase 创建 project，复制 Project URL 和 publishable anon key。
-2. 在 Supabase SQL Editor 运行：
-
-```sql
--- supabase/homepage-realtime.sql
-```
-
-3. 在 GitHub Developer Settings 创建 OAuth App，callback URL 使用：
+1. Create a Supabase project.
+2. Copy the Project URL and publishable anon key.
+3. Run `supabase/homepage-realtime.sql` in the Supabase SQL Editor.
+4. Enable GitHub in Supabase Authentication Providers.
+5. Create a GitHub OAuth App with this callback URL:
 
 ```text
 https://<project-ref>.supabase.co/auth/v1/callback
 ```
 
-4. 在 Supabase Authentication Providers 中启用 GitHub，填入 GitHub Client ID 和 Client Secret。
-5. 更新 `src/js/realtime-config.js`：
+6. Put the GitHub Client ID and Client Secret into the Supabase GitHub provider settings.
+7. Update `src/js/realtime-config.js`:
 
 ```js
 window.JUNLE_REALTIME_CONFIG = {
 	supabaseUrl: "https://<project-ref>.supabase.co",
 	supabaseAnonKey: "<publishable-anon-key>",
-	ownerGithubIds: ["108796659"],
-	ownerGithubLogins: ["junle-chen"],
+	ownerGithubIds: ["<github-numeric-id>"],
+	ownerGithubLogins: ["<github-login>"],
 	redirectTo: window.location.origin + window.location.pathname,
 };
 ```
 
+8. Update the allowed owner ids/logins in `supabase/homepage-realtime.sql` before running it.
+
 ## Configure Giscus
 
-Giscus 用 GitHub Discussions 做评论系统，配置在 `src/js/main.js` 的 `GISCUS_CONFIG`。
+Giscus uses GitHub Discussions as the comment backend. The config lives in `GISCUS_CONFIG` inside `src/js/main.js`.
 
-当前配置指向：
+Required setup:
 
-- repo: `junle-chen/ac-homepage`
-- category: `General`
-- mapping: `specific`
+1. Enable GitHub Discussions for your repository.
+2. Install and authorize the Giscus GitHub App for your repository.
+3. Use [giscus.app](https://giscus.app/) to generate:
+   - `data-repo`
+   - `data-repo-id`
+   - `data-category`
+   - `data-category-id`
+4. Paste those values into `GISCUS_CONFIG`.
 
-每篇 note 会用自己的 `data-comment-term` 生成独立评论线程。
+Each note uses its own `data-comment-term`, so every note gets a separate discussion thread.
 
 ## Local Development
 
@@ -170,7 +197,7 @@ npm run build
 npm run dev
 ```
 
-如果使用 pnpm，遇到 `Ignored build scripts` 提示时按 pnpm 提示审批依赖构建脚本：
+If you use pnpm and see `Ignored build scripts`, approve the dependency build scripts as prompted:
 
 ```bash
 pnpm install
@@ -179,21 +206,21 @@ pnpm run build
 pnpm run dev
 ```
 
-`npm run build` 生成 `dist/`。`npm run dev` 启动 gulp watch，并从 `dist` 预览。
+`npm run build` generates `dist/`. `npm run dev` starts the gulp watcher and previews from `dist`.
 
 ## Project Structure
 
-- `config.json`: 首页标题、描述、入口按钮、个人链接、头像和 WebGL 背景开关。
-- `src/components/`: Pug 模板。
-- `src/css/`: LESS styles。
-- `src/js/main.js`: 页面交互、reader、Giscus、Realtime store。
-- `src/js/realtime-config.js`: Supabase public config。
-- `src/assets/content/notes/`: 长笔记 Markdown。
-- `src/assets/content/pages/`: 站内说明页和功能页 Markdown。
-- `src/assets/content/data/daily-papers.json`: Daily Paper 数据。
-- `src/assets/content/data/zotero-paper-list.json`: Paper List 数据。
-- `supabase/homepage-realtime.sql`: Supabase tables、RLS policies、realtime publication。
-- `dist/`: 构建产物。
+- `config.json`: page title, description, intro button, profile links, avatar, and WebGL background switch.
+- `src/components/`: Pug templates.
+- `src/css/`: LESS styles.
+- `src/js/main.js`: page interactions, note reader, Giscus, and realtime store.
+- `src/js/realtime-config.js`: public Supabase config.
+- `src/assets/content/notes/`: long-form Markdown notes.
+- `src/assets/content/pages/`: in-site Markdown pages.
+- `src/assets/content/data/daily-papers.json`: Daily Paper data.
+- `src/assets/content/data/zotero-paper-list.json`: Paper List data.
+- `supabase/homepage-realtime.sql`: Supabase tables, RLS policies, and realtime publication.
+- `dist/`: generated static site.
 
 ## Deploy
 
@@ -201,32 +228,34 @@ pnpm run dev
 npm run build
 ```
 
-GitHub Pages 设置：
+GitHub Pages settings:
 
 - Source: Deploy from a branch
 - Branch: `gh-pages`
 - Folder: `/ (root)`
-- Custom domain: `junle.site`
+- Custom domain: optional
 - Enforce HTTPS: enabled
+
+## Websites And Services Used
+
+| Website or project | Use |
+| --- | --- |
+| [GitHub Pages](https://pages.github.com/) | Static hosting and custom domain deployment. |
+| [GitHub](https://github.com/) | Source hosting, Discussions, and OAuth App setup. |
+| [Giscus](https://giscus.app/) | Comment widget powered by GitHub Discussions. |
+| [Supabase](https://supabase.com/) | Realtime database, Auth, and owner-only writes. |
+| [arXiv](https://arxiv.org/) | Paper metadata and paper links for Daily Paper and Paper List content. |
+| [Zotero](https://www.zotero.org/) | Local paper-library export source. |
+| [jsDelivr](https://www.jsdelivr.com/) | Runtime CDN for frontend libraries. |
+| [anime.js](https://animejs.com/) | Animation timing and transitions. |
+| [MathJax](https://www.mathjax.org/) | LaTeX rendering for notes and paper details. |
+| [Supabase JS](https://supabase.com/docs/reference/javascript/introduction) | Browser client for Auth and Realtime. |
+| [Alibaba Iconfont](https://www.iconfont.cn/) | Icon font for link buttons. |
+| [SimonAKing/HomePage](https://github.com/SimonAKing/HomePage) | Original homepage structure and intro style. |
+| [WebGL Fluid Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/) | WebGL fluid background implementation. |
+| [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll) | Historical imported notes-site assets. |
+| [bootstrap-social](https://github.com/lipis/bootstrap-social) | Historical imported social-button CSS asset. |
 
 ## License And Attribution
 
-本仓库包含两类内容：
-
-- 网站源代码：基于 [SimonAKing/HomePage](https://github.com/SimonAKing/HomePage)，按 `LGPL-3.0-only` 保留许可证和上游署名。
-- 个人内容：notes、memos、论文阅读摘要、头像和个人介绍默认版权归 Junle Chen 所有，除非文件另有说明。
-
-具体边界见 [CONTENT_LICENSE.md](CONTENT_LICENSE.md)，上游版权说明见 [NOTICE.md](NOTICE.md)，第三方服务、库和模板来源见 [ATTRIBUTION.md](ATTRIBUTION.md)。
-
-## Citation
-
-如果使用或参考这个网页项目，请优先使用 GitHub 右侧的 “Cite this repository” 按钮；它由根目录的 `CITATION.cff` 提供。也可以手动引用：
-
-```bibtex
-@software{Chen_Junle_HomePage_2026,
-  author = {Chen, Junle},
-  title = {{Junle Chen HomePage}},
-  year = {2026},
-  url = {https://github.com/junle-chen/ac-homepage}
-}
-```
+The reusable website source code keeps the upstream `LGPL-3.0-only` license from [SimonAKing/HomePage](https://github.com/SimonAKing/HomePage). Keep `LICENSE`, `NOTICE.md`, and `ATTRIBUTION.md` when redistributing the code.

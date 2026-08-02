@@ -1,6 +1,6 @@
-# Content License
+# Content Notes
 
-This repository contains both website source code and personal content.
+This repository contains both reusable website source code and project-specific site content.
 
 ## Source Code
 
@@ -8,11 +8,9 @@ The website source code is based on `SimonAKing/HomePage` and is distributed und
 
 This includes the application source, build scripts, styles, and reusable frontend logic unless a file states a different license.
 
-## Personal Content
+## Site Content
 
-Personal notes, memos, paper-reading summaries, profile text, avatars, and other author-created site content are copyright Junle Chen unless a file states otherwise.
-
-Do not reuse personal content, private library exports, or profile assets without permission. Code reuse is governed by the source-code license above.
+Template users should replace project-specific notes, memos, paper-reading summaries, profile text, avatars, and private library exports before publishing a derived site unless those files explicitly say they are reusable. Code reuse is governed by the source-code license above.
 
 ## Third-Party Assets
 
