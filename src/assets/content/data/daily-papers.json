@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-05T01:57:21.674Z",
+  "updated_at": "2026-08-06T01:49:18.398Z",
   "source": "arxiv",
-  "analysis_method": "Codex CLI full-text paper reading plus manual strict relevance curation",
+  "analysis_method": "Codex manual full-text PDF curation after nested generator timeout",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、agent memory、agentic RL、长程执行状态与可靠性",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,43 +37,42 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-05 Daily Paper",
-    "report_date": "2026-08-05",
+    "title": "2026-08-06 Daily Paper",
+    "report_date": "2026-08-06",
     "focus": "多轮交互式 agent planning、long-horizon planning、agent memory、agentic RL、长程执行状态与可靠性",
-    "summary": "今日保留 13 篇强相关论文：agentic RL 的 token/turn/trajectory 信用分配，多轮 OPD 与搜索 agent 训练，长程执行状态管理，多语言规划失败诊断，长期记忆的 stale dependency、权限边界、世界模型联邦和记忆效用压缩。过滤掉高水风险的概念型 LLM+RL 混合稿、与主题间接的零样本协调实现鲁棒性评测，以及硬件算子 debug 专用 agent。",
+    "summary": "今日保留 9 篇强相关论文：长程世界模型自验证 RL、agent memory 成本-性能优化、工具使用多模态 agentic RL、VLA 显式语言记忆、OCSD 多轮信用分配、PI-conditioned 自蒸馏失败诊断、隐藏目标协作规划、记忆时间有效性和 query-only 记忆投毒。过滤掉计算架构、软件工程现象研究、一般 MARL reward shaping、模型偏好 steering、高水风险 hybrid LLM+RL 稿，以及已在 2026-08-05 发布过的旧条目。",
     "top_recommendations": [
-      "2608.03223v1",
-      "2608.01667v1",
-      "2608.01953v1"
+      "2608.04964v1",
+      "2608.04788v1",
+      "2608.04843v1"
     ],
     "low_priority": [
-      "2608.03648v1"
+      "2608.04309v1",
+      "2608.04436v1",
+      "2608.04746v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不提交、不部署。",
-    "email_body": "2026-08-05 Daily Paper\n\n今日保留 13 篇强相关论文，核心集中在 agentic RL 信用分配、多轮/长程 agent 执行状态、agent memory 可靠性和 agent planning failure diagnosis。\n\n最值得读的 3 篇\n1. Agentic Reinforcement Learning with Self-Distilled Reward Shaping (2608.03223v1)：ADRS 利用训练期程序性技能对无技能 rollout 进行事后重评分，把经过步内校准和回报关联门控的教师信号转成 token 级 RL 信用。它在 ALFWorld 和 WebShop 等长时程交互任务上取得明显且较持久的提升，同时不增加推理阶段的技能依赖；搜索问答上的提升则较小。\n2. TCPO: Turn-Level Credit Policy Optimization (2608.01667v1)：TCPO 研究多轮 verifier-guided RL 中“逐轮有分数却没有准确逐轮信用”的问题，通过历史最佳、未来结果和固定历史反事实三类参照构造 turn-level advantage。它在数学、代码与 AppWorld 上整体优于或持平强基线，并以较小额外成本提升成功率和修复效率，但评测指标与统计报告仍留下复现空间。\n3. Look Ahead Before You Distill: Future Trajectory Validation of Teacher Guidance for Agentic On-Policy Distillation (2608.01953v1)：FutureBridge-OPD 不再仅凭当前回合的教师—学生分歧决定是否蒸馏，而是实际执行教师桥接，并观察同一学生由此产生的后续轨迹是否更受教师偏好。三个多轮环境中的结果与消融总体支持这种“先向前验证、再选择监督”的思路，但其验证标准仍是教师偏好代理量，而非直接任务收益。\n\n其他保留论文\n- LongHorizon-Harness: Advancing Long-Horizon Agents for Real-World Tasks (2608.01964v1)：LongHorizon-Harness 将长程智能体执行改造成由管理、执行和独立审计组成的循环，只让经过环境验证的事实进入跨轮任务状态。在多个 GUI、GUI–CLI 和命令行基准上，它显著提高了完成率，但部分实验伴随更高计算成本和协议变化，因果归因仍需更严格消融。\n- An Actionable Diagnosis of Multilingual, Multi-Agent Planning Failures (2608.03735v1)：论文将多语言智能体的端到端失败定位到请求转计划阶段，归纳出实体、来源、时间、操作和答案格式五类约束丢失，并用结构化语义契约 TART 贯穿规划与执行。方法跨模型、语言和数据集取得较一致的提升，特别适合关注多轮状态保持与长链路可靠性的读者，但对最高难度任务帮助有限。\n- When Memory Updates but Behavior Does Not: Repairing Implicit Stale Dependencies in Personalized Agent Responses (2608.01619v1)：论文研究一种容易被忽视的长期记忆故障：Agent 的记忆已经更新，回答却仍隐式依赖旧状态。StateAuditor 通过状态到草稿的反向审计和来源、时序门控修复回答，在 Stale 上表现出稳定改善，但跨基准泛化与错误状态替代仍是明显边界。\n- When Memory Becomes Authority: Benchmarking Authority Collapse at the Memory Consolidation Boundary (2608.01679v2)：论文揭示持久化 Agent 记忆中的“权威坍塌”：整合器可能保留一条信息，却丢掉它来自用户、助手还是工具以及是否获认可，从而让非授权内容触发工具操作。AuthMem-Bench 的成对实验显示该问题跨整合器和模型普遍存在，结构化来源权限标签能显著改善，但不能解决记忆遗漏。\n- RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States (2608.02508v2)：RoMeRL 将不断扩张的逐轨迹记忆效用压缩为四个具有稳定语义的任务级坐标，以缓解反馈稀释及无关记忆共享成功奖励的问题。其在两个 Agent 基准上同时改善成功率、反馈利用率和资源开销，但仍依赖任务级奖励，尚未根治记忆信用分配。\n- PCSD: Persistent Consistency for Self-Distillation in Agentic Reinforcement Learning (2608.01837v1)：PCSD针对多轮智能体强化学习中的稀疏奖励问题，用教师支持信号的局部持续性来决定每个 token 应接受多少自蒸馏监督。它在ALFWorld上取得稳定且显著的改进，但WebShop收益较有限，方法的普适性仍需更多环境验证。\n- Cross-Domain Hybrid OPD for Generalizable Search Agents (2608.02101v1)：论文针对搜索 RL 导致通用能力退化的问题，将自主搜索强化学习与数学、代码、逻辑、科学专家的 On-Policy Distillation 联合训练。结果显示通用推理能力多数得到恢复，而搜索能力整体得以保留，但核心搜索证据主要来自内部基准。\n- FedWorld: Scope-Aware Federation of Agent World Models (2608.01561v1)：FedWorld研究如何在多个智能体之间安全共享世界模型规则，核心是先判断每条转移知识的适用作用域，再用它填补本地知识缺口。τ-bench与ALFWorld结果显示，它比直接汇总记忆更能抵抗冲突规则，但当前证据主要建立在人工规范化、确定性转移和构造客户端配置之上。\n- PGMem: Tightly Coupled Persona-Memory Graph for Lifelong Personalized Agents (2608.01708v1)：PGMem 把长期对话中的事件记忆与动态用户画像组织成带支持、冲突和状态迁移关系的异构图，使系统能够追踪某项偏好为什么成立、何时被更新。它在三个个性化对话基准上取得领先结果，尤其适合研究长上下文中如何避免过时记忆干扰回答，但证据仍主要来自合成数据和模型评审。\n- Group Perspective Matters: Regulating Debate Relationships Can Mitigate Blind Conformity in Multi-Agent Debate (2608.03648v1)：DEAR 不再尝试判断某个辩论智能体是否“可靠”，而是用两个强化学习控制器动态决定谁应参考谁，以及参考后应采取多大的生成探索度。它在多项数学和问答任务上报告了准确率与 token 效率的共同提升，对多轮智能体系统中的错误传播和盲目共识问题具有较强参考价值。\n\n过滤论文\n- 2608.03502v1：主题命中但全文显示实验可信度不足，水风险高。\n- 2608.03644v1：零样本协调实现鲁棒性有评测启发，但与 LLM agent planning / agentic RL 主线间接。\n- 2608.02712v1：硬件算子修复 domain agent，且自动全文分析超时；不作为今日主页强相关项。"
+    "email_body": "2026-08-06 Daily Paper\n\n今日保留 9 篇强相关论文，重点集中在长程世界模型 verifier、agentic RL 信用分配、agent memory 可靠性和多轮规划状态。\n\n最值得读的 3 篇\n1. WorldCycle (2608.04964v1)：用可逆动作闭环构造无标注长程 verifier，为世界模型 RL 后训练提供空间闭合和时间一致性奖励。\n2. OCSD (2608.04788v1)：用 full replay 与 observation-ablated replay 的差值校准 token 级 self-distillation，减少多轮 agentic RL 中未来观察监督的 scaffold 偏差。\n3. MemoryCPT (2608.04843v1)：把长程 agent memory 做成端到端可训练的成本-性能优化管线，直接优化查询相关证据压缩和下游 QA 质量。"
   },
   "latest_item_ids": [
-    "2608.03223v1",
-    "2608.01667v1",
-    "2608.01953v1",
-    "2608.01964v1",
-    "2608.03735v1",
-    "2608.01619v1",
-    "2608.01679v2",
-    "2608.02508v2",
-    "2608.01837v1",
-    "2608.02101v1",
-    "2608.01561v1",
-    "2608.01708v1",
-    "2608.03648v1"
+    "2608.04964v1",
+    "2608.04843v1",
+    "2608.04436v1",
+    "2608.04765v1",
+    "2608.04788v1",
+    "2608.04794v1",
+    "2608.04309v1",
+    "2608.04746v1",
+    "2608.03844v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 13,
-    "total_items": 141,
-    "previous_items": 128,
-    "latest_items": 13,
+    "fresh_items": 9,
+    "total_items": 150,
+    "previous_items": 141,
+    "latest_items": 9,
     "source_report_dates": {
+      "2026-08-06": 9,
       "2026-08-05": 13,
       "2026-08-04": 6,
       "2026-08-03": 6,
@@ -107,61 +106,22 @@
       "2026-06-13": 1
     },
     "filtered_candidate_ids": [
-      "2607.15001v1",
-      "2607.14870v1",
-      "2607.14688v1",
-      "2607.14485v1",
-      "2607.13818v1",
-      "2607.13655v1",
-      "2607.13880v1",
-      "2607.12924v2",
-      "2607.12497v1",
-      "2607.12861v1",
-      "2607.21653v1",
-      "2607.21760v1",
-      "2607.22445v1",
-      "2607.26697v1",
-      "2607.26760v1",
-      "2607.23933v1",
-      "2607.25082v2",
-      "2607.27699v1",
-      "2607.27703v1",
-      "2607.28002v1",
-      "2607.27967v1",
-      "2607.27494v1",
-      "2607.29347v1",
-      "2607.29007v1",
-      "2607.28826v1",
-      "2608.00679v1",
-      "2608.00255v1",
+      "2608.04443v1",
+      "2608.04661v1",
+      "2608.04663v1",
+      "2608.03892v1",
       "2608.03502v1",
-      "2608.03644v1",
-      "2608.02712v1"
+      "2608.03223v1",
+      "2608.03648v1"
     ],
     "filtered_today": {
-      "date": "2026-08-05",
-      "candidate_count": 16,
-      "kept_ids": [
-        "2608.03223v1",
-        "2608.01667v1",
-        "2608.01953v1",
-        "2608.01964v1",
-        "2608.03735v1",
-        "2608.01619v1",
-        "2608.01679v2",
-        "2608.02508v2",
-        "2608.01837v1",
-        "2608.02101v1",
-        "2608.01561v1",
-        "2608.01708v1",
-        "2608.03648v1"
-      ],
-      "dropped_ids": [
-        "2608.03502v1",
-        "2608.03644v1",
-        "2608.02712v1"
-      ],
-      "criteria": "Kept only full-text-reviewed papers directly tied to agentic RL credit assignment, multi-turn or long-horizon agent execution, planning failure diagnosis, agent memory state reliability, or world-model/planning reliability. Rejected high-water-risk concept work, indirect coordination evaluation, and a domain-specific hardware debug agent whose analysis timed out."
+      "2608.04443v1": "MCHA 是内存中心并行/顺序计算架构，MARL 只是 workload 动机，不是 LLM agent planning 或 agentic RL 方法。",
+      "2608.04661v1": "Agent Plans 是 OSS 中计划文件的探索性软件工程研究，相关但不是训练、规划机制或可靠性方法推进。",
+      "2608.04663v1": "人工 guilt reward shaping 属于一般多智能体强化学习和亲社会奖励校准，和 LLM agent / long-horizon planning 主线间接。",
+      "2608.03892v1": "Qwen3 时间偏好 activation steering 研究模型偏好方向，不是 agent planning、agent memory 或多轮执行系统。",
+      "2608.03502v1": "Hybrid LLM-Augmented RL 稿件泛化模板感强，实验数字和参考链条可信度不足，水风险高。",
+      "2608.03223v1": "已在 2026-08-05 发布，不能重新计入今日新增。",
+      "2608.03648v1": "已在 2026-08-05 发布，不能重新计入今日新增。"
     },
     "backfilled_report_dates": {
       "2026-07-17": 3,
@@ -171,6 +131,1061 @@
     }
   },
   "items": [
+    {
+      "id": "2608.04964v1",
+      "title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models",
+      "summary": "Interactive video world models are essential for long-horizon planning and exploration, yet they suffer from compounding errors. Post-training methods such as reinforcement learning (RL) can improve these models, but they hit a verification bottleneck: for arbitrary action sequences, no ground-truth future state exists to measure long-term drift. Our key insight is that reversible action cycles make this verification possible: a sequence composed with its inverse must analytically return to the initial state, yielding annotation-free supervision on long-horizon correctness. Building on this, we introduce WorldCycle, a self-verifiable RL framework that constructs closed action cycles and their repeated executions from ordinary action sequences, and optimizes two complementary rewards: a spatial closure reward enforcing symmetry between mirrored forward and reverse segments, and a temporal consistency reward aligning states across repeated cycle executions. These rewards force the model to learn actions as consistent state operators rather than memorized temporal patterns, and extend naturally to out-of-distribution composite action cycles that the base model handles poorly. We further release CycleBench, a diagnostic benchmark for state-returning ability under complex action structures. WorldCycle reduces state returning drift by up to 44% and lifts composite-action accuracy nearly 4x over the base model, providing a vital foundation for physically grounded world models.",
+      "url": "http://arxiv.org/abs/2608.04964v1",
+      "authors": [
+        "Bohai Gu",
+        "Yueyang Yuan",
+        "Taiyi Wu",
+        "Dazhao Du",
+        "Jian Liu",
+        "Xiaoyi Pang",
+        "Jie Zhang",
+        "Xiaocheng Lu",
+        "Haobin Zhong",
+        "Xiaotong Zhao",
+        "Alan Zhao",
+        "Song Guo"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强机制启发，外部有效性待验证",
+        "water_risk": "中",
+        "value_judgement": "强相关：长程世界模型、RL 后训练、自验证奖励和规划可靠性直接相关；水风险中等，因为主要证据来自自建闭环 benchmark。",
+        "reason": "强相关：长程世界模型、RL 后训练、自验证奖励和规划可靠性直接相关；水风险中等，因为主要证据来自自建闭环 benchmark。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Bohai Gu",
+          "Yueyang Yuan",
+          "Taiyi Wu",
+          "Dazhao Du",
+          "Jian Liu",
+          "Xiaoyi Pang",
+          "Jie Zhang",
+          "Xiaocheng Lu",
+          "Haobin Zhong",
+          "Xiaotong Zhao",
+          "Alan Zhao",
+          "Song Guo"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04964v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：长程世界模型、RL 后训练、自验证奖励和规划可靠性直接相关；水风险中等，因为主要证据来自自建闭环 benchmark。",
+        "summary": "这篇论文研究交互式视频世界模型在长程 rollout 中的误差累积问题。WorldCycle 的核心思路是把动作序列和逆动作拼成闭环，利用“应回到初始状态”的代数约束构造无标注长程奖励；空间闭合奖励定位正反向镜像帧漂移，时间一致性奖励约束重复循环中的同一动作保持稳定。CycleBench 实验显示它能降低状态返回漂移并显著改善基础模型的复合动作失效。阅读价值在于它给 agentic RL 提供了一种可构造 verifier 的范式，而不是仅仅展示视频生成效果；局限是闭环假设窄，且未验证下游规划收益。",
+        "highlights": [
+          "强相关：长程世界模型、RL 后训练、自验证奖励和规划可靠性直接相关；水风险中等，因为主要证据来自自建闭环 benchmark。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "交互式视频世界模型可作为 embodied agent、机器人和游戏式环境的长程规划模拟器，但自回归 rollout 会让局部动作误差随时间累积。普通动作序列缺少真实未来状态，导致 RL 后训练无法直接验证长程状态是否正确。论文抓住可逆动作闭环这一特殊结构：正向动作接反向动作应回到初始状态，因此可以构造无需人工未来标注的长程 verifier。",
+        "method": "WorldCycle 从普通动作序列构造闭合及重复执行的可逆 action cycle。空间闭合奖励用点跟踪比较正向与反向镜像帧，把终点约束变成逐段密集监督；时间一致性奖励比较多次循环中相同相位的帧，惩罚同一动作在不同 rollout 深度产生不同转移。训练时先做空间奖励 warm-up，再联合优化空间、时间、动作跟随和视觉质量奖励，并用多尺度 cycle 采样减少模型记住固定反转位置的 shortcut。",
+        "experiments": "作者发布 CycleBench，覆盖可逆、非回溯闭环、重复循环、级联循环和复合动作，并在 125/253/381 帧长程设置上评测。相对 WorldCompass，WorldCycle 在短程端点闭合误差、反向路径误差和重复循环漂移上都有明显下降；复合动作准确率相对基础 WorldPlay 接近四倍。不过长程 381 帧动作准确率仍很低，且实验没有证明这些世界模型改进会直接提升下游 agent planning 成功率。",
+        "research_help": "Insight：当开放式长程轨迹没有真实标签时，可以主动构造回滚、可逆、幂等或可交换的动作程序，用代数不变量做自生成 verifier。对 agentic RL 来说，这提示过程奖励不一定来自人工标注或外部 judge，也可以来自环境操作本身的可恢复性约束；但真实工具环境往往只有近似可逆性，因此需要结合状态快照、事务日志和语义状态差分来做软闭环验证。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强机制启发，外部有效性待验证",
+          "water_risk": "中",
+          "value_judgement": "强相关：长程世界模型、RL 后训练、自验证奖励和规划可靠性直接相关；水风险中等，因为主要证据来自自建闭环 benchmark。",
+          "reason": "强相关：长程世界模型、RL 后训练、自验证奖励和规划可靠性直接相关；水风险中等，因为主要证据来自自建闭环 benchmark。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：当开放式长程轨迹没有真实标签时，可以主动构造回滚、可逆、幂等或可交换的动作程序，用代数不变量做自生成 verifier。对 agentic RL 来说，这提示过程奖励不一定来自人工标注或外部 judge，也可以来自环境操作本身的可恢复性约束；但真实工具环境往往只有近似可逆性，因此需要结合状态快照、事务日志和语义状态差分来做软闭环验证。",
+        "abstract_zh": "交互式视频世界模型对长程规划与探索很重要，但自回归生成中的误差会不断累积。强化学习后训练可以改善模型，却面临验证瓶颈：任意动作序列通常没有真实未来状态可供比较。WorldCycle 利用可逆动作循环必然返回初始状态这一性质，构造闭合及重复循环，并使用空间闭合与时间一致性两种奖励进行自验证训练。该训练促使模型把动作学习为一致的状态算子，并能扩展到分布外复合动作。论文还提出 CycleBench，并报告状态返回漂移最多降低 44%、复合动作准确率相对基础模型接近四倍。",
+        "full_summary": "这篇论文研究交互式视频世界模型在长程 rollout 中的误差累积问题。WorldCycle 的核心思路是把动作序列和逆动作拼成闭环，利用“应回到初始状态”的代数约束构造无标注长程奖励；空间闭合奖励定位正反向镜像帧漂移，时间一致性奖励约束重复循环中的同一动作保持稳定。CycleBench 实验显示它能降低状态返回漂移并显著改善基础模型的复合动作失效。阅读价值在于它给 agentic RL 提供了一种可构造 verifier 的范式，而不是仅仅展示视频生成效果；局限是闭环假设窄，且未验证下游规划收益。",
+        "card_summary": "WorldCycle 用可逆动作闭环为长程视频世界模型构造自验证 RL 信号，把无法标注的未来状态转成空间闭合和时间一致性约束。它对长程 agent 世界模型的 verifier 设计很有启发，但当前证据仍主要停留在 CycleBench 的状态返回指标。"
+      },
+      "analysis": {
+        "motivation": "交互式视频世界模型可作为 embodied agent、机器人和游戏式环境的长程规划模拟器，但自回归 rollout 会让局部动作误差随时间累积。普通动作序列缺少真实未来状态，导致 RL 后训练无法直接验证长程状态是否正确。论文抓住可逆动作闭环这一特殊结构：正向动作接反向动作应回到初始状态，因此可以构造无需人工未来标注的长程 verifier。",
+        "method": "WorldCycle 从普通动作序列构造闭合及重复执行的可逆 action cycle。空间闭合奖励用点跟踪比较正向与反向镜像帧，把终点约束变成逐段密集监督；时间一致性奖励比较多次循环中相同相位的帧，惩罚同一动作在不同 rollout 深度产生不同转移。训练时先做空间奖励 warm-up，再联合优化空间、时间、动作跟随和视觉质量奖励，并用多尺度 cycle 采样减少模型记住固定反转位置的 shortcut。",
+        "experiments": "作者发布 CycleBench，覆盖可逆、非回溯闭环、重复循环、级联循环和复合动作，并在 125/253/381 帧长程设置上评测。相对 WorldCompass，WorldCycle 在短程端点闭合误差、反向路径误差和重复循环漂移上都有明显下降；复合动作准确率相对基础 WorldPlay 接近四倍。不过长程 381 帧动作准确率仍很低，且实验没有证明这些世界模型改进会直接提升下游 agent planning 成功率。",
+        "research_help": "Insight：当开放式长程轨迹没有真实标签时，可以主动构造回滚、可逆、幂等或可交换的动作程序，用代数不变量做自生成 verifier。对 agentic RL 来说，这提示过程奖励不一定来自人工标注或外部 judge，也可以来自环境操作本身的可恢复性约束；但真实工具环境往往只有近似可逆性，因此需要结合状态快照、事务日志和语义状态差分来做软闭环验证。",
+        "insight": "Insight：当开放式长程轨迹没有真实标签时，可以主动构造回滚、可逆、幂等或可交换的动作程序，用代数不变量做自生成 verifier。对 agentic RL 来说，这提示过程奖励不一定来自人工标注或外部 judge，也可以来自环境操作本身的可恢复性约束；但真实工具环境往往只有近似可逆性，因此需要结合状态快照、事务日志和语义状态差分来做软闭环验证。",
+        "abstract_zh": "交互式视频世界模型对长程规划与探索很重要，但自回归生成中的误差会不断累积。强化学习后训练可以改善模型，却面临验证瓶颈：任意动作序列通常没有真实未来状态可供比较。WorldCycle 利用可逆动作循环必然返回初始状态这一性质，构造闭合及重复循环，并使用空间闭合与时间一致性两种奖励进行自验证训练。该训练促使模型把动作学习为一致的状态算子，并能扩展到分布外复合动作。论文还提出 CycleBench，并报告状态返回漂移最多降低 44%、复合动作准确率相对基础模型接近四倍。",
+        "card_summary": "WorldCycle 用可逆动作闭环为长程视频世界模型构造自验证 RL 信号，把无法标注的未来状态转成空间闭合和时间一致性约束。它对长程 agent 世界模型的 verifier 设计很有启发，但当前证据仍主要停留在 CycleBench 的状态返回指标。",
+        "full_summary": "这篇论文研究交互式视频世界模型在长程 rollout 中的误差累积问题。WorldCycle 的核心思路是把动作序列和逆动作拼成闭环，利用“应回到初始状态”的代数约束构造无标注长程奖励；空间闭合奖励定位正反向镜像帧漂移，时间一致性奖励约束重复循环中的同一动作保持稳定。CycleBench 实验显示它能降低状态返回漂移并显著改善基础模型的复合动作失效。阅读价值在于它给 agentic RL 提供了一种可构造 verifier 的范式，而不是仅仅展示视频生成效果；局限是闭环假设窄，且未验证下游规划收益。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强机制启发，外部有效性待验证",
+        "value_reason": "强相关：长程世界模型、RL 后训练、自验证奖励和规划可靠性直接相关；水风险中等，因为主要证据来自自建闭环 benchmark。",
+        "limitations": "严格可逆动作只覆盖有限动力学；长程动作准确率仍低；缺少下游 agent planning 任务验证。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文显示方法包含 spatial closure reward 和 temporal consistency reward。",
+          "CycleBench 报告 state-returning drift 与 composite-action accuracy 改善。",
+          "论文明确讨论 long-horizon planning and exploration。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.397Z"
+      }
+    },
+    {
+      "id": "2608.04843v1",
+      "title": "MemoryCPT: An End-to-End Agent Memory Framework for Cost-Performance Trade-off",
+      "summary": "Long-horizon LLM agents require memory systems that recover useful evidence from large interaction histories without passing excessive context to downstream models. Existing memory pipelines often rely on hand-crafted heuristics and repeated LLM calls, which can introduce redundant context and high inference cost. We propose MemoryCPT, an end-to-end trainable agent memory pipeline that spans offline memory construction and online query-conditioned context generation. MemoryCPT consists of two stages: Query-agnostic Distillation (QAD), which distills a modular memory-construction pipeline into a compact model using explicit reasoning traces; and Query-aware Retrieval and Summarization (QAR), which combines reciprocal rank fusion (RRF) with a LoRA-based summarizer trained via Group Relative Policy Optimization (GRPO) under a cost-aware reward. We further introduce Quality per Cost (QPC) to quantify answer quality per unit inference cost. Experiments on LoCoMo and LongMemEval show that MemoryCPT improves the cost-performance trade-off over the evaluated baselines, while ablation and sensitivity analyses characterize the contributions of its components and the effects of key design choices.",
+      "url": "http://arxiv.org/abs/2608.04843v1",
+      "authors": [
+        "Songxin Lei",
+        "Kun Ouyang",
+        "Weilin Ruan",
+        "Yuqian Wu",
+        "Zhijiang Guo",
+        "Yushi Sun",
+        "Fugee Tsung"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强相关记忆训练框架",
+        "water_risk": "低",
+        "value_judgement": "强相关：直接处理 long-horizon LLM agents 的 memory construction、query-time compression 和成本-性能优化。",
+        "reason": "强相关：直接处理 long-horizon LLM agents 的 memory construction、query-time compression 和成本-性能优化。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Songxin Lei",
+          "Kun Ouyang",
+          "Weilin Ruan",
+          "Yuqian Wu",
+          "Zhijiang Guo",
+          "Yushi Sun",
+          "Fugee Tsung"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04843v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接处理 long-horizon LLM agents 的 memory construction、query-time compression 和成本-性能优化。",
+        "summary": "这篇论文面向长程 LLM agent 的记忆成本问题：历史越长，直接塞上下文越贵也越噪。MemoryCPT 用 query-agnostic distillation 学会从原始交互构造 episodic/semantic memory，再用 query-aware refinement 在具体查询下生成细粒度摘要，并用 one-step bandit 同时优化答案质量与上下文成本。LoCoMo 和 LongMemEval 实验显示它比若干检索/摘要基线有更好的 cost-performance 取舍。阅读价值在于把 agent memory 从静态工程管线转成可训练决策问题；局限是证据集中在 QA 式记忆使用，而非真实长程行动。",
+        "highlights": [
+          "强相关：直接处理 long-horizon LLM agents 的 memory construction、query-time compression 和成本-性能优化。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "长程 LLM agent 的记忆系统需要从不断增长的交互历史中恢复少量有用证据，而不是把大量上下文直接塞给下游模型。现有方法常依赖手工规则、多次 LLM 调用或固定压缩流程，容易带来冗余上下文和高推理成本。MemoryCPT 的问题定义很清楚：记忆系统不只要提高回答质量，还要优化单位推理成本产生的智能收益。",
+        "method": "MemoryCPT 把 agent memory 管线拆成两个可训练阶段：Query-agnostic Distillation 先从原始会话中学习压缩、分段、episodic/semantic memory 构造；Query-aware Refinement 再针对具体查询从候选记忆中生成细粒度摘要。第二阶段被建模为 one-step bandit，用可访问性、token 成本和最终 QA 质量共同定义 reward，从而直接优化 cost-performance trade-off，而不是只追求召回更多上下文。",
+        "experiments": "论文在 LoCoMo 和 LongMemEval 上比较 MemoryCPT 与检索、摘要、记忆系统基线，报告在成本和答案质量之间取得更好的 Pareto 取舍。消融显示 query-aware refinement、RRF 检索和 bandit 目标分别贡献效果；敏感性分析讨论候选数量和摘要长度的影响。局限是任务主要是长历史问答，尚未证明对真实工具 agent 的规划、恢复和行动成功率有直接提升。",
+        "research_help": "Insight：agent memory 的训练目标不应只写成“记住更多”或“检索更准”，而应显式把上下文成本、证据可恢复性和任务收益放进同一个优化目标。对多轮 agent planning 来说，MemoryCPT 提醒我们可以把记忆构造、检索和 query-time 压缩看成可学习 policy，并用下游成功率或 verifier 反馈来训练，而不是把 memory 作为固定工程模块。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强相关记忆训练框架",
+          "water_risk": "低",
+          "value_judgement": "强相关：直接处理 long-horizon LLM agents 的 memory construction、query-time compression 和成本-性能优化。",
+          "reason": "强相关：直接处理 long-horizon LLM agents 的 memory construction、query-time compression 和成本-性能优化。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：agent memory 的训练目标不应只写成“记住更多”或“检索更准”，而应显式把上下文成本、证据可恢复性和任务收益放进同一个优化目标。对多轮 agent planning 来说，MemoryCPT 提醒我们可以把记忆构造、检索和 query-time 压缩看成可学习 policy，并用下游成功率或 verifier 反馈来训练，而不是把 memory 作为固定工程模块。",
+        "abstract_zh": "Long-horizon LLM agents require memory systems that recover useful evidence from large interaction histories without passing excessive context to downstream models. Existing memory pipelines often rely on hand-crafted heuristics and repeated LLM calls, which can introduce redundant context and high inference cost. We propose MemoryCPT, an end-to-end trainable agent memory pipeline that spans offline memory construction and online query-conditioned context generation. MemoryCPT consists of two stages: Query-agnostic Distillation (QAD), which distills a modular memory-construction pipeline into a compact model using explicit reasoning traces; and Query-aware Retrieval and Summarization (QAR), which combines reciprocal rank fusion (RRF) with a LoRA-based summarizer trained via Group Relative Policy Optimization (GRPO) under a cost-aware reward. We further introduce Quality per Cost (QPC) t…",
+        "full_summary": "这篇论文面向长程 LLM agent 的记忆成本问题：历史越长，直接塞上下文越贵也越噪。MemoryCPT 用 query-agnostic distillation 学会从原始交互构造 episodic/semantic memory，再用 query-aware refinement 在具体查询下生成细粒度摘要，并用 one-step bandit 同时优化答案质量与上下文成本。LoCoMo 和 LongMemEval 实验显示它比若干检索/摘要基线有更好的 cost-performance 取舍。阅读价值在于把 agent memory 从静态工程管线转成可训练决策问题；局限是证据集中在 QA 式记忆使用，而非真实长程行动。",
+        "card_summary": "MemoryCPT 把长程 agent memory 做成端到端可训练的成本-性能优化管线，先学习离线记忆构造，再按查询压缩证据。它对“记忆是否值得占用上下文”这个问题给出了比普通检索更直接的训练目标。"
+      },
+      "analysis": {
+        "motivation": "长程 LLM agent 的记忆系统需要从不断增长的交互历史中恢复少量有用证据，而不是把大量上下文直接塞给下游模型。现有方法常依赖手工规则、多次 LLM 调用或固定压缩流程，容易带来冗余上下文和高推理成本。MemoryCPT 的问题定义很清楚：记忆系统不只要提高回答质量，还要优化单位推理成本产生的智能收益。",
+        "method": "MemoryCPT 把 agent memory 管线拆成两个可训练阶段：Query-agnostic Distillation 先从原始会话中学习压缩、分段、episodic/semantic memory 构造；Query-aware Refinement 再针对具体查询从候选记忆中生成细粒度摘要。第二阶段被建模为 one-step bandit，用可访问性、token 成本和最终 QA 质量共同定义 reward，从而直接优化 cost-performance trade-off，而不是只追求召回更多上下文。",
+        "experiments": "论文在 LoCoMo 和 LongMemEval 上比较 MemoryCPT 与检索、摘要、记忆系统基线，报告在成本和答案质量之间取得更好的 Pareto 取舍。消融显示 query-aware refinement、RRF 检索和 bandit 目标分别贡献效果；敏感性分析讨论候选数量和摘要长度的影响。局限是任务主要是长历史问答，尚未证明对真实工具 agent 的规划、恢复和行动成功率有直接提升。",
+        "research_help": "Insight：agent memory 的训练目标不应只写成“记住更多”或“检索更准”，而应显式把上下文成本、证据可恢复性和任务收益放进同一个优化目标。对多轮 agent planning 来说，MemoryCPT 提醒我们可以把记忆构造、检索和 query-time 压缩看成可学习 policy，并用下游成功率或 verifier 反馈来训练，而不是把 memory 作为固定工程模块。",
+        "insight": "Insight：agent memory 的训练目标不应只写成“记住更多”或“检索更准”，而应显式把上下文成本、证据可恢复性和任务收益放进同一个优化目标。对多轮 agent planning 来说，MemoryCPT 提醒我们可以把记忆构造、检索和 query-time 压缩看成可学习 policy，并用下游成功率或 verifier 反馈来训练，而不是把 memory 作为固定工程模块。",
+        "abstract_zh": "Long-horizon LLM agents require memory systems that recover useful evidence from large interaction histories without passing excessive context to downstream models. Existing memory pipelines often rely on hand-crafted heuristics and repeated LLM calls, which can introduce redundant context and high inference cost. We propose MemoryCPT, an end-to-end trainable agent memory pipeline that spans offline memory construction and online query-conditioned context generation. MemoryCPT consists of two stages: Query-agnostic Distillation (QAD), which distills a modular memory-construction pipeline into a compact model using explicit reasoning traces; and Query-aware Retrieval and Summarization (QAR), which combines reciprocal rank fusion (RRF) with a LoRA-based summarizer trained via Group Relative Policy Optimization (GRPO) under a cost-aware reward. We further introduce Quality per Cost (QPC) t…",
+        "card_summary": "MemoryCPT 把长程 agent memory 做成端到端可训练的成本-性能优化管线，先学习离线记忆构造，再按查询压缩证据。它对“记忆是否值得占用上下文”这个问题给出了比普通检索更直接的训练目标。",
+        "full_summary": "这篇论文面向长程 LLM agent 的记忆成本问题：历史越长，直接塞上下文越贵也越噪。MemoryCPT 用 query-agnostic distillation 学会从原始交互构造 episodic/semantic memory，再用 query-aware refinement 在具体查询下生成细粒度摘要，并用 one-step bandit 同时优化答案质量与上下文成本。LoCoMo 和 LongMemEval 实验显示它比若干检索/摘要基线有更好的 cost-performance 取舍。阅读价值在于把 agent memory 从静态工程管线转成可训练决策问题；局限是证据集中在 QA 式记忆使用，而非真实长程行动。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强相关记忆训练框架",
+        "value_reason": "强相关：直接处理 long-horizon LLM agents 的 memory construction、query-time compression 和成本-性能优化。",
+        "limitations": "主要评测长历史问答；对工具执行、规划恢复和跨任务行动成功率的影响仍需验证。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文方法包含 Query-agnostic Distillation 与 Query-aware Refinement。",
+          "实验覆盖 LoCoMo 和 LongMemEval。",
+          "目标明确包含 cost-performance trade-off。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.398Z"
+      }
+    },
+    {
+      "id": "2608.04436v1",
+      "title": "ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation",
+      "summary": "Text-to-image (T2I) models can produce visually compelling images, yet they remain limited on open-world tasks that require complex semantic understanding, multi-step reasoning, and the integration of external world knowledge. Existing efforts introduce agent capabilities into image generation, but they either prescribe a fixed workflow or place only a subset of the open-world image generation process under agent control. Consequently, reasoning, tool invocation, and image generation are not coordinated by a single policy. We propose ToolArtist, a fully agentic image generation model obtained by post-training a Unified Multimodal Model (UMM). ToolArtist dynamically orchestrates reasoning, external tool use, and native image generation within one unified policy. During Supervised Fine-Tuning (SFT), we equip a teacher agent with search tools alongside an image-generation tool. We then convert the collected trajectories into a UMM compatible format, where the image-generation tool is concealed while the resulting generated images are retained. During Reinforcement Learning (RL), we develop an agentic RL infrastructure for UMMs and introduce Reason-Act-Draw GRPO (RAD-GRPO), which uses complementary intent and quality rewards to jointly optimize the model. Experiments show that placing the entire open-world image-generation process under an agent policy consistently outperforms approaches with fixed pipelines or only partially agent-controlled components. We release the training data and the complete post-training infrastructure.",
+      "url": "http://arxiv.org/abs/2608.04436v1",
+      "authors": [
+        "Jiahao Zhao",
+        "Xiaomin Yu",
+        "Zhongxiang Sun",
+        "Fengwei Teng",
+        "Chengwei Qin",
+        "Xiaobin Hu",
+        "Jun Xu",
+        "Shuicheng Yan"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "强 agentic RL 案例但领域较窄",
+        "water_risk": "中",
+        "value_judgement": "相关：完整多轮工具调用与生成 action 统一训练，直接涉及 agentic RL；偏窄：核心任务是图像生成。",
+        "reason": "相关：完整多轮工具调用与生成 action 统一训练，直接涉及 agentic RL；偏窄：核心任务是图像生成。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jiahao Zhao",
+          "Xiaomin Yu",
+          "Zhongxiang Sun",
+          "Fengwei Teng",
+          "Chengwei Qin",
+          "Xiaobin Hu",
+          "Jun Xu",
+          "Shuicheng Yan"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04436v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "相关：完整多轮工具调用与生成 action 统一训练，直接涉及 agentic RL；偏窄：核心任务是图像生成。",
+        "summary": "这篇论文把开放世界图像生成重写为 agentic trajectory：模型可以推理、调用文本/图像搜索、吸收证据，并直接生成或修订图像。SFT 阶段用 teacher agent 产生多轮工具轨迹，再转成统一多模态模型可学习的原生视觉 token 轨迹；RL 阶段用 RAD-GRPO 将 intent reward 和 image quality reward 合并，训练完整的 reason-act-draw 策略。WISE 和 WorldGenBench-Humanities 结果显示它优于若干固定 pipeline 或部分 agent-controlled 的开源方法。阅读价值在于 agentic RL 的轨迹建模和奖励拆分，局限是其外部有效性主要限于图像生成。",
+        "highlights": [
+          "相关：完整多轮工具调用与生成 action 统一训练，直接涉及 agentic RL；偏窄：核心任务是图像生成。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "开放世界图像生成常需要先搜索事实、理解长尾知识、整合视觉参考，再生成图像。固定 pipeline 或外部 prompt-optimization agent 只把部分流程交给 agent 控制，没有让同一个策略学习何时搜索、如何用证据、何时生成或修订。ToolArtist 因此把图像生成也看成 agent policy 的一个 action。",
+        "method": "ToolArtist 基于统一多模态模型，把 reasoning、TextSearch、ImageSearch 和 native image generation 放进同一自回归轨迹。SFT 阶段用带搜索和外部图像生成工具的 teacher agent 产生多轮轨迹，再把外部生成步骤转换成 UMM 原生视觉 token 监督。RL 阶段提出 RAD-GRPO，用 intent reward 评估最终视觉意图是否充分准确，用 quality reward 评估图像是否满足请求和意图，并加入格式、draw signal、长度和 no-draw 辅助奖励。",
+        "experiments": "论文在 WISE 和 WorldGenBench-Humanities 上评测，ToolArtist 在非闭源方法中取得较强总体结果；在 WISE 平均分达到 0.79，在 WorldGenBench-Humanities 平均 KCS 为 22.10，优于若干开源 agentic image generation baseline。消融显示 source-aware image search summary 对结果影响很大，RL 训练曲线也显示 reward 上升且没有明显 entropy collapse。局限是任务仍是图像生成，agentic RL 结论是否迁移到通用工具 agent 需要谨慎。",
+        "research_help": "Insight：这篇论文最有价值的是把“最终产物生成”也纳入 agent action space，而不是让 agent 只负责查资料或改 prompt。对工具 agent 训练来说，SFT teacher trajectory 到统一 policy 轨迹的转换、以及同时奖励 intent 和 final artifact 的 RAD-GRPO，提供了可借鉴的 credit assignment 结构；但如果研究目标是通用 planning reliability，应把它当作 domain-specific agentic RL 案例，而非通用 agent benchmark 证据。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强 agentic RL 案例但领域较窄",
+          "water_risk": "中",
+          "value_judgement": "相关：完整多轮工具调用与生成 action 统一训练，直接涉及 agentic RL；偏窄：核心任务是图像生成。",
+          "reason": "相关：完整多轮工具调用与生成 action 统一训练，直接涉及 agentic RL；偏窄：核心任务是图像生成。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇论文最有价值的是把“最终产物生成”也纳入 agent action space，而不是让 agent 只负责查资料或改 prompt。对工具 agent 训练来说，SFT teacher trajectory 到统一 policy 轨迹的转换、以及同时奖励 intent 和 final artifact 的 RAD-GRPO，提供了可借鉴的 credit assignment 结构；但如果研究目标是通用 planning reliability，应把它当作 domain-specific agentic RL 案例，而非通用 agent benchmark 证据。",
+        "abstract_zh": "Text-to-image (T2I) models can produce visually compelling images, yet they remain limited on open-world tasks that require complex semantic understanding, multi-step reasoning, and the integration of external world knowledge. Existing efforts introduce agent capabilities into image generation, but they either prescribe a fixed workflow or place only a subset of the open-world image generation process under agent control. Consequently, reasoning, tool invocation, and image generation are not coordinated by a single policy. We propose ToolArtist, a fully agentic image generation model obtained by post-training a Unified Multimodal Model (UMM). ToolArtist dynamically orchestrates reasoning, external tool use, and native image generation within one unified policy. During Supervised Fine-Tuning (SFT), we equip a teacher agent with search tools alongside an image-generation tool. We then con…",
+        "full_summary": "这篇论文把开放世界图像生成重写为 agentic trajectory：模型可以推理、调用文本/图像搜索、吸收证据，并直接生成或修订图像。SFT 阶段用 teacher agent 产生多轮工具轨迹，再转成统一多模态模型可学习的原生视觉 token 轨迹；RL 阶段用 RAD-GRPO 将 intent reward 和 image quality reward 合并，训练完整的 reason-act-draw 策略。WISE 和 WorldGenBench-Humanities 结果显示它优于若干固定 pipeline 或部分 agent-controlled 的开源方法。阅读价值在于 agentic RL 的轨迹建模和奖励拆分，局限是其外部有效性主要限于图像生成。",
+        "card_summary": "ToolArtist 将搜索、证据整合和原生图像生成统一到同一个多模态 agent policy，并用 RAD-GRPO 同时奖励生成意图和最终图像质量。它是较强的 agentic RL 工具使用案例，但主题偏图像生成。"
+      },
+      "analysis": {
+        "motivation": "开放世界图像生成常需要先搜索事实、理解长尾知识、整合视觉参考，再生成图像。固定 pipeline 或外部 prompt-optimization agent 只把部分流程交给 agent 控制，没有让同一个策略学习何时搜索、如何用证据、何时生成或修订。ToolArtist 因此把图像生成也看成 agent policy 的一个 action。",
+        "method": "ToolArtist 基于统一多模态模型，把 reasoning、TextSearch、ImageSearch 和 native image generation 放进同一自回归轨迹。SFT 阶段用带搜索和外部图像生成工具的 teacher agent 产生多轮轨迹，再把外部生成步骤转换成 UMM 原生视觉 token 监督。RL 阶段提出 RAD-GRPO，用 intent reward 评估最终视觉意图是否充分准确，用 quality reward 评估图像是否满足请求和意图，并加入格式、draw signal、长度和 no-draw 辅助奖励。",
+        "experiments": "论文在 WISE 和 WorldGenBench-Humanities 上评测，ToolArtist 在非闭源方法中取得较强总体结果；在 WISE 平均分达到 0.79，在 WorldGenBench-Humanities 平均 KCS 为 22.10，优于若干开源 agentic image generation baseline。消融显示 source-aware image search summary 对结果影响很大，RL 训练曲线也显示 reward 上升且没有明显 entropy collapse。局限是任务仍是图像生成，agentic RL 结论是否迁移到通用工具 agent 需要谨慎。",
+        "research_help": "Insight：这篇论文最有价值的是把“最终产物生成”也纳入 agent action space，而不是让 agent 只负责查资料或改 prompt。对工具 agent 训练来说，SFT teacher trajectory 到统一 policy 轨迹的转换、以及同时奖励 intent 和 final artifact 的 RAD-GRPO，提供了可借鉴的 credit assignment 结构；但如果研究目标是通用 planning reliability，应把它当作 domain-specific agentic RL 案例，而非通用 agent benchmark 证据。",
+        "insight": "Insight：这篇论文最有价值的是把“最终产物生成”也纳入 agent action space，而不是让 agent 只负责查资料或改 prompt。对工具 agent 训练来说，SFT teacher trajectory 到统一 policy 轨迹的转换、以及同时奖励 intent 和 final artifact 的 RAD-GRPO，提供了可借鉴的 credit assignment 结构；但如果研究目标是通用 planning reliability，应把它当作 domain-specific agentic RL 案例，而非通用 agent benchmark 证据。",
+        "abstract_zh": "Text-to-image (T2I) models can produce visually compelling images, yet they remain limited on open-world tasks that require complex semantic understanding, multi-step reasoning, and the integration of external world knowledge. Existing efforts introduce agent capabilities into image generation, but they either prescribe a fixed workflow or place only a subset of the open-world image generation process under agent control. Consequently, reasoning, tool invocation, and image generation are not coordinated by a single policy. We propose ToolArtist, a fully agentic image generation model obtained by post-training a Unified Multimodal Model (UMM). ToolArtist dynamically orchestrates reasoning, external tool use, and native image generation within one unified policy. During Supervised Fine-Tuning (SFT), we equip a teacher agent with search tools alongside an image-generation tool. We then con…",
+        "card_summary": "ToolArtist 将搜索、证据整合和原生图像生成统一到同一个多模态 agent policy，并用 RAD-GRPO 同时奖励生成意图和最终图像质量。它是较强的 agentic RL 工具使用案例，但主题偏图像生成。",
+        "full_summary": "这篇论文把开放世界图像生成重写为 agentic trajectory：模型可以推理、调用文本/图像搜索、吸收证据，并直接生成或修订图像。SFT 阶段用 teacher agent 产生多轮工具轨迹，再转成统一多模态模型可学习的原生视觉 token 轨迹；RL 阶段用 RAD-GRPO 将 intent reward 和 image quality reward 合并，训练完整的 reason-act-draw 策略。WISE 和 WorldGenBench-Humanities 结果显示它优于若干固定 pipeline 或部分 agent-controlled 的开源方法。阅读价值在于 agentic RL 的轨迹建模和奖励拆分，局限是其外部有效性主要限于图像生成。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强 agentic RL 案例但领域较窄",
+        "value_reason": "相关：完整多轮工具调用与生成 action 统一训练，直接涉及 agentic RL；偏窄：核心任务是图像生成。",
+        "limitations": "结论主要来自图像生成 benchmark；奖励模型和评测与通用 agent planning 不同。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文描述 Reason-Act-Draw GRPO。",
+          "实验包含 WISE 和 WorldGenBench-Humanities。",
+          "论文公开 SFT 数据和 RL infrastructure。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.398Z"
+      }
+    },
+    {
+      "id": "2608.04765v1",
+      "title": "Explicit Language Memory for Long-Horizon Planning in Vision-Language-Action Models",
+      "summary": "Vision-language-action (VLA) models provide a unified paradigm for connecting visual perception, language understanding, and robotic control. However, existing VLA models still face major challenges in long-horizon tasks: sparse expert demonstrations constrain cross-task compositional generalization; the non-Markovian nature of long-horizon tasks makes it difficult for policies conditioned only on current observations to maintain temporal consistency; limited closed-loop error correction allows execution errors to accumulate; and end-to-end action fine-tuning may weaken the high-level semantic representations of vision-language model (VLM) backbones. To address these issues, we propose a hierarchical long-horizon VLA architecture with an explicit language-memory module. The central idea is to convert discrete temporal observations into a coherent textual memory sequence with temporal logic. The system is decoupled into a high-level VLM and a low-level VLA: the high-level VLM performs semantic reasoning through a visual question answering training paradigm, while the low-level VLA executes precise continuous control conditioned on subtask instructions and visual observations. The high-level VLM recursively updates both language memory and subtask instructions using the previous memory as a contextual anchor, enabling persistent temporal tracking and dynamic correction during long-horizon execution. We evaluate the proposed method in multiple simulation environments and conduct sim-to-real experiments on a real robotic platform. The results demonstrate that explicit language memory improves the success rate and robustness of VLA models on complex long-horizon tasks while providing an interpretable semantic account of the decision process.",
+      "url": "http://arxiv.org/abs/2608.04765v1",
+      "authors": [
+        "Houze Xu",
+        "Jizhong Li",
+        "Ziyi Ye"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 82,
+        "level": "高",
+        "label": "强 long-horizon memory 案例",
+        "water_risk": "中",
+        "value_judgement": "强相关：直接处理长程任务状态、语言记忆、闭环错误修正和 planning reliability。",
+        "reason": "强相关：直接处理长程任务状态、语言记忆、闭环错误修正和 planning reliability。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Houze Xu",
+          "Jizhong Li",
+          "Ziyi Ye"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04765v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接处理长程任务状态、语言记忆、闭环错误修正和 planning reliability。",
+        "summary": "论文指出 VLA 模型在长程任务中仅凭当前观测容易丢失阶段状态，进而跳步、重复或把失败继续传递。作者提出层级 VLA：高层 VLM 把离散观察写成有时间逻辑的语言记忆并生成子任务，低层 VLA 根据子任务执行动作。仿真和真实机器人实验显示显式语言记忆能提升成功率和鲁棒性，同时提供可解释状态轨迹。阅读价值在于把 memory 作为 planning state 而非上下文堆叠；局限是实机评测小、延迟更高且低层控制失败仍无法由语言记忆完全修复。",
+        "highlights": [
+          "强相关：直接处理长程任务状态、语言记忆、闭环错误修正和 planning reliability。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "VLA 模型在长程机器人任务中常只看当前观测，难以区分已完成步骤、失败步骤和下一步语义状态，导致跳步、重复动作和错误累积。把所有历史帧拼进上下文会带来实时成本，也不一定形成可解释的任务状态。论文的动机是用显式语言记忆补足长程任务的非 Markov 性。",
+        "method": "系统把高层 VLM 与低层 VLA 解耦：高层 VLM 读取当前视觉、全局指令和上一轮语言记忆，更新带时间逻辑的文本状态，并生成当前子任务；低层 VLA 则根据子任务执行动作。语言记忆记录离散阶段、观察结果和失败反馈，使模型能在闭环中修正后续计划，而不需要端到端把完整历史都压进动作模型。",
+        "experiments": "论文在多个仿真环境和真实机器人平台上测试，报告显式语言记忆能提升复杂长程任务的成功率和鲁棒性，并让决策过程更可解释。限制也很明确：真实机器人评测只有较短 pick-and-place、25 条训练轨迹和 20 次评测，仿真结果缺少随机种子方差/置信区间，层级 VLM 调用还增加了延迟。",
+        "research_help": "Insight：对 long-horizon agent 来说，记忆不一定要是大段历史或向量库；一个可编辑的语言状态机就能承载“已完成/未完成/失败/需重试”的任务语义。这个设计适合借鉴到多轮工具 agent：让 planner 维护结构化文字状态，executor 只消费当前子目标，同时用执行反馈更新状态，避免低层策略背负全部历史。",
+        "recommendation": {
+          "score": 82,
+          "level": "高",
+          "label": "强 long-horizon memory 案例",
+          "water_risk": "中",
+          "value_judgement": "强相关：直接处理长程任务状态、语言记忆、闭环错误修正和 planning reliability。",
+          "reason": "强相关：直接处理长程任务状态、语言记忆、闭环错误修正和 planning reliability。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对 long-horizon agent 来说，记忆不一定要是大段历史或向量库；一个可编辑的语言状态机就能承载“已完成/未完成/失败/需重试”的任务语义。这个设计适合借鉴到多轮工具 agent：让 planner 维护结构化文字状态，executor 只消费当前子目标，同时用执行反馈更新状态，避免低层策略背负全部历史。",
+        "abstract_zh": "Vision-language-action (VLA) models provide a unified paradigm for connecting visual perception, language understanding, and robotic control. However, existing VLA models still face major challenges in long-horizon tasks: sparse expert demonstrations constrain cross-task compositional generalization; the non-Markovian nature of long-horizon tasks makes it difficult for policies conditioned only on current observations to maintain temporal consistency; limited closed-loop error correction allows execution errors to accumulate; and end-to-end action fine-tuning may weaken the high-level semantic representations of vision-language model (VLM) backbones. To address these issues, we propose a hierarchical long-horizon VLA architecture with an explicit language-memory module. The central idea is to convert discrete temporal observations into a coherent textual memory sequence with temporal lo…",
+        "full_summary": "论文指出 VLA 模型在长程任务中仅凭当前观测容易丢失阶段状态，进而跳步、重复或把失败继续传递。作者提出层级 VLA：高层 VLM 把离散观察写成有时间逻辑的语言记忆并生成子任务，低层 VLA 根据子任务执行动作。仿真和真实机器人实验显示显式语言记忆能提升成功率和鲁棒性，同时提供可解释状态轨迹。阅读价值在于把 memory 作为 planning state 而非上下文堆叠；局限是实机评测小、延迟更高且低层控制失败仍无法由语言记忆完全修复。",
+        "card_summary": "这篇 VLA 论文用显式语言记忆维护长程机器人任务状态，让高层 VLM 更新子任务、低层 VLA 执行动作。它直接命中 long-horizon planning 和 agent memory，但真实机器人证据规模仍小。"
+      },
+      "analysis": {
+        "motivation": "VLA 模型在长程机器人任务中常只看当前观测，难以区分已完成步骤、失败步骤和下一步语义状态，导致跳步、重复动作和错误累积。把所有历史帧拼进上下文会带来实时成本，也不一定形成可解释的任务状态。论文的动机是用显式语言记忆补足长程任务的非 Markov 性。",
+        "method": "系统把高层 VLM 与低层 VLA 解耦：高层 VLM 读取当前视觉、全局指令和上一轮语言记忆，更新带时间逻辑的文本状态，并生成当前子任务；低层 VLA 则根据子任务执行动作。语言记忆记录离散阶段、观察结果和失败反馈，使模型能在闭环中修正后续计划，而不需要端到端把完整历史都压进动作模型。",
+        "experiments": "论文在多个仿真环境和真实机器人平台上测试，报告显式语言记忆能提升复杂长程任务的成功率和鲁棒性，并让决策过程更可解释。限制也很明确：真实机器人评测只有较短 pick-and-place、25 条训练轨迹和 20 次评测，仿真结果缺少随机种子方差/置信区间，层级 VLM 调用还增加了延迟。",
+        "research_help": "Insight：对 long-horizon agent 来说，记忆不一定要是大段历史或向量库；一个可编辑的语言状态机就能承载“已完成/未完成/失败/需重试”的任务语义。这个设计适合借鉴到多轮工具 agent：让 planner 维护结构化文字状态，executor 只消费当前子目标，同时用执行反馈更新状态，避免低层策略背负全部历史。",
+        "insight": "Insight：对 long-horizon agent 来说，记忆不一定要是大段历史或向量库；一个可编辑的语言状态机就能承载“已完成/未完成/失败/需重试”的任务语义。这个设计适合借鉴到多轮工具 agent：让 planner 维护结构化文字状态，executor 只消费当前子目标，同时用执行反馈更新状态，避免低层策略背负全部历史。",
+        "abstract_zh": "Vision-language-action (VLA) models provide a unified paradigm for connecting visual perception, language understanding, and robotic control. However, existing VLA models still face major challenges in long-horizon tasks: sparse expert demonstrations constrain cross-task compositional generalization; the non-Markovian nature of long-horizon tasks makes it difficult for policies conditioned only on current observations to maintain temporal consistency; limited closed-loop error correction allows execution errors to accumulate; and end-to-end action fine-tuning may weaken the high-level semantic representations of vision-language model (VLM) backbones. To address these issues, we propose a hierarchical long-horizon VLA architecture with an explicit language-memory module. The central idea is to convert discrete temporal observations into a coherent textual memory sequence with temporal lo…",
+        "card_summary": "这篇 VLA 论文用显式语言记忆维护长程机器人任务状态，让高层 VLM 更新子任务、低层 VLA 执行动作。它直接命中 long-horizon planning 和 agent memory，但真实机器人证据规模仍小。",
+        "full_summary": "论文指出 VLA 模型在长程任务中仅凭当前观测容易丢失阶段状态，进而跳步、重复或把失败继续传递。作者提出层级 VLA：高层 VLM 把离散观察写成有时间逻辑的语言记忆并生成子任务，低层 VLA 根据子任务执行动作。仿真和真实机器人实验显示显式语言记忆能提升成功率和鲁棒性，同时提供可解释状态轨迹。阅读价值在于把 memory 作为 planning state 而非上下文堆叠；局限是实机评测小、延迟更高且低层控制失败仍无法由语言记忆完全修复。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强 long-horizon memory 案例",
+        "value_reason": "强相关：直接处理长程任务状态、语言记忆、闭环错误修正和 planning reliability。",
+        "limitations": "真实机器人实验规模小；层级 VLM 调用增加延迟；低层控制数据不足时记忆无法补救。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文明确提出 explicit language-memory module。",
+          "Limitations 写明实机评测规模和延迟问题。",
+          "实验包含 simulation 和 sim-to-real robot platform。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.398Z"
+      }
+    },
+    {
+      "id": "2608.04788v1",
+      "title": "Agentic Reinforcement Learning with Observation-Calibrated Self-Distillation",
+      "summary": "Large language model agents are commonly trained through reinforcement learning with sparse trajectory-level rewards, which offer limited guidance on how strongly individual tokens should be updated. On-Policy Self-Distillation (OPSD) addresses this by re-scoring generated tokens under a privileged replay view to obtain dense, token-level supervision. However, we identify a confounding issue: the resulting support may reflect both the privileged information contained in the replay view and score shifts induced by the replay scaffold, making it difficult to attribute the support specifically to that information. This issue is especially pronounced when future environment observations serve as privileged information, since replaying them requires reconstructing an extended scaffold that itself perturbs token scores. To resolve this confounding, we propose Observation-Calibrated Self-Distillation (OCSD), which contrasts two structurally matched replay views, Full and Observation-Ablated, differing only in whether the actual future observation is present, to derive an observation residual that discounts score changes shared by the replay scaffold. OCSD then applies this residual to modulate token-level GRPO updates at high-uncertainty steps, while preserving the trajectory-level update direction. Experiments on ALFWorld, WebShop, and Search-QA across three Qwen3 model scales show that OCSD consistently outperforms strong baselines. Diagnostic analyses further confirm that the calibrated residual aligns better with local environment feedback. Our code is publicly available at https://github.com/yiy1x/OCSD.",
+      "url": "http://arxiv.org/abs/2608.04788v1",
+      "authors": [
+        "Yi Yang",
+        "Cong Qin",
+        "Xiaodan Liu",
+        "Chishui Chen",
+        "Qing Dong",
+        "Yan Zhang",
+        "Cao Liu",
+        "Zhao Yang",
+        "Lu Pan",
+        "Jiaye Lin",
+        "Yi Feng"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/yiy1x/OCSD",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 80,
+        "level": "高",
+        "label": "强烈推荐",
+        "water_risk": "低",
+        "value_judgement": "强相关：直接面向 agentic RL、稀疏轨迹奖励、多轮环境反馈和 token-level credit assignment。",
+        "reason": "强相关：直接面向 agentic RL、稀疏轨迹奖励、多轮环境反馈和 token-level credit assignment。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yi Yang",
+          "Cong Qin",
+          "Xiaodan Liu",
+          "Chishui Chen",
+          "Qing Dong",
+          "Yan Zhang",
+          "Cao Liu",
+          "Zhao Yang",
+          "Lu Pan",
+          "Jiaye Lin",
+          "Yi Feng"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04788v1",
+        "project_url": "",
+        "repo_url": "https://github.com/yiy1x/OCSD",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接面向 agentic RL、稀疏轨迹奖励、多轮环境反馈和 token-level credit assignment。",
+        "summary": "这篇论文研究 LLM agent RL 中 token 级 self-distillation 的偏差：privileged replay view 不只包含未来观察，也包含会改变分数的 replay scaffold。OCSD 用 Full 与 Observation-Ablated 两个结构匹配视图相减，得到更接近未来 observation 本身贡献的 residual，再在高不确定步骤上调节 GRPO 更新。ALFWorld、WebShop 和 Search-QA 上的多模型实验显示它稳定优于若干基线，诊断也支持 residual 更符合局部环境反馈。阅读价值在于给多轮 agent credit assignment 提供了反事实校准思路。",
+        "highlights": [
+          "强相关：直接面向 agentic RL、稀疏轨迹奖励、多轮环境反馈和 token-level credit assignment。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "LLM agent 的 RL 训练常只有稀疏轨迹级奖励，难以判断每个 token 或动作片段该如何更新。On-policy self-distillation 用未来观察或完整轨迹构造 privileged replay view 来给 token 级监督，但这种 replay view 本身也会改变 token 分数，导致模型把 scaffold 效应误认为未来观察带来的有效反馈。",
+        "method": "OCSD 构造两个结构匹配的 replay view：Full view 包含真实未来 observation，Observation-Ablated view 保留同样 replay scaffold 但移除目标观察。两者的支持差值被视为 observation residual，用来校准 token-level self-distillation 信号。训练上，OCSD 只在高不确定步骤上用这个 residual 调节 GRPO 更新，同时保持轨迹级优势方向，避免 token 级信号推翻环境奖励。",
+        "experiments": "论文在 ALFWorld、WebShop 和 Search-QA 上评测 Qwen3 多个尺度，报告 OCSD 稳定优于 GRPO、OPSD 等强基线。诊断实验显示校准后的 residual 更贴近局部环境反馈，消融也支持 full/ablated 对照和 uncertainty gating 的作用。局限是仍依赖构造良好的 replay 视图与未来 observation，可迁移到更开放工具环境时需要额外验证。",
+        "research_help": "Insight：多轮 agentic RL 的核心不是简单把未来信息拿来蒸馏，而是要扣除 replay scaffold 自身造成的伪支持。OCSD 提供了一个有用范式：用结构匹配的 counterfactual view 隔离真正来自环境反馈的 credit，再把它作为局部调节项接入原有 trajectory-level RL。这个思想可迁移到工具错误、记忆写入和澄清动作的信用分配。",
+        "recommendation": {
+          "score": 80,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "强相关：直接面向 agentic RL、稀疏轨迹奖励、多轮环境反馈和 token-level credit assignment。",
+          "reason": "强相关：直接面向 agentic RL、稀疏轨迹奖励、多轮环境反馈和 token-level credit assignment。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：多轮 agentic RL 的核心不是简单把未来信息拿来蒸馏，而是要扣除 replay scaffold 自身造成的伪支持。OCSD 提供了一个有用范式：用结构匹配的 counterfactual view 隔离真正来自环境反馈的 credit，再把它作为局部调节项接入原有 trajectory-level RL。这个思想可迁移到工具错误、记忆写入和澄清动作的信用分配。",
+        "abstract_zh": "Large language model agents are commonly trained through reinforcement learning with sparse trajectory-level rewards, which offer limited guidance on how strongly individual tokens should be updated. On-Policy Self-Distillation (OPSD) addresses this by re-scoring generated tokens under a privileged replay view to obtain dense, token-level supervision. However, we identify a confounding issue: the resulting support may reflect both the privileged information contained in the replay view and score shifts induced by the replay scaffold, making it difficult to attribute the support specifically to that information. This issue is especially pronounced when future environment observations serve as privileged information, since replaying them requires reconstructing an extended scaffold that itself perturbs token scores. To resolve this confounding, we propose Observation-Calibrated Self-Disti…",
+        "full_summary": "这篇论文研究 LLM agent RL 中 token 级 self-distillation 的偏差：privileged replay view 不只包含未来观察，也包含会改变分数的 replay scaffold。OCSD 用 Full 与 Observation-Ablated 两个结构匹配视图相减，得到更接近未来 observation 本身贡献的 residual，再在高不确定步骤上调节 GRPO 更新。ALFWorld、WebShop 和 Search-QA 上的多模型实验显示它稳定优于若干基线，诊断也支持 residual 更符合局部环境反馈。阅读价值在于给多轮 agent credit assignment 提供了反事实校准思路。",
+        "card_summary": "OCSD 用 full replay 与 observation-ablated replay 的差值校准 self-distillation，减少未来观察监督中的 scaffold 偏差。它是今天最直接的 agentic RL / 多轮信用分配论文之一。"
+      },
+      "analysis": {
+        "motivation": "LLM agent 的 RL 训练常只有稀疏轨迹级奖励，难以判断每个 token 或动作片段该如何更新。On-policy self-distillation 用未来观察或完整轨迹构造 privileged replay view 来给 token 级监督，但这种 replay view 本身也会改变 token 分数，导致模型把 scaffold 效应误认为未来观察带来的有效反馈。",
+        "method": "OCSD 构造两个结构匹配的 replay view：Full view 包含真实未来 observation，Observation-Ablated view 保留同样 replay scaffold 但移除目标观察。两者的支持差值被视为 observation residual，用来校准 token-level self-distillation 信号。训练上，OCSD 只在高不确定步骤上用这个 residual 调节 GRPO 更新，同时保持轨迹级优势方向，避免 token 级信号推翻环境奖励。",
+        "experiments": "论文在 ALFWorld、WebShop 和 Search-QA 上评测 Qwen3 多个尺度，报告 OCSD 稳定优于 GRPO、OPSD 等强基线。诊断实验显示校准后的 residual 更贴近局部环境反馈，消融也支持 full/ablated 对照和 uncertainty gating 的作用。局限是仍依赖构造良好的 replay 视图与未来 observation，可迁移到更开放工具环境时需要额外验证。",
+        "research_help": "Insight：多轮 agentic RL 的核心不是简单把未来信息拿来蒸馏，而是要扣除 replay scaffold 自身造成的伪支持。OCSD 提供了一个有用范式：用结构匹配的 counterfactual view 隔离真正来自环境反馈的 credit，再把它作为局部调节项接入原有 trajectory-level RL。这个思想可迁移到工具错误、记忆写入和澄清动作的信用分配。",
+        "insight": "Insight：多轮 agentic RL 的核心不是简单把未来信息拿来蒸馏，而是要扣除 replay scaffold 自身造成的伪支持。OCSD 提供了一个有用范式：用结构匹配的 counterfactual view 隔离真正来自环境反馈的 credit，再把它作为局部调节项接入原有 trajectory-level RL。这个思想可迁移到工具错误、记忆写入和澄清动作的信用分配。",
+        "abstract_zh": "Large language model agents are commonly trained through reinforcement learning with sparse trajectory-level rewards, which offer limited guidance on how strongly individual tokens should be updated. On-Policy Self-Distillation (OPSD) addresses this by re-scoring generated tokens under a privileged replay view to obtain dense, token-level supervision. However, we identify a confounding issue: the resulting support may reflect both the privileged information contained in the replay view and score shifts induced by the replay scaffold, making it difficult to attribute the support specifically to that information. This issue is especially pronounced when future environment observations serve as privileged information, since replaying them requires reconstructing an extended scaffold that itself perturbs token scores. To resolve this confounding, we propose Observation-Calibrated Self-Disti…",
+        "card_summary": "OCSD 用 full replay 与 observation-ablated replay 的差值校准 self-distillation，减少未来观察监督中的 scaffold 偏差。它是今天最直接的 agentic RL / 多轮信用分配论文之一。",
+        "full_summary": "这篇论文研究 LLM agent RL 中 token 级 self-distillation 的偏差：privileged replay view 不只包含未来观察，也包含会改变分数的 replay scaffold。OCSD 用 Full 与 Observation-Ablated 两个结构匹配视图相减，得到更接近未来 observation 本身贡献的 residual，再在高不确定步骤上调节 GRPO 更新。ALFWorld、WebShop 和 Search-QA 上的多模型实验显示它稳定优于若干基线，诊断也支持 residual 更符合局部环境反馈。阅读价值在于给多轮 agent credit assignment 提供了反事实校准思路。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强烈推荐",
+        "value_reason": "强相关：直接面向 agentic RL、稀疏轨迹奖励、多轮环境反馈和 token-level credit assignment。",
+        "limitations": "依赖可构造的 replay/ablation 视图；开放工具环境中如何定义匹配 counterfactual 仍需验证。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文描述 Full 与 Observation-Ablated replay views。",
+          "实验覆盖 ALFWorld、WebShop、Search-QA 和 Qwen3 多尺度。",
+          "诊断分析比较 residual 与局部环境反馈。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.398Z"
+      }
+    },
+    {
+      "id": "2608.04794v1",
+      "title": "Privileged, but Biased: How PI-Conditioned Teachers Break Self-Distillation",
+      "summary": "Self-distillation (SD) has emerged as a compute-efficient alternative to reinforcement learning with verifiable rewards: a self-teacher, conditioned on privileged information (PI) about the answer such as a reference solution, supplies dense per-token supervision to a student that never sees it. Reported gains, however, come almost exclusively from narrow, low-difficulty settings, leaving open a basic question: as a lone objective, with no reward term, does SD teach anything? We reproduce SDPO's reported gains in its easy setting, then apply the identical setup to difficult tasks and find that it does not. Across question answering, mathematics, coding, and multi-turn agentic tool use, across reasoning modes, model sizes, and forms of PI, and under both the SDPO and OPSD recipes, the per-token loss falls steadily while validation accuracy does not improve and typically degrades. We explain this failure through a single causal chain from the loss to the model it produces. The chain begins with PI bias: having seen one particular reference solution, the teacher's per-token target is pulled toward that trajectory rather than toward correctness in general, an effect we quantify with a PI Bias Score. Trained to match this target everywhere, the student's objective becomes nearly blind to whether a rollout is correct, and the loss it assigns falls mostly on low-information tokens like stopwords, punctuation, uncertainty markers, rather than those that determine the answer; within correct rollouts the exploratory tokens incur the highest divergence, so it penalizes the hesitation that reasoning requires. The result is a flatter, less decisive student that is no better at reasoning: as a lone objective, SD optimizes a signal decoupled from task success.",
+      "url": "http://arxiv.org/abs/2608.04794v1",
+      "authors": [
+        "Sarthak Harne",
+        "Chinmay Karkar",
+        "Yash Pandya",
+        "Ahmed Awadallah",
+        "Akshay Nambi"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 76,
+        "level": "高",
+        "label": "重要反例和训练风险诊断",
+        "water_risk": "中",
+        "value_judgement": "强相关：直接触及 OPD/self-distillation、multi-turn tool-use 和 agentic RL 信用信号错配。",
+        "reason": "强相关：直接触及 OPD/self-distillation、multi-turn tool-use 和 agentic RL 信用信号错配。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Sarthak Harne",
+          "Chinmay Karkar",
+          "Yash Pandya",
+          "Ahmed Awadallah",
+          "Akshay Nambi"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04794v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接触及 OPD/self-distillation、multi-turn tool-use 和 agentic RL 信用信号错配。",
+        "summary": "论文质疑以 privileged information 构造的自蒸馏是否真的提供 correctness 信号。作者在问答、数学、代码和 BFCL 多轮工具使用上复现实验，发现 per-token loss 虽下降，但验证准确率通常持平或下降；机制分析表明 teacher 更像被单条参考解锚定，而不是表达任务正确性。损失还大量落在低信息 token 和正确轨迹中的 off-reference 探索上，导致学生更短、更平、更少探索。阅读价值在于它给 agentic OPD/自蒸馏提供了强负面证据；局限是诊断而非方法，且跨模型泛化还未证明。",
+        "highlights": [
+          "强相关：直接触及 OPD/self-distillation、multi-turn tool-use 和 agentic RL 信用信号错配。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "很多 agentic RL / OPD 工作把 privileged information 条件下的自蒸馏当作低成本密集监督，但这些增益常来自窄而简单的设置。论文追问一个更基础的问题：如果没有 reward term，PI-conditioned self-distillation 本身到底是在教 correctness，还是只是在教某条参考轨迹的表面形式。",
+        "method": "作者复现容易设置中的 SDPO 增益，然后把同一代码和 teacher 设置迁移到问答、数学、代码和 BFCL 多轮工具使用等更难任务。机制分析提出 PI Bias Score，比较 teacher 对 in-context solution、另一条正确 solution 和无关 solution 的 log-prob 差异，并进一步检查损失是否能区分正确/错误 rollout、损失落在哪些 token、以及是否惩罚正确轨迹中的探索 token。",
+        "experiments": "在 Qwen3-8B/32B、think/instruct 模式、SDPO 与 OPSD 两类 recipe 下，论文发现 per-token loss 稳定下降，但验证准确率通常不升反降；BFCL 多轮 agentic tool-use 的 think 设置平均下降约 3.51 分，个别 benchmark 下降 7 分。作者还报告 loss 大量落在停用词、标点、不确定表达等低信息 token 上，并且正确 rollout 中 off-reference 探索 token 被更强惩罚。局限是论文主要是诊断研究，没有提出修复方案，且只覆盖 Qwen3 家族。",
+        "research_help": "Insight：对 multi-turn agent 训练，未来信息或参考答案不是天然正确的 dense reward；如果 teacher 被单一参考轨迹锚定，token-level loss 可能会惩罚有用探索并压平策略。设计 OPD/自蒸馏方法时需要显式验证监督信号是否与任务成功相关，而不能只看 loss 是否下降。它也给 state-delta / hindsight 训练提供反面基线：必须区分“参考轨迹相似性”和“状态修复/任务成功”。",
+        "recommendation": {
+          "score": 76,
+          "level": "高",
+          "label": "重要反例和训练风险诊断",
+          "water_risk": "中",
+          "value_judgement": "强相关：直接触及 OPD/self-distillation、multi-turn tool-use 和 agentic RL 信用信号错配。",
+          "reason": "强相关：直接触及 OPD/self-distillation、multi-turn tool-use 和 agentic RL 信用信号错配。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对 multi-turn agent 训练，未来信息或参考答案不是天然正确的 dense reward；如果 teacher 被单一参考轨迹锚定，token-level loss 可能会惩罚有用探索并压平策略。设计 OPD/自蒸馏方法时需要显式验证监督信号是否与任务成功相关，而不能只看 loss 是否下降。它也给 state-delta / hindsight 训练提供反面基线：必须区分“参考轨迹相似性”和“状态修复/任务成功”。",
+        "abstract_zh": "Self-distillation (SD) has emerged as a compute-efficient alternative to reinforcement learning with verifiable rewards: a self-teacher, conditioned on privileged information (PI) about the answer such as a reference solution, supplies dense per-token supervision to a student that never sees it. Reported gains, however, come almost exclusively from narrow, low-difficulty settings, leaving open a basic question: as a lone objective, with no reward term, does SD teach anything? We reproduce SDPO's reported gains in its easy setting, then apply the identical setup to difficult tasks and find that it does not. Across question answering, mathematics, coding, and multi-turn agentic tool use, across reasoning modes, model sizes, and forms of PI, and under both the SDPO and OPSD recipes, the per-token loss falls steadily while validation accuracy does not improve and typically degrades. We expl…",
+        "full_summary": "论文质疑以 privileged information 构造的自蒸馏是否真的提供 correctness 信号。作者在问答、数学、代码和 BFCL 多轮工具使用上复现实验，发现 per-token loss 虽下降，但验证准确率通常持平或下降；机制分析表明 teacher 更像被单条参考解锚定，而不是表达任务正确性。损失还大量落在低信息 token 和正确轨迹中的 off-reference 探索上，导致学生更短、更平、更少探索。阅读价值在于它给 agentic OPD/自蒸馏提供了强负面证据；局限是诊断而非方法，且跨模型泛化还未证明。",
+        "card_summary": "这篇诊断论文显示，PI-conditioned self-distillation 单独使用时可能让 loss 下降却不提升 reasoning 或多轮工具使用，甚至惩罚正确轨迹中的探索。它对 agentic RL/OPD 方法设计是重要反例。"
+      },
+      "analysis": {
+        "motivation": "很多 agentic RL / OPD 工作把 privileged information 条件下的自蒸馏当作低成本密集监督，但这些增益常来自窄而简单的设置。论文追问一个更基础的问题：如果没有 reward term，PI-conditioned self-distillation 本身到底是在教 correctness，还是只是在教某条参考轨迹的表面形式。",
+        "method": "作者复现容易设置中的 SDPO 增益，然后把同一代码和 teacher 设置迁移到问答、数学、代码和 BFCL 多轮工具使用等更难任务。机制分析提出 PI Bias Score，比较 teacher 对 in-context solution、另一条正确 solution 和无关 solution 的 log-prob 差异，并进一步检查损失是否能区分正确/错误 rollout、损失落在哪些 token、以及是否惩罚正确轨迹中的探索 token。",
+        "experiments": "在 Qwen3-8B/32B、think/instruct 模式、SDPO 与 OPSD 两类 recipe 下，论文发现 per-token loss 稳定下降，但验证准确率通常不升反降；BFCL 多轮 agentic tool-use 的 think 设置平均下降约 3.51 分，个别 benchmark 下降 7 分。作者还报告 loss 大量落在停用词、标点、不确定表达等低信息 token 上，并且正确 rollout 中 off-reference 探索 token 被更强惩罚。局限是论文主要是诊断研究，没有提出修复方案，且只覆盖 Qwen3 家族。",
+        "research_help": "Insight：对 multi-turn agent 训练，未来信息或参考答案不是天然正确的 dense reward；如果 teacher 被单一参考轨迹锚定，token-level loss 可能会惩罚有用探索并压平策略。设计 OPD/自蒸馏方法时需要显式验证监督信号是否与任务成功相关，而不能只看 loss 是否下降。它也给 state-delta / hindsight 训练提供反面基线：必须区分“参考轨迹相似性”和“状态修复/任务成功”。",
+        "insight": "Insight：对 multi-turn agent 训练，未来信息或参考答案不是天然正确的 dense reward；如果 teacher 被单一参考轨迹锚定，token-level loss 可能会惩罚有用探索并压平策略。设计 OPD/自蒸馏方法时需要显式验证监督信号是否与任务成功相关，而不能只看 loss 是否下降。它也给 state-delta / hindsight 训练提供反面基线：必须区分“参考轨迹相似性”和“状态修复/任务成功”。",
+        "abstract_zh": "Self-distillation (SD) has emerged as a compute-efficient alternative to reinforcement learning with verifiable rewards: a self-teacher, conditioned on privileged information (PI) about the answer such as a reference solution, supplies dense per-token supervision to a student that never sees it. Reported gains, however, come almost exclusively from narrow, low-difficulty settings, leaving open a basic question: as a lone objective, with no reward term, does SD teach anything? We reproduce SDPO's reported gains in its easy setting, then apply the identical setup to difficult tasks and find that it does not. Across question answering, mathematics, coding, and multi-turn agentic tool use, across reasoning modes, model sizes, and forms of PI, and under both the SDPO and OPSD recipes, the per-token loss falls steadily while validation accuracy does not improve and typically degrades. We expl…",
+        "card_summary": "这篇诊断论文显示，PI-conditioned self-distillation 单独使用时可能让 loss 下降却不提升 reasoning 或多轮工具使用，甚至惩罚正确轨迹中的探索。它对 agentic RL/OPD 方法设计是重要反例。",
+        "full_summary": "论文质疑以 privileged information 构造的自蒸馏是否真的提供 correctness 信号。作者在问答、数学、代码和 BFCL 多轮工具使用上复现实验，发现 per-token loss 虽下降，但验证准确率通常持平或下降；机制分析表明 teacher 更像被单条参考解锚定，而不是表达任务正确性。损失还大量落在低信息 token 和正确轨迹中的 off-reference 探索上，导致学生更短、更平、更少探索。阅读价值在于它给 agentic OPD/自蒸馏提供了强负面证据；局限是诊断而非方法，且跨模型泛化还未证明。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "重要反例和训练风险诊断",
+        "value_reason": "强相关：直接触及 OPD/self-distillation、multi-turn tool-use 和 agentic RL 信用信号错配。",
+        "limitations": "没有提出修复方法；主要模型家族为 Qwen3；部分差异可能受任务和 rollout 设置影响。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文报告 BFCL multi-turn agentic tool-use 下降。",
+          "机制分析包含 PI Bias Score 和 token loss 分布。",
+          "结论明确 self-distillation alone 与 task correctness decoupled。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.398Z"
+      }
+    },
+    {
+      "id": "2608.04309v1",
+      "title": "Structured LLM Reasoning for Zero-Shot Human--Robot Coordination Under Hidden Goals",
+      "summary": "We present a structured large-language-model (LLM) architecture for zero-shot human--robot coordination in a cooperative construction task with private goal views. Guided by a Dec-POMDP formulation, the architecture decomposes decision-making into (i) action-conditioned Theory-of-Mind (ToM) inference, (ii) hierarchical planning, (iii) conversation interpretation, (iv) action verification, and (v) feedback-based replanning. We compare the proposed method with an ablation without ToM inference and a multi-agent reinforcement-learning policy trained offline over many goal pairs. In human-participant experiments, the proposed method required fewer interaction steps and yielded higher post-interaction trust ratings than both baselines. These results suggest that systematically decomposing the team decision problem, using LLMs as tractable surrogates for otherwise intractable inference and planning computations, and retaining conventional verification for physical feasibility can improve both task coordination and the human experience.",
+      "url": "http://arxiv.org/abs/2608.04309v1",
+      "authors": [
+        "Dong Hae Mangalindan",
+        "Anand Gokhale",
+        "Francesco Bullo",
+        "Vaibhav Srivastava"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 74,
+        "level": "高",
+        "label": "强相关小规模 planning 案例",
+        "water_risk": "中",
+        "value_judgement": "相关：明确涉及 multi-turn planning、hidden-goal inference、conversation、verification 和 replanning；证据规模偏小。",
+        "reason": "相关：明确涉及 multi-turn planning、hidden-goal inference、conversation、verification 和 replanning；证据规模偏小。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Dong Hae Mangalindan",
+          "Anand Gokhale",
+          "Francesco Bullo",
+          "Vaibhav Srivastava"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04309v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "相关：明确涉及 multi-turn planning、hidden-goal inference、conversation、verification 和 replanning；证据规模偏小。",
+        "summary": "论文研究私有目标下的人机协作，机器人需要根据动作和对话推断人类目标，再决定下一步构造动作。作者用 Dec-POMDP 指导结构化 LLM 架构，把 ToM 推断、层级规划、对话解释、动作验证和反馈重规划分开。5 人 pilot 中，完整 LLM+ToM 比无 ToM 和离线 MARL 策略更少交互步并获得更高信任；但仿真结果显示不同策略组合差异很大。阅读价值在于模块化 multi-turn planning state 设计，局限是实验规模很小且机器人任务较窄。",
+        "highlights": [
+          "相关：明确涉及 multi-turn planning、hidden-goal inference、conversation、verification 和 replanning；证据规模偏小。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "人机协作常包含私有目标和不完整信息，机器人不能只按自身目标规划，还要推断人类伙伴可能在追求什么，并在对话和执行反馈中更新计划。论文把这个问题形式化为 Dec-POMDP，并用结构化 LLM 模块替代难以精确求解的推断和规划计算。",
+        "method": "系统由 action-conditioned Theory-of-Mind 推断、层级规划、对话理解、动作验证和反馈 replanning 组成。ToM 模块基于候选人类目标生成动作预测，并和观察到的人类动作/对话比较以更新目标 belief；planner 使用该 belief 产生子目标；动作 verifier 负责物理可行性，避免让 LLM 直接承担所有约束检查。",
+        "experiments": "论文在 La Boca 协作构造任务中做了 5 名参与者 pilot，对比完整 LLM+ToM、无 ToM ablation 和离线多智能体 RL policy。LLM+ToM 平均交互步数为 5.2，无 ToM 为 6.4，RL 为 10.2；两种 LLM 条件都完成任务，RL 条件中多数参与者因行为难以理解而终止。仿真实验中 RL/RL 成功率 100%、LLM/LLM 60%、LLM/RL 0%，说明结果仍受设置和策略匹配影响，不能过度外推。",
+        "research_help": "Insight：多轮 agent planning 的可靠性可以通过显式拆分 belief inference、planning、conversation parsing、verification 和 replanning 来提升，而不是把所有能力塞进一个 prompt。特别值得借鉴的是：把 partner goal belief 作为可更新状态，并把物理可行性 verifier 与语义规划分离。局限也提醒我们，人类信任和完成率可能来自结构化可解释交互，而非 LLM planner 本身更强。",
+        "recommendation": {
+          "score": 74,
+          "level": "高",
+          "label": "强相关小规模 planning 案例",
+          "water_risk": "中",
+          "value_judgement": "相关：明确涉及 multi-turn planning、hidden-goal inference、conversation、verification 和 replanning；证据规模偏小。",
+          "reason": "相关：明确涉及 multi-turn planning、hidden-goal inference、conversation、verification 和 replanning；证据规模偏小。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：多轮 agent planning 的可靠性可以通过显式拆分 belief inference、planning、conversation parsing、verification 和 replanning 来提升，而不是把所有能力塞进一个 prompt。特别值得借鉴的是：把 partner goal belief 作为可更新状态，并把物理可行性 verifier 与语义规划分离。局限也提醒我们，人类信任和完成率可能来自结构化可解释交互，而非 LLM planner 本身更强。",
+        "abstract_zh": "We present a structured large-language-model (LLM) architecture for zero-shot human--robot coordination in a cooperative construction task with private goal views. Guided by a Dec-POMDP formulation, the architecture decomposes decision-making into (i) action-conditioned Theory-of-Mind (ToM) inference, (ii) hierarchical planning, (iii) conversation interpretation, (iv) action verification, and (v) feedback-based replanning. We compare the proposed method with an ablation without ToM inference and a multi-agent reinforcement-learning policy trained offline over many goal pairs. In human-participant experiments, the proposed method required fewer interaction steps and yielded higher post-interaction trust ratings than both baselines. These results suggest that systematically decomposing the team decision problem, using LLMs as tractable surrogates for otherwise intractable inference and pl…",
+        "full_summary": "论文研究私有目标下的人机协作，机器人需要根据动作和对话推断人类目标，再决定下一步构造动作。作者用 Dec-POMDP 指导结构化 LLM 架构，把 ToM 推断、层级规划、对话解释、动作验证和反馈重规划分开。5 人 pilot 中，完整 LLM+ToM 比无 ToM 和离线 MARL 策略更少交互步并获得更高信任；但仿真结果显示不同策略组合差异很大。阅读价值在于模块化 multi-turn planning state 设计，局限是实验规模很小且机器人任务较窄。",
+        "card_summary": "这篇论文把隐藏目标下的人机协作拆成 ToM belief、层级规划、对话理解、动作验证和反馈重规划。它直接相关 multi-turn planning，但证据还是小规模 pilot。"
+      },
+      "analysis": {
+        "motivation": "人机协作常包含私有目标和不完整信息，机器人不能只按自身目标规划，还要推断人类伙伴可能在追求什么，并在对话和执行反馈中更新计划。论文把这个问题形式化为 Dec-POMDP，并用结构化 LLM 模块替代难以精确求解的推断和规划计算。",
+        "method": "系统由 action-conditioned Theory-of-Mind 推断、层级规划、对话理解、动作验证和反馈 replanning 组成。ToM 模块基于候选人类目标生成动作预测，并和观察到的人类动作/对话比较以更新目标 belief；planner 使用该 belief 产生子目标；动作 verifier 负责物理可行性，避免让 LLM 直接承担所有约束检查。",
+        "experiments": "论文在 La Boca 协作构造任务中做了 5 名参与者 pilot，对比完整 LLM+ToM、无 ToM ablation 和离线多智能体 RL policy。LLM+ToM 平均交互步数为 5.2，无 ToM 为 6.4，RL 为 10.2；两种 LLM 条件都完成任务，RL 条件中多数参与者因行为难以理解而终止。仿真实验中 RL/RL 成功率 100%、LLM/LLM 60%、LLM/RL 0%，说明结果仍受设置和策略匹配影响，不能过度外推。",
+        "research_help": "Insight：多轮 agent planning 的可靠性可以通过显式拆分 belief inference、planning、conversation parsing、verification 和 replanning 来提升，而不是把所有能力塞进一个 prompt。特别值得借鉴的是：把 partner goal belief 作为可更新状态，并把物理可行性 verifier 与语义规划分离。局限也提醒我们，人类信任和完成率可能来自结构化可解释交互，而非 LLM planner 本身更强。",
+        "insight": "Insight：多轮 agent planning 的可靠性可以通过显式拆分 belief inference、planning、conversation parsing、verification 和 replanning 来提升，而不是把所有能力塞进一个 prompt。特别值得借鉴的是：把 partner goal belief 作为可更新状态，并把物理可行性 verifier 与语义规划分离。局限也提醒我们，人类信任和完成率可能来自结构化可解释交互，而非 LLM planner 本身更强。",
+        "abstract_zh": "We present a structured large-language-model (LLM) architecture for zero-shot human--robot coordination in a cooperative construction task with private goal views. Guided by a Dec-POMDP formulation, the architecture decomposes decision-making into (i) action-conditioned Theory-of-Mind (ToM) inference, (ii) hierarchical planning, (iii) conversation interpretation, (iv) action verification, and (v) feedback-based replanning. We compare the proposed method with an ablation without ToM inference and a multi-agent reinforcement-learning policy trained offline over many goal pairs. In human-participant experiments, the proposed method required fewer interaction steps and yielded higher post-interaction trust ratings than both baselines. These results suggest that systematically decomposing the team decision problem, using LLMs as tractable surrogates for otherwise intractable inference and pl…",
+        "card_summary": "这篇论文把隐藏目标下的人机协作拆成 ToM belief、层级规划、对话理解、动作验证和反馈重规划。它直接相关 multi-turn planning，但证据还是小规模 pilot。",
+        "full_summary": "论文研究私有目标下的人机协作，机器人需要根据动作和对话推断人类目标，再决定下一步构造动作。作者用 Dec-POMDP 指导结构化 LLM 架构，把 ToM 推断、层级规划、对话解释、动作验证和反馈重规划分开。5 人 pilot 中，完整 LLM+ToM 比无 ToM 和离线 MARL 策略更少交互步并获得更高信任；但仿真结果显示不同策略组合差异很大。阅读价值在于模块化 multi-turn planning state 设计，局限是实验规模很小且机器人任务较窄。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关小规模 planning 案例",
+        "value_reason": "相关：明确涉及 multi-turn planning、hidden-goal inference、conversation、verification 和 replanning；证据规模偏小。",
+        "limitations": "只有 5 名参与者 pilot；仿真策略组合结果不稳定；任务是特定构造场景。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文描述 Dec-POMDP 与 ToM/planning/conversation/verifier/replanner。",
+          "人类参与者实验报告 LLM+ToM 平均 5.2 步。",
+          "仿真实验显示 LLM/RL、LLM/LLM 与 RL/RL 成功率差异。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.398Z"
+      }
+    },
+    {
+      "id": "2608.04746v1",
+      "title": "Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems",
+      "summary": "LLM agents that persist across sessions accumulate stored memories whose validity varies enormously by content type, yet existing memory architectures treat all memories as equally persistent and systematically contaminate retrieved context with outdated facts. We show that per-memory, type-conditioned temporal decay, a property of western scrub jay episodic memory, can be operationalized as an auto-classified coefficient $π_i$ in an external LLM-agent memory store, yielding ScrubJay-MEM: each memory is encoded as a jointly-bound What--Where--When tuple with an estimated perishability $π_i$ and utility horizon $τ_i$, retrieved by query-adaptive scoring, and revised retroactively at $O(1)$ LLM calls per update. We introduce the Temporal Generalization Test (TGT), a benchmark with held-out retention intervals and a Generalization Gap (GenGap) metric. On TGT, ScrubJay-MEM is the only retrieval-based system with substantially positive GenGap ($+0.108$); on MemoryAgentBench EventQA-64k it improves F1 by $+2.66$ over Mem0 and $+3.09$ over Qwen3-Embedding-4B under a llm backbone. A decay ablation collapses GenGap by $5.7\\times$, establishing type-conditioned decay as necessary for the result. Gains narrow under stronger backbones and reverse on fact-consolidation tasks, scoping the contribution to temporal reasoning over perishable facts.",
+      "url": "http://arxiv.org/abs/2608.04746v1",
+      "authors": [
+        "Kartikey Singh Bhandari",
+        "Aarya Wadhwani",
+        "Dhruv Kumar",
+        "Pratik Narang"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 68,
+        "level": "高",
+        "label": "有机制边界的 memory freshness 方法",
+        "water_risk": "中",
+        "value_judgement": "强相关：直接处理长期 agent memory 的 stale facts、temporal validity 和检索污染。",
+        "reason": "强相关：直接处理长期 agent memory 的 stale facts、temporal validity 和检索污染。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Kartikey Singh Bhandari",
+          "Aarya Wadhwani",
+          "Dhruv Kumar",
+          "Pratik Narang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04746v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接处理长期 agent memory 的 stale facts、temporal validity 和检索污染。",
+        "summary": "论文把长期 agent memory 的问题定义为时间有效性管理：不同内容类型有不同过期速度，统一 recency 或长期/短期二分都不够。ScrubJay-MEM 用 What-Where-When 结构、perishability 系数和 utility horizon 表示每条记忆，并在检索时把语义价值和时间衰减结合。EventQA-64k 与 Temporal Generalization Test 显示这种类型条件衰减在资源受限 backbone 下有效，no-decay 消融支持机制贡献。阅读价值在于把 memory freshness 变成可解释参数；局限是强模型或 fact-consolidation 任务中优势变窄甚至反转。",
+        "highlights": [
+          "强相关：直接处理长期 agent memory 的 stale facts、temporal validity 和检索污染。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "长期运行的 LLM agent 会积累不同保质期的记忆：职业偏好可能几年有效，会议室和分支名可能几小时后失效。现有 memory 架构常把记忆同等持久保存或只做统一 recency decay，导致过期事实污染检索上下文。论文的问题是让每条记忆携带可解释、可修订的时间有效性。",
+        "method": "ScrubJay-MEM 把每条记忆编码成 What-Where-When tuple，并估计 perishability 系数和 utility horizon。检索时使用 query-adaptive utility，将语义价值和类型条件的时间衰减结合；记忆还可通过 retroactive contextual integration 更新 decay 参数，并用 Prospective Memory Buffer 降低检索成本。核心不是简单短期/长期二分，而是 per-memory、type-conditioned、可修订的时间衰减。",
+        "experiments": "论文在 MemoryAgentBench EventQA-64k 上报告 ScrubJay-MEM 在 llama3.1:8b backbone 下比 Mem0 F1 高 2.66、比 Qwen3-Embedding-4B 高 3.09。作者还提出 Temporal Generalization Test，保留未见 retention interval，并用 GenGap 衡量 temporal decay 泛化；ScrubJay-MEM 是唯一显著正 GenGap 的 retrieval-based 系统，no-decay 消融让 GenGap 下降 5.7 倍。局限也写得清楚：强 backbone 下 dense retrieval 会追上，在 fact-consolidation 任务中 flat retrieval 更合适。",
+        "research_help": "Insight：agent memory 需要区分“语义相似”和“当前仍有效”。对 long-horizon planning，过期状态比缺失状态更危险，因为它会给 planner 一个看似可信的错误前提。ScrubJay-MEM 提醒我们可以把 temporal validity 做成每条记忆的结构化参数，并在任务上下文变化时反向修订，而不是依赖 prompt 临时推理。",
+        "recommendation": {
+          "score": 68,
+          "level": "高",
+          "label": "有机制边界的 memory freshness 方法",
+          "water_risk": "中",
+          "value_judgement": "强相关：直接处理长期 agent memory 的 stale facts、temporal validity 和检索污染。",
+          "reason": "强相关：直接处理长期 agent memory 的 stale facts、temporal validity 和检索污染。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：agent memory 需要区分“语义相似”和“当前仍有效”。对 long-horizon planning，过期状态比缺失状态更危险，因为它会给 planner 一个看似可信的错误前提。ScrubJay-MEM 提醒我们可以把 temporal validity 做成每条记忆的结构化参数，并在任务上下文变化时反向修订，而不是依赖 prompt 临时推理。",
+        "abstract_zh": "LLM agents that persist across sessions accumulate stored memories whose validity varies enormously by content type, yet existing memory architectures treat all memories as equally persistent and systematically contaminate retrieved context with outdated facts. We show that per-memory, type-conditioned temporal decay, a property of western scrub jay episodic memory, can be operationalized as an auto-classified coefficient $π_i$ in an external LLM-agent memory store, yielding ScrubJay-MEM: each memory is encoded as a jointly-bound What--Where--When tuple with an estimated perishability $π_i$ and utility horizon $τ_i$, retrieved by query-adaptive scoring, and revised retroactively at $O(1)$ LLM calls per update. We introduce the Temporal Generalization Test (TGT), a benchmark with held-out retention intervals and a Generalization Gap (GenGap) metric. On TGT, ScrubJay-MEM is the only retri…",
+        "full_summary": "论文把长期 agent memory 的问题定义为时间有效性管理：不同内容类型有不同过期速度，统一 recency 或长期/短期二分都不够。ScrubJay-MEM 用 What-Where-When 结构、perishability 系数和 utility horizon 表示每条记忆，并在检索时把语义价值和时间衰减结合。EventQA-64k 与 Temporal Generalization Test 显示这种类型条件衰减在资源受限 backbone 下有效，no-decay 消融支持机制贡献。阅读价值在于把 memory freshness 变成可解释参数；局限是强模型或 fact-consolidation 任务中优势变窄甚至反转。",
+        "card_summary": "ScrubJay-MEM 给每条 agent memory 加入 type-conditioned 时间衰减和可修订有效期，减少过期事实污染。它对长期 agent 状态可靠性很有启发，但收益主要集中在 perishable facts。"
+      },
+      "analysis": {
+        "motivation": "长期运行的 LLM agent 会积累不同保质期的记忆：职业偏好可能几年有效，会议室和分支名可能几小时后失效。现有 memory 架构常把记忆同等持久保存或只做统一 recency decay，导致过期事实污染检索上下文。论文的问题是让每条记忆携带可解释、可修订的时间有效性。",
+        "method": "ScrubJay-MEM 把每条记忆编码成 What-Where-When tuple，并估计 perishability 系数和 utility horizon。检索时使用 query-adaptive utility，将语义价值和类型条件的时间衰减结合；记忆还可通过 retroactive contextual integration 更新 decay 参数，并用 Prospective Memory Buffer 降低检索成本。核心不是简单短期/长期二分，而是 per-memory、type-conditioned、可修订的时间衰减。",
+        "experiments": "论文在 MemoryAgentBench EventQA-64k 上报告 ScrubJay-MEM 在 llama3.1:8b backbone 下比 Mem0 F1 高 2.66、比 Qwen3-Embedding-4B 高 3.09。作者还提出 Temporal Generalization Test，保留未见 retention interval，并用 GenGap 衡量 temporal decay 泛化；ScrubJay-MEM 是唯一显著正 GenGap 的 retrieval-based 系统，no-decay 消融让 GenGap 下降 5.7 倍。局限也写得清楚：强 backbone 下 dense retrieval 会追上，在 fact-consolidation 任务中 flat retrieval 更合适。",
+        "research_help": "Insight：agent memory 需要区分“语义相似”和“当前仍有效”。对 long-horizon planning，过期状态比缺失状态更危险，因为它会给 planner 一个看似可信的错误前提。ScrubJay-MEM 提醒我们可以把 temporal validity 做成每条记忆的结构化参数，并在任务上下文变化时反向修订，而不是依赖 prompt 临时推理。",
+        "insight": "Insight：agent memory 需要区分“语义相似”和“当前仍有效”。对 long-horizon planning，过期状态比缺失状态更危险，因为它会给 planner 一个看似可信的错误前提。ScrubJay-MEM 提醒我们可以把 temporal validity 做成每条记忆的结构化参数，并在任务上下文变化时反向修订，而不是依赖 prompt 临时推理。",
+        "abstract_zh": "LLM agents that persist across sessions accumulate stored memories whose validity varies enormously by content type, yet existing memory architectures treat all memories as equally persistent and systematically contaminate retrieved context with outdated facts. We show that per-memory, type-conditioned temporal decay, a property of western scrub jay episodic memory, can be operationalized as an auto-classified coefficient $π_i$ in an external LLM-agent memory store, yielding ScrubJay-MEM: each memory is encoded as a jointly-bound What--Where--When tuple with an estimated perishability $π_i$ and utility horizon $τ_i$, retrieved by query-adaptive scoring, and revised retroactively at $O(1)$ LLM calls per update. We introduce the Temporal Generalization Test (TGT), a benchmark with held-out retention intervals and a Generalization Gap (GenGap) metric. On TGT, ScrubJay-MEM is the only retri…",
+        "card_summary": "ScrubJay-MEM 给每条 agent memory 加入 type-conditioned 时间衰减和可修订有效期，减少过期事实污染。它对长期 agent 状态可靠性很有启发，但收益主要集中在 perishable facts。",
+        "full_summary": "论文把长期 agent memory 的问题定义为时间有效性管理：不同内容类型有不同过期速度，统一 recency 或长期/短期二分都不够。ScrubJay-MEM 用 What-Where-When 结构、perishability 系数和 utility horizon 表示每条记忆，并在检索时把语义价值和时间衰减结合。EventQA-64k 与 Temporal Generalization Test 显示这种类型条件衰减在资源受限 backbone 下有效，no-decay 消融支持机制贡献。阅读价值在于把 memory freshness 变成可解释参数；局限是强模型或 fact-consolidation 任务中优势变窄甚至反转。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "有机制边界的 memory freshness 方法",
+        "value_reason": "强相关：直接处理长期 agent memory 的 stale facts、temporal validity 和检索污染。",
+        "limitations": "主要适合 perishable facts；强 backbone 下优势缩小；fact-consolidation 需要保留旧事实时会失效。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文报告 EventQA-64k F1 改善。",
+          "Temporal Generalization Test 使用 held-out retention intervals 和 GenGap。",
+          "作者明确说明 conflict-resolution/fact-consolidation 不是适用场景。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.398Z"
+      }
+    },
+    {
+      "id": "2608.03844v1",
+      "title": "MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents",
+      "summary": "Memory-augmented LLM agents rely on rich context for long-horizon reasoning and acting, yet their memory modules expose a persistent attack surface for malicious records, making the study of memory poisoning threats imperative. However, existing query-only attacks often fail to remain effective in two realistic and prevalent settings: large-scale benign memory pools and active input auditing. Consequently, current approaches fall short when facing the dual challenges of high retrieval competitiveness and rigorous semantic checks. To overcome these limitations, we propose MAFIA, a query-only Memory Attack framework via probing and Factual Injection against Audit, tailored to this extended threat model. Specifically, MAFIA introduces: (1) a placement strategy that ensures retrieval-competitive injection via memory probing, budget allocation, and scheduling; and (2) a payload design that bypasses audits using compact factual cloaks, preserving malicious effects while maintaining high semantic similarity. Extensive evaluations reveal that MAFIA achieves up to a 90.7% attack success rate while suppressing audit detection from a peak of 83.3% to at most 7.4%, exposing critical vulnerabilities across agentic memory systems. Code will be made publicly available at https://github.com/JiamingChen1234/MAFIA.",
+      "url": "http://arxiv.org/abs/2608.03844v1",
+      "authors": [
+        "Jiaming Chen",
+        "Yisen Gao",
+        "Yanping Li",
+        "Zifan Liu",
+        "Yumeng Zhang",
+        "Jun Zhang"
+      ],
+      "report_date": "2026-08-06",
+      "published": "2026-08-04",
+      "updated": "2026-08-04",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/JiamingChen1234/MAFIA",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 90,
+        "level": "高",
+        "label": "强 agent memory 安全威胁模型",
+        "water_risk": "低",
+        "value_judgement": "强相关：直接涉及 memory-augmented LLM agents、long-horizon reasoning、persistent attack surface 和审计失效。",
+        "reason": "强相关：直接涉及 memory-augmented LLM agents、long-horizon reasoning、persistent attack surface 和审计失效。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jiaming Chen",
+          "Yisen Gao",
+          "Yanping Li",
+          "Zifan Liu",
+          "Yumeng Zhang",
+          "Jun Zhang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-04",
+        "paper_url": "https://arxiv.org/abs/2608.03844v1",
+        "project_url": "",
+        "repo_url": "https://github.com/JiamingChen1234/MAFIA",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接涉及 memory-augmented LLM agents、long-horizon reasoning、persistent attack surface 和审计失效。",
+        "summary": "论文指出 memory-augmented LLM agent 的长期记忆会成为持久攻击面，恶意记录可在未来任务中被检索并影响行为。MAFIA 通过 probing 和预算调度安排投毒位置，同时用 compact factual cloaks 绕过输入审计并保持语义相似度。实验显示该方法在审计和大规模 benign memory pool 下仍有高攻击成功率，并显著降低审计检出。阅读价值在于它把 long-horizon agent safety 从单轮输入扩展到记忆写入、检索竞争和延迟激活；局限是它是攻击研究，不提供完整防御。",
+        "highlights": [
+          "强相关：直接涉及 memory-augmented LLM agents、long-horizon reasoning、persistent attack surface 和审计失效。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取 + 人工严格筛选"
+        ],
+        "motivation": "记忆增强 LLM agent 依赖外部记忆完成长程推理和行动，但长期记忆也让恶意记录能在未来任务中持续影响行为。已有 query-only memory attack 往往在大型 benign memory pool 或主动 input audit 下效果下降，因此论文研究更现实的记忆投毒威胁。",
+        "method": "MAFIA 包含两部分：placement strategy 通过 memory probing、预算分配和写入调度，让恶意记录在目标查询附近保持 retrieval competitiveness；payload design 则使用 compact factual cloaks，把攻击意图伪装成事实性记录以绕过语义审计，同时保持与受害查询的相似性。攻击者不需要直接访问记忆库，只通过普通查询让 agent 自己写入记忆。",
+        "experiments": "论文在医疗和其他记忆增强 agent 设置中评估 general/targeted audit、大规模 benign memory pool 和有限 poisoning budget。结果报告最高 90.7% attack success rate，并把 audit detection 从最高 83.3% 压到不超过 7.4%，同时在不同 benign-memory size 下保持 retrieval dominance。需要注意它是攻击论文，价值在于暴露威胁模型与防御需求，而不是提高 agent 任务能力。",
+        "research_help": "Insight：长期 agent 的可靠性不能只检查当前输入是否安全，还必须检查记忆写入是否会在未来被组合成隐藏意图。MAFIA 对 planning reliability 的启发是，把 memory retrieval competitiveness、write budget、audit bypass 和 delayed activation 纳入 threat model；防御上需要 provenance、memory-level policy、retrieval-time auditing 和跨轮 latent intent 检测，而不是只做单轮 prompt injection filter。",
+        "recommendation": {
+          "score": 90,
+          "level": "高",
+          "label": "强 agent memory 安全威胁模型",
+          "water_risk": "低",
+          "value_judgement": "强相关：直接涉及 memory-augmented LLM agents、long-horizon reasoning、persistent attack surface 和审计失效。",
+          "reason": "强相关：直接涉及 memory-augmented LLM agents、long-horizon reasoning、persistent attack surface 和审计失效。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长期 agent 的可靠性不能只检查当前输入是否安全，还必须检查记忆写入是否会在未来被组合成隐藏意图。MAFIA 对 planning reliability 的启发是，把 memory retrieval competitiveness、write budget、audit bypass 和 delayed activation 纳入 threat model；防御上需要 provenance、memory-level policy、retrieval-time auditing 和跨轮 latent intent 检测，而不是只做单轮 prompt injection filter。",
+        "abstract_zh": "Memory-augmented LLM agents rely on rich context for long-horizon reasoning and acting, yet their memory modules expose a persistent attack surface for malicious records, making the study of memory poisoning threats imperative. However, existing query-only attacks often fail to remain effective in two realistic and prevalent settings: large-scale benign memory pools and active input auditing. Consequently, current approaches fall short when facing the dual challenges of high retrieval competitiveness and rigorous semantic checks. To overcome these limitations, we propose MAFIA, a query-only Memory Attack framework via probing and Factual Injection against Audit, tailored to this extended threat model. Specifically, MAFIA introduces: (1) a placement strategy that ensures retrieval-competitive injection via memory probing, budget allocation, and scheduling; and (2) a payload design that b…",
+        "full_summary": "论文指出 memory-augmented LLM agent 的长期记忆会成为持久攻击面，恶意记录可在未来任务中被检索并影响行为。MAFIA 通过 probing 和预算调度安排投毒位置，同时用 compact factual cloaks 绕过输入审计并保持语义相似度。实验显示该方法在审计和大规模 benign memory pool 下仍有高攻击成功率，并显著降低审计检出。阅读价值在于它把 long-horizon agent safety 从单轮输入扩展到记忆写入、检索竞争和延迟激活；局限是它是攻击研究，不提供完整防御。",
+        "card_summary": "MAFIA 研究 query-only 记忆投毒如何在大型 benign memory pool 和输入审计下仍保持检索优势。它是 agent memory 安全论文，但对长期 agent 可靠性的威胁模型很重要。"
+      },
+      "analysis": {
+        "motivation": "记忆增强 LLM agent 依赖外部记忆完成长程推理和行动，但长期记忆也让恶意记录能在未来任务中持续影响行为。已有 query-only memory attack 往往在大型 benign memory pool 或主动 input audit 下效果下降，因此论文研究更现实的记忆投毒威胁。",
+        "method": "MAFIA 包含两部分：placement strategy 通过 memory probing、预算分配和写入调度，让恶意记录在目标查询附近保持 retrieval competitiveness；payload design 则使用 compact factual cloaks，把攻击意图伪装成事实性记录以绕过语义审计，同时保持与受害查询的相似性。攻击者不需要直接访问记忆库，只通过普通查询让 agent 自己写入记忆。",
+        "experiments": "论文在医疗和其他记忆增强 agent 设置中评估 general/targeted audit、大规模 benign memory pool 和有限 poisoning budget。结果报告最高 90.7% attack success rate，并把 audit detection 从最高 83.3% 压到不超过 7.4%，同时在不同 benign-memory size 下保持 retrieval dominance。需要注意它是攻击论文，价值在于暴露威胁模型与防御需求，而不是提高 agent 任务能力。",
+        "research_help": "Insight：长期 agent 的可靠性不能只检查当前输入是否安全，还必须检查记忆写入是否会在未来被组合成隐藏意图。MAFIA 对 planning reliability 的启发是，把 memory retrieval competitiveness、write budget、audit bypass 和 delayed activation 纳入 threat model；防御上需要 provenance、memory-level policy、retrieval-time auditing 和跨轮 latent intent 检测，而不是只做单轮 prompt injection filter。",
+        "insight": "Insight：长期 agent 的可靠性不能只检查当前输入是否安全，还必须检查记忆写入是否会在未来被组合成隐藏意图。MAFIA 对 planning reliability 的启发是，把 memory retrieval competitiveness、write budget、audit bypass 和 delayed activation 纳入 threat model；防御上需要 provenance、memory-level policy、retrieval-time auditing 和跨轮 latent intent 检测，而不是只做单轮 prompt injection filter。",
+        "abstract_zh": "Memory-augmented LLM agents rely on rich context for long-horizon reasoning and acting, yet their memory modules expose a persistent attack surface for malicious records, making the study of memory poisoning threats imperative. However, existing query-only attacks often fail to remain effective in two realistic and prevalent settings: large-scale benign memory pools and active input auditing. Consequently, current approaches fall short when facing the dual challenges of high retrieval competitiveness and rigorous semantic checks. To overcome these limitations, we propose MAFIA, a query-only Memory Attack framework via probing and Factual Injection against Audit, tailored to this extended threat model. Specifically, MAFIA introduces: (1) a placement strategy that ensures retrieval-competitive injection via memory probing, budget allocation, and scheduling; and (2) a payload design that b…",
+        "card_summary": "MAFIA 研究 query-only 记忆投毒如何在大型 benign memory pool 和输入审计下仍保持检索优势。它是 agent memory 安全论文，但对长期 agent 可靠性的威胁模型很重要。",
+        "full_summary": "论文指出 memory-augmented LLM agent 的长期记忆会成为持久攻击面，恶意记录可在未来任务中被检索并影响行为。MAFIA 通过 probing 和预算调度安排投毒位置，同时用 compact factual cloaks 绕过输入审计并保持语义相似度。实验显示该方法在审计和大规模 benign memory pool 下仍有高攻击成功率，并显著降低审计检出。阅读价值在于它把 long-horizon agent safety 从单轮输入扩展到记忆写入、检索竞争和延迟激活；局限是它是攻击研究，不提供完整防御。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强 agent memory 安全威胁模型",
+        "value_reason": "强相关：直接涉及 memory-augmented LLM agents、long-horizon reasoning、persistent attack surface 和审计失效。",
+        "limitations": "主要是攻击框架；防御只作为启发；真实平台记忆策略差异可能影响可迁移性。",
+        "source_scope": "full_text",
+        "source_note": "Manual PDF full-text curation after nested Codex timeout.",
+        "source_evidence": [
+          "PDF 全文报告 query-only attack 与 factual cloaks。",
+          "摘要报告最高 90.7% attack success 和 audit detection 降到最多 7.4%。",
+          "实验考虑 large-scale benign memory pools 和 active input auditing。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-06T01:49:18.398Z"
+      }
+    },
     {
       "id": "2608.03223v1",
       "title": "Agentic Reinforcement Learning with Self-Distilled Reward Shaping",
