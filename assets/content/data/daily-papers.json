@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-08-06T01:49:18.398Z",
+  "updated_at": "2026-08-07T01:43:58.920Z",
   "source": "arxiv",
-  "analysis_method": "Codex manual full-text PDF curation after nested generator timeout",
-  "query_focus": "多轮交互式 agent planning、long-horizon planning、agent memory、agentic RL、长程执行状态与可靠性",
+  "analysis_method": "Codex curated full-text PDF reading after nested generator timeout",
+  "query_focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪与执行可靠性",
   "query_terms": [
     "agentic reinforcement learning",
     "agentic rl",
@@ -37,41 +37,37 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-06 Daily Paper",
-    "report_date": "2026-08-06",
-    "focus": "多轮交互式 agent planning、long-horizon planning、agent memory、agentic RL、长程执行状态与可靠性",
-    "summary": "今日保留 9 篇强相关论文：长程世界模型自验证 RL、agent memory 成本-性能优化、工具使用多模态 agentic RL、VLA 显式语言记忆、OCSD 多轮信用分配、PI-conditioned 自蒸馏失败诊断、隐藏目标协作规划、记忆时间有效性和 query-only 记忆投毒。过滤掉计算架构、软件工程现象研究、一般 MARL reward shaping、模型偏好 steering、高水风险 hybrid LLM+RL 稿，以及已在 2026-08-05 发布过的旧条目。",
+    "title": "2026-08-07 Daily Paper",
+    "report_date": "2026-08-07",
+    "focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪与执行可靠性",
+    "summary": "今日保留 6 篇强相关论文：内生世界模型式 agentic RL、递归逐轮信用分配、状态匹配自蒸馏、小时级流视频 agent 记忆、编码 agent 检索 RL，以及跨设备长期状态管理。过滤掉网络/硬件/张量基础设施、通用 POMDP/RL 记忆、3D 场景生成和已发布旧条目。",
     "top_recommendations": [
-      "2608.04964v1",
-      "2608.04788v1",
-      "2608.04843v1"
+      "2608.06197v1",
+      "2608.05987v1",
+      "2608.05219v1"
     ],
     "low_priority": [
-      "2608.04309v1",
-      "2608.04436v1",
-      "2608.04746v1"
+      "2608.05729v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不提交、不部署。",
-    "email_body": "2026-08-06 Daily Paper\n\n今日保留 9 篇强相关论文，重点集中在长程世界模型 verifier、agentic RL 信用分配、agent memory 可靠性和多轮规划状态。\n\n最值得读的 3 篇\n1. WorldCycle (2608.04964v1)：用可逆动作闭环构造无标注长程 verifier，为世界模型 RL 后训练提供空间闭合和时间一致性奖励。\n2. OCSD (2608.04788v1)：用 full replay 与 observation-ablated replay 的差值校准 token 级 self-distillation，减少多轮 agentic RL 中未来观察监督的 scaffold 偏差。\n3. MemoryCPT (2608.04843v1)：把长程 agent memory 做成端到端可训练的成本-性能优化管线，直接优化查询相关证据压缩和下游 QA 质量。"
+    "email_body": "2026-08-07 Daily Paper\n\n今日保留 6 篇强相关论文，重点集中在 agentic RL 的环境内化与逐轮信用、multi-turn distillation 的状态匹配、长程多模态记忆、代码 agent 检索子策略和跨设备状态管理。\n\n最值得读的 3 篇\n1. EnvACE (2608.06197v1)：用 world rehearsal 让策略内化动作-环境反馈，并支持执行前私有预演。\n2. AgentOPSD (2608.05987v1)：把自蒸馏信号递归聚合为逐轮信用，稳定重加权 GRPO 优势。\n3. SMRC-SD (2608.05219v1)：只在当前执行状态匹配成功参考轨迹时施加 privileged distillation，避免状态-参考错配。"
   },
   "latest_item_ids": [
-    "2608.04964v1",
-    "2608.04843v1",
-    "2608.04436v1",
-    "2608.04765v1",
-    "2608.04788v1",
-    "2608.04794v1",
-    "2608.04309v1",
-    "2608.04746v1",
-    "2608.03844v1"
+    "2608.06197v1",
+    "2608.05987v1",
+    "2608.05219v1",
+    "2608.05703v1",
+    "2608.05886v1",
+    "2608.05729v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 9,
-    "total_items": 150,
-    "previous_items": 141,
-    "latest_items": 9,
+    "fresh_items": 6,
+    "total_items": 156,
+    "previous_items": 150,
+    "latest_items": 6,
     "source_report_dates": {
+      "2026-08-07": 6,
       "2026-08-06": 9,
       "2026-08-05": 13,
       "2026-08-04": 6,
@@ -112,17 +108,29 @@
       "2608.03892v1",
       "2608.03502v1",
       "2608.03223v1",
-      "2608.03648v1"
+      "2608.03648v1",
+      "2608.06227v1",
+      "2608.06161v1",
+      "2608.06007v1",
+      "2608.05784v1",
+      "2608.05111v1",
+      "2608.04964v1",
+      "2608.04843v1",
+      "2608.04436v1",
+      "2608.04765v1"
     ],
-    "filtered_today": {
-      "2608.04443v1": "MCHA 是内存中心并行/顺序计算架构，MARL 只是 workload 动机，不是 LLM agent planning 或 agentic RL 方法。",
-      "2608.04661v1": "Agent Plans 是 OSS 中计划文件的探索性软件工程研究，相关但不是训练、规划机制或可靠性方法推进。",
-      "2608.04663v1": "人工 guilt reward shaping 属于一般多智能体强化学习和亲社会奖励校准，和 LLM agent / long-horizon planning 主线间接。",
-      "2608.03892v1": "Qwen3 时间偏好 activation steering 研究模型偏好方向，不是 agent planning、agent memory 或多轮执行系统。",
-      "2608.03502v1": "Hybrid LLM-Augmented RL 稿件泛化模板感强，实验数字和参考链条可信度不足，水风险高。",
-      "2608.03223v1": "已在 2026-08-05 发布，不能重新计入今日新增。",
-      "2608.03648v1": "已在 2026-08-05 发布，不能重新计入今日新增。"
-    },
+    "filtered_today": [
+      "2608.06227v1",
+      "2608.06161v1",
+      "2608.06007v1",
+      "2608.05784v1",
+      "2608.04443v1",
+      "2608.05111v1",
+      "2608.04964v1",
+      "2608.04843v1",
+      "2608.04436v1",
+      "2608.04765v1"
+    ],
     "backfilled_report_dates": {
       "2026-07-17": 3,
       "2026-07-24": 1,
@@ -131,6 +139,729 @@
     }
   },
   "items": [
+    {
+      "id": "2608.06197v1",
+      "title": "EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning",
+      "summary": "Training large language model agents for long-horizon tool use typically relies on interactions with real or synthesized executable environments, whose construction and verification are costly, or on external simulators that are difficult to ground. We introduce EnvACE, an agentic reinforcement learning method that replaces external environment interaction during training with world rehearsal. The policy alternates between acting and rehearsal: it first generates a tool call, then plays the role of the environment to produce the response induced by that action, and conditions subsequent decisions on the rehearsed response. Both roles are jointly optimized end-to-end using task-success rewards. Through world rehearsal, the policy internalizes the relationship between actions and their environment responses in its parameters, yielding an agent world model that directly supports decision making. Across BFCL-v4, tau^2-Bench, VitaBench, and FinMCP-Bench, EnvACE achieves strong and transferable performance, outperforming environment-scaling baselines in the overall evaluation. Controlled studies further show that world rehearsal consistently improves policy learning across model scales. At test time, the internalized world model enables private rehearsal before committed execution, yielding further gains under a moderate rehearsal budget without additional external interaction. Our findings establish world rehearsal as a new path toward scaling LLM agent training beyond the constraints of external environments. Our code is publicly available at https://github.com/Within-yao/EnvACE.",
+      "url": "http://arxiv.org/abs/2608.06197v1",
+      "authors": [
+        "Zishan Xu",
+        "Zhiyuan Yao",
+        "Yuxin Chen",
+        "Yifu Guo",
+        "Zhengxi Lu",
+        "Yuquan Lu",
+        "Jinyang Huang",
+        "Yan Xu",
+        "Yasheng Wang",
+        "Weinan Zhang",
+        "Xingshan Zeng",
+        "Weiwen Liu"
+      ],
+      "report_date": "2026-08-07",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/Within-yao/EnvACE",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "值得精读的内生世界模型式 agentic RL",
+        "water_risk": "中",
+        "value_judgement": "强相关：用 world rehearsal 把动作到环境反馈的预测纳入 agentic RL 训练，并在多轮工具/函数调用基准上给出跨任务结果；关键风险是自生成环境响应的真实性仍需更强验证。",
+        "reason": "强相关：用 world rehearsal 把动作到环境反馈的预测纳入 agentic RL 训练，并在多轮工具/函数调用基准上给出跨任务结果；关键风险是自生成环境响应的真实性仍需更强验证。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zishan Xu",
+          "Zhiyuan Yao",
+          "Yuxin Chen",
+          "Yifu Guo",
+          "Zhengxi Lu",
+          "Yuquan Lu",
+          "Jinyang Huang",
+          "Yan Xu",
+          "Yasheng Wang",
+          "Weinan Zhang",
+          "Xingshan Zeng",
+          "Weiwen Liu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.06197v1",
+        "project_url": "",
+        "repo_url": "https://github.com/Within-yao/EnvACE",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：用 world rehearsal 把动作到环境反馈的预测纳入 agentic RL 训练，并在多轮工具/函数调用基准上给出跨任务结果；关键风险是自生成环境响应的真实性仍需更强验证。",
+        "summary": "这篇论文针对agentic RL严重依赖昂贵可执行环境的问题，提出把环境响应生成直接吸收到代理策略内部。EnvACE以共享策略交替完成行动和world rehearsal，并用任务级奖励联合优化，使后续动作基于模型自行生成的观察展开。其最有价值的设计是把这一能力同时用于测试阶段的私有预演，让代理在真正调用工具前预测失败、修改参数或回避不安全写操作。四类工具与多轮基准、同骨干GRPO消融以及共享参数消融均给出了正向信号，不过相对强基线的总体优势并不悬殊。由于论文缺少充分的环境响应真实性评测，且演练实验运行次数有限，它值得精读，但“可替代外部环境”的强结论仍需更严格验证。",
+        "highlights": [
+          "强相关：用 world rehearsal 把动作到环境反馈的预测纳入 agentic RL 训练，并在多轮工具/函数调用基准上给出跨任务结果；关键风险是自生成环境响应的真实性仍需更强验证。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长时程工具代理的强化学习通常依赖真实或合成的可执行环境，建设、扩展和验证成本都很高；外部语言模型模拟器虽然便宜，却可能产生不准确或不一致的反馈。论文进一步指出，现有策略通常只消费外部反馈，没有把“动作将如何改变环境”内化为自身决策能力，因此提出让同一策略同时学习行动与环境响应。",
+        "method": "EnvACE让一个共享策略交替承担ACT与REHEARSE两种角色：先生成工具调用，再自行生成该动作可能诱发的环境响应，并基于想象出的响应继续后续决策，训练轨迹因而无需实时查询外部可执行环境。两个角色共享参数，以任务级成功奖励联合训练；role-wise GRPO分别计算角色基线，但所有步骤仍继承整条轨迹的结果奖励。测试时，模型可在真实执行前并行或顺序进行若干私有演练，把候选轨迹及自我评价压缩为rehearsal memory，再进行一次会真实改变环境的提交式执行。",
+        "experiments": "论文在BFCL-v4、τ2-Bench、VitaBench和FinMCP-Bench上评测，EnvACE在汇总结果上超过具有完整结果的环境扩展基线，并在金融工具调用中表现出较好的精确率与综合平衡。受控实验显示，相比同骨干的标准GRPO，world rehearsal在不同模型规模上都带来提升；共享行动与演练参数也优于双策略变体，为“环境知识被行动策略吸收”的解释提供了有限但直接的支持。测试时采用适中的私有演练预算还能继续改善多轮任务，但增加更多演练后性能回落，而且相关实验只报告单次运行。",
+        "research_help": "Insight：可迁移的核心不是简单增加推理次数，而是把动作到观察的转移预测嵌入策略训练，使代理能在不可逆工具调用前进行私有预演、发现参数错误或危险写操作，再修订计划。对long-horizon reliability而言，这提示可以把环境模型作为行动策略的共享能力，而非完全独立的模拟器，并将演练结果压缩成显式状态记忆来支持后续执行。与此同时，自生成环境很容易形成“行动者与模拟器共同相信错误世界”的闭环，因此实际系统应加入转移真实性校验、关键状态约束和真实环境回放；仅靠任务级奖励并未解决长轨迹中的细粒度信用分配。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：可迁移的核心不是简单增加推理次数，而是把动作到观察的转移预测嵌入策略训练，使代理能在不可逆工具调用前进行私有预演、发现参数错误或危险写操作，再修订计划。对long-horizon reliability而言，这提示可以把环境模型作为行动策略的共享能力，而非完全独立的模拟器，并将演练结果压缩成显式状态记忆来支持后续执行。与此同时，自生成环境很容易形成“行动者与模拟器共同相信错误世界”的闭环，因此实际系统应加入转移真实性校验、关键状态约束和真实环境回放；仅靠任务级奖励并未解决长轨迹中的细粒度信用分配。",
+        "abstract_zh": "长时程工具代理的训练往往依赖昂贵的真实或合成可执行环境，外部模拟器又难以可靠地与真实世界对齐。EnvACE用world rehearsal替代训练期间的外部环境交互：同一策略先采取动作，再扮演环境生成对应响应，并基于该响应继续决策，两个角色通过任务成功奖励端到端联合优化。实验显示，该方法在多个函数调用、多轮服务和金融工具基准上取得较强且可迁移的表现，受控实验也表明演练机制在不同模型规模下有助于策略学习。测试时，内化的世界模型还能在正式执行前进行私有演练，以适中的额外计算进一步改善表现，而不增加外部环境交互。",
+        "full_summary": "这篇论文针对agentic RL严重依赖昂贵可执行环境的问题，提出把环境响应生成直接吸收到代理策略内部。EnvACE以共享策略交替完成行动和world rehearsal，并用任务级奖励联合优化，使后续动作基于模型自行生成的观察展开。其最有价值的设计是把这一能力同时用于测试阶段的私有预演，让代理在真正调用工具前预测失败、修改参数或回避不安全写操作。四类工具与多轮基准、同骨干GRPO消融以及共享参数消融均给出了正向信号，不过相对强基线的总体优势并不悬殊。由于论文缺少充分的环境响应真实性评测，且演练实验运行次数有限，它值得精读，但“可替代外部环境”的强结论仍需更严格验证。",
+        "card_summary": "EnvACE让同一个代理既执行工具动作，又自行演练环境将返回什么，从而在不实时调用训练环境的情况下学习动作—反馈关系。多基准结果和受控消融显示这一机制有实际增益，并能用于执行前预演，但自生成反馈是否忠实仍是其最关键的可靠性风险。"
+      },
+      "analysis": {
+        "motivation": "长时程工具代理的强化学习通常依赖真实或合成的可执行环境，建设、扩展和验证成本都很高；外部语言模型模拟器虽然便宜，却可能产生不准确或不一致的反馈。论文进一步指出，现有策略通常只消费外部反馈，没有把“动作将如何改变环境”内化为自身决策能力，因此提出让同一策略同时学习行动与环境响应。",
+        "method": "EnvACE让一个共享策略交替承担ACT与REHEARSE两种角色：先生成工具调用，再自行生成该动作可能诱发的环境响应，并基于想象出的响应继续后续决策，训练轨迹因而无需实时查询外部可执行环境。两个角色共享参数，以任务级成功奖励联合训练；role-wise GRPO分别计算角色基线，但所有步骤仍继承整条轨迹的结果奖励。测试时，模型可在真实执行前并行或顺序进行若干私有演练，把候选轨迹及自我评价压缩为rehearsal memory，再进行一次会真实改变环境的提交式执行。",
+        "experiments": "论文在BFCL-v4、τ2-Bench、VitaBench和FinMCP-Bench上评测，EnvACE在汇总结果上超过具有完整结果的环境扩展基线，并在金融工具调用中表现出较好的精确率与综合平衡。受控实验显示，相比同骨干的标准GRPO，world rehearsal在不同模型规模上都带来提升；共享行动与演练参数也优于双策略变体，为“环境知识被行动策略吸收”的解释提供了有限但直接的支持。测试时采用适中的私有演练预算还能继续改善多轮任务，但增加更多演练后性能回落，而且相关实验只报告单次运行。",
+        "research_help": "Insight：可迁移的核心不是简单增加推理次数，而是把动作到观察的转移预测嵌入策略训练，使代理能在不可逆工具调用前进行私有预演、发现参数错误或危险写操作，再修订计划。对long-horizon reliability而言，这提示可以把环境模型作为行动策略的共享能力，而非完全独立的模拟器，并将演练结果压缩成显式状态记忆来支持后续执行。与此同时，自生成环境很容易形成“行动者与模拟器共同相信错误世界”的闭环，因此实际系统应加入转移真实性校验、关键状态约束和真实环境回放；仅靠任务级奖励并未解决长轨迹中的细粒度信用分配。",
+        "insight": "Insight：可迁移的核心不是简单增加推理次数，而是把动作到观察的转移预测嵌入策略训练，使代理能在不可逆工具调用前进行私有预演、发现参数错误或危险写操作，再修订计划。对long-horizon reliability而言，这提示可以把环境模型作为行动策略的共享能力，而非完全独立的模拟器，并将演练结果压缩成显式状态记忆来支持后续执行。与此同时，自生成环境很容易形成“行动者与模拟器共同相信错误世界”的闭环，因此实际系统应加入转移真实性校验、关键状态约束和真实环境回放；仅靠任务级奖励并未解决长轨迹中的细粒度信用分配。",
+        "abstract_zh": "长时程工具代理的训练往往依赖昂贵的真实或合成可执行环境，外部模拟器又难以可靠地与真实世界对齐。EnvACE用world rehearsal替代训练期间的外部环境交互：同一策略先采取动作，再扮演环境生成对应响应，并基于该响应继续决策，两个角色通过任务成功奖励端到端联合优化。实验显示，该方法在多个函数调用、多轮服务和金融工具基准上取得较强且可迁移的表现，受控实验也表明演练机制在不同模型规模下有助于策略学习。测试时，内化的世界模型还能在正式执行前进行私有演练，以适中的额外计算进一步改善表现，而不增加外部环境交互。",
+        "card_summary": "EnvACE让同一个代理既执行工具动作，又自行演练环境将返回什么，从而在不实时调用训练环境的情况下学习动作—反馈关系。多基准结果和受控消融显示这一机制有实际增益，并能用于执行前预演，但自生成反馈是否忠实仍是其最关键的可靠性风险。",
+        "full_summary": "这篇论文针对agentic RL严重依赖昂贵可执行环境的问题，提出把环境响应生成直接吸收到代理策略内部。EnvACE以共享策略交替完成行动和world rehearsal，并用任务级奖励联合优化，使后续动作基于模型自行生成的观察展开。其最有价值的设计是把这一能力同时用于测试阶段的私有预演，让代理在真正调用工具前预测失败、修改参数或回避不安全写操作。四类工具与多轮基准、同骨干GRPO消融以及共享参数消融均给出了正向信号，不过相对强基线的总体优势并不悬殊。由于论文缺少充分的环境响应真实性评测，且演练实验运行次数有限，它值得精读，但“可替代外部环境”的强结论仍需更严格验证。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得精读的内生世界模型式 agentic RL",
+        "value_reason": "强相关：用 world rehearsal 把动作到环境反馈的预测纳入 agentic RL 训练，并在多轮工具/函数调用基准上给出跨任务结果；关键风险是自生成环境响应的真实性仍需更强验证。",
+        "limitations": "作者明确只验证到中等规模模型，任务也主要集中在工具交互，尚不能外推到更大模型、开放网页、GUI或软件工程等环境。测试时扩展实验因成本只运行一次，缺乏方差与显著性证据，且更大演练预算出现退化。更关键的是，论文没有系统报告演练响应相对真实环境的准确率、状态一致性或错误累积；共享策略可能产生自洽但虚假的反馈，并借助任务级评估形成策略与模拟器的共适应。训练还使用工具文档、少量真实参考、清单式评估器或语言模型裁判，因此“摆脱外部环境”的表述应严格理解为训练rollout不实时查询环境，而非不再需要外部知识和验证。跨论文基线采用的训练数据、模型规模与计算预算并不完全一致，而role-wise GRPO仍把同一轨迹奖励赋给所有步骤，没有真正解决长时程信用分配。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "方法部分明确规定共享策略在每轮先生成ACT动作，再以REHEARSE角色生成对应观察，并把该观察追加到后续历史。",
+          "训练采用任务级成功奖励和role-wise GRPO；两个角色分别计算基线，但共同更新同一套策略参数。",
+          "主实验覆盖函数调用、状态化多轮服务、现实应用与金融MCP工具四类基准，汇总结果优于具有完整对比结果的环境扩展方法。",
+          "同骨干受控比较显示world rehearsal优于标准GRPO，共享参数版本又优于行动与演练使用不同策略的版本。瀏覧、书写或搜索相关能力时，EnvACE提供了执行前预演和状态修正信号。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-07T01:35:50.951Z"
+      }
+    },
+    {
+      "id": "2608.05987v1",
+      "title": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning",
+      "summary": "Reinforcement learning (RL) with verifiable rewards constructs trajectory-level advantage estimates, yet it often fails to credit the few pivotal decisions that determine outcomes in long-horizon, multi-turn agentic tasks. Recent work introduces privileged self-distillation for credit assignment, providing denser supervision, but it remains unclear how such local signals should represent sequential credit. We propose AgentOPSD, a critic-free, recursive method for turn-level credit assignment in agentic reinforcement learning. AgentOPSD aggregates token-level teacher-student log-probability gaps into turn-level evidence and recursively updates a Bayesian belief state in log-odds space. This yields a principled reweighting scheme that converts sparse outcome supervision into turn-level credit signals and identifies pivotal turns through the marginal belief revision between consecutive states. The method is fully compatible with standard policy optimization and requires neither an additional critic nor extra rollouts. We evaluate AgentOPSD on ALFWorld, WebShop, and Search-QA using Qwen2.5 models at two scales (3B and 7B). AgentOPSD outperforms GRPO and strong self-distillation baselines, achieving 89.1% success on ALFWorld with Qwen2.5-7B. Ablation studies attribute the gains to turn-level aggregation and history-dependent recursive belief updates.",
+      "url": "http://arxiv.org/abs/2608.05987v1",
+      "authors": [
+        "Zi-Han Wang",
+        "Zhengxi Lu",
+        "Zhiyuan Yao",
+        "Jinyang Wu",
+        "Jie Wu",
+        "Zhengzhou Cai",
+        "Yueqing Sun",
+        "Ziang Ye",
+        "Linji Hao",
+        "Qi Gu",
+        "Xunliang Cai",
+        "Yongliang Shen",
+        "Yujiu Yang"
+      ],
+      "report_date": "2026-08-07",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "递归逐轮信用分配的 agentic RL",
+        "water_risk": "中",
+        "value_judgement": "强相关：面向 long-horizon, multi-turn agentic RL 的 turn-level credit assignment，用递归 belief state 重加权 GRPO 优势，并在 ALFWorld、Search-QA、WebShop 上给出对比和消融。",
+        "reason": "强相关：面向 long-horizon, multi-turn agentic RL 的 turn-level credit assignment，用递归 belief state 重加权 GRPO 优势，并在 ALFWorld、Search-QA、WebShop 上给出对比和消融。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zi-Han Wang",
+          "Zhengxi Lu",
+          "Zhiyuan Yao",
+          "Jinyang Wu",
+          "Jie Wu",
+          "Zhengzhou Cai",
+          "Yueqing Sun",
+          "Ziang Ye",
+          "Linji Hao",
+          "Qi Gu",
+          "Xunliang Cai",
+          "Yongliang Shen",
+          "Yujiu Yang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05987v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：面向 long-horizon, multi-turn agentic RL 的 turn-level credit assignment，用递归 belief state 重加权 GRPO 优势，并在 ALFWorld、Search-QA、WebShop 上给出对比和消融。",
+        "summary": "这篇论文针对长时程 agentic RL 中终局奖励无法区分关键动作与冗余动作的问题，提出了逐轮信用分配方法 AgentOPSD。其核心是用训练期技能条件分支与普通策略之间的概率差构造逐轮证据，再递归更新一个表示成功支持度的状态。相邻状态的变化经过结果符号对齐和有界标准化后，只调整 GRPO 优势的相对大小，而不改变终局奖励规定的优化方向。三种交互环境和两种模型规模上的结果整体优于普通 GRPO及多数自蒸馏基线，7B 模型在 ALFWorld 上达到 89.1% 成功率，相关消融也支持递归、动作边界聚合和先验锚定。与此同时，WebShop 的部分准确率低于 SDAR，主实验缺少多随机种子置信区间，长时程优势也主要由跨子任务回归支撑。它对研究长时程信用分配很值得读，但应把方法理解为贝叶斯启发的稳定重加权方案，而不是已经验证的真实逐轮因果贡献估计器。",
+        "highlights": [
+          "强相关：面向 long-horizon, multi-turn agentic RL 的 turn-level credit assignment，用递归 belief state 重加权 GRPO 优势，并在 ALFWorld、Search-QA、WebShop 上给出对比和消融。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长时程智能体通常只在轨迹结束时获得可验证奖励，GRPO会把同一个轨迹级优势广播给所有动作，因而无法区分关键决策、例行操作和错误后仍有价值的步骤。已有自蒸馏方法虽然提供了稠密的教师—学生概率差，但 token 级信号既不对应环境的动作边界，也没有考虑此前交互所积累的证据。论文要解决的核心问题是：如何在不训练 critic、不增加环境 rollout 的情况下，把局部自蒸馏差异转化为依赖历史的逐轮信用。",
+        "method": "AgentOPSD让同一策略分别以普通历史和加入训练期检索技能的特权历史，对学生自己生成的动作进行打分，再将 token 级对数概率差求和为每轮证据。它以同一 GRPO 组的成功率作为初始先验，在 log-odds 空间递归累积带衰减的证据，并把相邻信念状态之差视为该轮的边际信用。该信用再与最终轨迹优势的符号对齐、在轨迹内标准化，并通过严格为正的有界乘子调整各轮 GRPO 优势的大小，因此不会反转终局奖励决定的更新方向。方法不需要额外环境采样或学习价值网络，但需要额外计算特权教师分支，其所谓“成功信念”只是相对支持度，并非经过校准的成功概率。",
+        "experiments": "论文在 ALFWorld、Search-QA 和 WebShop 上训练 Qwen2.5-3B/7B，并在统一骨干、数据和训练预算下与 GRPO、GRPO+OPSD、Skill-SD、RLSD、SDAR、StepOPSD 等方法比较。7B 模型在 ALFWorld 达到 89.1% 成功率，高于 GRPO 的 81.2% 和 SDAR 的 85.9%；Search-QA 平均准确率为 49.2%，但在 WebShop 上虽然 Score 为 90.2，高于 SDAR 的 89.4，Acc 为 79.7%，反而低于 SDAR 的 82.8%。3B 模型的 ALFWorld 结果与 SDAR 同为 84.4%，因此不能概括为在每项指标上全面领先。ALFWorld 消融中，将逐轮信念改为逐 token 累积、用局部 gap 替代递归信念变化、去掉结果符号或经验先验，都会造成明显下降，其中结果方向和先验锚点影响最大。论文还报告 AgentOPSD 的性能随任务轮数增加下降得更慢，但该结论来自不同子任务之间的回归，可能混入任务难度差异，不能等同于严格控制下的因果证据。",
+        "research_help": "Insight：逐轮信用不应只由当前动作的局部置信信号决定，更有价值的定义是“该动作使已积累的任务状态发生了多大修正”。对多轮工具代理或规划代理，可先在动作—环境反馈边界聚合 token 信号，再利用状态增量、计划修订量、验证器变化或记忆一致性变化来定位关键转折点。将细粒度信用限制为对终局优势的有界正向重加权，是兼顾长时程归因能力与策略优化稳定性的一种通用设计。不过，若递归状态含衰减，其相邻差分会同时混合新动作证据与旧证据遗忘，后续设计应通过反事实干预或逐轮价值标签验证它是否真的对应动作贡献。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：逐轮信用不应只由当前动作的局部置信信号决定，更有价值的定义是“该动作使已积累的任务状态发生了多大修正”。对多轮工具代理或规划代理，可先在动作—环境反馈边界聚合 token 信号，再利用状态增量、计划修订量、验证器变化或记忆一致性变化来定位关键转折点。将细粒度信用限制为对终局优势的有界正向重加权，是兼顾长时程归因能力与策略优化稳定性的一种通用设计。不过，若递归状态含衰减，其相邻差分会同时混合新动作证据与旧证据遗忘，后续设计应通过反事实干预或逐轮价值标签验证它是否真的对应动作贡献。",
+        "abstract_zh": "长时程多轮智能体强化学习通常只能获得轨迹级可验证奖励，因此难以把信用分配给少数真正决定结果的动作。论文提出无 critic 的递归逐轮信用分配方法 AgentOPSD，将教师—学生的 token 级对数概率差聚合为逐轮证据，并在 log-odds 空间递归更新贝叶斯式信念状态。相邻信念状态的边际变化被用于识别关键轮次和重加权策略优势，且不需要额外环境 rollout。作者在 ALFWorld、WebShop 和 Search-QA 的两种 Qwen 模型规模上报告了相对 GRPO 及自蒸馏基线的提升，消融结果支持逐轮聚合和历史依赖更新的作用。",
+        "full_summary": "这篇论文针对长时程 agentic RL 中终局奖励无法区分关键动作与冗余动作的问题，提出了逐轮信用分配方法 AgentOPSD。其核心是用训练期技能条件分支与普通策略之间的概率差构造逐轮证据，再递归更新一个表示成功支持度的状态。相邻状态的变化经过结果符号对齐和有界标准化后，只调整 GRPO 优势的相对大小，而不改变终局奖励规定的优化方向。三种交互环境和两种模型规模上的结果整体优于普通 GRPO及多数自蒸馏基线，7B 模型在 ALFWorld 上达到 89.1% 成功率，相关消融也支持递归、动作边界聚合和先验锚定。与此同时，WebShop 的部分准确率低于 SDAR，主实验缺少多随机种子置信区间，长时程优势也主要由跨子任务回归支撑。它对研究长时程信用分配很值得读，但应把方法理解为贝叶斯启发的稳定重加权方案，而不是已经验证的真实逐轮因果贡献估计器。",
+        "card_summary": "AgentOPSD把训练期特权自蒸馏信号聚合到动作轮次，并用递归成功支持度的变化重加权各轮 GRPO 优势，从而处理长时程智能体的稀疏奖励归因。三类交互环境上的结果和消融总体积极，但“贝叶斯信念”依赖较强代理假设，且部分指标并未超过最佳基线。"
+      },
+      "analysis": {
+        "motivation": "长时程智能体通常只在轨迹结束时获得可验证奖励，GRPO会把同一个轨迹级优势广播给所有动作，因而无法区分关键决策、例行操作和错误后仍有价值的步骤。已有自蒸馏方法虽然提供了稠密的教师—学生概率差，但 token 级信号既不对应环境的动作边界，也没有考虑此前交互所积累的证据。论文要解决的核心问题是：如何在不训练 critic、不增加环境 rollout 的情况下，把局部自蒸馏差异转化为依赖历史的逐轮信用。",
+        "method": "AgentOPSD让同一策略分别以普通历史和加入训练期检索技能的特权历史，对学生自己生成的动作进行打分，再将 token 级对数概率差求和为每轮证据。它以同一 GRPO 组的成功率作为初始先验，在 log-odds 空间递归累积带衰减的证据，并把相邻信念状态之差视为该轮的边际信用。该信用再与最终轨迹优势的符号对齐、在轨迹内标准化，并通过严格为正的有界乘子调整各轮 GRPO 优势的大小，因此不会反转终局奖励决定的更新方向。方法不需要额外环境采样或学习价值网络，但需要额外计算特权教师分支，其所谓“成功信念”只是相对支持度，并非经过校准的成功概率。",
+        "experiments": "论文在 ALFWorld、Search-QA 和 WebShop 上训练 Qwen2.5-3B/7B，并在统一骨干、数据和训练预算下与 GRPO、GRPO+OPSD、Skill-SD、RLSD、SDAR、StepOPSD 等方法比较。7B 模型在 ALFWorld 达到 89.1% 成功率，高于 GRPO 的 81.2% 和 SDAR 的 85.9%；Search-QA 平均准确率为 49.2%，但在 WebShop 上虽然 Score 为 90.2，高于 SDAR 的 89.4，Acc 为 79.7%，反而低于 SDAR 的 82.8%。3B 模型的 ALFWorld 结果与 SDAR 同为 84.4%，因此不能概括为在每项指标上全面领先。ALFWorld 消融中，将逐轮信念改为逐 token 累积、用局部 gap 替代递归信念变化、去掉结果符号或经验先验，都会造成明显下降，其中结果方向和先验锚点影响最大。论文还报告 AgentOPSD 的性能随任务轮数增加下降得更慢，但该结论来自不同子任务之间的回归，可能混入任务难度差异，不能等同于严格控制下的因果证据。",
+        "research_help": "Insight：逐轮信用不应只由当前动作的局部置信信号决定，更有价值的定义是“该动作使已积累的任务状态发生了多大修正”。对多轮工具代理或规划代理，可先在动作—环境反馈边界聚合 token 信号，再利用状态增量、计划修订量、验证器变化或记忆一致性变化来定位关键转折点。将细粒度信用限制为对终局优势的有界正向重加权，是兼顾长时程归因能力与策略优化稳定性的一种通用设计。不过，若递归状态含衰减，其相邻差分会同时混合新动作证据与旧证据遗忘，后续设计应通过反事实干预或逐轮价值标签验证它是否真的对应动作贡献。",
+        "insight": "Insight：逐轮信用不应只由当前动作的局部置信信号决定，更有价值的定义是“该动作使已积累的任务状态发生了多大修正”。对多轮工具代理或规划代理，可先在动作—环境反馈边界聚合 token 信号，再利用状态增量、计划修订量、验证器变化或记忆一致性变化来定位关键转折点。将细粒度信用限制为对终局优势的有界正向重加权，是兼顾长时程归因能力与策略优化稳定性的一种通用设计。不过，若递归状态含衰减，其相邻差分会同时混合新动作证据与旧证据遗忘，后续设计应通过反事实干预或逐轮价值标签验证它是否真的对应动作贡献。",
+        "abstract_zh": "长时程多轮智能体强化学习通常只能获得轨迹级可验证奖励，因此难以把信用分配给少数真正决定结果的动作。论文提出无 critic 的递归逐轮信用分配方法 AgentOPSD，将教师—学生的 token 级对数概率差聚合为逐轮证据，并在 log-odds 空间递归更新贝叶斯式信念状态。相邻信念状态的边际变化被用于识别关键轮次和重加权策略优势，且不需要额外环境 rollout。作者在 ALFWorld、WebShop 和 Search-QA 的两种 Qwen 模型规模上报告了相对 GRPO 及自蒸馏基线的提升，消融结果支持逐轮聚合和历史依赖更新的作用。",
+        "card_summary": "AgentOPSD把训练期特权自蒸馏信号聚合到动作轮次，并用递归成功支持度的变化重加权各轮 GRPO 优势，从而处理长时程智能体的稀疏奖励归因。三类交互环境上的结果和消融总体积极，但“贝叶斯信念”依赖较强代理假设，且部分指标并未超过最佳基线。",
+        "full_summary": "这篇论文针对长时程 agentic RL 中终局奖励无法区分关键动作与冗余动作的问题，提出了逐轮信用分配方法 AgentOPSD。其核心是用训练期技能条件分支与普通策略之间的概率差构造逐轮证据，再递归更新一个表示成功支持度的状态。相邻状态的变化经过结果符号对齐和有界标准化后，只调整 GRPO 优势的相对大小，而不改变终局奖励规定的优化方向。三种交互环境和两种模型规模上的结果整体优于普通 GRPO及多数自蒸馏基线，7B 模型在 ALFWorld 上达到 89.1% 成功率，相关消融也支持递归、动作边界聚合和先验锚定。与此同时，WebShop 的部分准确率低于 SDAR，主实验缺少多随机种子置信区间，长时程优势也主要由跨子任务回归支撑。它对研究长时程信用分配很值得读，但应把方法理解为贝叶斯启发的稳定重加权方案，而不是已经验证的真实逐轮因果贡献估计器。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "递归逐轮信用分配的 agentic RL",
+        "value_reason": "强相关：面向 long-horizon, multi-turn agentic RL 的 turn-level credit assignment，用递归 belief state 重加权 GRPO 优势，并在 ALFWorld、Search-QA、WebShop 上给出对比和消融。",
+        "limitations": "第一，理论解释依赖“技能条件分支近似成功条件动作分布”等假设，检索技能质量或偏差可能直接决定信用信号，而实验没有验证该近似。第二，递归状态只是相对支持度，不是校准概率；当衰减系数小于一时，状态差还包含旧证据自然衰减，未必完全归因于当前动作。第三，实验仅覆盖 Qwen2.5 的两个较小规模和三个模拟交互环境，WebShop 只有固定验证任务，外推到代码代理、GUI代理或更长真实任务仍不确定。第四，主结果未报告多随机种子均值、置信区间或显著性检验，个别指标仅小幅领先或落后于 SDAR。第五，没有与需要额外 rollout 或价值模型的强信用分配方法做成本—效果正面对照，也没有用反事实删除、动作替换等实验检查所识别的关键轮次是否真的具有因果作用。第六，方法虽不增加环境 rollout，但额外特权教师前向仍带来训练计算和技能库依赖。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "第2.2至2.4节给出了从 token 级教师—学生对数概率差、逐轮证据、递归 log-odds 状态到有界优势重塑的完整定义。",
+          "表1覆盖 ALFWorld、Search-QA、WebShop 以及 Qwen2.5-3B/7B；7B AgentOPSD 的 ALFWorld 平均成功率为89.1%，WebShop Score/Acc 为90.2/79.7。",
+          "表2显示完整方法为89.1%，逐 token 累积为85.9%，改用局部 gap 为82.8%，仅保留变化幅度为80.5%，去掉经验先验为78.9%。",
+          "附录A.1明确把技能条件分支近似成功条件分布列为假设，并说明所得状态应视为证据代理而非直接可观测的真实贝叶斯因子。具体而言，若技能条件分支并不代表成功行为，逐轮信用解释就会失效。另一个关键点是，论文没有提供多随机种子方差或置信区间，因此表中小幅差异的稳健性暂时无法确认。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-07T01:38:31.604Z"
+      }
+    },
+    {
+      "id": "2608.05219v1",
+      "title": "When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents",
+      "summary": "Privileged on-policy distillation provides dense supervision for multi-turn agents by allowing a synchronized teacher to re-score the student's response at every turn with access to training-only references, such as successful trajectories. In interactive environments, however, the student's preceding actions continually change the execution state. As the student takes different actions or completes subgoals in a different order, its rollout may reach states not covered by the reference, making the reference an unreliable source of guidance for the state actually reached. Applying privileged distillation indiscriminately therefore creates state--reference mismatch. This mismatch motivates a central objective: providing privileged reference guidance that remains compatible with the student's current execution state. We introduce State-Matched Routing and Contextualized Self-Distillation (SMRC-SD), which explicitly determines when and how a privileged trajectory should guide an on-policy student. At each turn, SMRC-SD verifies whether the student's current execution state matches a supported state along the reference trajectory. Distillation is applied only at matched states, filtering out turns for which the reference lacks locally compatible guidance. For each matched state, SMRC-SD further constructs state-conditioned teacher context from the successful trajectory, grounding supervision in the state actually reached. Across ALFWorld and WebShop, SMRC-SD consistently outperforms unconditional successful full-path distillation. With Qwen3-1.7B, it improves task success from $0.746$ to $0.865$ on ALFWorld and from $0.574$ to $0.693$ on WebShop. Controlled routing and context ablations support both selecting locally supported turns and constructing state-compatible teacher context as contributors to these gains. Code is available at https://github.com/liujunzhuo/SMRC-SD.",
+      "url": "http://arxiv.org/abs/2608.05219v1",
+      "authors": [
+        "Junzhuo Liu",
+        "Weiwei Li",
+        "Jun Ling",
+        "Peng Wang"
+      ],
+      "report_date": "2026-08-07",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/liujunzhuo/SMRC-SD",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "状态匹配的多轮 agent 自蒸馏",
+        "water_risk": "低",
+        "value_judgement": "强相关：直接处理 multi-turn agent 训练中的 state-reference mismatch，把成功轨迹当成按执行状态索引的训练资源，并在 ALFWorld / WebShop 上给出明确增益与路由消融。",
+        "reason": "强相关：直接处理 multi-turn agent 训练中的 state-reference mismatch，把成功轨迹当成按执行状态索引的训练资源，并在 ALFWorld / WebShop 上给出明确增益与路由消融。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Junzhuo Liu",
+          "Weiwei Li",
+          "Jun Ling",
+          "Peng Wang"
+        ],
+        "affiliations": "University of Electronic Science and Technology of China",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.05219v1",
+        "project_url": "",
+        "repo_url": "https://github.com/liujunzhuo/SMRC-SD",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接处理 multi-turn agent 训练中的 state-reference mismatch，把成功轨迹当成按执行状态索引的训练资源，并在 ALFWorld / WebShop 上给出明确增益与路由消融。",
+        "summary": "这篇论文指出 privileged OPD 在多轮交互里有一个上游可靠性问题：成功参考轨迹只在其自身到达的状态上有效，学生如果绕路、换顺序或完成了不同子目标，继续把完整成功轨迹塞给 teacher 可能会压低本来正确的恢复动作。SMRC-SD 先把参考轨迹重建成状态签名序列，再检查学生当前状态、可执行动作和参考候选是否局部兼容；匹配时才给该轮加 self-distillation，并在教师上下文里加入当前状态摘要和 grounded candidate。Qwen3-1.7B 上，ALFWorld 成功率从 0.746 提到 0.865，WebShop 从 0.574 提到 0.693；固定状态干预显示 unmatched 状态下 FullPath-SD 可能负向移动动作概率。局限是 matcher 依赖环境手写状态签名，仍不是通用因果贡献估计，但它对多轮 agent 训练中的状态对齐很有参考价值。",
+        "highlights": [
+          "强相关：直接处理 multi-turn agent 训练中的 state-reference mismatch，把成功轨迹当成按执行状态索引的训练资源，并在 ALFWorld / WebShop 上给出明确增益与路由消融。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "多轮 agent 的终局奖励稀疏，privileged self-distillation 试图用成功轨迹给每轮动作提供稠密监督。但交互环境里的先前动作会改变位置、库存、网页状态、已完成子目标等执行状态；当学生状态不在参考轨迹支持范围内时，同一条成功轨迹会变成局部不兼容的教师信号。",
+        "method": "SMRC-SD 为 ALFWorld / WebShop 构造环境相关的状态签名，将成功轨迹视为一组带前置状态的可执行转移。训练时每轮先匹配学生当前状态与参考轨迹状态，并检查参考候选动作是否在当前 admissible actions 中可执行；只有匹配时才启用 SDL。教师上下文包含完整成功路径、当前状态摘要和 grounded candidate，学生仍只看普通输入，GRPO 终局奖励对所有轨迹继续生效。",
+        "experiments": "论文在 ALFWorld 和 WebShop 上比较 GRPO、Skill-SD、SDAR、FullPath-SD、matched routing、dynamic context 和 SMRC-SD。Qwen3-1.7B 下 SMRC-SD 将 ALFWorld task success 从 0.746 提到 0.865，将 WebShop 从 0.574 提到 0.693；固定状态 teacher intervention 显示 matched 与 unmatched 状态的 FullPath-SD 影响方向不同，context ablation 也显示本地状态上下文比抽象 skill 或其他成功路径更强。",
+        "research_help": "Insight：多轮训练里的“参考轨迹”不应被当成全局可用标签，而应先通过当前状态、可执行动作和任务进度进行局部合法性检查。对 agent planning / tool-use RL，可以把计划轨迹、成功日志或 teacher trace 编成 state-indexed resource，只在状态兼容时施加过程监督；否则监督会把恢复、回退和重规划动作误判成偏离成功路径。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "card_summary": "SMRC-SD 把成功轨迹从“全程都能监督”改成“只有当前状态匹配时才监督”，避免多轮 agent rollout 偏离参考后继续接受错误教师信号。ALFWorld 和 WebShop 结果显示状态匹配路由与上下文化教师提示都带来增益，是一篇很贴近 agent 训练信用与状态对齐的论文。",
+        "full_summary": "这篇论文指出 privileged OPD 在多轮交互里有一个上游可靠性问题：成功参考轨迹只在其自身到达的状态上有效，学生如果绕路、换顺序或完成了不同子目标，继续把完整成功轨迹塞给 teacher 可能会压低本来正确的恢复动作。SMRC-SD 先把参考轨迹重建成状态签名序列，再检查学生当前状态、可执行动作和参考候选是否局部兼容；匹配时才给该轮加 self-distillation，并在教师上下文里加入当前状态摘要和 grounded candidate。Qwen3-1.7B 上，ALFWorld 成功率从 0.746 提到 0.865，WebShop 从 0.574 提到 0.693；固定状态干预显示 unmatched 状态下 FullPath-SD 可能负向移动动作概率。局限是 matcher 依赖环境手写状态签名，仍不是通用因果贡献估计，但它对多轮 agent 训练中的状态对齐很有参考价值。",
+        "abstract_zh": "多轮 agent 的 privileged on-policy distillation 可以用成功轨迹给每轮动作提供稠密监督，但学生 rollout 的当前状态常常已经偏离参考轨迹，导致同一条成功轨迹在局部状态上不再适用。SMRC-SD 在每一轮先检查当前执行状态是否能匹配参考轨迹中的某个支持状态，只在匹配状态上使用参考条件自蒸馏，并把教师上下文化到当前状态和可执行候选动作。论文在 ALFWorld 和 WebShop 上显示该方法稳定优于无条件 full-path distillation，并用固定状态干预与路由/上下文消融支持其机制。代码已公开。",
+        "insight": "Insight：多轮训练里的“参考轨迹”不应被当成全局可用标签，而应先通过当前状态、可执行动作和任务进度进行局部合法性检查。对 agent planning / tool-use RL，可以把计划轨迹、成功日志或 teacher trace 编成 state-indexed resource，只在状态兼容时施加过程监督；否则监督会把恢复、回退和重规划动作误判成偏离成功路径。"
+      },
+      "analysis": {
+        "motivation": "多轮 agent 的终局奖励稀疏，privileged self-distillation 试图用成功轨迹给每轮动作提供稠密监督。但交互环境里的先前动作会改变位置、库存、网页状态、已完成子目标等执行状态；当学生状态不在参考轨迹支持范围内时，同一条成功轨迹会变成局部不兼容的教师信号。",
+        "method": "SMRC-SD 为 ALFWorld / WebShop 构造环境相关的状态签名，将成功轨迹视为一组带前置状态的可执行转移。训练时每轮先匹配学生当前状态与参考轨迹状态，并检查参考候选动作是否在当前 admissible actions 中可执行；只有匹配时才启用 SDL。教师上下文包含完整成功路径、当前状态摘要和 grounded candidate，学生仍只看普通输入，GRPO 终局奖励对所有轨迹继续生效。",
+        "experiments": "论文在 ALFWorld 和 WebShop 上比较 GRPO、Skill-SD、SDAR、FullPath-SD、matched routing、dynamic context 和 SMRC-SD。Qwen3-1.7B 下 SMRC-SD 将 ALFWorld task success 从 0.746 提到 0.865，将 WebShop 从 0.574 提到 0.693；固定状态 teacher intervention 显示 matched 与 unmatched 状态的 FullPath-SD 影响方向不同，context ablation 也显示本地状态上下文比抽象 skill 或其他成功路径更强。",
+        "research_help": "Insight：多轮训练里的“参考轨迹”不应被当成全局可用标签，而应先通过当前状态、可执行动作和任务进度进行局部合法性检查。对 agent planning / tool-use RL，可以把计划轨迹、成功日志或 teacher trace 编成 state-indexed resource，只在状态兼容时施加过程监督；否则监督会把恢复、回退和重规划动作误判成偏离成功路径。",
+        "insight": "Insight：多轮训练里的“参考轨迹”不应被当成全局可用标签，而应先通过当前状态、可执行动作和任务进度进行局部合法性检查。对 agent planning / tool-use RL，可以把计划轨迹、成功日志或 teacher trace 编成 state-indexed resource，只在状态兼容时施加过程监督；否则监督会把恢复、回退和重规划动作误判成偏离成功路径。",
+        "abstract_zh": "多轮 agent 的 privileged on-policy distillation 可以用成功轨迹给每轮动作提供稠密监督，但学生 rollout 的当前状态常常已经偏离参考轨迹，导致同一条成功轨迹在局部状态上不再适用。SMRC-SD 在每一轮先检查当前执行状态是否能匹配参考轨迹中的某个支持状态，只在匹配状态上使用参考条件自蒸馏，并把教师上下文化到当前状态和可执行候选动作。论文在 ALFWorld 和 WebShop 上显示该方法稳定优于无条件 full-path distillation，并用固定状态干预与路由/上下文消融支持其机制。代码已公开。",
+        "card_summary": "SMRC-SD 把成功轨迹从“全程都能监督”改成“只有当前状态匹配时才监督”，避免多轮 agent rollout 偏离参考后继续接受错误教师信号。ALFWorld 和 WebShop 结果显示状态匹配路由与上下文化教师提示都带来增益，是一篇很贴近 agent 训练信用与状态对齐的论文。",
+        "full_summary": "这篇论文指出 privileged OPD 在多轮交互里有一个上游可靠性问题：成功参考轨迹只在其自身到达的状态上有效，学生如果绕路、换顺序或完成了不同子目标，继续把完整成功轨迹塞给 teacher 可能会压低本来正确的恢复动作。SMRC-SD 先把参考轨迹重建成状态签名序列，再检查学生当前状态、可执行动作和参考候选是否局部兼容；匹配时才给该轮加 self-distillation，并在教师上下文里加入当前状态摘要和 grounded candidate。Qwen3-1.7B 上，ALFWorld 成功率从 0.746 提到 0.865，WebShop 从 0.574 提到 0.693；固定状态干预显示 unmatched 状态下 FullPath-SD 可能负向移动动作概率。局限是 matcher 依赖环境手写状态签名，仍不是通用因果贡献估计，但它对多轮 agent 训练中的状态对齐很有参考价值。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "状态匹配的多轮 agent 自蒸馏",
+        "value_reason": "强相关：直接处理 multi-turn agent 训练中的 state-reference mismatch，把成功轨迹当成按执行状态索引的训练资源，并在 ALFWorld / WebShop 上给出明确增益与路由消融。",
+        "limitations": "核心 matcher 是环境手写的状态签名，迁移到开放网页、代码仓库或真实工具环境需要自动状态抽象。匹配/不匹配是操作性标签，不等于动作正确性标签；论文也主要报告单 run 曲线和有限 benchmark，尚需更大规模随机种子与更开放环境验证。",
+        "source_scope": "full_text",
+        "source_note": "Manually curated from extracted arXiv PDF text after nested Codex reader timeout.",
+        "source_evidence": [
+          "PDF 全文说明 state-reference mismatch 发生在学生 rollout 到达参考轨迹未覆盖状态时。",
+          "固定状态干预显示 matched 与 unmatched 状态的教师打分方向不同。",
+          "ALFWorld / WebShop 上 Qwen3-1.7B 分别从 0.746 到 0.865、0.574 到 0.693。",
+          "路由和上下文化消融分别验证选择兼容 turn 与构造状态兼容教师上下文的贡献。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-07T01:43:58.919Z"
+      }
+    },
+    {
+      "id": "2608.05703v1",
+      "title": "StreamArena: Toward Continuous, Interactive, and Long-Horizon Agentic Streaming Video Understanding",
+      "summary": "Deploying autonomous multimodal agents in continuous, real-world environments requires them to ingest unbounded audio-visual streams and maintain hour-scale memory. However, current evaluations predominantly rely on brief clips and multiple-choice formats. This design allows minimal baselines that process only the last four frames to match or surpass complex streaming models, while answer options also expose language shortcuts. We introduce StreamArena, a benchmark for hour-scale, interactive streaming video understanding. StreamArena contains 243 full-length videos averaging 88.8 minutes and 3,646 rigorously annotated, open-ended question-answer pairs that evaluate real-time perception, historical retrospection, proactive interaction, and multimodal tool utilization. Evaluation across diverse systems exposes a tension between continuous interaction and long-horizon multimodal comprehension. Methods that retain only recent frames cannot recover distant events, methods that convert past observations into text lose visual evidence, and methods that repeatedly compress visual memory struggle to preserve fine-grained details over time. We address this tension with StreamMind, a two-tier architecture that assigns latency-critical interaction and proactive monitoring to independently scheduled frontend workers, while backend workers asynchronously construct persistent multimodal memory and perform historical recall and external search. StreamMind outperforms existing streaming baselines across all four capabilities and reduces query-to-answer latency by reusing persistent state.",
+      "url": "http://arxiv.org/abs/2608.05703v1",
+      "authors": [
+        "Xichen Zhang",
+        "Guankai Li",
+        "Yinghao Zhu",
+        "Shijian Wang",
+        "Sitong Wu",
+        "Shaozuo Yu",
+        "Meng Chu",
+        "Yuan Lu",
+        "Jiaya Jia"
+      ],
+      "report_date": "2026-08-07",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "长程交互式视频 agent benchmark",
+        "water_risk": "中",
+        "value_judgement": "强相关：直接评估 continuous, interactive, long-horizon multimodal agents 的 hour-scale memory、proactive monitoring 和 tool use，并提出 persistent multimodal memory 架构；风险在于 StreamMind 结果是单次大模型评测且 benchmark 成本高。",
+        "reason": "强相关：直接评估 continuous, interactive, long-horizon multimodal agents 的 hour-scale memory、proactive monitoring 和 tool use，并提出 persistent multimodal memory 架构；风险在于 StreamMind 结果是单次大模型评测且 benchmark 成本高。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xichen Zhang",
+          "Guankai Li",
+          "Yinghao Zhu",
+          "Shijian Wang",
+          "Sitong Wu",
+          "Shaozuo Yu",
+          "Meng Chu",
+          "Yuan Lu",
+          "Jiaya Jia"
+        ],
+        "affiliations": "HKUST; Xiaohongshu Inc.; The University of Hong Kong; The Chinese University of Hong Kong",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05703v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：直接评估 continuous, interactive, long-horizon multimodal agents 的 hour-scale memory、proactive monitoring 和 tool use，并提出 persistent multimodal memory 架构；风险在于 StreamMind 结果是单次大模型评测且 benchmark 成本高。",
+        "summary": "这篇论文的价值主要在 benchmark 与系统分解：StreamArena 包含 243 个平均 88.8 分钟的视频、3,646 个开放式任务，并要求模型在因果时间点回答或主动触发，覆盖实时感知、历史回溯、工具使用和 proactive interaction。结果显示只保留近期帧、把过去压成文本摘要或依赖内部压缩都会在远距离证据和细粒度视觉记忆上失效。StreamMind 将 Front / Monitor 与 MemoryWriter / Router / Recall / Search 分层，让记忆构建异步发生，再按查询取回事件、实体关系和关键帧。它相对最强 streaming baseline 在四项能力上有 53.7% 到 228.1% 的相对提升，同 backbone 下 pooled latency 降低 66.2%。局限是完整评测昂贵，表格多数是单 run，且系统复杂度较高。",
+        "highlights": [
+          "强相关：直接评估 continuous, interactive, long-horizon multimodal agents 的 hour-scale memory、proactive monitoring 和 tool use，并提出 persistent multimodal memory 架构；风险在于 StreamMind 结果是单次大模型评测且 benchmark 成本高。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "部署在可穿戴、机器人或直播场景的 agent 不能只在用户提问后读取一段短视频；它需要持续理解流、保留遥远视觉证据、在条件满足时主动提醒，并在外部信息不足时调用工具。现有短片/选择题 benchmark 会放大语言 shortcut 和最近帧 shortcut，不能证明 hour-scale memory 和连续交互能力。",
+        "method": "StreamArena 用人工标注的 query timestamp 与 evidence timestamp 约束因果访问，并把任务划为实时感知、历史回溯、工具使用、主动交互四类。StreamMind 是两层 worker 架构：FrontWorker 负责即时响应和任务派发，MonitorWorker 持续检查未来条件；MemoryWriter 异步写入层级事件、实体关系和关键帧，Router/Recall/Search 根据查询执行多轮检索和外部搜索。",
+        "experiments": "StreamArena 覆盖 243 个 60-134.2 分钟视频，平均 88.8 分钟，3,646 个 validated QA。表 3 显示 StreamMind 在 streaming systems 中四类能力都排第一；相对支持相应能力的最强 streaming baseline，实时感知、历史回溯、工具使用和主动交互分别相对提升 58.4%、53.7%、228.1%、54.7%。同 Qwen3.5-397B-A17B backbone 下，它将 pooled query-to-answer latency 从 81.4 秒降到 27.5 秒。",
+        "research_help": "Insight：长程多模态 agent 的记忆不能只靠最近窗口或文本摘要；需要在事件、实体关系和视觉证据之间建立可检索的持久状态，并把 proactive monitoring 从普通问答路径拆出来。对 long-horizon planning benchmark，关键不是把上下文堆长，而是显式测试 evidence-to-query gap、因果可见性和跨能力组合。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "card_summary": "StreamArena 把 streaming video agent 评测推到小时级、多轮、主动触发和工具使用场景，避免短片选择题的 recency shortcut。配套的 StreamMind 用前端监控和后端持久记忆拆开延迟敏感交互与长程回忆，适合关注 long-horizon agent memory 的读者。",
+        "full_summary": "这篇论文的价值主要在 benchmark 与系统分解：StreamArena 包含 243 个平均 88.8 分钟的视频、3,646 个开放式任务，并要求模型在因果时间点回答或主动触发，覆盖实时感知、历史回溯、工具使用和 proactive interaction。结果显示只保留近期帧、把过去压成文本摘要或依赖内部压缩都会在远距离证据和细粒度视觉记忆上失效。StreamMind 将 Front / Monitor 与 MemoryWriter / Router / Recall / Search 分层，让记忆构建异步发生，再按查询取回事件、实体关系和关键帧。它相对最强 streaming baseline 在四项能力上有 53.7% 到 228.1% 的相对提升，同 backbone 下 pooled latency 降低 66.2%。局限是完整评测昂贵，表格多数是单 run，且系统复杂度较高。",
+        "abstract_zh": "真实环境中的多模态 agent 需要持续摄入音视频流、保留小时级记忆并主动交互，但现有评测多是短视频或选择题，容易被最近帧和语言选项 shortcut 掩盖。StreamArena 提供 243 个平均 88.8 分钟的视频和 3,646 个开放式问答，覆盖实时感知、历史回溯、主动触发和多模态工具使用。作者还提出 StreamMind，用前端 worker 处理低延迟交互和监控，用后端 worker 异步构建持久多模态记忆并执行回忆/搜索。实验显示它在四类 streaming 能力上都优于现有 streaming baseline，并通过复用持久状态降低响应延迟。",
+        "insight": "Insight：长程多模态 agent 的记忆不能只靠最近窗口或文本摘要；需要在事件、实体关系和视觉证据之间建立可检索的持久状态，并把 proactive monitoring 从普通问答路径拆出来。对 long-horizon planning benchmark，关键不是把上下文堆长，而是显式测试 evidence-to-query gap、因果可见性和跨能力组合。"
+      },
+      "analysis": {
+        "motivation": "部署在可穿戴、机器人或直播场景的 agent 不能只在用户提问后读取一段短视频；它需要持续理解流、保留遥远视觉证据、在条件满足时主动提醒，并在外部信息不足时调用工具。现有短片/选择题 benchmark 会放大语言 shortcut 和最近帧 shortcut，不能证明 hour-scale memory 和连续交互能力。",
+        "method": "StreamArena 用人工标注的 query timestamp 与 evidence timestamp 约束因果访问，并把任务划为实时感知、历史回溯、工具使用、主动交互四类。StreamMind 是两层 worker 架构：FrontWorker 负责即时响应和任务派发，MonitorWorker 持续检查未来条件；MemoryWriter 异步写入层级事件、实体关系和关键帧，Router/Recall/Search 根据查询执行多轮检索和外部搜索。",
+        "experiments": "StreamArena 覆盖 243 个 60-134.2 分钟视频，平均 88.8 分钟，3,646 个 validated QA。表 3 显示 StreamMind 在 streaming systems 中四类能力都排第一；相对支持相应能力的最强 streaming baseline，实时感知、历史回溯、工具使用和主动交互分别相对提升 58.4%、53.7%、228.1%、54.7%。同 Qwen3.5-397B-A17B backbone 下，它将 pooled query-to-answer latency 从 81.4 秒降到 27.5 秒。",
+        "research_help": "Insight：长程多模态 agent 的记忆不能只靠最近窗口或文本摘要；需要在事件、实体关系和视觉证据之间建立可检索的持久状态，并把 proactive monitoring 从普通问答路径拆出来。对 long-horizon planning benchmark，关键不是把上下文堆长，而是显式测试 evidence-to-query gap、因果可见性和跨能力组合。",
+        "insight": "Insight：长程多模态 agent 的记忆不能只靠最近窗口或文本摘要；需要在事件、实体关系和视觉证据之间建立可检索的持久状态，并把 proactive monitoring 从普通问答路径拆出来。对 long-horizon planning benchmark，关键不是把上下文堆长，而是显式测试 evidence-to-query gap、因果可见性和跨能力组合。",
+        "abstract_zh": "真实环境中的多模态 agent 需要持续摄入音视频流、保留小时级记忆并主动交互，但现有评测多是短视频或选择题，容易被最近帧和语言选项 shortcut 掩盖。StreamArena 提供 243 个平均 88.8 分钟的视频和 3,646 个开放式问答，覆盖实时感知、历史回溯、主动触发和多模态工具使用。作者还提出 StreamMind，用前端 worker 处理低延迟交互和监控，用后端 worker 异步构建持久多模态记忆并执行回忆/搜索。实验显示它在四类 streaming 能力上都优于现有 streaming baseline，并通过复用持久状态降低响应延迟。",
+        "card_summary": "StreamArena 把 streaming video agent 评测推到小时级、多轮、主动触发和工具使用场景，避免短片选择题的 recency shortcut。配套的 StreamMind 用前端监控和后端持久记忆拆开延迟敏感交互与长程回忆，适合关注 long-horizon agent memory 的读者。",
+        "full_summary": "这篇论文的价值主要在 benchmark 与系统分解：StreamArena 包含 243 个平均 88.8 分钟的视频、3,646 个开放式任务，并要求模型在因果时间点回答或主动触发，覆盖实时感知、历史回溯、工具使用和 proactive interaction。结果显示只保留近期帧、把过去压成文本摘要或依赖内部压缩都会在远距离证据和细粒度视觉记忆上失效。StreamMind 将 Front / Monitor 与 MemoryWriter / Router / Recall / Search 分层，让记忆构建异步发生，再按查询取回事件、实体关系和关键帧。它相对最强 streaming baseline 在四项能力上有 53.7% 到 228.1% 的相对提升，同 backbone 下 pooled latency 降低 66.2%。局限是完整评测昂贵，表格多数是单 run，且系统复杂度较高。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "长程交互式视频 agent benchmark",
+        "value_reason": "强相关：直接评估 continuous, interactive, long-horizon multimodal agents 的 hour-scale memory、proactive monitoring 和 tool use，并提出 persistent multimodal memory 架构；风险在于 StreamMind 结果是单次大模型评测且 benchmark 成本高。",
+        "limitations": "论文没有报告多随机种子显著性，完整评测依赖大模型和长视频处理，复现实验成本高。StreamMind 是系统组合而非单一模型改进，具体 worker 设计和 Google 搜索等外部组件可能影响泛化判断。",
+        "source_scope": "full_text",
+        "source_note": "Manually curated from extracted arXiv PDF text after nested Codex reader timeout.",
+        "source_evidence": [
+          "StreamArena 含 243 个平均 88.8 分钟视频和 3,646 个开放式任务。",
+          "任务覆盖实时感知、历史回溯、主动交互和多模态工具使用。",
+          "StreamMind 相对最强 streaming baseline 在四项能力上相对提升 53.7% 到 228.1%。",
+          "同 backbone pooled query-to-answer latency 相对降低 66.2%。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-07T01:43:58.920Z"
+      }
+    },
+    {
+      "id": "2608.05886v1",
+      "title": "CodeGrep: An RL-Trained Retrieval Agent for LLM Coding Agents",
+      "summary": "Modern LLM coding agents such as Claude Code and OpenHands share a common inefficiency: they spend much of their token budget finding the file to patch, rather than patching it. On SWE-Bench Verified, a 30B OpenHands agent averages 23 rounds and 631K tokens per resolved issue, with many calls spent on grep, glob, and view_file during repository exploration. We introduce CodeGrep, a 14B retrieval agent trained end-to-end with GRPO to issue multi-turn parallel grep, glob, and read tool calls and return candidate files to a frozen downstream coding agent. On all 500 SWE-Bench Verified instances, CodeGrep preserves resolve rate while substantially improving efficiency: 27.0% versus 25.8% for the no-retrieval baseline, with 15% fewer rounds and 19% fewer tokens on resolved instances. Across retrievers, downstream utility follows a precision threshold: BM25 with precision 0.375 degrades the agent, Jina with precision 0.445 is neutral, and CodeGrep with precision 0.677 crosses the threshold at which retrieval begins to reduce rollout cost. To enable this study, we mine supervision from 67K open-source agent trajectories using CATM and build a Git-worktree environment for multi-turn agent RL. In our setting, applying the efficiency signal at the advantage layer rather than the reward layer reduces KL drift and translates cleanly into downstream efficiency. We will release the model, training pipeline, RL environment, and evaluation harnesses.",
+      "url": "http://arxiv.org/abs/2608.05886v1",
+      "authors": [
+        "Wuya Chen",
+        "Yihao yang",
+        "Yang Cao",
+        "Yue Lin"
+      ],
+      "report_date": "2026-08-07",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "面向编码 agent 的 GRPO 检索子代理",
+        "water_risk": "中",
+        "value_judgement": "强相关：把代码仓库定位建模为多轮 grep/glob/read 工具 RL agent，并在 SWE-Bench Verified 下游 agent 中评估 resolve rate、rounds 和 token；主要局限是收益集中在效率而非解题率。",
+        "reason": "强相关：把代码仓库定位建模为多轮 grep/glob/read 工具 RL agent，并在 SWE-Bench Verified 下游 agent 中评估 resolve rate、rounds 和 token；主要局限是收益集中在效率而非解题率。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Wuya Chen",
+          "Yihao yang",
+          "Yang Cao",
+          "Yue Lin"
+        ],
+        "affiliations": "Netease Guangzhou AI Lab; Independent Researchers",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05886v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "强相关：把代码仓库定位建模为多轮 grep/glob/read 工具 RL agent，并在 SWE-Bench Verified 下游 agent 中评估 resolve rate、rounds 和 token；主要局限是收益集中在效率而非解题率。",
+        "summary": "这篇论文面向 coding agent 的一个具体长程瓶颈：大量 rollout 时间花在仓库探索，而不是编辑补丁。CodeGrep 用 Qwen3-14B-Instruct 作为检索子代理，最多 3 轮并行调用 grep/glob/read，输出候选文件后交给冻结的 OpenHands agent。训练数据由 CATM 从 67K 条 OpenHands 轨迹中挖掘相关文件，再用 GRPO 在轻量 Git worktree 环境中训练。实验显示只有 precision 足够高的 agentic retriever 才能产生下游收益：BM25 会伤害，Jina 近似中性，CodeGrep v3 在 500 个 SWE-Bench Verified 实例上将 resolve rate 从 25.8% 提到 27.0%，并把 resolved token 降低 19%。局限是提升更多是 rollout cost，不是解决率突破；效率数字还混合 resolved set selection effect，不过 paired 子集仍保留大部分收益。",
+        "highlights": [
+          "强相关：把代码仓库定位建模为多轮 grep/glob/read 工具 RL agent，并在 SWE-Bench Verified 下游 agent 中评估 resolve rate、rounds 和 token；主要局限是收益集中在效率而非解题率。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "代码 agent 在 SWE-Bench 类任务中经常需要先定位文件，盲目 grep / view_file 会形成长探索前缀。通用 retriever 或 BM25 不一定和下游 agent 的可用上下文匹配，低 precision 候选反而会变成 distractor。",
+        "method": "CodeGrep 是 14B tool-calling retriever，暴露 grep、glob、read 三个只读工具，每轮最多并行 8 个调用，最多 4 轮。CATM 从 OpenHands 轨迹中挖掘被读取且后续推理认为相关的文件作为训练信号；RL 环境用 bare repo + git worktree 代替 Docker，使多轮文件系统交互可扩展。奖励以 precision-biased file F_beta 为主，并把效率信号放在 advantage layer 以降低 KL drift。",
+        "experiments": "内部检索评测中 CodeGrep v3 precision 为 0.677，明显高于 BM25 的 0.375 和 Jina 的 0.445。下游 SWE-Bench Verified 500 题中，baseline resolve 25.8%、resolved rounds 23.0、resolved tokens 631K；CodeGrep v3 resolve 27.0%、resolved rounds 19.6、resolved tokens 514K。作者还报告在共同解决的 96 个实例上 rounds 下降 9%、tokens 下降 15%，说明不是纯选择效应。",
+        "research_help": "Insight：工具 agent 的可训练子模块不一定要直接生成最终答案；把高成本、重复性强的探索前缀拆成专门 RL policy，也能改善长程执行效率。更重要的是，下游效用存在 precision threshold，低质量检索会让 agent 花更多步骤排除干扰，因此 agent memory/retrieval 的训练目标应按下游 rollout cost 和成功率共同验证。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；涉及多轮交互、状态延续或交互式重规划；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "card_summary": "CodeGrep 把“找该改哪个文件”单独训练成多轮工具检索 agent，用 GRPO 学习并行 grep/glob/read。它在 SWE-Bench Verified 中主要买到效率：小幅提高 resolve rate，同时显著减少冻结 OpenHands 的轮数和 token。",
+        "full_summary": "这篇论文面向 coding agent 的一个具体长程瓶颈：大量 rollout 时间花在仓库探索，而不是编辑补丁。CodeGrep 用 Qwen3-14B-Instruct 作为检索子代理，最多 3 轮并行调用 grep/glob/read，输出候选文件后交给冻结的 OpenHands agent。训练数据由 CATM 从 67K 条 OpenHands 轨迹中挖掘相关文件，再用 GRPO 在轻量 Git worktree 环境中训练。实验显示只有 precision 足够高的 agentic retriever 才能产生下游收益：BM25 会伤害，Jina 近似中性，CodeGrep v3 在 500 个 SWE-Bench Verified 实例上将 resolve rate 从 25.8% 提到 27.0%，并把 resolved token 降低 19%。局限是提升更多是 rollout cost，不是解决率突破；效率数字还混合 resolved set selection effect，不过 paired 子集仍保留大部分收益。",
+        "abstract_zh": "现代代码 agent 在修 bug 前常消耗大量 token 找文件。CodeGrep 是一个 14B 检索 agent，用 GRPO 训练多轮并行 grep、glob、read 调用，然后把候选文件注入冻结的 OpenHands 下游 agent。作者从 67K 条开源 OpenHands 轨迹挖掘监督，构建 Git worktree 多轮 RL 环境，并比较 BM25、Jina 和 CodeGrep。SWE-Bench Verified 全量 500 题上，CodeGrep v3 将 resolve rate 从 25.8% 提到 27.0%，resolved rounds 从 23.0 降到 19.6，resolved tokens 从 631K 降到 514K。",
+        "insight": "Insight：工具 agent 的可训练子模块不一定要直接生成最终答案；把高成本、重复性强的探索前缀拆成专门 RL policy，也能改善长程执行效率。更重要的是，下游效用存在 precision threshold，低质量检索会让 agent 花更多步骤排除干扰，因此 agent memory/retrieval 的训练目标应按下游 rollout cost 和成功率共同验证。"
+      },
+      "analysis": {
+        "motivation": "代码 agent 在 SWE-Bench 类任务中经常需要先定位文件，盲目 grep / view_file 会形成长探索前缀。通用 retriever 或 BM25 不一定和下游 agent 的可用上下文匹配，低 precision 候选反而会变成 distractor。",
+        "method": "CodeGrep 是 14B tool-calling retriever，暴露 grep、glob、read 三个只读工具，每轮最多并行 8 个调用，最多 4 轮。CATM 从 OpenHands 轨迹中挖掘被读取且后续推理认为相关的文件作为训练信号；RL 环境用 bare repo + git worktree 代替 Docker，使多轮文件系统交互可扩展。奖励以 precision-biased file F_beta 为主，并把效率信号放在 advantage layer 以降低 KL drift。",
+        "experiments": "内部检索评测中 CodeGrep v3 precision 为 0.677，明显高于 BM25 的 0.375 和 Jina 的 0.445。下游 SWE-Bench Verified 500 题中，baseline resolve 25.8%、resolved rounds 23.0、resolved tokens 631K；CodeGrep v3 resolve 27.0%、resolved rounds 19.6、resolved tokens 514K。作者还报告在共同解决的 96 个实例上 rounds 下降 9%、tokens 下降 15%，说明不是纯选择效应。",
+        "research_help": "Insight：工具 agent 的可训练子模块不一定要直接生成最终答案；把高成本、重复性强的探索前缀拆成专门 RL policy，也能改善长程执行效率。更重要的是，下游效用存在 precision threshold，低质量检索会让 agent 花更多步骤排除干扰，因此 agent memory/retrieval 的训练目标应按下游 rollout cost 和成功率共同验证。",
+        "insight": "Insight：工具 agent 的可训练子模块不一定要直接生成最终答案；把高成本、重复性强的探索前缀拆成专门 RL policy，也能改善长程执行效率。更重要的是，下游效用存在 precision threshold，低质量检索会让 agent 花更多步骤排除干扰，因此 agent memory/retrieval 的训练目标应按下游 rollout cost 和成功率共同验证。",
+        "abstract_zh": "现代代码 agent 在修 bug 前常消耗大量 token 找文件。CodeGrep 是一个 14B 检索 agent，用 GRPO 训练多轮并行 grep、glob、read 调用，然后把候选文件注入冻结的 OpenHands 下游 agent。作者从 67K 条开源 OpenHands 轨迹挖掘监督，构建 Git worktree 多轮 RL 环境，并比较 BM25、Jina 和 CodeGrep。SWE-Bench Verified 全量 500 题上，CodeGrep v3 将 resolve rate 从 25.8% 提到 27.0%，resolved rounds 从 23.0 降到 19.6，resolved tokens 从 631K 降到 514K。",
+        "card_summary": "CodeGrep 把“找该改哪个文件”单独训练成多轮工具检索 agent，用 GRPO 学习并行 grep/glob/read。它在 SWE-Bench Verified 中主要买到效率：小幅提高 resolve rate，同时显著减少冻结 OpenHands 的轮数和 token。",
+        "full_summary": "这篇论文面向 coding agent 的一个具体长程瓶颈：大量 rollout 时间花在仓库探索，而不是编辑补丁。CodeGrep 用 Qwen3-14B-Instruct 作为检索子代理，最多 3 轮并行调用 grep/glob/read，输出候选文件后交给冻结的 OpenHands agent。训练数据由 CATM 从 67K 条 OpenHands 轨迹中挖掘相关文件，再用 GRPO 在轻量 Git worktree 环境中训练。实验显示只有 precision 足够高的 agentic retriever 才能产生下游收益：BM25 会伤害，Jina 近似中性，CodeGrep v3 在 500 个 SWE-Bench Verified 实例上将 resolve rate 从 25.8% 提到 27.0%，并把 resolved token 降低 19%。局限是提升更多是 rollout cost，不是解决率突破；效率数字还混合 resolved set selection effect，不过 paired 子集仍保留大部分收益。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "面向编码 agent 的 GRPO 检索子代理",
+        "value_reason": "强相关：把代码仓库定位建模为多轮 grep/glob/read 工具 RL agent，并在 SWE-Bench Verified 下游 agent 中评估 resolve rate、rounds 和 token；主要局限是收益集中在效率而非解题率。",
+        "limitations": "CodeGrep 对 resolve rate 的提升只有 1.2 个百分点，主要贡献是效率；评估下游 agent 固定为 OpenHands + Qwen3-30B，阈值是否迁移到其他 agent 未验证。模型和环境会发布但论文目前仍是预印本，效率统计也需要区分 pooled 与 paired resolved set。",
+        "source_scope": "full_text",
+        "source_note": "Manually curated from extracted arXiv PDF text after nested Codex reader timeout.",
+        "source_evidence": [
+          "论文在 SWE-Bench Verified 全量 500 实例上做下游注入评测。",
+          "CodeGrep v3 resolve 27.0%，baseline 25.8%。",
+          "resolved rounds 从 23.0 降至 19.6，resolved tokens 从 631K 降至 514K。",
+          "BM25 precision 0.375 会伤害下游，CodeGrep precision 0.677 才进入效率收益区间。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-07T01:43:58.920Z"
+      }
+    },
+    {
+      "id": "2608.05729v1",
+      "title": "Unified Agent: Managing Interactions across Devices",
+      "summary": "As capabilities rapidly increase, AI agents can move from running inside one app to acting across a user's devices over time. Yet existing agent systems still fall short in this scenario. This is because observations are scattered across devices and moments, but mainstream systems are not designed around this fact: a single agent that treats devices as tools lacks effective state management for all devices across time, and multi-agent systems coordinate across agents but do not maintain the compact carried state a cross-device, cross-time request needs. We argue that the agent should maintain an effectively designed state that organizes engagement evidence, stated facts, and the standing request in a compact, action-ready form for deciding its action given the current observation. To compare state designs, we construct a benchmark of user-agent interaction across devices and time. We instantiate this principle in Unified Agent, a stateful agent that carries interaction evidence across devices and moments and uses it with the current observation to act. In the default setting, it significantly outperforms our adaptations of four published designs. Across changes in multimodal large language model (MLLM) family, capability, and reasoning effort, it remains ahead of all compared systems, demonstrating that the state-design advantage is robust across MLLM settings. Our code and data will be publicly available on GitHub.",
+      "url": "http://arxiv.org/abs/2608.05729v1",
+      "authors": [
+        "Xinshuang Liu",
+        "Runfa Blark Li",
+        "Shaoxiu Wei",
+        "Xin Lin",
+        "Truong Nguyen"
+      ],
+      "report_date": "2026-08-07",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.HC"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 90,
+        "level": "高",
+        "label": "跨设备长期状态管理 agent",
+        "water_risk": "中",
+        "value_judgement": "相关：直接讨论跨设备、跨时间 user-agent interaction 的 compact carried state，覆盖 engagement evidence、stated facts 和 standing request；风险是 benchmark 为受控 3D/照片场景，且使用未来模型名，外部有效性要谨慎。",
+        "reason": "相关：直接讨论跨设备、跨时间 user-agent interaction 的 compact carried state，覆盖 engagement evidence、stated facts 和 standing request；风险是 benchmark 为受控 3D/照片场景，且使用未来模型名，外部有效性要谨慎。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xinshuang Liu",
+          "Runfa Blark Li",
+          "Shaoxiu Wei",
+          "Xin Lin",
+          "Truong Nguyen"
+        ],
+        "affiliations": "University of California, San Diego",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05729v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "相关：直接讨论跨设备、跨时间 user-agent interaction 的 compact carried state，覆盖 engagement evidence、stated facts 和 standing request；风险是 benchmark 为受控 3D/照片场景，且使用未来模型名，外部有效性要谨慎。",
+        "summary": "这篇论文把跨设备 user-agent interaction 定义为一个状态管理问题：当前相机视角和用户话语往往不足以解析后续请求，agent 必须携带此前哪个设备被关注、用户说过哪些事实、当前 standing request 是什么。Unified Agent 每一帧把观察折叠进三类显式状态，再用状态加当前观察选择设备和动作。UA-BENCH 包含 100 个 matched pairs / 200 episodes，任务覆盖识别 engaged device、意图、事实回忆、响应设备和下一步动作。默认 GPT-5.6-Luna low setting 下 Unified Agent overall 为 0.668，高于 Full context 的 0.613，也明显高于 Self-notes、Mem0、MM-DST 和多代理基线。它的启发是状态结构比上下文长度更关键；局限是受控渲染 benchmark 和未来模型命名使结果需要谨慎外推。",
+        "highlights": [
+          "相关：直接讨论跨设备、跨时间 user-agent interaction 的 compact carried state，覆盖 engagement evidence、stated facts 和 standing request；风险是 benchmark 为受控 3D/照片场景，且使用未来模型名，外部有效性要谨慎。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "跨设备 agent 面临的不是单纯长上下文问题：决定性线索可能出现在过去某个设备的局部视角里，后续请求又不显式说明设备或对象。无状态 agent 会追问，直接保留全历史则冗长且不一定 action-ready。",
+        "method": "Unified Agent 维护一个 carried state S_t，包括 engagement evidence、stated facts 和 standing request。每个新观察先折叠进状态，再结合当前观察决策；状态记录设备关联的注意/活动证据、按 topic 和 device 归档的事实，以及最新可执行请求。UA-BENCH 用 matched-pair 设计交换 engaged/decoy 角色，使 later request 的正确答案依赖早期交互状态。",
+        "experiments": "UA-BENCH 含 100 matched pairs、200 episodes、12 帧交互序列，并用 by-construction ground truth 评测 Eng、Inf、Rsp、Nxt 等任务。默认设置下 Unified Agent overall 0.668，Full context 0.613，Self-notes 0.480，Mixture-of-Agents / Debate-or-vote 0.474，Mem0 0.288，MM-DST 0.260；在 Gemini3.1 Flash-Lite、GPT-5.6-Luna medium、GPT-5.6-Sol 等设置下仍领先 strongest control。",
+        "research_help": "Insight：多轮 agent 的记忆状态应该是为后续动作服务的结构化证据，而不是完整日志或自由文本摘要。对长期个性化 agent，可将 engagement、事实、standing request 和设备能力拆成可更新字段，让状态直接参与路由和下一步动作选择；这比把所有历史交给模型更可控，也更容易诊断。",
+        "recommendation": {
+          "score": 90,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "涉及多轮交互、状态延续或交互式重规划；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "card_summary": "Unified Agent 关注一个很现实的多轮问题：用户跨设备操作后再说“刚才那个”，agent 需要携带什么状态才能执行。论文用 UA-BENCH 对比 full context、self-notes、Mem0、多代理等设计，显示紧凑 action-ready state 比直接保留历史更有效。",
+        "full_summary": "这篇论文把跨设备 user-agent interaction 定义为一个状态管理问题：当前相机视角和用户话语往往不足以解析后续请求，agent 必须携带此前哪个设备被关注、用户说过哪些事实、当前 standing request 是什么。Unified Agent 每一帧把观察折叠进三类显式状态，再用状态加当前观察选择设备和动作。UA-BENCH 包含 100 个 matched pairs / 200 episodes，任务覆盖识别 engaged device、意图、事实回忆、响应设备和下一步动作。默认 GPT-5.6-Luna low setting 下 Unified Agent overall 为 0.668，高于 Full context 的 0.613，也明显高于 Self-notes、Mem0、MM-DST 和多代理基线。它的启发是状态结构比上下文长度更关键；局限是受控渲染 benchmark 和未来模型命名使结果需要谨慎外推。",
+        "abstract_zh": "当 agent 从单一 app 扩展到用户多个设备时，关键信息会分散在不同设备和不同时刻。Unified Agent 主张维护一个紧凑、可行动的状态，记录 engagement evidence、stated facts 和 standing request，使后续设备未指明的请求仍能被解析。作者构建 UA-BENCH，在渲染 3D 场景中比较不同状态设计和若干 memory / multi-agent baseline。结果显示 Unified Agent 在默认设置和多种 MLLM family、reasoning effort、capability 设置下都领先，说明状态表示方式本身带来优势。",
+        "insight": "Insight：多轮 agent 的记忆状态应该是为后续动作服务的结构化证据，而不是完整日志或自由文本摘要。对长期个性化 agent，可将 engagement、事实、standing request 和设备能力拆成可更新字段，让状态直接参与路由和下一步动作选择；这比把所有历史交给模型更可控，也更容易诊断。"
+      },
+      "analysis": {
+        "motivation": "跨设备 agent 面临的不是单纯长上下文问题：决定性线索可能出现在过去某个设备的局部视角里，后续请求又不显式说明设备或对象。无状态 agent 会追问，直接保留全历史则冗长且不一定 action-ready。",
+        "method": "Unified Agent 维护一个 carried state S_t，包括 engagement evidence、stated facts 和 standing request。每个新观察先折叠进状态，再结合当前观察决策；状态记录设备关联的注意/活动证据、按 topic 和 device 归档的事实，以及最新可执行请求。UA-BENCH 用 matched-pair 设计交换 engaged/decoy 角色，使 later request 的正确答案依赖早期交互状态。",
+        "experiments": "UA-BENCH 含 100 matched pairs、200 episodes、12 帧交互序列，并用 by-construction ground truth 评测 Eng、Inf、Rsp、Nxt 等任务。默认设置下 Unified Agent overall 0.668，Full context 0.613，Self-notes 0.480，Mixture-of-Agents / Debate-or-vote 0.474，Mem0 0.288，MM-DST 0.260；在 Gemini3.1 Flash-Lite、GPT-5.6-Luna medium、GPT-5.6-Sol 等设置下仍领先 strongest control。",
+        "research_help": "Insight：多轮 agent 的记忆状态应该是为后续动作服务的结构化证据，而不是完整日志或自由文本摘要。对长期个性化 agent，可将 engagement、事实、standing request 和设备能力拆成可更新字段，让状态直接参与路由和下一步动作选择；这比把所有历史交给模型更可控，也更容易诊断。",
+        "insight": "Insight：多轮 agent 的记忆状态应该是为后续动作服务的结构化证据，而不是完整日志或自由文本摘要。对长期个性化 agent，可将 engagement、事实、standing request 和设备能力拆成可更新字段，让状态直接参与路由和下一步动作选择；这比把所有历史交给模型更可控，也更容易诊断。",
+        "abstract_zh": "当 agent 从单一 app 扩展到用户多个设备时，关键信息会分散在不同设备和不同时刻。Unified Agent 主张维护一个紧凑、可行动的状态，记录 engagement evidence、stated facts 和 standing request，使后续设备未指明的请求仍能被解析。作者构建 UA-BENCH，在渲染 3D 场景中比较不同状态设计和若干 memory / multi-agent baseline。结果显示 Unified Agent 在默认设置和多种 MLLM family、reasoning effort、capability 设置下都领先，说明状态表示方式本身带来优势。",
+        "card_summary": "Unified Agent 关注一个很现实的多轮问题：用户跨设备操作后再说“刚才那个”，agent 需要携带什么状态才能执行。论文用 UA-BENCH 对比 full context、self-notes、Mem0、多代理等设计，显示紧凑 action-ready state 比直接保留历史更有效。",
+        "full_summary": "这篇论文把跨设备 user-agent interaction 定义为一个状态管理问题：当前相机视角和用户话语往往不足以解析后续请求，agent 必须携带此前哪个设备被关注、用户说过哪些事实、当前 standing request 是什么。Unified Agent 每一帧把观察折叠进三类显式状态，再用状态加当前观察选择设备和动作。UA-BENCH 包含 100 个 matched pairs / 200 episodes，任务覆盖识别 engaged device、意图、事实回忆、响应设备和下一步动作。默认 GPT-5.6-Luna low setting 下 Unified Agent overall 为 0.668，高于 Full context 的 0.613，也明显高于 Self-notes、Mem0、MM-DST 和多代理基线。它的启发是状态结构比上下文长度更关键；局限是受控渲染 benchmark 和未来模型命名使结果需要谨慎外推。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "跨设备长期状态管理 agent",
+        "value_reason": "相关：直接讨论跨设备、跨时间 user-agent interaction 的 compact carried state，覆盖 engagement evidence、stated facts 和 standing request；风险是 benchmark 为受控 3D/照片场景，且使用未来模型名，外部有效性要谨慎。",
+        "limitations": "主要实验是受控 3D 渲染和小规模真实照片案例，离真实跨设备权限、隐私、异步通知和失败恢复还有距离。论文使用未来模型名和固定 zero-shot prompt，当前结果应理解为状态设计比较，而不是对真实产品系统的直接证明。",
+        "source_scope": "full_text",
+        "source_note": "Manually curated from extracted arXiv PDF text after nested Codex reader timeout.",
+        "source_evidence": [
+          "UA-BENCH 包含 100 matched pairs / 200 episodes，专门测试跨设备与跨时间状态。",
+          "默认设置 Unified Agent overall 0.668，高于 Full context 0.613。",
+          "消融显示 engagement count、pointing channel、prior state 和 ability routing 分别支撑不同决策。",
+          "跨模型 family、reasoning effort 和 capability 设置下仍领先 strongest control。"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-07T01:43:58.920Z"
+      }
+    },
     {
       "id": "2608.04964v1",
       "title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models",
