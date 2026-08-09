@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-07T01:43:58.920Z",
+  "updated_at": "2026-08-09T01:37:36.948Z",
   "source": "arxiv",
-  "analysis_method": "Codex curated full-text PDF reading after nested generator timeout",
+  "analysis_method": "Manual Codex curation from arXiv category HTML and arXiv abstract/HTML pages after arXiv API returned 429; strong relevance only.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪与执行可靠性",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,35 +37,40 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-07 Daily Paper",
-    "report_date": "2026-08-07",
-    "focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪与执行可靠性",
-    "summary": "今日保留 6 篇强相关论文：内生世界模型式 agentic RL、递归逐轮信用分配、状态匹配自蒸馏、小时级流视频 agent 记忆、编码 agent 检索 RL，以及跨设备长期状态管理。过滤掉网络/硬件/张量基础设施、通用 POMDP/RL 记忆、3D 场景生成和已发布旧条目。",
+    "title": "2026-08-09 Daily Paper",
+    "report_date": "2026-08-09",
+    "focus": "long horizon, multi-turn, agentic RL, agent planning",
+    "summary": "arXiv API 429 后改用 category HTML 兜底，补入 Friday 批次中此前未发布但强相关的多轮工具、搜索代理、长程终端任务、技能蒸馏、trajectory 审计和风险世界模型论文。周末没有伪造新的 arXiv 批次。",
     "top_recommendations": [
-      "2608.06197v1",
-      "2608.05987v1",
-      "2608.05219v1"
+      "2608.06057v1",
+      "2608.06128v1",
+      "2608.05466v1"
     ],
     "low_priority": [
-      "2608.05729v1"
+      "2608.06144v1"
     ],
-    "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不提交、不部署。",
-    "email_body": "2026-08-07 Daily Paper\n\n今日保留 6 篇强相关论文，重点集中在 agentic RL 的环境内化与逐轮信用、multi-turn distillation 的状态匹配、长程多模态记忆、代码 agent 检索子策略和跨设备状态管理。\n\n最值得读的 3 篇\n1. EnvACE (2608.06197v1)：用 world rehearsal 让策略内化动作-环境反馈，并支持执行前私有预演。\n2. AgentOPSD (2608.05987v1)：把自蒸馏信号递归聚合为逐轮信用，稳定重加权 GRPO 优势。\n3. SMRC-SD (2608.05219v1)：只在当前执行状态匹配成功参考轨迹时施加 privileged distillation，避免状态-参考错配。"
+    "no_news_policy": "如果没有新增强相关论文，则不提交不部署；本次为 Friday 批次补漏更新。",
+    "email_body": ""
   },
   "latest_item_ids": [
-    "2608.06197v1",
-    "2608.05987v1",
-    "2608.05219v1",
-    "2608.05703v1",
-    "2608.05886v1",
-    "2608.05729v1"
+    "2608.06057v1",
+    "2608.06128v1",
+    "2608.05466v1",
+    "2608.05225v1",
+    "2608.05212v1",
+    "2608.05245v1",
+    "2608.05573v1",
+    "2608.05519v1",
+    "2608.05587v1",
+    "2608.05695v1",
+    "2608.06144v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 6,
-    "total_items": 156,
-    "previous_items": 150,
-    "latest_items": 6,
+    "fresh_items": 11,
+    "total_items": 167,
+    "previous_items": 156,
+    "latest_items": 11,
     "source_report_dates": {
       "2026-08-07": 6,
       "2026-08-06": 9,
@@ -99,7 +104,8 @@
       "2026-06-15": 9,
       "2026-06-18": 1,
       "2026-06-14": 5,
-      "2026-06-13": 1
+      "2026-06-13": 1,
+      "2026-08-09": 11
     },
     "filtered_candidate_ids": [
       "2608.04443v1",
@@ -117,19 +123,29 @@
       "2608.04964v1",
       "2608.04843v1",
       "2608.04436v1",
-      "2608.04765v1"
+      "2608.04765v1",
+      "2608.05159v1",
+      "2608.05266v1",
+      "2608.05876v1",
+      "2608.06020v1",
+      "2608.05792v1",
+      "2608.05668v1",
+      "2608.05375v1",
+      "2608.05970v1",
+      "2608.05948v1"
     ],
     "filtered_today": [
-      "2608.06227v1",
-      "2608.06161v1",
-      "2608.06007v1",
+      "2608.05159v1",
+      "2608.05266v1",
       "2608.05784v1",
-      "2608.04443v1",
-      "2608.05111v1",
-      "2608.04964v1",
-      "2608.04843v1",
-      "2608.04436v1",
-      "2608.04765v1"
+      "2608.05876v1",
+      "2608.06020v1",
+      "2608.05792v1",
+      "2608.05668v1",
+      "2608.05375v1",
+      "2608.06227v1",
+      "2608.05970v1",
+      "2608.05948v1"
     ],
     "backfilled_report_dates": {
       "2026-07-17": 3,
@@ -139,6 +155,1298 @@
     }
   },
   "items": [
+    {
+      "id": "2608.06144v1",
+      "title": "FinEvo-Bench: A Longitudinal Benchmark for Self-Evolving Agents in Professional Financial Workflows",
+      "summary": "FinEvo-Bench measures whether self-evolving agents turn experience from earlier professional workflow tasks into later gains. It uses 120 real-case-grounded tasks across financial scenes and compares evolving scaffolds against paired non-evolving controls, finding measurable quality and compliance improvements.",
+      "url": "https://arxiv.org/abs/2608.06144v1",
+      "authors": [
+        "Bo Deng",
+        "Kang Zhou",
+        "Lifan Guo",
+        "Chongyang Tao",
+        "Xuanren Chen",
+        "Chenggang Xie",
+        "Renzhao Liang",
+        "Feng Chen",
+        "Chi Zhang"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "中高",
+        "label": "专业工作流里的 agent 自进化纵向评测",
+        "water_risk": "中",
+        "value_judgement": "专业工作流里的 agent 自进化纵向评测",
+        "reason": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Bo Deng",
+          "Kang Zhou",
+          "Lifan Guo",
+          "Chongyang Tao",
+          "Xuanren Chen",
+          "Chenggang Xie",
+          "Renzhao Liang",
+          "Feng Chen",
+          "Chi Zhang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.06144v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。",
+        "summary": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。 Insight：评估自进化 agent 时要用 interleaved longitudinal streams 和 paired non-evolving controls，否则很难区分 scaffold 记忆/技能带来的真实增益。金融领域限制较强，所以放低优先级。",
+        "highlights": [
+          "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "常见 agent benchmark 把任务独立评测，无法衡量经验是否帮助后续任务；自进化 benchmark 又往往缺少专业流程、开放产物和多维评估。",
+        "method": "基准包含 120 个真实案例支撑的任务、20 个业务场景和 6 个金融领域；每个场景有共享专业流程与人工复核 rubric。作者用相同 Qwen3.7-Max backbone 比较四种 self-evolving scaffolds 与非进化配对控制。",
+        "experiments": "Letta 得到最高 evolved score 和最低 compliance issues；Codex 的 self-evolution gain 最大。四种 scaffold 的 evolving condition 均提升 9.33-19.37 分，并减少合规问题；后半程任务收益更高，skill-only evolution 在 Claude Code 中优于 memory-only。",
+        "research_help": "Insight：评估自进化 agent 时要用 interleaved longitudinal streams 和 paired non-evolving controls，否则很难区分 scaffold 记忆/技能带来的真实增益。金融领域限制较强，所以放低优先级。",
+        "recommendation": {
+          "score": 88,
+          "level": "中高",
+          "label": "推荐",
+          "water_risk": "中",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：评估自进化 agent 时要用 interleaved longitudinal streams 和 paired non-evolving controls，否则很难区分 scaffold 记忆/技能带来的真实增益。金融领域限制较强，所以放低优先级。",
+        "abstract_zh": "FinEvo-Bench measures whether self-evolving agents turn experience from earlier professional workflow tasks into later gains. It uses 120 real-case-grounded tasks across financial scenes and compares evolving scaffolds against paired non-evolving controls, finding measurable quality and compliance improvements.",
+        "full_summary": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。 基准包含 120 个真实案例支撑的任务、20 个业务场景和 6 个金融领域；每个场景有共享专业流程与人工复核 rubric。作者用相同 Qwen3.7-Max backbone 比较四种 self-evolving scaffolds 与非进化配对控制。 Letta 得到最高 evolved score 和最低 compliance issues；Codex 的 self-evolution gain 最大。四种 scaffold 的 evolving condition 均提升 9.33-19.37 分，并减少合规问题；后半程任务收益更高，skill-only evolution 在 Claude Code 中优于 memory-only。",
+        "card_summary": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。"
+      },
+      "analysis": {
+        "motivation": "常见 agent benchmark 把任务独立评测，无法衡量经验是否帮助后续任务；自进化 benchmark 又往往缺少专业流程、开放产物和多维评估。",
+        "method": "基准包含 120 个真实案例支撑的任务、20 个业务场景和 6 个金融领域；每个场景有共享专业流程与人工复核 rubric。作者用相同 Qwen3.7-Max backbone 比较四种 self-evolving scaffolds 与非进化配对控制。",
+        "experiments": "Letta 得到最高 evolved score 和最低 compliance issues；Codex 的 self-evolution gain 最大。四种 scaffold 的 evolving condition 均提升 9.33-19.37 分，并减少合规问题；后半程任务收益更高，skill-only evolution 在 Claude Code 中优于 memory-only。",
+        "research_help": "Insight：评估自进化 agent 时要用 interleaved longitudinal streams 和 paired non-evolving controls，否则很难区分 scaffold 记忆/技能带来的真实增益。金融领域限制较强，所以放低优先级。",
+        "insight": "Insight：评估自进化 agent 时要用 interleaved longitudinal streams 和 paired non-evolving controls，否则很难区分 scaffold 记忆/技能带来的真实增益。金融领域限制较强，所以放低优先级。",
+        "abstract_zh": "FinEvo-Bench measures whether self-evolving agents turn experience from earlier professional workflow tasks into later gains. It uses 120 real-case-grounded tasks across financial scenes and compares evolving scaffolds against paired non-evolving controls, finding measurable quality and compliance improvements.",
+        "card_summary": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。",
+        "full_summary": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。 基准包含 120 个真实案例支撑的任务、20 个业务场景和 6 个金融领域；每个场景有共享专业流程与人工复核 rubric。作者用相同 Qwen3.7-Max backbone 比较四种 self-evolving scaffolds 与非进化配对控制。 Letta 得到最高 evolved score 和最低 compliance issues；Codex 的 self-evolution gain 最大。四种 scaffold 的 evolving condition 均提升 9.33-19.37 分，并减少合规问题；后半程任务收益更高，skill-only evolution 在 Claude Code 中优于 memory-only。",
+        "recommendation_level": "中高",
+        "water_risk": "中",
+        "value_label": "专业工作流里的 agent 自进化纵向评测",
+        "value_reason": "FinEvo-Bench 的价值在于纵向评测：同一 agent scaffold 在相关但不同的专业任务流里，能否把前面经验转化成后面任务的质量与合规提升。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；结论强度受限于任务覆盖、评测构造和作者报告的消融细节，发布卡片应保留谨慎表述。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "常见 agent benchmark 把任务独立评测，无法衡量经验是否帮助后续任务；自进化 benchmark 又往往缺少专业流程、开放产物和多维评估。",
+          "基准包含 120 个真实案例支撑的任务、20 个业务场景和 6 个金融领域；每个场景有共享专业流程与人工复核 rubric。作者用相同 Qwen3.7-Max backbone 比较四种 self-evolving scaffolds 与非进化配对控制。",
+          "Letta 得到最高 evolved score 和最低 compliance issues；Codex 的 self-evolution gain 最大。四种 scaffold 的 evolving condition 均提升 9.33-19.37 分，并减少合规问题；后半程任务收益更高，skill-only evolution 在 Claude Code 中优于 memory-only。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.05695v1",
+      "title": "DreamGuard: Efficient Runtime Guardrail for LLM Agents via Risk-Aware World Model",
+      "summary": "DreamGuard builds a proactive guardrail around a risk-aware world model that tracks compact recurrent latent state and predicts future latent risk. It fuses immediate-hazard and prefix-risk signals before execution, outperforming reactive and proactive guardrail baselines with low latency.",
+      "url": "https://arxiv.org/abs/2608.05695v1",
+      "authors": [
+        "Wenhao Lin",
+        "Chenyu Yu",
+        "Xingwei Lin",
+        "Sicong Cao",
+        "Xiang Chen",
+        "Lei Xue",
+        "Le Yu",
+        "Letian Sha",
+        "Chunming Wu"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CR"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 89,
+        "level": "中高",
+        "label": "基于风险世界模型的长程 agent guardrail",
+        "water_risk": "中",
+        "value_judgement": "基于风险世界模型的长程 agent guardrail",
+        "reason": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Wenhao Lin",
+          "Chenyu Yu",
+          "Xingwei Lin",
+          "Sicong Cao",
+          "Xiang Chen",
+          "Lei Xue",
+          "Le Yu",
+          "Letian Sha",
+          "Chunming Wu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05695v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。",
+        "summary": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。 Insight：长程 agent 安全需要预测“前缀风险”而非只审核当前动作。这个思路可与工具调用前的 private rehearsal、state constraints 和不可逆操作审批结合。",
+        "highlights": [
+          "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "很多危险不是单个动作明显违规，而是多步 benign actions 逐渐把系统带入危险状态；反应式 guardrail 看不到这种 long-horizon drift。",
+        "method": "风险感知 world model 维护紧凑 recurrent latent state，从轨迹预测未来 latent states，再生成 immediate-hazard 与 prefix-risk 证据，供执行前 intervention decision 使用。",
+        "experiments": "摘要报告四个 benchmark 和一个 online guardrail evaluation，DreamGuard 在 safety-utility trade-off 上优于 generic、reactive 和 proactive guardrail baselines，平均端到端延迟约 25 ms/call。",
+        "research_help": "Insight：长程 agent 安全需要预测“前缀风险”而非只审核当前动作。这个思路可与工具调用前的 private rehearsal、state constraints 和不可逆操作审批结合。",
+        "recommendation": {
+          "score": 89,
+          "level": "中高",
+          "label": "推荐",
+          "water_risk": "中",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长程 agent 安全需要预测“前缀风险”而非只审核当前动作。这个思路可与工具调用前的 private rehearsal、state constraints 和不可逆操作审批结合。",
+        "abstract_zh": "DreamGuard builds a proactive guardrail around a risk-aware world model that tracks compact recurrent latent state and predicts future latent risk. It fuses immediate-hazard and prefix-risk signals before execution, outperforming reactive and proactive guardrail baselines with low latency.",
+        "full_summary": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。 风险感知 world model 维护紧凑 recurrent latent state，从轨迹预测未来 latent states，再生成 immediate-hazard 与 prefix-risk 证据，供执行前 intervention decision 使用。 摘要报告四个 benchmark 和一个 online guardrail evaluation，DreamGuard 在 safety-utility trade-off 上优于 generic、reactive 和 proactive guardrail baselines，平均端到端延迟约 25 ms/call。",
+        "card_summary": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。"
+      },
+      "analysis": {
+        "motivation": "很多危险不是单个动作明显违规，而是多步 benign actions 逐渐把系统带入危险状态；反应式 guardrail 看不到这种 long-horizon drift。",
+        "method": "风险感知 world model 维护紧凑 recurrent latent state，从轨迹预测未来 latent states，再生成 immediate-hazard 与 prefix-risk 证据，供执行前 intervention decision 使用。",
+        "experiments": "摘要报告四个 benchmark 和一个 online guardrail evaluation，DreamGuard 在 safety-utility trade-off 上优于 generic、reactive 和 proactive guardrail baselines，平均端到端延迟约 25 ms/call。",
+        "research_help": "Insight：长程 agent 安全需要预测“前缀风险”而非只审核当前动作。这个思路可与工具调用前的 private rehearsal、state constraints 和不可逆操作审批结合。",
+        "insight": "Insight：长程 agent 安全需要预测“前缀风险”而非只审核当前动作。这个思路可与工具调用前的 private rehearsal、state constraints 和不可逆操作审批结合。",
+        "abstract_zh": "DreamGuard builds a proactive guardrail around a risk-aware world model that tracks compact recurrent latent state and predicts future latent risk. It fuses immediate-hazard and prefix-risk signals before execution, outperforming reactive and proactive guardrail baselines with low latency.",
+        "card_summary": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。",
+        "full_summary": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。 风险感知 world model 维护紧凑 recurrent latent state，从轨迹预测未来 latent states，再生成 immediate-hazard 与 prefix-risk 证据，供执行前 intervention decision 使用。 摘要报告四个 benchmark 和一个 online guardrail evaluation，DreamGuard 在 safety-utility trade-off 上优于 generic、reactive 和 proactive guardrail baselines，平均端到端延迟约 25 ms/call。",
+        "recommendation_level": "中高",
+        "water_risk": "中",
+        "value_label": "基于风险世界模型的长程 agent guardrail",
+        "value_reason": "DreamGuard 把 agent 安全检查从单步 action 审核扩展到 trajectory-level risk：用 recurrent latent world model 预测未来风险，并在执行前融合 immediate hazard 与 prefix risk。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；结论强度受限于任务覆盖、评测构造和作者报告的消融细节，发布卡片应保留谨慎表述。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "很多危险不是单个动作明显违规，而是多步 benign actions 逐渐把系统带入危险状态；反应式 guardrail 看不到这种 long-horizon drift。",
+          "风险感知 world model 维护紧凑 recurrent latent state，从轨迹预测未来 latent states，再生成 immediate-hazard 与 prefix-risk 证据，供执行前 intervention decision 使用。",
+          "摘要报告四个 benchmark 和一个 online guardrail evaluation，DreamGuard 在 safety-utility trade-off 上优于 generic、reactive 和 proactive guardrail baselines，平均端到端延迟约 25 ms/call。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.05587v1",
+      "title": "StepReflect: Structured UI Transition Reflection for Mobile GUI Agents",
+      "summary": "StepReflect reformulates per-step GUI reflection as supervised structured prediction over explicit transition specifications and paired visual evidence. The 8B model improves transition-level accuracy and online task success for long-horizon mobile GUI agents while reducing frontier-model reflection cost.",
+      "url": "https://arxiv.org/abs/2608.05587v1",
+      "authors": [
+        "Linqiang Guo",
+        "Wei Liu",
+        "Li Gu",
+        "Yang Wang",
+        "Tse-Hsun Chen"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 90,
+        "level": "中高",
+        "label": "移动 GUI agent 的结构化状态转移反思",
+        "water_risk": "中",
+        "value_judgement": "移动 GUI agent 的结构化状态转移反思",
+        "reason": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Linqiang Guo",
+          "Wei Liu",
+          "Li Gu",
+          "Yang Wang",
+          "Tse-Hsun Chen"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05587v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。",
+        "summary": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。 Insight：GUI agent 的 long-horizon reliability 可以从“每步状态转移是否成立”入手，训练小 verifier/reflector 替代昂贵通用反思。限制是场景集中在移动 GUI，泛化到网页和桌面仍需验证。",
+        "highlights": [
+          "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "移动 GUI 长程执行需要每步判断动作是否产生预期状态变化；反复调用 frontier model 做开放式 reflection 成本高，也不匹配 GUI 转移的结构化性质。",
+        "method": "模型通过 SFT、teacher-student distillation、preference 与 reward-based refinement 分阶段训练，输入显式 transition spec 和 paired visual evidence，输出结构化转移反思。",
+        "experiments": "8B StepReflect 在 AndroidWorld 上达到 82.16% transition-level accuracy，超过同结构输入下的 zero-shot GPT-5.2；在线接入四种 agent 配置时，三种成功率更高，第四种接近 GPT-5.2 Reflection Agent，同时降低付费 API 成本。",
+        "research_help": "Insight：GUI agent 的 long-horizon reliability 可以从“每步状态转移是否成立”入手，训练小 verifier/reflector 替代昂贵通用反思。限制是场景集中在移动 GUI，泛化到网页和桌面仍需验证。",
+        "recommendation": {
+          "score": 90,
+          "level": "中高",
+          "label": "推荐",
+          "water_risk": "中",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：GUI agent 的 long-horizon reliability 可以从“每步状态转移是否成立”入手，训练小 verifier/reflector 替代昂贵通用反思。限制是场景集中在移动 GUI，泛化到网页和桌面仍需验证。",
+        "abstract_zh": "StepReflect reformulates per-step GUI reflection as supervised structured prediction over explicit transition specifications and paired visual evidence. The 8B model improves transition-level accuracy and online task success for long-horizon mobile GUI agents while reducing frontier-model reflection cost.",
+        "full_summary": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。 模型通过 SFT、teacher-student distillation、preference 与 reward-based refinement 分阶段训练，输入显式 transition spec 和 paired visual evidence，输出结构化转移反思。 8B StepReflect 在 AndroidWorld 上达到 82.16% transition-level accuracy，超过同结构输入下的 zero-shot GPT-5.2；在线接入四种 agent 配置时，三种成功率更高，第四种接近 GPT-5.2 Reflection Agent，同时降低付费 API 成本。",
+        "card_summary": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。"
+      },
+      "analysis": {
+        "motivation": "移动 GUI 长程执行需要每步判断动作是否产生预期状态变化；反复调用 frontier model 做开放式 reflection 成本高，也不匹配 GUI 转移的结构化性质。",
+        "method": "模型通过 SFT、teacher-student distillation、preference 与 reward-based refinement 分阶段训练，输入显式 transition spec 和 paired visual evidence，输出结构化转移反思。",
+        "experiments": "8B StepReflect 在 AndroidWorld 上达到 82.16% transition-level accuracy，超过同结构输入下的 zero-shot GPT-5.2；在线接入四种 agent 配置时，三种成功率更高，第四种接近 GPT-5.2 Reflection Agent，同时降低付费 API 成本。",
+        "research_help": "Insight：GUI agent 的 long-horizon reliability 可以从“每步状态转移是否成立”入手，训练小 verifier/reflector 替代昂贵通用反思。限制是场景集中在移动 GUI，泛化到网页和桌面仍需验证。",
+        "insight": "Insight：GUI agent 的 long-horizon reliability 可以从“每步状态转移是否成立”入手，训练小 verifier/reflector 替代昂贵通用反思。限制是场景集中在移动 GUI，泛化到网页和桌面仍需验证。",
+        "abstract_zh": "StepReflect reformulates per-step GUI reflection as supervised structured prediction over explicit transition specifications and paired visual evidence. The 8B model improves transition-level accuracy and online task success for long-horizon mobile GUI agents while reducing frontier-model reflection cost.",
+        "card_summary": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。",
+        "full_summary": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。 模型通过 SFT、teacher-student distillation、preference 与 reward-based refinement 分阶段训练，输入显式 transition spec 和 paired visual evidence，输出结构化转移反思。 8B StepReflect 在 AndroidWorld 上达到 82.16% transition-level accuracy，超过同结构输入下的 zero-shot GPT-5.2；在线接入四种 agent 配置时，三种成功率更高，第四种接近 GPT-5.2 Reflection Agent，同时降低付费 API 成本。",
+        "recommendation_level": "中高",
+        "water_risk": "中",
+        "value_label": "移动 GUI agent 的结构化状态转移反思",
+        "value_reason": "StepReflect 将 GUI agent 每步 action reflection 从开放式多模态自省，改成基于 transition specification 和成对视觉证据的结构化预测。它更像一个本地可部署的状态转移 verifier。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；结论强度受限于任务覆盖、评测构造和作者报告的消融细节，发布卡片应保留谨慎表述。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "移动 GUI 长程执行需要每步判断动作是否产生预期状态变化；反复调用 frontier model 做开放式 reflection 成本高，也不匹配 GUI 转移的结构化性质。",
+          "模型通过 SFT、teacher-student distillation、preference 与 reward-based refinement 分阶段训练，输入显式 transition spec 和 paired visual evidence，输出结构化转移反思。",
+          "8B StepReflect 在 AndroidWorld 上达到 82.16% transition-level accuracy，超过同结构输入下的 zero-shot GPT-5.2；在线接入四种 agent 配置时，三种成功率更高，第四种接近 GPT-5.2 Reflection Agent，同时降低付费 API 成本。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.05519v1",
+      "title": "EcoAgent-Bench: Evaluating Economic Decision-Making in Budget-Constrained LLM Agents",
+      "summary": "EcoAgent-Bench evaluates whether agents can choose among local lookup, search, stronger models, composite tools, or human escalation under explicit budgets. It separates task completion from economical action selection and reports that current agents perform poorly on economic consistency.",
+      "url": "https://arxiv.org/abs/2608.05519v1",
+      "authors": [
+        "Jie Wu",
+        "Ming Gong",
+        "Feixiang Cheng",
+        "Qinqin Zhao"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 90,
+        "level": "中高",
+        "label": "预算约束下的代理升级与工具选择评测",
+        "water_risk": "中",
+        "value_judgement": "预算约束下的代理升级与工具选择评测",
+        "reason": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jie Wu",
+          "Ming Gong",
+          "Feixiang Cheng",
+          "Qinqin Zhao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05519v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。",
+        "summary": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。 Insight：长期 agent 的可靠性还包括 resource-aware control。它提醒训练 agentic policy 时应把成本、升级和停止条件建模为状态化决策，而非后处理统计。",
+        "highlights": [
+          "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "真实 agent 系统里，选择便宜检索、强模型、组合工具或人工升级是任务策略的一部分；只看完成率会奖励总是升级的浪费策略。",
+        "method": "每个任务都有 priced actions 和 explicit budget，并报告 economic-consistency score，惩罚一边倒的 always-escalate 或 always-save policy。评测覆盖 tool-API 和 workspace-CLI 两种设置。",
+        "experiments": "七个 LLM agents 在 micro strict success 和 economic consistency 上都表现有限；摘要中最高 economic consistency 只有 7.3%，预算 sweep 对 GPT-5.4 的升级率影响也很小。",
+        "research_help": "Insight：长期 agent 的可靠性还包括 resource-aware control。它提醒训练 agentic policy 时应把成本、升级和停止条件建模为状态化决策，而非后处理统计。",
+        "recommendation": {
+          "score": 90,
+          "level": "中高",
+          "label": "推荐",
+          "water_risk": "中",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长期 agent 的可靠性还包括 resource-aware control。它提醒训练 agentic policy 时应把成本、升级和停止条件建模为状态化决策，而非后处理统计。",
+        "abstract_zh": "EcoAgent-Bench evaluates whether agents can choose among local lookup, search, stronger models, composite tools, or human escalation under explicit budgets. It separates task completion from economical action selection and reports that current agents perform poorly on economic consistency.",
+        "full_summary": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。 每个任务都有 priced actions 和 explicit budget，并报告 economic-consistency score，惩罚一边倒的 always-escalate 或 always-save policy。评测覆盖 tool-API 和 workspace-CLI 两种设置。 七个 LLM agents 在 micro strict success 和 economic consistency 上都表现有限；摘要中最高 economic consistency 只有 7.3%，预算 sweep 对 GPT-5.4 的升级率影响也很小。",
+        "card_summary": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。"
+      },
+      "analysis": {
+        "motivation": "真实 agent 系统里，选择便宜检索、强模型、组合工具或人工升级是任务策略的一部分；只看完成率会奖励总是升级的浪费策略。",
+        "method": "每个任务都有 priced actions 和 explicit budget，并报告 economic-consistency score，惩罚一边倒的 always-escalate 或 always-save policy。评测覆盖 tool-API 和 workspace-CLI 两种设置。",
+        "experiments": "七个 LLM agents 在 micro strict success 和 economic consistency 上都表现有限；摘要中最高 economic consistency 只有 7.3%，预算 sweep 对 GPT-5.4 的升级率影响也很小。",
+        "research_help": "Insight：长期 agent 的可靠性还包括 resource-aware control。它提醒训练 agentic policy 时应把成本、升级和停止条件建模为状态化决策，而非后处理统计。",
+        "insight": "Insight：长期 agent 的可靠性还包括 resource-aware control。它提醒训练 agentic policy 时应把成本、升级和停止条件建模为状态化决策，而非后处理统计。",
+        "abstract_zh": "EcoAgent-Bench evaluates whether agents can choose among local lookup, search, stronger models, composite tools, or human escalation under explicit budgets. It separates task completion from economical action selection and reports that current agents perform poorly on economic consistency.",
+        "card_summary": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。",
+        "full_summary": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。 每个任务都有 priced actions 和 explicit budget，并报告 economic-consistency score，惩罚一边倒的 always-escalate 或 always-save policy。评测覆盖 tool-API 和 workspace-CLI 两种设置。 七个 LLM agents 在 micro strict success 和 economic consistency 上都表现有限；摘要中最高 economic consistency 只有 7.3%，预算 sweep 对 GPT-5.4 的升级率影响也很小。",
+        "recommendation_level": "中高",
+        "water_risk": "中",
+        "value_label": "预算约束下的代理升级与工具选择评测",
+        "value_reason": "EcoAgent-Bench 把“是否升级工具/模型/人工、是否省钱”本身变成任务决策，而不是把成本当附属统计。它用 304 个真实衍生任务测试预算约束下的升级、节省、模型档位选择和 unsupported premise 停止能力。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；结论强度受限于任务覆盖、评测构造和作者报告的消融细节，发布卡片应保留谨慎表述。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "真实 agent 系统里，选择便宜检索、强模型、组合工具或人工升级是任务策略的一部分；只看完成率会奖励总是升级的浪费策略。",
+          "每个任务都有 priced actions 和 explicit budget，并报告 economic-consistency score，惩罚一边倒的 always-escalate 或 always-save policy。评测覆盖 tool-API 和 workspace-CLI 两种设置。",
+          "七个 LLM agents 在 micro strict success 和 economic consistency 上都表现有限；摘要中最高 economic consistency 只有 7.3%，预算 sweep 对 GPT-5.4 的升级率影响也很小。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.05573v1",
+      "title": "SkillTV-Bench: Benchmarking How Well Judges Perform on Skill-Augmented Agentic Execution",
+      "summary": "SkillTV-Bench evaluates skill-aware trajectory verification for skill-augmented agents using 681 real trajectories from 50 tasks across eleven domains. SkillTV-Evolve externalizes verification knowledge as JudgeSkill, improving agent-judge accuracy and rollout-pool selection success.",
+      "url": "https://arxiv.org/abs/2608.05573v1",
+      "authors": [
+        "Zhi Han",
+        "Chenxi Zeng",
+        "Liuhaichen Yang",
+        "Zihan Guo",
+        "Ming Zhou",
+        "Yang Li"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "中高",
+        "label": "技能增强 agent 执行的轨迹验证基准",
+        "water_risk": "低",
+        "value_judgement": "技能增强 agent 执行的轨迹验证基准",
+        "reason": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhi Han",
+          "Chenxi Zeng",
+          "Liuhaichen Yang",
+          "Zihan Guo",
+          "Ming Zhou",
+          "Yang Li"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05573v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。",
+        "summary": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。 Insight：训练或选择多轮 agent rollout 时，judge 也需要技能和程序知识。这个方向补上了 execution-time verification 和 process supervision 之间的缺口。",
+        "highlights": [
+          "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "随着 agent 通过技能完成长程任务，最终回答评分不够；验证者必须知道哪些证据该查、哪些失败是 task-critical。",
+        "method": "作者构建 681 个真实 agent trajectories，覆盖 50 个任务和 11 个领域，并提出 SkillTV-Evolve，把验证知识外化为 JudgeSkill，让 agent judge 规划 targeted inspections 并给出 evidence-grounded verdicts。",
+        "experiments": "Refined JudgeSkill 让同一个 agent judge 的准确率提升 14.8 个百分点；在离线 rollout-pool selection 中，十个 rollout 的 selected-trajectory success 从 22.9% 提升到 45.5%。",
+        "research_help": "Insight：训练或选择多轮 agent rollout 时，judge 也需要技能和程序知识。这个方向补上了 execution-time verification 和 process supervision 之间的缺口。",
+        "recommendation": {
+          "score": 92,
+          "level": "中高",
+          "label": "推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：训练或选择多轮 agent rollout 时，judge 也需要技能和程序知识。这个方向补上了 execution-time verification 和 process supervision 之间的缺口。",
+        "abstract_zh": "SkillTV-Bench evaluates skill-aware trajectory verification for skill-augmented agents using 681 real trajectories from 50 tasks across eleven domains. SkillTV-Evolve externalizes verification knowledge as JudgeSkill, improving agent-judge accuracy and rollout-pool selection success.",
+        "full_summary": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。 作者构建 681 个真实 agent trajectories，覆盖 50 个任务和 11 个领域，并提出 SkillTV-Evolve，把验证知识外化为 JudgeSkill，让 agent judge 规划 targeted inspections 并给出 evidence-grounded verdicts。 Refined JudgeSkill 让同一个 agent judge 的准确率提升 14.8 个百分点；在离线 rollout-pool selection 中，十个 rollout 的 selected-trajectory success 从 22.9% 提升到 45.5%。",
+        "card_summary": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。"
+      },
+      "analysis": {
+        "motivation": "随着 agent 通过技能完成长程任务，最终回答评分不够；验证者必须知道哪些证据该查、哪些失败是 task-critical。",
+        "method": "作者构建 681 个真实 agent trajectories，覆盖 50 个任务和 11 个领域，并提出 SkillTV-Evolve，把验证知识外化为 JudgeSkill，让 agent judge 规划 targeted inspections 并给出 evidence-grounded verdicts。",
+        "experiments": "Refined JudgeSkill 让同一个 agent judge 的准确率提升 14.8 个百分点；在离线 rollout-pool selection 中，十个 rollout 的 selected-trajectory success 从 22.9% 提升到 45.5%。",
+        "research_help": "Insight：训练或选择多轮 agent rollout 时，judge 也需要技能和程序知识。这个方向补上了 execution-time verification 和 process supervision 之间的缺口。",
+        "insight": "Insight：训练或选择多轮 agent rollout 时，judge 也需要技能和程序知识。这个方向补上了 execution-time verification 和 process supervision 之间的缺口。",
+        "abstract_zh": "SkillTV-Bench evaluates skill-aware trajectory verification for skill-augmented agents using 681 real trajectories from 50 tasks across eleven domains. SkillTV-Evolve externalizes verification knowledge as JudgeSkill, improving agent-judge accuracy and rollout-pool selection success.",
+        "card_summary": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。",
+        "full_summary": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。 作者构建 681 个真实 agent trajectories，覆盖 50 个任务和 11 个领域，并提出 SkillTV-Evolve，把验证知识外化为 JudgeSkill，让 agent judge 规划 targeted inspections 并给出 evidence-grounded verdicts。 Refined JudgeSkill 让同一个 agent judge 的准确率提升 14.8 个百分点；在离线 rollout-pool selection 中，十个 rollout 的 selected-trajectory success 从 22.9% 提升到 45.5%。",
+        "recommendation_level": "中高",
+        "water_risk": "低",
+        "value_label": "技能增强 agent 执行的轨迹验证基准",
+        "value_reason": "SkillTV-Bench 把评测焦点放在 skill-augmented agent 的完整执行验证上：judge 既要看轨迹和环境产物，也要理解任务时 skill 里编码的 procedural knowledge。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；具体实验设置、统计显著性与数据泄漏风险仍需精读正文确认。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "随着 agent 通过技能完成长程任务，最终回答评分不够；验证者必须知道哪些证据该查、哪些失败是 task-critical。",
+          "作者构建 681 个真实 agent trajectories，覆盖 50 个任务和 11 个领域，并提出 SkillTV-Evolve，把验证知识外化为 JudgeSkill，让 agent judge 规划 targeted inspections 并给出 evidence-grounded verdicts。",
+          "Refined JudgeSkill 让同一个 agent judge 的准确率提升 14.8 个百分点；在离线 rollout-pool selection 中，十个 rollout 的 selected-trajectory success 从 22.9% 提升到 45.5%。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.05245v1",
+      "title": "Search2Skill: Skill Distillation Beyond Knowledge Boundaries Via Rubric-Based Reinforcement Learning",
+      "summary": "Search2Skill detects an agent's capability gaps, searches external sources, and distills retrieved evidence into structured reusable skills. A rubric-based RL scheme jointly improves when to search, how to search, and how to generate skills, outperforming search-augmented and trajectory-based skill-learning baselines.",
+      "url": "https://arxiv.org/abs/2608.05245v1",
+      "authors": [
+        "Muyang Ye",
+        "Tian Lan",
+        "Feihu Jiang",
+        "Yongshi Ye",
+        "Wuyunsiqin",
+        "Bin Zhu",
+        "Qianghuai Jia",
+        "Zhao Xu",
+        "Weihua Luo",
+        "Ye Wang",
+        "Jinyang Zhang",
+        "Longyue Wang",
+        "Lingfeng Bao"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 93,
+        "level": "中高",
+        "label": "检索增强的技能蒸馏与 rubric RL",
+        "water_risk": "中",
+        "value_judgement": "检索增强的技能蒸馏与 rubric RL",
+        "reason": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Muyang Ye",
+          "Tian Lan",
+          "Feihu Jiang",
+          "Yongshi Ye",
+          "Wuyunsiqin",
+          "Bin Zhu",
+          "Qianghuai Jia",
+          "Zhao Xu",
+          "Weihua Luo",
+          "Ye Wang",
+          "Jinyang Zhang",
+          "Longyue Wang",
+          "Lingfeng Bao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.05245v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。",
+        "summary": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。 Insight：对长期 agent 而言，search 的最终产物不应只是上下文证据，还可以变成可迁移的技能资产。关键风险是 rubric 是否能防止错误证据被固化成 skill。",
+        "highlights": [
+          "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "自进化 skill 方法如果只从模型参数知识或已有轨迹构造技能，会被模型已经知道的内容限制；专业流程和规范往往在模型知识边界之外。",
+        "method": "框架识别 capability gaps，调用外部搜索补足知识，再将证据抽象为可复用技能。训练使用 rubric-based RL 联合优化搜索时机、搜索方式和技能生成质量。",
+        "experiments": "在来自三个 benchmark 的八个专家级领域中，Search2Skill 在 streaming 和 held-out evaluation 下都超过 search-augmented 与 trajectory-based skill-learning baselines；分析显示收益来自 skill abstraction，而非简单拼接 retrieved evidence。",
+        "research_help": "Insight：对长期 agent 而言，search 的最终产物不应只是上下文证据，还可以变成可迁移的技能资产。关键风险是 rubric 是否能防止错误证据被固化成 skill。",
+        "recommendation": {
+          "score": 93,
+          "level": "中高",
+          "label": "推荐",
+          "water_risk": "中",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：对长期 agent 而言，search 的最终产物不应只是上下文证据，还可以变成可迁移的技能资产。关键风险是 rubric 是否能防止错误证据被固化成 skill。",
+        "abstract_zh": "Search2Skill detects an agent's capability gaps, searches external sources, and distills retrieved evidence into structured reusable skills. A rubric-based RL scheme jointly improves when to search, how to search, and how to generate skills, outperforming search-augmented and trajectory-based skill-learning baselines.",
+        "full_summary": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。 框架识别 capability gaps，调用外部搜索补足知识，再将证据抽象为可复用技能。训练使用 rubric-based RL 联合优化搜索时机、搜索方式和技能生成质量。 在来自三个 benchmark 的八个专家级领域中，Search2Skill 在 streaming 和 held-out evaluation 下都超过 search-augmented 与 trajectory-based skill-learning baselines；分析显示收益来自 skill abstraction，而非简单拼接 retrieved evidence。",
+        "card_summary": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。"
+      },
+      "analysis": {
+        "motivation": "自进化 skill 方法如果只从模型参数知识或已有轨迹构造技能，会被模型已经知道的内容限制；专业流程和规范往往在模型知识边界之外。",
+        "method": "框架识别 capability gaps，调用外部搜索补足知识，再将证据抽象为可复用技能。训练使用 rubric-based RL 联合优化搜索时机、搜索方式和技能生成质量。",
+        "experiments": "在来自三个 benchmark 的八个专家级领域中，Search2Skill 在 streaming 和 held-out evaluation 下都超过 search-augmented 与 trajectory-based skill-learning baselines；分析显示收益来自 skill abstraction，而非简单拼接 retrieved evidence。",
+        "research_help": "Insight：对长期 agent 而言，search 的最终产物不应只是上下文证据，还可以变成可迁移的技能资产。关键风险是 rubric 是否能防止错误证据被固化成 skill。",
+        "insight": "Insight：对长期 agent 而言，search 的最终产物不应只是上下文证据，还可以变成可迁移的技能资产。关键风险是 rubric 是否能防止错误证据被固化成 skill。",
+        "abstract_zh": "Search2Skill detects an agent's capability gaps, searches external sources, and distills retrieved evidence into structured reusable skills. A rubric-based RL scheme jointly improves when to search, how to search, and how to generate skills, outperforming search-augmented and trajectory-based skill-learning baselines.",
+        "card_summary": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。",
+        "full_summary": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。 框架识别 capability gaps，调用外部搜索补足知识，再将证据抽象为可复用技能。训练使用 rubric-based RL 联合优化搜索时机、搜索方式和技能生成质量。 在来自三个 benchmark 的八个专家级领域中，Search2Skill 在 streaming 和 held-out evaluation 下都超过 search-augmented 与 trajectory-based skill-learning baselines；分析显示收益来自 skill abstraction，而非简单拼接 retrieved evidence。",
+        "recommendation_level": "中高",
+        "water_risk": "中",
+        "value_label": "检索增强的技能蒸馏与 rubric RL",
+        "value_reason": "Search2Skill 把 reusable skill 的来源从模型内部轨迹扩展到外部证据：先发现能力缺口，再搜索专业资料，并把证据蒸馏成结构化技能。rubric-based RL 同时训练何时搜、怎么搜、怎么写 skill。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；结论强度受限于任务覆盖、评测构造和作者报告的消融细节，发布卡片应保留谨慎表述。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "自进化 skill 方法如果只从模型参数知识或已有轨迹构造技能，会被模型已经知道的内容限制；专业流程和规范往往在模型知识边界之外。",
+          "框架识别 capability gaps，调用外部搜索补足知识，再将证据抽象为可复用技能。训练使用 rubric-based RL 联合优化搜索时机、搜索方式和技能生成质量。",
+          "在来自三个 benchmark 的八个专家级领域中，Search2Skill 在 streaming 和 held-out evaluation 下都超过 search-augmented 与 trajectory-based skill-learning baselines；分析显示收益来自 skill abstraction，而非简单拼接 retrieved evidence。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.05212v1",
+      "title": "SearchAuditor: Auditing and Attributing Failures in Long-Horizon Search Agents",
+      "summary": "SearchAuditBench contains 1,243 failed long-horizon search trajectories with expert-labeled critical steps, root causes, and repairs. SearchAuditor uses multi-perspective evidence-grounded adjudication to localize, attribute, and repair failures, improving end-to-end pass rate and recovery.",
+      "url": "https://arxiv.org/abs/2608.05212v1",
+      "authors": [
+        "Zhixiang Liang",
+        "Yifei Liu",
+        "Yidan Huang",
+        "Haozhe Zhao",
+        "Beichen Huang",
+        "Jiaqi Wang",
+        "Nan Duan",
+        "Qiong Cao"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "长程搜索代理失败定位与修复审计",
+        "water_risk": "低",
+        "value_judgement": "长程搜索代理失败定位与修复审计",
+        "reason": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhixiang Liang",
+          "Yifei Liu",
+          "Yidan Huang",
+          "Haozhe Zhao",
+          "Beichen Huang",
+          "Jiaqi Wang",
+          "Nan Duan",
+          "Qiong Cao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.05212v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。",
+        "summary": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。 Insight：长程 agent 可靠性需要“失败定位数据”，不仅是成功轨迹。这个 benchmark 形态可直接借鉴到 tool-use、web navigation 和 coding-agent 的 trajectory debugging。",
+        "highlights": [
+          "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "深度搜索代理的轨迹长且噪声大，小错误会在后续检索和推理中放大；人工读完整轨迹定位失败成本很高。",
+        "method": "SearchAuditBench 提供失败轨迹、关键错误步、search-specific root cause、reference repair 和 grading rubrics。SearchAuditor 通过多视角审计与 evidence-grounded adjudication 来定位、归因和生成修复。",
+        "experiments": "摘要报告最强 baseline 即使用 GPT-5.5 也只有 26.6% end-to-end pass rate，而 SearchAuditor 达到 32.3%；将修复用于恢复失败运行还能提高 agent recovery。",
+        "research_help": "Insight：长程 agent 可靠性需要“失败定位数据”，不仅是成功轨迹。这个 benchmark 形态可直接借鉴到 tool-use、web navigation 和 coding-agent 的 trajectory debugging。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长程 agent 可靠性需要“失败定位数据”，不仅是成功轨迹。这个 benchmark 形态可直接借鉴到 tool-use、web navigation 和 coding-agent 的 trajectory debugging。",
+        "abstract_zh": "SearchAuditBench contains 1,243 failed long-horizon search trajectories with expert-labeled critical steps, root causes, and repairs. SearchAuditor uses multi-perspective evidence-grounded adjudication to localize, attribute, and repair failures, improving end-to-end pass rate and recovery.",
+        "full_summary": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。 SearchAuditBench 提供失败轨迹、关键错误步、search-specific root cause、reference repair 和 grading rubrics。SearchAuditor 通过多视角审计与 evidence-grounded adjudication 来定位、归因和生成修复。 摘要报告最强 baseline 即使用 GPT-5.5 也只有 26.6% end-to-end pass rate，而 SearchAuditor 达到 32.3%；将修复用于恢复失败运行还能提高 agent recovery。",
+        "card_summary": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。"
+      },
+      "analysis": {
+        "motivation": "深度搜索代理的轨迹长且噪声大，小错误会在后续检索和推理中放大；人工读完整轨迹定位失败成本很高。",
+        "method": "SearchAuditBench 提供失败轨迹、关键错误步、search-specific root cause、reference repair 和 grading rubrics。SearchAuditor 通过多视角审计与 evidence-grounded adjudication 来定位、归因和生成修复。",
+        "experiments": "摘要报告最强 baseline 即使用 GPT-5.5 也只有 26.6% end-to-end pass rate，而 SearchAuditor 达到 32.3%；将修复用于恢复失败运行还能提高 agent recovery。",
+        "research_help": "Insight：长程 agent 可靠性需要“失败定位数据”，不仅是成功轨迹。这个 benchmark 形态可直接借鉴到 tool-use、web navigation 和 coding-agent 的 trajectory debugging。",
+        "insight": "Insight：长程 agent 可靠性需要“失败定位数据”，不仅是成功轨迹。这个 benchmark 形态可直接借鉴到 tool-use、web navigation 和 coding-agent 的 trajectory debugging。",
+        "abstract_zh": "SearchAuditBench contains 1,243 failed long-horizon search trajectories with expert-labeled critical steps, root causes, and repairs. SearchAuditor uses multi-perspective evidence-grounded adjudication to localize, attribute, and repair failures, improving end-to-end pass rate and recovery.",
+        "card_summary": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。",
+        "full_summary": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。 SearchAuditBench 提供失败轨迹、关键错误步、search-specific root cause、reference repair 和 grading rubrics。SearchAuditor 通过多视角审计与 evidence-grounded adjudication 来定位、归因和生成修复。 摘要报告最强 baseline 即使用 GPT-5.5 也只有 26.6% end-to-end pass rate，而 SearchAuditor 达到 32.3%；将修复用于恢复失败运行还能提高 agent recovery。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "长程搜索代理失败定位与修复审计",
+        "value_reason": "SearchAuditor 关注长程 search agent 的失败归因，而不是只看最终答案。它构建 1,243 条失败轨迹，平均 73.1 messages 和 65.1K tokens，并标注关键错误步、根因和参考修复。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；具体实验设置、统计显著性与数据泄漏风险仍需精读正文确认。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "深度搜索代理的轨迹长且噪声大，小错误会在后续检索和推理中放大；人工读完整轨迹定位失败成本很高。",
+          "SearchAuditBench 提供失败轨迹、关键错误步、search-specific root cause、reference repair 和 grading rubrics。SearchAuditor 通过多视角审计与 evidence-grounded adjudication 来定位、归因和生成修复。",
+          "摘要报告最强 baseline 即使用 GPT-5.5 也只有 26.6% end-to-end pass rate，而 SearchAuditor 达到 32.3%；将修复用于恢复失败运行还能提高 agent recovery。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.05225v1",
+      "title": "Project2Task: Graph-Guided Project-Level Planning for Autonomous Research",
+      "summary": "Project2Task treats autonomous research as a long-horizon project rather than one oversized task. It represents candidate contributions as innovation atoms, selects a portfolio decomposition with a graph objective, and emits dependency-aware task contracts that improve project quality and downstream executor accuracy.",
+      "url": "https://arxiv.org/abs/2608.05225v1",
+      "authors": [
+        "Huirui Xu",
+        "Runtao Xu",
+        "Shuo Ren",
+        "Jiajun Zhang"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "自主研究的项目级任务图规划",
+        "water_risk": "中",
+        "value_judgement": "自主研究的项目级任务图规划",
+        "reason": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Huirui Xu",
+          "Runtao Xu",
+          "Shuo Ren",
+          "Jiajun Zhang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.05225v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。",
+        "summary": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。 Insight：agent planning 在研究场景里不应只生成 plan steps，而要生成可交付、可评估、可合并的任务 contract。它对 multi-agent research orchestration 很有参考价值，但评测规模仍偏小。",
+        "highlights": [
+          "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "研究代理如果只接受一个大主题，常会生成平铺、重叠或缺少执行边界的任务，难以形成 coherent project-level result。",
+        "method": "方法用创新原子和有向 lineage graph 表示候选贡献，再用轻量 Bernoulli block-model 目标选择 horizontal、vertical 或 hybrid portfolio decomposition，最后修复任务重叠和缺失字段，输出依赖感知的任务合同。",
+        "experiments": "在 10 个 project briefs、约 30 个任务的 benchmark 上，manuscript-based portfolio evaluation 平均质量 7.15，高于 Brief Baseline 的 4.58 和 Topic-only 的 5.31；接入 AutoResearchClaw 后 downstream task accuracy 从 0.536 提升到 0.759。",
+        "research_help": "Insight：agent planning 在研究场景里不应只生成 plan steps，而要生成可交付、可评估、可合并的任务 contract。它对 multi-agent research orchestration 很有参考价值，但评测规模仍偏小。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "中",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：agent planning 在研究场景里不应只生成 plan steps，而要生成可交付、可评估、可合并的任务 contract。它对 multi-agent research orchestration 很有参考价值，但评测规模仍偏小。",
+        "abstract_zh": "Project2Task treats autonomous research as a long-horizon project rather than one oversized task. It represents candidate contributions as innovation atoms, selects a portfolio decomposition with a graph objective, and emits dependency-aware task contracts that improve project quality and downstream executor accuracy.",
+        "full_summary": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。 方法用创新原子和有向 lineage graph 表示候选贡献，再用轻量 Bernoulli block-model 目标选择 horizontal、vertical 或 hybrid portfolio decomposition，最后修复任务重叠和缺失字段，输出依赖感知的任务合同。 在 10 个 project briefs、约 30 个任务的 benchmark 上，manuscript-based portfolio evaluation 平均质量 7.15，高于 Brief Baseline 的 4.58 和 Topic-only 的 5.31；接入 AutoResearchClaw 后 downstream task accuracy 从 0.536 提升到 0.759。",
+        "card_summary": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。"
+      },
+      "analysis": {
+        "motivation": "研究代理如果只接受一个大主题，常会生成平铺、重叠或缺少执行边界的任务，难以形成 coherent project-level result。",
+        "method": "方法用创新原子和有向 lineage graph 表示候选贡献，再用轻量 Bernoulli block-model 目标选择 horizontal、vertical 或 hybrid portfolio decomposition，最后修复任务重叠和缺失字段，输出依赖感知的任务合同。",
+        "experiments": "在 10 个 project briefs、约 30 个任务的 benchmark 上，manuscript-based portfolio evaluation 平均质量 7.15，高于 Brief Baseline 的 4.58 和 Topic-only 的 5.31；接入 AutoResearchClaw 后 downstream task accuracy 从 0.536 提升到 0.759。",
+        "research_help": "Insight：agent planning 在研究场景里不应只生成 plan steps，而要生成可交付、可评估、可合并的任务 contract。它对 multi-agent research orchestration 很有参考价值，但评测规模仍偏小。",
+        "insight": "Insight：agent planning 在研究场景里不应只生成 plan steps，而要生成可交付、可评估、可合并的任务 contract。它对 multi-agent research orchestration 很有参考价值，但评测规模仍偏小。",
+        "abstract_zh": "Project2Task treats autonomous research as a long-horizon project rather than one oversized task. It represents candidate contributions as innovation atoms, selects a portfolio decomposition with a graph objective, and emits dependency-aware task contracts that improve project quality and downstream executor accuracy.",
+        "card_summary": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。",
+        "full_summary": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。 方法用创新原子和有向 lineage graph 表示候选贡献，再用轻量 Bernoulli block-model 目标选择 horizontal、vertical 或 hybrid portfolio decomposition，最后修复任务重叠和缺失字段，输出依赖感知的任务合同。 在 10 个 project briefs、约 30 个任务的 benchmark 上，manuscript-based portfolio evaluation 平均质量 7.15，高于 Brief Baseline 的 4.58 和 Topic-only 的 5.31；接入 AutoResearchClaw 后 downstream task accuracy 从 0.536 提升到 0.759。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "自主研究的项目级任务图规划",
+        "value_reason": "Project2Task 把 autonomous research 从单个大任务拆成有依赖的任务组合：先把潜在贡献表示成 innovation atoms 和 lineage graph，再生成带目标、输入、产物、评估和边界约束的 task contracts。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；结论强度受限于任务覆盖、评测构造和作者报告的消融细节，发布卡片应保留谨慎表述。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "研究代理如果只接受一个大主题，常会生成平铺、重叠或缺少执行边界的任务，难以形成 coherent project-level result。",
+          "方法用创新原子和有向 lineage graph 表示候选贡献，再用轻量 Bernoulli block-model 目标选择 horizontal、vertical 或 hybrid portfolio decomposition，最后修复任务重叠和缺失字段，输出依赖感知的任务合同。",
+          "在 10 个 project briefs、约 30 个任务的 benchmark 上，manuscript-based portfolio evaluation 平均质量 7.15，高于 Brief Baseline 的 4.58 和 Topic-only 的 5.31；接入 AutoResearchClaw 后 downstream task accuracy 从 0.536 提升到 0.759。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.05466v1",
+      "title": "Recursive Synthesis for Long-Horizon Terminal Tasks",
+      "summary": "RST recursively expands verified terminal-agent seed tasks by extending reference solutions, realigning verifiers and instructions, validating in fresh sandboxes, and reusing accepted tasks. It generates 37,484 long-horizon tasks and improves Qwen3.5 models on terminal-agent benchmarks through SFT and agentic PPO.",
+      "url": "https://arxiv.org/abs/2608.05466v1",
+      "authors": [
+        "Zhongzhi Li",
+        "Yucheng Shi",
+        "Zongxia Li",
+        "Ruhan Wang",
+        "Anhao Li",
+        "Zixun Huang",
+        "Junyao Yang",
+        "Lei Ke",
+        "Ninghao Liu",
+        "Haitao Mi",
+        "Leowei Liang"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "递归验证生成长程终端代理任务",
+        "water_risk": "中",
+        "value_judgement": "递归验证生成长程终端代理任务",
+        "reason": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhongzhi Li",
+          "Yucheng Shi",
+          "Zongxia Li",
+          "Ruhan Wang",
+          "Anhao Li",
+          "Zixun Huang",
+          "Junyao Yang",
+          "Lei Ke",
+          "Ninghao Liu",
+          "Haitao Mi",
+          "Leowei Liang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.05466v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。",
+        "summary": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。 Insight：长程 agent 数据的难点是环境、解法和 verifier 的联合一致性；递归验证比单次生成更接近可扩展数据引擎。但它仍依赖 seed 和 sandbox/verifier 质量，不能自动保证任务覆盖真实软件工程长尾。",
+        "highlights": [
+          "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "长程 terminal-agent 任务需要 instruction、环境、reference solution 和 verifier 同时一致，人工成本高，直接生成又容易破坏依赖关系。",
+        "method": "从 verified seed tasks 出发，RST 每轮扩展 reference solution，重新对齐 verifier 与 instruction，在新 sandbox 中验证，只有通过的任务才进入下一轮递归。接受任务再被用于收集模型轨迹做 SFT 和 agentic PPO。",
+        "experiments": "15 轮递归产生 37,484 个任务，reference solution 与命令数随轮次增长，DeepSeek-V4-Pro pass@4 从早期高通过率降到 R15 的 2.5%。用合成轨迹训练 Qwen3.5-27B/122B-A10B 在多个 terminal benchmark 上提升，agentic PPO 也带来相对增益。",
+        "research_help": "Insight：长程 agent 数据的难点是环境、解法和 verifier 的联合一致性；递归验证比单次生成更接近可扩展数据引擎。但它仍依赖 seed 和 sandbox/verifier 质量，不能自动保证任务覆盖真实软件工程长尾。",
+        "recommendation": {
+          "score": 95,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "中",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长程 agent 数据的难点是环境、解法和 verifier 的联合一致性；递归验证比单次生成更接近可扩展数据引擎。但它仍依赖 seed 和 sandbox/verifier 质量，不能自动保证任务覆盖真实软件工程长尾。",
+        "abstract_zh": "RST recursively expands verified terminal-agent seed tasks by extending reference solutions, realigning verifiers and instructions, validating in fresh sandboxes, and reusing accepted tasks. It generates 37,484 long-horizon tasks and improves Qwen3.5 models on terminal-agent benchmarks through SFT and agentic PPO.",
+        "full_summary": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。 从 verified seed tasks 出发，RST 每轮扩展 reference solution，重新对齐 verifier 与 instruction，在新 sandbox 中验证，只有通过的任务才进入下一轮递归。接受任务再被用于收集模型轨迹做 SFT 和 agentic PPO。 15 轮递归产生 37,484 个任务，reference solution 与命令数随轮次增长，DeepSeek-V4-Pro pass@4 从早期高通过率降到 R15 的 2.5%。用合成轨迹训练 Qwen3.5-27B/122B-A10B 在多个 terminal benchmark 上提升，agentic PPO 也带来相对增益。",
+        "card_summary": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。"
+      },
+      "analysis": {
+        "motivation": "长程 terminal-agent 任务需要 instruction、环境、reference solution 和 verifier 同时一致，人工成本高，直接生成又容易破坏依赖关系。",
+        "method": "从 verified seed tasks 出发，RST 每轮扩展 reference solution，重新对齐 verifier 与 instruction，在新 sandbox 中验证，只有通过的任务才进入下一轮递归。接受任务再被用于收集模型轨迹做 SFT 和 agentic PPO。",
+        "experiments": "15 轮递归产生 37,484 个任务，reference solution 与命令数随轮次增长，DeepSeek-V4-Pro pass@4 从早期高通过率降到 R15 的 2.5%。用合成轨迹训练 Qwen3.5-27B/122B-A10B 在多个 terminal benchmark 上提升，agentic PPO 也带来相对增益。",
+        "research_help": "Insight：长程 agent 数据的难点是环境、解法和 verifier 的联合一致性；递归验证比单次生成更接近可扩展数据引擎。但它仍依赖 seed 和 sandbox/verifier 质量，不能自动保证任务覆盖真实软件工程长尾。",
+        "insight": "Insight：长程 agent 数据的难点是环境、解法和 verifier 的联合一致性；递归验证比单次生成更接近可扩展数据引擎。但它仍依赖 seed 和 sandbox/verifier 质量，不能自动保证任务覆盖真实软件工程长尾。",
+        "abstract_zh": "RST recursively expands verified terminal-agent seed tasks by extending reference solutions, realigning verifiers and instructions, validating in fresh sandboxes, and reusing accepted tasks. It generates 37,484 long-horizon tasks and improves Qwen3.5 models on terminal-agent benchmarks through SFT and agentic PPO.",
+        "card_summary": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。",
+        "full_summary": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。 从 verified seed tasks 出发，RST 每轮扩展 reference solution，重新对齐 verifier 与 instruction，在新 sandbox 中验证，只有通过的任务才进入下一轮递归。接受任务再被用于收集模型轨迹做 SFT 和 agentic PPO。 15 轮递归产生 37,484 个任务，reference solution 与命令数随轮次增长，DeepSeek-V4-Pro pass@4 从早期高通过率降到 R15 的 2.5%。用合成轨迹训练 Qwen3.5-27B/122B-A10B 在多个 terminal benchmark 上提升，agentic PPO 也带来相对增益。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "递归验证生成长程终端代理任务",
+        "value_reason": "RST 不是直接让 LLM 一次性编长任务，而是从已验证 seed 递归扩展 reference solution、verifier 和 instruction，并在新 sandbox 里验收后继续作为下一轮 seed。它把长程终端代理训练数据的规模化问题做成了可验证的递归合成流程。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；结论强度受限于任务覆盖、评测构造和作者报告的消融细节，发布卡片应保留谨慎表述。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "长程 terminal-agent 任务需要 instruction、环境、reference solution 和 verifier 同时一致，人工成本高，直接生成又容易破坏依赖关系。",
+          "从 verified seed tasks 出发，RST 每轮扩展 reference solution，重新对齐 verifier 与 instruction，在新 sandbox 中验证，只有通过的任务才进入下一轮递归。接受任务再被用于收集模型轨迹做 SFT 和 agentic PPO。",
+          "15 轮递归产生 37,484 个任务，reference solution 与命令数随轮次增长，DeepSeek-V4-Pro pass@4 从早期高通过率降到 R15 的 2.5%。用合成轨迹训练 Qwen3.5-27B/122B-A10B 在多个 terminal benchmark 上提升，agentic PPO 也带来相对增益。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.06128v1",
+      "title": "Contextual Information Policy Optimization for Search Agents",
+      "summary": "Search agents must not only retrieve evidence but also use it to revise later reasoning. CIPO adds dense turn-level credit for reasoning actions influenced by retrieved evidence, combining that signal with outcome reward to reduce prior-driven reasoning without human process labels or an extra reward model.",
+      "url": "https://arxiv.org/abs/2608.06128v1",
+      "authors": [
+        "Xingyu Guo",
+        "Wei Chen",
+        "Linlin Yang",
+        "Baochang Zhang"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "面向搜索代理证据使用的 turn-level RL",
+        "water_risk": "中",
+        "value_judgement": "面向搜索代理证据使用的 turn-level RL",
+        "reason": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xingyu Guo",
+          "Wei Chen",
+          "Linlin Yang",
+          "Baochang Zhang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.06128v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。",
+        "summary": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。 Insight：这篇把“证据是否改变策略”从结果评测里拆出来，适合用于多轮 research/search agent 的过程奖励。它也提醒我们，RAG 或 search-agent 的可靠性不能只看最终 answer accuracy。",
+        "highlights": [
+          "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。",
+          "偏水风险：中",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "长程搜索代理的失败常常不是没有检索，而是检索后仍按模型先验走，外部证据没有改变后续推理。只奖励最终正确性会鼓励这种 confirmation bias。",
+        "method": "CIPO 显式评估检索证据与后续 reasoning action 的关联，把 evidence-use credit 作为 turn-level 强化学习信号，并与全局 outcome reward 结合，以保持答案正确性。方法不依赖人工过程标注或额外 reward model。",
+        "experiments": "论文报告七个 in-domain 和 out-of-domain benchmark，CIPO 降低 prior-driven reasoning，并在多数任务上取得强表现。摘要层面的限制是细节依赖作者的证据使用度量，仍需全文检查其是否会奖励表面引用而非真实修正。",
+        "research_help": "Insight：这篇把“证据是否改变策略”从结果评测里拆出来，适合用于多轮 research/search agent 的过程奖励。它也提醒我们，RAG 或 search-agent 的可靠性不能只看最终 answer accuracy。",
+        "recommendation": {
+          "score": 96,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "中",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这篇把“证据是否改变策略”从结果评测里拆出来，适合用于多轮 research/search agent 的过程奖励。它也提醒我们，RAG 或 search-agent 的可靠性不能只看最终 answer accuracy。",
+        "abstract_zh": "Search agents must not only retrieve evidence but also use it to revise later reasoning. CIPO adds dense turn-level credit for reasoning actions influenced by retrieved evidence, combining that signal with outcome reward to reduce prior-driven reasoning without human process labels or an extra reward model.",
+        "full_summary": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。 CIPO 显式评估检索证据与后续 reasoning action 的关联，把 evidence-use credit 作为 turn-level 强化学习信号，并与全局 outcome reward 结合，以保持答案正确性。方法不依赖人工过程标注或额外 reward model。 论文报告七个 in-domain 和 out-of-domain benchmark，CIPO 降低 prior-driven reasoning，并在多数任务上取得强表现。摘要层面的限制是细节依赖作者的证据使用度量，仍需全文检查其是否会奖励表面引用而非真实修正。",
+        "card_summary": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。"
+      },
+      "analysis": {
+        "motivation": "长程搜索代理的失败常常不是没有检索，而是检索后仍按模型先验走，外部证据没有改变后续推理。只奖励最终正确性会鼓励这种 confirmation bias。",
+        "method": "CIPO 显式评估检索证据与后续 reasoning action 的关联，把 evidence-use credit 作为 turn-level 强化学习信号，并与全局 outcome reward 结合，以保持答案正确性。方法不依赖人工过程标注或额外 reward model。",
+        "experiments": "论文报告七个 in-domain 和 out-of-domain benchmark，CIPO 降低 prior-driven reasoning，并在多数任务上取得强表现。摘要层面的限制是细节依赖作者的证据使用度量，仍需全文检查其是否会奖励表面引用而非真实修正。",
+        "research_help": "Insight：这篇把“证据是否改变策略”从结果评测里拆出来，适合用于多轮 research/search agent 的过程奖励。它也提醒我们，RAG 或 search-agent 的可靠性不能只看最终 answer accuracy。",
+        "insight": "Insight：这篇把“证据是否改变策略”从结果评测里拆出来，适合用于多轮 research/search agent 的过程奖励。它也提醒我们，RAG 或 search-agent 的可靠性不能只看最终 answer accuracy。",
+        "abstract_zh": "Search agents must not only retrieve evidence but also use it to revise later reasoning. CIPO adds dense turn-level credit for reasoning actions influenced by retrieved evidence, combining that signal with outcome reward to reduce prior-driven reasoning without human process labels or an extra reward model.",
+        "card_summary": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。",
+        "full_summary": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。 CIPO 显式评估检索证据与后续 reasoning action 的关联，把 evidence-use credit 作为 turn-level 强化学习信号，并与全局 outcome reward 结合，以保持答案正确性。方法不依赖人工过程标注或额外 reward model。 论文报告七个 in-domain 和 out-of-domain benchmark，CIPO 降低 prior-driven reasoning，并在多数任务上取得强表现。摘要层面的限制是细节依赖作者的证据使用度量，仍需全文检查其是否会奖励表面引用而非真实修正。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "面向搜索代理证据使用的 turn-level RL",
+        "value_reason": "CIPO 针对搜索代理“检索只是确认先验”的问题，把 retrieved evidence 是否真正影响后续推理纳入策略优化。它给证据驱动的 turn-level reasoning 动作分配稠密信用，同时保留最终答案奖励。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；结论强度受限于任务覆盖、评测构造和作者报告的消融细节，发布卡片应保留谨慎表述。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "长程搜索代理的失败常常不是没有检索，而是检索后仍按模型先验走，外部证据没有改变后续推理。只奖励最终正确性会鼓励这种 confirmation bias。",
+          "CIPO 显式评估检索证据与后续 reasoning action 的关联，把 evidence-use credit 作为 turn-level 强化学习信号，并与全局 outcome reward 结合，以保持答案正确性。方法不依赖人工过程标注或额外 reward model。",
+          "论文报告七个 in-domain 和 out-of-domain benchmark，CIPO 降低 prior-driven reasoning，并在多数任务上取得强表现。摘要层面的限制是细节依赖作者的证据使用度量，仍需全文检查其是否会奖励表面引用而非真实修正。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
+    {
+      "id": "2608.06057v1",
+      "title": "When History Lies: Evaluating and Improving Tool Use under Misleading Multi-Turn Histories",
+      "summary": "Tool-calling agents infer task state from accumulated dialogue and tool traces, but stale-yet-plausible history can hijack the policy in persistent interactions. The paper builds paired Original/Polluted/Oracle-State tool-use settings and trains a student under polluted history from an oracle-conditioned teacher, substantially improving balanced tool-use accuracy and transfer.",
+      "url": "https://arxiv.org/abs/2608.06057v1",
+      "authors": [
+        "Xiaoqing Wu",
+        "Xingyu Fan",
+        "Feifei Li",
+        "Wenhui Que"
+      ],
+      "report_date": "2026-08-09",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "多轮工具代理的历史污染与可靠状态迁移",
+        "water_risk": "低",
+        "value_judgement": "多轮工具代理的历史污染与可靠状态迁移",
+        "reason": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xiaoqing Wu",
+          "Xingyu Fan",
+          "Feifei Li",
+          "Wenhui Que"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.06057v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。",
+        "summary": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。 Insight：多轮 agent 的关键不是把完整历史塞得更长，而是显式判断哪些历史仍然对当前状态有约束力。这个方向可以和状态摘要、工具 schema 版本化、trajectory repair 结合，形成更可靠的 long-horizon state tracking 训练信号。",
+        "highlights": [
+          "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。",
+          "偏水风险：低",
+          "阅读来源：arXiv 摘要与 HTML 论文页人工核验"
+        ],
+        "motivation": "长期对话和工具轨迹会把旧实体、旧接口约定和旧中间结果留在上下文里；这些痕迹在形式上仍然合理，却可能不再适用于当前请求。论文的核心动机是证明这不是普通噪声，而是多轮工具使用里的独立状态跟踪问题。",
+        "method": "作者构造同步的 Original、Polluted 和 Oracle State 视图，保持工具、最新请求、系统策略和 gold next action 一致，只改变历史污染条件。训练阶段用 oracle-conditioned teacher 提供软监督，让学生在只观察污染历史时也学习可靠状态决策。",
+        "experiments": "在 Qwen3-1.7B 上，历史污染会翻转大量原本正确的工具决策；可靠状态迁移达到 87.0% Balanced Tool-Use Accuracy，超过 Gold-SFT、Oracle sequence distillation 和 off-policy token distillation。扩大 teacher 或 student 后仍有提升，并能迁移到清洁历史、未见函数、外部工具基准和 noisy multi-hop QA。",
+        "research_help": "Insight：多轮 agent 的关键不是把完整历史塞得更长，而是显式判断哪些历史仍然对当前状态有约束力。这个方向可以和状态摘要、工具 schema 版本化、trajectory repair 结合，形成更可靠的 long-horizon state tracking 训练信号。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：进入今日补漏候选。",
+          "reason": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：多轮 agent 的关键不是把完整历史塞得更长，而是显式判断哪些历史仍然对当前状态有约束力。这个方向可以和状态摘要、工具 schema 版本化、trajectory repair 结合，形成更可靠的 long-horizon state tracking 训练信号。",
+        "abstract_zh": "Tool-calling agents infer task state from accumulated dialogue and tool traces, but stale-yet-plausible history can hijack the policy in persistent interactions. The paper builds paired Original/Polluted/Oracle-State tool-use settings and trains a student under polluted history from an oracle-conditioned teacher, substantially improving balanced tool-use accuracy and transfer.",
+        "full_summary": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。 作者构造同步的 Original、Polluted 和 Oracle State 视图，保持工具、最新请求、系统策略和 gold next action 一致，只改变历史污染条件。训练阶段用 oracle-conditioned teacher 提供软监督，让学生在只观察污染历史时也学习可靠状态决策。 在 Qwen3-1.7B 上，历史污染会翻转大量原本正确的工具决策；可靠状态迁移达到 87.0% Balanced Tool-Use Accuracy，超过 Gold-SFT、Oracle sequence distillation 和 off-policy token distillation。扩大 teacher 或 student 后仍有提升，并能迁移到清洁历史、未见函数、外部工具基准和 noisy multi-hop QA。",
+        "card_summary": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。"
+      },
+      "analysis": {
+        "motivation": "长期对话和工具轨迹会把旧实体、旧接口约定和旧中间结果留在上下文里；这些痕迹在形式上仍然合理，却可能不再适用于当前请求。论文的核心动机是证明这不是普通噪声，而是多轮工具使用里的独立状态跟踪问题。",
+        "method": "作者构造同步的 Original、Polluted 和 Oracle State 视图，保持工具、最新请求、系统策略和 gold next action 一致，只改变历史污染条件。训练阶段用 oracle-conditioned teacher 提供软监督，让学生在只观察污染历史时也学习可靠状态决策。",
+        "experiments": "在 Qwen3-1.7B 上，历史污染会翻转大量原本正确的工具决策；可靠状态迁移达到 87.0% Balanced Tool-Use Accuracy，超过 Gold-SFT、Oracle sequence distillation 和 off-policy token distillation。扩大 teacher 或 student 后仍有提升，并能迁移到清洁历史、未见函数、外部工具基准和 noisy multi-hop QA。",
+        "research_help": "Insight：多轮 agent 的关键不是把完整历史塞得更长，而是显式判断哪些历史仍然对当前状态有约束力。这个方向可以和状态摘要、工具 schema 版本化、trajectory repair 结合，形成更可靠的 long-horizon state tracking 训练信号。",
+        "insight": "Insight：多轮 agent 的关键不是把完整历史塞得更长，而是显式判断哪些历史仍然对当前状态有约束力。这个方向可以和状态摘要、工具 schema 版本化、trajectory repair 结合，形成更可靠的 long-horizon state tracking 训练信号。",
+        "abstract_zh": "Tool-calling agents infer task state from accumulated dialogue and tool traces, but stale-yet-plausible history can hijack the policy in persistent interactions. The paper builds paired Original/Polluted/Oracle-State tool-use settings and trains a student under polluted history from an oracle-conditioned teacher, substantially improving balanced tool-use accuracy and transfer.",
+        "card_summary": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。",
+        "full_summary": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。 作者构造同步的 Original、Polluted 和 Oracle State 视图，保持工具、最新请求、系统策略和 gold next action 一致，只改变历史污染条件。训练阶段用 oracle-conditioned teacher 提供软监督，让学生在只观察污染历史时也学习可靠状态决策。 在 Qwen3-1.7B 上，历史污染会翻转大量原本正确的工具决策；可靠状态迁移达到 87.0% Balanced Tool-Use Accuracy，超过 Gold-SFT、Oracle sequence distillation 和 off-policy token distillation。扩大 teacher 或 student 后仍有提升，并能迁移到清洁历史、未见函数、外部工具基准和 noisy multi-hop QA。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "多轮工具代理的历史污染与可靠状态迁移",
+        "value_reason": "这篇论文把多轮工具代理中的“历史仍像真的但已经不该信”单独定义为可靠性瓶颈。它用 Original/Polluted/Oracle State 成对轨迹隔离状态、实体绑定和接口执行错误，再用 oracle-conditioned teacher 把可靠状态策略迁移给只能看到污染历史的学生。",
+        "limitations": "当前判断主要基于 arXiv 摘要和 HTML 论文页，未完成逐页 PDF 复核；具体实验设置、统计显著性与数据泄漏风险仍需精读正文确认。",
+        "source_scope": "abstract_and_html_page",
+        "source_note": "Curated manually from arXiv abstract/HTML metadata after export.arxiv.org returned 429.",
+        "source_evidence": [
+          "长期对话和工具轨迹会把旧实体、旧接口约定和旧中间结果留在上下文里；这些痕迹在形式上仍然合理，却可能不再适用于当前请求。论文的核心动机是证明这不是普通噪声，而是多轮工具使用里的独立状态跟踪问题。",
+          "作者构造同步的 Original、Polluted 和 Oracle State 视图，保持工具、最新请求、系统策略和 gold next action 一致，只改变历史污染条件。训练阶段用 oracle-conditioned teacher 提供软监督，让学生在只观察污染历史时也学习可靠状态决策。",
+          "在 Qwen3-1.7B 上，历史污染会翻转大量原本正确的工具决策；可靠状态迁移达到 87.0% Balanced Tool-Use Accuracy，超过 Gold-SFT、Oracle sequence distillation 和 off-policy token distillation。扩大 teacher 或 student 后仍有提升，并能迁移到清洁历史、未见函数、外部工具基准和 noisy multi-hop QA。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-09T01:37:36.948Z"
+      }
+    },
     {
       "id": "2608.06197v1",
       "title": "EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning",
