@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-09T01:37:36.948Z",
+  "updated_at": "2026-08-10T01:40:12.411Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation from arXiv category HTML and arXiv abstract/HTML pages after arXiv API returned 429; strong relevance only.",
+  "analysis_method": "Manual Codex curation from arXiv category HTML, arXiv abs pages, and extracted PDF text after arXiv API returned 503; strong relevance only.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪与执行可靠性",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,40 +37,39 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-09 Daily Paper",
-    "report_date": "2026-08-09",
+    "title": "2026-08-10 Daily Paper",
+    "report_date": "2026-08-10",
     "focus": "long horizon, multi-turn, agentic RL, agent planning",
-    "summary": "arXiv API 429 后改用 category HTML 兜底，补入 Friday 批次中此前未发布但强相关的多轮工具、搜索代理、长程终端任务、技能蒸馏、trajectory 审计和风险世界模型论文。周末没有伪造新的 arXiv 批次。",
+    "summary": "arXiv API 503 后改用 category HTML 与 PDF 正文抽取兜底；当前可见批次仍是 Friday, 7 August 2026，因此本次是 Friday 批次强相关遗漏/交叉项 catch-up，而不是伪造新的 Monday arXiv 批次。保留 agent harness、GUI agent world model、tool-use RL、agentic insight retrieval、多 agent orchestration、自进化 skill 安全和多轮 reward 相关论文。",
     "top_recommendations": [
-      "2608.06057v1",
-      "2608.06128v1",
-      "2608.05466v1"
+      "2608.05446v1",
+      "2608.06301v1",
+      "2608.05891v1"
     ],
     "low_priority": [
-      "2608.06144v1"
+      "2608.05797v1",
+      "2608.05832v1"
     ],
-    "no_news_policy": "如果没有新增强相关论文，则不提交不部署；本次为 Friday 批次补漏更新。",
+    "no_news_policy": "如果没有新增强相关论文，则不提交不部署；本次为 Friday 可见批次补漏更新。",
     "email_body": ""
   },
   "latest_item_ids": [
-    "2608.06057v1",
-    "2608.06128v1",
-    "2608.05466v1",
-    "2608.05225v1",
-    "2608.05212v1",
-    "2608.05245v1",
-    "2608.05573v1",
-    "2608.05519v1",
-    "2608.05587v1",
-    "2608.05695v1",
-    "2608.06144v1"
+    "2608.05446v1",
+    "2608.06301v1",
+    "2608.05891v1",
+    "2608.03327v1",
+    "2608.04761v1",
+    "2608.05263v1",
+    "2608.05563v1",
+    "2608.05797v1",
+    "2608.05832v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 11,
-    "total_items": 167,
-    "previous_items": 156,
-    "latest_items": 11,
+    "fresh_items": 9,
+    "total_items": 176,
+    "previous_items": 167,
+    "latest_items": 9,
     "source_report_dates": {
       "2026-08-07": 6,
       "2026-08-06": 9,
@@ -105,7 +104,8 @@
       "2026-06-18": 1,
       "2026-06-14": 5,
       "2026-06-13": 1,
-      "2026-08-09": 11
+      "2026-08-09": 11,
+      "2026-08-10": 9
     },
     "filtered_candidate_ids": [
       "2608.04443v1",
@@ -132,20 +132,26 @@
       "2608.05668v1",
       "2608.05375v1",
       "2608.05970v1",
-      "2608.05948v1"
+      "2608.05948v1",
+      "2608.04872v1",
+      "2608.05588v1",
+      "2608.05201v1",
+      "2608.05248v1",
+      "2608.05332v1",
+      "2608.05430v1",
+      "2608.05643v1",
+      "2608.05166v1"
     ],
     "filtered_today": [
-      "2608.05159v1",
-      "2608.05266v1",
-      "2608.05784v1",
-      "2608.05876v1",
-      "2608.06020v1",
+      "2608.04872v1",
+      "2608.05588v1",
       "2608.05792v1",
-      "2608.05668v1",
-      "2608.05375v1",
-      "2608.06227v1",
-      "2608.05970v1",
-      "2608.05948v1"
+      "2608.05201v1",
+      "2608.05248v1",
+      "2608.05332v1",
+      "2608.05430v1",
+      "2608.05643v1",
+      "2608.05166v1"
     ],
     "backfilled_report_dates": {
       "2026-07-17": 3,
@@ -155,6 +161,1070 @@
     }
   },
   "items": [
+    {
+      "id": "2608.05446v1",
+      "title": "EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents",
+      "summary": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。它在 ALFWorld 上达到 96.9% seen success，并展示 harness annealing 与 harness evolution 两个训练动态。",
+      "url": "https://arxiv.org/abs/2608.05446v1",
+      "authors": [
+        "Xuying Ning",
+        "Dongqi Fu",
+        "Tianxin Wei",
+        "Hanqing Zeng",
+        "Yuanchen Bei",
+        "Bingxuan Li",
+        "Zihao Li",
+        "Qifan Wang",
+        "Xiang Shen",
+        "Yifan Wu",
+        "Jiayi Liu",
+        "Hong Li",
+        "Yinglong Xia",
+        "Xiangjun Fan",
+        "Hanghang Tong",
+        "Jingrui He"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "Accepted to LLA@COLM 2026",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "可训练的 long-horizon agent harness 使用策略",
+        "water_risk": "低",
+        "value_judgement": "可训练的 long-horizon agent harness 使用策略",
+        "reason": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xuying Ning",
+          "Dongqi Fu",
+          "Tianxin Wei",
+          "Hanqing Zeng",
+          "Yuanchen Bei",
+          "Bingxuan Li",
+          "Zihao Li",
+          "Qifan Wang",
+          "Xiang Shen",
+          "Yifan Wu",
+          "Jiayi Liu",
+          "Hong Li",
+          "Yinglong Xia",
+          "Xiangjun Fan",
+          "Hanghang Tong",
+          "Jingrui He"
+        ],
+        "affiliations": "University of Illinois Urbana-Champaign; Meta AI",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.05446v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "Accepted to LLA@COLM 2026",
+        "contribution": "可训练的 long-horizon agent harness 使用策略",
+        "summary": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。它在 ALFWorld 上达到 96.9% seen success，并展示 harness annealing 与 harness evolution 两个训练动态。 Insight：对你的 long-horizon agent 主题很直接：关键不是“加一个记忆/工具”，而是把外部状态访问本身作为可训练策略，并显式计入交互预算。可以作为 context/state pollution 或 agentic RL 工作的强 baseline/related method。",
+        "highlights": [
+          "可训练的 long-horizon agent harness 使用策略",
+          "偏水风险：低",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "长程 agent 需要状态跟踪、进度记录、经验复用和验证器等外部执行支持，但现有 harness 多靠 prompt、规则或手写 scaffold 控制，模型并没有学会何时访问、更新和压缩这些外部状态。",
+        "method": "论文提出 BPE workspace：Belief 保存环境事实，Progress 保存子目标/执行状态，Experience 保存跨 episode 技能和失败经验；agent 通过 track、commit、recall、note 等 harness meta-action 与 workspace 交互。训练分两阶段：先用 SFT 学习 harness action 语义，再用 cost-aware GRPO 在任务成功、效率、动作多样性、重复/格式惩罚之间优化 runtime harness coordination。",
+        "experiments": "ALFWorld 实验显示，prompt-time BPE 已能提升 stateful 任务；SFT 和 GRPO 后 seen split 达到 96.9% success，unseen split 达到 86.6%。消融和行为分析显示，训练会把频繁 scaffold 访问转化为选择性状态访问，同时在线 progress 和 experience consolidation 会把外部 workspace 精炼成更紧凑的任务适配状态。",
+        "research_help": "对你的 long-horizon agent 主题很直接：关键不是“加一个记忆/工具”，而是把外部状态访问本身作为可训练策略，并显式计入交互预算。可以作为 context/state pollution 或 agentic RL 工作的强 baseline/related method。",
+        "recommendation": {
+          "score": 96,
+          "level": "高",
+          "label": "可训练的 long-horizon agent harness 使用策略",
+          "water_risk": "低",
+          "value_judgement": "可训练的 long-horizon agent harness 使用策略",
+          "reason": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "对你的 long-horizon agent 主题很直接：关键不是“加一个记忆/工具”，而是把外部状态访问本身作为可训练策略，并显式计入交互预算。可以作为 context/state pollution 或 agentic RL 工作的强 baseline/related method。",
+        "abstract_zh": "论文研究 long-horizon LLM agents 如何学习构造和使用外部 harness 状态，而不是手写 prompt scaffold。EvoHarness-RL 用 BPE 状态和 harness meta-action 训练 agent 选择性读写外部状态。",
+        "full_summary": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。它在 ALFWorld 上达到 96.9% seen success，并展示 harness annealing 与 harness evolution 两个训练动态。 论文提出 BPE workspace：Belief 保存环境事实，Progress 保存子目标/执行状态，Experience 保存跨 episode 技能和失败经验；agent 通过 track、commit、recall、note 等 harness meta-action 与 workspace 交互。训练分两阶段：先用 SFT 学习 harness action 语义，再用 cost-aware GRPO 在任务成功、效率、动作多样性、重复/格式惩罚之间优化 runtime harness coordination。 ALFWorld 实验显示，prompt-time BPE 已能提升 stateful 任务；SFT 和 GRPO 后 seen split 达到 96.9% success，unseen split 达到 86.6%。消融和行为分析显示，训练会把频繁 scaffold 访问转化为选择性状态访问，同时在线 progress 和 experience consolidation 会把外部 workspace 精炼成更紧凑的任务适配状态。 对你的 long-horizon agent 主题很直接：关键不是“加一个记忆/工具”，而是把外部状态访问本身作为可训练策略，并显式计入交互预算。可以作为 context/state pollution 或 agentic RL 工作的强 baseline/related method。",
+        "card_summary": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。它在 ALFWorld 上达到 96.9% seen success，并展示 harness annealing 与 harness evolution 两个训练动态。"
+      },
+      "analysis": {
+        "motivation": "长程 agent 需要状态跟踪、进度记录、经验复用和验证器等外部执行支持，但现有 harness 多靠 prompt、规则或手写 scaffold 控制，模型并没有学会何时访问、更新和压缩这些外部状态。",
+        "method": "论文提出 BPE workspace：Belief 保存环境事实，Progress 保存子目标/执行状态，Experience 保存跨 episode 技能和失败经验；agent 通过 track、commit、recall、note 等 harness meta-action 与 workspace 交互。训练分两阶段：先用 SFT 学习 harness action 语义，再用 cost-aware GRPO 在任务成功、效率、动作多样性、重复/格式惩罚之间优化 runtime harness coordination。",
+        "experiments": "ALFWorld 实验显示，prompt-time BPE 已能提升 stateful 任务；SFT 和 GRPO 后 seen split 达到 96.9% success，unseen split 达到 86.6%。消融和行为分析显示，训练会把频繁 scaffold 访问转化为选择性状态访问，同时在线 progress 和 experience consolidation 会把外部 workspace 精炼成更紧凑的任务适配状态。",
+        "research_help": "对你的 long-horizon agent 主题很直接：关键不是“加一个记忆/工具”，而是把外部状态访问本身作为可训练策略，并显式计入交互预算。可以作为 context/state pollution 或 agentic RL 工作的强 baseline/related method。",
+        "insight": "对你的 long-horizon agent 主题很直接：关键不是“加一个记忆/工具”，而是把外部状态访问本身作为可训练策略，并显式计入交互预算。可以作为 context/state pollution 或 agentic RL 工作的强 baseline/related method。",
+        "abstract_zh": "论文研究 long-horizon LLM agents 如何学习构造和使用外部 harness 状态，而不是手写 prompt scaffold。EvoHarness-RL 用 BPE 状态和 harness meta-action 训练 agent 选择性读写外部状态。",
+        "card_summary": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。它在 ALFWorld 上达到 96.9% seen success，并展示 harness annealing 与 harness evolution 两个训练动态。",
+        "full_summary": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。它在 ALFWorld 上达到 96.9% seen success，并展示 harness annealing 与 harness evolution 两个训练动态。 论文提出 BPE workspace：Belief 保存环境事实，Progress 保存子目标/执行状态，Experience 保存跨 episode 技能和失败经验；agent 通过 track、commit、recall、note 等 harness meta-action 与 workspace 交互。训练分两阶段：先用 SFT 学习 harness action 语义，再用 cost-aware GRPO 在任务成功、效率、动作多样性、重复/格式惩罚之间优化 runtime harness coordination。 ALFWorld 实验显示，prompt-time BPE 已能提升 stateful 任务；SFT 和 GRPO 后 seen split 达到 96.9% success，unseen split 达到 86.6%。消融和行为分析显示，训练会把频繁 scaffold 访问转化为选择性状态访问，同时在线 progress 和 experience consolidation 会把外部 workspace 精炼成更紧凑的任务适配状态。 对你的 long-horizon agent 主题很直接：关键不是“加一个记忆/工具”，而是把外部状态访问本身作为可训练策略，并显式计入交互预算。可以作为 context/state pollution 或 agentic RL 工作的强 baseline/related method。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "可训练的 long-horizon agent harness 使用策略",
+        "value_reason": "EvoHarness-RL 把外部 harness 拆成 Belief、Progress、Experience 三类可操作状态，并用 SFT + cost-aware GRPO 学习何时读写这些状态。",
+        "limitations": "主要在 ALFWorld 上验证，BPE grounding 仍依赖环境 adapter；跨 web、coding、开放工具环境的泛化还需要更强证据。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.LG, cs.CL",
+          "PDF text extracted locally for 2608.05446v1",
+          "ALFWorld 实验显示，prompt-time BPE 已能提升 stateful 任务；SFT 和 GRPO 后 seen split 达到 96.9% success，unseen split 达到 86.6%。消融和行为分析显示，训练会把频繁 scaffold 访问转化为选择性状态访问，同时在线 progress 和 experience cons"
+        ]
+      }
+    },
+    {
+      "id": "2608.06301v1",
+      "title": "HarnessOpt-Bench: Evaluating LLMs at Harness Optimization",
+      "summary": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。111 次 scored runs 显示 optimizer model 的差异比 coding harness 差异更明显，native harness 并不稳定占优。",
+      "url": "https://arxiv.org/abs/2608.06301v1",
+      "authors": [
+        "Varun Ursekar",
+        "Apaar Shanker",
+        "Yash Maurya",
+        "Shehab Yasser",
+        "Vijay S. Kalmath",
+        "Veronica Chatrath",
+        "Yuan (Emily) Xue"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "把 agent harness 优化变成可测能力的 benchmark",
+        "water_risk": "中",
+        "value_judgement": "把 agent harness 优化变成可测能力的 benchmark",
+        "reason": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Varun Ursekar",
+          "Apaar Shanker",
+          "Yash Maurya",
+          "Shehab Yasser",
+          "Vijay S. Kalmath",
+          "Veronica Chatrath",
+          "Yuan (Emily) Xue"
+        ],
+        "affiliations": "Scale AI",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.06301v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "把 agent harness 优化变成可测能力的 benchmark",
+        "summary": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。111 次 scored runs 显示 optimizer model 的差异比 coding harness 差异更明显，native harness 并不稳定占优。 Insight：这篇适合作为“agent 改进 agent”的评测坐标：它把 harness engineering 从工程经验变成可复现实验对象，也提醒后续方法必须防止对固定 evaluator 的过拟合。",
+        "highlights": [
+          "把 agent harness 优化变成可测能力的 benchmark",
+          "偏水风险：中",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "同一个模型在不同 agent harness 下能力差异很大，但社区缺少统一协议衡量“模型能否诊断并改进另一个 agent harness”。没有 held-out 评估边界时，harness optimization 很容易退化成调参或评测泄漏。",
+        "method": "benchmark 给 optimizer 一个 seed harness、graded development feedback 和固定 target-evaluation budget；optimizer 修改 harness 并提交最终候选，系统在不可见 test partition 上计算相对 seed 的 normalized gain。trusted execution environment 负责隔离 test、计量资源和保留候选版本。",
+        "experiments": "作者评估 5 个 frontier LLM optimizer，在 shared coding harness 和 native harness 两种设置下覆盖 4 个 downstream tasks，共 111 个 scored runs。结果显示模型间分离度强于 harness 间分离度，native harness 不总是优于共享 harness，收益随任务和 seed maturity 大幅波动。",
+        "research_help": "这篇适合作为“agent 改进 agent”的评测坐标：它把 harness engineering 从工程经验变成可复现实验对象，也提醒后续方法必须防止对固定 evaluator 的过拟合。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "把 agent harness 优化变成可测能力的 benchmark",
+          "water_risk": "中",
+          "value_judgement": "把 agent harness 优化变成可测能力的 benchmark",
+          "reason": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇适合作为“agent 改进 agent”的评测坐标：它把 harness engineering 从工程经验变成可复现实验对象，也提醒后续方法必须防止对固定 evaluator 的过拟合。",
+        "abstract_zh": "论文提出 HarnessOpt-Bench，评估 LLM 是否能在预算内改进另一个 agent 的 harness，并用 held-out 分区衡量真实收益。",
+        "full_summary": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。111 次 scored runs 显示 optimizer model 的差异比 coding harness 差异更明显，native harness 并不稳定占优。 benchmark 给 optimizer 一个 seed harness、graded development feedback 和固定 target-evaluation budget；optimizer 修改 harness 并提交最终候选，系统在不可见 test partition 上计算相对 seed 的 normalized gain。trusted execution environment 负责隔离 test、计量资源和保留候选版本。 作者评估 5 个 frontier LLM optimizer，在 shared coding harness 和 native harness 两种设置下覆盖 4 个 downstream tasks，共 111 个 scored runs。结果显示模型间分离度强于 harness 间分离度，native harness 不总是优于共享 harness，收益随任务和 seed maturity 大幅波动。 这篇适合作为“agent 改进 agent”的评测坐标：它把 harness engineering 从工程经验变成可复现实验对象，也提醒后续方法必须防止对固定 evaluator 的过拟合。",
+        "card_summary": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。111 次 scored runs 显示 optimizer model 的差异比 coding harness 差异更明显，native harness 并不稳定占优。"
+      },
+      "analysis": {
+        "motivation": "同一个模型在不同 agent harness 下能力差异很大，但社区缺少统一协议衡量“模型能否诊断并改进另一个 agent harness”。没有 held-out 评估边界时，harness optimization 很容易退化成调参或评测泄漏。",
+        "method": "benchmark 给 optimizer 一个 seed harness、graded development feedback 和固定 target-evaluation budget；optimizer 修改 harness 并提交最终候选，系统在不可见 test partition 上计算相对 seed 的 normalized gain。trusted execution environment 负责隔离 test、计量资源和保留候选版本。",
+        "experiments": "作者评估 5 个 frontier LLM optimizer，在 shared coding harness 和 native harness 两种设置下覆盖 4 个 downstream tasks，共 111 个 scored runs。结果显示模型间分离度强于 harness 间分离度，native harness 不总是优于共享 harness，收益随任务和 seed maturity 大幅波动。",
+        "research_help": "这篇适合作为“agent 改进 agent”的评测坐标：它把 harness engineering 从工程经验变成可复现实验对象，也提醒后续方法必须防止对固定 evaluator 的过拟合。",
+        "insight": "这篇适合作为“agent 改进 agent”的评测坐标：它把 harness engineering 从工程经验变成可复现实验对象，也提醒后续方法必须防止对固定 evaluator 的过拟合。",
+        "abstract_zh": "论文提出 HarnessOpt-Bench，评估 LLM 是否能在预算内改进另一个 agent 的 harness，并用 held-out 分区衡量真实收益。",
+        "card_summary": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。111 次 scored runs 显示 optimizer model 的差异比 coding harness 差异更明显，native harness 并不稳定占优。",
+        "full_summary": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。111 次 scored runs 显示 optimizer model 的差异比 coding harness 差异更明显，native harness 并不稳定占优。 benchmark 给 optimizer 一个 seed harness、graded development feedback 和固定 target-evaluation budget；optimizer 修改 harness 并提交最终候选，系统在不可见 test partition 上计算相对 seed 的 normalized gain。trusted execution environment 负责隔离 test、计量资源和保留候选版本。 作者评估 5 个 frontier LLM optimizer，在 shared coding harness 和 native harness 两种设置下覆盖 4 个 downstream tasks，共 111 个 scored runs。结果显示模型间分离度强于 harness 间分离度，native harness 不总是优于共享 harness，收益随任务和 seed maturity 大幅波动。 这篇适合作为“agent 改进 agent”的评测坐标：它把 harness engineering 从工程经验变成可复现实验对象，也提醒后续方法必须防止对固定 evaluator 的过拟合。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "把 agent harness 优化变成可测能力的 benchmark",
+        "value_reason": "HarnessOpt-Bench 让 LLM 优化目标 agent 的 prompt、tools、control flow、memory 和 orchestration code，并用 held-out partition 评估 normalized gain。",
+        "limitations": "benchmark 目标是 hack-resistant 而不是 hackproof；固定 evaluation feedback 仍可能奖励 evaluator-specific 策略，seed harness 成熟度也没有系统扫参。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.AI, cs.CL, cs.LG",
+          "PDF text extracted locally for 2608.06301v1",
+          "作者评估 5 个 frontier LLM optimizer，在 shared coding harness 和 native harness 两种设置下覆盖 4 个 downstream tasks，共 111 个 scored runs。结果显示模型间分离度强于 harness 间分离度，native harness 不总是优于共享 harness，收"
+        ]
+      }
+    },
+    {
+      "id": "2608.05891v1",
+      "title": "AppDeltaWorld: Transition-Grounded Delta Code World Model for Mobile GUI Agents",
+      "summary": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。它在 CMGUIBench-500 上提升 GUI fidelity，并用生成轨迹训练 AppDeltaAgent，在 AndroidLens、MobileGym、MobileWorld 上带来稳定收益。",
+      "url": "https://arxiv.org/abs/2608.05891v1",
+      "authors": [
+        "Weikai Xu",
+        "Yunren Feng",
+        "Haoxiang Lei",
+        "Kun Huang",
+        "Yuxuan Liu",
+        "Kang Zhao",
+        "Xiaolin Hu",
+        "Shuo Shang",
+        "Bo An"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 93,
+        "level": "高",
+        "label": "面向 mobile GUI agents 的 transition-grounded world model",
+        "water_risk": "中",
+        "value_judgement": "面向 mobile GUI agents 的 transition-grounded world model",
+        "reason": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Weikai Xu",
+          "Yunren Feng",
+          "Haoxiang Lei",
+          "Kun Huang",
+          "Yuxuan Liu",
+          "Kang Zhao",
+          "Xiaolin Hu",
+          "Shuo Shang",
+          "Bo An"
+        ],
+        "affiliations": "Nanyang Technological University; University of Electronic Science and Technology of China; Independent Researchers; Renmin University of China; Xiamen University",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05891v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "面向 mobile GUI agents 的 transition-grounded world model",
+        "summary": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。它在 CMGUIBench-500 上提升 GUI fidelity，并用生成轨迹训练 AppDeltaAgent，在 AndroidLens、MobileGym、MobileWorld 上带来稳定收益。 Insight：对 GUI/web agent 训练很有参考价值：世界模型不应只追求视觉拟真，而要把“动作后是否能到达这个状态”编码进生成过程，否则 rollout 数据会污染 policy。",
+        "highlights": [
+          "面向 mobile GUI agents 的 transition-grounded world model",
+          "偏水风险：中",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "mobile GUI agents 需要长程交互轨迹，但真实 app 轨迹昂贵且涉及隐私；现有 GUI world model 容易出现页面不稳定、视觉元素缺失和动作转移逻辑不一致，难以作为训练环境。",
+        "method": "方法先在 action-transition 约束下检索 app-specific Level-1 HTML reference，再基于当前屏幕、动作、预测 next-screen text 和检索结构生成可执行 Level-2 HTML，并填充视觉资产后由浏览器渲染。生成世界模型还用于过滤 closed-loop SFT 数据和 test-time RL 适配。",
+        "experiments": "在 CMGUIBench-500 的 Code2World evaluation 中，AppDeltaWorld 在结构布局和 UI 元素重建上优于 image-only 与 code-only baselines。用其生成数据训练的 AppDeltaAgent 在 AndroidLens 达到 SOTA，并在 MobileGym、MobileWorld 上获得一致提升；world-model-based test-time RL 还能在不访问真实 app 的情况下继续改进。",
+        "research_help": "对 GUI/web agent 训练很有参考价值：世界模型不应只追求视觉拟真，而要把“动作后是否能到达这个状态”编码进生成过程，否则 rollout 数据会污染 policy。",
+        "recommendation": {
+          "score": 93,
+          "level": "高",
+          "label": "面向 mobile GUI agents 的 transition-grounded world model",
+          "water_risk": "中",
+          "value_judgement": "面向 mobile GUI agents 的 transition-grounded world model",
+          "reason": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "对 GUI/web agent 训练很有参考价值：世界模型不应只追求视觉拟真，而要把“动作后是否能到达这个状态”编码进生成过程，否则 rollout 数据会污染 policy。",
+        "abstract_zh": "论文提出 AppDeltaWorld，用 transition-grounded delta code 生成 mobile GUI 下一状态，并将其作为可扩展训练环境改进 GUI agent。",
+        "full_summary": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。它在 CMGUIBench-500 上提升 GUI fidelity，并用生成轨迹训练 AppDeltaAgent，在 AndroidLens、MobileGym、MobileWorld 上带来稳定收益。 方法先在 action-transition 约束下检索 app-specific Level-1 HTML reference，再基于当前屏幕、动作、预测 next-screen text 和检索结构生成可执行 Level-2 HTML，并填充视觉资产后由浏览器渲染。生成世界模型还用于过滤 closed-loop SFT 数据和 test-time RL 适配。 在 CMGUIBench-500 的 Code2World evaluation 中，AppDeltaWorld 在结构布局和 UI 元素重建上优于 image-only 与 code-only baselines。用其生成数据训练的 AppDeltaAgent 在 AndroidLens 达到 SOTA，并在 MobileGym、MobileWorld 上获得一致提升；world-model-based test-time RL 还能在不访问真实 app 的情况下继续改进。 对 GUI/web agent 训练很有参考价值：世界模型不应只追求视觉拟真，而要把“动作后是否能到达这个状态”编码进生成过程，否则 rollout 数据会污染 policy。",
+        "card_summary": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。它在 CMGUIBench-500 上提升 GUI fidelity，并用生成轨迹训练 AppDeltaAgent，在 AndroidLens、MobileGym、MobileWorld 上带来稳定收益。"
+      },
+      "analysis": {
+        "motivation": "mobile GUI agents 需要长程交互轨迹，但真实 app 轨迹昂贵且涉及隐私；现有 GUI world model 容易出现页面不稳定、视觉元素缺失和动作转移逻辑不一致，难以作为训练环境。",
+        "method": "方法先在 action-transition 约束下检索 app-specific Level-1 HTML reference，再基于当前屏幕、动作、预测 next-screen text 和检索结构生成可执行 Level-2 HTML，并填充视觉资产后由浏览器渲染。生成世界模型还用于过滤 closed-loop SFT 数据和 test-time RL 适配。",
+        "experiments": "在 CMGUIBench-500 的 Code2World evaluation 中，AppDeltaWorld 在结构布局和 UI 元素重建上优于 image-only 与 code-only baselines。用其生成数据训练的 AppDeltaAgent 在 AndroidLens 达到 SOTA，并在 MobileGym、MobileWorld 上获得一致提升；world-model-based test-time RL 还能在不访问真实 app 的情况下继续改进。",
+        "research_help": "对 GUI/web agent 训练很有参考价值：世界模型不应只追求视觉拟真，而要把“动作后是否能到达这个状态”编码进生成过程，否则 rollout 数据会污染 policy。",
+        "insight": "对 GUI/web agent 训练很有参考价值：世界模型不应只追求视觉拟真，而要把“动作后是否能到达这个状态”编码进生成过程，否则 rollout 数据会污染 policy。",
+        "abstract_zh": "论文提出 AppDeltaWorld，用 transition-grounded delta code 生成 mobile GUI 下一状态，并将其作为可扩展训练环境改进 GUI agent。",
+        "card_summary": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。它在 CMGUIBench-500 上提升 GUI fidelity，并用生成轨迹训练 AppDeltaAgent，在 AndroidLens、MobileGym、MobileWorld 上带来稳定收益。",
+        "full_summary": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。它在 CMGUIBench-500 上提升 GUI fidelity，并用生成轨迹训练 AppDeltaAgent，在 AndroidLens、MobileGym、MobileWorld 上带来稳定收益。 方法先在 action-transition 约束下检索 app-specific Level-1 HTML reference，再基于当前屏幕、动作、预测 next-screen text 和检索结构生成可执行 Level-2 HTML，并填充视觉资产后由浏览器渲染。生成世界模型还用于过滤 closed-loop SFT 数据和 test-time RL 适配。 在 CMGUIBench-500 的 Code2World evaluation 中，AppDeltaWorld 在结构布局和 UI 元素重建上优于 image-only 与 code-only baselines。用其生成数据训练的 AppDeltaAgent 在 AndroidLens 达到 SOTA，并在 MobileGym、MobileWorld 上获得一致提升；world-model-based test-time RL 还能在不访问真实 app 的情况下继续改进。 对 GUI/web agent 训练很有参考价值：世界模型不应只追求视觉拟真，而要把“动作后是否能到达这个状态”编码进生成过程，否则 rollout 数据会污染 policy。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "面向 mobile GUI agents 的 transition-grounded world model",
+        "value_reason": "AppDeltaWorld 把下一屏预测建模为 action-constrained HTML delta，而不是无约束图片或文本生成。",
+        "limitations": "依赖 HTML reference 和渲染式评估；对原生控件、登录态、隐私流程和复杂跨 app 任务的覆盖仍有限。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.AI, cs.CL",
+          "PDF text extracted locally for 2608.05891v1",
+          "在 CMGUIBench-500 的 Code2World evaluation 中，AppDeltaWorld 在结构布局和 UI 元素重建上优于 image-only 与 code-only baselines。用其生成数据训练的 AppDeltaAgent 在 AndroidLens 达到 SOTA，并在 MobileGym、MobileWorld 上"
+        ]
+      }
+    },
+    {
+      "id": "2608.03327v1",
+      "title": "Screenshots or Tools? Eliciting Tool Use and Managing Multimodal Context in Hybrid GUI-MCP Computer-Use Agents",
+      "summary": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。同一工具注入对 reasoning model 提升 +4.0pp、对 non-reasoning model 降低 -5.9pp；multi-turn RL 能提高工具采用，但真正瓶颈在 tool-call semantics 和训练/推理 observation rule 对齐。",
+      "url": "https://arxiv.org/abs/2608.03327v1",
+      "authors": [
+        "Siqi Fan",
+        "Minghao Li",
+        "Xiaoqian Ma",
+        "Wenhui Tan",
+        "Xiusheng Huang",
+        "Juntong Wu",
+        "Liujie Zhang",
+        "Shuo Shang",
+        "Weihang Chen"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-04",
+      "updated": "2026-08-04",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "GUI-MCP agents 的工具采用与多模态上下文管理",
+        "water_risk": "低",
+        "value_judgement": "GUI-MCP agents 的工具采用与多模态上下文管理",
+        "reason": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Siqi Fan",
+          "Minghao Li",
+          "Xiaoqian Ma",
+          "Wenhui Tan",
+          "Xiusheng Huang",
+          "Juntong Wu",
+          "Liujie Zhang",
+          "Shuo Shang",
+          "Weihang Chen"
+        ],
+        "affiliations": "University of Electronic Science and Technology of China; AI Platform, Xiaohongshu Inc.; Renmin University of China; Peking University",
+        "date": "2026-08-04",
+        "paper_url": "https://arxiv.org/abs/2608.03327v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "GUI-MCP agents 的工具采用与多模态上下文管理",
+        "summary": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。同一工具注入对 reasoning model 提升 +4.0pp、对 non-reasoning model 降低 -5.9pp；multi-turn RL 能提高工具采用，但真正瓶颈在 tool-call semantics 和训练/推理 observation rule 对齐。 Insight：这篇和多轮工具 agent 的训练很贴：工具采用是可被 reward shaping 推动的行为，但 competence 不会自动跟上；上下文压缩也必须与训练时观察规则一致。",
+        "highlights": [
+          "GUI-MCP agents 的工具采用与多模态上下文管理",
+          "偏水风险：低",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "GUI-MCP agent 同时能看截图和调用文本工具，但工具存在并不等于模型会正确使用；过多截图历史也会增加上下文成本。现有评测常把工具注入效果当作整体结果，缺少对工具决策行为的拆解。",
+        "method": "作者在 OSWorld-MCP 309 个任务上固定 GUI-MCP harness，比对 reasoning 与 non-reasoning model 的工具使用；再用 dense tool bonus 做 multi-turn RL probe，观察工具采用率和 accuracy 是否同步改善；最后研究成功工具调用后丢弃冗余截图，并在相同 observation rule 下重训。",
+        "experiments": "同一 MCP tools 对 reasoning model 带来 +4.0pp，对 non-reasoning model 带来 -5.9pp。reasoning model 虽然避免明显工具错误，但只在 55/309 个任务调用工具，约占 tool-reachable 任务的 23.9%。dense tool bonus 将 spreadsheet 工具采用从 0.03 提到 0.33，但 held-out accuracy 不同步上升；匹配重训的压缩 agent 用 53% input cost 达到 37.8%，高于未压缩 operating point 的 33.0%。",
+        "research_help": "这篇和多轮工具 agent 的训练很贴：工具采用是可被 reward shaping 推动的行为，但 competence 不会自动跟上；上下文压缩也必须与训练时观察规则一致。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "GUI-MCP agents 的工具采用与多模态上下文管理",
+          "water_risk": "低",
+          "value_judgement": "GUI-MCP agents 的工具采用与多模态上下文管理",
+          "reason": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇和多轮工具 agent 的训练很贴：工具采用是可被 reward shaping 推动的行为，但 competence 不会自动跟上；上下文压缩也必须与训练时观察规则一致。",
+        "abstract_zh": "论文研究 hybrid GUI-MCP computer-use agents 在截图与工具之间的选择，发现工具可用性不是充分条件，训练目标和 observation rule 决定工具采用与上下文成本。",
+        "full_summary": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。同一工具注入对 reasoning model 提升 +4.0pp、对 non-reasoning model 降低 -5.9pp；multi-turn RL 能提高工具采用，但真正瓶颈在 tool-call semantics 和训练/推理 observation rule 对齐。 作者在 OSWorld-MCP 309 个任务上固定 GUI-MCP harness，比对 reasoning 与 non-reasoning model 的工具使用；再用 dense tool bonus 做 multi-turn RL probe，观察工具采用率和 accuracy 是否同步改善；最后研究成功工具调用后丢弃冗余截图，并在相同 observation rule 下重训。 同一 MCP tools 对 reasoning model 带来 +4.0pp，对 non-reasoning model 带来 -5.9pp。reasoning model 虽然避免明显工具错误，但只在 55/309 个任务调用工具，约占 tool-reachable 任务的 23.9%。dense tool bonus 将 spreadsheet 工具采用从 0.03 提到 0.33，但 held-out accuracy 不同步上升；匹配重训的压缩 agent 用 53% input cost 达到 37.8%，高于未压缩 operating point 的 33.0%。 这篇和多轮工具 agent 的训练很贴：工具采用是可被 reward shaping 推动的行为，但 competence 不会自动跟上；上下文压缩也必须与训练时观察规则一致。",
+        "card_summary": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。同一工具注入对 reasoning model 提升 +4.0pp、对 non-reasoning model 降低 -5.9pp；multi-turn RL 能提高工具采用，但真正瓶颈在 tool-call semantics 和训练/推理 observation rule 对齐。"
+      },
+      "analysis": {
+        "motivation": "GUI-MCP agent 同时能看截图和调用文本工具，但工具存在并不等于模型会正确使用；过多截图历史也会增加上下文成本。现有评测常把工具注入效果当作整体结果，缺少对工具决策行为的拆解。",
+        "method": "作者在 OSWorld-MCP 309 个任务上固定 GUI-MCP harness，比对 reasoning 与 non-reasoning model 的工具使用；再用 dense tool bonus 做 multi-turn RL probe，观察工具采用率和 accuracy 是否同步改善；最后研究成功工具调用后丢弃冗余截图，并在相同 observation rule 下重训。",
+        "experiments": "同一 MCP tools 对 reasoning model 带来 +4.0pp，对 non-reasoning model 带来 -5.9pp。reasoning model 虽然避免明显工具错误，但只在 55/309 个任务调用工具，约占 tool-reachable 任务的 23.9%。dense tool bonus 将 spreadsheet 工具采用从 0.03 提到 0.33，但 held-out accuracy 不同步上升；匹配重训的压缩 agent 用 53% input cost 达到 37.8%，高于未压缩 operating point 的 33.0%。",
+        "research_help": "这篇和多轮工具 agent 的训练很贴：工具采用是可被 reward shaping 推动的行为，但 competence 不会自动跟上；上下文压缩也必须与训练时观察规则一致。",
+        "insight": "这篇和多轮工具 agent 的训练很贴：工具采用是可被 reward shaping 推动的行为，但 competence 不会自动跟上；上下文压缩也必须与训练时观察规则一致。",
+        "abstract_zh": "论文研究 hybrid GUI-MCP computer-use agents 在截图与工具之间的选择，发现工具可用性不是充分条件，训练目标和 observation rule 决定工具采用与上下文成本。",
+        "card_summary": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。同一工具注入对 reasoning model 提升 +4.0pp、对 non-reasoning model 降低 -5.9pp；multi-turn RL 能提高工具采用，但真正瓶颈在 tool-call semantics 和训练/推理 observation rule 对齐。",
+        "full_summary": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。同一工具注入对 reasoning model 提升 +4.0pp、对 non-reasoning model 降低 -5.9pp；multi-turn RL 能提高工具采用，但真正瓶颈在 tool-call semantics 和训练/推理 observation rule 对齐。 作者在 OSWorld-MCP 309 个任务上固定 GUI-MCP harness，比对 reasoning 与 non-reasoning model 的工具使用；再用 dense tool bonus 做 multi-turn RL probe，观察工具采用率和 accuracy 是否同步改善；最后研究成功工具调用后丢弃冗余截图，并在相同 observation rule 下重训。 同一 MCP tools 对 reasoning model 带来 +4.0pp，对 non-reasoning model 带来 -5.9pp。reasoning model 虽然避免明显工具错误，但只在 55/309 个任务调用工具，约占 tool-reachable 任务的 23.9%。dense tool bonus 将 spreadsheet 工具采用从 0.03 提到 0.33，但 held-out accuracy 不同步上升；匹配重训的压缩 agent 用 53% input cost 达到 37.8%，高于未压缩 operating point 的 33.0%。 这篇和多轮工具 agent 的训练很贴：工具采用是可被 reward shaping 推动的行为，但 competence 不会自动跟上；上下文压缩也必须与训练时观察规则一致。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "GUI-MCP agents 的工具采用与多模态上下文管理",
+        "value_reason": "这篇直接检验 GUI agent 在截图与 MCP 文本工具之间如何选择。",
+        "limitations": "主要围绕 OSWorld-MCP 和特定 GUI-MCP harness；工具语义学习仍未被完全解决，replacement submission 的更新幅度需继续跟踪。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.AI",
+          "PDF text extracted locally for 2608.03327v1",
+          "同一 MCP tools 对 reasoning model 带来 +4.0pp，对 non-reasoning model 带来 -5.9pp。reasoning model 虽然避免明显工具错误，但只在 55/309 个任务调用工具，约占 tool-reachable 任务的 23.9%。dense tool bonus 将 spreadsheet 工具"
+        ]
+      }
+    },
+    {
+      "id": "2608.04761v1",
+      "title": "InsightEmb: Learning Action-Intent Embeddings for Agentic Insight Retrieval",
+      "summary": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。它只用数学推理数据训练 contrastive embedding，却在 ALFWorld、WebShop、ScienceWorld 和 SRA-Bench 上提升动态 insight 注入与 skill retrieval。",
+      "url": "https://arxiv.org/abs/2608.04761v1",
+      "authors": [
+        "Tsz Ting Chung",
+        "Jiangnan Li",
+        "Jie Zhou",
+        "Mo Yu"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 91,
+        "level": "高",
+        "label": "按行动意图检索 agent 经验/insight",
+        "water_risk": "低",
+        "value_judgement": "按行动意图检索 agent 经验/insight",
+        "reason": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": false,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Tsz Ting Chung",
+          "Jiangnan Li",
+          "Jie Zhou",
+          "Mo Yu"
+        ],
+        "affiliations": "The Hong Kong University of Science and Technology; WeChat AI, Tencent",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.04761v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "按行动意图检索 agent 经验/insight",
+        "summary": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。它只用数学推理数据训练 contrastive embedding，却在 ALFWorld、WebShop、ScienceWorld 和 SRA-Bench 上提升动态 insight 注入与 skill retrieval。 Insight：对长期记忆很重要：经验检索的相似度应围绕“当前该推进什么动作意图”，不是围绕表面任务词。可作为 memory retrieval baseline，也能支撑 active-state / bottleneck-aware retrieval 论证。",
+        "highlights": [
+          "按行动意图检索 agent 经验/insight",
+          "偏水风险：低",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "自改进 agent 会积累 trajectory insight，但常规 embedding 更偏主题相似，无法判断某条经验是否对当前状态、目标和行动历史下的下一步瓶颈有帮助。",
+        "method": "论文把具体 situation 与抽象 heuristic rule 对齐，并让相似 progress structure 的 reasoning trajectories 聚类，形成 goal-conditioned/action-intent retrieval geometry。训练数据来自数学推理，不依赖目标环境的 trajectory 标注。",
+        "experiments": "动态 top-k insight injection 在 ALFWorld、WebShop、ScienceWorld 上提高 end-task success；SRA-Bench 上提高 retrieval recall 和 nDCG。结论部分还报告，InsightEmb 即使不用 ALFWorld 数据，也超过 ALFWorld in-domain retriever。",
+        "research_help": "对长期记忆很重要：经验检索的相似度应围绕“当前该推进什么动作意图”，不是围绕表面任务词。可作为 memory retrieval baseline，也能支撑 active-state / bottleneck-aware retrieval 论证。",
+        "recommendation": {
+          "score": 91,
+          "level": "高",
+          "label": "按行动意图检索 agent 经验/insight",
+          "water_risk": "低",
+          "value_judgement": "按行动意图检索 agent 经验/insight",
+          "reason": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": false,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "对长期记忆很重要：经验检索的相似度应围绕“当前该推进什么动作意图”，不是围绕表面任务词。可作为 memory retrieval baseline，也能支撑 active-state / bottleneck-aware retrieval 论证。",
+        "abstract_zh": "论文提出 InsightEmb，用 action-intent embedding 解决 self-improving agent 在每个决策步检索可行动经验的问题。",
+        "full_summary": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。它只用数学推理数据训练 contrastive embedding，却在 ALFWorld、WebShop、ScienceWorld 和 SRA-Bench 上提升动态 insight 注入与 skill retrieval。 论文把具体 situation 与抽象 heuristic rule 对齐，并让相似 progress structure 的 reasoning trajectories 聚类，形成 goal-conditioned/action-intent retrieval geometry。训练数据来自数学推理，不依赖目标环境的 trajectory 标注。 动态 top-k insight injection 在 ALFWorld、WebShop、ScienceWorld 上提高 end-task success；SRA-Bench 上提高 retrieval recall 和 nDCG。结论部分还报告，InsightEmb 即使不用 ALFWorld 数据，也超过 ALFWorld in-domain retriever。 对长期记忆很重要：经验检索的相似度应围绕“当前该推进什么动作意图”，不是围绕表面任务词。可作为 memory retrieval baseline，也能支撑 active-state / bottleneck-aware retrieval 论证。",
+        "card_summary": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。它只用数学推理数据训练 contrastive embedding，却在 ALFWorld、WebShop、ScienceWorld 和 SRA-Bench 上提升动态 insight 注入与 skill retrieval。"
+      },
+      "analysis": {
+        "motivation": "自改进 agent 会积累 trajectory insight，但常规 embedding 更偏主题相似，无法判断某条经验是否对当前状态、目标和行动历史下的下一步瓶颈有帮助。",
+        "method": "论文把具体 situation 与抽象 heuristic rule 对齐，并让相似 progress structure 的 reasoning trajectories 聚类，形成 goal-conditioned/action-intent retrieval geometry。训练数据来自数学推理，不依赖目标环境的 trajectory 标注。",
+        "experiments": "动态 top-k insight injection 在 ALFWorld、WebShop、ScienceWorld 上提高 end-task success；SRA-Bench 上提高 retrieval recall 和 nDCG。结论部分还报告，InsightEmb 即使不用 ALFWorld 数据，也超过 ALFWorld in-domain retriever。",
+        "research_help": "对长期记忆很重要：经验检索的相似度应围绕“当前该推进什么动作意图”，不是围绕表面任务词。可作为 memory retrieval baseline，也能支撑 active-state / bottleneck-aware retrieval 论证。",
+        "insight": "对长期记忆很重要：经验检索的相似度应围绕“当前该推进什么动作意图”，不是围绕表面任务词。可作为 memory retrieval baseline，也能支撑 active-state / bottleneck-aware retrieval 论证。",
+        "abstract_zh": "论文提出 InsightEmb，用 action-intent embedding 解决 self-improving agent 在每个决策步检索可行动经验的问题。",
+        "card_summary": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。它只用数学推理数据训练 contrastive embedding，却在 ALFWorld、WebShop、ScienceWorld 和 SRA-Bench 上提升动态 insight 注入与 skill retrieval。",
+        "full_summary": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。它只用数学推理数据训练 contrastive embedding，却在 ALFWorld、WebShop、ScienceWorld 和 SRA-Bench 上提升动态 insight 注入与 skill retrieval。 论文把具体 situation 与抽象 heuristic rule 对齐，并让相似 progress structure 的 reasoning trajectories 聚类，形成 goal-conditioned/action-intent retrieval geometry。训练数据来自数学推理，不依赖目标环境的 trajectory 标注。 动态 top-k insight injection 在 ALFWorld、WebShop、ScienceWorld 上提高 end-task success；SRA-Bench 上提高 retrieval recall 和 nDCG。结论部分还报告，InsightEmb 即使不用 ALFWorld 数据，也超过 ALFWorld in-domain retriever。 对长期记忆很重要：经验检索的相似度应围绕“当前该推进什么动作意图”，不是围绕表面任务词。可作为 memory retrieval baseline，也能支撑 active-state / bottleneck-aware retrieval 论证。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "按行动意图检索 agent 经验/insight",
+        "value_reason": "InsightEmb 定义 agentic insight retrieval：每一步检索的不是语义最相似文本，而是能解决当前 procedural bottleneck 的抽象经验。",
+        "limitations": "方法依赖构造好的 situation-rule 对和 contrastive supervision；跨开放工具环境、噪声轨迹和真实 agent 记忆库的鲁棒性还需要更多验证。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.CL, cs.AI",
+          "PDF text extracted locally for 2608.04761v1",
+          "动态 top-k insight injection 在 ALFWorld、WebShop、ScienceWorld 上提高 end-task success；SRA-Bench 上提高 retrieval recall 和 nDCG。结论部分还报告，InsightEmb 即使不用 ALFWorld 数据，也超过 ALFWorld in-domain ret"
+        ]
+      }
+    },
+    {
+      "id": "2608.05263v1",
+      "title": "OrchestraBench: Evaluating Multi-Agent Orchestration Failure Modes, Recovery, and Decomposition Quality",
+      "summary": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。它显示 keyword router 在 adversarial diagnostic 上为 0%，intent-reasoning router 为 100%，并揭示 tool fault、ambiguous delegation、latent/semantic faults 的恢复分层。",
+      "url": "https://arxiv.org/abs/2608.05263v1",
+      "authors": [
+        "Yidian Chen",
+        "Yingzi Gu",
+        "Natan Vidra",
+        "Spurthi Setty",
+        "Sharon Zheng"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 90,
+        "level": "高",
+        "label": "多 agent 编排的失败传播与恢复评测",
+        "water_risk": "中",
+        "value_judgement": "多 agent 编排的失败传播与恢复评测",
+        "reason": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yidian Chen",
+          "Yingzi Gu",
+          "Natan Vidra",
+          "Spurthi Setty",
+          "Sharon Zheng"
+        ],
+        "affiliations": "Anote",
+        "date": "2026-08-05",
+        "paper_url": "https://arxiv.org/abs/2608.05263v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "多 agent 编排的失败传播与恢复评测",
+        "summary": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。它显示 keyword router 在 adversarial diagnostic 上为 0%，intent-reasoning router 为 100%，并揭示 tool fault、ambiguous delegation、latent/semantic faults 的恢复分层。 Insight：这篇适合支撑 multi-agent planning/reliability 论证：真正的问题不只是分解任务，而是失败归因、可信状态传递和级联半径控制。",
+        "highlights": [
+          "多 agent 编排的失败传播与恢复评测",
+          "偏水风险：中",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "多 agent orchestration 已进入生产流程，但普通 benchmark 只报最终成功率，无法定位错误路由、级联传播和失败恢复机制，团队难以按可靠性选择或加固框架。",
+        "method": "benchmark 用可复现 failure-injection harness 构造 enterprise workflow 和 arithmetic dependency chain，定义 cascade radius、per-failure-mode recovery、decomposition quality 等指标，并用 bootstrap confidence intervals/paired tests 比较 routing policy。",
+        "experiments": "26-case gold diagnostic 中，keyword/flag router 在 misleading 或 missing surface flag 的 adversarial case 上 0%，model-driven intent router 100%，达到 oracle。Claude agent 机制探针显示 tool faults 完全恢复，ambiguous delegation 部分恢复，latent/semantic modes 基本无法恢复；cascade radius 随 pipeline depth 从 0.9 增至 4.7。trusted-state ablation 表明恢复收益主要来自可信上游状态，而不是 agent 自主检测。",
+        "research_help": "这篇适合支撑 multi-agent planning/reliability 论证：真正的问题不只是分解任务，而是失败归因、可信状态传递和级联半径控制。",
+        "recommendation": {
+          "score": 90,
+          "level": "高",
+          "label": "多 agent 编排的失败传播与恢复评测",
+          "water_risk": "中",
+          "value_judgement": "多 agent 编排的失败传播与恢复评测",
+          "reason": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇适合支撑 multi-agent planning/reliability 论证：真正的问题不只是分解任务，而是失败归因、可信状态传递和级联半径控制。",
+        "abstract_zh": "论文提出 OrchestraBench，评估多 agent 编排中的失败类型、恢复能力、分解质量和级联传播，而不是只看最终任务成功率。",
+        "full_summary": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。它显示 keyword router 在 adversarial diagnostic 上为 0%，intent-reasoning router 为 100%，并揭示 tool fault、ambiguous delegation、latent/semantic faults 的恢复分层。 benchmark 用可复现 failure-injection harness 构造 enterprise workflow 和 arithmetic dependency chain，定义 cascade radius、per-failure-mode recovery、decomposition quality 等指标，并用 bootstrap confidence intervals/paired tests 比较 routing policy。 26-case gold diagnostic 中，keyword/flag router 在 misleading 或 missing surface flag 的 adversarial case 上 0%，model-driven intent router 100%，达到 oracle。Claude agent 机制探针显示 tool faults 完全恢复，ambiguous delegation 部分恢复，latent/semantic modes 基本无法恢复；cascade radius 随 pipeline depth 从 0.9 增至 4.7。trusted-state ablation 表明恢复收益主要来自可信上游状态，而不是 agent 自主检测。 这篇适合支撑 multi-agent planning/reliability 论证：真正的问题不只是分解任务，而是失败归因、可信状态传递和级联半径控制。",
+        "card_summary": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。它显示 keyword router 在 adversarial diagnostic 上为 0%，intent-reasoning router 为 100%，并揭示 tool fault、ambiguous delegation、latent/semantic faults 的恢复分层。"
+      },
+      "analysis": {
+        "motivation": "多 agent orchestration 已进入生产流程，但普通 benchmark 只报最终成功率，无法定位错误路由、级联传播和失败恢复机制，团队难以按可靠性选择或加固框架。",
+        "method": "benchmark 用可复现 failure-injection harness 构造 enterprise workflow 和 arithmetic dependency chain，定义 cascade radius、per-failure-mode recovery、decomposition quality 等指标，并用 bootstrap confidence intervals/paired tests 比较 routing policy。",
+        "experiments": "26-case gold diagnostic 中，keyword/flag router 在 misleading 或 missing surface flag 的 adversarial case 上 0%，model-driven intent router 100%，达到 oracle。Claude agent 机制探针显示 tool faults 完全恢复，ambiguous delegation 部分恢复，latent/semantic modes 基本无法恢复；cascade radius 随 pipeline depth 从 0.9 增至 4.7。trusted-state ablation 表明恢复收益主要来自可信上游状态，而不是 agent 自主检测。",
+        "research_help": "这篇适合支撑 multi-agent planning/reliability 论证：真正的问题不只是分解任务，而是失败归因、可信状态传递和级联半径控制。",
+        "insight": "这篇适合支撑 multi-agent planning/reliability 论证：真正的问题不只是分解任务，而是失败归因、可信状态传递和级联半径控制。",
+        "abstract_zh": "论文提出 OrchestraBench，评估多 agent 编排中的失败类型、恢复能力、分解质量和级联传播，而不是只看最终任务成功率。",
+        "card_summary": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。它显示 keyword router 在 adversarial diagnostic 上为 0%，intent-reasoning router 为 100%，并揭示 tool fault、ambiguous delegation、latent/semantic faults 的恢复分层。",
+        "full_summary": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。它显示 keyword router 在 adversarial diagnostic 上为 0%，intent-reasoning router 为 100%，并揭示 tool fault、ambiguous delegation、latent/semantic faults 的恢复分层。 benchmark 用可复现 failure-injection harness 构造 enterprise workflow 和 arithmetic dependency chain，定义 cascade radius、per-failure-mode recovery、decomposition quality 等指标，并用 bootstrap confidence intervals/paired tests 比较 routing policy。 26-case gold diagnostic 中，keyword/flag router 在 misleading 或 missing surface flag 的 adversarial case 上 0%，model-driven intent router 100%，达到 oracle。Claude agent 机制探针显示 tool faults 完全恢复，ambiguous delegation 部分恢复，latent/semantic modes 基本无法恢复；cascade radius 随 pipeline depth 从 0.9 增至 4.7。trusted-state ablation 表明恢复收益主要来自可信上游状态，而不是 agent 自主检测。 这篇适合支撑 multi-agent planning/reliability 论证：真正的问题不只是分解任务，而是失败归因、可信状态传递和级联半径控制。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "多 agent 编排的失败传播与恢复评测",
+        "value_reason": "OrchestraBench 不只看任务是否成功，而是把 routing、recovery、decomposition failure 和 cascade radius 作为一等指标。",
+        "limitations": "实验是 controlled-chain mechanism probes，不等价于真实企业 workload；LLM recovery 条件依赖 trusted-state hint，不能过度解读为自主故障诊断能力。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.AI",
+          "PDF text extracted locally for 2608.05263v1",
+          "26-case gold diagnostic 中，keyword/flag router 在 misleading 或 missing surface flag 的 adversarial case 上 0%，model-driven intent router 100%，达到 oracle。Claude agent 机制探针显示 tool faults "
+        ]
+      }
+    },
+    {
+      "id": "2608.05563v1",
+      "title": "When Experience Becomes Instruction: Trajectory Poisoning in Self-Evolving Agent Skill Systems",
+      "summary": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。10% attacker support 下，攻击在 SkillClaw 中 546/600 次嵌入目标行为，在 Trace2Skill 中 369/600 次成功。",
+      "url": "https://arxiv.org/abs/2608.05563v1",
+      "authors": [
+        "Jialuo Chen",
+        "Lingqi Jiang",
+        "Xinhao Deng",
+        "Xiaohu Du",
+        "Jianan Ma",
+        "Yunhao Feng",
+        "Yuqi Qing",
+        "Zhihao Yuan",
+        "Linkang Du",
+        "Jingyi Wang"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 89,
+        "level": "中高",
+        "label": "自进化 agent skill 的 trajectory poisoning 边界",
+        "water_risk": "低",
+        "value_judgement": "自进化 agent skill 的 trajectory poisoning 边界",
+        "reason": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jialuo Chen",
+          "Lingqi Jiang",
+          "Xinhao Deng",
+          "Xiaohu Du",
+          "Jianan Ma",
+          "Yunhao Feng",
+          "Yuqi Qing",
+          "Zhihao Yuan",
+          "Linkang Du",
+          "Jingyi Wang"
+        ],
+        "affiliations": "Ant Group; Zhejiang University; Tsinghua University; Hangzhou Dianzi University; The Chinese University of Hong Kong, Shenzhen; Xian Jiaotong University",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05563v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "自进化 agent skill 的 trajectory poisoning 边界",
+        "summary": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。10% attacker support 下，攻击在 SkillClaw 中 546/600 次嵌入目标行为，在 Trace2Skill 中 369/600 次成功。 Insight：这篇对 agent memory/skill 学习很重要：长期经验不是天然可信资产，经验到 instruction 的 promotion 需要 provenance、relevance 和 causal-usefulness 审计。",
+        "highlights": [
+          "自进化 agent skill 的 trajectory poisoning 边界",
+          "偏水风险：低",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "self-evolving agent 会把 trajectory 经验提升为 skill 或长期 instruction；如果贡献轨迹来自多用户或不可信来源，攻击者不需要直接改 skill bank，只要让恶意模式看起来反复有用、可归因、可泛化。",
+        "method": "论文定义 Inclusion、Evolution Attribution、Realization 三个条件，构造 skill-visible black-box attacker：能看公开 skill、贡献有限证据，但不能访问私有池或 evolution prompt。攻击目标是 trajectory-to-skill 的 promotion policy，而不是 retrieval-time 文档注入。",
+        "experiments": "在 SkillClaw 的六个主流 LLM evolver 上，10% attacker support 达到 91.0% SER；迁移到结构不同的 Trace2Skill pipeline 后仍有 61.5% SER。30-record batch 中三条一致 attacker records 就足以形成代表性成功，消融显示 recurring support、causal framing 和 domain-aligned encoding 是关键。",
+        "research_help": "这篇对 agent memory/skill 学习很重要：长期经验不是天然可信资产，经验到 instruction 的 promotion 需要 provenance、relevance 和 causal-usefulness 审计。",
+        "recommendation": {
+          "score": 89,
+          "level": "中高",
+          "label": "自进化 agent skill 的 trajectory poisoning 边界",
+          "water_risk": "低",
+          "value_judgement": "自进化 agent skill 的 trajectory poisoning 边界",
+          "reason": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇对 agent memory/skill 学习很重要：长期经验不是天然可信资产，经验到 instruction 的 promotion 需要 provenance、relevance 和 causal-usefulness 审计。",
+        "abstract_zh": "论文研究 self-evolving agent skill systems 中轨迹证据如何被提升为持久 instruction，并展示 trajectory poisoning 的高成功率与跨架构迁移。",
+        "full_summary": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。10% attacker support 下，攻击在 SkillClaw 中 546/600 次嵌入目标行为，在 Trace2Skill 中 369/600 次成功。 论文定义 Inclusion、Evolution Attribution、Realization 三个条件，构造 skill-visible black-box attacker：能看公开 skill、贡献有限证据，但不能访问私有池或 evolution prompt。攻击目标是 trajectory-to-skill 的 promotion policy，而不是 retrieval-time 文档注入。 在 SkillClaw 的六个主流 LLM evolver 上，10% attacker support 达到 91.0% SER；迁移到结构不同的 Trace2Skill pipeline 后仍有 61.5% SER。30-record batch 中三条一致 attacker records 就足以形成代表性成功，消融显示 recurring support、causal framing 和 domain-aligned encoding 是关键。 这篇对 agent memory/skill 学习很重要：长期经验不是天然可信资产，经验到 instruction 的 promotion 需要 provenance、relevance 和 causal-usefulness 审计。",
+        "card_summary": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。10% attacker support 下，攻击在 SkillClaw 中 546/600 次嵌入目标行为，在 Trace2Skill 中 369/600 次成功。"
+      },
+      "analysis": {
+        "motivation": "self-evolving agent 会把 trajectory 经验提升为 skill 或长期 instruction；如果贡献轨迹来自多用户或不可信来源，攻击者不需要直接改 skill bank，只要让恶意模式看起来反复有用、可归因、可泛化。",
+        "method": "论文定义 Inclusion、Evolution Attribution、Realization 三个条件，构造 skill-visible black-box attacker：能看公开 skill、贡献有限证据，但不能访问私有池或 evolution prompt。攻击目标是 trajectory-to-skill 的 promotion policy，而不是 retrieval-time 文档注入。",
+        "experiments": "在 SkillClaw 的六个主流 LLM evolver 上，10% attacker support 达到 91.0% SER；迁移到结构不同的 Trace2Skill pipeline 后仍有 61.5% SER。30-record batch 中三条一致 attacker records 就足以形成代表性成功，消融显示 recurring support、causal framing 和 domain-aligned encoding 是关键。",
+        "research_help": "这篇对 agent memory/skill 学习很重要：长期经验不是天然可信资产，经验到 instruction 的 promotion 需要 provenance、relevance 和 causal-usefulness 审计。",
+        "insight": "这篇对 agent memory/skill 学习很重要：长期经验不是天然可信资产，经验到 instruction 的 promotion 需要 provenance、relevance 和 causal-usefulness 审计。",
+        "abstract_zh": "论文研究 self-evolving agent skill systems 中轨迹证据如何被提升为持久 instruction，并展示 trajectory poisoning 的高成功率与跨架构迁移。",
+        "card_summary": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。10% attacker support 下，攻击在 SkillClaw 中 546/600 次嵌入目标行为，在 Trace2Skill 中 369/600 次成功。",
+        "full_summary": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。10% attacker support 下，攻击在 SkillClaw 中 546/600 次嵌入目标行为，在 Trace2Skill 中 369/600 次成功。 论文定义 Inclusion、Evolution Attribution、Realization 三个条件，构造 skill-visible black-box attacker：能看公开 skill、贡献有限证据，但不能访问私有池或 evolution prompt。攻击目标是 trajectory-to-skill 的 promotion policy，而不是 retrieval-time 文档注入。 在 SkillClaw 的六个主流 LLM evolver 上，10% attacker support 达到 91.0% SER；迁移到结构不同的 Trace2Skill pipeline 后仍有 61.5% SER。30-record batch 中三条一致 attacker records 就足以形成代表性成功，消融显示 recurring support、causal framing 和 domain-aligned encoding 是关键。 这篇对 agent memory/skill 学习很重要：长期经验不是天然可信资产，经验到 instruction 的 promotion 需要 provenance、relevance 和 causal-usefulness 审计。",
+        "recommendation_level": "中高",
+        "water_risk": "低",
+        "value_label": "自进化 agent skill 的 trajectory poisoning 边界",
+        "value_reason": "PoisonedEvolution 指出 self-evolving skill systems 会把未信任轨迹蒸馏成持久 instruction，因此 experience promotion 本身是安全边界。",
+        "limitations": "实验使用 inert canary specification，不证明真实危害 payload 的端到端破坏；重点是 artifact poisoning 风险，而非 runtime compromise。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.CR, cs.AI",
+          "PDF text extracted locally for 2608.05563v1",
+          "在 SkillClaw 的六个主流 LLM evolver 上，10% attacker support 达到 91.0% SER；迁移到结构不同的 Trace2Skill pipeline 后仍有 61.5% SER。30-record batch 中三条一致 attacker records 就足以形成代表性成功，消融显示 recurring suppo"
+        ]
+      }
+    },
+    {
+      "id": "2608.05797v1",
+      "title": "Predicting Task Difficulty Without Rollouts",
+      "summary": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。作者覆盖 17 个 agentic benchmarks，指出 AUC 会掩盖差的难度估计，token-level entropy 是有用信号，预测残差能暴露 contamination、不可行任务等环境问题。",
+      "url": "https://arxiv.org/abs/2608.05797v1",
+      "authors": [
+        "Stefan Krsteski",
+        "Charlotte Meyer"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "Under review",
+      "recommendation": {
+        "score": 86,
+        "level": "中高",
+        "label": "无 rollout 预测 agentic benchmark 难度",
+        "water_risk": "中",
+        "value_judgement": "无 rollout 预测 agentic benchmark 难度",
+        "reason": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Stefan Krsteski",
+          "Charlotte Meyer"
+        ],
+        "affiliations": "Andromede AI",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05797v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "Under review",
+        "contribution": "无 rollout 预测 agentic benchmark 难度",
+        "summary": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。作者覆盖 17 个 agentic benchmarks，指出 AUC 会掩盖差的难度估计，token-level entropy 是有用信号，预测残差能暴露 contamination、不可行任务等环境问题。 Insight：对 long-horizon benchmark 设计有用：与其先烧 rollout 预算，不如用 ex ante difficulty signal 做 curriculum、污染诊断和环境筛查；但它是评测基础设施，不是 agent policy 本身。",
+        "highlights": [
+          "无 rollout 预测 agentic benchmark 难度",
+          "偏水风险：中",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "长程 agent 评测和训练越来越依赖昂贵模拟，环境设计者需要在投入 rollout 之前知道任务是否过难、过易、污染或不可行。现有 early prediction 多限于静态任务或单一 coding 环境。",
+        "method": "论文把任务难度视为 ex ante prediction 问题，跨 coding、math、ML、web navigation、function calling 等 17 个 agentic benchmarks 建模；比较不确定性、token entropy、IRT-style difficulty、human-time calibration 等特征和评估方式。",
+        "experiments": "实验显示 AUC 可能掩盖 poor calibration；token-level entropy 对难度预测有效。human-time calibration 子集上，线性/岭回归与 XGBoost 的 log human minutes 误差接近，leave-one-benchmark transfer 仍是限制。预测残差可帮助发现隐藏环境缺陷，如 contamination 和 infeasibility。",
+        "research_help": "对 long-horizon benchmark 设计有用：与其先烧 rollout 预算，不如用 ex ante difficulty signal 做 curriculum、污染诊断和环境筛查；但它是评测基础设施，不是 agent policy 本身。",
+        "recommendation": {
+          "score": 86,
+          "level": "中高",
+          "label": "无 rollout 预测 agentic benchmark 难度",
+          "water_risk": "中",
+          "value_judgement": "无 rollout 预测 agentic benchmark 难度",
+          "reason": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "对 long-horizon benchmark 设计有用：与其先烧 rollout 预算，不如用 ex ante difficulty signal 做 curriculum、污染诊断和环境筛查；但它是评测基础设施，不是 agent policy 本身。",
+        "abstract_zh": "论文研究无需 rollout 的 agentic task difficulty prediction，用任务描述和模型不确定性信号估计长程任务难度并诊断 benchmark 缺陷。",
+        "full_summary": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。作者覆盖 17 个 agentic benchmarks，指出 AUC 会掩盖差的难度估计，token-level entropy 是有用信号，预测残差能暴露 contamination、不可行任务等环境问题。 论文把任务难度视为 ex ante prediction 问题，跨 coding、math、ML、web navigation、function calling 等 17 个 agentic benchmarks 建模；比较不确定性、token entropy、IRT-style difficulty、human-time calibration 等特征和评估方式。 实验显示 AUC 可能掩盖 poor calibration；token-level entropy 对难度预测有效。human-time calibration 子集上，线性/岭回归与 XGBoost 的 log human minutes 误差接近，leave-one-benchmark transfer 仍是限制。预测残差可帮助发现隐藏环境缺陷，如 contamination 和 infeasibility。 对 long-horizon benchmark 设计有用：与其先烧 rollout 预算，不如用 ex ante difficulty signal 做 curriculum、污染诊断和环境筛查；但它是评测基础设施，不是 agent policy 本身。",
+        "card_summary": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。作者覆盖 17 个 agentic benchmarks，指出 AUC 会掩盖差的难度估计，token-level entropy 是有用信号，预测残差能暴露 contamination、不可行任务等环境问题。"
+      },
+      "analysis": {
+        "motivation": "长程 agent 评测和训练越来越依赖昂贵模拟，环境设计者需要在投入 rollout 之前知道任务是否过难、过易、污染或不可行。现有 early prediction 多限于静态任务或单一 coding 环境。",
+        "method": "论文把任务难度视为 ex ante prediction 问题，跨 coding、math、ML、web navigation、function calling 等 17 个 agentic benchmarks 建模；比较不确定性、token entropy、IRT-style difficulty、human-time calibration 等特征和评估方式。",
+        "experiments": "实验显示 AUC 可能掩盖 poor calibration；token-level entropy 对难度预测有效。human-time calibration 子集上，线性/岭回归与 XGBoost 的 log human minutes 误差接近，leave-one-benchmark transfer 仍是限制。预测残差可帮助发现隐藏环境缺陷，如 contamination 和 infeasibility。",
+        "research_help": "对 long-horizon benchmark 设计有用：与其先烧 rollout 预算，不如用 ex ante difficulty signal 做 curriculum、污染诊断和环境筛查；但它是评测基础设施，不是 agent policy 本身。",
+        "insight": "对 long-horizon benchmark 设计有用：与其先烧 rollout 预算，不如用 ex ante difficulty signal 做 curriculum、污染诊断和环境筛查；但它是评测基础设施，不是 agent policy 本身。",
+        "abstract_zh": "论文研究无需 rollout 的 agentic task difficulty prediction，用任务描述和模型不确定性信号估计长程任务难度并诊断 benchmark 缺陷。",
+        "card_summary": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。作者覆盖 17 个 agentic benchmarks，指出 AUC 会掩盖差的难度估计，token-level entropy 是有用信号，预测残差能暴露 contamination、不可行任务等环境问题。",
+        "full_summary": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。作者覆盖 17 个 agentic benchmarks，指出 AUC 会掩盖差的难度估计，token-level entropy 是有用信号，预测残差能暴露 contamination、不可行任务等环境问题。 论文把任务难度视为 ex ante prediction 问题，跨 coding、math、ML、web navigation、function calling 等 17 个 agentic benchmarks 建模；比较不确定性、token entropy、IRT-style difficulty、human-time calibration 等特征和评估方式。 实验显示 AUC 可能掩盖 poor calibration；token-level entropy 对难度预测有效。human-time calibration 子集上，线性/岭回归与 XGBoost 的 log human minutes 误差接近，leave-one-benchmark transfer 仍是限制。预测残差可帮助发现隐藏环境缺陷，如 contamination 和 infeasibility。 对 long-horizon benchmark 设计有用：与其先烧 rollout 预算，不如用 ex ante difficulty signal 做 curriculum、污染诊断和环境筛查；但它是评测基础设施，不是 agent policy 本身。",
+        "recommendation_level": "中高",
+        "water_risk": "中",
+        "value_label": "无 rollout 预测 agentic benchmark 难度",
+        "value_reason": "这篇研究在执行昂贵 rollout 之前，仅从任务描述估计 agent 成功概率。",
+        "limitations": "跨 benchmark transfer 仍弱；难度预测只能提示异常，不能替代真实交互成功率。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.LG, cs.CL",
+          "PDF text extracted locally for 2608.05797v1",
+          "实验显示 AUC 可能掩盖 poor calibration；token-level entropy 对难度预测有效。human-time calibration 子集上，线性/岭回归与 XGBoost 的 log human minutes 误差接近，leave-one-benchmark transfer 仍是限制。预测残差可帮助发现隐藏环境缺陷，如 c"
+        ]
+      }
+    },
+    {
+      "id": "2608.05832v1",
+      "title": "Enhancing Social Intelligence in LLMs with Hierarchical Reasoning and Utterance-Level Goal Rewarding",
+      "summary": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。在 SOTOPIA 上，Qwen2.5-7B fine-tuned agent 的 goal completion 比 GPT-4o baseline 高 7.32%。",
+      "url": "https://arxiv.org/abs/2608.05832v1",
+      "authors": [
+        "Xiaofeng Wang",
+        "Kakam Chong",
+        "Shuai Xiao",
+        "Dexin Kong",
+        "Qingyuan Tian",
+        "Chen Ju",
+        "Xu Yan",
+        "Shuai Zhao",
+        "Fei Huang",
+        "Rui Wang",
+        "Shuguang Han",
+        "Jufeng Chen"
+      ],
+      "report_date": "2026-08-10",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 84,
+        "level": "中高",
+        "label": "多轮社会交互中的层级策略推理与 utterance-level reward",
+        "water_risk": "中",
+        "value_judgement": "多轮社会交互中的层级策略推理与 utterance-level reward",
+        "reason": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xiaofeng Wang",
+          "Kakam Chong",
+          "Shuai Xiao",
+          "Dexin Kong",
+          "Qingyuan Tian",
+          "Chen Ju",
+          "Xu Yan",
+          "Shuai Zhao",
+          "Fei Huang",
+          "Rui Wang",
+          "Shuguang Han",
+          "Jufeng Chen"
+        ],
+        "affiliations": "Independent Researcher; Alibaba Group; Shanghai Jiao Tong University",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.05832v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "多轮社会交互中的层级策略推理与 utterance-level reward",
+        "summary": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。在 SOTOPIA 上，Qwen2.5-7B fine-tuned agent 的 goal completion 比 GPT-4o baseline 高 7.32%。 Insight：这篇不是典型工具 agent，但对 multi-turn interaction RL 很贴：每轮 utterance 的局部策略奖励比 episode-level goal reward 更能约束长期目标推进。",
+        "highlights": [
+          "多轮社会交互中的层级策略推理与 utterance-level reward",
+          "偏水风险：中",
+          "阅读来源：arXiv PDF 正文抽取与分类页人工核验"
+        ],
+        "motivation": "LLM 在数学/代码等静态任务上表现强，但动态社会互动需要长期目标协调、快速策略调整和避免多轮重复；现有 goal reward 往往把整段对话一刀切，忽略每个 utterance 的局部目标和策略理由。",
+        "method": "论文提出 Think-Strategy-Response 框架：先进行高层战略规划，再执行具体 utterance。LHRL-VGR 根据 goal achievement score 的方差动态路由 goal completion 与 strategy adherence reward，并加入非重复约束以维持对话推进。",
+        "experiments": "SOTOPIA 实验显示，fine-tuned Qwen2.5-7B agent 在 goal completion success 上超过 GPT-4o baseline 7.32%。消融案例显示，没有 strategy-followed reward 或 non-repetition reward 时，多轮对话更容易偏离目标或陷入重复句式。",
+        "research_help": "这篇不是典型工具 agent，但对 multi-turn interaction RL 很贴：每轮 utterance 的局部策略奖励比 episode-level goal reward 更能约束长期目标推进。",
+        "recommendation": {
+          "score": 84,
+          "level": "中高",
+          "label": "多轮社会交互中的层级策略推理与 utterance-level reward",
+          "water_risk": "中",
+          "value_judgement": "多轮社会交互中的层级策略推理与 utterance-level reward",
+          "reason": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇不是典型工具 agent，但对 multi-turn interaction RL 很贴：每轮 utterance 的局部策略奖励比 episode-level goal reward 更能约束长期目标推进。",
+        "abstract_zh": "论文用层级推理和 utterance-level reward 训练多轮社会互动 agent，解决长期目标协调和重复退化问题。",
+        "full_summary": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。在 SOTOPIA 上，Qwen2.5-7B fine-tuned agent 的 goal completion 比 GPT-4o baseline 高 7.32%。 论文提出 Think-Strategy-Response 框架：先进行高层战略规划，再执行具体 utterance。LHRL-VGR 根据 goal achievement score 的方差动态路由 goal completion 与 strategy adherence reward，并加入非重复约束以维持对话推进。 SOTOPIA 实验显示，fine-tuned Qwen2.5-7B agent 在 goal completion success 上超过 GPT-4o baseline 7.32%。消融案例显示，没有 strategy-followed reward 或 non-repetition reward 时，多轮对话更容易偏离目标或陷入重复句式。 这篇不是典型工具 agent，但对 multi-turn interaction RL 很贴：每轮 utterance 的局部策略奖励比 episode-level goal reward 更能约束长期目标推进。",
+        "card_summary": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。在 SOTOPIA 上，Qwen2.5-7B fine-tuned agent 的 goal completion 比 GPT-4o baseline 高 7.32%。"
+      },
+      "analysis": {
+        "motivation": "LLM 在数学/代码等静态任务上表现强，但动态社会互动需要长期目标协调、快速策略调整和避免多轮重复；现有 goal reward 往往把整段对话一刀切，忽略每个 utterance 的局部目标和策略理由。",
+        "method": "论文提出 Think-Strategy-Response 框架：先进行高层战略规划，再执行具体 utterance。LHRL-VGR 根据 goal achievement score 的方差动态路由 goal completion 与 strategy adherence reward，并加入非重复约束以维持对话推进。",
+        "experiments": "SOTOPIA 实验显示，fine-tuned Qwen2.5-7B agent 在 goal completion success 上超过 GPT-4o baseline 7.32%。消融案例显示，没有 strategy-followed reward 或 non-repetition reward 时，多轮对话更容易偏离目标或陷入重复句式。",
+        "research_help": "这篇不是典型工具 agent，但对 multi-turn interaction RL 很贴：每轮 utterance 的局部策略奖励比 episode-level goal reward 更能约束长期目标推进。",
+        "insight": "这篇不是典型工具 agent，但对 multi-turn interaction RL 很贴：每轮 utterance 的局部策略奖励比 episode-level goal reward 更能约束长期目标推进。",
+        "abstract_zh": "论文用层级推理和 utterance-level reward 训练多轮社会互动 agent，解决长期目标协调和重复退化问题。",
+        "card_summary": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。在 SOTOPIA 上，Qwen2.5-7B fine-tuned agent 的 goal completion 比 GPT-4o baseline 高 7.32%。",
+        "full_summary": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。在 SOTOPIA 上，Qwen2.5-7B fine-tuned agent 的 goal completion 比 GPT-4o baseline 高 7.32%。 论文提出 Think-Strategy-Response 框架：先进行高层战略规划，再执行具体 utterance。LHRL-VGR 根据 goal achievement score 的方差动态路由 goal completion 与 strategy adherence reward，并加入非重复约束以维持对话推进。 SOTOPIA 实验显示，fine-tuned Qwen2.5-7B agent 在 goal completion success 上超过 GPT-4o baseline 7.32%。消融案例显示，没有 strategy-followed reward 或 non-repetition reward 时，多轮对话更容易偏离目标或陷入重复句式。 这篇不是典型工具 agent，但对 multi-turn interaction RL 很贴：每轮 utterance 的局部策略奖励比 episode-level goal reward 更能约束长期目标推进。",
+        "recommendation_level": "中高",
+        "water_risk": "中",
+        "value_label": "多轮社会交互中的层级策略推理与 utterance-level reward",
+        "value_reason": "TSR/LHRL-VGR 把社会对话拆成高层 strategy planning 和低层 response execution，并用 utterance-level goal/strategy reward 训练多轮 negotiation agent。",
+        "limitations": "主要是社会 negotiation 场景；SOTOPIA 指标和 LLM judge 质量会影响结论，迁移到工具/环境 agent 需要重新验证。",
+        "source_scope": "full_text_pdf",
+        "source_note": "Curated manually from arXiv category HTML/abs pages plus extracted arXiv PDF text after arXiv API returned 503.",
+        "source_evidence": [
+          "arXiv categories: cs.CL",
+          "PDF text extracted locally for 2608.05832v1",
+          "SOTOPIA 实验显示，fine-tuned Qwen2.5-7B agent 在 goal completion success 上超过 GPT-4o baseline 7.32%。消融案例显示，没有 strategy-followed reward 或 non-repetition reward 时，多轮对话更容易偏离目标或陷入重复句式。"
+        ]
+      }
+    },
     {
       "id": "2608.06144v1",
       "title": "FinEvo-Bench: A Longitudinal Benchmark for Self-Evolving Agents in Professional Financial Workflows",
