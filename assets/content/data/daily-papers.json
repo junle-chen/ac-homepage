@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-08-10T01:40:12.411Z",
+  "updated_at": "2026-08-11T01:41:03.899Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation from arXiv category HTML, arXiv abs pages, and extracted PDF text after arXiv API returned 503; strong relevance only.",
-  "query_focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪与执行可靠性",
+  "analysis_method": "Manual Codex curation from arXiv cs.AI/cs.CL/cs.LG category HTML, arXiv abs pages, and extracted PDF text after arXiv API returned 429; strong relevance only.",
+  "query_focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪、工具/环境交互与执行可靠性",
   "query_terms": [
     "agentic reinforcement learning",
     "agentic rl",
@@ -37,39 +37,46 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-10 Daily Paper",
-    "report_date": "2026-08-10",
-    "focus": "long horizon, multi-turn, agentic RL, agent planning",
-    "summary": "arXiv API 503 后改用 category HTML 与 PDF 正文抽取兜底；当前可见批次仍是 Friday, 7 August 2026，因此本次是 Friday 批次强相关遗漏/交叉项 catch-up，而不是伪造新的 Monday arXiv 批次。保留 agent harness、GUI agent world model、tool-use RL、agentic insight retrieval、多 agent orchestration、自进化 skill 安全和多轮 reward 相关论文。",
+    "title": "2026-08-11 Daily Paper",
+    "report_date": "2026-08-11",
+    "focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪、工具/环境交互与执行可靠性",
+    "summary": "arXiv API 今日返回 429；改用 arXiv 分类 HTML、abs 页面和 PDF 全文抽取人工筛选。保留 14 篇强相关论文，重点集中在长程 LLM agent 的信用分配、memory state alignment、编程/web agent 执行可靠性和轨迹归因。",
     "top_recommendations": [
-      "2608.05446v1",
-      "2608.06301v1",
-      "2608.05891v1"
+      "2608.06861v1",
+      "2608.07118v1",
+      "2608.07068v1"
     ],
     "low_priority": [
-      "2608.05797v1",
-      "2608.05832v1"
+      "2608.06880v1",
+      "2608.06474v1",
+      "2608.06909v1",
+      "2608.06714v1"
     ],
-    "no_news_policy": "如果没有新增强相关论文，则不提交不部署；本次为 Friday 可见批次补漏更新。",
-    "email_body": ""
+    "no_news_policy": "若无 long horizon、multi-turn、agentic RL、agent planning、agent memory 或执行可靠性强相关新增论文，则不发布。",
+    "email_body": "今日保留 14 篇强相关 Daily Paper：Gated-BEPO、FACTOR、MemOPD、The Horizon Gap、TRIAL、DiDPO、PMCoder、LivePlan、AMD、WebRider、SkillAligner、WebGrader、Trajectory Attribution、ReASearch。过滤医疗/机器人/分子设计/卫星/多模态模型合并等边界项。"
   },
   "latest_item_ids": [
-    "2608.05446v1",
-    "2608.06301v1",
-    "2608.05891v1",
-    "2608.03327v1",
-    "2608.04761v1",
-    "2608.05263v1",
-    "2608.05563v1",
-    "2608.05797v1",
-    "2608.05832v1"
+    "2608.06861v1",
+    "2608.07118v1",
+    "2608.07068v1",
+    "2608.06663v1",
+    "2608.07371v1",
+    "2608.07147v1",
+    "2608.06811v1",
+    "2608.06701v1",
+    "2608.07169v1",
+    "2608.06704v1",
+    "2608.06880v1",
+    "2608.06474v1",
+    "2608.06909v1",
+    "2608.06714v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 9,
-    "total_items": 176,
-    "previous_items": 167,
-    "latest_items": 9,
+    "fresh_items": 14,
+    "total_items": 190,
+    "previous_items": 176,
+    "latest_items": 14,
     "source_report_dates": {
       "2026-08-07": 6,
       "2026-08-06": 9,
@@ -105,7 +112,8 @@
       "2026-06-14": 5,
       "2026-06-13": 1,
       "2026-08-09": 11,
-      "2026-08-10": 9
+      "2026-08-10": 9,
+      "2026-08-11": 14
     },
     "filtered_candidate_ids": [
       "2608.04443v1",
@@ -140,18 +148,31 @@
       "2608.05332v1",
       "2608.05430v1",
       "2608.05643v1",
-      "2608.05166v1"
+      "2608.05166v1",
+      "2608.07418v1",
+      "2608.06699v1",
+      "2608.06735v1",
+      "2608.07346v1",
+      "2608.06984v1",
+      "2608.06871v1",
+      "2608.06961v1",
+      "2608.06434v1",
+      "2606.05597v1",
+      "2608.07408v1",
+      "2608.06933v1"
     ],
     "filtered_today": [
-      "2608.04872v1",
-      "2608.05588v1",
-      "2608.05792v1",
-      "2608.05201v1",
-      "2608.05248v1",
-      "2608.05332v1",
-      "2608.05430v1",
-      "2608.05643v1",
-      "2608.05166v1"
+      "2608.07418v1",
+      "2608.06699v1",
+      "2608.06735v1",
+      "2608.07346v1",
+      "2608.06984v1",
+      "2608.06871v1",
+      "2608.06961v1",
+      "2608.06434v1",
+      "2606.05597v1",
+      "2608.07408v1",
+      "2608.06933v1"
     ],
     "backfilled_report_dates": {
       "2026-07-17": 3,
@@ -161,6 +182,1581 @@
     }
   },
   "items": [
+    {
+      "id": "2608.06861v1",
+      "title": "Gated-BEPO: Confidence-Gated Bellman Credit Assignment for Large Language Model Agents",
+      "summary": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。",
+      "url": "https://arxiv.org/abs/2608.06861v1",
+      "authors": [
+        "Hongxi Yan",
+        "Ziyue Huang",
+        "Shichao Fan",
+        "Qingjie Liu"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "Bellman 图信用分配用于长程 LLM agent 训练",
+        "water_risk": "低",
+        "value_judgement": "Bellman 图信用分配用于长程 LLM agent 训练",
+        "reason": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Hongxi Yan",
+          "Ziyue Huang",
+          "Shichao Fan",
+          "Qingjie Liu"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.06861v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "Bellman 图信用分配用于长程 LLM agent 训练",
+        "summary": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。 Insight：这篇直接对准你的 agentic RL 问题：它不是再做一个奖励模型，而是把 sparse terminal outcome 转成可解释的 rollout-graph credit。可以作为长程 agent credit assignment 的强 baseline。",
+        "highlights": [
+          "Bellman 图信用分配用于长程 LLM agent 训练",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程 agent 训练常只有 terminal reward。把整条 trajectory 的回报均匀广播到每步会奖励失败轨迹里的无效动作，也会惩罚成功轨迹中实际有用但局部不可见的动作。",
+        "method": "论文把同一状态附近的 rollout 组织成经验图，用 mean-backup Bellman fixed point 估计节点值，再沿采样轨迹累积 TD residual 得到 step-level credit。置信门只在状态拥有多个后继、Bellman 估计较可靠时引入 step credit，否则退回 episode-level credit。",
+        "experiments": "作者在 WebShop、ALFWorld 和 visual Sokoban 上测试 language / vision-language agent，报告相对 GRPO 等基线的稳定提升；消融显示 Bellman value 估计有效，但 step credit 不能无条件融合，选择性 gating 是关键。",
+        "research_help": "这篇直接对准你的 agentic RL 问题：它不是再做一个奖励模型，而是把 sparse terminal outcome 转成可解释的 rollout-graph credit。可以作为长程 agent credit assignment 的强 baseline。",
+        "recommendation": {
+          "score": 96,
+          "level": "高",
+          "label": "Bellman 图信用分配用于长程 LLM agent 训练",
+          "water_risk": "低",
+          "value_judgement": "Bellman 图信用分配用于长程 LLM agent 训练",
+          "reason": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇直接对准你的 agentic RL 问题：它不是再做一个奖励模型，而是把 sparse terminal outcome 转成可解释的 rollout-graph credit。可以作为长程 agent credit assignment 的强 baseline。",
+        "abstract_zh": "论文研究长程 LLM agent 训练中的稀疏奖励信用分配，提出基于经验 rollout 图的 Bellman credit，并用置信门选择性融合 step-level 与 episode-level 信号。",
+        "full_summary": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。 论文把同一状态附近的 rollout 组织成经验图，用 mean-backup Bellman fixed point 估计节点值，再沿采样轨迹累积 TD residual 得到 step-level credit。置信门只在状态拥有多个后继、Bellman 估计较可靠时引入 step credit，否则退回 episode-level credit。 作者在 WebShop、ALFWorld 和 visual Sokoban 上测试 language / vision-language agent，报告相对 GRPO 等基线的稳定提升；消融显示 Bellman value 估计有效，但 step credit 不能无条件融合，选择性 gating 是关键。 这篇直接对准你的 agentic RL 问题：它不是再做一个奖励模型，而是把 sparse terminal outcome 转成可解释的 rollout-graph credit。可以作为长程 agent credit assignment 的强 baseline。",
+        "card_summary": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。"
+      },
+      "analysis": {
+        "motivation": "长程 agent 训练常只有 terminal reward。把整条 trajectory 的回报均匀广播到每步会奖励失败轨迹里的无效动作，也会惩罚成功轨迹中实际有用但局部不可见的动作。",
+        "method": "论文把同一状态附近的 rollout 组织成经验图，用 mean-backup Bellman fixed point 估计节点值，再沿采样轨迹累积 TD residual 得到 step-level credit。置信门只在状态拥有多个后继、Bellman 估计较可靠时引入 step credit，否则退回 episode-level credit。",
+        "experiments": "作者在 WebShop、ALFWorld 和 visual Sokoban 上测试 language / vision-language agent，报告相对 GRPO 等基线的稳定提升；消融显示 Bellman value 估计有效，但 step credit 不能无条件融合，选择性 gating 是关键。",
+        "research_help": "这篇直接对准你的 agentic RL 问题：它不是再做一个奖励模型，而是把 sparse terminal outcome 转成可解释的 rollout-graph credit。可以作为长程 agent credit assignment 的强 baseline。",
+        "insight": "这篇直接对准你的 agentic RL 问题：它不是再做一个奖励模型，而是把 sparse terminal outcome 转成可解释的 rollout-graph credit。可以作为长程 agent credit assignment 的强 baseline。",
+        "abstract_zh": "论文研究长程 LLM agent 训练中的稀疏奖励信用分配，提出基于经验 rollout 图的 Bellman credit，并用置信门选择性融合 step-level 与 episode-level 信号。",
+        "card_summary": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。",
+        "full_summary": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。 论文把同一状态附近的 rollout 组织成经验图，用 mean-backup Bellman fixed point 估计节点值，再沿采样轨迹累积 TD residual 得到 step-level credit。置信门只在状态拥有多个后继、Bellman 估计较可靠时引入 step credit，否则退回 episode-level credit。 作者在 WebShop、ALFWorld 和 visual Sokoban 上测试 language / vision-language agent，报告相对 GRPO 等基线的稳定提升；消融显示 Bellman value 估计有效，但 step credit 不能无条件融合，选择性 gating 是关键。 这篇直接对准你的 agentic RL 问题：它不是再做一个奖励模型，而是把 sparse terminal outcome 转成可解释的 rollout-graph credit。可以作为长程 agent credit assignment 的强 baseline。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "Bellman 图信用分配用于长程 LLM agent 训练",
+        "value_reason": "Gated-BEPO 用经验 rollout 图估计 step-level Bellman advantage，并用置信门在 episode credit 与 step credit 之间切换，专门处理长程 LLM agent 的稀疏回报信用分配。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Empirical rollout graphs with Bellman fixed-point value estimation",
+          "Evaluated on WebShop, ALFWorld, and visual Sokoban",
+          "Ablations support selective confidence gating"
+        ]
+      }
+    },
+    {
+      "id": "2608.07118v1",
+      "title": "How Much, Then Where: Credit-Conserving Action-to-Token Allocation for Multi-Turn Agent Reinforcement Learning",
+      "summary": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。",
+      "url": "https://arxiv.org/abs/2608.07118v1",
+      "authors": [
+        "Lichao Ma",
+        "Yang Sun",
+        "Shuaitao Zhao",
+        "Yangyi Fang",
+        "Cong Qin",
+        "Xiaoliang Fu",
+        "Yuhang Tian",
+        "Yuchen Wei",
+        "Junbo Zhu",
+        "Yang Wei",
+        "Lu Pan",
+        "Jiaye Lin"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "把 action credit 与 token allocation 解耦的多轮 agent RL",
+        "water_risk": "低",
+        "value_judgement": "把 action credit 与 token allocation 解耦的多轮 agent RL",
+        "reason": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Lichao Ma",
+          "Yang Sun",
+          "Shuaitao Zhao",
+          "Yangyi Fang",
+          "Cong Qin",
+          "Xiaoliang Fu",
+          "Yuhang Tian",
+          "Yuchen Wei",
+          "Junbo Zhu",
+          "Yang Wei",
+          "Lu Pan",
+          "Jiaye Lin"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.07118v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "把 action credit 与 token allocation 解耦的多轮 agent RL",
+        "summary": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。 Insight：这篇把 credit conservation 写成 loss-level 约束，适合用来反驳只靠 dense feedback 或 token reweighting 的粗糙方案。对多轮 agent RL 的粒度定义很有参考价值。",
+        "highlights": [
+          "把 action credit 与 token allocation 解耦的多轮 agent RL",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "多轮 agent RL 需要同时回答“哪一步该得多少 credit”和“这一步内部哪些 token 该更新”。现有方法容易把 token 长度、teacher 置信度和真实环境优势混在一起。",
+        "method": "FACTOR 用 TAC 分解 trajectory advantage，使 action credit telescope 回原始轨迹优势；HTA 用反馈条件下的 teacher-student likelihood gap 识别 action 内重要 token；APM 保证每个 action 内 allocation 均值为一，配合 action-mean loss 使 action 的 pre-clipping surrogate 等于 assigned credit。",
+        "experiments": "论文在 ALFWorld、WebShop、ScienceWorld 上与 GRPO、SERL 等基线对比，三种环境和种子均 favor FACTOR，最长程的 ScienceWorld 增益最大；跨 Qwen2.5-14B 与 Llama-3.1-8B 也保持提升。",
+        "research_help": "这篇把 credit conservation 写成 loss-level 约束，适合用来反驳只靠 dense feedback 或 token reweighting 的粗糙方案。对多轮 agent RL 的粒度定义很有参考价值。",
+        "recommendation": {
+          "score": 95,
+          "level": "高",
+          "label": "把 action credit 与 token allocation 解耦的多轮 agent RL",
+          "water_risk": "低",
+          "value_judgement": "把 action credit 与 token allocation 解耦的多轮 agent RL",
+          "reason": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇把 credit conservation 写成 loss-level 约束，适合用来反驳只靠 dense feedback 或 token reweighting 的粗糙方案。对多轮 agent RL 的粒度定义很有参考价值。",
+        "abstract_zh": "论文提出 FACTOR，将多轮 agent 强化学习中的 action-level temporal credit 和 action 内 token allocation 分开建模，并通过守恒接口防止信用尺度漂移。",
+        "full_summary": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。 FACTOR 用 TAC 分解 trajectory advantage，使 action credit telescope 回原始轨迹优势；HTA 用反馈条件下的 teacher-student likelihood gap 识别 action 内重要 token；APM 保证每个 action 内 allocation 均值为一，配合 action-mean loss 使 action 的 pre-clipping surrogate 等于 assigned credit。 论文在 ALFWorld、WebShop、ScienceWorld 上与 GRPO、SERL 等基线对比，三种环境和种子均 favor FACTOR，最长程的 ScienceWorld 增益最大；跨 Qwen2.5-14B 与 Llama-3.1-8B 也保持提升。 这篇把 credit conservation 写成 loss-level 约束，适合用来反驳只靠 dense feedback 或 token reweighting 的粗糙方案。对多轮 agent RL 的粒度定义很有参考价值。",
+        "card_summary": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。"
+      },
+      "analysis": {
+        "motivation": "多轮 agent RL 需要同时回答“哪一步该得多少 credit”和“这一步内部哪些 token 该更新”。现有方法容易把 token 长度、teacher 置信度和真实环境优势混在一起。",
+        "method": "FACTOR 用 TAC 分解 trajectory advantage，使 action credit telescope 回原始轨迹优势；HTA 用反馈条件下的 teacher-student likelihood gap 识别 action 内重要 token；APM 保证每个 action 内 allocation 均值为一，配合 action-mean loss 使 action 的 pre-clipping surrogate 等于 assigned credit。",
+        "experiments": "论文在 ALFWorld、WebShop、ScienceWorld 上与 GRPO、SERL 等基线对比，三种环境和种子均 favor FACTOR，最长程的 ScienceWorld 增益最大；跨 Qwen2.5-14B 与 Llama-3.1-8B 也保持提升。",
+        "research_help": "这篇把 credit conservation 写成 loss-level 约束，适合用来反驳只靠 dense feedback 或 token reweighting 的粗糙方案。对多轮 agent RL 的粒度定义很有参考价值。",
+        "insight": "这篇把 credit conservation 写成 loss-level 约束，适合用来反驳只靠 dense feedback 或 token reweighting 的粗糙方案。对多轮 agent RL 的粒度定义很有参考价值。",
+        "abstract_zh": "论文提出 FACTOR，将多轮 agent 强化学习中的 action-level temporal credit 和 action 内 token allocation 分开建模，并通过守恒接口防止信用尺度漂移。",
+        "card_summary": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。",
+        "full_summary": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。 FACTOR 用 TAC 分解 trajectory advantage，使 action credit telescope 回原始轨迹优势；HTA 用反馈条件下的 teacher-student likelihood gap 识别 action 内重要 token；APM 保证每个 action 内 allocation 均值为一，配合 action-mean loss 使 action 的 pre-clipping surrogate 等于 assigned credit。 论文在 ALFWorld、WebShop、ScienceWorld 上与 GRPO、SERL 等基线对比，三种环境和种子均 favor FACTOR，最长程的 ScienceWorld 增益最大；跨 Qwen2.5-14B 与 Llama-3.1-8B 也保持提升。 这篇把 credit conservation 写成 loss-level 约束，适合用来反驳只靠 dense feedback 或 token reweighting 的粗糙方案。对多轮 agent RL 的粒度定义很有参考价值。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "把 action credit 与 token allocation 解耦的多轮 agent RL",
+        "value_reason": "FACTOR 先用 checkpoint-calibrated TD residual 给每个 action 分配守恒信用，再用 hindsight teacher-student likelihood gap 在 action 内分配 token 权重，避免 token 长度和 teacher confidence 扭曲信用规模。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Action credit telescopes to trajectory advantage",
+          "Evaluated on ALFWorld, WebShop, and ScienceWorld",
+          "Cross-backbone transfer reported for Qwen2.5-14B and Llama-3.1-8B"
+        ]
+      }
+    },
+    {
+      "id": "2608.07068v1",
+      "title": "MemOPD: On-Policy Distillation through Memory State Alignment for Long-Horizon Agents",
+      "summary": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。",
+      "url": "https://arxiv.org/abs/2608.07068v1",
+      "authors": [
+        "Zhiyuan Liu",
+        "Tinghong Ye",
+        "Chenghao Liu",
+        "Yizhuo Li",
+        "Songfang Huang"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/TPssp/MemOPD",
+      "venue_status": "",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "memory state alignment 版 OPD 用于长程 agent",
+        "water_risk": "低",
+        "value_judgement": "memory state alignment 版 OPD 用于长程 agent",
+        "reason": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhiyuan Liu",
+          "Tinghong Ye",
+          "Chenghao Liu",
+          "Yizhuo Li",
+          "Songfang Huang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.07068v1",
+        "project_url": "",
+        "repo_url": "https://github.com/TPssp/MemOPD",
+        "venue_status": "",
+        "contribution": "memory state alignment 版 OPD 用于长程 agent",
+        "summary": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。 Insight：这篇很适合你的 state tracking / context pollution 方向：它把“记忆压缩是否改变训练状态”形式化为 OPD 的有效性问题，而不是泛泛讨论 memory 好不好。",
+        "highlights": [
+          "memory state alignment 版 OPD 用于长程 agent",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程 agent 会不断压缩和重写历史。若把响应重新塞回 persistent history 后再让 teacher 打分，teacher 看到的状态可能不是 student 采样动作时的状态，OPD 信号会变成“来源 on-policy、状态 off-policy”。",
+        "method": "MemOPD 记录每次模型调用的输入和采样输出，在 teacher scoring 时恢复原始 token positions 与 causal visibility，并把多个重构 invocation 打包以提高效率；teacher 在采样 action 位置提供 full-vocabulary supervision，PPO 保留最终任务目标。",
+        "experiments": "实验验证多次 context update 后的 state alignment 问题；相同控制下，MemOPD 相比 persistent-history teacher scoring 提高 7.0% F1，MemOPD-3B 相比 PPO 最高提升 416.2% F1，并报告 actor computation packing 最高 1.63x 加速。",
+        "research_help": "这篇很适合你的 state tracking / context pollution 方向：它把“记忆压缩是否改变训练状态”形式化为 OPD 的有效性问题，而不是泛泛讨论 memory 好不好。",
+        "recommendation": {
+          "score": 95,
+          "level": "高",
+          "label": "memory state alignment 版 OPD 用于长程 agent",
+          "water_risk": "低",
+          "value_judgement": "memory state alignment 版 OPD 用于长程 agent",
+          "reason": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇很适合你的 state tracking / context pollution 方向：它把“记忆压缩是否改变训练状态”形式化为 OPD 的有效性问题，而不是泛泛讨论 memory 好不好。",
+        "abstract_zh": "论文研究长程 agent 的 memory compression 如何破坏 on-policy distillation 的状态一致性，并提出 MemOPD 在 teacher scoring 时恢复原始调用状态。",
+        "full_summary": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。 MemOPD 记录每次模型调用的输入和采样输出，在 teacher scoring 时恢复原始 token positions 与 causal visibility，并把多个重构 invocation 打包以提高效率；teacher 在采样 action 位置提供 full-vocabulary supervision，PPO 保留最终任务目标。 实验验证多次 context update 后的 state alignment 问题；相同控制下，MemOPD 相比 persistent-history teacher scoring 提高 7.0% F1，MemOPD-3B 相比 PPO 最高提升 416.2% F1，并报告 actor computation packing 最高 1.63x 加速。 这篇很适合你的 state tracking / context pollution 方向：它把“记忆压缩是否改变训练状态”形式化为 OPD 的有效性问题，而不是泛泛讨论 memory 好不好。",
+        "card_summary": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。"
+      },
+      "analysis": {
+        "motivation": "长程 agent 会不断压缩和重写历史。若把响应重新塞回 persistent history 后再让 teacher 打分，teacher 看到的状态可能不是 student 采样动作时的状态，OPD 信号会变成“来源 on-policy、状态 off-policy”。",
+        "method": "MemOPD 记录每次模型调用的输入和采样输出，在 teacher scoring 时恢复原始 token positions 与 causal visibility，并把多个重构 invocation 打包以提高效率；teacher 在采样 action 位置提供 full-vocabulary supervision，PPO 保留最终任务目标。",
+        "experiments": "实验验证多次 context update 后的 state alignment 问题；相同控制下，MemOPD 相比 persistent-history teacher scoring 提高 7.0% F1，MemOPD-3B 相比 PPO 最高提升 416.2% F1，并报告 actor computation packing 最高 1.63x 加速。",
+        "research_help": "这篇很适合你的 state tracking / context pollution 方向：它把“记忆压缩是否改变训练状态”形式化为 OPD 的有效性问题，而不是泛泛讨论 memory 好不好。",
+        "insight": "这篇很适合你的 state tracking / context pollution 方向：它把“记忆压缩是否改变训练状态”形式化为 OPD 的有效性问题，而不是泛泛讨论 memory 好不好。",
+        "abstract_zh": "论文研究长程 agent 的 memory compression 如何破坏 on-policy distillation 的状态一致性，并提出 MemOPD 在 teacher scoring 时恢复原始调用状态。",
+        "card_summary": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。",
+        "full_summary": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。 MemOPD 记录每次模型调用的输入和采样输出，在 teacher scoring 时恢复原始 token positions 与 causal visibility，并把多个重构 invocation 打包以提高效率；teacher 在采样 action 位置提供 full-vocabulary supervision，PPO 保留最终任务目标。 实验验证多次 context update 后的 state alignment 问题；相同控制下，MemOPD 相比 persistent-history teacher scoring 提高 7.0% F1，MemOPD-3B 相比 PPO 最高提升 416.2% F1，并报告 actor computation packing 最高 1.63x 加速。 这篇很适合你的 state tracking / context pollution 方向：它把“记忆压缩是否改变训练状态”形式化为 OPD 的有效性问题，而不是泛泛讨论 memory 好不好。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "memory state alignment 版 OPD 用于长程 agent",
+        "value_reason": "MemOPD 指出 memory compression 会让 teacher 在错误状态下评分 on-policy rollout，并通过恢复每次调用的原始 token 位置和因果可见性来对齐 memory state。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Persistent-history teacher scoring can misalign state",
+          "Reports 7.0% F1 gain over matched control",
+          "Reports up to 416.2% F1 gain over PPO"
+        ]
+      }
+    },
+    {
+      "id": "2608.06663v1",
+      "title": "The Horizon Gap: Planning, Memory, Execution, Training, and Evaluation for Long-Horizon LLM Agents",
+      "summary": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。",
+      "url": "https://arxiv.org/abs/2608.06663v1",
+      "authors": [
+        "Mingguang Chen",
+        "Licheng Wang",
+        "Bo Qu"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "长程 LLM agent 的规划、记忆、执行、训练和评估综述框架",
+        "water_risk": "中",
+        "value_judgement": "长程 LLM agent 的规划、记忆、执行、训练和评估综述框架",
+        "reason": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": false,
+          "survey": true
+        }
+      },
+      "brief": {
+        "authors": [
+          "Mingguang Chen",
+          "Licheng Wang",
+          "Bo Qu"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.06663v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "长程 LLM agent 的规划、记忆、执行、训练和评估综述框架",
+        "summary": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。 Insight：对你的文献框架有直接用处：它把规划、记忆、执行控制、训练、评估放到同一个 horizon gap 机制下，能作为 related work taxonomy，但需要注意 survey 本身不是方法 baseline。",
+        "highlights": [
+          "长程 LLM agent 的规划、记忆、执行、训练和评估综述框架",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "单步推理能力增长并不等于多小时任务可靠完成。长程 agent 常在目标漂移、早停、上下文遗忘、harness 失败和评估偏差上出问题。",
+        "method": "论文用八条 seed thread 收集 2024-2026 年 1,547 篇 arXiv 论文，报告 26.8% off-topic bleed filter，并按任务 horizon 的承载位置（within-context、within-task beyond context、cross-task persistent）交叉分类。",
+        "experiments": "这是 survey 而非新实验系统。它的证据来自系统化 corpus 分类和跨章节模式归纳：随着 horizon 变长，outcome-only 信号失效，训练和评估都转向 step-level / process-level dense signal。",
+        "research_help": "对你的文献框架有直接用处：它把规划、记忆、执行控制、训练、评估放到同一个 horizon gap 机制下，能作为 related work taxonomy，但需要注意 survey 本身不是方法 baseline。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "长程 LLM agent 的规划、记忆、执行、训练和评估综述框架",
+          "water_risk": "中",
+          "value_judgement": "长程 LLM agent 的规划、记忆、执行、训练和评估综述框架",
+          "reason": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": false,
+            "survey": true
+          }
+        },
+        "insight": "对你的文献框架有直接用处：它把规划、记忆、执行控制、训练、评估放到同一个 horizon gap 机制下，能作为 related work taxonomy，但需要注意 survey 本身不是方法 baseline。",
+        "abstract_zh": "论文综述长程 LLM agent 的 horizon gap，区分任务 horizon、模型 context 和系统 memory，并从规划、记忆、执行、训练、评估与安全基础六个维度组织文献。",
+        "full_summary": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。 论文用八条 seed thread 收集 2024-2026 年 1,547 篇 arXiv 论文，报告 26.8% off-topic bleed filter，并按任务 horizon 的承载位置（within-context、within-task beyond context、cross-task persistent）交叉分类。 这是 survey 而非新实验系统。它的证据来自系统化 corpus 分类和跨章节模式归纳：随着 horizon 变长，outcome-only 信号失效，训练和评估都转向 step-level / process-level dense signal。 对你的文献框架有直接用处：它把规划、记忆、执行控制、训练、评估放到同一个 horizon gap 机制下，能作为 related work taxonomy，但需要注意 survey 本身不是方法 baseline。",
+        "card_summary": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。"
+      },
+      "analysis": {
+        "motivation": "单步推理能力增长并不等于多小时任务可靠完成。长程 agent 常在目标漂移、早停、上下文遗忘、harness 失败和评估偏差上出问题。",
+        "method": "论文用八条 seed thread 收集 2024-2026 年 1,547 篇 arXiv 论文，报告 26.8% off-topic bleed filter，并按任务 horizon 的承载位置（within-context、within-task beyond context、cross-task persistent）交叉分类。",
+        "experiments": "这是 survey 而非新实验系统。它的证据来自系统化 corpus 分类和跨章节模式归纳：随着 horizon 变长，outcome-only 信号失效，训练和评估都转向 step-level / process-level dense signal。",
+        "research_help": "对你的文献框架有直接用处：它把规划、记忆、执行控制、训练、评估放到同一个 horizon gap 机制下，能作为 related work taxonomy，但需要注意 survey 本身不是方法 baseline。",
+        "insight": "对你的文献框架有直接用处：它把规划、记忆、执行控制、训练、评估放到同一个 horizon gap 机制下，能作为 related work taxonomy，但需要注意 survey 本身不是方法 baseline。",
+        "abstract_zh": "论文综述长程 LLM agent 的 horizon gap，区分任务 horizon、模型 context 和系统 memory，并从规划、记忆、执行、训练、评估与安全基础六个维度组织文献。",
+        "card_summary": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。",
+        "full_summary": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。 论文用八条 seed thread 收集 2024-2026 年 1,547 篇 arXiv 论文，报告 26.8% off-topic bleed filter，并按任务 horizon 的承载位置（within-context、within-task beyond context、cross-task persistent）交叉分类。 这是 survey 而非新实验系统。它的证据来自系统化 corpus 分类和跨章节模式归纳：随着 horizon 变长，outcome-only 信号失效，训练和评估都转向 step-level / process-level dense signal。 对你的文献框架有直接用处：它把规划、记忆、执行控制、训练、评估放到同一个 horizon gap 机制下，能作为 related work taxonomy，但需要注意 survey 本身不是方法 baseline。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "长程 LLM agent 的规划、记忆、执行、训练和评估综述框架",
+        "value_reason": "这篇综述把 long-horizon、long-context 和 long-term memory 明确拆开，并用 1,547 篇 arXiv 论文组织出 planning、memory、execution、training、evaluation、safety/foundations 六类长程 agent 生命周期。",
+        "limitations": "Survey 论文，贡献在分类和问题框架；不能当作新方法或实验 baseline。",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Corpus of 1,547 arXiv papers from 2024-2026",
+          "Defines long-horizon, long-context, and long-term memory separately",
+          "Organizes six lifecycle categories"
+        ]
+      }
+    },
+    {
+      "id": "2608.07371v1",
+      "title": "Trajectory-Relative Hindsight Distillation for Agentic Reinforcement Learning",
+      "summary": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。",
+      "url": "https://arxiv.org/abs/2608.07371v1",
+      "authors": [
+        "Haoyu Zheng",
+        "Yun Zhu",
+        "Qing Wang",
+        "Wenqiao Zhang"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 93,
+        "level": "高",
+        "label": "trajectory-relative hindsight distillation 分配 turn-level supervision",
+        "water_risk": "低",
+        "value_judgement": "trajectory-relative hindsight distillation 分配 turn-level supervision",
+        "reason": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Haoyu Zheng",
+          "Yun Zhu",
+          "Qing Wang",
+          "Wenqiao Zhang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.07371v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "trajectory-relative hindsight distillation 分配 turn-level supervision",
+        "summary": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。 Insight：TRIAL 与 FACTOR/Gated-BEPO 形成很好的对照：它不是建 Bellman 图，而是把 hindsight supervision 变成轨迹相对的 turn allocation，可用于比较不同 dense signal 生成机制。",
+        "highlights": [
+          "trajectory-relative hindsight distillation 分配 turn-level supervision",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "Hindsight 可以给稀疏回报补充 dense supervision，但一条 rollout 会产生多个 hindsight signal；如果不知道怎么分配到各 turn，就会制造新的 credit 噪声。",
+        "method": "TRIAL 对每个 decision turn 抽取该决策的 realized consequence view，分别在普通上下文和 hindsight-conditioned 上下文中评分同一响应，用 signed log-prob gap 决定 token 级监督方向，再在整条轨迹上联合归一化 turn-level magnitude。",
+        "experiments": "论文在 WebShop 和 ALFWorld 上测试不同 backbone，报告 TRIAL 在八个 backbone/environment/metric 组合中全部超过 GRPO，并在六个组合中达到 best 或 tied-best；Qwen3-1.7B WebShop success 从 56.4% 提升到 75.2%。",
+        "research_help": "TRIAL 与 FACTOR/Gated-BEPO 形成很好的对照：它不是建 Bellman 图，而是把 hindsight supervision 变成轨迹相对的 turn allocation，可用于比较不同 dense signal 生成机制。",
+        "recommendation": {
+          "score": 93,
+          "level": "高",
+          "label": "trajectory-relative hindsight distillation 分配 turn-level supervision",
+          "water_risk": "低",
+          "value_judgement": "trajectory-relative hindsight distillation 分配 turn-level supervision",
+          "reason": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "TRIAL 与 FACTOR/Gated-BEPO 形成很好的对照：它不是建 Bellman 图，而是把 hindsight supervision 变成轨迹相对的 turn allocation，可用于比较不同 dense signal 生成机制。",
+        "abstract_zh": "论文提出 TRIAL，用 trajectory-relative hindsight distillation 为 agentic RL 分配 turn-level 和 token-level 监督，缓解 sparse reward 下的多轮信用分配。",
+        "full_summary": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。 TRIAL 对每个 decision turn 抽取该决策的 realized consequence view，分别在普通上下文和 hindsight-conditioned 上下文中评分同一响应，用 signed log-prob gap 决定 token 级监督方向，再在整条轨迹上联合归一化 turn-level magnitude。 论文在 WebShop 和 ALFWorld 上测试不同 backbone，报告 TRIAL 在八个 backbone/environment/metric 组合中全部超过 GRPO，并在六个组合中达到 best 或 tied-best；Qwen3-1.7B WebShop success 从 56.4% 提升到 75.2%。 TRIAL 与 FACTOR/Gated-BEPO 形成很好的对照：它不是建 Bellman 图，而是把 hindsight supervision 变成轨迹相对的 turn allocation，可用于比较不同 dense signal 生成机制。",
+        "card_summary": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。"
+      },
+      "analysis": {
+        "motivation": "Hindsight 可以给稀疏回报补充 dense supervision，但一条 rollout 会产生多个 hindsight signal；如果不知道怎么分配到各 turn，就会制造新的 credit 噪声。",
+        "method": "TRIAL 对每个 decision turn 抽取该决策的 realized consequence view，分别在普通上下文和 hindsight-conditioned 上下文中评分同一响应，用 signed log-prob gap 决定 token 级监督方向，再在整条轨迹上联合归一化 turn-level magnitude。",
+        "experiments": "论文在 WebShop 和 ALFWorld 上测试不同 backbone，报告 TRIAL 在八个 backbone/environment/metric 组合中全部超过 GRPO，并在六个组合中达到 best 或 tied-best；Qwen3-1.7B WebShop success 从 56.4% 提升到 75.2%。",
+        "research_help": "TRIAL 与 FACTOR/Gated-BEPO 形成很好的对照：它不是建 Bellman 图，而是把 hindsight supervision 变成轨迹相对的 turn allocation，可用于比较不同 dense signal 生成机制。",
+        "insight": "TRIAL 与 FACTOR/Gated-BEPO 形成很好的对照：它不是建 Bellman 图，而是把 hindsight supervision 变成轨迹相对的 turn allocation，可用于比较不同 dense signal 生成机制。",
+        "abstract_zh": "论文提出 TRIAL，用 trajectory-relative hindsight distillation 为 agentic RL 分配 turn-level 和 token-level 监督，缓解 sparse reward 下的多轮信用分配。",
+        "card_summary": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。",
+        "full_summary": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。 TRIAL 对每个 decision turn 抽取该决策的 realized consequence view，分别在普通上下文和 hindsight-conditioned 上下文中评分同一响应，用 signed log-prob gap 决定 token 级监督方向，再在整条轨迹上联合归一化 turn-level magnitude。 论文在 WebShop 和 ALFWorld 上测试不同 backbone，报告 TRIAL 在八个 backbone/environment/metric 组合中全部超过 GRPO，并在六个组合中达到 best 或 tied-best；Qwen3-1.7B WebShop success 从 56.4% 提升到 75.2%。 TRIAL 与 FACTOR/Gated-BEPO 形成很好的对照：它不是建 Bellman 图，而是把 hindsight supervision 变成轨迹相对的 turn allocation，可用于比较不同 dense signal 生成机制。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "trajectory-relative hindsight distillation 分配 turn-level supervision",
+        "value_reason": "TRIAL 为 agentic RL 的 hindsight 信号设计 turn-aligned scoring：比较普通上下文和 hindsight-conditioned 上下文下的 log-prob gap，并在真实轨迹内归一化各 turn 的监督强度。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Evaluated on WebShop and ALFWorld",
+          "Outperforms GRPO in all eight reported combinations",
+          "WebShop Qwen3-1.7B success improves from 56.4% to 75.2%"
+        ]
+      }
+    },
+    {
+      "id": "2608.07147v1",
+      "title": "DiDPO: Diff-in-Diff Policy Optimization for Coding Agent Training",
+      "summary": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。",
+      "url": "https://arxiv.org/abs/2608.07147v1",
+      "authors": [
+        "Xucong Wang",
+        "Zhe Zhao",
+        "Liheng Yu",
+        "Di Wu",
+        "Xiaofeng Cao",
+        "Pengkun Wang"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/xuc865/verl-code",
+      "venue_status": "",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "面向 coding agent 的 diff-level fine-grained credit assignment",
+        "water_risk": "低",
+        "value_judgement": "面向 coding agent 的 diff-level fine-grained credit assignment",
+        "reason": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xucong Wang",
+          "Zhe Zhao",
+          "Liheng Yu",
+          "Di Wu",
+          "Xiaofeng Cao",
+          "Pengkun Wang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.07147v1",
+        "project_url": "",
+        "repo_url": "https://github.com/xuc865/verl-code",
+        "venue_status": "",
+        "contribution": "面向 coding agent 的 diff-level fine-grained credit assignment",
+        "summary": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。 Insight：它是 coding-agent 版 credit assignment 的强相关论文：把“动作”细化到 diff 区域，比只讨论 step-level credit 更贴近真实 SWE agent 失败模式。",
+        "highlights": [
+          "面向 coding agent 的 diff-level fine-grained credit assignment",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "Coding agent 的一个 action 往往同时修改多个代码区域。只用 outcome reward 或 step reward 无法区分同一步里哪些 diff 真的导致测试通过或失败。",
+        "method": "DiDPO 先把 thought-action trajectory 中的代码变更拆成 sub-diff，再用 groupability score 选择 anchor，把语义相近的 sub-diff 聚成 credit group；局部 advantage 经由 diff structure 分配到对应 token，而不是广播到整步响应。",
+        "experiments": "论文在长程 coding 和 reasoning benchmarks 上报告相对 agentic RL 基线的显著提升；在 Qwen2.5-7B-Coder 上超过可比方法 10% 以上，并开源 verl-code 训练框架。",
+        "research_help": "它是 coding-agent 版 credit assignment 的强相关论文：把“动作”细化到 diff 区域，比只讨论 step-level credit 更贴近真实 SWE agent 失败模式。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "面向 coding agent 的 diff-level fine-grained credit assignment",
+          "water_risk": "低",
+          "value_judgement": "面向 coding agent 的 diff-level fine-grained credit assignment",
+          "reason": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它是 coding-agent 版 credit assignment 的强相关论文：把“动作”细化到 diff 区域，比只讨论 step-level credit 更贴近真实 SWE agent 失败模式。",
+        "abstract_zh": "论文提出 DiDPO，用 code diff 内部结构为多轮 coding agent 训练构造细粒度 credit unit，并将 diff-level advantage 投回 token。",
+        "full_summary": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。 DiDPO 先把 thought-action trajectory 中的代码变更拆成 sub-diff，再用 groupability score 选择 anchor，把语义相近的 sub-diff 聚成 credit group；局部 advantage 经由 diff structure 分配到对应 token，而不是广播到整步响应。 论文在长程 coding 和 reasoning benchmarks 上报告相对 agentic RL 基线的显著提升；在 Qwen2.5-7B-Coder 上超过可比方法 10% 以上，并开源 verl-code 训练框架。 它是 coding-agent 版 credit assignment 的强相关论文：把“动作”细化到 diff 区域，比只讨论 step-level credit 更贴近真实 SWE agent 失败模式。",
+        "card_summary": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。"
+      },
+      "analysis": {
+        "motivation": "Coding agent 的一个 action 往往同时修改多个代码区域。只用 outcome reward 或 step reward 无法区分同一步里哪些 diff 真的导致测试通过或失败。",
+        "method": "DiDPO 先把 thought-action trajectory 中的代码变更拆成 sub-diff，再用 groupability score 选择 anchor，把语义相近的 sub-diff 聚成 credit group；局部 advantage 经由 diff structure 分配到对应 token，而不是广播到整步响应。",
+        "experiments": "论文在长程 coding 和 reasoning benchmarks 上报告相对 agentic RL 基线的显著提升；在 Qwen2.5-7B-Coder 上超过可比方法 10% 以上，并开源 verl-code 训练框架。",
+        "research_help": "它是 coding-agent 版 credit assignment 的强相关论文：把“动作”细化到 diff 区域，比只讨论 step-level credit 更贴近真实 SWE agent 失败模式。",
+        "insight": "它是 coding-agent 版 credit assignment 的强相关论文：把“动作”细化到 diff 区域，比只讨论 step-level credit 更贴近真实 SWE agent 失败模式。",
+        "abstract_zh": "论文提出 DiDPO，用 code diff 内部结构为多轮 coding agent 训练构造细粒度 credit unit，并将 diff-level advantage 投回 token。",
+        "card_summary": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。",
+        "full_summary": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。 DiDPO 先把 thought-action trajectory 中的代码变更拆成 sub-diff，再用 groupability score 选择 anchor，把语义相近的 sub-diff 聚成 credit group；局部 advantage 经由 diff structure 分配到对应 token，而不是广播到整步响应。 论文在长程 coding 和 reasoning benchmarks 上报告相对 agentic RL 基线的显著提升；在 Qwen2.5-7B-Coder 上超过可比方法 10% 以上，并开源 verl-code 训练框架。 它是 coding-agent 版 credit assignment 的强相关论文：把“动作”细化到 diff 区域，比只讨论 step-level credit 更贴近真实 SWE agent 失败模式。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "面向 coding agent 的 diff-level fine-grained credit assignment",
+        "value_reason": "DiDPO 把多轮 coding interaction 中的 code diff 切成可匹配 sub-diff，通过 anchor/groupability 形成 advantage group，再把 diff-level advantage 投回 response token。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Organizes multi-turn coding interactions into thought-action steps",
+          "Uses sub-diff anchors and groupability score",
+          "Reports over 10% gain over comparable methods on Qwen2.5-7B-Coder"
+        ]
+      }
+    },
+    {
+      "id": "2608.06811v1",
+      "title": "Coupling Planning with Episodic Memory in LLM Agents for Software Issue Resolution",
+      "summary": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。",
+      "url": "https://arxiv.org/abs/2608.06811v1",
+      "authors": [
+        "Jiahao Zhang",
+        "Yifan Zhang",
+        "Yu Huang"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 91,
+        "level": "高",
+        "label": "把 hierarchical phase planner 与 episodic memory 双向耦合的 SWE agent",
+        "water_risk": "低",
+        "value_judgement": "把 hierarchical phase planner 与 episodic memory 双向耦合的 SWE agent",
+        "reason": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jiahao Zhang",
+          "Yifan Zhang",
+          "Yu Huang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.06811v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "把 hierarchical phase planner 与 episodic memory 双向耦合的 SWE agent",
+        "summary": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。 Insight：这篇非常贴近你的“planning + state tracking + execution evidence”主线，尤其适合作为长程软件 agent 中 memory/planner 耦合而非单独模块增强的 baseline。",
+        "highlights": [
+          "把 hierarchical phase planner 与 episodic memory 双向耦合的 SWE agent",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "真实 issue resolution 往往要几十到上百步。只加强 planner 或 memory 都不够，agent 仍会重复失败编辑、忘记证据、依赖自我声明完成验证。",
+        "method": "PMCoder 使用 hierarchical phase planner 管理探索、假设、实现、验证等阶段；episodic memory 存储观察和轨迹统计，反过来影响当前 phase 的检索、卡住检测和重规划；可用时用 issue reproduction verdict grounding verification。",
+        "experiments": "SWE-bench Verified 上，PMCoder 比 harness-matched baseline 平均多解决 25 个 case（+5.0pp）；Verified-500 在 Claude Haiku 4.5、DeepSeek-V4-Flash 和 OpenHands port 上保持正向收益，TerminalWorld sample 也显示迁移迹象。",
+        "research_help": "这篇非常贴近你的“planning + state tracking + execution evidence”主线，尤其适合作为长程软件 agent 中 memory/planner 耦合而非单独模块增强的 baseline。",
+        "recommendation": {
+          "score": 91,
+          "level": "高",
+          "label": "把 hierarchical phase planner 与 episodic memory 双向耦合的 SWE agent",
+          "water_risk": "低",
+          "value_judgement": "把 hierarchical phase planner 与 episodic memory 双向耦合的 SWE agent",
+          "reason": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇非常贴近你的“planning + state tracking + execution evidence”主线，尤其适合作为长程软件 agent 中 memory/planner 耦合而非单独模块增强的 baseline。",
+        "abstract_zh": "论文提出 PMCoder，将层级阶段规划器和 episodic memory 双向耦合，用于长程软件 issue resolution，并用执行证据约束验证阶段。",
+        "full_summary": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。 PMCoder 使用 hierarchical phase planner 管理探索、假设、实现、验证等阶段；episodic memory 存储观察和轨迹统计，反过来影响当前 phase 的检索、卡住检测和重规划；可用时用 issue reproduction verdict grounding verification。 SWE-bench Verified 上，PMCoder 比 harness-matched baseline 平均多解决 25 个 case（+5.0pp）；Verified-500 在 Claude Haiku 4.5、DeepSeek-V4-Flash 和 OpenHands port 上保持正向收益，TerminalWorld sample 也显示迁移迹象。 这篇非常贴近你的“planning + state tracking + execution evidence”主线，尤其适合作为长程软件 agent 中 memory/planner 耦合而非单独模块增强的 baseline。",
+        "card_summary": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。"
+      },
+      "analysis": {
+        "motivation": "真实 issue resolution 往往要几十到上百步。只加强 planner 或 memory 都不够，agent 仍会重复失败编辑、忘记证据、依赖自我声明完成验证。",
+        "method": "PMCoder 使用 hierarchical phase planner 管理探索、假设、实现、验证等阶段；episodic memory 存储观察和轨迹统计，反过来影响当前 phase 的检索、卡住检测和重规划；可用时用 issue reproduction verdict grounding verification。",
+        "experiments": "SWE-bench Verified 上，PMCoder 比 harness-matched baseline 平均多解决 25 个 case（+5.0pp）；Verified-500 在 Claude Haiku 4.5、DeepSeek-V4-Flash 和 OpenHands port 上保持正向收益，TerminalWorld sample 也显示迁移迹象。",
+        "research_help": "这篇非常贴近你的“planning + state tracking + execution evidence”主线，尤其适合作为长程软件 agent 中 memory/planner 耦合而非单独模块增强的 baseline。",
+        "insight": "这篇非常贴近你的“planning + state tracking + execution evidence”主线，尤其适合作为长程软件 agent 中 memory/planner 耦合而非单独模块增强的 baseline。",
+        "abstract_zh": "论文提出 PMCoder，将层级阶段规划器和 episodic memory 双向耦合，用于长程软件 issue resolution，并用执行证据约束验证阶段。",
+        "card_summary": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。",
+        "full_summary": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。 PMCoder 使用 hierarchical phase planner 管理探索、假设、实现、验证等阶段；episodic memory 存储观察和轨迹统计，反过来影响当前 phase 的检索、卡住检测和重规划；可用时用 issue reproduction verdict grounding verification。 SWE-bench Verified 上，PMCoder 比 harness-matched baseline 平均多解决 25 个 case（+5.0pp）；Verified-500 在 Claude Haiku 4.5、DeepSeek-V4-Flash 和 OpenHands port 上保持正向收益，TerminalWorld sample 也显示迁移迹象。 这篇非常贴近你的“planning + state tracking + execution evidence”主线，尤其适合作为长程软件 agent 中 memory/planner 耦合而非单独模块增强的 baseline。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "把 hierarchical phase planner 与 episodic memory 双向耦合的 SWE agent",
+        "value_reason": "PMCoder 把软件修复 episode 看成长程规划问题，用当前 plan phase 条件化 memory retrieval，并用 memory-derived trajectory statistics 触发 stuck detection 和 replanning。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "SWE-bench Verified gains of 25 cases / +5.0pp",
+          "Ablations show planning-memory coupling beats either alone",
+          "Reports reduced repeated failures and context exhaustion"
+        ]
+      }
+    },
+    {
+      "id": "2608.06701v1",
+      "title": "Online Monitoring and Corrective Steering of Programming Agents",
+      "summary": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。",
+      "url": "https://arxiv.org/abs/2608.06701v1",
+      "authors": [
+        "Shuyang Liu",
+        "Saman Dehghan",
+        "Ji Young Kim",
+        "Jatin Ganhotra",
+        "Martin Hirzel",
+        "Reyhaneh Jabbarvand"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 90,
+        "level": "高",
+        "label": "对 programming agent 长轨迹做在线监控和纠偏",
+        "water_risk": "低",
+        "value_judgement": "对 programming agent 长轨迹做在线监控和纠偏",
+        "reason": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Shuyang Liu",
+          "Saman Dehghan",
+          "Ji Young Kim",
+          "Jatin Ganhotra",
+          "Martin Hirzel",
+          "Reyhaneh Jabbarvand"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.06701v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "对 programming agent 长轨迹做在线监控和纠偏",
+        "summary": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。 Insight：这篇的价值在 runtime reliability：它把长程 agent 的“跑偏”变成可检测事件，适合你的 long-horizon failure diagnosis / replanning 研究。",
+        "highlights": [
+          "对 programming agent 长轨迹做在线监控和纠偏",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程编程 agent 的失败常不是某个单步不会写代码，而是执行过程中偏离计划、重复无效动作、过早结束或在缺信息时继续猜。",
+        "method": "LivePlan 将 judging 和 advising 解耦：规则 monitor 持续检查轨迹信号以低成本发现行为低效和 drift；只有触发问题时才调用 advisor LLM，给下一步高层 correction，而不重写整个 planner。",
+        "experiments": "作者在 SWE-bench Verified 和 SWE-bench Pro 上用五个 LLM 组合评估，报告相对 vanilla SWE-agent 的 resolution rate 最高提升 15.2%、平均提升 9.9%，额外成本约每实例 0.08 美元。",
+        "research_help": "这篇的价值在 runtime reliability：它把长程 agent 的“跑偏”变成可检测事件，适合你的 long-horizon failure diagnosis / replanning 研究。",
+        "recommendation": {
+          "score": 90,
+          "level": "高",
+          "label": "对 programming agent 长轨迹做在线监控和纠偏",
+          "water_risk": "低",
+          "value_judgement": "对 programming agent 长轨迹做在线监控和纠偏",
+          "reason": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇的价值在 runtime reliability：它把长程 agent 的“跑偏”变成可检测事件，适合你的 long-horizon failure diagnosis / replanning 研究。",
+        "abstract_zh": "论文提出 LivePlan，对编程 agent 的长轨迹进行在线监控，在检测到漂移或低效时调用 advisor LLM 进行高层纠偏。",
+        "full_summary": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。 LivePlan 将 judging 和 advising 解耦：规则 monitor 持续检查轨迹信号以低成本发现行为低效和 drift；只有触发问题时才调用 advisor LLM，给下一步高层 correction，而不重写整个 planner。 作者在 SWE-bench Verified 和 SWE-bench Pro 上用五个 LLM 组合评估，报告相对 vanilla SWE-agent 的 resolution rate 最高提升 15.2%、平均提升 9.9%，额外成本约每实例 0.08 美元。 这篇的价值在 runtime reliability：它把长程 agent 的“跑偏”变成可检测事件，适合你的 long-horizon failure diagnosis / replanning 研究。",
+        "card_summary": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。"
+      },
+      "analysis": {
+        "motivation": "长程编程 agent 的失败常不是某个单步不会写代码，而是执行过程中偏离计划、重复无效动作、过早结束或在缺信息时继续猜。",
+        "method": "LivePlan 将 judging 和 advising 解耦：规则 monitor 持续检查轨迹信号以低成本发现行为低效和 drift；只有触发问题时才调用 advisor LLM，给下一步高层 correction，而不重写整个 planner。",
+        "experiments": "作者在 SWE-bench Verified 和 SWE-bench Pro 上用五个 LLM 组合评估，报告相对 vanilla SWE-agent 的 resolution rate 最高提升 15.2%、平均提升 9.9%，额外成本约每实例 0.08 美元。",
+        "research_help": "这篇的价值在 runtime reliability：它把长程 agent 的“跑偏”变成可检测事件，适合你的 long-horizon failure diagnosis / replanning 研究。",
+        "insight": "这篇的价值在 runtime reliability：它把长程 agent 的“跑偏”变成可检测事件，适合你的 long-horizon failure diagnosis / replanning 研究。",
+        "abstract_zh": "论文提出 LivePlan，对编程 agent 的长轨迹进行在线监控，在检测到漂移或低效时调用 advisor LLM 进行高层纠偏。",
+        "card_summary": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。",
+        "full_summary": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。 LivePlan 将 judging 和 advising 解耦：规则 monitor 持续检查轨迹信号以低成本发现行为低效和 drift；只有触发问题时才调用 advisor LLM，给下一步高层 correction，而不重写整个 planner。 作者在 SWE-bench Verified 和 SWE-bench Pro 上用五个 LLM 组合评估，报告相对 vanilla SWE-agent 的 resolution rate 最高提升 15.2%、平均提升 9.9%，额外成本约每实例 0.08 美元。 这篇的价值在 runtime reliability：它把长程 agent 的“跑偏”变成可检测事件，适合你的 long-horizon failure diagnosis / replanning 研究。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "对 programming agent 长轨迹做在线监控和纠偏",
+        "value_reason": "LivePlan 在 SWE-agent 上加入 deterministic trajectory monitor，只在检测到计划漂移、重复失败、低效探索或错误终止风险时调用 advisor LLM 给高层纠偏建议。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Built on SWE-agent",
+          "Evaluated on SWE-bench Verified and SWE-bench Pro",
+          "Reports up to 15.2% and average 9.9% resolution gains"
+        ]
+      }
+    },
+    {
+      "id": "2608.07169v1",
+      "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+      "summary": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。",
+      "url": "https://arxiv.org/abs/2608.07169v1",
+      "authors": [
+        "Taeil Kim",
+        "Kangsan Kim",
+        "Sung Ju Hwang"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "https://agent-memory-distillation.github.io/",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 90,
+        "level": "高",
+        "label": "把大 teacher agent 的成功轨迹蒸馏成小 agent 分层记忆",
+        "water_risk": "低",
+        "value_judgement": "把大 teacher agent 的成功轨迹蒸馏成小 agent 分层记忆",
+        "reason": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Taeil Kim",
+          "Kangsan Kim",
+          "Sung Ju Hwang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.07169v1",
+        "project_url": "https://agent-memory-distillation.github.io/",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "把大 teacher agent 的成功轨迹蒸馏成小 agent 分层记忆",
+        "summary": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。 Insight：这篇强调“记忆不是聊天历史，而是可复用 procedural guidance”。对你研究 agent memory / skill reuse 时区分 workflow memory 和 function memory 很有用。",
+        "highlights": [
+          "把大 teacher agent 的成功轨迹蒸馏成小 agent 分层记忆",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "小模型 agent 很难自己产生足够成功轨迹；单纯加 retrieval memory 又常停留在语义相关，无法给出可操作流程和函数调用细节。",
+        "method": "AMD 把 teacher trajectories 压缩成层级记忆：Workflow memory 描述任务级策略，Subtask memory 保存中粒度行为样例，Function memory 记录函数调用约定和常见坑；前两者 proactive injection，Function memory 在工具错误时 reactive retrieval。",
+        "experiments": "论文在 AppWorld、BFCL V3、ToolSandbox 三个 tool-use benchmarks 和四个 4B-8B student 模型上评估，平均准确率分别提升 27.2pp、11.2pp、3.4pp，并超过已有 memory-based baselines。",
+        "research_help": "这篇强调“记忆不是聊天历史，而是可复用 procedural guidance”。对你研究 agent memory / skill reuse 时区分 workflow memory 和 function memory 很有用。",
+        "recommendation": {
+          "score": 90,
+          "level": "高",
+          "label": "把大 teacher agent 的成功轨迹蒸馏成小 agent 分层记忆",
+          "water_risk": "低",
+          "value_judgement": "把大 teacher agent 的成功轨迹蒸馏成小 agent 分层记忆",
+          "reason": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇强调“记忆不是聊天历史，而是可复用 procedural guidance”。对你研究 agent memory / skill reuse 时区分 workflow memory 和 function memory 很有用。",
+        "abstract_zh": "论文提出 AMD，将大 teacher agent 的成功轨迹蒸馏为 Workflow、Subtask、Function 三类层级记忆，以提升小模型 tool-use agent。",
+        "full_summary": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。 AMD 把 teacher trajectories 压缩成层级记忆：Workflow memory 描述任务级策略，Subtask memory 保存中粒度行为样例，Function memory 记录函数调用约定和常见坑；前两者 proactive injection，Function memory 在工具错误时 reactive retrieval。 论文在 AppWorld、BFCL V3、ToolSandbox 三个 tool-use benchmarks 和四个 4B-8B student 模型上评估，平均准确率分别提升 27.2pp、11.2pp、3.4pp，并超过已有 memory-based baselines。 这篇强调“记忆不是聊天历史，而是可复用 procedural guidance”。对你研究 agent memory / skill reuse 时区分 workflow memory 和 function memory 很有用。",
+        "card_summary": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。"
+      },
+      "analysis": {
+        "motivation": "小模型 agent 很难自己产生足够成功轨迹；单纯加 retrieval memory 又常停留在语义相关，无法给出可操作流程和函数调用细节。",
+        "method": "AMD 把 teacher trajectories 压缩成层级记忆：Workflow memory 描述任务级策略，Subtask memory 保存中粒度行为样例，Function memory 记录函数调用约定和常见坑；前两者 proactive injection，Function memory 在工具错误时 reactive retrieval。",
+        "experiments": "论文在 AppWorld、BFCL V3、ToolSandbox 三个 tool-use benchmarks 和四个 4B-8B student 模型上评估，平均准确率分别提升 27.2pp、11.2pp、3.4pp，并超过已有 memory-based baselines。",
+        "research_help": "这篇强调“记忆不是聊天历史，而是可复用 procedural guidance”。对你研究 agent memory / skill reuse 时区分 workflow memory 和 function memory 很有用。",
+        "insight": "这篇强调“记忆不是聊天历史，而是可复用 procedural guidance”。对你研究 agent memory / skill reuse 时区分 workflow memory 和 function memory 很有用。",
+        "abstract_zh": "论文提出 AMD，将大 teacher agent 的成功轨迹蒸馏为 Workflow、Subtask、Function 三类层级记忆，以提升小模型 tool-use agent。",
+        "card_summary": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。",
+        "full_summary": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。 AMD 把 teacher trajectories 压缩成层级记忆：Workflow memory 描述任务级策略，Subtask memory 保存中粒度行为样例，Function memory 记录函数调用约定和常见坑；前两者 proactive injection，Function memory 在工具错误时 reactive retrieval。 论文在 AppWorld、BFCL V3、ToolSandbox 三个 tool-use benchmarks 和四个 4B-8B student 模型上评估，平均准确率分别提升 27.2pp、11.2pp、3.4pp，并超过已有 memory-based baselines。 这篇强调“记忆不是聊天历史，而是可复用 procedural guidance”。对你研究 agent memory / skill reuse 时区分 workflow memory 和 function memory 很有用。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "把大 teacher agent 的成功轨迹蒸馏成小 agent 分层记忆",
+        "value_reason": "AMD 从 teacher 成功轨迹中构造 Workflow、Subtask、Function 三类 memory，分别在任务开始和 tool-calling 出错时注入，帮助小模型 agent 不经训练获得可执行经验。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Uses workflow, subtask, and function memory",
+          "Evaluated on AppWorld, BFCL V3, and ToolSandbox",
+          "Reports gains of 27.2pp, 11.2pp, and 3.4pp"
+        ]
+      }
+    },
+    {
+      "id": "2608.06704v1",
+      "title": "WebRider: Persona-Conditioned Intent Controllers for Live-Web Assistance",
+      "summary": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。",
+      "url": "https://arxiv.org/abs/2608.06704v1",
+      "authors": [
+        "Zhi Li",
+        "Tao Zhou",
+        "Yeqing Li",
+        "Eugene Ie",
+        "Demetri Terzopoulos"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 89,
+        "level": "高",
+        "label": "live-web agent 的 intent contract 与可审计控制器",
+        "water_risk": "低",
+        "value_judgement": "live-web agent 的 intent contract 与可审计控制器",
+        "reason": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhi Li",
+          "Tao Zhou",
+          "Yeqing Li",
+          "Eugene Ie",
+          "Demetri Terzopoulos"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.06704v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "live-web agent 的 intent contract 与可审计控制器",
+        "summary": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。 Insight：这篇将“用户意图/约束状态”显式变成 agent 控制对象，适合你关注 clarification、state tracking 和 web-agent reliability 的交叉问题。",
+        "highlights": [
+          "live-web agent 的 intent contract 与可审计控制器",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "网页 agent 只看最终答案会掩盖策略约束违规。论文的 live audit 显示强 controller 可完成 99.2% 任务，却只有 38.8% case 满足全部 policy constraints。",
+        "method": "系统采用三层架构：顶层 controller 维护 intent contract，中层把意图实现为 guarded executable actions，底层调用 browser/search/maps 工具。RiderBench 同时审计内部 contract state 和可见用户体验。",
+        "experiments": "RiderBench 覆盖 42 个公共网站、4,096 个 live-web contracts；论文还用 guarded middle interface 训练 8B action-policy model，并报告其优于 executable-only baseline。",
+        "research_help": "这篇将“用户意图/约束状态”显式变成 agent 控制对象，适合你关注 clarification、state tracking 和 web-agent reliability 的交叉问题。",
+        "recommendation": {
+          "score": 89,
+          "level": "高",
+          "label": "live-web agent 的 intent contract 与可审计控制器",
+          "water_risk": "低",
+          "value_judgement": "live-web agent 的 intent contract 与可审计控制器",
+          "reason": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇将“用户意图/约束状态”显式变成 agent 控制对象，适合你关注 clarification、state tracking 和 web-agent reliability 的交叉问题。",
+        "abstract_zh": "论文提出 WebRider，用 intent contract 管理 live-web assistance 中的目标、约束、证据和 persona，并用 RiderBench 评估过程 fidelity。",
+        "full_summary": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。 系统采用三层架构：顶层 controller 维护 intent contract，中层把意图实现为 guarded executable actions，底层调用 browser/search/maps 工具。RiderBench 同时审计内部 contract state 和可见用户体验。 RiderBench 覆盖 42 个公共网站、4,096 个 live-web contracts；论文还用 guarded middle interface 训练 8B action-policy model，并报告其优于 executable-only baseline。 这篇将“用户意图/约束状态”显式变成 agent 控制对象，适合你关注 clarification、state tracking 和 web-agent reliability 的交叉问题。",
+        "card_summary": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。"
+      },
+      "analysis": {
+        "motivation": "网页 agent 只看最终答案会掩盖策略约束违规。论文的 live audit 显示强 controller 可完成 99.2% 任务，却只有 38.8% case 满足全部 policy constraints。",
+        "method": "系统采用三层架构：顶层 controller 维护 intent contract，中层把意图实现为 guarded executable actions，底层调用 browser/search/maps 工具。RiderBench 同时审计内部 contract state 和可见用户体验。",
+        "experiments": "RiderBench 覆盖 42 个公共网站、4,096 个 live-web contracts；论文还用 guarded middle interface 训练 8B action-policy model，并报告其优于 executable-only baseline。",
+        "research_help": "这篇将“用户意图/约束状态”显式变成 agent 控制对象，适合你关注 clarification、state tracking 和 web-agent reliability 的交叉问题。",
+        "insight": "这篇将“用户意图/约束状态”显式变成 agent 控制对象，适合你关注 clarification、state tracking 和 web-agent reliability 的交叉问题。",
+        "abstract_zh": "论文提出 WebRider，用 intent contract 管理 live-web assistance 中的目标、约束、证据和 persona，并用 RiderBench 评估过程 fidelity。",
+        "card_summary": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。",
+        "full_summary": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。 系统采用三层架构：顶层 controller 维护 intent contract，中层把意图实现为 guarded executable actions，底层调用 browser/search/maps 工具。RiderBench 同时审计内部 contract state 和可见用户体验。 RiderBench 覆盖 42 个公共网站、4,096 个 live-web contracts；论文还用 guarded middle interface 训练 8B action-policy model，并报告其优于 executable-only baseline。 这篇将“用户意图/约束状态”显式变成 agent 控制对象，适合你关注 clarification、state tracking 和 web-agent reliability 的交叉问题。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "live-web agent 的 intent contract 与可审计控制器",
+        "value_reason": "WebRider 把用户委托的 web task formalize 成 intent contract，持续维护目标、约束、证据义务、答案格式和 persona 控制，避免“答案看似完成但过程违约”。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Live audit reports 99.2% completion but 38.8% full constraint fidelity",
+          "RiderBench has 4,096 contracts across 42 websites",
+          "Trains an 8B action-policy model from guarded interface signals"
+        ]
+      }
+    },
+    {
+      "id": "2608.06880v1",
+      "title": "SkillAligner: Treating Retrieved Skills as Adaptable Drafts at Execution Time",
+      "summary": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。",
+      "url": "https://arxiv.org/abs/2608.06880v1",
+      "authors": [
+        "Qinfeng Li",
+        "Dalin He",
+        "Yuntai Bao",
+        "Ying Yang",
+        "Ruoxi Chen",
+        "Xinyan Yu",
+        "Lizhou Liang",
+        "Ge Su",
+        "Wenqi Zhang",
+        "Xuhong Zhang"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 87,
+        "level": "高",
+        "label": "执行时适配 retrieved skills，缓解 skill-execution misfit",
+        "water_risk": "低",
+        "value_judgement": "执行时适配 retrieved skills，缓解 skill-execution misfit",
+        "reason": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Qinfeng Li",
+          "Dalin He",
+          "Yuntai Bao",
+          "Ying Yang",
+          "Ruoxi Chen",
+          "Xinyan Yu",
+          "Lizhou Liang",
+          "Ge Su",
+          "Wenqi Zhang",
+          "Xuhong Zhang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.06880v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "执行时适配 retrieved skills，缓解 skill-execution misfit",
+        "summary": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。 Insight：这篇适合作为“工具/技能检索不是直接拼 prompt”的反例：真正难点在于把 procedural memory 对齐到当前执行接口。",
+        "highlights": [
+          "执行时适配 retrieved skills，缓解 skill-execution misfit",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "语义相关的 skill 不一定可执行：它可能假设错误工具接口、过时环境、与当前任务不符，甚至和其他 skill 冲突，导致 retrieval 反而伤害 agent。",
+        "method": "论文定义 skill-execution misfit，并提出 training-free execution-time adaptation：抽取有用 skill fragments，专门化到任务和接口，解析依赖、冲突和冗余，生成紧凑 guide 后在整条轨迹复用。",
+        "experiments": "作者在多个 agent benchmarks 和 model backbones 上评估，报告相对 existing skill-use baselines 的稳定性能提升，同时减少 skill-induced regressions 和总推理成本。",
+        "research_help": "这篇适合作为“工具/技能检索不是直接拼 prompt”的反例：真正难点在于把 procedural memory 对齐到当前执行接口。",
+        "recommendation": {
+          "score": 87,
+          "level": "高",
+          "label": "执行时适配 retrieved skills，缓解 skill-execution misfit",
+          "water_risk": "低",
+          "value_judgement": "执行时适配 retrieved skills，缓解 skill-execution misfit",
+          "reason": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇适合作为“工具/技能检索不是直接拼 prompt”的反例：真正难点在于把 procedural memory 对齐到当前执行接口。",
+        "abstract_zh": "论文提出 SkillAligner，在执行前改写和组合 retrieved skills，使其适配当前任务、环境和工具接口，缓解技能检索带来的执行错配。",
+        "full_summary": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。 论文定义 skill-execution misfit，并提出 training-free execution-time adaptation：抽取有用 skill fragments，专门化到任务和接口，解析依赖、冲突和冗余，生成紧凑 guide 后在整条轨迹复用。 作者在多个 agent benchmarks 和 model backbones 上评估，报告相对 existing skill-use baselines 的稳定性能提升，同时减少 skill-induced regressions 和总推理成本。 这篇适合作为“工具/技能检索不是直接拼 prompt”的反例：真正难点在于把 procedural memory 对齐到当前执行接口。",
+        "card_summary": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。"
+      },
+      "analysis": {
+        "motivation": "语义相关的 skill 不一定可执行：它可能假设错误工具接口、过时环境、与当前任务不符，甚至和其他 skill 冲突，导致 retrieval 反而伤害 agent。",
+        "method": "论文定义 skill-execution misfit，并提出 training-free execution-time adaptation：抽取有用 skill fragments，专门化到任务和接口，解析依赖、冲突和冗余，生成紧凑 guide 后在整条轨迹复用。",
+        "experiments": "作者在多个 agent benchmarks 和 model backbones 上评估，报告相对 existing skill-use baselines 的稳定性能提升，同时减少 skill-induced regressions 和总推理成本。",
+        "research_help": "这篇适合作为“工具/技能检索不是直接拼 prompt”的反例：真正难点在于把 procedural memory 对齐到当前执行接口。",
+        "insight": "这篇适合作为“工具/技能检索不是直接拼 prompt”的反例：真正难点在于把 procedural memory 对齐到当前执行接口。",
+        "abstract_zh": "论文提出 SkillAligner，在执行前改写和组合 retrieved skills，使其适配当前任务、环境和工具接口，缓解技能检索带来的执行错配。",
+        "card_summary": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。",
+        "full_summary": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。 论文定义 skill-execution misfit，并提出 training-free execution-time adaptation：抽取有用 skill fragments，专门化到任务和接口，解析依赖、冲突和冗余，生成紧凑 guide 后在整条轨迹复用。 作者在多个 agent benchmarks 和 model backbones 上评估，报告相对 existing skill-use baselines 的稳定性能提升，同时减少 skill-induced regressions 和总推理成本。 这篇适合作为“工具/技能检索不是直接拼 prompt”的反例：真正难点在于把 procedural memory 对齐到当前执行接口。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "执行时适配 retrieved skills，缓解 skill-execution misfit",
+        "value_reason": "SkillAligner 把检索到的 skills 视为可改写 draft，在执行前一次性联合适配任务需求、工具接口和多 skill 冲突，再压缩成执行 guide 供后续 trajectory 使用。",
+        "limitations": "摘要和正文给出跨 benchmark 结论，但公开摘要中的具体 benchmark 数字较少，作为中高优先级而非最高优先级。",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Defines skill-execution misfit",
+          "Training-free execution-time adaptation",
+          "Reports reduced skill-induced regressions and lower inference cost"
+        ]
+      }
+    },
+    {
+      "id": "2608.06474v1",
+      "title": "WebGrader: Training LLMs for Web Development with Self-Evolving Programmatic Grader",
+      "summary": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。",
+      "url": "https://arxiv.org/abs/2608.06474v1",
+      "authors": [
+        "Boshui Chen",
+        "Huiping Liu",
+        "Shaolei Zhang"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-06",
+      "updated": "2026-08-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/boneykingofnone/",
+      "venue_status": "",
+      "recommendation": {
+        "score": 87,
+        "level": "高",
+        "label": "用自进化程序化 grader 生成 web-development RL reward",
+        "water_risk": "低",
+        "value_judgement": "用自进化程序化 grader 生成 web-development RL reward",
+        "reason": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Boshui Chen",
+          "Huiping Liu",
+          "Shaolei Zhang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-06",
+        "paper_url": "https://arxiv.org/abs/2608.06474v1",
+        "project_url": "",
+        "repo_url": "https://github.com/boneykingofnone/",
+        "venue_status": "",
+        "contribution": "用自进化程序化 grader 生成 web-development RL reward",
+        "summary": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。 Insight：这篇不是普通网页生成，而是把浏览器轨迹证据转成可训练 verifier/reward。对 agentic RL 中“环境反馈如何可靠判分”很有借鉴意义。",
+        "highlights": [
+          "用自进化程序化 grader 生成 web-development RL reward",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "开放式 web development RL 的奖励设计很难。手写浏览器脚本成本高，VLM/GUI-agent grader 又可能没观察到关键状态就给出结论。",
+        "method": "WebGrader 将 test planning、action grounding、evidence collection、semantic judgment 分离；残差驱动的 offline loop 还会发现可复用 verifier skills，并在 disjoint validation pages 上筛选后冻结 skill graph。",
+        "experiments": "WebGen-Bench 上，WebGrader 将 8B policy 训练到 52.01% functional success，比 matched appearance-plus-script reward 高 7.88 点，并超过 o4-mini 和 DeepSeek-v4-flash；WG-core-250 Full Score 为 44.953。",
+        "research_help": "这篇不是普通网页生成，而是把浏览器轨迹证据转成可训练 verifier/reward。对 agentic RL 中“环境反馈如何可靠判分”很有借鉴意义。",
+        "recommendation": {
+          "score": 87,
+          "level": "高",
+          "label": "用自进化程序化 grader 生成 web-development RL reward",
+          "water_risk": "低",
+          "value_judgement": "用自进化程序化 grader 生成 web-development RL reward",
+          "reason": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇不是普通网页生成，而是把浏览器轨迹证据转成可训练 verifier/reward。对 agentic RL 中“环境反馈如何可靠判分”很有借鉴意义。",
+        "abstract_zh": "论文提出 WebGrader，为网页开发任务自动构造可执行 flow contract 和程序化 grader，用浏览器轨迹证据训练 LLM policy。",
+        "full_summary": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。 WebGrader 将 test planning、action grounding、evidence collection、semantic judgment 分离；残差驱动的 offline loop 还会发现可复用 verifier skills，并在 disjoint validation pages 上筛选后冻结 skill graph。 WebGen-Bench 上，WebGrader 将 8B policy 训练到 52.01% functional success，比 matched appearance-plus-script reward 高 7.88 点，并超过 o4-mini 和 DeepSeek-v4-flash；WG-core-250 Full Score 为 44.953。 这篇不是普通网页生成，而是把浏览器轨迹证据转成可训练 verifier/reward。对 agentic RL 中“环境反馈如何可靠判分”很有借鉴意义。",
+        "card_summary": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。"
+      },
+      "analysis": {
+        "motivation": "开放式 web development RL 的奖励设计很难。手写浏览器脚本成本高，VLM/GUI-agent grader 又可能没观察到关键状态就给出结论。",
+        "method": "WebGrader 将 test planning、action grounding、evidence collection、semantic judgment 分离；残差驱动的 offline loop 还会发现可复用 verifier skills，并在 disjoint validation pages 上筛选后冻结 skill graph。",
+        "experiments": "WebGen-Bench 上，WebGrader 将 8B policy 训练到 52.01% functional success，比 matched appearance-plus-script reward 高 7.88 点，并超过 o4-mini 和 DeepSeek-v4-flash；WG-core-250 Full Score 为 44.953。",
+        "research_help": "这篇不是普通网页生成，而是把浏览器轨迹证据转成可训练 verifier/reward。对 agentic RL 中“环境反馈如何可靠判分”很有借鉴意义。",
+        "insight": "这篇不是普通网页生成，而是把浏览器轨迹证据转成可训练 verifier/reward。对 agentic RL 中“环境反馈如何可靠判分”很有借鉴意义。",
+        "abstract_zh": "论文提出 WebGrader，为网页开发任务自动构造可执行 flow contract 和程序化 grader，用浏览器轨迹证据训练 LLM policy。",
+        "card_summary": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。",
+        "full_summary": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。 WebGrader 将 test planning、action grounding、evidence collection、semantic judgment 分离；残差驱动的 offline loop 还会发现可复用 verifier skills，并在 disjoint validation pages 上筛选后冻结 skill graph。 WebGen-Bench 上，WebGrader 将 8B policy 训练到 52.01% functional success，比 matched appearance-plus-script reward 高 7.88 点，并超过 o4-mini 和 DeepSeek-v4-flash；WG-core-250 Full Score 为 44.953。 这篇不是普通网页生成，而是把浏览器轨迹证据转成可训练 verifier/reward。对 agentic RL 中“环境反馈如何可靠判分”很有借鉴意义。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "用自进化程序化 grader 生成 web-development RL reward",
+        "value_reason": "WebGrader 自动从网页需求中推导交互 flow contract，在真实浏览器里收集视觉、DOM、响应和持久状态证据，把完整交互是否通过作为 RL reward。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Flow Contract derived from website request",
+          "WebGen-Bench functional success 52.01%",
+          "Improves by 7.88 points over matched reward baseline"
+        ]
+      }
+    },
+    {
+      "id": "2608.06909v1",
+      "title": "Long-Horizon Agent Trajectory Attribution: A Unified Benchmark and Fine-Grained Annotation Framework",
+      "summary": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。",
+      "url": "https://arxiv.org/abs/2608.06909v1",
+      "authors": [
+        "Jing Chen",
+        "Yang Sun",
+        "Li Zhang",
+        "Lin Xu",
+        "Jie Shi"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/chenjing-2024/agent-trajectory-attribution",
+      "venue_status": "",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "长程 agent trajectory attribution benchmark",
+        "water_risk": "低",
+        "value_judgement": "长程 agent trajectory attribution benchmark",
+        "reason": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jing Chen",
+          "Yang Sun",
+          "Li Zhang",
+          "Lin Xu",
+          "Jie Shi"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.06909v1",
+        "project_url": "",
+        "repo_url": "https://github.com/chenjing-2024/agent-trajectory-attribution",
+        "venue_status": "",
+        "contribution": "长程 agent trajectory attribution benchmark",
+        "summary": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。 Insight：对长程 agent 评估很有用：它把“为什么失败/为什么拒绝/为什么完成”做成独立任务，能支持你做过程级诊断而不是只比较 pass rate。",
+        "highlights": [
+          "长程 agent trajectory attribution benchmark",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "AgentDojo、Agent3Sigma 等基准能告诉你 agent 是否成功或是否越权，但很难解释是哪段长轨迹组件导致了最终行为。",
+        "method": "论文定义 primary attribution localization 和 attribution-chain recovery 两个任务，把 heterogeneous execution traces 标准化为 component schema，并为 task-aligned action、unsafe action、safety refusal 标注 primary cause 和可选因果链。",
+        "experiments": "基准包含来自 AgentDojo、Agent3Sigma Stage/Canary 的 1,300+ annotated trajectories。两类简单 baseline 在 long-range attribution 和 chain recovery 上表现明显下降，例如 overall primary Hit@1 约 0.369/0.537。",
+        "research_help": "对长程 agent 评估很有用：它把“为什么失败/为什么拒绝/为什么完成”做成独立任务，能支持你做过程级诊断而不是只比较 pass rate。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "长程 agent trajectory attribution benchmark",
+          "water_risk": "低",
+          "value_judgement": "长程 agent trajectory attribution benchmark",
+          "reason": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "对长程 agent 评估很有用：它把“为什么失败/为什么拒绝/为什么完成”做成独立任务，能支持你做过程级诊断而不是只比较 pass rate。",
+        "abstract_zh": "论文提出长程 LLM agent trajectory attribution 基准和标注框架，用 component-level schema 解释 agent 最终行为来自轨迹中的哪些组件。",
+        "full_summary": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。 论文定义 primary attribution localization 和 attribution-chain recovery 两个任务，把 heterogeneous execution traces 标准化为 component schema，并为 task-aligned action、unsafe action、safety refusal 标注 primary cause 和可选因果链。 基准包含来自 AgentDojo、Agent3Sigma Stage/Canary 的 1,300+ annotated trajectories。两类简单 baseline 在 long-range attribution 和 chain recovery 上表现明显下降，例如 overall primary Hit@1 约 0.369/0.537。 对长程 agent 评估很有用：它把“为什么失败/为什么拒绝/为什么完成”做成独立任务，能支持你做过程级诊断而不是只比较 pass rate。",
+        "card_summary": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。"
+      },
+      "analysis": {
+        "motivation": "AgentDojo、Agent3Sigma 等基准能告诉你 agent 是否成功或是否越权，但很难解释是哪段长轨迹组件导致了最终行为。",
+        "method": "论文定义 primary attribution localization 和 attribution-chain recovery 两个任务，把 heterogeneous execution traces 标准化为 component schema，并为 task-aligned action、unsafe action、safety refusal 标注 primary cause 和可选因果链。",
+        "experiments": "基准包含来自 AgentDojo、Agent3Sigma Stage/Canary 的 1,300+ annotated trajectories。两类简单 baseline 在 long-range attribution 和 chain recovery 上表现明显下降，例如 overall primary Hit@1 约 0.369/0.537。",
+        "research_help": "对长程 agent 评估很有用：它把“为什么失败/为什么拒绝/为什么完成”做成独立任务，能支持你做过程级诊断而不是只比较 pass rate。",
+        "insight": "对长程 agent 评估很有用：它把“为什么失败/为什么拒绝/为什么完成”做成独立任务，能支持你做过程级诊断而不是只比较 pass rate。",
+        "abstract_zh": "论文提出长程 LLM agent trajectory attribution 基准和标注框架，用 component-level schema 解释 agent 最终行为来自轨迹中的哪些组件。",
+        "card_summary": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。",
+        "full_summary": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。 论文定义 primary attribution localization 和 attribution-chain recovery 两个任务，把 heterogeneous execution traces 标准化为 component schema，并为 task-aligned action、unsafe action、safety refusal 标注 primary cause 和可选因果链。 基准包含来自 AgentDojo、Agent3Sigma Stage/Canary 的 1,300+ annotated trajectories。两类简单 baseline 在 long-range attribution 和 chain recovery 上表现明显下降，例如 overall primary Hit@1 约 0.369/0.537。 对长程 agent 评估很有用：它把“为什么失败/为什么拒绝/为什么完成”做成独立任务，能支持你做过程级诊断而不是只比较 pass rate。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "长程 agent trajectory attribution benchmark",
+        "value_reason": "这篇把 agent 行为解释从 outcome evaluation 推到 component-level trajectory attribution，统一标注 user instruction、tool observation、memory、action 等组件对目标行为的贡献。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "More than 1,300 annotated trajectories",
+          "Defines primary localization and chain recovery",
+          "Baseline results show long-range attribution is harder"
+        ]
+      }
+    },
+    {
+      "id": "2608.06714v1",
+      "title": "The Optimizer Is the Agent: Reasoning-Driven Search across Prompts, Programs, and ML Workflows",
+      "summary": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。",
+      "url": "https://arxiv.org/abs/2608.06714v1",
+      "authors": [
+        "Junbo Li",
+        "Boyi Liu",
+        "Canwen Xu",
+        "Yite Wang",
+        "Yuxiong He",
+        "Zhangyang Wang",
+        "Qiang Liu",
+        "Zhewei Yao"
+      ],
+      "report_date": "2026-08-11",
+      "published": "2026-08-07",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 86,
+        "level": "高",
+        "label": "让 tool-using agent 内化 prompts/programs/ML workflows 的搜索策略",
+        "water_risk": "低",
+        "value_judgement": "让 tool-using agent 内化 prompts/programs/ML workflows 的搜索策略",
+        "reason": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Junbo Li",
+          "Boyi Liu",
+          "Canwen Xu",
+          "Yite Wang",
+          "Yuxiong He",
+          "Zhangyang Wang",
+          "Qiang Liu",
+          "Zhewei Yao"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.06714v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "让 tool-using agent 内化 prompts/programs/ML workflows 的搜索策略",
+        "summary": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。 Insight：这篇适合作为 agent planning 与 search controller 的桥：它的关键主张是复杂搜索行为可从 agent reasoning loop 中涌现，而不是外部调度器固定给定。",
+        "highlights": [
+          "让 tool-using agent 内化 prompts/programs/ML workflows 的搜索策略",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "现有 prompt/program/workflow optimization 往往依赖手写外循环控制器，如 evolutionary search、bandit 或 textual gradient；这些控制器和 agent 自身推理能力割裂。",
+        "method": "ReASearch 使用共享 agent loop 和领域工具，让 agent 观察执行结果、分配预算、诊断失败、提出修改并验证。它在不同任务中复用同一 scaffold，而不是为每个优化问题写专用 controller。",
+        "experiments": "论文在 14 个多样任务上评估，报告相对强领域专用 baseline 的 2% 到 40% 收益，并在若干案例中发现超过既有人类 best-known result 的解。",
+        "research_help": "这篇适合作为 agent planning 与 search controller 的桥：它的关键主张是复杂搜索行为可从 agent reasoning loop 中涌现，而不是外部调度器固定给定。",
+        "recommendation": {
+          "score": 86,
+          "level": "高",
+          "label": "让 tool-using agent 内化 prompts/programs/ML workflows 的搜索策略",
+          "water_risk": "低",
+          "value_judgement": "让 tool-using agent 内化 prompts/programs/ML workflows 的搜索策略",
+          "reason": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇适合作为 agent planning 与 search controller 的桥：它的关键主张是复杂搜索行为可从 agent reasoning loop 中涌现，而不是外部调度器固定给定。",
+        "abstract_zh": "论文提出 ReASearch，用一个带工具和持久记忆的 agent 统一优化 prompts、programs 和 ML workflows，让 agent 自主执行长程搜索。",
+        "full_summary": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。 ReASearch 使用共享 agent loop 和领域工具，让 agent 观察执行结果、分配预算、诊断失败、提出修改并验证。它在不同任务中复用同一 scaffold，而不是为每个优化问题写专用 controller。 论文在 14 个多样任务上评估，报告相对强领域专用 baseline 的 2% 到 40% 收益，并在若干案例中发现超过既有人类 best-known result 的解。 这篇适合作为 agent planning 与 search controller 的桥：它的关键主张是复杂搜索行为可从 agent reasoning loop 中涌现，而不是外部调度器固定给定。",
+        "card_summary": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。"
+      },
+      "analysis": {
+        "motivation": "现有 prompt/program/workflow optimization 往往依赖手写外循环控制器，如 evolutionary search、bandit 或 textual gradient；这些控制器和 agent 自身推理能力割裂。",
+        "method": "ReASearch 使用共享 agent loop 和领域工具，让 agent 观察执行结果、分配预算、诊断失败、提出修改并验证。它在不同任务中复用同一 scaffold，而不是为每个优化问题写专用 controller。",
+        "experiments": "论文在 14 个多样任务上评估，报告相对强领域专用 baseline 的 2% 到 40% 收益，并在若干案例中发现超过既有人类 best-known result 的解。",
+        "research_help": "这篇适合作为 agent planning 与 search controller 的桥：它的关键主张是复杂搜索行为可从 agent reasoning loop 中涌现，而不是外部调度器固定给定。",
+        "insight": "这篇适合作为 agent planning 与 search controller 的桥：它的关键主张是复杂搜索行为可从 agent reasoning loop 中涌现，而不是外部调度器固定给定。",
+        "abstract_zh": "论文提出 ReASearch，用一个带工具和持久记忆的 agent 统一优化 prompts、programs 和 ML workflows，让 agent 自主执行长程搜索。",
+        "card_summary": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。",
+        "full_summary": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。 ReASearch 使用共享 agent loop 和领域工具，让 agent 观察执行结果、分配预算、诊断失败、提出修改并验证。它在不同任务中复用同一 scaffold，而不是为每个优化问题写专用 controller。 论文在 14 个多样任务上评估，报告相对强领域专用 baseline 的 2% 到 40% 收益，并在若干案例中发现超过既有人类 best-known result 的解。 这篇适合作为 agent planning 与 search controller 的桥：它的关键主张是复杂搜索行为可从 agent reasoning loop 中涌现，而不是外部调度器固定给定。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "让 tool-using agent 内化 prompts/programs/ML workflows 的搜索策略",
+        "value_reason": "ReASearch 把优化 prompt、program 和 ML workflow 的外循环搜索交给同一个 tool-using agent，由 agent 自主决定评估、诊断、编辑、验证和重启，并通过 persistent memory 跨长程搜索积累策略。",
+        "limitations": "",
+        "source_scope": "full_text",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "Shared agent loop across prompts, programs, and ML workflows",
+          "Evaluated on 14 tasks",
+          "Reports 2% to 40% gains over strong specialized baselines"
+        ]
+      }
+    },
     {
       "id": "2608.05446v1",
       "title": "EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents",
