@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-11T01:41:03.899Z",
+  "updated_at": "2026-08-12T01:38:45.000Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation from arXiv cs.AI/cs.CL/cs.LG category HTML, arXiv abs pages, and extracted PDF text after arXiv API returned 429; strong relevance only.",
+  "analysis_method": "Manual Codex curation from arXiv cs.AI/cs.CL/cs.LG/cs.HC category HTML, arXiv abs pages, and extracted PDF text after arXiv API returned 429; strong relevance only.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪、工具/环境交互与执行可靠性",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,46 +37,49 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-11 Daily Paper",
-    "report_date": "2026-08-11",
+    "title": "2026-08-12 Daily Paper",
+    "report_date": "2026-08-12",
     "focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪、工具/环境交互与执行可靠性",
-    "summary": "arXiv API 今日返回 429；改用 arXiv 分类 HTML、abs 页面和 PDF 全文抽取人工筛选。保留 14 篇强相关论文，重点集中在长程 LLM agent 的信用分配、memory state alignment、编程/web agent 执行可靠性和轨迹归因。",
+    "summary": "arXiv API 今日返回 429；改用 arXiv 分类 HTML、abs 页面和 PDF 全文抽取人工筛选。保留 16 篇强相关论文，重点集中在 agentic RL 信用分配、长程执行循环/agent harness 自演化、mutable state、context/trajectory 归因和复杂工作流 benchmark。",
     "top_recommendations": [
-      "2608.06861v1",
-      "2608.07118v1",
-      "2608.07068v1"
+      "2608.08255v1",
+      "2608.09380v1",
+      "2608.08466v1"
     ],
     "low_priority": [
-      "2608.06880v1",
-      "2608.06474v1",
-      "2608.06909v1",
-      "2608.06714v1"
+      "2608.08621v1",
+      "2608.09524v1",
+      "2608.08960v1",
+      "2608.09282v1",
+      "2608.08282v1"
     ],
     "no_news_policy": "若无 long horizon、multi-turn、agentic RL、agent planning、agent memory 或执行可靠性强相关新增论文，则不发布。",
-    "email_body": "今日保留 14 篇强相关 Daily Paper：Gated-BEPO、FACTOR、MemOPD、The Horizon Gap、TRIAL、DiDPO、PMCoder、LivePlan、AMD、WebRider、SkillAligner、WebGrader、Trajectory Attribution、ReASearch。过滤医疗/机器人/分子设计/卫星/多模态模型合并等边界项。"
+    "email_body": "今日保留 16 篇强相关 Daily Paper：EFCA、OpenLoopEvolve、HSI、Argus、DocAtlas、BCSD、Evo-Bench、TRACE、SCOUT、Not Worth Another Token、CommitKV、Business Arena、STAIR、CAPS、ComboShoppingBench、Stateful CARS。过滤机器人/视频纯视觉证据、模型家族报告、医疗/推荐/形式证明/迁移等边界项。"
   },
   "latest_item_ids": [
-    "2608.06861v1",
-    "2608.07118v1",
-    "2608.07068v1",
-    "2608.06663v1",
-    "2608.07371v1",
-    "2608.07147v1",
-    "2608.06811v1",
-    "2608.06701v1",
-    "2608.07169v1",
-    "2608.06704v1",
-    "2608.06880v1",
-    "2608.06474v1",
-    "2608.06909v1",
-    "2608.06714v1"
+    "2608.08255v1",
+    "2608.09380v1",
+    "2608.08466v1",
+    "2608.05144v2",
+    "2608.07527v1",
+    "2608.09555v1",
+    "2608.09096v2",
+    "2608.09153v1",
+    "2608.07959v1",
+    "2608.08389v1",
+    "2608.07855v1",
+    "2608.08621v1",
+    "2608.09524v1",
+    "2608.08960v1",
+    "2608.09282v1",
+    "2608.08282v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 14,
-    "total_items": 190,
-    "previous_items": 176,
-    "latest_items": 14,
+    "fresh_items": 16,
+    "total_items": 206,
+    "previous_items": 190,
+    "latest_items": 16,
     "source_report_dates": {
       "2026-08-07": 6,
       "2026-08-06": 9,
@@ -113,7 +116,8 @@
       "2026-06-13": 1,
       "2026-08-09": 11,
       "2026-08-10": 9,
-      "2026-08-11": 14
+      "2026-08-11": 14,
+      "2026-08-12": 16
     },
     "filtered_candidate_ids": [
       "2608.04443v1",
@@ -159,20 +163,41 @@
       "2608.06434v1",
       "2606.05597v1",
       "2608.07408v1",
-      "2608.06933v1"
+      "2608.06933v1",
+      "2608.07905v1",
+      "2608.07585v1",
+      "2608.09819v1",
+      "2608.07593v1",
+      "2608.07637v1",
+      "2608.07746v1",
+      "2608.09273v1",
+      "2608.09277v1",
+      "2608.09666v1",
+      "2608.08160v1",
+      "2608.09184v1",
+      "2608.08491v1",
+      "2608.08878v1",
+      "2608.08996v1",
+      "2608.09467v1",
+      "2608.09564v1"
     ],
     "filtered_today": [
-      "2608.07418v1",
-      "2608.06699v1",
-      "2608.06735v1",
-      "2608.07346v1",
-      "2608.06984v1",
-      "2608.06871v1",
-      "2608.06961v1",
-      "2608.06434v1",
-      "2606.05597v1",
-      "2608.07408v1",
-      "2608.06933v1"
+      "2608.07905v1",
+      "2608.07585v1",
+      "2608.09819v1",
+      "2608.07593v1",
+      "2608.07637v1",
+      "2608.07746v1",
+      "2608.09273v1",
+      "2608.09277v1",
+      "2608.09666v1",
+      "2608.08160v1",
+      "2608.09184v1",
+      "2608.08491v1",
+      "2608.08878v1",
+      "2608.08996v1",
+      "2608.09467v1",
+      "2608.09564v1"
     ],
     "backfilled_report_dates": {
       "2026-07-17": 3,
@@ -182,6 +207,1997 @@
     }
   },
   "items": [
+    {
+      "id": "2608.08255v1",
+      "title": "Learning from Environmental Feedback: Credit Assignment across Multiple Timescales for Agentic Reinforcement Learning",
+      "summary": "EFCA 把长程 agentic RL 的 terminal reward 拆成长期 outcome、短期环境反馈和中期状态历史三类信号，用 return reweighting 缓解稀疏奖励信用分配。",
+      "url": "https://arxiv.org/abs/2608.08255v1",
+      "authors": [
+        "Yifu Huo",
+        "Shunjie Xing",
+        "Chenglong Wang",
+        "Peinan Feng",
+        "Qiaozhi He",
+        "Yan Ding",
+        "Anxiang Ma",
+        "Yuxin Gao",
+        "Tongran Liu",
+        "Tong Xiao",
+        "Jingbo Zhu"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-08",
+      "updated": "2026-08-08",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "环境反馈多时间尺度信用分配用于 agentic RL",
+        "water_risk": "低",
+        "value_judgement": "环境反馈多时间尺度信用分配用于 agentic RL",
+        "reason": "EFCA 把长程 agentic RL 的 terminal reward 拆成长期 outcome、短期环境反馈和中期状态历史三类信号，用 return reweighting 缓解稀疏奖励信用分配。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yifu Huo",
+          "Shunjie Xing",
+          "Chenglong Wang",
+          "Peinan Feng",
+          "Qiaozhi He",
+          "Yan Ding",
+          "Anxiang Ma",
+          "Yuxin Gao",
+          "Tongran Liu",
+          "Tong Xiao",
+          "Jingbo Zhu"
+        ],
+        "affiliations": "",
+        "date": "2026-08-08",
+        "paper_url": "https://arxiv.org/abs/2608.08255v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "环境反馈多时间尺度信用分配用于 agentic RL",
+        "summary": "EFCA 把长程 agentic RL 的 terminal reward 拆成长期 outcome、短期环境反馈和中期状态历史三类信号，用 return reweighting 缓解稀疏奖励信用分配。 Insight：这篇是今天最直接的 agentic RL 论文，可作为长程工具/环境交互任务里 credit assignment 的强 baseline。",
+        "highlights": [
+          "环境反馈多时间尺度信用分配用于 agentic RL",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程交互环境里的 reward 往往延迟且稀疏，单纯把最终成功/失败广播到整条 trajectory 会掩盖哪些动作真的改变了环境状态。",
+        "method": "方法直接从环境反馈中抽取两个过程信号：当前动作带来的短期状态变化，以及最近交互历史中暴露的中期无效模式，再和长期 outcome reward 组合成多时间尺度 credit。",
+        "experiments": "PDF 正文报告在 ALFWorld 和 WebShop 上相对强基线同时提升 task success 与 task quality，说明过程反馈不是只改善训练曲线，而是能改进最终任务表现。",
+        "research_help": "这篇是今天最直接的 agentic RL 论文，可作为长程工具/环境交互任务里 credit assignment 的强 baseline。",
+        "recommendation": {
+          "score": 96,
+          "level": "高",
+          "label": "环境反馈多时间尺度信用分配用于 agentic RL",
+          "water_risk": "低",
+          "value_judgement": "环境反馈多时间尺度信用分配用于 agentic RL",
+          "reason": "EFCA 把长程 agentic RL 的 terminal reward 拆成长期 outcome、短期环境反馈和中期状态历史三类信号，用 return reweighting 缓解稀疏奖励信用分配。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇是今天最直接的 agentic RL 论文，可作为长程工具/环境交互任务里 credit assignment 的强 baseline。",
+        "abstract_zh": "长程交互环境里的 reward 往往延迟且稀疏，单纯把最终成功/失败广播到整条 trajectory 会掩盖哪些动作真的改变了环境状态。 方法直接从环境反馈中抽取两个过程信号：当前动作带来的短期状态变化，以及最近交互历史中暴露的中期无效模式，再和长期 outcome reward 组合成多时间尺度 credit。",
+        "full_summary": "EFCA 把长程 agentic RL 的 terminal reward 拆成长期 outcome、短期环境反馈和中期状态历史三类信号，用 return reweighting 缓解稀疏奖励信用分配。 长程交互环境里的 reward 往往延迟且稀疏，单纯把最终成功/失败广播到整条 trajectory 会掩盖哪些动作真的改变了环境状态。 方法直接从环境反馈中抽取两个过程信号：当前动作带来的短期状态变化，以及最近交互历史中暴露的中期无效模式，再和长期 outcome reward 组合成多时间尺度 credit。 PDF 正文报告在 ALFWorld 和 WebShop 上相对强基线同时提升 task success 与 task quality，说明过程反馈不是只改善训练曲线，而是能改进最终任务表现。 Insight：这篇是今天最直接的 agentic RL 论文，可作为长程工具/环境交互任务里 credit assignment 的强 baseline。",
+        "card_summary": "EFCA 把长程 agentic RL 的 terminal reward 拆成长期 outcome、短期环境反馈和中期状态历史三类信号，用 return reweighting 缓解稀疏奖励信用分配。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "长程交互环境里的 reward 往往延迟且稀疏，单纯把最终成功/失败广播到整条 trajectory 会掩盖哪些动作真的改变了环境状态。",
+        "method": "方法直接从环境反馈中抽取两个过程信号：当前动作带来的短期状态变化，以及最近交互历史中暴露的中期无效模式，再和长期 outcome reward 组合成多时间尺度 credit。",
+        "experiments": "PDF 正文报告在 ALFWorld 和 WebShop 上相对强基线同时提升 task success 与 task quality，说明过程反馈不是只改善训练曲线，而是能改进最终任务表现。",
+        "research_help": "这篇是今天最直接的 agentic RL 论文，可作为长程工具/环境交互任务里 credit assignment 的强 baseline。",
+        "insight": "这篇是今天最直接的 agentic RL 论文，可作为长程工具/环境交互任务里 credit assignment 的强 baseline。",
+        "abstract_zh": "长程交互环境里的 reward 往往延迟且稀疏，单纯把最终成功/失败广播到整条 trajectory 会掩盖哪些动作真的改变了环境状态。 方法直接从环境反馈中抽取两个过程信号：当前动作带来的短期状态变化，以及最近交互历史中暴露的中期无效模式，再和长期 outcome reward 组合成多时间尺度 credit。",
+        "card_summary": "EFCA 把长程 agentic RL 的 terminal reward 拆成长期 outcome、短期环境反馈和中期状态历史三类信号，用 return reweighting 缓解稀疏奖励信用分配。",
+        "full_summary": "EFCA 把长程 agentic RL 的 terminal reward 拆成长期 outcome、短期环境反馈和中期状态历史三类信号，用 return reweighting 缓解稀疏奖励信用分配。 长程交互环境里的 reward 往往延迟且稀疏，单纯把最终成功/失败广播到整条 trajectory 会掩盖哪些动作真的改变了环境状态。 方法直接从环境反馈中抽取两个过程信号：当前动作带来的短期状态变化，以及最近交互历史中暴露的中期无效模式，再和长期 outcome reward 组合成多时间尺度 credit。 PDF 正文报告在 ALFWorld 和 WebShop 上相对强基线同时提升 task success 与 task quality，说明过程反馈不是只改善训练曲线，而是能改进最终任务表现。 Insight：这篇是今天最直接的 agentic RL 论文，可作为长程工具/环境交互任务里 credit assignment 的强 baseline。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "环境反馈多时间尺度信用分配用于 agentic RL",
+        "value_reason": "这篇是今天最直接的 agentic RL 论文，可作为长程工具/环境交互任务里 credit assignment 的强 baseline。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.09380v1",
+      "title": "OpenLoopEvolve: A Verifiable Self-Evolution Framework for Loop Policies in Long-Horizon Complex Tasks",
+      "summary": "OpenLoopEvolve 把 observation、planning、memory、action、verification、recovery、stopping 和 budget control 统一成可演化 Loop Policy，用在线/离线候选、Champion-Challenger 评估和回滚机制积累长程控制经验。",
+      "url": "https://arxiv.org/abs/2608.09380v1",
+      "authors": [
+        "Siqi Wang",
+        "Xinlin Li",
+        "Zhenglin Li",
+        "Li Li"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-10",
+      "updated": "2026-08-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "把 agent 执行循环本身做成可版本化 Loop Policy",
+        "water_risk": "中",
+        "value_judgement": "把 agent 执行循环本身做成可版本化 Loop Policy",
+        "reason": "OpenLoopEvolve 把 observation、planning、memory、action、verification、recovery、stopping 和 budget control 统一成可演化 Loop Policy，用在线/离线候选、Champion-Challenger 评估和回滚机制积累长程控制经验。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Siqi Wang",
+          "Xinlin Li",
+          "Zhenglin Li",
+          "Li Li"
+        ],
+        "affiliations": "",
+        "date": "2026-08-10",
+        "paper_url": "https://arxiv.org/abs/2608.09380v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "把 agent 执行循环本身做成可版本化 Loop Policy",
+        "summary": "OpenLoopEvolve 把 observation、planning、memory、action、verification、recovery、stopping 和 budget control 统一成可演化 Loop Policy，用在线/离线候选、Champion-Challenger 评估和回滚机制积累长程控制经验。 Insight：它把“agent 该如何循环执行”从 prompt 经验提升为可治理 artifact，对长程 agent replanning 与运维式评估很有启发。",
+        "highlights": [
+          "把 agent 执行循环本身做成可版本化 Loop Policy",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程复杂任务的失败往往来自执行循环策略，而不是单步生成质量；过去的 traces 很难变成可复用、可发布、可回滚的控制资产。",
+        "method": "OLE 将 loop policy 表示成带 lineage 的策略对象，在线模式从持续运行反馈触发候选，离线模式从历史失败证据搜索候选，发布后继续监控并可回滚到父版本。",
+        "experiments": "作者在模拟 YC-Bench 上报告在线和离线模式相对固定初始 Loop Policy 改善 aggregate task performance、success rate 和 risk metrics。",
+        "research_help": "它把“agent 该如何循环执行”从 prompt 经验提升为可治理 artifact，对长程 agent replanning 与运维式评估很有启发。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "把 agent 执行循环本身做成可版本化 Loop Policy",
+          "water_risk": "中",
+          "value_judgement": "把 agent 执行循环本身做成可版本化 Loop Policy",
+          "reason": "OpenLoopEvolve 把 observation、planning、memory、action、verification、recovery、stopping 和 budget control 统一成可演化 Loop Policy，用在线/离线候选、Champion-Challenger 评估和回滚机制积累长程控制经验。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它把“agent 该如何循环执行”从 prompt 经验提升为可治理 artifact，对长程 agent replanning 与运维式评估很有启发。",
+        "abstract_zh": "长程复杂任务的失败往往来自执行循环策略，而不是单步生成质量；过去的 traces 很难变成可复用、可发布、可回滚的控制资产。 OLE 将 loop policy 表示成带 lineage 的策略对象，在线模式从持续运行反馈触发候选，离线模式从历史失败证据搜索候选，发布后继续监控并可回滚到父版本。",
+        "full_summary": "OpenLoopEvolve 把 observation、planning、memory、action、verification、recovery、stopping 和 budget control 统一成可演化 Loop Policy，用在线/离线候选、Champion-Challenger 评估和回滚机制积累长程控制经验。 长程复杂任务的失败往往来自执行循环策略，而不是单步生成质量；过去的 traces 很难变成可复用、可发布、可回滚的控制资产。 OLE 将 loop policy 表示成带 lineage 的策略对象，在线模式从持续运行反馈触发候选，离线模式从历史失败证据搜索候选，发布后继续监控并可回滚到父版本。 作者在模拟 YC-Bench 上报告在线和离线模式相对固定初始 Loop Policy 改善 aggregate task performance、success rate 和 risk metrics。 Insight：它把“agent 该如何循环执行”从 prompt 经验提升为可治理 artifact，对长程 agent replanning 与运维式评估很有启发。",
+        "card_summary": "OpenLoopEvolve 把 observation、planning、memory、action、verification、recovery、stopping 和 budget control 统一成可演化 Loop Policy，用在线/离线候选、Champion-Challenger 评估和回滚机制积累长程控制经验。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "长程复杂任务的失败往往来自执行循环策略，而不是单步生成质量；过去的 traces 很难变成可复用、可发布、可回滚的控制资产。",
+        "method": "OLE 将 loop policy 表示成带 lineage 的策略对象，在线模式从持续运行反馈触发候选，离线模式从历史失败证据搜索候选，发布后继续监控并可回滚到父版本。",
+        "experiments": "作者在模拟 YC-Bench 上报告在线和离线模式相对固定初始 Loop Policy 改善 aggregate task performance、success rate 和 risk metrics。",
+        "research_help": "它把“agent 该如何循环执行”从 prompt 经验提升为可治理 artifact，对长程 agent replanning 与运维式评估很有启发。",
+        "insight": "它把“agent 该如何循环执行”从 prompt 经验提升为可治理 artifact，对长程 agent replanning 与运维式评估很有启发。",
+        "abstract_zh": "长程复杂任务的失败往往来自执行循环策略，而不是单步生成质量；过去的 traces 很难变成可复用、可发布、可回滚的控制资产。 OLE 将 loop policy 表示成带 lineage 的策略对象，在线模式从持续运行反馈触发候选，离线模式从历史失败证据搜索候选，发布后继续监控并可回滚到父版本。",
+        "card_summary": "OpenLoopEvolve 把 observation、planning、memory、action、verification、recovery、stopping 和 budget control 统一成可演化 Loop Policy，用在线/离线候选、Champion-Challenger 评估和回滚机制积累长程控制经验。",
+        "full_summary": "OpenLoopEvolve 把 observation、planning、memory、action、verification、recovery、stopping 和 budget control 统一成可演化 Loop Policy，用在线/离线候选、Champion-Challenger 评估和回滚机制积累长程控制经验。 长程复杂任务的失败往往来自执行循环策略，而不是单步生成质量；过去的 traces 很难变成可复用、可发布、可回滚的控制资产。 OLE 将 loop policy 表示成带 lineage 的策略对象，在线模式从持续运行反馈触发候选，离线模式从历史失败证据搜索候选，发布后继续监控并可回滚到父版本。 作者在模拟 YC-Bench 上报告在线和离线模式相对固定初始 Loop Policy 改善 aggregate task performance、success rate 和 risk metrics。 Insight：它把“agent 该如何循环执行”从 prompt 经验提升为可治理 artifact，对长程 agent replanning 与运维式评估很有启发。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "把 agent 执行循环本身做成可版本化 Loop Policy",
+        "value_reason": "它把“agent 该如何循环执行”从 prompt 经验提升为可治理 artifact，对长程 agent replanning 与运维式评估很有启发。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.08466v1",
+      "title": "Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses",
+      "summary": "HSI 让冻结 LLM 同时扮演任务 harness、harness evolver 和 meta-evolver，用环境反馈热更新可执行 scaffold，并明确给出反馈质量和 backbone 能力边界。",
+      "url": "https://arxiv.org/abs/2608.08466v1",
+      "authors": [
+        "Tailin Zhou"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-09",
+      "updated": "2026-08-09",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 93,
+        "level": "高",
+        "label": "任务专属 agent harness 的层级自改进",
+        "water_risk": "中",
+        "value_judgement": "任务专属 agent harness 的层级自改进",
+        "reason": "HSI 让冻结 LLM 同时扮演任务 harness、harness evolver 和 meta-evolver，用环境反馈热更新可执行 scaffold，并明确给出反馈质量和 backbone 能力边界。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Tailin Zhou"
+        ],
+        "affiliations": "",
+        "date": "2026-08-09",
+        "paper_url": "https://arxiv.org/abs/2608.08466v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "任务专属 agent harness 的层级自改进",
+        "summary": "HSI 让冻结 LLM 同时扮演任务 harness、harness evolver 和 meta-evolver，用环境反馈热更新可执行 scaffold，并明确给出反馈质量和 backbone 能力边界。 Insight：这篇的价值在于同时给出自改进收益和失败边界，适合作为 harness evolution 的严肃 baseline，而不是空泛 RSI 叙事。",
+        "highlights": [
+          "任务专属 agent harness 的层级自改进",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "agent harness 通常靠人工改 prompt、工具和流程；如果 harness 固定，模型无法通过执行反馈持续改进任务家族级策略。",
+        "method": "框架用固定 task-injection seam 热替换 harness，evolver 重写 harness，meta-evolver 再重写 evolver 的策略代码；task execution 关闭 thinking，自改进阶段开启 thinking，以隔离 harness 贡献。",
+        "experiments": "在 BALROG 上，DeepSeek-V4-Flash-Preview 冻结 backbone 获得 BabyAI +39.3、Crafter +33.0、TextWorld +25.0、MiniHack +15.0 raw progress，但在超出 backbone 能力的 NLE 上无提升。",
+        "research_help": "这篇的价值在于同时给出自改进收益和失败边界，适合作为 harness evolution 的严肃 baseline，而不是空泛 RSI 叙事。",
+        "recommendation": {
+          "score": 93,
+          "level": "高",
+          "label": "任务专属 agent harness 的层级自改进",
+          "water_risk": "中",
+          "value_judgement": "任务专属 agent harness 的层级自改进",
+          "reason": "HSI 让冻结 LLM 同时扮演任务 harness、harness evolver 和 meta-evolver，用环境反馈热更新可执行 scaffold，并明确给出反馈质量和 backbone 能力边界。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇的价值在于同时给出自改进收益和失败边界，适合作为 harness evolution 的严肃 baseline，而不是空泛 RSI 叙事。",
+        "abstract_zh": "agent harness 通常靠人工改 prompt、工具和流程；如果 harness 固定，模型无法通过执行反馈持续改进任务家族级策略。 框架用固定 task-injection seam 热替换 harness，evolver 重写 harness，meta-evolver 再重写 evolver 的策略代码；task execution 关闭 thinking，自改进阶段开启 thinking，以隔离 harness 贡献。",
+        "full_summary": "HSI 让冻结 LLM 同时扮演任务 harness、harness evolver 和 meta-evolver，用环境反馈热更新可执行 scaffold，并明确给出反馈质量和 backbone 能力边界。 agent harness 通常靠人工改 prompt、工具和流程；如果 harness 固定，模型无法通过执行反馈持续改进任务家族级策略。 框架用固定 task-injection seam 热替换 harness，evolver 重写 harness，meta-evolver 再重写 evolver 的策略代码；task execution 关闭 thinking，自改进阶段开启 thinking，以隔离 harness 贡献。 在 BALROG 上，DeepSeek-V4-Flash-Preview 冻结 backbone 获得 BabyAI +39.3、Crafter +33.0、TextWorld +25.0、MiniHack +15.0 raw progress，但在超出 backbone 能力的 NLE 上无提升。 Insight：这篇的价值在于同时给出自改进收益和失败边界，适合作为 harness evolution 的严肃 baseline，而不是空泛 RSI 叙事。",
+        "card_summary": "HSI 让冻结 LLM 同时扮演任务 harness、harness evolver 和 meta-evolver，用环境反馈热更新可执行 scaffold，并明确给出反馈质量和 backbone 能力边界。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "agent harness 通常靠人工改 prompt、工具和流程；如果 harness 固定，模型无法通过执行反馈持续改进任务家族级策略。",
+        "method": "框架用固定 task-injection seam 热替换 harness，evolver 重写 harness，meta-evolver 再重写 evolver 的策略代码；task execution 关闭 thinking，自改进阶段开启 thinking，以隔离 harness 贡献。",
+        "experiments": "在 BALROG 上，DeepSeek-V4-Flash-Preview 冻结 backbone 获得 BabyAI +39.3、Crafter +33.0、TextWorld +25.0、MiniHack +15.0 raw progress，但在超出 backbone 能力的 NLE 上无提升。",
+        "research_help": "这篇的价值在于同时给出自改进收益和失败边界，适合作为 harness evolution 的严肃 baseline，而不是空泛 RSI 叙事。",
+        "insight": "这篇的价值在于同时给出自改进收益和失败边界，适合作为 harness evolution 的严肃 baseline，而不是空泛 RSI 叙事。",
+        "abstract_zh": "agent harness 通常靠人工改 prompt、工具和流程；如果 harness 固定，模型无法通过执行反馈持续改进任务家族级策略。 框架用固定 task-injection seam 热替换 harness，evolver 重写 harness，meta-evolver 再重写 evolver 的策略代码；task execution 关闭 thinking，自改进阶段开启 thinking，以隔离 harness 贡献。",
+        "card_summary": "HSI 让冻结 LLM 同时扮演任务 harness、harness evolver 和 meta-evolver，用环境反馈热更新可执行 scaffold，并明确给出反馈质量和 backbone 能力边界。",
+        "full_summary": "HSI 让冻结 LLM 同时扮演任务 harness、harness evolver 和 meta-evolver，用环境反馈热更新可执行 scaffold，并明确给出反馈质量和 backbone 能力边界。 agent harness 通常靠人工改 prompt、工具和流程；如果 harness 固定，模型无法通过执行反馈持续改进任务家族级策略。 框架用固定 task-injection seam 热替换 harness，evolver 重写 harness，meta-evolver 再重写 evolver 的策略代码；task execution 关闭 thinking，自改进阶段开启 thinking，以隔离 harness 贡献。 在 BALROG 上，DeepSeek-V4-Flash-Preview 冻结 backbone 获得 BabyAI +39.3、Crafter +33.0、TextWorld +25.0、MiniHack +15.0 raw progress，但在超出 backbone 能力的 NLE 上无提升。 Insight：这篇的价值在于同时给出自改进收益和失败边界，适合作为 harness evolution 的严肃 baseline，而不是空泛 RSI 叙事。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "任务专属 agent harness 的层级自改进",
+        "value_reason": "这篇的价值在于同时给出自改进收益和失败边界，适合作为 harness evolution 的严肃 baseline，而不是空泛 RSI 叙事。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.05144v2",
+      "title": "Argus: A General-Purpose Agentic Reasoning Runtime for Long-Horizon Tasks",
+      "summary": "Argus 把 Manager、Planner、Engineer、Reviewer 放在持久项目状态上运行，用 verification-gated admission 管理 memory、skill、procedure、verifier、routing 和 rejected routes。",
+      "url": "https://arxiv.org/abs/2608.05144v2",
+      "authors": [
+        "Boxiu Li",
+        "Zimo Wen",
+        "Yijia Fan",
+        "Chuan Wen",
+        "Fan Yang",
+        "Hangxi Guo",
+        "Jiaao Wu",
+        "Jiachen Zhang",
+        "Junxiang Lei",
+        "Mukai Li",
+        "Ruize Tang",
+        "Runjing Gu",
+        "Shibo Hu",
+        "Sihan Chen",
+        "Sufeng Guo",
+        "Wanbo Zhang",
+        "Xian Zhang",
+        "Xiaoyu Chen",
+        "Xuanhe Zhou",
+        "Xuyao Huang",
+        "Yifei Gao",
+        "Yifei Shen",
+        "Yilin Chen",
+        "Yuheng Wu",
+        "Yuzhe Zhang",
+        "Zelong Zhao",
+        "Zhijie Deng"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-05",
+      "updated": "2026-08-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "固定权重的长程 agentic runtime 与验证门控自演化",
+        "water_risk": "中",
+        "value_judgement": "固定权重的长程 agentic runtime 与验证门控自演化",
+        "reason": "Argus 把 Manager、Planner、Engineer、Reviewer 放在持久项目状态上运行，用 verification-gated admission 管理 memory、skill、procedure、verifier、routing 和 rejected routes。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Boxiu Li",
+          "Zimo Wen",
+          "Yijia Fan",
+          "Chuan Wen",
+          "Fan Yang",
+          "Hangxi Guo",
+          "Jiaao Wu",
+          "Jiachen Zhang",
+          "Junxiang Lei",
+          "Mukai Li",
+          "Ruize Tang",
+          "Runjing Gu",
+          "Shibo Hu",
+          "Sihan Chen",
+          "Sufeng Guo",
+          "Wanbo Zhang",
+          "Xian Zhang",
+          "Xiaoyu Chen",
+          "Xuanhe Zhou",
+          "Xuyao Huang",
+          "Yifei Gao",
+          "Yifei Shen",
+          "Yilin Chen",
+          "Yuheng Wu",
+          "Yuzhe Zhang",
+          "Zelong Zhao",
+          "Zhijie Deng"
+        ],
+        "affiliations": "",
+        "date": "2026-08-07",
+        "paper_url": "https://arxiv.org/abs/2608.05144v2",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "固定权重的长程 agentic runtime 与验证门控自演化",
+        "summary": "Argus 把 Manager、Planner、Engineer、Reviewer 放在持久项目状态上运行，用 verification-gated admission 管理 memory、skill、procedure、verifier、routing 和 rejected routes。 Insight：它和当前 Codex/HomePage 自动化经验高度同构：关键不是让模型一次做对，而是把验证、回滚、升级点和失败路线保存为长程运行时状态。",
+        "highlights": [
+          "固定权重的长程 agentic runtime 与验证门控自演化",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "研究/工程型长程任务目标会在证据推进中改变，纯 dense-score self-improvement 不能处理目标未定义、反馈稀疏和需要人工升级的场景。",
+        "method": "Argus 区分稳定 user intent、operation objective、constraints 与 verification criteria；只有经过角色审查和任务原生验证的 refinement 才进入持久运行时状态。",
+        "experiments": "论文报告七个 GPT-5.5 benchmark arenas，包括 SWE-Bench Pro 约 78% vs Direct Copilot 59%，成熟 wave token 与 workflow time 下降，并记录 verifier recoveries 和 review-loop rescues。",
+        "research_help": "它和当前 Codex/HomePage 自动化经验高度同构：关键不是让模型一次做对，而是把验证、回滚、升级点和失败路线保存为长程运行时状态。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "固定权重的长程 agentic runtime 与验证门控自演化",
+          "water_risk": "中",
+          "value_judgement": "固定权重的长程 agentic runtime 与验证门控自演化",
+          "reason": "Argus 把 Manager、Planner、Engineer、Reviewer 放在持久项目状态上运行，用 verification-gated admission 管理 memory、skill、procedure、verifier、routing 和 rejected routes。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它和当前 Codex/HomePage 自动化经验高度同构：关键不是让模型一次做对，而是把验证、回滚、升级点和失败路线保存为长程运行时状态。",
+        "abstract_zh": "研究/工程型长程任务目标会在证据推进中改变，纯 dense-score self-improvement 不能处理目标未定义、反馈稀疏和需要人工升级的场景。 Argus 区分稳定 user intent、operation objective、constraints 与 verification criteria；只有经过角色审查和任务原生验证的 refinement 才进入持久运行时状态。",
+        "full_summary": "Argus 把 Manager、Planner、Engineer、Reviewer 放在持久项目状态上运行，用 verification-gated admission 管理 memory、skill、procedure、verifier、routing 和 rejected routes。 研究/工程型长程任务目标会在证据推进中改变，纯 dense-score self-improvement 不能处理目标未定义、反馈稀疏和需要人工升级的场景。 Argus 区分稳定 user intent、operation objective、constraints 与 verification criteria；只有经过角色审查和任务原生验证的 refinement 才进入持久运行时状态。 论文报告七个 GPT-5.5 benchmark arenas，包括 SWE-Bench Pro 约 78% vs Direct Copilot 59%，成熟 wave token 与 workflow time 下降，并记录 verifier recoveries 和 review-loop rescues。 Insight：它和当前 Codex/HomePage 自动化经验高度同构：关键不是让模型一次做对，而是把验证、回滚、升级点和失败路线保存为长程运行时状态。",
+        "card_summary": "Argus 把 Manager、Planner、Engineer、Reviewer 放在持久项目状态上运行，用 verification-gated admission 管理 memory、skill、procedure、verifier、routing 和 rejected routes。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "研究/工程型长程任务目标会在证据推进中改变，纯 dense-score self-improvement 不能处理目标未定义、反馈稀疏和需要人工升级的场景。",
+        "method": "Argus 区分稳定 user intent、operation objective、constraints 与 verification criteria；只有经过角色审查和任务原生验证的 refinement 才进入持久运行时状态。",
+        "experiments": "论文报告七个 GPT-5.5 benchmark arenas，包括 SWE-Bench Pro 约 78% vs Direct Copilot 59%，成熟 wave token 与 workflow time 下降，并记录 verifier recoveries 和 review-loop rescues。",
+        "research_help": "它和当前 Codex/HomePage 自动化经验高度同构：关键不是让模型一次做对，而是把验证、回滚、升级点和失败路线保存为长程运行时状态。",
+        "insight": "它和当前 Codex/HomePage 自动化经验高度同构：关键不是让模型一次做对，而是把验证、回滚、升级点和失败路线保存为长程运行时状态。",
+        "abstract_zh": "研究/工程型长程任务目标会在证据推进中改变，纯 dense-score self-improvement 不能处理目标未定义、反馈稀疏和需要人工升级的场景。 Argus 区分稳定 user intent、operation objective、constraints 与 verification criteria；只有经过角色审查和任务原生验证的 refinement 才进入持久运行时状态。",
+        "card_summary": "Argus 把 Manager、Planner、Engineer、Reviewer 放在持久项目状态上运行，用 verification-gated admission 管理 memory、skill、procedure、verifier、routing 和 rejected routes。",
+        "full_summary": "Argus 把 Manager、Planner、Engineer、Reviewer 放在持久项目状态上运行，用 verification-gated admission 管理 memory、skill、procedure、verifier、routing 和 rejected routes。 研究/工程型长程任务目标会在证据推进中改变，纯 dense-score self-improvement 不能处理目标未定义、反馈稀疏和需要人工升级的场景。 Argus 区分稳定 user intent、operation objective、constraints 与 verification criteria；只有经过角色审查和任务原生验证的 refinement 才进入持久运行时状态。 论文报告七个 GPT-5.5 benchmark arenas，包括 SWE-Bench Pro 约 78% vs Direct Copilot 59%，成熟 wave token 与 workflow time 下降，并记录 verifier recoveries 和 review-loop rescues。 Insight：它和当前 Codex/HomePage 自动化经验高度同构：关键不是让模型一次做对，而是把验证、回滚、升级点和失败路线保存为长程运行时状态。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "固定权重的长程 agentic runtime 与验证门控自演化",
+        "value_reason": "它和当前 Codex/HomePage 自动化经验高度同构：关键不是让模型一次做对，而是把验证、回滚、升级点和失败路线保存为长程运行时状态。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.07527v1",
+      "title": "DocAtlas: Long-Document Understanding as Mutable-State Interaction",
+      "summary": "DocAtlas 把长文档 QA 设计成可变文档 harness，让 agent 在 search、reading、note-taking、review 工具之间更新层级树和 note store，而不是只读静态检索结果。",
+      "url": "https://arxiv.org/abs/2608.07527v1",
+      "authors": [
+        "Hongchen Wei",
+        "Yuanzhe Wang",
+        "Bei Liu",
+        "Yifan Yang",
+        "Qi Dai",
+        "Kai Qiu",
+        "Yunsheng Li",
+        "Dongdong Chen",
+        "Chong Luo",
+        "Zhenzhong Chen",
+        "Baining Guo"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-07-21",
+      "updated": "2026-07-21",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 91,
+        "level": "高",
+        "label": "长文档理解转为 mutable-state 信息搜索环境",
+        "water_risk": "中",
+        "value_judgement": "长文档理解转为 mutable-state 信息搜索环境",
+        "reason": "DocAtlas 把长文档 QA 设计成可变文档 harness，让 agent 在 search、reading、note-taking、review 工具之间更新层级树和 note store，而不是只读静态检索结果。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Hongchen Wei",
+          "Yuanzhe Wang",
+          "Bei Liu",
+          "Yifan Yang",
+          "Qi Dai",
+          "Kai Qiu",
+          "Yunsheng Li",
+          "Dongdong Chen",
+          "Chong Luo",
+          "Zhenzhong Chen",
+          "Baining Guo"
+        ],
+        "affiliations": "",
+        "date": "2026-07-21",
+        "paper_url": "https://arxiv.org/abs/2608.07527v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "长文档理解转为 mutable-state 信息搜索环境",
+        "summary": "DocAtlas 把长文档 QA 设计成可变文档 harness，让 agent 在 search、reading、note-taking、review 工具之间更新层级树和 note store，而不是只读静态检索结果。 Insight：这篇把“读文档”变成环境交互和可变状态维护，对 multi-turn state tracking 与 evidence management 很有迁移价值。",
+        "highlights": [
+          "长文档理解转为 mutable-state 信息搜索环境",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长文档问题需要跨页、表格、图和布局组合证据，静态 RAG 很容易丢掉过程中的中间发现，prompt-only agent 又受限于固定上下文和冻结行为。",
+        "method": "系统暴露搜索、阅读、记笔记和回顾工具，并在 episode 内更新检索状态与工作记忆；同一 harness 可用于大 VLM 推理，也可给小 VLM 做端到端 RL。",
+        "experiments": "作者报告 GPT-5.4 在 MMLongBench-Doc 达 71.4%，超过 65.8% human-expert reference；Qwen3.5-4B 在 DocAtlas 环境 RL 后从 54.4% 提到 63.7%。",
+        "research_help": "这篇把“读文档”变成环境交互和可变状态维护，对 multi-turn state tracking 与 evidence management 很有迁移价值。",
+        "recommendation": {
+          "score": 91,
+          "level": "高",
+          "label": "长文档理解转为 mutable-state 信息搜索环境",
+          "water_risk": "中",
+          "value_judgement": "长文档理解转为 mutable-state 信息搜索环境",
+          "reason": "DocAtlas 把长文档 QA 设计成可变文档 harness，让 agent 在 search、reading、note-taking、review 工具之间更新层级树和 note store，而不是只读静态检索结果。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇把“读文档”变成环境交互和可变状态维护，对 multi-turn state tracking 与 evidence management 很有迁移价值。",
+        "abstract_zh": "长文档问题需要跨页、表格、图和布局组合证据，静态 RAG 很容易丢掉过程中的中间发现，prompt-only agent 又受限于固定上下文和冻结行为。 系统暴露搜索、阅读、记笔记和回顾工具，并在 episode 内更新检索状态与工作记忆；同一 harness 可用于大 VLM 推理，也可给小 VLM 做端到端 RL。",
+        "full_summary": "DocAtlas 把长文档 QA 设计成可变文档 harness，让 agent 在 search、reading、note-taking、review 工具之间更新层级树和 note store，而不是只读静态检索结果。 长文档问题需要跨页、表格、图和布局组合证据，静态 RAG 很容易丢掉过程中的中间发现，prompt-only agent 又受限于固定上下文和冻结行为。 系统暴露搜索、阅读、记笔记和回顾工具，并在 episode 内更新检索状态与工作记忆；同一 harness 可用于大 VLM 推理，也可给小 VLM 做端到端 RL。 作者报告 GPT-5.4 在 MMLongBench-Doc 达 71.4%，超过 65.8% human-expert reference；Qwen3.5-4B 在 DocAtlas 环境 RL 后从 54.4% 提到 63.7%。 Insight：这篇把“读文档”变成环境交互和可变状态维护，对 multi-turn state tracking 与 evidence management 很有迁移价值。",
+        "card_summary": "DocAtlas 把长文档 QA 设计成可变文档 harness，让 agent 在 search、reading、note-taking、review 工具之间更新层级树和 note store，而不是只读静态检索结果。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "长文档问题需要跨页、表格、图和布局组合证据，静态 RAG 很容易丢掉过程中的中间发现，prompt-only agent 又受限于固定上下文和冻结行为。",
+        "method": "系统暴露搜索、阅读、记笔记和回顾工具，并在 episode 内更新检索状态与工作记忆；同一 harness 可用于大 VLM 推理，也可给小 VLM 做端到端 RL。",
+        "experiments": "作者报告 GPT-5.4 在 MMLongBench-Doc 达 71.4%，超过 65.8% human-expert reference；Qwen3.5-4B 在 DocAtlas 环境 RL 后从 54.4% 提到 63.7%。",
+        "research_help": "这篇把“读文档”变成环境交互和可变状态维护，对 multi-turn state tracking 与 evidence management 很有迁移价值。",
+        "insight": "这篇把“读文档”变成环境交互和可变状态维护，对 multi-turn state tracking 与 evidence management 很有迁移价值。",
+        "abstract_zh": "长文档问题需要跨页、表格、图和布局组合证据，静态 RAG 很容易丢掉过程中的中间发现，prompt-only agent 又受限于固定上下文和冻结行为。 系统暴露搜索、阅读、记笔记和回顾工具，并在 episode 内更新检索状态与工作记忆；同一 harness 可用于大 VLM 推理，也可给小 VLM 做端到端 RL。",
+        "card_summary": "DocAtlas 把长文档 QA 设计成可变文档 harness，让 agent 在 search、reading、note-taking、review 工具之间更新层级树和 note store，而不是只读静态检索结果。",
+        "full_summary": "DocAtlas 把长文档 QA 设计成可变文档 harness，让 agent 在 search、reading、note-taking、review 工具之间更新层级树和 note store，而不是只读静态检索结果。 长文档问题需要跨页、表格、图和布局组合证据，静态 RAG 很容易丢掉过程中的中间发现，prompt-only agent 又受限于固定上下文和冻结行为。 系统暴露搜索、阅读、记笔记和回顾工具，并在 episode 内更新检索状态与工作记忆；同一 harness 可用于大 VLM 推理，也可给小 VLM 做端到端 RL。 作者报告 GPT-5.4 在 MMLongBench-Doc 达 71.4%，超过 65.8% human-expert reference；Qwen3.5-4B 在 DocAtlas 环境 RL 后从 54.4% 提到 63.7%。 Insight：这篇把“读文档”变成环境交互和可变状态维护，对 multi-turn state tracking 与 evidence management 很有迁移价值。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "长文档理解转为 mutable-state 信息搜索环境",
+        "value_reason": "这篇把“读文档”变成环境交互和可变状态维护，对 multi-turn state tracking 与 evidence management 很有迁移价值。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.09555v1",
+      "title": "Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents",
+      "summary": "BCSD 用增强技能视图和裁剪技能视图为同一 trajectory 提供互补 token-level 信号，再重标定 RL advantage，训练 agent 更好地使用外部自然语言 skill。",
+      "url": "https://arxiv.org/abs/2608.09555v1",
+      "authors": [
+        "Tianjun Pan",
+        "Yuan Li",
+        "Hongda Wang",
+        "Linbo Jin",
+        "Mengfei Song",
+        "Lei Gao",
+        "Qiming Shi",
+        "Shaokang Fu",
+        "Jiarong Zhao",
+        "Chengyu Wang",
+        "Chengfu Huo"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-10",
+      "updated": "2026-08-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 90,
+        "level": "高",
+        "label": "技能型 LLM agent 的双向上下文自蒸馏 RL",
+        "water_risk": "低",
+        "value_judgement": "技能型 LLM agent 的双向上下文自蒸馏 RL",
+        "reason": "BCSD 用增强技能视图和裁剪技能视图为同一 trajectory 提供互补 token-level 信号，再重标定 RL advantage，训练 agent 更好地使用外部自然语言 skill。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Tianjun Pan",
+          "Yuan Li",
+          "Hongda Wang",
+          "Linbo Jin",
+          "Mengfei Song",
+          "Lei Gao",
+          "Qiming Shi",
+          "Shaokang Fu",
+          "Jiarong Zhao",
+          "Chengyu Wang",
+          "Chengfu Huo"
+        ],
+        "affiliations": "",
+        "date": "2026-08-10",
+        "paper_url": "https://arxiv.org/abs/2608.09555v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "技能型 LLM agent 的双向上下文自蒸馏 RL",
+        "summary": "BCSD 用增强技能视图和裁剪技能视图为同一 trajectory 提供互补 token-level 信号，再重标定 RL advantage，训练 agent 更好地使用外部自然语言 skill。 Insight：如果你关心 Codex skill / agent procedure 如何进入 policy，这篇比单纯“进化 skill 文本”更接近训练机制。",
+        "highlights": [
+          "技能型 LLM agent 的双向上下文自蒸馏 RL",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "外部 skill 是否有用不只取决于 skill 质量，还取决于 policy 能不能把显式 guidance 翻译成正确动作；task-level reward 对这种能力监督太粗。",
+        "method": "增强视图加入 Meta-Skill，高层指导模型如何使用 skill；裁剪视图去掉泛化 guidance，突出 task-specific skill，两者的自蒸馏差异共同缩放 RL 更新。",
+        "experiments": "论文在 ALFWorld 和 WebShop 上报告跨模型规模最强总体性能，消融验证 augmented/reduced 两个上下文视图互补。",
+        "research_help": "如果你关心 Codex skill / agent procedure 如何进入 policy，这篇比单纯“进化 skill 文本”更接近训练机制。",
+        "recommendation": {
+          "score": 90,
+          "level": "高",
+          "label": "技能型 LLM agent 的双向上下文自蒸馏 RL",
+          "water_risk": "低",
+          "value_judgement": "技能型 LLM agent 的双向上下文自蒸馏 RL",
+          "reason": "BCSD 用增强技能视图和裁剪技能视图为同一 trajectory 提供互补 token-level 信号，再重标定 RL advantage，训练 agent 更好地使用外部自然语言 skill。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "如果你关心 Codex skill / agent procedure 如何进入 policy，这篇比单纯“进化 skill 文本”更接近训练机制。",
+        "abstract_zh": "外部 skill 是否有用不只取决于 skill 质量，还取决于 policy 能不能把显式 guidance 翻译成正确动作；task-level reward 对这种能力监督太粗。 增强视图加入 Meta-Skill，高层指导模型如何使用 skill；裁剪视图去掉泛化 guidance，突出 task-specific skill，两者的自蒸馏差异共同缩放 RL 更新。",
+        "full_summary": "BCSD 用增强技能视图和裁剪技能视图为同一 trajectory 提供互补 token-level 信号，再重标定 RL advantage，训练 agent 更好地使用外部自然语言 skill。 外部 skill 是否有用不只取决于 skill 质量，还取决于 policy 能不能把显式 guidance 翻译成正确动作；task-level reward 对这种能力监督太粗。 增强视图加入 Meta-Skill，高层指导模型如何使用 skill；裁剪视图去掉泛化 guidance，突出 task-specific skill，两者的自蒸馏差异共同缩放 RL 更新。 论文在 ALFWorld 和 WebShop 上报告跨模型规模最强总体性能，消融验证 augmented/reduced 两个上下文视图互补。 Insight：如果你关心 Codex skill / agent procedure 如何进入 policy，这篇比单纯“进化 skill 文本”更接近训练机制。",
+        "card_summary": "BCSD 用增强技能视图和裁剪技能视图为同一 trajectory 提供互补 token-level 信号，再重标定 RL advantage，训练 agent 更好地使用外部自然语言 skill。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "外部 skill 是否有用不只取决于 skill 质量，还取决于 policy 能不能把显式 guidance 翻译成正确动作；task-level reward 对这种能力监督太粗。",
+        "method": "增强视图加入 Meta-Skill，高层指导模型如何使用 skill；裁剪视图去掉泛化 guidance，突出 task-specific skill，两者的自蒸馏差异共同缩放 RL 更新。",
+        "experiments": "论文在 ALFWorld 和 WebShop 上报告跨模型规模最强总体性能，消融验证 augmented/reduced 两个上下文视图互补。",
+        "research_help": "如果你关心 Codex skill / agent procedure 如何进入 policy，这篇比单纯“进化 skill 文本”更接近训练机制。",
+        "insight": "如果你关心 Codex skill / agent procedure 如何进入 policy，这篇比单纯“进化 skill 文本”更接近训练机制。",
+        "abstract_zh": "外部 skill 是否有用不只取决于 skill 质量，还取决于 policy 能不能把显式 guidance 翻译成正确动作；task-level reward 对这种能力监督太粗。 增强视图加入 Meta-Skill，高层指导模型如何使用 skill；裁剪视图去掉泛化 guidance，突出 task-specific skill，两者的自蒸馏差异共同缩放 RL 更新。",
+        "card_summary": "BCSD 用增强技能视图和裁剪技能视图为同一 trajectory 提供互补 token-level 信号，再重标定 RL advantage，训练 agent 更好地使用外部自然语言 skill。",
+        "full_summary": "BCSD 用增强技能视图和裁剪技能视图为同一 trajectory 提供互补 token-level 信号，再重标定 RL advantage，训练 agent 更好地使用外部自然语言 skill。 外部 skill 是否有用不只取决于 skill 质量，还取决于 policy 能不能把显式 guidance 翻译成正确动作；task-level reward 对这种能力监督太粗。 增强视图加入 Meta-Skill，高层指导模型如何使用 skill；裁剪视图去掉泛化 guidance，突出 task-specific skill，两者的自蒸馏差异共同缩放 RL 更新。 论文在 ALFWorld 和 WebShop 上报告跨模型规模最强总体性能，消融验证 augmented/reduced 两个上下文视图互补。 Insight：如果你关心 Codex skill / agent procedure 如何进入 policy，这篇比单纯“进化 skill 文本”更接近训练机制。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "技能型 LLM agent 的双向上下文自蒸馏 RL",
+        "value_reason": "如果你关心 Codex skill / agent procedure 如何进入 policy，这篇比单纯“进化 skill 文本”更接近训练机制。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.09096v2",
+      "title": "Evo-Bench: Can Language Models Improve Agent Harness?",
+      "summary": "Evo-Bench 专门评估 LLM 自主优化 agent harness 的能力，覆盖 Search、Office、General 三类 agent 任务，并用 harness-sensitive 构造避免只测 base model 能力。",
+      "url": "https://arxiv.org/abs/2608.09096v2",
+      "authors": [
+        "Lisheng Huang",
+        "Chen Yang",
+        "Hao Zhou",
+        "Huatong Song",
+        "Zongchao Chen",
+        "Ran Le",
+        "Yang Song",
+        "Wayne Xin Zhao",
+        "Tao Zhang"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-10",
+      "updated": "2026-08-11",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 89,
+        "level": "高",
+        "label": "评测模型能否自主改进 agent harness",
+        "water_risk": "中",
+        "value_judgement": "评测模型能否自主改进 agent harness",
+        "reason": "Evo-Bench 专门评估 LLM 自主优化 agent harness 的能力，覆盖 Search、Office、General 三类 agent 任务，并用 harness-sensitive 构造避免只测 base model 能力。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Lisheng Huang",
+          "Chen Yang",
+          "Hao Zhou",
+          "Huatong Song",
+          "Zongchao Chen",
+          "Ran Le",
+          "Yang Song",
+          "Wayne Xin Zhao",
+          "Tao Zhang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.09096v2",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "评测模型能否自主改进 agent harness",
+        "summary": "Evo-Bench 专门评估 LLM 自主优化 agent harness 的能力，覆盖 Search、Office、General 三类 agent 任务，并用 harness-sensitive 构造避免只测 base model 能力。 Insight：这篇对 agent planning 研究很有用：它把“能不能改 prompt/harness”从 anecdote 变成可测能力。",
+        "highlights": [
+          "评测模型能否自主改进 agent harness",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "现有 agent benchmark 多测静态任务解决，不知道模型是否能迭代改自己的执行框架，也容易把 harness 改善和模型能力混在一起。",
+        "method": "基准先用辅助任务生成多样 evolved harness，再选择对 harness 变化敏感且难度分层的任务，形成验证/测试套件来隔离 harness evolution 能力。",
+        "experiments": "九个 frontier/open-weight 模型评测显示 top models 可获得最高 16.6 分绝对提升，Search/General 表现较好，Office 类高特定流程任务仍困难，并发现早期饱和等时间异常。",
+        "research_help": "这篇对 agent planning 研究很有用：它把“能不能改 prompt/harness”从 anecdote 变成可测能力。",
+        "recommendation": {
+          "score": 89,
+          "level": "高",
+          "label": "评测模型能否自主改进 agent harness",
+          "water_risk": "中",
+          "value_judgement": "评测模型能否自主改进 agent harness",
+          "reason": "Evo-Bench 专门评估 LLM 自主优化 agent harness 的能力，覆盖 Search、Office、General 三类 agent 任务，并用 harness-sensitive 构造避免只测 base model 能力。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇对 agent planning 研究很有用：它把“能不能改 prompt/harness”从 anecdote 变成可测能力。",
+        "abstract_zh": "现有 agent benchmark 多测静态任务解决，不知道模型是否能迭代改自己的执行框架，也容易把 harness 改善和模型能力混在一起。 基准先用辅助任务生成多样 evolved harness，再选择对 harness 变化敏感且难度分层的任务，形成验证/测试套件来隔离 harness evolution 能力。",
+        "full_summary": "Evo-Bench 专门评估 LLM 自主优化 agent harness 的能力，覆盖 Search、Office、General 三类 agent 任务，并用 harness-sensitive 构造避免只测 base model 能力。 现有 agent benchmark 多测静态任务解决，不知道模型是否能迭代改自己的执行框架，也容易把 harness 改善和模型能力混在一起。 基准先用辅助任务生成多样 evolved harness，再选择对 harness 变化敏感且难度分层的任务，形成验证/测试套件来隔离 harness evolution 能力。 九个 frontier/open-weight 模型评测显示 top models 可获得最高 16.6 分绝对提升，Search/General 表现较好，Office 类高特定流程任务仍困难，并发现早期饱和等时间异常。 Insight：这篇对 agent planning 研究很有用：它把“能不能改 prompt/harness”从 anecdote 变成可测能力。",
+        "card_summary": "Evo-Bench 专门评估 LLM 自主优化 agent harness 的能力，覆盖 Search、Office、General 三类 agent 任务，并用 harness-sensitive 构造避免只测 base model 能力。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "现有 agent benchmark 多测静态任务解决，不知道模型是否能迭代改自己的执行框架，也容易把 harness 改善和模型能力混在一起。",
+        "method": "基准先用辅助任务生成多样 evolved harness，再选择对 harness 变化敏感且难度分层的任务，形成验证/测试套件来隔离 harness evolution 能力。",
+        "experiments": "九个 frontier/open-weight 模型评测显示 top models 可获得最高 16.6 分绝对提升，Search/General 表现较好，Office 类高特定流程任务仍困难，并发现早期饱和等时间异常。",
+        "research_help": "这篇对 agent planning 研究很有用：它把“能不能改 prompt/harness”从 anecdote 变成可测能力。",
+        "insight": "这篇对 agent planning 研究很有用：它把“能不能改 prompt/harness”从 anecdote 变成可测能力。",
+        "abstract_zh": "现有 agent benchmark 多测静态任务解决，不知道模型是否能迭代改自己的执行框架，也容易把 harness 改善和模型能力混在一起。 基准先用辅助任务生成多样 evolved harness，再选择对 harness 变化敏感且难度分层的任务，形成验证/测试套件来隔离 harness evolution 能力。",
+        "card_summary": "Evo-Bench 专门评估 LLM 自主优化 agent harness 的能力，覆盖 Search、Office、General 三类 agent 任务，并用 harness-sensitive 构造避免只测 base model 能力。",
+        "full_summary": "Evo-Bench 专门评估 LLM 自主优化 agent harness 的能力，覆盖 Search、Office、General 三类 agent 任务，并用 harness-sensitive 构造避免只测 base model 能力。 现有 agent benchmark 多测静态任务解决，不知道模型是否能迭代改自己的执行框架，也容易把 harness 改善和模型能力混在一起。 基准先用辅助任务生成多样 evolved harness，再选择对 harness 变化敏感且难度分层的任务，形成验证/测试套件来隔离 harness evolution 能力。 九个 frontier/open-weight 模型评测显示 top models 可获得最高 16.6 分绝对提升，Search/General 表现较好，Office 类高特定流程任务仍困难，并发现早期饱和等时间异常。 Insight：这篇对 agent planning 研究很有用：它把“能不能改 prompt/harness”从 anecdote 变成可测能力。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "评测模型能否自主改进 agent harness",
+        "value_reason": "这篇对 agent planning 研究很有用：它把“能不能改 prompt/harness”从 anecdote 变成可测能力。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.09153v1",
+      "title": "TRACE: TRajectory Attribution for Automated Context Engineering",
+      "summary": "TRACE 挖掘历史 agent 轨迹里的用户纠正、重述、放弃等 dissatisfaction signals，对 prompt、KB、tool description 和 skill 等 context source 做 root-cause attribution 与修复。",
+      "url": "https://arxiv.org/abs/2608.09153v1",
+      "authors": [
+        "Yikai Zhao",
+        "Pradeep Kumar Misra",
+        "Saurabh Pandey"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-10",
+      "updated": "2026-08-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 88,
+        "level": "高",
+        "label": "从生产 agent 轨迹归因并修复 context 层故障",
+        "water_risk": "中",
+        "value_judgement": "从生产 agent 轨迹归因并修复 context 层故障",
+        "reason": "TRACE 挖掘历史 agent 轨迹里的用户纠正、重述、放弃等 dissatisfaction signals，对 prompt、KB、tool description 和 skill 等 context source 做 root-cause attribution 与修复。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yikai Zhao",
+          "Pradeep Kumar Misra",
+          "Saurabh Pandey"
+        ],
+        "affiliations": "",
+        "date": "2026-08-10",
+        "paper_url": "https://arxiv.org/abs/2608.09153v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "从生产 agent 轨迹归因并修复 context 层故障",
+        "summary": "TRACE 挖掘历史 agent 轨迹里的用户纠正、重述、放弃等 dissatisfaction signals，对 prompt、KB、tool description 和 skill 等 context source 做 root-cause attribution 与修复。 Insight：这篇适合放进“long-horizon reliability”工具箱：它把失败轨迹变成 context 工程的监督信号，而不是只做离线错误分类。",
+        "highlights": [
+          "从生产 agent 轨迹归因并修复 context 层故障",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "生产 agent 失败常来自 context 源错误或缺口，但人工看日志扩展性差，且 fine-tuning 不能快速修复工具说明、KB 或 procedural skill。",
+        "method": "TRACE 将 trajectory mining、跨组件 causal attribution、context source exploratory verification 和自动 CREATE/UPDATE 修复串成反馈回路。",
+        "experiments": "在 60 条 dissatisfaction traces、最多 16 个执行节点的 benchmark 上，论文报告 72.7% root cause attribution、96% operation accuracy 和 82% end-to-end fix effectiveness。",
+        "research_help": "这篇适合放进“long-horizon reliability”工具箱：它把失败轨迹变成 context 工程的监督信号，而不是只做离线错误分类。",
+        "recommendation": {
+          "score": 88,
+          "level": "高",
+          "label": "从生产 agent 轨迹归因并修复 context 层故障",
+          "water_risk": "中",
+          "value_judgement": "从生产 agent 轨迹归因并修复 context 层故障",
+          "reason": "TRACE 挖掘历史 agent 轨迹里的用户纠正、重述、放弃等 dissatisfaction signals，对 prompt、KB、tool description 和 skill 等 context source 做 root-cause attribution 与修复。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇适合放进“long-horizon reliability”工具箱：它把失败轨迹变成 context 工程的监督信号，而不是只做离线错误分类。",
+        "abstract_zh": "生产 agent 失败常来自 context 源错误或缺口，但人工看日志扩展性差，且 fine-tuning 不能快速修复工具说明、KB 或 procedural skill。 TRACE 将 trajectory mining、跨组件 causal attribution、context source exploratory verification 和自动 CREATE/UPDATE 修复串成反馈回路。",
+        "full_summary": "TRACE 挖掘历史 agent 轨迹里的用户纠正、重述、放弃等 dissatisfaction signals，对 prompt、KB、tool description 和 skill 等 context source 做 root-cause attribution 与修复。 生产 agent 失败常来自 context 源错误或缺口，但人工看日志扩展性差，且 fine-tuning 不能快速修复工具说明、KB 或 procedural skill。 TRACE 将 trajectory mining、跨组件 causal attribution、context source exploratory verification 和自动 CREATE/UPDATE 修复串成反馈回路。 在 60 条 dissatisfaction traces、最多 16 个执行节点的 benchmark 上，论文报告 72.7% root cause attribution、96% operation accuracy 和 82% end-to-end fix effectiveness。 Insight：这篇适合放进“long-horizon reliability”工具箱：它把失败轨迹变成 context 工程的监督信号，而不是只做离线错误分类。",
+        "card_summary": "TRACE 挖掘历史 agent 轨迹里的用户纠正、重述、放弃等 dissatisfaction signals，对 prompt、KB、tool description 和 skill 等 context source 做 root-cause attribution 与修复。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "生产 agent 失败常来自 context 源错误或缺口，但人工看日志扩展性差，且 fine-tuning 不能快速修复工具说明、KB 或 procedural skill。",
+        "method": "TRACE 将 trajectory mining、跨组件 causal attribution、context source exploratory verification 和自动 CREATE/UPDATE 修复串成反馈回路。",
+        "experiments": "在 60 条 dissatisfaction traces、最多 16 个执行节点的 benchmark 上，论文报告 72.7% root cause attribution、96% operation accuracy 和 82% end-to-end fix effectiveness。",
+        "research_help": "这篇适合放进“long-horizon reliability”工具箱：它把失败轨迹变成 context 工程的监督信号，而不是只做离线错误分类。",
+        "insight": "这篇适合放进“long-horizon reliability”工具箱：它把失败轨迹变成 context 工程的监督信号，而不是只做离线错误分类。",
+        "abstract_zh": "生产 agent 失败常来自 context 源错误或缺口，但人工看日志扩展性差，且 fine-tuning 不能快速修复工具说明、KB 或 procedural skill。 TRACE 将 trajectory mining、跨组件 causal attribution、context source exploratory verification 和自动 CREATE/UPDATE 修复串成反馈回路。",
+        "card_summary": "TRACE 挖掘历史 agent 轨迹里的用户纠正、重述、放弃等 dissatisfaction signals，对 prompt、KB、tool description 和 skill 等 context source 做 root-cause attribution 与修复。",
+        "full_summary": "TRACE 挖掘历史 agent 轨迹里的用户纠正、重述、放弃等 dissatisfaction signals，对 prompt、KB、tool description 和 skill 等 context source 做 root-cause attribution 与修复。 生产 agent 失败常来自 context 源错误或缺口，但人工看日志扩展性差，且 fine-tuning 不能快速修复工具说明、KB 或 procedural skill。 TRACE 将 trajectory mining、跨组件 causal attribution、context source exploratory verification 和自动 CREATE/UPDATE 修复串成反馈回路。 在 60 条 dissatisfaction traces、最多 16 个执行节点的 benchmark 上，论文报告 72.7% root cause attribution、96% operation accuracy 和 82% end-to-end fix effectiveness。 Insight：这篇适合放进“long-horizon reliability”工具箱：它把失败轨迹变成 context 工程的监督信号，而不是只做离线错误分类。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "从生产 agent 轨迹归因并修复 context 层故障",
+        "value_reason": "这篇适合放进“long-horizon reliability”工具箱：它把失败轨迹变成 context 工程的监督信号，而不是只做离线错误分类。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.07959v1",
+      "title": "SCOUT: Self-Checking and Recovery-Aware Tool-Thought Agents for Ultra-Long Egocentric Video Reasoning",
+      "summary": "SCOUT 针对小时/天级 egocentric video 推理，给 Chain-of-Tool-Thought agent 加入中间工具观察自检、探索/利用切换和不确定性优先的 UPS-GRPO。",
+      "url": "https://arxiv.org/abs/2608.07959v1",
+      "authors": [
+        "Keyang Zhong",
+        "Kuo Wang",
+        "Peng Liu",
+        "Quanlong Zheng",
+        "Junlin Xie",
+        "Zhijia Liang",
+        "Yanhao Zhang",
+        "Guanbin Li"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-08",
+      "updated": "2026-08-08",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 86,
+        "level": "中",
+        "label": "带自检恢复的超长视频 Tool-Thought agent",
+        "water_risk": "中",
+        "value_judgement": "带自检恢复的超长视频 Tool-Thought agent",
+        "reason": "SCOUT 针对小时/天级 egocentric video 推理，给 Chain-of-Tool-Thought agent 加入中间工具观察自检、探索/利用切换和不确定性优先的 UPS-GRPO。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Keyang Zhong",
+          "Kuo Wang",
+          "Peng Liu",
+          "Quanlong Zheng",
+          "Junlin Xie",
+          "Zhijia Liang",
+          "Yanhao Zhang",
+          "Guanbin Li"
+        ],
+        "affiliations": "",
+        "date": "2026-08-08",
+        "paper_url": "https://arxiv.org/abs/2608.07959v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "带自检恢复的超长视频 Tool-Thought agent",
+        "summary": "SCOUT 针对小时/天级 egocentric video 推理，给 Chain-of-Tool-Thought agent 加入中间工具观察自检、探索/利用切换和不确定性优先的 UPS-GRPO。 Insight：虽然是视频域，但自检、恢复和工具轨迹 credit 分配机制对一般长程 tool agent 有直接借鉴。",
+        "highlights": [
+          "带自检恢复的超长视频 Tool-Thought agent",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "超长视频 agent 容易在早期 zoom-in 错误后沿错误证据传播，普通 outcome reward 也难以监督多轮工具调用过程。",
+        "method": "框架让 agent 评估中间 tool observation，在 zoom-in 和 region switching 间动态切换；训练上用不确定性优先采样和 turn-level advantage decomposition 结合 outcome reward 与 temporal alignment reward。",
+        "experiments": "作者报告 SCOUT 在 ultra-long egocentric benchmarks 上达到 SOTA，同时在较短 long-video 设置保持竞争力。",
+        "research_help": "虽然是视频域，但自检、恢复和工具轨迹 credit 分配机制对一般长程 tool agent 有直接借鉴。",
+        "recommendation": {
+          "score": 86,
+          "level": "中",
+          "label": "带自检恢复的超长视频 Tool-Thought agent",
+          "water_risk": "中",
+          "value_judgement": "带自检恢复的超长视频 Tool-Thought agent",
+          "reason": "SCOUT 针对小时/天级 egocentric video 推理，给 Chain-of-Tool-Thought agent 加入中间工具观察自检、探索/利用切换和不确定性优先的 UPS-GRPO。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "虽然是视频域，但自检、恢复和工具轨迹 credit 分配机制对一般长程 tool agent 有直接借鉴。",
+        "abstract_zh": "超长视频 agent 容易在早期 zoom-in 错误后沿错误证据传播，普通 outcome reward 也难以监督多轮工具调用过程。 框架让 agent 评估中间 tool observation，在 zoom-in 和 region switching 间动态切换；训练上用不确定性优先采样和 turn-level advantage decomposition 结合 outcome reward 与 temporal alignment reward。",
+        "full_summary": "SCOUT 针对小时/天级 egocentric video 推理，给 Chain-of-Tool-Thought agent 加入中间工具观察自检、探索/利用切换和不确定性优先的 UPS-GRPO。 超长视频 agent 容易在早期 zoom-in 错误后沿错误证据传播，普通 outcome reward 也难以监督多轮工具调用过程。 框架让 agent 评估中间 tool observation，在 zoom-in 和 region switching 间动态切换；训练上用不确定性优先采样和 turn-level advantage decomposition 结合 outcome reward 与 temporal alignment reward。 作者报告 SCOUT 在 ultra-long egocentric benchmarks 上达到 SOTA，同时在较短 long-video 设置保持竞争力。 Insight：虽然是视频域，但自检、恢复和工具轨迹 credit 分配机制对一般长程 tool agent 有直接借鉴。",
+        "card_summary": "SCOUT 针对小时/天级 egocentric video 推理，给 Chain-of-Tool-Thought agent 加入中间工具观察自检、探索/利用切换和不确定性优先的 UPS-GRPO。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "超长视频 agent 容易在早期 zoom-in 错误后沿错误证据传播，普通 outcome reward 也难以监督多轮工具调用过程。",
+        "method": "框架让 agent 评估中间 tool observation，在 zoom-in 和 region switching 间动态切换；训练上用不确定性优先采样和 turn-level advantage decomposition 结合 outcome reward 与 temporal alignment reward。",
+        "experiments": "作者报告 SCOUT 在 ultra-long egocentric benchmarks 上达到 SOTA，同时在较短 long-video 设置保持竞争力。",
+        "research_help": "虽然是视频域，但自检、恢复和工具轨迹 credit 分配机制对一般长程 tool agent 有直接借鉴。",
+        "insight": "虽然是视频域，但自检、恢复和工具轨迹 credit 分配机制对一般长程 tool agent 有直接借鉴。",
+        "abstract_zh": "超长视频 agent 容易在早期 zoom-in 错误后沿错误证据传播，普通 outcome reward 也难以监督多轮工具调用过程。 框架让 agent 评估中间 tool observation，在 zoom-in 和 region switching 间动态切换；训练上用不确定性优先采样和 turn-level advantage decomposition 结合 outcome reward 与 temporal alignment reward。",
+        "card_summary": "SCOUT 针对小时/天级 egocentric video 推理，给 Chain-of-Tool-Thought agent 加入中间工具观察自检、探索/利用切换和不确定性优先的 UPS-GRPO。",
+        "full_summary": "SCOUT 针对小时/天级 egocentric video 推理，给 Chain-of-Tool-Thought agent 加入中间工具观察自检、探索/利用切换和不确定性优先的 UPS-GRPO。 超长视频 agent 容易在早期 zoom-in 错误后沿错误证据传播，普通 outcome reward 也难以监督多轮工具调用过程。 框架让 agent 评估中间 tool observation，在 zoom-in 和 region switching 间动态切换；训练上用不确定性优先采样和 turn-level advantage decomposition 结合 outcome reward 与 temporal alignment reward。 作者报告 SCOUT 在 ultra-long egocentric benchmarks 上达到 SOTA，同时在较短 long-video 设置保持竞争力。 Insight：虽然是视频域，但自检、恢复和工具轨迹 credit 分配机制对一般长程 tool agent 有直接借鉴。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "带自检恢复的超长视频 Tool-Thought agent",
+        "value_reason": "虽然是视频域，但自检、恢复和工具轨迹 credit 分配机制对一般长程 tool agent 有直接借鉴。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.08389v1",
+      "title": "Not Worth Another Token: Marginal Value Estimation for Efficient Deep Research Agents",
+      "summary": "Not Worth Another Token 系统比较 deep research agent 在 pre-retrieval、post-retrieval、pre-synthesis 三个阶段做 evidence pruning 的收益，发现剪枝位置比具体打分规则更关键。",
+      "url": "https://arxiv.org/abs/2608.08389v1",
+      "authors": [
+        "Harshitha Kolukuluru",
+        "Reshma Ashok",
+        "Kirat Arora",
+        "Evan William Ciccarelli",
+        "Nischal Ashok Kumar",
+        "Lunyiu Nie",
+        "Franck Dernoncourt",
+        "Samyadeep Basu",
+        "Ryan A. Rossi",
+        "Nedim Lipka"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-09",
+      "updated": "2026-08-09",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR",
+        "cs.MA"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 85,
+        "level": "中",
+        "label": "深度研究 agent 的边际价值剪枝",
+        "water_risk": "低",
+        "value_judgement": "深度研究 agent 的边际价值剪枝",
+        "reason": "Not Worth Another Token 系统比较 deep research agent 在 pre-retrieval、post-retrieval、pre-synthesis 三个阶段做 evidence pruning 的收益，发现剪枝位置比具体打分规则更关键。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Harshitha Kolukuluru",
+          "Reshma Ashok",
+          "Kirat Arora",
+          "Evan William Ciccarelli",
+          "Nischal Ashok Kumar",
+          "Lunyiu Nie",
+          "Franck Dernoncourt",
+          "Samyadeep Basu",
+          "Ryan A. Rossi",
+          "Nedim Lipka"
+        ],
+        "affiliations": "",
+        "date": "2026-08-09",
+        "paper_url": "https://arxiv.org/abs/2608.08389v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "深度研究 agent 的边际价值剪枝",
+        "summary": "Not Worth Another Token 系统比较 deep research agent 在 pre-retrieval、post-retrieval、pre-synthesis 三个阶段做 evidence pruning 的收益，发现剪枝位置比具体打分规则更关键。 Insight：它给长程 research agent 一个很实用的设计结论：先决定在哪里剪，再纠结复杂 value model。",
+        "highlights": [
+          "深度研究 agent 的边际价值剪枝",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程 research agent 迭代检索、聚合和综合时上下文会不断膨胀，额外 evidence 的边际价值下降，带来 token 成本、延迟和噪声。",
+        "method": "论文在 GPT-Researcher pipeline 上比较轻量 heuristic 与 learned value model，固定底层检索/生成以隔离剪枝策略影响。",
+        "experiments": "100 个 query 的实验显示早期剪枝带来最大 end-to-end savings，轻量 heuristic 最多减少 73% token usage 且质量损失很小，后期剪枝主要改善 synthesis context。",
+        "research_help": "它给长程 research agent 一个很实用的设计结论：先决定在哪里剪，再纠结复杂 value model。",
+        "recommendation": {
+          "score": 85,
+          "level": "中",
+          "label": "深度研究 agent 的边际价值剪枝",
+          "water_risk": "低",
+          "value_judgement": "深度研究 agent 的边际价值剪枝",
+          "reason": "Not Worth Another Token 系统比较 deep research agent 在 pre-retrieval、post-retrieval、pre-synthesis 三个阶段做 evidence pruning 的收益，发现剪枝位置比具体打分规则更关键。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它给长程 research agent 一个很实用的设计结论：先决定在哪里剪，再纠结复杂 value model。",
+        "abstract_zh": "长程 research agent 迭代检索、聚合和综合时上下文会不断膨胀，额外 evidence 的边际价值下降，带来 token 成本、延迟和噪声。 论文在 GPT-Researcher pipeline 上比较轻量 heuristic 与 learned value model，固定底层检索/生成以隔离剪枝策略影响。",
+        "full_summary": "Not Worth Another Token 系统比较 deep research agent 在 pre-retrieval、post-retrieval、pre-synthesis 三个阶段做 evidence pruning 的收益，发现剪枝位置比具体打分规则更关键。 长程 research agent 迭代检索、聚合和综合时上下文会不断膨胀，额外 evidence 的边际价值下降，带来 token 成本、延迟和噪声。 论文在 GPT-Researcher pipeline 上比较轻量 heuristic 与 learned value model，固定底层检索/生成以隔离剪枝策略影响。 100 个 query 的实验显示早期剪枝带来最大 end-to-end savings，轻量 heuristic 最多减少 73% token usage 且质量损失很小，后期剪枝主要改善 synthesis context。 Insight：它给长程 research agent 一个很实用的设计结论：先决定在哪里剪，再纠结复杂 value model。",
+        "card_summary": "Not Worth Another Token 系统比较 deep research agent 在 pre-retrieval、post-retrieval、pre-synthesis 三个阶段做 evidence pruning 的收益，发现剪枝位置比具体打分规则更关键。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "长程 research agent 迭代检索、聚合和综合时上下文会不断膨胀，额外 evidence 的边际价值下降，带来 token 成本、延迟和噪声。",
+        "method": "论文在 GPT-Researcher pipeline 上比较轻量 heuristic 与 learned value model，固定底层检索/生成以隔离剪枝策略影响。",
+        "experiments": "100 个 query 的实验显示早期剪枝带来最大 end-to-end savings，轻量 heuristic 最多减少 73% token usage 且质量损失很小，后期剪枝主要改善 synthesis context。",
+        "research_help": "它给长程 research agent 一个很实用的设计结论：先决定在哪里剪，再纠结复杂 value model。",
+        "insight": "它给长程 research agent 一个很实用的设计结论：先决定在哪里剪，再纠结复杂 value model。",
+        "abstract_zh": "长程 research agent 迭代检索、聚合和综合时上下文会不断膨胀，额外 evidence 的边际价值下降，带来 token 成本、延迟和噪声。 论文在 GPT-Researcher pipeline 上比较轻量 heuristic 与 learned value model，固定底层检索/生成以隔离剪枝策略影响。",
+        "card_summary": "Not Worth Another Token 系统比较 deep research agent 在 pre-retrieval、post-retrieval、pre-synthesis 三个阶段做 evidence pruning 的收益，发现剪枝位置比具体打分规则更关键。",
+        "full_summary": "Not Worth Another Token 系统比较 deep research agent 在 pre-retrieval、post-retrieval、pre-synthesis 三个阶段做 evidence pruning 的收益，发现剪枝位置比具体打分规则更关键。 长程 research agent 迭代检索、聚合和综合时上下文会不断膨胀，额外 evidence 的边际价值下降，带来 token 成本、延迟和噪声。 论文在 GPT-Researcher pipeline 上比较轻量 heuristic 与 learned value model，固定底层检索/生成以隔离剪枝策略影响。 100 个 query 的实验显示早期剪枝带来最大 end-to-end savings，轻量 heuristic 最多减少 73% token usage 且质量损失很小，后期剪枝主要改善 synthesis context。 Insight：它给长程 research agent 一个很实用的设计结论：先决定在哪里剪，再纠结复杂 value model。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "深度研究 agent 的边际价值剪枝",
+        "value_reason": "它给长程 research agent 一个很实用的设计结论：先决定在哪里剪，再纠结复杂 value model。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.07855v1",
+      "title": "CommitKV: Lifecycle-Aware KV Cache Compression via Commit Transitions for Multi-Turn Agents",
+      "summary": "CommitKV 在 ReAct 多轮 agent 的工具调用边界前后测量 token page 删除影响，把暂时 dormant 的信息和已经完成作用的信息区分开，再安全回收 KV cache。",
+      "url": "https://arxiv.org/abs/2608.07855v1",
+      "authors": [
+        "Weizhong Huang",
+        "Jinchao Zhang",
+        "Xiawu Zheng"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-08",
+      "updated": "2026-08-08",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 84,
+        "level": "中",
+        "label": "基于 commit transition 的多轮 agent KV 生命周期压缩",
+        "water_risk": "低",
+        "value_judgement": "基于 commit transition 的多轮 agent KV 生命周期压缩",
+        "reason": "CommitKV 在 ReAct 多轮 agent 的工具调用边界前后测量 token page 删除影响，把暂时 dormant 的信息和已经完成作用的信息区分开，再安全回收 KV cache。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Weizhong Huang",
+          "Jinchao Zhang",
+          "Xiawu Zheng"
+        ],
+        "affiliations": "",
+        "date": "2026-08-08",
+        "paper_url": "https://arxiv.org/abs/2608.07855v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "基于 commit transition 的多轮 agent KV 生命周期压缩",
+        "summary": "CommitKV 在 ReAct 多轮 agent 的工具调用边界前后测量 token page 删除影响，把暂时 dormant 的信息和已经完成作用的信息区分开，再安全回收 KV cache。 Insight：这是基础设施论文，但直接针对 multi-turn ReAct 轨迹；对长程 agent 上下文生命周期管理有现实价值。",
+        "highlights": [
+          "基于 commit transition 的多轮 agent KV 生命周期压缩",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "多轮工具 agent 的 reasoning、tool call 和 observation 轨迹会让 KV cache 持续增长；单看当前 attention 低不代表未来不会用到。",
+        "method": "方法把完成的 agent event 切成 token pages，比较 tool-call commit 前和 observation 纳入后的 deletion effect，用 paired measurement 找 high-to-low completion candidates，并用 joint test 控制组合删除影响。",
+        "experiments": "论文在多种 benchmark 上报告降低 memory use、加速端到端推理，并比现有 KV cache compression 方法取得更高 accuracy。",
+        "research_help": "这是基础设施论文，但直接针对 multi-turn ReAct 轨迹；对长程 agent 上下文生命周期管理有现实价值。",
+        "recommendation": {
+          "score": 84,
+          "level": "中",
+          "label": "基于 commit transition 的多轮 agent KV 生命周期压缩",
+          "water_risk": "低",
+          "value_judgement": "基于 commit transition 的多轮 agent KV 生命周期压缩",
+          "reason": "CommitKV 在 ReAct 多轮 agent 的工具调用边界前后测量 token page 删除影响，把暂时 dormant 的信息和已经完成作用的信息区分开，再安全回收 KV cache。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这是基础设施论文，但直接针对 multi-turn ReAct 轨迹；对长程 agent 上下文生命周期管理有现实价值。",
+        "abstract_zh": "多轮工具 agent 的 reasoning、tool call 和 observation 轨迹会让 KV cache 持续增长；单看当前 attention 低不代表未来不会用到。 方法把完成的 agent event 切成 token pages，比较 tool-call commit 前和 observation 纳入后的 deletion effect，用 paired measurement 找 high-to-low completion candidates，并用 joint test 控制组合删除",
+        "full_summary": "CommitKV 在 ReAct 多轮 agent 的工具调用边界前后测量 token page 删除影响，把暂时 dormant 的信息和已经完成作用的信息区分开，再安全回收 KV cache。 多轮工具 agent 的 reasoning、tool call 和 observation 轨迹会让 KV cache 持续增长；单看当前 attention 低不代表未来不会用到。 方法把完成的 agent event 切成 token pages，比较 tool-call commit 前和 observation 纳入后的 deletion effect，用 paired measurement 找 high-to-low completion candidates，并用 joint test 控制组合删除影响。 论文在多种 benchmark 上报告降低 memory use、加速端到端推理，并比现有 KV cache compression 方法取得更高 accuracy。 Insight：这是基础设施论文，但直接针对 multi-turn ReAct 轨迹；对长程 agent 上下文生命周期管理有现实价值。",
+        "card_summary": "CommitKV 在 ReAct 多轮 agent 的工具调用边界前后测量 token page 删除影响，把暂时 dormant 的信息和已经完成作用的信息区分开，再安全回收 KV cache。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "多轮工具 agent 的 reasoning、tool call 和 observation 轨迹会让 KV cache 持续增长；单看当前 attention 低不代表未来不会用到。",
+        "method": "方法把完成的 agent event 切成 token pages，比较 tool-call commit 前和 observation 纳入后的 deletion effect，用 paired measurement 找 high-to-low completion candidates，并用 joint test 控制组合删除影响。",
+        "experiments": "论文在多种 benchmark 上报告降低 memory use、加速端到端推理，并比现有 KV cache compression 方法取得更高 accuracy。",
+        "research_help": "这是基础设施论文，但直接针对 multi-turn ReAct 轨迹；对长程 agent 上下文生命周期管理有现实价值。",
+        "insight": "这是基础设施论文，但直接针对 multi-turn ReAct 轨迹；对长程 agent 上下文生命周期管理有现实价值。",
+        "abstract_zh": "多轮工具 agent 的 reasoning、tool call 和 observation 轨迹会让 KV cache 持续增长；单看当前 attention 低不代表未来不会用到。 方法把完成的 agent event 切成 token pages，比较 tool-call commit 前和 observation 纳入后的 deletion effect，用 paired measurement 找 high-to-low completion candidates，并用 joint test 控制组合删除",
+        "card_summary": "CommitKV 在 ReAct 多轮 agent 的工具调用边界前后测量 token page 删除影响，把暂时 dormant 的信息和已经完成作用的信息区分开，再安全回收 KV cache。",
+        "full_summary": "CommitKV 在 ReAct 多轮 agent 的工具调用边界前后测量 token page 删除影响，把暂时 dormant 的信息和已经完成作用的信息区分开，再安全回收 KV cache。 多轮工具 agent 的 reasoning、tool call 和 observation 轨迹会让 KV cache 持续增长；单看当前 attention 低不代表未来不会用到。 方法把完成的 agent event 切成 token pages，比较 tool-call commit 前和 observation 纳入后的 deletion effect，用 paired measurement 找 high-to-low completion candidates，并用 joint test 控制组合删除影响。 论文在多种 benchmark 上报告降低 memory use、加速端到端推理，并比现有 KV cache compression 方法取得更高 accuracy。 Insight：这是基础设施论文，但直接针对 multi-turn ReAct 轨迹；对长程 agent 上下文生命周期管理有现实价值。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "基于 commit transition 的多轮 agent KV 生命周期压缩",
+        "value_reason": "这是基础设施论文，但直接针对 multi-turn ReAct 轨迹；对长程 agent 上下文生命周期管理有现实价值。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.08621v1",
+      "title": "Business Arena: Benchmarking LLM Agents in a Realistic Marketplace",
+      "summary": "Business Arena 让 AI agent 在模拟跨境商店中长期买卖、定价、服务和合规，用利润、技能指标和 action attribution 评估端到端经营能力。",
+      "url": "https://arxiv.org/abs/2608.08621v1",
+      "authors": [
+        "Yijun Pan",
+        "Yukun Lian",
+        "Kunyu Shi",
+        "Junbo Li",
+        "Hongwei Xue",
+        "Sicong Xie",
+        "Guannan Zhang",
+        "Xiaoying Xing"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-09",
+      "updated": "2026-08-09",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 82,
+        "level": "中",
+        "label": "真实市场模拟中的长程商业 agent benchmark",
+        "water_risk": "低",
+        "value_judgement": "真实市场模拟中的长程商业 agent benchmark",
+        "reason": "Business Arena 让 AI agent 在模拟跨境商店中长期买卖、定价、服务和合规，用利润、技能指标和 action attribution 评估端到端经营能力。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yijun Pan",
+          "Yukun Lian",
+          "Kunyu Shi",
+          "Junbo Li",
+          "Hongwei Xue",
+          "Sicong Xie",
+          "Guannan Zhang",
+          "Xiaoying Xing"
+        ],
+        "affiliations": "",
+        "date": "2026-08-09",
+        "paper_url": "https://arxiv.org/abs/2608.08621v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "真实市场模拟中的长程商业 agent benchmark",
+        "summary": "Business Arena 让 AI agent 在模拟跨境商店中长期买卖、定价、服务和合规，用利润、技能指标和 action attribution 评估端到端经营能力。 Insight：它是领域 benchmark，但长程、延迟反馈、可归因 action 价值很适合测试 agent planning 和执行可靠性。",
+        "highlights": [
+          "真实市场模拟中的长程商业 agent benchmark",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "商业运营要求从部分信号推断机会、在延迟反馈下投入资金并适应市场变化，现有 agent benchmark 很少覆盖这种耦合长程任务。",
+        "method": "环境基于 Alibaba.com sourcing 数据和校准市场条件，最终 profit 之外还设计 human-designed strategies、skill-level metrics 和 action-level gains/losses attribution。",
+        "experiments": "15 个 frontier models 的均值 final net worth 相差九倍，最佳模型仍落后人工策略；skill analysis 区分出高利润卖家、高周转批发商和客服型行为。",
+        "research_help": "它是领域 benchmark，但长程、延迟反馈、可归因 action 价值很适合测试 agent planning 和执行可靠性。",
+        "recommendation": {
+          "score": 82,
+          "level": "中",
+          "label": "真实市场模拟中的长程商业 agent benchmark",
+          "water_risk": "低",
+          "value_judgement": "真实市场模拟中的长程商业 agent benchmark",
+          "reason": "Business Arena 让 AI agent 在模拟跨境商店中长期买卖、定价、服务和合规，用利润、技能指标和 action attribution 评估端到端经营能力。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它是领域 benchmark，但长程、延迟反馈、可归因 action 价值很适合测试 agent planning 和执行可靠性。",
+        "abstract_zh": "商业运营要求从部分信号推断机会、在延迟反馈下投入资金并适应市场变化，现有 agent benchmark 很少覆盖这种耦合长程任务。 环境基于 Alibaba.com sourcing 数据和校准市场条件，最终 profit 之外还设计 human-designed strategies、skill-level metrics 和 action-level gains/losses attribution。",
+        "full_summary": "Business Arena 让 AI agent 在模拟跨境商店中长期买卖、定价、服务和合规，用利润、技能指标和 action attribution 评估端到端经营能力。 商业运营要求从部分信号推断机会、在延迟反馈下投入资金并适应市场变化，现有 agent benchmark 很少覆盖这种耦合长程任务。 环境基于 Alibaba.com sourcing 数据和校准市场条件，最终 profit 之外还设计 human-designed strategies、skill-level metrics 和 action-level gains/losses attribution。 15 个 frontier models 的均值 final net worth 相差九倍，最佳模型仍落后人工策略；skill analysis 区分出高利润卖家、高周转批发商和客服型行为。 Insight：它是领域 benchmark，但长程、延迟反馈、可归因 action 价值很适合测试 agent planning 和执行可靠性。",
+        "card_summary": "Business Arena 让 AI agent 在模拟跨境商店中长期买卖、定价、服务和合规，用利润、技能指标和 action attribution 评估端到端经营能力。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "商业运营要求从部分信号推断机会、在延迟反馈下投入资金并适应市场变化，现有 agent benchmark 很少覆盖这种耦合长程任务。",
+        "method": "环境基于 Alibaba.com sourcing 数据和校准市场条件，最终 profit 之外还设计 human-designed strategies、skill-level metrics 和 action-level gains/losses attribution。",
+        "experiments": "15 个 frontier models 的均值 final net worth 相差九倍，最佳模型仍落后人工策略；skill analysis 区分出高利润卖家、高周转批发商和客服型行为。",
+        "research_help": "它是领域 benchmark，但长程、延迟反馈、可归因 action 价值很适合测试 agent planning 和执行可靠性。",
+        "insight": "它是领域 benchmark，但长程、延迟反馈、可归因 action 价值很适合测试 agent planning 和执行可靠性。",
+        "abstract_zh": "商业运营要求从部分信号推断机会、在延迟反馈下投入资金并适应市场变化，现有 agent benchmark 很少覆盖这种耦合长程任务。 环境基于 Alibaba.com sourcing 数据和校准市场条件，最终 profit 之外还设计 human-designed strategies、skill-level metrics 和 action-level gains/losses attribution。",
+        "card_summary": "Business Arena 让 AI agent 在模拟跨境商店中长期买卖、定价、服务和合规，用利润、技能指标和 action attribution 评估端到端经营能力。",
+        "full_summary": "Business Arena 让 AI agent 在模拟跨境商店中长期买卖、定价、服务和合规，用利润、技能指标和 action attribution 评估端到端经营能力。 商业运营要求从部分信号推断机会、在延迟反馈下投入资金并适应市场变化，现有 agent benchmark 很少覆盖这种耦合长程任务。 环境基于 Alibaba.com sourcing 数据和校准市场条件，最终 profit 之外还设计 human-designed strategies、skill-level metrics 和 action-level gains/losses attribution。 15 个 frontier models 的均值 final net worth 相差九倍，最佳模型仍落后人工策略；skill analysis 区分出高利润卖家、高周转批发商和客服型行为。 Insight：它是领域 benchmark，但长程、延迟反馈、可归因 action 价值很适合测试 agent planning 和执行可靠性。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "真实市场模拟中的长程商业 agent benchmark",
+        "value_reason": "它是领域 benchmark，但长程、延迟反馈、可归因 action 价值很适合测试 agent planning 和执行可靠性。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.09524v1",
+      "title": "STAIR: Effective Incident Response Using an End-to-End Agentic Planning Framework",
+      "summary": "STAIR 把 cyber incident response 建模成 state-driven、stage-aware、experience-supported workflow，用 Graph-as-State、Stage Router、历史经验检索和 Execution Harness 做闭环恢复。",
+      "url": "https://arxiv.org/abs/2608.09524v1",
+      "authors": [
+        "Hanlin Jiang",
+        "Jionghao Huang",
+        "Shaofei Li",
+        "Bojia Yu",
+        "Peng Jiang",
+        "Yuxin Ren",
+        "Ning Jia",
+        "Yao Guo",
+        "Ding Li"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-10",
+      "updated": "2026-08-10",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 81,
+        "level": "中",
+        "label": "事件响应中的状态驱动 agentic planning",
+        "water_risk": "低",
+        "value_judgement": "事件响应中的状态驱动 agentic planning",
+        "reason": "STAIR 把 cyber incident response 建模成 state-driven、stage-aware、experience-supported workflow，用 Graph-as-State、Stage Router、历史经验检索和 Execution Harness 做闭环恢复。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Hanlin Jiang",
+          "Jionghao Huang",
+          "Shaofei Li",
+          "Bojia Yu",
+          "Peng Jiang",
+          "Yuxin Ren",
+          "Ning Jia",
+          "Yao Guo",
+          "Ding Li"
+        ],
+        "affiliations": "",
+        "date": "2026-08-10",
+        "paper_url": "https://arxiv.org/abs/2608.09524v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "事件响应中的状态驱动 agentic planning",
+        "summary": "STAIR 把 cyber incident response 建模成 state-driven、stage-aware、experience-supported workflow，用 Graph-as-State、Stage Router、历史经验检索和 Execution Harness 做闭环恢复。 Insight：虽然是安全场景，但它把状态表示、阶段路由、执行反馈和经验复用放到一个 agent planning 闭环里，方法层面可迁移。",
+        "highlights": [
+          "事件响应中的状态驱动 agentic planning",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "固定 playbook 难以适应动态攻击、恢复目标变化和执行反馈；普通 LLM planner 在长程响应中又缺少统一 incident state 与阶段对齐。",
+        "method": "Graph-as-State 维护当前事件，Stage Router 分派到阶段专属 agent，Execution Harness 执行动作并回写反馈，验证后的经验再供后续 action selection 复用。",
+        "experiments": "100 个 Docker-based cyber ranges 上，作者报告 normalized defense score 0.94，比最强 baseline 提升 9.5%。",
+        "research_help": "虽然是安全场景，但它把状态表示、阶段路由、执行反馈和经验复用放到一个 agent planning 闭环里，方法层面可迁移。",
+        "recommendation": {
+          "score": 81,
+          "level": "中",
+          "label": "事件响应中的状态驱动 agentic planning",
+          "water_risk": "低",
+          "value_judgement": "事件响应中的状态驱动 agentic planning",
+          "reason": "STAIR 把 cyber incident response 建模成 state-driven、stage-aware、experience-supported workflow，用 Graph-as-State、Stage Router、历史经验检索和 Execution Harness 做闭环恢复。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "虽然是安全场景，但它把状态表示、阶段路由、执行反馈和经验复用放到一个 agent planning 闭环里，方法层面可迁移。",
+        "abstract_zh": "固定 playbook 难以适应动态攻击、恢复目标变化和执行反馈；普通 LLM planner 在长程响应中又缺少统一 incident state 与阶段对齐。 Graph-as-State 维护当前事件，Stage Router 分派到阶段专属 agent，Execution Harness 执行动作并回写反馈，验证后的经验再供后续 action selection 复用。",
+        "full_summary": "STAIR 把 cyber incident response 建模成 state-driven、stage-aware、experience-supported workflow，用 Graph-as-State、Stage Router、历史经验检索和 Execution Harness 做闭环恢复。 固定 playbook 难以适应动态攻击、恢复目标变化和执行反馈；普通 LLM planner 在长程响应中又缺少统一 incident state 与阶段对齐。 Graph-as-State 维护当前事件，Stage Router 分派到阶段专属 agent，Execution Harness 执行动作并回写反馈，验证后的经验再供后续 action selection 复用。 100 个 Docker-based cyber ranges 上，作者报告 normalized defense score 0.94，比最强 baseline 提升 9.5%。 Insight：虽然是安全场景，但它把状态表示、阶段路由、执行反馈和经验复用放到一个 agent planning 闭环里，方法层面可迁移。",
+        "card_summary": "STAIR 把 cyber incident response 建模成 state-driven、stage-aware、experience-supported workflow，用 Graph-as-State、Stage Router、历史经验检索和 Execution Harness 做闭环恢复。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "固定 playbook 难以适应动态攻击、恢复目标变化和执行反馈；普通 LLM planner 在长程响应中又缺少统一 incident state 与阶段对齐。",
+        "method": "Graph-as-State 维护当前事件，Stage Router 分派到阶段专属 agent，Execution Harness 执行动作并回写反馈，验证后的经验再供后续 action selection 复用。",
+        "experiments": "100 个 Docker-based cyber ranges 上，作者报告 normalized defense score 0.94，比最强 baseline 提升 9.5%。",
+        "research_help": "虽然是安全场景，但它把状态表示、阶段路由、执行反馈和经验复用放到一个 agent planning 闭环里，方法层面可迁移。",
+        "insight": "虽然是安全场景，但它把状态表示、阶段路由、执行反馈和经验复用放到一个 agent planning 闭环里，方法层面可迁移。",
+        "abstract_zh": "固定 playbook 难以适应动态攻击、恢复目标变化和执行反馈；普通 LLM planner 在长程响应中又缺少统一 incident state 与阶段对齐。 Graph-as-State 维护当前事件，Stage Router 分派到阶段专属 agent，Execution Harness 执行动作并回写反馈，验证后的经验再供后续 action selection 复用。",
+        "card_summary": "STAIR 把 cyber incident response 建模成 state-driven、stage-aware、experience-supported workflow，用 Graph-as-State、Stage Router、历史经验检索和 Execution Harness 做闭环恢复。",
+        "full_summary": "STAIR 把 cyber incident response 建模成 state-driven、stage-aware、experience-supported workflow，用 Graph-as-State、Stage Router、历史经验检索和 Execution Harness 做闭环恢复。 固定 playbook 难以适应动态攻击、恢复目标变化和执行反馈；普通 LLM planner 在长程响应中又缺少统一 incident state 与阶段对齐。 Graph-as-State 维护当前事件，Stage Router 分派到阶段专属 agent，Execution Harness 执行动作并回写反馈，验证后的经验再供后续 action selection 复用。 100 个 Docker-based cyber ranges 上，作者报告 normalized defense score 0.94，比最强 baseline 提升 9.5%。 Insight：虽然是安全场景，但它把状态表示、阶段路由、执行反馈和经验复用放到一个 agent planning 闭环里，方法层面可迁移。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "事件响应中的状态驱动 agentic planning",
+        "value_reason": "虽然是安全场景，但它把状态表示、阶段路由、执行反馈和经验复用放到一个 agent planning 闭环里，方法层面可迁移。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.08960v1",
+      "title": "Reading is not Reasoning: Bridging the Agentic Policy Gap in Vision-Text Compression",
+      "summary": "Reading is not Reasoning 证明把长交互历史渲染成图像压缩后，agent 不只是 OCR 变差，而是在 action selection、query formulation、stopping 和 evidence use 上出现 policy drift。",
+      "url": "https://arxiv.org/abs/2608.08960v1",
+      "authors": [
+        "Cheng Fan",
+        "Junyi Zhou",
+        "Tingzhang Luo",
+        "RongJian Xu",
+        "Qiyanhui Lu",
+        "Mingjian Zhu",
+        "Hanting Chen",
+        "Jianyuan Guo"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-09",
+      "updated": "2026-08-09",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 80,
+        "level": "中",
+        "label": "视觉压缩历史下的 agentic policy gap 与自蒸馏",
+        "water_risk": "中",
+        "value_judgement": "视觉压缩历史下的 agentic policy gap 与自蒸馏",
+        "reason": "Reading is not Reasoning 证明把长交互历史渲染成图像压缩后，agent 不只是 OCR 变差，而是在 action selection、query formulation、stopping 和 evidence use 上出现 policy drift。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Cheng Fan",
+          "Junyi Zhou",
+          "Tingzhang Luo",
+          "RongJian Xu",
+          "Qiyanhui Lu",
+          "Mingjian Zhu",
+          "Hanting Chen",
+          "Jianyuan Guo"
+        ],
+        "affiliations": "",
+        "date": "2026-08-09",
+        "paper_url": "https://arxiv.org/abs/2608.08960v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "视觉压缩历史下的 agentic policy gap 与自蒸馏",
+        "summary": "Reading is not Reasoning 证明把长交互历史渲染成图像压缩后，agent 不只是 OCR 变差，而是在 action selection、query formulation、stopping 和 evidence use 上出现 policy drift。 Insight：这篇提醒长期记忆压缩不能只测 retrieval/OCR，要测压缩后的 agent policy 是否保持行动一致。",
+        "highlights": [
+          "视觉压缩历史下的 agentic policy gap 与自蒸馏",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "多步 agent 为降低上下文成本会压缩历史，但如果视觉历史改变了决策分布，省 token 会换来错误行动。",
+        "method": "CAPS 用同一模型更强的 text-history policy 监督 visual-history policy：离线 trajectory self-distillation 迁移成功行为，在线 policy self-distillation 在视觉策略访问状态上给 dense supervision。",
+        "experiments": "SearchQA 上相对 AgentOCR 提升 5.0%/3.4%，full-history ALFWorld 提升 15.6%/14.5%，同时平均 memory-context cost 最多降 63.3%、峰值降 83.4%。",
+        "research_help": "这篇提醒长期记忆压缩不能只测 retrieval/OCR，要测压缩后的 agent policy 是否保持行动一致。",
+        "recommendation": {
+          "score": 80,
+          "level": "中",
+          "label": "视觉压缩历史下的 agentic policy gap 与自蒸馏",
+          "water_risk": "中",
+          "value_judgement": "视觉压缩历史下的 agentic policy gap 与自蒸馏",
+          "reason": "Reading is not Reasoning 证明把长交互历史渲染成图像压缩后，agent 不只是 OCR 变差，而是在 action selection、query formulation、stopping 和 evidence use 上出现 policy drift。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇提醒长期记忆压缩不能只测 retrieval/OCR，要测压缩后的 agent policy 是否保持行动一致。",
+        "abstract_zh": "多步 agent 为降低上下文成本会压缩历史，但如果视觉历史改变了决策分布，省 token 会换来错误行动。 CAPS 用同一模型更强的 text-history policy 监督 visual-history policy：离线 trajectory self-distillation 迁移成功行为，在线 policy self-distillation 在视觉策略访问状态上给 dense supervision。",
+        "full_summary": "Reading is not Reasoning 证明把长交互历史渲染成图像压缩后，agent 不只是 OCR 变差，而是在 action selection、query formulation、stopping 和 evidence use 上出现 policy drift。 多步 agent 为降低上下文成本会压缩历史，但如果视觉历史改变了决策分布，省 token 会换来错误行动。 CAPS 用同一模型更强的 text-history policy 监督 visual-history policy：离线 trajectory self-distillation 迁移成功行为，在线 policy self-distillation 在视觉策略访问状态上给 dense supervision。 SearchQA 上相对 AgentOCR 提升 5.0%/3.4%，full-history ALFWorld 提升 15.6%/14.5%，同时平均 memory-context cost 最多降 63.3%、峰值降 83.4%。 Insight：这篇提醒长期记忆压缩不能只测 retrieval/OCR，要测压缩后的 agent policy 是否保持行动一致。",
+        "card_summary": "Reading is not Reasoning 证明把长交互历史渲染成图像压缩后，agent 不只是 OCR 变差，而是在 action selection、query formulation、stopping 和 evidence use 上出现 policy drift。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "多步 agent 为降低上下文成本会压缩历史，但如果视觉历史改变了决策分布，省 token 会换来错误行动。",
+        "method": "CAPS 用同一模型更强的 text-history policy 监督 visual-history policy：离线 trajectory self-distillation 迁移成功行为，在线 policy self-distillation 在视觉策略访问状态上给 dense supervision。",
+        "experiments": "SearchQA 上相对 AgentOCR 提升 5.0%/3.4%，full-history ALFWorld 提升 15.6%/14.5%，同时平均 memory-context cost 最多降 63.3%、峰值降 83.4%。",
+        "research_help": "这篇提醒长期记忆压缩不能只测 retrieval/OCR，要测压缩后的 agent policy 是否保持行动一致。",
+        "insight": "这篇提醒长期记忆压缩不能只测 retrieval/OCR，要测压缩后的 agent policy 是否保持行动一致。",
+        "abstract_zh": "多步 agent 为降低上下文成本会压缩历史，但如果视觉历史改变了决策分布，省 token 会换来错误行动。 CAPS 用同一模型更强的 text-history policy 监督 visual-history policy：离线 trajectory self-distillation 迁移成功行为，在线 policy self-distillation 在视觉策略访问状态上给 dense supervision。",
+        "card_summary": "Reading is not Reasoning 证明把长交互历史渲染成图像压缩后，agent 不只是 OCR 变差，而是在 action selection、query formulation、stopping 和 evidence use 上出现 policy drift。",
+        "full_summary": "Reading is not Reasoning 证明把长交互历史渲染成图像压缩后，agent 不只是 OCR 变差，而是在 action selection、query formulation、stopping 和 evidence use 上出现 policy drift。 多步 agent 为降低上下文成本会压缩历史，但如果视觉历史改变了决策分布，省 token 会换来错误行动。 CAPS 用同一模型更强的 text-history policy 监督 visual-history policy：离线 trajectory self-distillation 迁移成功行为，在线 policy self-distillation 在视觉策略访问状态上给 dense supervision。 SearchQA 上相对 AgentOCR 提升 5.0%/3.4%，full-history ALFWorld 提升 15.6%/14.5%，同时平均 memory-context cost 最多降 63.3%、峰值降 83.4%。 Insight：这篇提醒长期记忆压缩不能只测 retrieval/OCR，要测压缩后的 agent policy 是否保持行动一致。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "视觉压缩历史下的 agentic policy gap 与自蒸馏",
+        "value_reason": "这篇提醒长期记忆压缩不能只测 retrieval/OCR，要测压缩后的 agent policy 是否保持行动一致。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.09282v1",
+      "title": "ComboShoppingBench: Evaluating LLM Agents for Budget-Constrained Basket Shopping with Coupons",
+      "summary": "ComboShoppingBench 构造开放但可验证的 basket shopping 任务，用语义 judge 加确定性校验同时评估约束满足、预算、优惠券和商品 ID 合法性。",
+      "url": "https://arxiv.org/abs/2608.09282v1",
+      "authors": [
+        "Adrian Li",
+        "Kelong Mao",
+        "Yudong Guo",
+        "Heming Xia",
+        "Xinwei Yang",
+        "Lirui Luo",
+        "Jace Wong",
+        "Pu Yao",
+        "Sulong Xu",
+        "Simiu Gu"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-10",
+      "updated": "2026-08-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 78,
+        "level": "中",
+        "label": "预算和优惠券约束下的可验证购物 agent benchmark",
+        "water_risk": "低",
+        "value_judgement": "预算和优惠券约束下的可验证购物 agent benchmark",
+        "reason": "ComboShoppingBench 构造开放但可验证的 basket shopping 任务，用语义 judge 加确定性校验同时评估约束满足、预算、优惠券和商品 ID 合法性。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": false,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Adrian Li",
+          "Kelong Mao",
+          "Yudong Guo",
+          "Heming Xia",
+          "Xinwei Yang",
+          "Lirui Luo",
+          "Jace Wong",
+          "Pu Yao",
+          "Sulong Xu",
+          "Simiu Gu"
+        ],
+        "affiliations": "",
+        "date": "2026-08-10",
+        "paper_url": "https://arxiv.org/abs/2608.09282v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "预算和优惠券约束下的可验证购物 agent benchmark",
+        "summary": "ComboShoppingBench 构造开放但可验证的 basket shopping 任务，用语义 judge 加确定性校验同时评估约束满足、预算、优惠券和商品 ID 合法性。 Insight：它是 shopping 域，但“开放解空间 + 可验证硬约束”的设计对复杂工具 agent 评测很有参考价值。",
+        "highlights": [
+          "预算和优惠券约束下的可验证购物 agent benchmark",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "真实购物不是检索单个商品，而是组合互补物品并处理兼容性、店铺门槛、配送费、优惠券和预算；exact match 或纯语义 judge 都不够。",
+        "method": "任务合成先由 exploration agent 构造可行 basket，再生成 coupons、budget constraints、user queries 和 aligned rubrics；评测时结合 LLM judge 与 deterministic validators。",
+        "experiments": "多类 LLM agents 实验显示强模型仍显著失败，尤其是在可行性、最优优惠券组合和预算约束上。",
+        "research_help": "它是 shopping 域，但“开放解空间 + 可验证硬约束”的设计对复杂工具 agent 评测很有参考价值。",
+        "recommendation": {
+          "score": 78,
+          "level": "中",
+          "label": "预算和优惠券约束下的可验证购物 agent benchmark",
+          "water_risk": "低",
+          "value_judgement": "预算和优惠券约束下的可验证购物 agent benchmark",
+          "reason": "ComboShoppingBench 构造开放但可验证的 basket shopping 任务，用语义 judge 加确定性校验同时评估约束满足、预算、优惠券和商品 ID 合法性。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": false,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它是 shopping 域，但“开放解空间 + 可验证硬约束”的设计对复杂工具 agent 评测很有参考价值。",
+        "abstract_zh": "真实购物不是检索单个商品，而是组合互补物品并处理兼容性、店铺门槛、配送费、优惠券和预算；exact match 或纯语义 judge 都不够。 任务合成先由 exploration agent 构造可行 basket，再生成 coupons、budget constraints、user queries 和 aligned rubrics；评测时结合 LLM judge 与 deterministic validators。",
+        "full_summary": "ComboShoppingBench 构造开放但可验证的 basket shopping 任务，用语义 judge 加确定性校验同时评估约束满足、预算、优惠券和商品 ID 合法性。 真实购物不是检索单个商品，而是组合互补物品并处理兼容性、店铺门槛、配送费、优惠券和预算；exact match 或纯语义 judge 都不够。 任务合成先由 exploration agent 构造可行 basket，再生成 coupons、budget constraints、user queries 和 aligned rubrics；评测时结合 LLM judge 与 deterministic validators。 多类 LLM agents 实验显示强模型仍显著失败，尤其是在可行性、最优优惠券组合和预算约束上。 Insight：它是 shopping 域，但“开放解空间 + 可验证硬约束”的设计对复杂工具 agent 评测很有参考价值。",
+        "card_summary": "ComboShoppingBench 构造开放但可验证的 basket shopping 任务，用语义 judge 加确定性校验同时评估约束满足、预算、优惠券和商品 ID 合法性。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "真实购物不是检索单个商品，而是组合互补物品并处理兼容性、店铺门槛、配送费、优惠券和预算；exact match 或纯语义 judge 都不够。",
+        "method": "任务合成先由 exploration agent 构造可行 basket，再生成 coupons、budget constraints、user queries 和 aligned rubrics；评测时结合 LLM judge 与 deterministic validators。",
+        "experiments": "多类 LLM agents 实验显示强模型仍显著失败，尤其是在可行性、最优优惠券组合和预算约束上。",
+        "research_help": "它是 shopping 域，但“开放解空间 + 可验证硬约束”的设计对复杂工具 agent 评测很有参考价值。",
+        "insight": "它是 shopping 域，但“开放解空间 + 可验证硬约束”的设计对复杂工具 agent 评测很有参考价值。",
+        "abstract_zh": "真实购物不是检索单个商品，而是组合互补物品并处理兼容性、店铺门槛、配送费、优惠券和预算；exact match 或纯语义 judge 都不够。 任务合成先由 exploration agent 构造可行 basket，再生成 coupons、budget constraints、user queries 和 aligned rubrics；评测时结合 LLM judge 与 deterministic validators。",
+        "card_summary": "ComboShoppingBench 构造开放但可验证的 basket shopping 任务，用语义 judge 加确定性校验同时评估约束满足、预算、优惠券和商品 ID 合法性。",
+        "full_summary": "ComboShoppingBench 构造开放但可验证的 basket shopping 任务，用语义 judge 加确定性校验同时评估约束满足、预算、优惠券和商品 ID 合法性。 真实购物不是检索单个商品，而是组合互补物品并处理兼容性、店铺门槛、配送费、优惠券和预算；exact match 或纯语义 judge 都不够。 任务合成先由 exploration agent 构造可行 basket，再生成 coupons、budget constraints、user queries 和 aligned rubrics；评测时结合 LLM judge 与 deterministic validators。 多类 LLM agents 实验显示强模型仍显著失败，尤其是在可行性、最优优惠券组合和预算约束上。 Insight：它是 shopping 域，但“开放解空间 + 可验证硬约束”的设计对复杂工具 agent 评测很有参考价值。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "预算和优惠券约束下的可验证购物 agent benchmark",
+        "value_reason": "它是 shopping 域，但“开放解空间 + 可验证硬约束”的设计对复杂工具 agent 评测很有参考价值。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
+    {
+      "id": "2608.08282v1",
+      "title": "Stateful CARS: Exact Cross-History Reuse for Policy-Constrained LLM Agents",
+      "summary": "Stateful CARS 研究工具 agent 在历史相关硬约束下如何从模型分布精确采样，复用跨历史 invalidity certificates，并坦率报告系统效率不优于官方 CARS。",
+      "url": "https://arxiv.org/abs/2608.08282v1",
+      "authors": [
+        "Ibne Farabi Shihab",
+        "Md Najmus Swaqeeb",
+        "Abu Sa-Adat Mohamed Moon-Im Al Ahsan"
+      ],
+      "report_date": "2026-08-12",
+      "published": "2026-08-08",
+      "updated": "2026-08-08",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 76,
+        "level": "中",
+        "label": "带硬状态约束的 LLM agent 精确条件采样",
+        "water_risk": "中",
+        "value_judgement": "带硬状态约束的 LLM agent 精确条件采样",
+        "reason": "Stateful CARS 研究工具 agent 在历史相关硬约束下如何从模型分布精确采样，复用跨历史 invalidity certificates，并坦率报告系统效率不优于官方 CARS。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Ibne Farabi Shihab",
+          "Md Najmus Swaqeeb",
+          "Abu Sa-Adat Mohamed Moon-Im Al Ahsan"
+        ],
+        "affiliations": "",
+        "date": "2026-08-08",
+        "paper_url": "https://arxiv.org/abs/2608.08282v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "带硬状态约束的 LLM agent 精确条件采样",
+        "summary": "Stateful CARS 研究工具 agent 在历史相关硬约束下如何从模型分布精确采样，复用跨历史 invalidity certificates，并坦率报告系统效率不优于官方 CARS。 Insight：这篇价值不在工程胜出，而在把 stateful validator 下的 agent action sampling 问题讲清楚，并给出负结果边界。",
+        "highlights": [
+          "带硬状态约束的 LLM agent 精确条件采样",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "工具环境中的约束会随 observation 和 prior actions 改变，局部合法动作可能在全局历史下不可行；简单 constrained decoding 会改变条件分布。",
+        "method": "方法冻结 state-continuation schemas，移除包含已认证无效 continuation 的轨迹，用 exact residual Doob transform 从剩余 proposal 中采样，并给出 future-validity bisimulation 等证明。",
+        "experiments": "enumerable workflow 中 analytic law 到 1e-16 精度匹配有效条件分布；但 matched comparison 为负，official CARS 更便宜，Qwen 比较也基本无差异。",
+        "research_help": "这篇价值不在工程胜出，而在把 stateful validator 下的 agent action sampling 问题讲清楚，并给出负结果边界。",
+        "recommendation": {
+          "score": 76,
+          "level": "中",
+          "label": "带硬状态约束的 LLM agent 精确条件采样",
+          "water_risk": "中",
+          "value_judgement": "带硬状态约束的 LLM agent 精确条件采样",
+          "reason": "Stateful CARS 研究工具 agent 在历史相关硬约束下如何从模型分布精确采样，复用跨历史 invalidity certificates，并坦率报告系统效率不优于官方 CARS。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇价值不在工程胜出，而在把 stateful validator 下的 agent action sampling 问题讲清楚，并给出负结果边界。",
+        "abstract_zh": "工具环境中的约束会随 observation 和 prior actions 改变，局部合法动作可能在全局历史下不可行；简单 constrained decoding 会改变条件分布。 方法冻结 state-continuation schemas，移除包含已认证无效 continuation 的轨迹，用 exact residual Doob transform 从剩余 proposal 中采样，并给出 future-validity bisimulation 等证明。",
+        "full_summary": "Stateful CARS 研究工具 agent 在历史相关硬约束下如何从模型分布精确采样，复用跨历史 invalidity certificates，并坦率报告系统效率不优于官方 CARS。 工具环境中的约束会随 observation 和 prior actions 改变，局部合法动作可能在全局历史下不可行；简单 constrained decoding 会改变条件分布。 方法冻结 state-continuation schemas，移除包含已认证无效 continuation 的轨迹，用 exact residual Doob transform 从剩余 proposal 中采样，并给出 future-validity bisimulation 等证明。 enumerable workflow 中 analytic law 到 1e-16 精度匹配有效条件分布；但 matched comparison 为负，official CARS 更便宜，Qwen 比较也基本无差异。 Insight：这篇价值不在工程胜出，而在把 stateful validator 下的 agent action sampling 问题讲清楚，并给出负结果边界。",
+        "card_summary": "Stateful CARS 研究工具 agent 在历史相关硬约束下如何从模型分布精确采样，复用跨历史 invalidity certificates，并坦率报告系统效率不优于官方 CARS。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "工具环境中的约束会随 observation 和 prior actions 改变，局部合法动作可能在全局历史下不可行；简单 constrained decoding 会改变条件分布。",
+        "method": "方法冻结 state-continuation schemas，移除包含已认证无效 continuation 的轨迹，用 exact residual Doob transform 从剩余 proposal 中采样，并给出 future-validity bisimulation 等证明。",
+        "experiments": "enumerable workflow 中 analytic law 到 1e-16 精度匹配有效条件分布；但 matched comparison 为负，official CARS 更便宜，Qwen 比较也基本无差异。",
+        "research_help": "这篇价值不在工程胜出，而在把 stateful validator 下的 agent action sampling 问题讲清楚，并给出负结果边界。",
+        "insight": "这篇价值不在工程胜出，而在把 stateful validator 下的 agent action sampling 问题讲清楚，并给出负结果边界。",
+        "abstract_zh": "工具环境中的约束会随 observation 和 prior actions 改变，局部合法动作可能在全局历史下不可行；简单 constrained decoding 会改变条件分布。 方法冻结 state-continuation schemas，移除包含已认证无效 continuation 的轨迹，用 exact residual Doob transform 从剩余 proposal 中采样，并给出 future-validity bisimulation 等证明。",
+        "card_summary": "Stateful CARS 研究工具 agent 在历史相关硬约束下如何从模型分布精确采样，复用跨历史 invalidity certificates，并坦率报告系统效率不优于官方 CARS。",
+        "full_summary": "Stateful CARS 研究工具 agent 在历史相关硬约束下如何从模型分布精确采样，复用跨历史 invalidity certificates，并坦率报告系统效率不优于官方 CARS。 工具环境中的约束会随 observation 和 prior actions 改变，局部合法动作可能在全局历史下不可行；简单 constrained decoding 会改变条件分布。 方法冻结 state-continuation schemas，移除包含已认证无效 continuation 的轨迹，用 exact residual Doob transform 从剩余 proposal 中采样，并给出 future-validity bisimulation 等证明。 enumerable workflow 中 analytic law 到 1e-16 精度匹配有效条件分布；但 matched comparison 为负，official CARS 更便宜，Qwen 比较也基本无差异。 Insight：这篇价值不在工程胜出，而在把 stateful validator 下的 agent action sampling 问题讲清楚，并给出负结果边界。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "带硬状态约束的 LLM agent 精确条件采样",
+        "value_reason": "这篇价值不在工程胜出，而在把 stateful validator 下的 agent action sampling 问题讲清楚，并给出负结果边界。",
+        "limitations": "仍是 arXiv 预印本，部分结果依赖模拟环境、特定 harness 或作者自建 benchmark；需要关注开源复现、真实生产轨迹和跨任务迁移。",
+        "source_scope": "full_text",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported experiments/results sections"
+        ],
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC new-category HTML, abs pages, and extracted PDF text."
+      }
+    },
     {
       "id": "2608.06861v1",
       "title": "Gated-BEPO: Confidence-Gated Bellman Credit Assignment for Large Language Model Agents",
