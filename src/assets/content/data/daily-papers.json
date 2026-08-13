@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-12T01:38:45.000Z",
+  "updated_at": "2026-08-13T01:36:00.000Z",
   "source": "arxiv",
-  "analysis_method": "Manual Codex curation from arXiv cs.AI/cs.CL/cs.LG/cs.HC category HTML, arXiv abs pages, and extracted PDF text after arXiv API returned 429; strong relevance only.",
+  "analysis_method": "manual full-text Codex curation from arXiv category HTML after API 429",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪、工具/环境交互与执行可靠性",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,48 +37,45 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-12 Daily Paper",
-    "report_date": "2026-08-12",
+    "title": "2026-08-13 Daily Paper",
+    "report_date": "2026-08-13",
     "focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪、工具/环境交互与执行可靠性",
-    "summary": "arXiv API 今日返回 429；改用 arXiv 分类 HTML、abs 页面和 PDF 全文抽取人工筛选。保留 16 篇强相关论文，重点集中在 agentic RL 信用分配、长程执行循环/agent harness 自演化、mutable state、context/trajectory 归因和复杂工作流 benchmark。",
+    "summary": "arXiv API 今日返回 429；改用 arXiv cs.AI/cs.CL/cs.LG/cs.HC recent HTML、单篇 abs 页面与 PDF 正文抽取人工筛选。保留 16 篇强相关论文，重点集中在长程/持久 agent、agent memory 维护与修复、自演化 harness/skill、真实工具环境评测和 agent workflow 可靠性。",
     "top_recommendations": [
-      "2608.08255v1",
-      "2608.09380v1",
-      "2608.08466v1"
+      "2608.11095v1",
+      "2608.10676v1",
+      "2608.10502v1"
     ],
     "low_priority": [
-      "2608.08621v1",
-      "2608.09524v1",
-      "2608.08960v1",
-      "2608.09282v1",
-      "2608.08282v1"
+      "2608.10716v1",
+      "2608.10494v1"
     ],
     "no_news_policy": "若无 long horizon、multi-turn、agentic RL、agent planning、agent memory 或执行可靠性强相关新增论文，则不发布。",
-    "email_body": "今日保留 16 篇强相关 Daily Paper：EFCA、OpenLoopEvolve、HSI、Argus、DocAtlas、BCSD、Evo-Bench、TRACE、SCOUT、Not Worth Another Token、CommitKV、Business Arena、STAIR、CAPS、ComboShoppingBench、Stateful CARS。过滤机器人/视频纯视觉证据、模型家族报告、医疗/推荐/形式证明/迁移等边界项。"
+    "email_body": "今日保留 16 篇强相关 Daily Paper：Catastrophic Remembering、SkillZip、VibeLifeBench、SkillLens、DuplexWorld、ReTree、SKILLER、MAP-Graph、MEGA、Dependency-Guided Rollback Repair、GeoForge、Recovering Wasted Compute、DSAgentBench、LinkedIn Self-evolving Support、SBCO、MESA。过滤泛化 reasoning、单纯 dashboard/安全综述、领域 RL 优化和弱 agent 词面相关项。"
   },
   "latest_item_ids": [
-    "2608.08255v1",
-    "2608.09380v1",
-    "2608.08466v1",
-    "2608.05144v2",
-    "2608.07527v1",
-    "2608.09555v1",
-    "2608.09096v2",
-    "2608.09153v1",
-    "2608.07959v1",
-    "2608.08389v1",
-    "2608.07855v1",
-    "2608.08621v1",
-    "2608.09524v1",
-    "2608.08960v1",
-    "2608.09282v1",
-    "2608.08282v1"
+    "2608.11095v1",
+    "2608.11079v1",
+    "2608.10875v1",
+    "2608.10775v1",
+    "2608.10716v1",
+    "2608.10676v1",
+    "2608.10538v1",
+    "2608.10509v1",
+    "2608.10504v1",
+    "2608.10502v1",
+    "2608.10494v1",
+    "2608.10424v1",
+    "2608.10366v1",
+    "2608.10224v1",
+    "2608.10157v1",
+    "2608.10108v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
     "fresh_items": 16,
-    "total_items": 206,
-    "previous_items": 190,
+    "total_items": 222,
+    "previous_items": 206,
     "latest_items": 16,
     "source_report_dates": {
       "2026-08-07": 6,
@@ -117,87 +114,39 @@
       "2026-08-09": 11,
       "2026-08-10": 9,
       "2026-08-11": 14,
-      "2026-08-12": 16
+      "2026-08-12": 16,
+      "2026-08-13": 16
     },
     "filtered_candidate_ids": [
-      "2608.04443v1",
-      "2608.04661v1",
-      "2608.04663v1",
-      "2608.03892v1",
-      "2608.03502v1",
-      "2608.03223v1",
-      "2608.03648v1",
-      "2608.06227v1",
-      "2608.06161v1",
-      "2608.06007v1",
-      "2608.05784v1",
-      "2608.05111v1",
-      "2608.04964v1",
-      "2608.04843v1",
-      "2608.04436v1",
-      "2608.04765v1",
-      "2608.05159v1",
-      "2608.05266v1",
-      "2608.05876v1",
-      "2608.06020v1",
-      "2608.05792v1",
-      "2608.05668v1",
-      "2608.05375v1",
-      "2608.05970v1",
-      "2608.05948v1",
-      "2608.04872v1",
-      "2608.05588v1",
-      "2608.05201v1",
-      "2608.05248v1",
-      "2608.05332v1",
-      "2608.05430v1",
-      "2608.05643v1",
-      "2608.05166v1",
-      "2608.07418v1",
-      "2608.06699v1",
-      "2608.06735v1",
-      "2608.07346v1",
-      "2608.06984v1",
-      "2608.06871v1",
-      "2608.06961v1",
-      "2608.06434v1",
-      "2606.05597v1",
-      "2608.07408v1",
-      "2608.06933v1",
-      "2608.07905v1",
-      "2608.07585v1",
-      "2608.09819v1",
-      "2608.07593v1",
-      "2608.07637v1",
-      "2608.07746v1",
-      "2608.09273v1",
-      "2608.09277v1",
-      "2608.09666v1",
-      "2608.08160v1",
-      "2608.09184v1",
-      "2608.08491v1",
-      "2608.08878v1",
-      "2608.08996v1",
-      "2608.09467v1",
-      "2608.09564v1"
+      "2608.11195v1",
+      "2608.10928v1",
+      "2608.10915v2",
+      "2608.10792v1",
+      "2608.10740v1",
+      "2608.10669v1",
+      "2608.10579v1",
+      "2608.10567v1",
+      "2608.10438v1",
+      "2608.10218v1",
+      "2608.10530v1"
     ],
     "filtered_today": [
-      "2608.07905v1",
-      "2608.07585v1",
-      "2608.09819v1",
-      "2608.07593v1",
-      "2608.07637v1",
-      "2608.07746v1",
-      "2608.09273v1",
-      "2608.09277v1",
-      "2608.09666v1",
-      "2608.08160v1",
-      "2608.09184v1",
-      "2608.08491v1",
-      "2608.08878v1",
-      "2608.08996v1",
-      "2608.09467v1",
-      "2608.09564v1"
+      "2608.11095v1",
+      "2608.11079v1",
+      "2608.10875v1",
+      "2608.10775v1",
+      "2608.10716v1",
+      "2608.10676v1",
+      "2608.10538v1",
+      "2608.10509v1",
+      "2608.10504v1",
+      "2608.10502v1",
+      "2608.10494v1",
+      "2608.10424v1",
+      "2608.10366v1",
+      "2608.10224v1",
+      "2608.10157v1",
+      "2608.10108v1"
     ],
     "backfilled_report_dates": {
       "2026-07-17": 3,
@@ -207,6 +156,1953 @@
     }
   },
   "items": [
+    {
+      "id": "2608.11095v1",
+      "title": "Why Does CLAUDE.md Keep Growing? Catastrophic Remembering in Agentic Coding",
+      "summary": "这篇把 CLAUDE.md、AGENTS.md 这类 agentic coding 指令文件的持续膨胀定义为 catastrophic remembering：添加指令很便宜，但缺失 rationale 后安全删除会变成指数级审计问题。论文分析 1,867 个仓库中的 247,694 条指令生命周期，并用 prompt comments 在可验证环境中移除 99.3% 的冗余指令，还提升真实指令遵循表现。",
+      "url": "https://arxiv.org/abs/2608.11095v1",
+      "authors": [
+        "Kushal Chakrabarti"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Software Engineering"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 97,
+        "level": "高",
+        "label": "agentic coding 指令记忆的 catastrophic remembering",
+        "water_risk": "低",
+        "value_judgement": "agentic coding 指令记忆的 catastrophic remembering",
+        "reason": "这篇把 CLAUDE.md、AGENTS.md 这类 agentic coding 指令文件的持续膨胀定义为 catastrophic remembering：添加指令很便宜，但缺失 rationale 后安全删除会变成指数级审计问题。论文分析 1,867 个仓库中的 247,694 条指令生命周期，并用 prompt comments 在可验证环境中移除 99.3% 的冗余指令，还提升真实指令遵循表现。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": false,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Kushal Chakrabarti"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.11095v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "agentic coding 指令记忆的 catastrophic remembering",
+        "summary": "这篇把 CLAUDE.md、AGENTS.md 这类 agentic coding 指令文件的持续膨胀定义为 catastrophic remembering：添加指令很便宜，但缺失 rationale 后安全删除会变成指数级审计问题。论文分析 1,867 个仓库中的 247,694 条指令生命周期，并用 prompt comments 在可验证环境中移除 99.3% 的冗余指令，还提升真实指令遵循表现。",
+        "highlights": [
+          "agentic coding 指令记忆的 catastrophic remembering",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程 coding agent 的行为越来越依赖仓库内指令文件，但这些文件会因为“宁可追加也不敢删除”而不断累积噪声，最终让上下文、维护和遵循都退化。",
+        "method": "论文先把指令生灭建模为缺失 rationale 的记忆维护问题，再在真实仓库历史中统计增长/删除模式；随后构造可知最优 prompt 的 IFEval 反转环境，用 comments 显式保存指令存在原因，让后续维护者能 O(1) 判断是否删除。",
+        "experiments": "正文报告 1,867 个仓库、247,694 条指令生命周期的实证分析；prompt comments 在反转 IFEval 中把多余指令从 +211.3% 降到 +1.4%，并在 WildIFEval 上带来最高 23.1% 的真实指令遵循提升。",
+        "research_help": "对长期运行的 Codex/agent 仓库很直接：记忆不是越多越好，维护 rationale 和删除条件本身应成为 agent state 的一等字段。",
+        "recommendation": {
+          "score": 97,
+          "level": "高",
+          "label": "agentic coding 指令记忆的 catastrophic remembering",
+          "water_risk": "低",
+          "value_judgement": "agentic coding 指令记忆的 catastrophic remembering",
+          "reason": "这篇把 CLAUDE.md、AGENTS.md 这类 agentic coding 指令文件的持续膨胀定义为 catastrophic remembering：添加指令很便宜，但缺失 rationale 后安全删除会变成指数级审计问题。论文分析 1,867 个仓库中的 247,694 条指令生命周期，并用 prompt comments 在可验证环境中移除 99.3% 的冗余指令，还提升真实指令遵循表现。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": false,
+            "survey": false
+          }
+        },
+        "insight": "对长期运行的 Codex/agent 仓库很直接：记忆不是越多越好，维护 rationale 和删除条件本身应成为 agent state 的一等字段。",
+        "abstract_zh": "Agentic coding READMEs like this http URL grow without bound in real repositories, stopping only when the repository retires or someone rewrites the file wholesale. We trace this to imperfect recall: appending an instruction is always cheap, but once an instruction's rationale is gone, deleting it without risking a correctness regression costs O(2^|D|) in a prompt of |D| instructions. We name the resulting divergence catastrophic remembering, the inverse of catastrophic forgetting around which continual learning is organized. First, we characterize this phenomenon across 247,694 instruction li",
+        "full_summary": "这篇把 CLAUDE.md、AGENTS.md 这类 agentic coding 指令文件的持续膨胀定义为 catastrophic remembering：添加指令很便宜，但缺失 rationale 后安全删除会变成指数级审计问题。论文分析 1,867 个仓库中的 247,694 条指令生命周期，并用 prompt comments 在可验证环境中移除 99.3% 的冗余指令，还提升真实指令遵循表现。 长程 coding agent 的行为越来越依赖仓库内指令文件，但这些文件会因为“宁可追加也不敢删除”而不断累积噪声，最终让上下文、维护和遵循都退化。 论文先把指令生灭建模为缺失 rationale 的记忆维护问题，再在真实仓库历史中统计增长/删除模式；随后构造可知最优 prompt 的 IFEval 反转环境，用 comments 显式保存指令存在原因，让后续维护者能 O(1) 判断是否删除。 正文报告 1,867 个仓库、247,694 条指令生命周期的实证分析；prompt comments 在反转 IFEval 中把多余指令从 +211.3% 降到 +1.4%，并在 WildIFEval 上带来最高 23.1% 的真实指令遵循提升。 Insight：对长期运行的 Codex/agent 仓库很直接：记忆不是越多越好，维护 rationale 和删除条件本身应成为 agent state 的一等字段。",
+        "card_summary": "这篇把 CLAUDE.md、AGENTS.md 这类 agentic coding 指令文件的持续膨胀定义为 catastrophic remembering：添加指令很便宜，但缺失 rationale 后安全删除会变成指数级审计问题。论文分析 1,867 个仓库中的 247,694 条指令生命周期，并用 prompt comments 在可验证环境中移除 99.3% 的冗余指令，还提升真实指令遵循表现。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "长程 coding agent 的行为越来越依赖仓库内指令文件，但这些文件会因为“宁可追加也不敢删除”而不断累积噪声，最终让上下文、维护和遵循都退化。",
+        "method": "论文先把指令生灭建模为缺失 rationale 的记忆维护问题，再在真实仓库历史中统计增长/删除模式；随后构造可知最优 prompt 的 IFEval 反转环境，用 comments 显式保存指令存在原因，让后续维护者能 O(1) 判断是否删除。",
+        "experiments": "正文报告 1,867 个仓库、247,694 条指令生命周期的实证分析；prompt comments 在反转 IFEval 中把多余指令从 +211.3% 降到 +1.4%，并在 WildIFEval 上带来最高 23.1% 的真实指令遵循提升。",
+        "research_help": "对长期运行的 Codex/agent 仓库很直接：记忆不是越多越好，维护 rationale 和删除条件本身应成为 agent state 的一等字段。",
+        "insight": "对长期运行的 Codex/agent 仓库很直接：记忆不是越多越好，维护 rationale 和删除条件本身应成为 agent state 的一等字段。",
+        "abstract_zh": "Agentic coding READMEs like this http URL grow without bound in real repositories, stopping only when the repository retires or someone rewrites the file wholesale. We trace this to imperfect recall: appending an instruction is always cheap, but once an instruction's rationale is gone, deleting it without risking a correctness regression costs O(2^|D|) in a prompt of |D| instructions. We name the resulting divergence catastrophic remembering, the inverse of catastrophic forgetting around which continual learning is organized. First, we characterize this phenomenon across 247,694 instruction lifetimes in 1,867 repositories: agentic prompts grow without bound, more than tripling over their lifetime (+226%), gaining +4.9 net instructions every commit; further, the older an instruction gets, the less likely it is to be deleted (log-hazard -0.032/commit). Then, we show that prompt comments ca",
+        "card_summary": "这篇把 CLAUDE.md、AGENTS.md 这类 agentic coding 指令文件的持续膨胀定义为 catastrophic remembering：添加指令很便宜，但缺失 rationale 后安全删除会变成指数级审计问题。论文分析 1,867 个仓库中的 247,694 条指令生命周期，并用 prompt comments 在可验证环境中移除 99.3% 的冗余指令，还提升真实指令遵循表现。",
+        "full_summary": "这篇把 CLAUDE.md、AGENTS.md 这类 agentic coding 指令文件的持续膨胀定义为 catastrophic remembering：添加指令很便宜，但缺失 rationale 后安全删除会变成指数级审计问题。论文分析 1,867 个仓库中的 247,694 条指令生命周期，并用 prompt comments 在可验证环境中移除 99.3% 的冗余指令，还提升真实指令遵循表现。 长程 coding agent 的行为越来越依赖仓库内指令文件，但这些文件会因为“宁可追加也不敢删除”而不断累积噪声，最终让上下文、维护和遵循都退化。 论文先把指令生灭建模为缺失 rationale 的记忆维护问题，再在真实仓库历史中统计增长/删除模式；随后构造可知最优 prompt 的 IFEval 反转环境，用 comments 显式保存指令存在原因，让后续维护者能 O(1) 判断是否删除。 正文报告 1,867 个仓库、247,694 条指令生命周期的实证分析；prompt comments 在反转 IFEval 中把多余指令从 +211.3% 降到 +1.4%，并在 WildIFEval 上带来最高 23.1% 的真实指令遵循提升。 Insight：对长期运行的 Codex/agent 仓库很直接：记忆不是越多越好，维护 rationale 和删除条件本身应成为 agent state 的一等字段。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "agentic coding 指令记忆的 catastrophic remembering",
+        "value_reason": "对长期运行的 Codex/agent 仓库很直接：记忆不是越多越好，维护 rationale 和删除条件本身应成为 agent state 的一等字段。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.11079v1",
+      "title": "SkillZip: Evaluation-Free Skill Compression for Self-Evolving Agents by Discovering Reusable Structure",
+      "summary": "SkillZip 面向自演化 agent 中不断膨胀的 skill 库，主张技能不是普通文本，而是由触发条件、工作流、工具契约、输出字段和例外规则组成的结构化契约。它用 typed MDL 目标把重复规则和动作序列上提为共享结构，在不跑 rollout 的情况下压缩 skill 并保留稀有约束。",
+      "url": "https://arxiv.org/abs/2608.11079v1",
+      "authors": [
+        "Xiaofan Bai",
+        "Hongqiang Lin",
+        "Chao Liu",
+        "Yantao Zhang",
+        "Xuan Jin",
+        "Xipeng Cao",
+        "Yuhong Li"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "自演化 agent skill 的结构化压缩",
+        "water_risk": "低",
+        "value_judgement": "自演化 agent skill 的结构化压缩",
+        "reason": "SkillZip 面向自演化 agent 中不断膨胀的 skill 库，主张技能不是普通文本，而是由触发条件、工作流、工具契约、输出字段和例外规则组成的结构化契约。它用 typed MDL 目标把重复规则和动作序列上提为共享结构，在不跑 rollout 的情况下压缩 skill 并保留稀有约束。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xiaofan Bai",
+          "Hongqiang Lin",
+          "Chao Liu",
+          "Yantao Zhang",
+          "Xuan Jin",
+          "Xipeng Cao",
+          "Yuhong Li"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.11079v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "自演化 agent skill 的结构化压缩",
+        "summary": "SkillZip 面向自演化 agent 中不断膨胀的 skill 库，主张技能不是普通文本，而是由触发条件、工作流、工具契约、输出字段和例外规则组成的结构化契约。它用 typed MDL 目标把重复规则和动作序列上提为共享结构，在不跑 rollout 的情况下压缩 skill 并保留稀有约束。",
+        "highlights": [
+          "自演化 agent skill 的结构化压缩",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "自演化 agent 会不断把成功流程和失败修复追加进 skill，长期运行后同一约束被重复写在多个分支，导致注入成本和维护成本上升。",
+        "method": "方法抽取 skill 的触发器、workflow edge、tool requirement、obligation 和 output field，用最短忠实结构解释来合并重复规则；一版支持 one-shot 结构抽取与确定性优化，另一版支持 Zip-on-Write 增量压缩。",
+        "experiments": "论文报告多组 skill 压缩实验，比较压缩率、泛化和成本开销，结论是无需 compression-time evaluation set 也能保留关键约束并降低长程 skill 累积成本。",
+        "research_help": "这对 agent memory/skill 生命周期很有用：压缩不应只做语义摘要，而要保护触发、工具和输出契约这些会影响执行正确性的结构。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "自演化 agent skill 的结构化压缩",
+          "water_risk": "低",
+          "value_judgement": "自演化 agent skill 的结构化压缩",
+          "reason": "SkillZip 面向自演化 agent 中不断膨胀的 skill 库，主张技能不是普通文本，而是由触发条件、工作流、工具契约、输出字段和例外规则组成的结构化契约。它用 typed MDL 目标把重复规则和动作序列上提为共享结构，在不跑 rollout 的情况下压缩 skill 并保留稀有约束。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这对 agent memory/skill 生命周期很有用：压缩不应只做语义摘要，而要保护触发、工具和输出契约这些会影响执行正确性的结构。",
+        "abstract_zh": "Self-evolving agents accumulate reusable skills by appending successful procedures and failure fixes. Over time, the same requirement is often restated in several branches, examples, and warnings, while common action sequences are copied rather than reused. The resulting skill becomes expensive to inject and difficult to maintain. Generic prompt compression is ill-suited to this setting because a skill is not a flat passage: its name and description define when it applies, its workflow controls execution, its tool and output contracts constrain validity, and rare exceptions may remain essentia",
+        "full_summary": "SkillZip 面向自演化 agent 中不断膨胀的 skill 库，主张技能不是普通文本，而是由触发条件、工作流、工具契约、输出字段和例外规则组成的结构化契约。它用 typed MDL 目标把重复规则和动作序列上提为共享结构，在不跑 rollout 的情况下压缩 skill 并保留稀有约束。 自演化 agent 会不断把成功流程和失败修复追加进 skill，长期运行后同一约束被重复写在多个分支，导致注入成本和维护成本上升。 方法抽取 skill 的触发器、workflow edge、tool requirement、obligation 和 output field，用最短忠实结构解释来合并重复规则；一版支持 one-shot 结构抽取与确定性优化，另一版支持 Zip-on-Write 增量压缩。 论文报告多组 skill 压缩实验，比较压缩率、泛化和成本开销，结论是无需 compression-time evaluation set 也能保留关键约束并降低长程 skill 累积成本。 Insight：这对 agent memory/skill 生命周期很有用：压缩不应只做语义摘要，而要保护触发、工具和输出契约这些会影响执行正确性的结构。",
+        "card_summary": "SkillZip 面向自演化 agent 中不断膨胀的 skill 库，主张技能不是普通文本，而是由触发条件、工作流、工具契约、输出字段和例外规则组成的结构化契约。它用 typed MDL 目标把重复规则和动作序列上提为共享结构，在不跑 rollout 的情况下压缩 skill 并保留稀有约束。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "自演化 agent 会不断把成功流程和失败修复追加进 skill，长期运行后同一约束被重复写在多个分支，导致注入成本和维护成本上升。",
+        "method": "方法抽取 skill 的触发器、workflow edge、tool requirement、obligation 和 output field，用最短忠实结构解释来合并重复规则；一版支持 one-shot 结构抽取与确定性优化，另一版支持 Zip-on-Write 增量压缩。",
+        "experiments": "论文报告多组 skill 压缩实验，比较压缩率、泛化和成本开销，结论是无需 compression-time evaluation set 也能保留关键约束并降低长程 skill 累积成本。",
+        "research_help": "这对 agent memory/skill 生命周期很有用：压缩不应只做语义摘要，而要保护触发、工具和输出契约这些会影响执行正确性的结构。",
+        "insight": "这对 agent memory/skill 生命周期很有用：压缩不应只做语义摘要，而要保护触发、工具和输出契约这些会影响执行正确性的结构。",
+        "abstract_zh": "Self-evolving agents accumulate reusable skills by appending successful procedures and failure fixes. Over time, the same requirement is often restated in several branches, examples, and warnings, while common action sequences are copied rather than reused. The resulting skill becomes expensive to inject and difficult to maintain. Generic prompt compression is ill-suited to this setting because a skill is not a flat passage: its name and description define when it applies, its workflow controls execution, its tool and output contracts constrain validity, and rare exceptions may remain essential even when no sampled task activates them. Evaluation-guided compression can test these behaviors, but it introduces rollouts, cost, and dependence on the compression-time evaluation set. We present SkillZip, an evaluation-free method that compresses a skill by finding its shortest faithful structu",
+        "card_summary": "SkillZip 面向自演化 agent 中不断膨胀的 skill 库，主张技能不是普通文本，而是由触发条件、工作流、工具契约、输出字段和例外规则组成的结构化契约。它用 typed MDL 目标把重复规则和动作序列上提为共享结构，在不跑 rollout 的情况下压缩 skill 并保留稀有约束。",
+        "full_summary": "SkillZip 面向自演化 agent 中不断膨胀的 skill 库，主张技能不是普通文本，而是由触发条件、工作流、工具契约、输出字段和例外规则组成的结构化契约。它用 typed MDL 目标把重复规则和动作序列上提为共享结构，在不跑 rollout 的情况下压缩 skill 并保留稀有约束。 自演化 agent 会不断把成功流程和失败修复追加进 skill，长期运行后同一约束被重复写在多个分支，导致注入成本和维护成本上升。 方法抽取 skill 的触发器、workflow edge、tool requirement、obligation 和 output field，用最短忠实结构解释来合并重复规则；一版支持 one-shot 结构抽取与确定性优化，另一版支持 Zip-on-Write 增量压缩。 论文报告多组 skill 压缩实验，比较压缩率、泛化和成本开销，结论是无需 compression-time evaluation set 也能保留关键约束并降低长程 skill 累积成本。 Insight：这对 agent memory/skill 生命周期很有用：压缩不应只做语义摘要，而要保护触发、工具和输出契约这些会影响执行正确性的结构。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "自演化 agent skill 的结构化压缩",
+        "value_reason": "这对 agent memory/skill 生命周期很有用：压缩不应只做语义摘要，而要保护触发、工具和输出契约这些会影响执行正确性的结构。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10875v1",
+      "title": "VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?",
+      "summary": "VibeLifeBench 把个人生活助理评测从短请求推进到多周、会自行变化的 simulated world：agent 需要决定何时主动行动、何时询问、何时保持沉默，并维持最初隐含约束。它包含 200 个长程任务、10 个生活领域和 22 个 mock services，七个 frontier model 都表现较低。",
+      "url": "https://arxiv.org/abs/2608.10875v1",
+      "authors": [
+        "Xiaohongshu Inc"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Computation and Language",
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "多周生活助理长程持久性 benchmark",
+        "water_risk": "低",
+        "value_judgement": "多周生活助理长程持久性 benchmark",
+        "reason": "VibeLifeBench 把个人生活助理评测从短请求推进到多周、会自行变化的 simulated world：agent 需要决定何时主动行动、何时询问、何时保持沉默，并维持最初隐含约束。它包含 200 个长程任务、10 个生活领域和 22 个 mock services，七个 frontier model 都表现较低。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xiaohongshu Inc"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10875v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "多周生活助理长程持久性 benchmark",
+        "summary": "VibeLifeBench 把个人生活助理评测从短请求推进到多周、会自行变化的 simulated world：agent 需要决定何时主动行动、何时询问、何时保持沉默，并维持最初隐含约束。它包含 200 个长程任务、10 个生活领域和 22 个 mock services，七个 frontier model 都表现较低。",
+        "highlights": [
+          "多周生活助理长程持久性 benchmark",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "真实生活助理任务会跨数周推进，世界即使用户不提示也会变化，且很多约束只在早期隐含给出；现有静态短任务 benchmark 无法测出这类能力。",
+        "method": " benchmark 用脚本化多周 timeline 和 22 个服务后端构成 living world，任务按最终状态、动作时机和隐含约束保持情况进行细粒度加权评估。",
+        "experiments": "正文评测七个 frontier models，结果整体偏低，显示当前 agent 在主动性、静默状态变化发现和跨日计划一致性上仍有明显缺口。",
+        "research_help": "这是 long-horizon personal agent 研究的强基准信号，尤其适合检验状态追踪、定时检查、主动恢复和长期约束保持。",
+        "recommendation": {
+          "score": 96,
+          "level": "高",
+          "label": "多周生活助理长程持久性 benchmark",
+          "water_risk": "低",
+          "value_judgement": "多周生活助理长程持久性 benchmark",
+          "reason": "VibeLifeBench 把个人生活助理评测从短请求推进到多周、会自行变化的 simulated world：agent 需要决定何时主动行动、何时询问、何时保持沉默，并维持最初隐含约束。它包含 200 个长程任务、10 个生活领域和 22 个 mock services，七个 frontier model 都表现较低。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这是 long-horizon personal agent 研究的强基准信号，尤其适合检验状态追踪、定时检查、主动恢复和长期约束保持。",
+        "abstract_zh": "Large language model (LLM) agents are increasingly deployed as personal assistants. Existing evaluations, however, mostly use short, self-contained requests in static environments. Everyday life assistance is different. A task runs for weeks rather than minutes. The world keeps changing while the agent is not being prompted. Many constraints are never stated outright. An agent that merely answers the request in front of it will fail at such a task. What is needed instead is an agent that stays proactive and consistent. It decides on its own when to act, when to ask, and when to stay silent. It",
+        "full_summary": "VibeLifeBench 把个人生活助理评测从短请求推进到多周、会自行变化的 simulated world：agent 需要决定何时主动行动、何时询问、何时保持沉默，并维持最初隐含约束。它包含 200 个长程任务、10 个生活领域和 22 个 mock services，七个 frontier model 都表现较低。 真实生活助理任务会跨数周推进，世界即使用户不提示也会变化，且很多约束只在早期隐含给出；现有静态短任务 benchmark 无法测出这类能力。  benchmark 用脚本化多周 timeline 和 22 个服务后端构成 living world，任务按最终状态、动作时机和隐含约束保持情况进行细粒度加权评估。 正文评测七个 frontier models，结果整体偏低，显示当前 agent 在主动性、静默状态变化发现和跨日计划一致性上仍有明显缺口。 Insight：这是 long-horizon personal agent 研究的强基准信号，尤其适合检验状态追踪、定时检查、主动恢复和长期约束保持。",
+        "card_summary": "VibeLifeBench 把个人生活助理评测从短请求推进到多周、会自行变化的 simulated world：agent 需要决定何时主动行动、何时询问、何时保持沉默，并维持最初隐含约束。它包含 200 个长程任务、10 个生活领域和 22 个 mock services，七个 frontier model 都表现较低。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "真实生活助理任务会跨数周推进，世界即使用户不提示也会变化，且很多约束只在早期隐含给出；现有静态短任务 benchmark 无法测出这类能力。",
+        "method": " benchmark 用脚本化多周 timeline 和 22 个服务后端构成 living world，任务按最终状态、动作时机和隐含约束保持情况进行细粒度加权评估。",
+        "experiments": "正文评测七个 frontier models，结果整体偏低，显示当前 agent 在主动性、静默状态变化发现和跨日计划一致性上仍有明显缺口。",
+        "research_help": "这是 long-horizon personal agent 研究的强基准信号，尤其适合检验状态追踪、定时检查、主动恢复和长期约束保持。",
+        "insight": "这是 long-horizon personal agent 研究的强基准信号，尤其适合检验状态追踪、定时检查、主动恢复和长期约束保持。",
+        "abstract_zh": "Large language model (LLM) agents are increasingly deployed as personal assistants. Existing evaluations, however, mostly use short, self-contained requests in static environments. Everyday life assistance is different. A task runs for weeks rather than minutes. The world keeps changing while the agent is not being prompted. Many constraints are never stated outright. An agent that merely answers the request in front of it will fail at such a task. What is needed instead is an agent that stays proactive and consistent. It decides on its own when to act, when to ask, and when to stay silent. It notices changes that nobody announced. It keeps one plan coherent from the first day to the last. No current benchmark measures this. We introduce VibeLifeBench, a benchmark of 200 long-horizon tasks across ten everyday-life domains. Each task is a scripted multi-week timeline in a simulated world ",
+        "card_summary": "VibeLifeBench 把个人生活助理评测从短请求推进到多周、会自行变化的 simulated world：agent 需要决定何时主动行动、何时询问、何时保持沉默，并维持最初隐含约束。它包含 200 个长程任务、10 个生活领域和 22 个 mock services，七个 frontier model 都表现较低。",
+        "full_summary": "VibeLifeBench 把个人生活助理评测从短请求推进到多周、会自行变化的 simulated world：agent 需要决定何时主动行动、何时询问、何时保持沉默，并维持最初隐含约束。它包含 200 个长程任务、10 个生活领域和 22 个 mock services，七个 frontier model 都表现较低。 真实生活助理任务会跨数周推进，世界即使用户不提示也会变化，且很多约束只在早期隐含给出；现有静态短任务 benchmark 无法测出这类能力。  benchmark 用脚本化多周 timeline 和 22 个服务后端构成 living world，任务按最终状态、动作时机和隐含约束保持情况进行细粒度加权评估。 正文评测七个 frontier models，结果整体偏低，显示当前 agent 在主动性、静默状态变化发现和跨日计划一致性上仍有明显缺口。 Insight：这是 long-horizon personal agent 研究的强基准信号，尤其适合检验状态追踪、定时检查、主动恢复和长期约束保持。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "多周生活助理长程持久性 benchmark",
+        "value_reason": "这是 long-horizon personal agent 研究的强基准信号，尤其适合检验状态追踪、定时检查、主动恢复和长期约束保持。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10775v1",
+      "title": "SkillLens: Visual Skill Cards for Retrieval-Augmented GUI Action Prediction and On-Policy Distillation",
+      "summary": "SkillLens 为 computer-using agent 构造 Visual Skill Cards，把可复用流程、适用屏幕线索、关键视觉证据和验证信号绑定成 state-conditioned memory。推理时只检索并展开当前 GUI 行动所需证据，也可用 CardDistill 把卡片条件行为蒸馏进小模型。",
+      "url": "https://arxiv.org/abs/2608.10775v1",
+      "authors": [
+        "Zhou Liu",
+        "Ligang Huang",
+        "Zeli Su",
+        "Zewei Pan",
+        "Zhaoyang Han",
+        "Xing Chen",
+        "Yuanfeng Song",
+        "Wentao Zhang"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "GUI agent 的视觉程序记忆卡片",
+        "water_risk": "低",
+        "value_judgement": "GUI agent 的视觉程序记忆卡片",
+        "reason": "SkillLens 为 computer-using agent 构造 Visual Skill Cards，把可复用流程、适用屏幕线索、关键视觉证据和验证信号绑定成 state-conditioned memory。推理时只检索并展开当前 GUI 行动所需证据，也可用 CardDistill 把卡片条件行为蒸馏进小模型。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Zhou Liu",
+          "Ligang Huang",
+          "Zeli Su",
+          "Zewei Pan",
+          "Zhaoyang Han",
+          "Xing Chen",
+          "Yuanfeng Song",
+          "Wentao Zhang"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10775v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "GUI agent 的视觉程序记忆卡片",
+        "summary": "SkillLens 为 computer-using agent 构造 Visual Skill Cards，把可复用流程、适用屏幕线索、关键视觉证据和验证信号绑定成 state-conditioned memory。推理时只检索并展开当前 GUI 行动所需证据，也可用 CardDistill 把卡片条件行为蒸馏进小模型。",
+        "highlights": [
+          "GUI agent 的视觉程序记忆卡片",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "GUI agent 经常能看见控件却不知道当前处在什么熟悉工作流中；原始轨迹太长太噪，纯文本 skill 又丢失决定适用性的视觉状态。",
+        "method": "方法从交互经验生成 VSC，并在推理时按当前屏幕检索、重排和选择证据给固定 VLM executor；CardDistill 则用 VSC 作为教师上下文训练无需运行时检索的学生模型。",
+        "experiments": "在 Multimodal-Mind2Web 和 WebLINX-BrowserGym 上，SkillLens 让 frozen GPT-5.4-mini 分别提升 +11.6 Step SR 和 +2.9 Overall；CardDistill 让 Qwen3-VL-2B 学生模型再提升 +12.0 和 +3.2。",
+        "research_help": "它把“程序性经验”落到可检索、可验证、视觉条件化的 memory，对多轮 GUI agent 的状态判断和流程复用很有参考价值。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "GUI agent 的视觉程序记忆卡片",
+          "water_risk": "低",
+          "value_judgement": "GUI agent 的视觉程序记忆卡片",
+          "reason": "SkillLens 为 computer-using agent 构造 Visual Skill Cards，把可复用流程、适用屏幕线索、关键视觉证据和验证信号绑定成 state-conditioned memory。推理时只检索并展开当前 GUI 行动所需证据，也可用 CardDistill 把卡片条件行为蒸馏进小模型。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它把“程序性经验”落到可检索、可验证、视觉条件化的 memory，对多轮 GUI agent 的状态判断和流程复用很有参考价值。",
+        "abstract_zh": "Computer-using agents can perceive rich software interfaces, yet their decisions often lack visual procedural memory: they may recognize individual controls without identifying which familiar workflow is active, which control matters next, or what evidence would confirm progress. Raw interaction traces preserve such information but are long and noisy to condition on, whereas text-only skills often omit the visual state that makes a procedure applicable. We introduce Visual Skill Cards (VSCs), a state-conditioned memory representation that binds reusable procedures with applicability cues, visu",
+        "full_summary": "SkillLens 为 computer-using agent 构造 Visual Skill Cards，把可复用流程、适用屏幕线索、关键视觉证据和验证信号绑定成 state-conditioned memory。推理时只检索并展开当前 GUI 行动所需证据，也可用 CardDistill 把卡片条件行为蒸馏进小模型。 GUI agent 经常能看见控件却不知道当前处在什么熟悉工作流中；原始轨迹太长太噪，纯文本 skill 又丢失决定适用性的视觉状态。 方法从交互经验生成 VSC，并在推理时按当前屏幕检索、重排和选择证据给固定 VLM executor；CardDistill 则用 VSC 作为教师上下文训练无需运行时检索的学生模型。 在 Multimodal-Mind2Web 和 WebLINX-BrowserGym 上，SkillLens 让 frozen GPT-5.4-mini 分别提升 +11.6 Step SR 和 +2.9 Overall；CardDistill 让 Qwen3-VL-2B 学生模型再提升 +12.0 和 +3.2。 Insight：它把“程序性经验”落到可检索、可验证、视觉条件化的 memory，对多轮 GUI agent 的状态判断和流程复用很有参考价值。",
+        "card_summary": "SkillLens 为 computer-using agent 构造 Visual Skill Cards，把可复用流程、适用屏幕线索、关键视觉证据和验证信号绑定成 state-conditioned memory。推理时只检索并展开当前 GUI 行动所需证据，也可用 CardDistill 把卡片条件行为蒸馏进小模型。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "GUI agent 经常能看见控件却不知道当前处在什么熟悉工作流中；原始轨迹太长太噪，纯文本 skill 又丢失决定适用性的视觉状态。",
+        "method": "方法从交互经验生成 VSC，并在推理时按当前屏幕检索、重排和选择证据给固定 VLM executor；CardDistill 则用 VSC 作为教师上下文训练无需运行时检索的学生模型。",
+        "experiments": "在 Multimodal-Mind2Web 和 WebLINX-BrowserGym 上，SkillLens 让 frozen GPT-5.4-mini 分别提升 +11.6 Step SR 和 +2.9 Overall；CardDistill 让 Qwen3-VL-2B 学生模型再提升 +12.0 和 +3.2。",
+        "research_help": "它把“程序性经验”落到可检索、可验证、视觉条件化的 memory，对多轮 GUI agent 的状态判断和流程复用很有参考价值。",
+        "insight": "它把“程序性经验”落到可检索、可验证、视觉条件化的 memory，对多轮 GUI agent 的状态判断和流程复用很有参考价值。",
+        "abstract_zh": "Computer-using agents can perceive rich software interfaces, yet their decisions often lack visual procedural memory: they may recognize individual controls without identifying which familiar workflow is active, which control matters next, or what evidence would confirm progress. Raw interaction traces preserve such information but are long and noisy to condition on, whereas text-only skills often omit the visual state that makes a procedure applicable. We introduce Visual Skill Cards (VSCs), a state-conditioned memory representation that binds reusable procedures with applicability cues, visual evidence, and verification signals. SkillLens constructs VSCs from heterogeneous interaction experience through Trace-to-Visual-Skill-Card and, at inference time, retrieves relevant cards and selectively expands only the evidence needed by a fixed visual-language model executor for grounded GUI a",
+        "card_summary": "SkillLens 为 computer-using agent 构造 Visual Skill Cards，把可复用流程、适用屏幕线索、关键视觉证据和验证信号绑定成 state-conditioned memory。推理时只检索并展开当前 GUI 行动所需证据，也可用 CardDistill 把卡片条件行为蒸馏进小模型。",
+        "full_summary": "SkillLens 为 computer-using agent 构造 Visual Skill Cards，把可复用流程、适用屏幕线索、关键视觉证据和验证信号绑定成 state-conditioned memory。推理时只检索并展开当前 GUI 行动所需证据，也可用 CardDistill 把卡片条件行为蒸馏进小模型。 GUI agent 经常能看见控件却不知道当前处在什么熟悉工作流中；原始轨迹太长太噪，纯文本 skill 又丢失决定适用性的视觉状态。 方法从交互经验生成 VSC，并在推理时按当前屏幕检索、重排和选择证据给固定 VLM executor；CardDistill 则用 VSC 作为教师上下文训练无需运行时检索的学生模型。 在 Multimodal-Mind2Web 和 WebLINX-BrowserGym 上，SkillLens 让 frozen GPT-5.4-mini 分别提升 +11.6 Step SR 和 +2.9 Overall；CardDistill 让 Qwen3-VL-2B 学生模型再提升 +12.0 和 +3.2。 Insight：它把“程序性经验”落到可检索、可验证、视觉条件化的 memory，对多轮 GUI agent 的状态判断和流程复用很有参考价值。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "GUI agent 的视觉程序记忆卡片",
+        "value_reason": "它把“程序性经验”落到可检索、可验证、视觉条件化的 memory，对多轮 GUI agent 的状态判断和流程复用很有参考价值。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10716v1",
+      "title": "DuplexWorld: Can voice agents help you get through the day?",
+      "summary": "DuplexWorld 关注 speech-to-speech voice agent 在银行、保险、旅行、医疗、物流和路径规划等日常场景中的 agentic 与 conversational 双重能力。它包含 156 个场景、350+ 小时对话和 11 类 conversation type，显示最佳 voice agent 仍只有 Pass@1 0.490、turn-taking 0.653。",
+      "url": "https://arxiv.org/abs/2608.10716v1",
+      "authors": [
+        "Aryan Vijay Bhosale",
+        "Harshit Rajgarhia",
+        "Akhil Pothanapalli",
+        "Asif Shaik",
+        "Abhishek Mukherji",
+        "Dinesh Manocha"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Sound",
+        "Artificial Intelligence",
+        "Computation and Language"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 83,
+        "level": "中",
+        "label": "语音 agent 多场景日常任务评测",
+        "water_risk": "中",
+        "value_judgement": "语音 agent 多场景日常任务评测",
+        "reason": "DuplexWorld 关注 speech-to-speech voice agent 在银行、保险、旅行、医疗、物流和路径规划等日常场景中的 agentic 与 conversational 双重能力。它包含 156 个场景、350+ 小时对话和 11 类 conversation type，显示最佳 voice agent 仍只有 Pass@1 0.490、turn-taking 0.653。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Aryan Vijay Bhosale",
+          "Harshit Rajgarhia",
+          "Akhil Pothanapalli",
+          "Asif Shaik",
+          "Abhishek Mukherji",
+          "Dinesh Manocha"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10716v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "语音 agent 多场景日常任务评测",
+        "summary": "DuplexWorld 关注 speech-to-speech voice agent 在银行、保险、旅行、医疗、物流和路径规划等日常场景中的 agentic 与 conversational 双重能力。它包含 156 个场景、350+ 小时对话和 11 类 conversation type，显示最佳 voice agent 仍只有 Pass@1 0.490、turn-taking 0.653。",
+        "highlights": [
+          "语音 agent 多场景日常任务评测",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "语音 agent 的真实价值不只是查数据库，还要在自然对话中完成日常协助；现有评测往往把任务简化为工具调用，忽略轮次管理、噪声、情绪和路径规划等复杂互动。",
+        "method": "DuplexWorld 设计六类世界与十一种对话类型，用统一 harness 同时评估 agentic task success、对话质量和语音自然度，并分析不同世界与失败类型。",
+        "experiments": "实验报告最佳系统仍在三类指标上有明显空间：Pass@1 为 0.490，turn-taking 为 0.653，DNSMOS 为 3.378，并进一步分析 Pathfinding 中 explore/exploit 失败。",
+        "research_help": "它对多轮语音 agent 很有用，因为它把任务完成、对话管理和真实语音条件放在同一个长对话评测里。",
+        "recommendation": {
+          "score": 83,
+          "level": "中",
+          "label": "语音 agent 多场景日常任务评测",
+          "water_risk": "中",
+          "value_judgement": "语音 agent 多场景日常任务评测",
+          "reason": "DuplexWorld 关注 speech-to-speech voice agent 在银行、保险、旅行、医疗、物流和路径规划等日常场景中的 agentic 与 conversational 双重能力。它包含 156 个场景、350+ 小时对话和 11 类 conversation type，显示最佳 voice agent 仍只有 Pass@1 0.490、turn-taking 0.653。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它对多轮语音 agent 很有用，因为它把任务完成、对话管理和真实语音条件放在同一个长对话评测里。",
+        "abstract_zh": "Speech-to-speech (S2S) voice agents are increasingly being incorporated into enterprise for customer care and as daily companions for consumers owing to the ease of the conversational modality over text. However, existing benchmarks fail to holistically evaluate voice agents along axes that really matter and are shaped as tests of agentic tool calling against a database. We believe they fail to adequately account for the diversity of conversational dialogue that mundane activities introduce and further, never test how faithfully an agent can assist on tasks that move beyond database manipulati",
+        "full_summary": "DuplexWorld 关注 speech-to-speech voice agent 在银行、保险、旅行、医疗、物流和路径规划等日常场景中的 agentic 与 conversational 双重能力。它包含 156 个场景、350+ 小时对话和 11 类 conversation type，显示最佳 voice agent 仍只有 Pass@1 0.490、turn-taking 0.653。 语音 agent 的真实价值不只是查数据库，还要在自然对话中完成日常协助；现有评测往往把任务简化为工具调用，忽略轮次管理、噪声、情绪和路径规划等复杂互动。 DuplexWorld 设计六类世界与十一种对话类型，用统一 harness 同时评估 agentic task success、对话质量和语音自然度，并分析不同世界与失败类型。 实验报告最佳系统仍在三类指标上有明显空间：Pass@1 为 0.490，turn-taking 为 0.653，DNSMOS 为 3.378，并进一步分析 Pathfinding 中 explore/exploit 失败。 Insight：它对多轮语音 agent 很有用，因为它把任务完成、对话管理和真实语音条件放在同一个长对话评测里。",
+        "card_summary": "DuplexWorld 关注 speech-to-speech voice agent 在银行、保险、旅行、医疗、物流和路径规划等日常场景中的 agentic 与 conversational 双重能力。它包含 156 个场景、350+ 小时对话和 11 类 conversation type，显示最佳 voice agent 仍只有 Pass@1 0.490、turn-taking 0.653。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "语音 agent 的真实价值不只是查数据库，还要在自然对话中完成日常协助；现有评测往往把任务简化为工具调用，忽略轮次管理、噪声、情绪和路径规划等复杂互动。",
+        "method": "DuplexWorld 设计六类世界与十一种对话类型，用统一 harness 同时评估 agentic task success、对话质量和语音自然度，并分析不同世界与失败类型。",
+        "experiments": "实验报告最佳系统仍在三类指标上有明显空间：Pass@1 为 0.490，turn-taking 为 0.653，DNSMOS 为 3.378，并进一步分析 Pathfinding 中 explore/exploit 失败。",
+        "research_help": "它对多轮语音 agent 很有用，因为它把任务完成、对话管理和真实语音条件放在同一个长对话评测里。",
+        "insight": "它对多轮语音 agent 很有用，因为它把任务完成、对话管理和真实语音条件放在同一个长对话评测里。",
+        "abstract_zh": "Speech-to-speech (S2S) voice agents are increasingly being incorporated into enterprise for customer care and as daily companions for consumers owing to the ease of the conversational modality over text. However, existing benchmarks fail to holistically evaluate voice agents along axes that really matter and are shaped as tests of agentic tool calling against a database. We believe they fail to adequately account for the diversity of conversational dialogue that mundane activities introduce and further, never test how faithfully an agent can assist on tasks that move beyond database manipulation. To tackle this DuplexWorld introduces six worlds where voice agents are especially useful: banking, insurance, travel, healthcare and logistics, and Pathfinding. Agents are evaluated on eleven different types of conversations across 156 scenarios (350+ hours of conversation), each testing conver",
+        "card_summary": "DuplexWorld 关注 speech-to-speech voice agent 在银行、保险、旅行、医疗、物流和路径规划等日常场景中的 agentic 与 conversational 双重能力。它包含 156 个场景、350+ 小时对话和 11 类 conversation type，显示最佳 voice agent 仍只有 Pass@1 0.490、turn-taking 0.653。",
+        "full_summary": "DuplexWorld 关注 speech-to-speech voice agent 在银行、保险、旅行、医疗、物流和路径规划等日常场景中的 agentic 与 conversational 双重能力。它包含 156 个场景、350+ 小时对话和 11 类 conversation type，显示最佳 voice agent 仍只有 Pass@1 0.490、turn-taking 0.653。 语音 agent 的真实价值不只是查数据库，还要在自然对话中完成日常协助；现有评测往往把任务简化为工具调用，忽略轮次管理、噪声、情绪和路径规划等复杂互动。 DuplexWorld 设计六类世界与十一种对话类型，用统一 harness 同时评估 agentic task success、对话质量和语音自然度，并分析不同世界与失败类型。 实验报告最佳系统仍在三类指标上有明显空间：Pass@1 为 0.490，turn-taking 为 0.653，DNSMOS 为 3.378，并进一步分析 Pathfinding 中 explore/exploit 失败。 Insight：它对多轮语音 agent 很有用，因为它把任务完成、对话管理和真实语音条件放在同一个长对话评测里。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "语音 agent 多场景日常任务评测",
+        "value_reason": "它对多轮语音 agent 很有用，因为它把任务完成、对话管理和真实语音条件放在同一个长对话评测里。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10676v1",
+      "title": "Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory",
+      "summary": "ReTree 为多步 search agent 构造 tree-structured memory：每个节点保存 bounded summary、证据和 revision history，当新证据推翻旧 claim 时回溯到引入节点，替换证据、重写摘要、剪枝受影响分支后继续搜索。",
+      "url": "https://arxiv.org/abs/2608.10676v1",
+      "authors": [
+        "Aijun Yang",
+        "Qianxue Guo",
+        "Ziyi Huang",
+        "Yuxuan Chen",
+        "Shiyou Qian",
+        "Jian Cao"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "长程搜索 agent 的可修复树状记忆",
+        "water_risk": "低",
+        "value_judgement": "长程搜索 agent 的可修复树状记忆",
+        "reason": "ReTree 为多步 search agent 构造 tree-structured memory：每个节点保存 bounded summary、证据和 revision history，当新证据推翻旧 claim 时回溯到引入节点，替换证据、重写摘要、剪枝受影响分支后继续搜索。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Aijun Yang",
+          "Qianxue Guo",
+          "Ziyi Huang",
+          "Yuxuan Chen",
+          "Shiyou Qian",
+          "Jian Cao"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10676v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "长程搜索 agent 的可修复树状记忆",
+        "summary": "ReTree 为多步 search agent 构造 tree-structured memory：每个节点保存 bounded summary、证据和 revision history，当新证据推翻旧 claim 时回溯到引入节点，替换证据、重写摘要、剪枝受影响分支后继续搜索。",
+        "highlights": [
+          "长程搜索 agent 的可修复树状记忆",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程搜索 agent 直接保留完整轨迹会导致上下文无限增长和噪声；普通摘要又可能覆盖错误事实，却不修复依赖这些事实的后续推理。",
+        "method": "方法把搜索过程建成 evidence tree，保留 source-linked evidence 和 revision history；冲突出现时定位 claim 源头并对受影响子树做局部修复，而不是重放整条轨迹。",
+        "experiments": "在四个公开问答/搜索 benchmark、2,149 个问题上，ReTree 相比 Full-Trajectory ReAct 提高 8.3 到 25.6 个百分点，同时最大单步 reasoning context 只有后者的 1/1.27 到 1/1.51。",
+        "research_help": "这是长程 agent memory 的强相关工作：关键不是压缩轨迹，而是让记忆支持 provenance、冲突定位和局部 rollback。",
+        "recommendation": {
+          "score": 96,
+          "level": "高",
+          "label": "长程搜索 agent 的可修复树状记忆",
+          "water_risk": "低",
+          "value_judgement": "长程搜索 agent 的可修复树状记忆",
+          "reason": "ReTree 为多步 search agent 构造 tree-structured memory：每个节点保存 bounded summary、证据和 revision history，当新证据推翻旧 claim 时回溯到引入节点，替换证据、重写摘要、剪枝受影响分支后继续搜索。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这是长程 agent memory 的强相关工作：关键不是压缩轨迹，而是让记忆支持 provenance、冲突定位和局部 rollback。",
+        "abstract_zh": "Large language model (LLM)-based search agents answer questions through multi-step interactions with external environments. However, providing complete execution trajectories to the LLM causes unbounded context growth and introduces noise. Existing compression methods reduce context at the cost of important details and often replace erroneous facts without repairing downstream reasoning derived from them. To address this problem, we propose ReTree, a self-correcting tree-structured memory mechanism for search agents. ReTree constructs a bounded per-step reasoning context while preserving sourc",
+        "full_summary": "ReTree 为多步 search agent 构造 tree-structured memory：每个节点保存 bounded summary、证据和 revision history，当新证据推翻旧 claim 时回溯到引入节点，替换证据、重写摘要、剪枝受影响分支后继续搜索。 长程搜索 agent 直接保留完整轨迹会导致上下文无限增长和噪声；普通摘要又可能覆盖错误事实，却不修复依赖这些事实的后续推理。 方法把搜索过程建成 evidence tree，保留 source-linked evidence 和 revision history；冲突出现时定位 claim 源头并对受影响子树做局部修复，而不是重放整条轨迹。 在四个公开问答/搜索 benchmark、2,149 个问题上，ReTree 相比 Full-Trajectory ReAct 提高 8.3 到 25.6 个百分点，同时最大单步 reasoning context 只有后者的 1/1.27 到 1/1.51。 Insight：这是长程 agent memory 的强相关工作：关键不是压缩轨迹，而是让记忆支持 provenance、冲突定位和局部 rollback。",
+        "card_summary": "ReTree 为多步 search agent 构造 tree-structured memory：每个节点保存 bounded summary、证据和 revision history，当新证据推翻旧 claim 时回溯到引入节点，替换证据、重写摘要、剪枝受影响分支后继续搜索。。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "长程搜索 agent 直接保留完整轨迹会导致上下文无限增长和噪声；普通摘要又可能覆盖错误事实，却不修复依赖这些事实的后续推理。",
+        "method": "方法把搜索过程建成 evidence tree，保留 source-linked evidence 和 revision history；冲突出现时定位 claim 源头并对受影响子树做局部修复，而不是重放整条轨迹。",
+        "experiments": "在四个公开问答/搜索 benchmark、2,149 个问题上，ReTree 相比 Full-Trajectory ReAct 提高 8.3 到 25.6 个百分点，同时最大单步 reasoning context 只有后者的 1/1.27 到 1/1.51。",
+        "research_help": "这是长程 agent memory 的强相关工作：关键不是压缩轨迹，而是让记忆支持 provenance、冲突定位和局部 rollback。",
+        "insight": "这是长程 agent memory 的强相关工作：关键不是压缩轨迹，而是让记忆支持 provenance、冲突定位和局部 rollback。",
+        "abstract_zh": "Large language model (LLM)-based search agents answer questions through multi-step interactions with external environments. However, providing complete execution trajectories to the LLM causes unbounded context growth and introduces noise. Existing compression methods reduce context at the cost of important details and often replace erroneous facts without repairing downstream reasoning derived from them. To address this problem, we propose ReTree, a self-correcting tree-structured memory mechanism for search agents. ReTree constructs a bounded per-step reasoning context while preserving source-linked evidence. It models search as an evidence tree whose nodes store bounded summaries, evidence, and revision histories. When newly retrieved evidence contradicts an earlier claim, ReTree traces back to the node where the claim was introduced, replaces outdated evidence, regenerates summaries,",
+        "card_summary": "ReTree 为多步 search agent 构造 tree-structured memory：每个节点保存 bounded summary、证据和 revision history，当新证据推翻旧 claim 时回溯到引入节点，替换证据、重写摘要、剪枝受影响分支后继续搜索。。",
+        "full_summary": "ReTree 为多步 search agent 构造 tree-structured memory：每个节点保存 bounded summary、证据和 revision history，当新证据推翻旧 claim 时回溯到引入节点，替换证据、重写摘要、剪枝受影响分支后继续搜索。 长程搜索 agent 直接保留完整轨迹会导致上下文无限增长和噪声；普通摘要又可能覆盖错误事实，却不修复依赖这些事实的后续推理。 方法把搜索过程建成 evidence tree，保留 source-linked evidence 和 revision history；冲突出现时定位 claim 源头并对受影响子树做局部修复，而不是重放整条轨迹。 在四个公开问答/搜索 benchmark、2,149 个问题上，ReTree 相比 Full-Trajectory ReAct 提高 8.3 到 25.6 个百分点，同时最大单步 reasoning context 只有后者的 1/1.27 到 1/1.51。 Insight：这是长程 agent memory 的强相关工作：关键不是压缩轨迹，而是让记忆支持 provenance、冲突定位和局部 rollback。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "长程搜索 agent 的可修复树状记忆",
+        "value_reason": "这是长程 agent memory 的强相关工作：关键不是压缩轨迹，而是让记忆支持 provenance、冲突定位和局部 rollback。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10538v1",
+      "title": "SKILLER: Language-Level Reinforcement Learning for Reusable Skill Extraction in Small Language Models",
+      "summary": "SKILLER 把 skill 生成视为 language-level reinforcement learning：强模型担任 actor/critic，小模型 agent loop 作为环境，反馈也用自然语言传播。目标是为 Qwen3.5-9B/4B 这类小模型自动生成匹配其行为空间的可复用技能。",
+      "url": "https://arxiv.org/abs/2608.10538v1",
+      "authors": [
+        "Chenhao Dang",
+        "Siyuan Xiong",
+        "Conghui He",
+        "Weijia Li"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/DANG-ai/SKILLER",
+      "venue_status": "",
+      "recommendation": {
+        "score": 90,
+        "level": "中",
+        "label": "用自然语言 RL 生成小模型 agent skill",
+        "water_risk": "低",
+        "value_judgement": "用自然语言 RL 生成小模型 agent skill",
+        "reason": "SKILLER 把 skill 生成视为 language-level reinforcement learning：强模型担任 actor/critic，小模型 agent loop 作为环境，反馈也用自然语言传播。目标是为 Qwen3.5-9B/4B 这类小模型自动生成匹配其行为空间的可复用技能。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": false,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Chenhao Dang",
+          "Siyuan Xiong",
+          "Conghui He",
+          "Weijia Li"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10538v1",
+        "project_url": "",
+        "repo_url": "https://github.com/DANG-ai/SKILLER",
+        "venue_status": "",
+        "contribution": "用自然语言 RL 生成小模型 agent skill",
+        "summary": "SKILLER 把 skill 生成视为 language-level reinforcement learning：强模型担任 actor/critic，小模型 agent loop 作为环境，反馈也用自然语言传播。目标是为 Qwen3.5-9B/4B 这类小模型自动生成匹配其行为空间的可复用技能。",
+        "highlights": [
+          "用自然语言 RL 生成小模型 agent skill",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "强闭源模型驱动的 agent harness 成本高，而小模型直接复用高端 skill 又常常因能力边界不匹配而失败。",
+        "method": "框架让强模型根据小模型执行反馈迭代生成和修改 skill，用自然语言奖励/批评约束小模型行为空间，并通过 progressive skill disclosure 避免小模型被长文本压垮。",
+        "experiments": "论文在五个 benchmark 上评测 Qwen3.5-9B 和 4B，9B 获得 4.3 到 20.4 个百分点绝对提升，4B 获得 1.8 到 13.3 点提升，并在单 skill 任务上接近强闭源模型表现。",
+        "research_help": "它把 agentic RL 放在技能文本层而非参数层，适合思考如何用语言反馈优化低成本 agent harness。",
+        "recommendation": {
+          "score": 90,
+          "level": "中",
+          "label": "用自然语言 RL 生成小模型 agent skill",
+          "water_risk": "低",
+          "value_judgement": "用自然语言 RL 生成小模型 agent skill",
+          "reason": "SKILLER 把 skill 生成视为 language-level reinforcement learning：强模型担任 actor/critic，小模型 agent loop 作为环境，反馈也用自然语言传播。目标是为 Qwen3.5-9B/4B 这类小模型自动生成匹配其行为空间的可复用技能。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": false,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它把 agentic RL 放在技能文本层而非参数层，适合思考如何用语言反馈优化低成本 agent harness。",
+        "abstract_zh": "Agent skills represent a standardized format for packaging procedural knowledge and domain expertise, serving within agent harness systems as an essential mechanism to continually constrain a language model's behavior space for repeatable, high-quality task execution. However, because strong closed-source models entail high inference costs, current popular agent harnesses, such as Codex and OpenClaw, remain prohibitively expensive when deploying these skills to accomplish real-world tasks. The rapid capability enhancement of open-source models deployable on consumer-grade GPUs presents a compe",
+        "full_summary": "SKILLER 把 skill 生成视为 language-level reinforcement learning：强模型担任 actor/critic，小模型 agent loop 作为环境，反馈也用自然语言传播。目标是为 Qwen3.5-9B/4B 这类小模型自动生成匹配其行为空间的可复用技能。 强闭源模型驱动的 agent harness 成本高，而小模型直接复用高端 skill 又常常因能力边界不匹配而失败。 框架让强模型根据小模型执行反馈迭代生成和修改 skill，用自然语言奖励/批评约束小模型行为空间，并通过 progressive skill disclosure 避免小模型被长文本压垮。 论文在五个 benchmark 上评测 Qwen3.5-9B 和 4B，9B 获得 4.3 到 20.4 个百分点绝对提升，4B 获得 1.8 到 13.3 点提升，并在单 skill 任务上接近强闭源模型表现。 Insight：它把 agentic RL 放在技能文本层而非参数层，适合思考如何用语言反馈优化低成本 agent harness。",
+        "card_summary": "SKILLER 把 skill 生成视为 language-level reinforcement learning：强模型担任 actor/critic，小模型 agent loop 作为环境，反馈也用自然语言传播。目标是为 Qwen3.5-9B/4B 这类小模型自动生成匹配其行为空间的可复用技能。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "强闭源模型驱动的 agent harness 成本高，而小模型直接复用高端 skill 又常常因能力边界不匹配而失败。",
+        "method": "框架让强模型根据小模型执行反馈迭代生成和修改 skill，用自然语言奖励/批评约束小模型行为空间，并通过 progressive skill disclosure 避免小模型被长文本压垮。",
+        "experiments": "论文在五个 benchmark 上评测 Qwen3.5-9B 和 4B，9B 获得 4.3 到 20.4 个百分点绝对提升，4B 获得 1.8 到 13.3 点提升，并在单 skill 任务上接近强闭源模型表现。",
+        "research_help": "它把 agentic RL 放在技能文本层而非参数层，适合思考如何用语言反馈优化低成本 agent harness。",
+        "insight": "它把 agentic RL 放在技能文本层而非参数层，适合思考如何用语言反馈优化低成本 agent harness。",
+        "abstract_zh": "Agent skills represent a standardized format for packaging procedural knowledge and domain expertise, serving within agent harness systems as an essential mechanism to continually constrain a language model's behavior space for repeatable, high-quality task execution. However, because strong closed-source models entail high inference costs, current popular agent harnesses, such as Codex and OpenClaw, remain prohibitively expensive when deploying these skills to accomplish real-world tasks. The rapid capability enhancement of open-source models deployable on consumer-grade GPUs presents a compelling opportunity to drastically reduce these costs by leveraging skill-based behavioral constraints. Nevertheless, automatically generating effective skills tailored specifically for such compact models remains a significant practical challenge. To address this, we propose SKILLER, a natural-langua",
+        "card_summary": "SKILLER 把 skill 生成视为 language-level reinforcement learning：强模型担任 actor/critic，小模型 agent loop 作为环境，反馈也用自然语言传播。目标是为 Qwen3.5-9B/4B 这类小模型自动生成匹配其行为空间的可复用技能。",
+        "full_summary": "SKILLER 把 skill 生成视为 language-level reinforcement learning：强模型担任 actor/critic，小模型 agent loop 作为环境，反馈也用自然语言传播。目标是为 Qwen3.5-9B/4B 这类小模型自动生成匹配其行为空间的可复用技能。 强闭源模型驱动的 agent harness 成本高，而小模型直接复用高端 skill 又常常因能力边界不匹配而失败。 框架让强模型根据小模型执行反馈迭代生成和修改 skill，用自然语言奖励/批评约束小模型行为空间，并通过 progressive skill disclosure 避免小模型被长文本压垮。 论文在五个 benchmark 上评测 Qwen3.5-9B 和 4B，9B 获得 4.3 到 20.4 个百分点绝对提升，4B 获得 1.8 到 13.3 点提升，并在单 skill 任务上接近强闭源模型表现。 Insight：它把 agentic RL 放在技能文本层而非参数层，适合思考如何用语言反馈优化低成本 agent harness。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "用自然语言 RL 生成小模型 agent skill",
+        "value_reason": "它把 agentic RL 放在技能文本层而非参数层，适合思考如何用语言反馈优化低成本 agent harness。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10509v1",
+      "title": "MAP-Graph: Provenance-Aware Shared Memory for Multi-Agent Workflows",
+      "summary": "MAP-Graph 解决 shared memory 在多 agent workflow 中的权限、信任和来源传播问题：同一条记忆可能语义相关，但因私有、污染、撤销或低可信来源而不应被某个 action 使用。论文把 agent、source、memory、claim 和 action 放进 typed execution graph，并在执行前做 risk-sensitive gate。",
+      "url": "https://arxiv.org/abs/2608.10509v1",
+      "authors": [
+        "Yiqi Wang",
+        "Zihao Yan",
+        "Jiaqi Zhang",
+        "Zhangkai Wu",
+        "Mingkai Zheng",
+        "Zequn Sun",
+        "Yanming Zhu",
+        "Taotao Cai"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence",
+        "Multiagent Systems"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 93,
+        "level": "高",
+        "label": "多 agent workflow 的 provenance-aware shared memory",
+        "water_risk": "低",
+        "value_judgement": "多 agent workflow 的 provenance-aware shared memory",
+        "reason": "MAP-Graph 解决 shared memory 在多 agent workflow 中的权限、信任和来源传播问题：同一条记忆可能语义相关，但因私有、污染、撤销或低可信来源而不应被某个 action 使用。论文把 agent、source、memory、claim 和 action 放进 typed execution graph，并在执行前做 risk-sensitive gate。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Yiqi Wang",
+          "Zihao Yan",
+          "Jiaqi Zhang",
+          "Zhangkai Wu",
+          "Mingkai Zheng",
+          "Zequn Sun",
+          "Yanming Zhu",
+          "Taotao Cai"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10509v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "多 agent workflow 的 provenance-aware shared memory",
+        "summary": "MAP-Graph 解决 shared memory 在多 agent workflow 中的权限、信任和来源传播问题：同一条记忆可能语义相关，但因私有、污染、撤销或低可信来源而不应被某个 action 使用。论文把 agent、source、memory、claim 和 action 放进 typed execution graph，并在执行前做 risk-sensitive gate。",
+        "highlights": [
+          "多 agent workflow 的 provenance-aware shared memory",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长工作流中的共享记忆会隐藏来源和权限约束，摘要或检索结果一旦掩盖 poisoned/private/revoked ancestry，就可能触发越权读取或不安全行动。",
+        "method": "MAP-Graph 跟踪记忆祖先，先排除权限不合格记录，再按语义相似度和路径 trust 重排，最后根据 action risk 做门控，同时保留 lineage 供审计。",
+        "experiments": "在三个领域每种方法 2,700 个 synthetic tasks 的控制 benchmark 上，MAP-Graph 达到 94.96% overall task success、72.70% exact decision accuracy，并通过消融分离 permission filtering、path trust 和 action gating 的贡献。",
+        "research_help": "对多 agent 长流程很关键：memory 的可用性不能只看相关度，还要把 provenance、权限和行动风险作为执行时控制信号。",
+        "recommendation": {
+          "score": 93,
+          "level": "高",
+          "label": "多 agent workflow 的 provenance-aware shared memory",
+          "water_risk": "低",
+          "value_judgement": "多 agent workflow 的 provenance-aware shared memory",
+          "reason": "MAP-Graph 解决 shared memory 在多 agent workflow 中的权限、信任和来源传播问题：同一条记忆可能语义相关，但因私有、污染、撤销或低可信来源而不应被某个 action 使用。论文把 agent、source、memory、claim 和 action 放进 typed execution graph，并在执行前做 risk-sensitive gate。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "对多 agent 长流程很关键：memory 的可用性不能只看相关度，还要把 provenance、权限和行动风险作为执行时控制信号。",
+        "abstract_zh": "Shared memory helps language-model agents reuse information across long workflows, yet relevant evidence may not be admissible for a particular agent or action. Because restrictions propagate through derivations, summaries can conceal private, poisoned, untrusted, or revoked sources, enabling unauthorized reads or unsafe actions. Existing approaches provide semantic retrieval, scoped access, or lineage tracking, but do not clearly separate hard authorization from graded trust or adapt evidence requirements to action risk. We introduce MAP-Graph, a provenance-aware memory layer that represents ",
+        "full_summary": "MAP-Graph 解决 shared memory 在多 agent workflow 中的权限、信任和来源传播问题：同一条记忆可能语义相关，但因私有、污染、撤销或低可信来源而不应被某个 action 使用。论文把 agent、source、memory、claim 和 action 放进 typed execution graph，并在执行前做 risk-sensitive gate。 长工作流中的共享记忆会隐藏来源和权限约束，摘要或检索结果一旦掩盖 poisoned/private/revoked ancestry，就可能触发越权读取或不安全行动。 MAP-Graph 跟踪记忆祖先，先排除权限不合格记录，再按语义相似度和路径 trust 重排，最后根据 action risk 做门控，同时保留 lineage 供审计。 在三个领域每种方法 2,700 个 synthetic tasks 的控制 benchmark 上，MAP-Graph 达到 94.96% overall task success、72.70% exact decision accuracy，并通过消融分离 permission filtering、path trust 和 action gating 的贡献。 Insight：对多 agent 长流程很关键：memory 的可用性不能只看相关度，还要把 provenance、权限和行动风险作为执行时控制信号。",
+        "card_summary": "MAP-Graph 解决 shared memory 在多 agent workflow 中的权限、信任和来源传播问题：同一条记忆可能语义相关，但因私有、污染、撤销或低可信来源而不应被某个 action 使用。论文把 agent、source、memory、claim 和 action 放进 typed execution graph，并在执行前做 risk-sensitive gate。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "长工作流中的共享记忆会隐藏来源和权限约束，摘要或检索结果一旦掩盖 poisoned/private/revoked ancestry，就可能触发越权读取或不安全行动。",
+        "method": "MAP-Graph 跟踪记忆祖先，先排除权限不合格记录，再按语义相似度和路径 trust 重排，最后根据 action risk 做门控，同时保留 lineage 供审计。",
+        "experiments": "在三个领域每种方法 2,700 个 synthetic tasks 的控制 benchmark 上，MAP-Graph 达到 94.96% overall task success、72.70% exact decision accuracy，并通过消融分离 permission filtering、path trust 和 action gating 的贡献。",
+        "research_help": "对多 agent 长流程很关键：memory 的可用性不能只看相关度，还要把 provenance、权限和行动风险作为执行时控制信号。",
+        "insight": "对多 agent 长流程很关键：memory 的可用性不能只看相关度，还要把 provenance、权限和行动风险作为执行时控制信号。",
+        "abstract_zh": "Shared memory helps language-model agents reuse information across long workflows, yet relevant evidence may not be admissible for a particular agent or action. Because restrictions propagate through derivations, summaries can conceal private, poisoned, untrusted, or revoked sources, enabling unauthorized reads or unsafe actions. Existing approaches provide semantic retrieval, scoped access, or lineage tracking, but do not clearly separate hard authorization from graded trust or adapt evidence requirements to action risk. We introduce MAP-Graph, a provenance-aware memory layer that represents agents, sources, memories, claims, and actions in a typed execution graph. It traces ancestry, excludes permission-ineligible records, reranks eligible memories by semantic similarity and multiplicative path trust, and applies a risk-sensitive gate before action execution while retaining affected li",
+        "card_summary": "MAP-Graph 解决 shared memory 在多 agent workflow 中的权限、信任和来源传播问题：同一条记忆可能语义相关，但因私有、污染、撤销或低可信来源而不应被某个 action 使用。论文把 agent、source、memory、claim 和 action 放进 typed execution graph，并在执行前做 risk-sensitive gate。",
+        "full_summary": "MAP-Graph 解决 shared memory 在多 agent workflow 中的权限、信任和来源传播问题：同一条记忆可能语义相关，但因私有、污染、撤销或低可信来源而不应被某个 action 使用。论文把 agent、source、memory、claim 和 action 放进 typed execution graph，并在执行前做 risk-sensitive gate。 长工作流中的共享记忆会隐藏来源和权限约束，摘要或检索结果一旦掩盖 poisoned/private/revoked ancestry，就可能触发越权读取或不安全行动。 MAP-Graph 跟踪记忆祖先，先排除权限不合格记录，再按语义相似度和路径 trust 重排，最后根据 action risk 做门控，同时保留 lineage 供审计。 在三个领域每种方法 2,700 个 synthetic tasks 的控制 benchmark 上，MAP-Graph 达到 94.96% overall task success、72.70% exact decision accuracy，并通过消融分离 permission filtering、path trust 和 action gating 的贡献。 Insight：对多 agent 长流程很关键：memory 的可用性不能只看相关度，还要把 provenance、权限和行动风险作为执行时控制信号。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "多 agent workflow 的 provenance-aware shared memory",
+        "value_reason": "对多 agent 长流程很关键：memory 的可用性不能只看相关度，还要把 provenance、权限和行动风险作为执行时控制信号。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10504v1",
+      "title": "MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph",
+      "summary": "MEGA 把 coding agent/session 中的操作经验沉淀为 durable wisdom asset，再拆成 typed Wisdom Graph 中的 PCR 单元，通过演绎、溯因和归纳关系组合成后续优化计划。它把 agent workflow 优化和知识自演化放进同一闭环。",
+      "url": "https://arxiv.org/abs/2608.10504v1",
+      "authors": [
+        "Jung Hwan Lee",
+        "Kyu Ho Lee",
+        "Gwang Hoon Yoo"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 88,
+        "level": "中",
+        "label": "基于 Wisdom Graph 的自演化 agent 优化基础设施",
+        "water_risk": "低",
+        "value_judgement": "基于 Wisdom Graph 的自演化 agent 优化基础设施",
+        "reason": "MEGA 把 coding agent/session 中的操作经验沉淀为 durable wisdom asset，再拆成 typed Wisdom Graph 中的 PCR 单元，通过演绎、溯因和归纳关系组合成后续优化计划。它把 agent workflow 优化和知识自演化放进同一闭环。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Jung Hwan Lee",
+          "Kyu Ho Lee",
+          "Gwang Hoon Yoo"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10504v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "基于 Wisdom Graph 的自演化 agent 优化基础设施",
+        "summary": "MEGA 把 coding agent/session 中的操作经验沉淀为 durable wisdom asset，再拆成 typed Wisdom Graph 中的 PCR 单元，通过演绎、溯因和归纳关系组合成后续优化计划。它把 agent workflow 优化和知识自演化放进同一闭环。",
+        "highlights": [
+          "基于 Wisdom Graph 的自演化 agent 优化基础设施",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "agent 系统优化常常每次从零开始搜索策略，缺少可组合、可验证、可随运行证据更新的长期知识基础设施。",
+        "method": "三层结构先从 session 中聚类和 A/B 验证 reusable wisdom，再用 Wisdom Graph 做组合推理，最后在 code nodes、LLM calls 和 tool-using agents 上做多 agent 协作优化并归因改进效果。",
+        "experiments": "论文为 technical report，报告了行为模式聚类、经验资产化、受控评价和跨运行反馈机制；实验重点是基础设施设计与受控归因，而不是单一 benchmark SOTA。",
+        "research_help": "它对 long-running coding agent 很相关，因为它把“经验沉淀”和“下一轮 harness 优化”统一成可审计的图结构闭环。",
+        "recommendation": {
+          "score": 88,
+          "level": "中",
+          "label": "基于 Wisdom Graph 的自演化 agent 优化基础设施",
+          "water_risk": "低",
+          "value_judgement": "基于 Wisdom Graph 的自演化 agent 优化基础设施",
+          "reason": "MEGA 把 coding agent/session 中的操作经验沉淀为 durable wisdom asset，再拆成 typed Wisdom Graph 中的 PCR 单元，通过演绎、溯因和归纳关系组合成后续优化计划。它把 agent workflow 优化和知识自演化放进同一闭环。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "它对 long-running coding agent 很相关，因为它把“经验沉淀”和“下一轮 harness 优化”统一成可审计的图结构闭环。",
+        "abstract_zh": "As coding agents increasingly handle implementation, the central challenge shifts from building individual agents to building an infrastructure that systematically improves them. Current approaches optimize agent systems without accumulating transferable knowledge, accumulate knowledge without compositional reasoning over it, and lack a mechanism for that knowledge to self-evolve through operational evidence. MEGA (Meta Evaluation-Grounded Adaptation) addresses these gaps as a self-evolving infrastructure: each optimization cycle produces durable assets, compositional reasoning over those asse",
+        "full_summary": "MEGA 把 coding agent/session 中的操作经验沉淀为 durable wisdom asset，再拆成 typed Wisdom Graph 中的 PCR 单元，通过演绎、溯因和归纳关系组合成后续优化计划。它把 agent workflow 优化和知识自演化放进同一闭环。 agent 系统优化常常每次从零开始搜索策略，缺少可组合、可验证、可随运行证据更新的长期知识基础设施。 三层结构先从 session 中聚类和 A/B 验证 reusable wisdom，再用 Wisdom Graph 做组合推理，最后在 code nodes、LLM calls 和 tool-using agents 上做多 agent 协作优化并归因改进效果。 论文为 technical report，报告了行为模式聚类、经验资产化、受控评价和跨运行反馈机制；实验重点是基础设施设计与受控归因，而不是单一 benchmark SOTA。 Insight：它对 long-running coding agent 很相关，因为它把“经验沉淀”和“下一轮 harness 优化”统一成可审计的图结构闭环。",
+        "card_summary": "MEGA 把 coding agent/session 中的操作经验沉淀为 durable wisdom asset，再拆成 typed Wisdom Graph 中的 PCR 单元，通过演绎、溯因和归纳关系组合成后续优化计划。它把 agent workflow 优化和知识自演化放进同一闭环。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "agent 系统优化常常每次从零开始搜索策略，缺少可组合、可验证、可随运行证据更新的长期知识基础设施。",
+        "method": "三层结构先从 session 中聚类和 A/B 验证 reusable wisdom，再用 Wisdom Graph 做组合推理，最后在 code nodes、LLM calls 和 tool-using agents 上做多 agent 协作优化并归因改进效果。",
+        "experiments": "论文为 technical report，报告了行为模式聚类、经验资产化、受控评价和跨运行反馈机制；实验重点是基础设施设计与受控归因，而不是单一 benchmark SOTA。",
+        "research_help": "它对 long-running coding agent 很相关，因为它把“经验沉淀”和“下一轮 harness 优化”统一成可审计的图结构闭环。",
+        "insight": "它对 long-running coding agent 很相关，因为它把“经验沉淀”和“下一轮 harness 优化”统一成可审计的图结构闭环。",
+        "abstract_zh": "As coding agents increasingly handle implementation, the central challenge shifts from building individual agents to building an infrastructure that systematically improves them. Current approaches optimize agent systems without accumulating transferable knowledge, accumulate knowledge without compositional reasoning over it, and lack a mechanism for that knowledge to self-evolve through operational evidence. MEGA (Meta Evaluation-Grounded Adaptation) addresses these gaps as a self-evolving infrastructure: each optimization cycle produces durable assets, compositional reasoning over those assets guides subsequent optimization, and operational evidence refines both the accumulated wisdom and the reasoning that governs it. Layer 1 distills reusable wisdom from agent sessions through behavioral-pattern clustering and empirical A/B validation, transforming each process into a durable asset. ",
+        "card_summary": "MEGA 把 coding agent/session 中的操作经验沉淀为 durable wisdom asset，再拆成 typed Wisdom Graph 中的 PCR 单元，通过演绎、溯因和归纳关系组合成后续优化计划。它把 agent workflow 优化和知识自演化放进同一闭环。",
+        "full_summary": "MEGA 把 coding agent/session 中的操作经验沉淀为 durable wisdom asset，再拆成 typed Wisdom Graph 中的 PCR 单元，通过演绎、溯因和归纳关系组合成后续优化计划。它把 agent workflow 优化和知识自演化放进同一闭环。 agent 系统优化常常每次从零开始搜索策略，缺少可组合、可验证、可随运行证据更新的长期知识基础设施。 三层结构先从 session 中聚类和 A/B 验证 reusable wisdom，再用 Wisdom Graph 做组合推理，最后在 code nodes、LLM calls 和 tool-using agents 上做多 agent 协作优化并归因改进效果。 论文为 technical report，报告了行为模式聚类、经验资产化、受控评价和跨运行反馈机制；实验重点是基础设施设计与受控归因，而不是单一 benchmark SOTA。 Insight：它对 long-running coding agent 很相关，因为它把“经验沉淀”和“下一轮 harness 优化”统一成可审计的图结构闭环。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "基于 Wisdom Graph 的自演化 agent 优化基础设施",
+        "value_reason": "它对 long-running coding agent 很相关，因为它把“经验沉淀”和“下一轮 harness 优化”统一成可审计的图结构闭环。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10502v1",
+      "title": "From Faulty Memories to Corrected Actions: Dependency-Guided Rollback Repair for Memory-Augmented Agents",
+      "summary": "这篇提出 post-failure memory recovery：当持久记忆中有错误、污染或过期记录时，不只修当前答案，也要修复被错误记忆污染的持久状态。Dependency-guided rollback repair 用 memory-to-action graph 找下游依赖、保留独立可信支持、停用无支持状态，并只重放受影响计算。",
+      "url": "https://arxiv.org/abs/2608.10502v1",
+      "authors": [
+        "Caili Yu",
+        "Yiqi Wang",
+        "Jiaqi Zhang",
+        "Yiqun Duan",
+        "Mingkai Zheng",
+        "Zhangkai Wu",
+        "Kaize Shi",
+        "Taotao Cai"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "memory-augmented agent 的依赖回滚修复",
+        "water_risk": "低",
+        "value_judgement": "memory-augmented agent 的依赖回滚修复",
+        "reason": "这篇提出 post-failure memory recovery：当持久记忆中有错误、污染或过期记录时，不只修当前答案，也要修复被错误记忆污染的持久状态。Dependency-guided rollback repair 用 memory-to-action graph 找下游依赖、保留独立可信支持、停用无支持状态，并只重放受影响计算。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Caili Yu",
+          "Yiqi Wang",
+          "Jiaqi Zhang",
+          "Yiqun Duan",
+          "Mingkai Zheng",
+          "Zhangkai Wu",
+          "Kaize Shi",
+          "Taotao Cai"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10502v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "memory-augmented agent 的依赖回滚修复",
+        "summary": "这篇提出 post-failure memory recovery：当持久记忆中有错误、污染或过期记录时，不只修当前答案，也要修复被错误记忆污染的持久状态。Dependency-guided rollback repair 用 memory-to-action graph 找下游依赖、保留独立可信支持、停用无支持状态，并只重放受影响计算。",
+        "highlights": [
+          "memory-augmented agent 的依赖回滚修复",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "persistent memory 会让错误跨 session 留存并污染后续行动；简单删除源记忆会留下已经传播的 derived claim/action，而全量重置又破坏良性状态。",
+        "method": "方法构建 typed memory-execution graph，经过依赖追踪、独立支持检查、规则化 rollback planning 和 selective replay 来同时修复答案与 memory state。",
+        "experiments": "在 150 个受控案例和 50 个 LongMemEval-V2 衍生 stress cases 上，方法分别达到 85.3% 与 68.0% recovery，优于最强对比的 77.3% 与 54.0%，claim invalidation F1 也最高。",
+        "research_help": "这是 agent memory recovery 的核心问题之一：恢复应按依赖子图局部执行，而不是把记忆删除或全量重放当万能方案。",
+        "recommendation": {
+          "score": 95,
+          "level": "高",
+          "label": "memory-augmented agent 的依赖回滚修复",
+          "water_risk": "低",
+          "value_judgement": "memory-augmented agent 的依赖回滚修复",
+          "reason": "这篇提出 post-failure memory recovery：当持久记忆中有错误、污染或过期记录时，不只修当前答案，也要修复被错误记忆污染的持久状态。Dependency-guided rollback repair 用 memory-to-action graph 找下游依赖、保留独立可信支持、停用无支持状态，并只重放受影响计算。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这是 agent memory recovery 的核心问题之一：恢复应按依赖子图局部执行，而不是把记忆删除或全量重放当万能方案。",
+        "abstract_zh": "Persistent memory lets language-model agents reuse information across sessions, but it also makes errors durable: a poisoned, stale, or misattributed record can alter reasoning, tool use, answers, and subsequent memory writes. Existing defenses mainly detect or delete suspicious memories, or revise the current response. Deleting the source leaves already propagated claims, actions, and derived memories active, whereas resetting the store or replaying the full trace destroys benign state and repeats unnecessary computation. We therefore formulate \\textbf{post-failure memory recovery: } \\textit{",
+        "full_summary": "这篇提出 post-failure memory recovery：当持久记忆中有错误、污染或过期记录时，不只修当前答案，也要修复被错误记忆污染的持久状态。Dependency-guided rollback repair 用 memory-to-action graph 找下游依赖、保留独立可信支持、停用无支持状态，并只重放受影响计算。 persistent memory 会让错误跨 session 留存并污染后续行动；简单删除源记忆会留下已经传播的 derived claim/action，而全量重置又破坏良性状态。 方法构建 typed memory-execution graph，经过依赖追踪、独立支持检查、规则化 rollback planning 和 selective replay 来同时修复答案与 memory state。 在 150 个受控案例和 50 个 LongMemEval-V2 衍生 stress cases 上，方法分别达到 85.3% 与 68.0% recovery，优于最强对比的 77.3% 与 54.0%，claim invalidation F1 也最高。 Insight：这是 agent memory recovery 的核心问题之一：恢复应按依赖子图局部执行，而不是把记忆删除或全量重放当万能方案。",
+        "card_summary": "这篇提出 post-failure memory recovery：当持久记忆中有错误、污染或过期记录时，不只修当前答案，也要修复被错误记忆污染的持久状态。Dependency-guided rollback repair 用 memory-to-action graph 找下游依赖、保留独立可信支持、停用无支持状态，并只重放受影响计算。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "persistent memory 会让错误跨 session 留存并污染后续行动；简单删除源记忆会留下已经传播的 derived claim/action，而全量重置又破坏良性状态。",
+        "method": "方法构建 typed memory-execution graph，经过依赖追踪、独立支持检查、规则化 rollback planning 和 selective replay 来同时修复答案与 memory state。",
+        "experiments": "在 150 个受控案例和 50 个 LongMemEval-V2 衍生 stress cases 上，方法分别达到 85.3% 与 68.0% recovery，优于最强对比的 77.3% 与 54.0%，claim invalidation F1 也最高。",
+        "research_help": "这是 agent memory recovery 的核心问题之一：恢复应按依赖子图局部执行，而不是把记忆删除或全量重放当万能方案。",
+        "insight": "这是 agent memory recovery 的核心问题之一：恢复应按依赖子图局部执行，而不是把记忆删除或全量重放当万能方案。",
+        "abstract_zh": "Persistent memory lets language-model agents reuse information across sessions, but it also makes errors durable: a poisoned, stale, or misattributed record can alter reasoning, tool use, answers, and subsequent memory writes. Existing defenses mainly detect or delete suspicious memories, or revise the current response. Deleting the source leaves already propagated claims, actions, and derived memories active, whereas resetting the store or replaying the full trace destroys benign state and repeats unnecessary computation. We therefore formulate \\textbf{post-failure memory recovery: } \\textit{given a failed execution and diagnosed faulty memories, recover both the answer and persistent state while retaining unaffected work.} Our \\textbf{dependency-guided rollback repair} builds a typed memory-to-action graph from runtime provenance, traces explicit downstream dependencies, preserves cand",
+        "card_summary": "这篇提出 post-failure memory recovery：当持久记忆中有错误、污染或过期记录时，不只修当前答案，也要修复被错误记忆污染的持久状态。Dependency-guided rollback repair 用 memory-to-action graph 找下游依赖、保留独立可信支持、停用无支持状态，并只重放受影响计算。",
+        "full_summary": "这篇提出 post-failure memory recovery：当持久记忆中有错误、污染或过期记录时，不只修当前答案，也要修复被错误记忆污染的持久状态。Dependency-guided rollback repair 用 memory-to-action graph 找下游依赖、保留独立可信支持、停用无支持状态，并只重放受影响计算。 persistent memory 会让错误跨 session 留存并污染后续行动；简单删除源记忆会留下已经传播的 derived claim/action，而全量重置又破坏良性状态。 方法构建 typed memory-execution graph，经过依赖追踪、独立支持检查、规则化 rollback planning 和 selective replay 来同时修复答案与 memory state。 在 150 个受控案例和 50 个 LongMemEval-V2 衍生 stress cases 上，方法分别达到 85.3% 与 68.0% recovery，优于最强对比的 77.3% 与 54.0%，claim invalidation F1 也最高。 Insight：这是 agent memory recovery 的核心问题之一：恢复应按依赖子图局部执行，而不是把记忆删除或全量重放当万能方案。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "memory-augmented agent 的依赖回滚修复",
+        "value_reason": "这是 agent memory recovery 的核心问题之一：恢复应按依赖子图局部执行，而不是把记忆删除或全量重放当万能方案。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10494v1",
+      "title": "GeoForge: Non-Parametric Self-Evolving Agents for Earth-Observation Reasoning",
+      "summary": "GeoForge 把 earth-observation agent 的完整工具轨迹蒸馏成三类 non-parametric execution state：workflow graph memory、action-level experiences 和 adapted skill SOP，用于后续工具规划。虽然领域是遥感，但问题本质是约束密集工具 workflow 的经验复用。",
+      "url": "https://arxiv.org/abs/2608.10494v1",
+      "authors": [
+        "Xin Xiao",
+        "Jiang Zhong",
+        "Junnan Zhu",
+        "Yingchao Feng",
+        "Peijin Wang",
+        "Yidan Zhang",
+        "Kaiwen Wei"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence",
+        "Multiagent Systems"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 84,
+        "level": "中",
+        "label": "地球观测 agent 的自演化工具流程记忆",
+        "water_risk": "中",
+        "value_judgement": "地球观测 agent 的自演化工具流程记忆",
+        "reason": "GeoForge 把 earth-observation agent 的完整工具轨迹蒸馏成三类 non-parametric execution state：workflow graph memory、action-level experiences 和 adapted skill SOP，用于后续工具规划。虽然领域是遥感，但问题本质是约束密集工具 workflow 的经验复用。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xin Xiao",
+          "Jiang Zhong",
+          "Junnan Zhu",
+          "Yingchao Feng",
+          "Peijin Wang",
+          "Yidan Zhang",
+          "Kaiwen Wei"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10494v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "地球观测 agent 的自演化工具流程记忆",
+        "summary": "GeoForge 把 earth-observation agent 的完整工具轨迹蒸馏成三类 non-parametric execution state：workflow graph memory、action-level experiences 和 adapted skill SOP，用于后续工具规划。虽然领域是遥感，但问题本质是约束密集工具 workflow 的经验复用。",
+        "highlights": [
+          "地球观测 agent 的自演化工具流程记忆",
+          "偏水风险：中",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "EO agent 的工具选择和执行顺序受 sensing semantics、产品依赖、空间/时间兼容性和参数约束限制，每次从大操作空间搜索会产生冗余调用和错误流程。",
+        "method": "框架根据 sensing context 缩小操作空间，检索三类记忆形成 task-conditioned prior；任务结束后再经过 safety-gated distillation 把 grounded trajectories 写回可复用执行知识。",
+        "experiments": "论文在多个 geospatial benchmark 上报告任务准确率和 tool-use trajectory quality 同时提升，并显示跨不同 LLM backbone 减少规划与推理错误。",
+        "research_help": "可迁移点在于把领域工具流程拆成全局顺序、局部纠错和 SOP 约束三层 memory，而不是只存完整轨迹。",
+        "recommendation": {
+          "score": 84,
+          "level": "中",
+          "label": "地球观测 agent 的自演化工具流程记忆",
+          "water_risk": "中",
+          "value_judgement": "地球观测 agent 的自演化工具流程记忆",
+          "reason": "GeoForge 把 earth-observation agent 的完整工具轨迹蒸馏成三类 non-parametric execution state：workflow graph memory、action-level experiences 和 adapted skill SOP，用于后续工具规划。虽然领域是遥感，但问题本质是约束密集工具 workflow 的经验复用。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "可迁移点在于把领域工具流程拆成全局顺序、局部纠错和 SOP 约束三层 memory，而不是只存完整轨迹。",
+        "abstract_zh": "Earth observation (EO) agents construct scientifically valid tool workflows and ground their conclusions in current geospatial evidence. This is challenging because EO workflows are constrained by sensing semantics, product dependencies, spatial and temporal compatibility, and parameter requirements. Existing agents often search a broad operation space for each query, while recent self-evolving systems do not fully organize heterogeneous EO trajectories into reusable knowledge across different decision levels. To solve this problem, we present GeoForge, a training-free, self-evolving framework",
+        "full_summary": "GeoForge 把 earth-observation agent 的完整工具轨迹蒸馏成三类 non-parametric execution state：workflow graph memory、action-level experiences 和 adapted skill SOP，用于后续工具规划。虽然领域是遥感，但问题本质是约束密集工具 workflow 的经验复用。 EO agent 的工具选择和执行顺序受 sensing semantics、产品依赖、空间/时间兼容性和参数约束限制，每次从大操作空间搜索会产生冗余调用和错误流程。 框架根据 sensing context 缩小操作空间，检索三类记忆形成 task-conditioned prior；任务结束后再经过 safety-gated distillation 把 grounded trajectories 写回可复用执行知识。 论文在多个 geospatial benchmark 上报告任务准确率和 tool-use trajectory quality 同时提升，并显示跨不同 LLM backbone 减少规划与推理错误。 Insight：可迁移点在于把领域工具流程拆成全局顺序、局部纠错和 SOP 约束三层 memory，而不是只存完整轨迹。",
+        "card_summary": "GeoForge 把 earth-observation agent 的完整工具轨迹蒸馏成三类 non-parametric execution state：workflow graph memory、action-level experiences 和 adapted skill SOP，用于后续工具规划。虽然领域是遥感，但问题本质是约束密集工具 workflow 的经验复用。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "EO agent 的工具选择和执行顺序受 sensing semantics、产品依赖、空间/时间兼容性和参数约束限制，每次从大操作空间搜索会产生冗余调用和错误流程。",
+        "method": "框架根据 sensing context 缩小操作空间，检索三类记忆形成 task-conditioned prior；任务结束后再经过 safety-gated distillation 把 grounded trajectories 写回可复用执行知识。",
+        "experiments": "论文在多个 geospatial benchmark 上报告任务准确率和 tool-use trajectory quality 同时提升，并显示跨不同 LLM backbone 减少规划与推理错误。",
+        "research_help": "可迁移点在于把领域工具流程拆成全局顺序、局部纠错和 SOP 约束三层 memory，而不是只存完整轨迹。",
+        "insight": "可迁移点在于把领域工具流程拆成全局顺序、局部纠错和 SOP 约束三层 memory，而不是只存完整轨迹。",
+        "abstract_zh": "Earth observation (EO) agents construct scientifically valid tool workflows and ground their conclusions in current geospatial evidence. This is challenging because EO workflows are constrained by sensing semantics, product dependencies, spatial and temporal compatibility, and parameter requirements. Existing agents often search a broad operation space for each query, while recent self-evolving systems do not fully organize heterogeneous EO trajectories into reusable knowledge across different decision levels. To solve this problem, we present GeoForge, a training-free, self-evolving framework that transforms completed trajectories into a structured nonparametric execution state. GeoForge constrains the operation space according to the sensing context, then retrieves a task-conditioned prior from three complementary memories. Workflow Graph Memory captures global operation order, Action-",
+        "card_summary": "GeoForge 把 earth-observation agent 的完整工具轨迹蒸馏成三类 non-parametric execution state：workflow graph memory、action-level experiences 和 adapted skill SOP，用于后续工具规划。虽然领域是遥感，但问题本质是约束密集工具 workflow 的经验复用。",
+        "full_summary": "GeoForge 把 earth-observation agent 的完整工具轨迹蒸馏成三类 non-parametric execution state：workflow graph memory、action-level experiences 和 adapted skill SOP，用于后续工具规划。虽然领域是遥感，但问题本质是约束密集工具 workflow 的经验复用。 EO agent 的工具选择和执行顺序受 sensing semantics、产品依赖、空间/时间兼容性和参数约束限制，每次从大操作空间搜索会产生冗余调用和错误流程。 框架根据 sensing context 缩小操作空间，检索三类记忆形成 task-conditioned prior；任务结束后再经过 safety-gated distillation 把 grounded trajectories 写回可复用执行知识。 论文在多个 geospatial benchmark 上报告任务准确率和 tool-use trajectory quality 同时提升，并显示跨不同 LLM backbone 减少规划与推理错误。 Insight：可迁移点在于把领域工具流程拆成全局顺序、局部纠错和 SOP 约束三层 memory，而不是只存完整轨迹。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "地球观测 agent 的自演化工具流程记忆",
+        "value_reason": "可迁移点在于把领域工具流程拆成全局顺序、局部纠错和 SOP 约束三层 memory，而不是只存完整轨迹。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10424v1",
+      "title": "Recovering Wasted Compute in Autoresearch Agents",
+      "summary": "这篇研究 autoresearch/MLE agent 为什么浪费 compute：重复修同类 bug、预算充足却不调参、tree search 不探索，以及做了 EDA 但不把分析转化为决策。作者用 global debug consultant、控制层修改和 refined tree search 在不换底座模型的情况下恢复性能。",
+      "url": "https://arxiv.org/abs/2608.10424v1",
+      "authors": [
+        "Au Kwok Chun",
+        "Abhigyan Acherjee",
+        "Amrutha Rao",
+        "Zaiqian Chen",
+        "Kazem Meidani",
+        "C. Bayan Bruss",
+        "Micah Goldblum"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence",
+        "Machine Learning"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 89,
+        "level": "中",
+        "label": "autoresearch agent 的搜索与调试 compute 回收",
+        "water_risk": "低",
+        "value_judgement": "autoresearch agent 的搜索与调试 compute 回收",
+        "reason": "这篇研究 autoresearch/MLE agent 为什么浪费 compute：重复修同类 bug、预算充足却不调参、tree search 不探索，以及做了 EDA 但不把分析转化为决策。作者用 global debug consultant、控制层修改和 refined tree search 在不换底座模型的情况下恢复性能。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Au Kwok Chun",
+          "Abhigyan Acherjee",
+          "Amrutha Rao",
+          "Zaiqian Chen",
+          "Kazem Meidani",
+          "C. Bayan Bruss",
+          "Micah Goldblum"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10424v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "autoresearch agent 的搜索与调试 compute 回收",
+        "summary": "这篇研究 autoresearch/MLE agent 为什么浪费 compute：重复修同类 bug、预算充足却不调参、tree search 不探索，以及做了 EDA 但不把分析转化为决策。作者用 global debug consultant、控制层修改和 refined tree search 在不换底座模型的情况下恢复性能。",
+        "highlights": [
+          "autoresearch agent 的搜索与调试 compute 回收",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "端到端研究/数据科学 agent 的核心循环是写代码、运行实验、读反馈并改进方案；如果搜索树陷入重复调试或无效分支，长程预算会被快速浪费。",
+        "method": "论文分析 MLE agent pipeline 中的四类失败，并加入跨分支共享 runtime constraints 的 debug consultant、prompt/control 改造和 Thompson Sampling 式树搜索以改善探索。",
+        "experiments": "正文展示这些 agentic design intervention 能在固定基础模型下显著提升 autoresearch 性能，尤其减少重复 bug 修复和不探索造成的预算浪费。",
+        "research_help": "这篇对 long-horizon agent 很实用：很多失败不是模型能力不足，而是 harness 没有把执行反馈、调试知识和搜索策略接好。",
+        "recommendation": {
+          "score": 89,
+          "level": "中",
+          "label": "autoresearch agent 的搜索与调试 compute 回收",
+          "water_risk": "低",
+          "value_judgement": "autoresearch agent 的搜索与调试 compute 回收",
+          "reason": "这篇研究 autoresearch/MLE agent 为什么浪费 compute：重复修同类 bug、预算充足却不调参、tree search 不探索，以及做了 EDA 但不把分析转化为决策。作者用 global debug consultant、控制层修改和 refined tree search 在不换底座模型的情况下恢复性能。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这篇对 long-horizon agent 很实用：很多失败不是模型能力不足，而是 harness 没有把执行反馈、调试知识和搜索策略接好。",
+        "abstract_zh": "A slew of recent works develop agents for solving research problems end-to-end, a paradigm increasingly referred to as autoresearch. Such agents have inspired large industry investment, motivated by their potential to automate time-consuming human labor and customize machine learning solutions for specialized applications. In this paper, we study the modeling pipeline at the core of these autoresearch systems and identify common failure modes when they are applied to tabular datasets: (1) they waste compute resolving the same bugs over and over again; (2) they often fail to tune hyperparameter",
+        "full_summary": "这篇研究 autoresearch/MLE agent 为什么浪费 compute：重复修同类 bug、预算充足却不调参、tree search 不探索，以及做了 EDA 但不把分析转化为决策。作者用 global debug consultant、控制层修改和 refined tree search 在不换底座模型的情况下恢复性能。 端到端研究/数据科学 agent 的核心循环是写代码、运行实验、读反馈并改进方案；如果搜索树陷入重复调试或无效分支，长程预算会被快速浪费。 论文分析 MLE agent pipeline 中的四类失败，并加入跨分支共享 runtime constraints 的 debug consultant、prompt/control 改造和 Thompson Sampling 式树搜索以改善探索。 正文展示这些 agentic design intervention 能在固定基础模型下显著提升 autoresearch 性能，尤其减少重复 bug 修复和不探索造成的预算浪费。 Insight：这篇对 long-horizon agent 很实用：很多失败不是模型能力不足，而是 harness 没有把执行反馈、调试知识和搜索策略接好。",
+        "card_summary": "这篇研究 autoresearch/MLE agent 为什么浪费 compute：重复修同类 bug、预算充足却不调参、tree search 不探索，以及做了 EDA 但不把分析转化为决策。作者用 global debug consultant、控制层修改和 refined tree search 在不换底座模型的情况下恢复性能。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "端到端研究/数据科学 agent 的核心循环是写代码、运行实验、读反馈并改进方案；如果搜索树陷入重复调试或无效分支，长程预算会被快速浪费。",
+        "method": "论文分析 MLE agent pipeline 中的四类失败，并加入跨分支共享 runtime constraints 的 debug consultant、prompt/control 改造和 Thompson Sampling 式树搜索以改善探索。",
+        "experiments": "正文展示这些 agentic design intervention 能在固定基础模型下显著提升 autoresearch 性能，尤其减少重复 bug 修复和不探索造成的预算浪费。",
+        "research_help": "这篇对 long-horizon agent 很实用：很多失败不是模型能力不足，而是 harness 没有把执行反馈、调试知识和搜索策略接好。",
+        "insight": "这篇对 long-horizon agent 很实用：很多失败不是模型能力不足，而是 harness 没有把执行反馈、调试知识和搜索策略接好。",
+        "abstract_zh": "A slew of recent works develop agents for solving research problems end-to-end, a paradigm increasingly referred to as autoresearch. Such agents have inspired large industry investment, motivated by their potential to automate time-consuming human labor and customize machine learning solutions for specialized applications. In this paper, we study the modeling pipeline at the core of these autoresearch systems and identify common failure modes when they are applied to tabular datasets: (1) they waste compute resolving the same bugs over and over again; (2) they often fail to tune hyperparameters even when they have a large remaining compute budget; (3) the tree-search algorithms that power them do not explore; and (4) they perform data analysis, mimicking the humans whose data they are trained on, but do not use that analysis to make downstream decisions. We explore targeted interventions",
+        "card_summary": "这篇研究 autoresearch/MLE agent 为什么浪费 compute：重复修同类 bug、预算充足却不调参、tree search 不探索，以及做了 EDA 但不把分析转化为决策。作者用 global debug consultant、控制层修改和 refined tree search 在不换底座模型的情况下恢复性能。",
+        "full_summary": "这篇研究 autoresearch/MLE agent 为什么浪费 compute：重复修同类 bug、预算充足却不调参、tree search 不探索，以及做了 EDA 但不把分析转化为决策。作者用 global debug consultant、控制层修改和 refined tree search 在不换底座模型的情况下恢复性能。 端到端研究/数据科学 agent 的核心循环是写代码、运行实验、读反馈并改进方案；如果搜索树陷入重复调试或无效分支，长程预算会被快速浪费。 论文分析 MLE agent pipeline 中的四类失败，并加入跨分支共享 runtime constraints 的 debug consultant、prompt/control 改造和 Thompson Sampling 式树搜索以改善探索。 正文展示这些 agentic design intervention 能在固定基础模型下显著提升 autoresearch 性能，尤其减少重复 bug 修复和不探索造成的预算浪费。 Insight：这篇对 long-horizon agent 很实用：很多失败不是模型能力不足，而是 harness 没有把执行反馈、调试知识和搜索策略接好。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "autoresearch agent 的搜索与调试 compute 回收",
+        "value_reason": "这篇对 long-horizon agent 很实用：很多失败不是模型能力不足，而是 harness 没有把执行反馈、调试知识和搜索策略接好。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10366v1",
+      "title": "DSAgentBench: Can Agents Automate End-to-End Data-Science Workflows in Real Computer Environments?",
+      "summary": "DSAgentBench 评测 agent 是否能在真实计算机环境里完成完整数据科学工作流，而不是只生成一段代码。它包含 275 个覆盖数据 wrangling、探索、建模、可视化和验证的任务，并用确定性 evaluator 检查分析正确性、视觉输出和模型表现。",
+      "url": "https://arxiv.org/abs/2608.10366v1",
+      "authors": [
+        "Mizanur Rahman",
+        "Mohammed Saidul Islam",
+        "Ridwan Mahbub",
+        "Md Tahmid Rahman Laskar",
+        "Shafiq Joty",
+        "Enamul Hoque Prince"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence",
+        "Computation and Language"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/vis-nlp/DSAgentBench",
+      "venue_status": "",
+      "recommendation": {
+        "score": 92,
+        "level": "高",
+        "label": "真实计算机环境中的端到端数据科学 agent benchmark",
+        "water_risk": "低",
+        "value_judgement": "真实计算机环境中的端到端数据科学 agent benchmark",
+        "reason": "DSAgentBench 评测 agent 是否能在真实计算机环境里完成完整数据科学工作流，而不是只生成一段代码。它包含 275 个覆盖数据 wrangling、探索、建模、可视化和验证的任务，并用确定性 evaluator 检查分析正确性、视觉输出和模型表现。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Mizanur Rahman",
+          "Mohammed Saidul Islam",
+          "Ridwan Mahbub",
+          "Md Tahmid Rahman Laskar",
+          "Shafiq Joty",
+          "Enamul Hoque Prince"
+        ],
+        "affiliations": "",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.10366v1",
+        "project_url": "",
+        "repo_url": "https://github.com/vis-nlp/DSAgentBench",
+        "venue_status": "",
+        "contribution": "真实计算机环境中的端到端数据科学 agent benchmark",
+        "summary": "DSAgentBench 评测 agent 是否能在真实计算机环境里完成完整数据科学工作流，而不是只生成一段代码。它包含 275 个覆盖数据 wrangling、探索、建模、可视化和验证的任务，并用确定性 evaluator 检查分析正确性、视觉输出和模型表现。",
+        "highlights": [
+          "真实计算机环境中的端到端数据科学 agent benchmark",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "真实数据科学需要跨 notebook、IDE、terminal、browser、database 协调工具和中间结果；现有 benchmark 多是孤立技能或代码执行，无法测完整 workflow。",
+        "method": "benchmark 在真实操作系统环境中要求 agent 逐步读取文件、写代码、运行分析、检查中间输出并交付最终结果；评估器不只看代码是否执行，还看分析与产物是否正确。",
+        "experiments": "15 个闭源与开源模型的实验中，最强 Claude-4.6-Sonnet 只有 56.70% task success，开源 agent 均低于 1%，主要失败在工具编排、OS grounding 和多步推理。",
+        "research_help": "这是工具/环境交互可靠性的重要 benchmark，能直接暴露“能写代码”和“能完成真实长流程分析”之间的差距。",
+        "recommendation": {
+          "score": 92,
+          "level": "高",
+          "label": "真实计算机环境中的端到端数据科学 agent benchmark",
+          "water_risk": "低",
+          "value_judgement": "真实计算机环境中的端到端数据科学 agent benchmark",
+          "reason": "DSAgentBench 评测 agent 是否能在真实计算机环境里完成完整数据科学工作流，而不是只生成一段代码。它包含 275 个覆盖数据 wrangling、探索、建模、可视化和验证的任务，并用确定性 evaluator 检查分析正确性、视觉输出和模型表现。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这是工具/环境交互可靠性的重要 benchmark，能直接暴露“能写代码”和“能完成真实长流程分析”之间的差距。",
+        "abstract_zh": "Real-world data science involves long-horizon workflows that span data wrangling, exploration, modeling, visualization, and validation, and require coordinated use of tools such as notebooks, IDEs, terminals, browsers, and databases within real operating environments. Yet existing benchmarks lack real-computer interaction and do not evaluate whether agents can execute complete end-to-end data-science workflows in realistic computing environments, failing to capture the multi-stage, multi-tool nature of data-science practice. We introduce DSAgentBench, the first benchmark to evaluate whether ag",
+        "full_summary": "DSAgentBench 评测 agent 是否能在真实计算机环境里完成完整数据科学工作流，而不是只生成一段代码。它包含 275 个覆盖数据 wrangling、探索、建模、可视化和验证的任务，并用确定性 evaluator 检查分析正确性、视觉输出和模型表现。 真实数据科学需要跨 notebook、IDE、terminal、browser、database 协调工具和中间结果；现有 benchmark 多是孤立技能或代码执行，无法测完整 workflow。 benchmark 在真实操作系统环境中要求 agent 逐步读取文件、写代码、运行分析、检查中间输出并交付最终结果；评估器不只看代码是否执行，还看分析与产物是否正确。 15 个闭源与开源模型的实验中，最强 Claude-4.6-Sonnet 只有 56.70% task success，开源 agent 均低于 1%，主要失败在工具编排、OS grounding 和多步推理。 Insight：这是工具/环境交互可靠性的重要 benchmark，能直接暴露“能写代码”和“能完成真实长流程分析”之间的差距。",
+        "card_summary": "DSAgentBench 评测 agent 是否能在真实计算机环境里完成完整数据科学工作流，而不是只生成一段代码。它包含 275 个覆盖数据 wrangling、探索、建模、可视化和验证的任务，并用确定性 evaluator 检查分析正确性、视觉输出和模型表现。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "真实数据科学需要跨 notebook、IDE、terminal、browser、database 协调工具和中间结果；现有 benchmark 多是孤立技能或代码执行，无法测完整 workflow。",
+        "method": "benchmark 在真实操作系统环境中要求 agent 逐步读取文件、写代码、运行分析、检查中间输出并交付最终结果；评估器不只看代码是否执行，还看分析与产物是否正确。",
+        "experiments": "15 个闭源与开源模型的实验中，最强 Claude-4.6-Sonnet 只有 56.70% task success，开源 agent 均低于 1%，主要失败在工具编排、OS grounding 和多步推理。",
+        "research_help": "这是工具/环境交互可靠性的重要 benchmark，能直接暴露“能写代码”和“能完成真实长流程分析”之间的差距。",
+        "insight": "这是工具/环境交互可靠性的重要 benchmark，能直接暴露“能写代码”和“能完成真实长流程分析”之间的差距。",
+        "abstract_zh": "Real-world data science involves long-horizon workflows that span data wrangling, exploration, modeling, visualization, and validation, and require coordinated use of tools such as notebooks, IDEs, terminals, browsers, and databases within real operating environments. Yet existing benchmarks lack real-computer interaction and do not evaluate whether agents can execute complete end-to-end data-science workflows in realistic computing environments, failing to capture the multi-stage, multi-tool nature of data-science practice. We introduce DSAgentBench, the first benchmark to evaluate whether agents can automate full data-science workflows inside real computer environments. DSAgentBench contains 275 diverse tasks covering the entire data-science life-cycle, reflecting the complexity and tool coordination required in practice. Each task requires grounding decisions in intermediate outputs a",
+        "card_summary": "DSAgentBench 评测 agent 是否能在真实计算机环境里完成完整数据科学工作流，而不是只生成一段代码。它包含 275 个覆盖数据 wrangling、探索、建模、可视化和验证的任务，并用确定性 evaluator 检查分析正确性、视觉输出和模型表现。",
+        "full_summary": "DSAgentBench 评测 agent 是否能在真实计算机环境里完成完整数据科学工作流，而不是只生成一段代码。它包含 275 个覆盖数据 wrangling、探索、建模、可视化和验证的任务，并用确定性 evaluator 检查分析正确性、视觉输出和模型表现。 真实数据科学需要跨 notebook、IDE、terminal、browser、database 协调工具和中间结果；现有 benchmark 多是孤立技能或代码执行，无法测完整 workflow。 benchmark 在真实操作系统环境中要求 agent 逐步读取文件、写代码、运行分析、检查中间输出并交付最终结果；评估器不只看代码是否执行，还看分析与产物是否正确。 15 个闭源与开源模型的实验中，最强 Claude-4.6-Sonnet 只有 56.70% task success，开源 agent 均低于 1%，主要失败在工具编排、OS grounding 和多步推理。 Insight：这是工具/环境交互可靠性的重要 benchmark，能直接暴露“能写代码”和“能完成真实长流程分析”之间的差距。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "真实计算机环境中的端到端数据科学 agent benchmark",
+        "value_reason": "这是工具/环境交互可靠性的重要 benchmark，能直接暴露“能写代码”和“能完成真实长流程分析”之间的差距。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10224v1",
+      "title": "Self-evolving Agentic Customer Support System at LinkedIn",
+      "summary": "LinkedIn 的 self-evolving support agent 把 RAG、auto-prompting 和生产对齐 evaluation 做成版本化闭环，在不微调基础模型的情况下持续改进客服表现。它强调 prompt、retrieval 和 evaluator 都要受 operational guardrails 管理。",
+      "url": "https://arxiv.org/abs/2608.10224v1",
+      "authors": [
+        "Chih Hui Wang",
+        "Mengdie Tu",
+        "Qianyun Zhang",
+        "Wei Wu",
+        "Lili Zhou",
+        "Mingqi Shen",
+        "Changshuai Wei"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-10",
+      "updated": "2026-08-10",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 87,
+        "level": "中",
+        "label": "LinkedIn 生产客服 agent 的自演化闭环",
+        "water_risk": "低",
+        "value_judgement": "LinkedIn 生产客服 agent 的自演化闭环",
+        "reason": "LinkedIn 的 self-evolving support agent 把 RAG、auto-prompting 和生产对齐 evaluation 做成版本化闭环，在不微调基础模型的情况下持续改进客服表现。它强调 prompt、retrieval 和 evaluator 都要受 operational guardrails 管理。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Chih Hui Wang",
+          "Mengdie Tu",
+          "Qianyun Zhang",
+          "Wei Wu",
+          "Lili Zhou",
+          "Mingqi Shen",
+          "Changshuai Wei"
+        ],
+        "affiliations": "",
+        "date": "2026-08-10",
+        "paper_url": "https://arxiv.org/abs/2608.10224v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "LinkedIn 生产客服 agent 的自演化闭环",
+        "summary": "LinkedIn 的 self-evolving support agent 把 RAG、auto-prompting 和生产对齐 evaluation 做成版本化闭环，在不微调基础模型的情况下持续改进客服表现。它强调 prompt、retrieval 和 evaluator 都要受 operational guardrails 管理。",
+        "highlights": [
+          "LinkedIn 生产客服 agent 的自演化闭环",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "企业客服知识、政策和产品界面持续变化，静态 assistant 很快变脆；生产系统需要能安全迭代、回滚和跨业务归因的自演化流程。",
+        "method": "系统用离线模拟与模块化 evaluator 驱动 evolutionary auto-prompting，并通过版本控制、staged rollout、gated promotion 和 rollback 管理 prompt/retrieval/evaluation 三层。",
+        "experiments": "两周用户随机 A/B 测试显示，集成自演化 workflow 让 QA self-serve 提升 9.0 个百分点，cancellation self-serve 提升 4.8 点，routing accuracy 提升 30.6 点。",
+        "research_help": "这是少见的生产级 agent self-evolution 证据，值得关注 evaluator 与 guardrail 如何支撑持续改进而非一次性 benchmark。",
+        "recommendation": {
+          "score": 87,
+          "level": "中",
+          "label": "LinkedIn 生产客服 agent 的自演化闭环",
+          "water_risk": "低",
+          "value_judgement": "LinkedIn 生产客服 agent 的自演化闭环",
+          "reason": "LinkedIn 的 self-evolving support agent 把 RAG、auto-prompting 和生产对齐 evaluation 做成版本化闭环，在不微调基础模型的情况下持续改进客服表现。它强调 prompt、retrieval 和 evaluator 都要受 operational guardrails 管理。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "这是少见的生产级 agent self-evolution 证据，值得关注 evaluator 与 guardrail 如何支撑持续改进而非一次性 benchmark。",
+        "abstract_zh": "Enterprise support agents operate in rapidly changing environments where policies, product capabilities, and knowledge bases evolve continuously, making static assistants brittle and costly to maintain. We present LinkedIn's self-evolving agentic support system, which integrates retrieval-augmented generation with evolutionary auto-prompting and a modular, production-aligned evaluation framework to enable safe, continuous improvement without retraining foundation models. The system treats prompts, retrieval, and evaluation as a closed-loop, versioned workflow with operational guardrails. Offli",
+        "full_summary": "LinkedIn 的 self-evolving support agent 把 RAG、auto-prompting 和生产对齐 evaluation 做成版本化闭环，在不微调基础模型的情况下持续改进客服表现。它强调 prompt、retrieval 和 evaluator 都要受 operational guardrails 管理。 企业客服知识、政策和产品界面持续变化，静态 assistant 很快变脆；生产系统需要能安全迭代、回滚和跨业务归因的自演化流程。 系统用离线模拟与模块化 evaluator 驱动 evolutionary auto-prompting，并通过版本控制、staged rollout、gated promotion 和 rollback 管理 prompt/retrieval/evaluation 三层。 两周用户随机 A/B 测试显示，集成自演化 workflow 让 QA self-serve 提升 9.0 个百分点，cancellation self-serve 提升 4.8 点，routing accuracy 提升 30.6 点。 Insight：这是少见的生产级 agent self-evolution 证据，值得关注 evaluator 与 guardrail 如何支撑持续改进而非一次性 benchmark。",
+        "card_summary": "LinkedIn 的 self-evolving support agent 把 RAG、auto-prompting 和生产对齐 evaluation 做成版本化闭环，在不微调基础模型的情况下持续改进客服表现。它强调 prompt、retrieval 和 evaluator 都要受 operational guardrails 管理。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "企业客服知识、政策和产品界面持续变化，静态 assistant 很快变脆；生产系统需要能安全迭代、回滚和跨业务归因的自演化流程。",
+        "method": "系统用离线模拟与模块化 evaluator 驱动 evolutionary auto-prompting，并通过版本控制、staged rollout、gated promotion 和 rollback 管理 prompt/retrieval/evaluation 三层。",
+        "experiments": "两周用户随机 A/B 测试显示，集成自演化 workflow 让 QA self-serve 提升 9.0 个百分点，cancellation self-serve 提升 4.8 点，routing accuracy 提升 30.6 点。",
+        "research_help": "这是少见的生产级 agent self-evolution 证据，值得关注 evaluator 与 guardrail 如何支撑持续改进而非一次性 benchmark。",
+        "insight": "这是少见的生产级 agent self-evolution 证据，值得关注 evaluator 与 guardrail 如何支撑持续改进而非一次性 benchmark。",
+        "abstract_zh": "Enterprise support agents operate in rapidly changing environments where policies, product capabilities, and knowledge bases evolve continuously, making static assistants brittle and costly to maintain. We present LinkedIn's self-evolving agentic support system, which integrates retrieval-augmented generation with evolutionary auto-prompting and a modular, production-aligned evaluation framework to enable safe, continuous improvement without retraining foundation models. The system treats prompts, retrieval, and evaluation as a closed-loop, versioned workflow with operational guardrails. Offline simulations and ablations show clear quality gains over vanilla RAG and baseline agents, including reduced hallucinations and improved response completeness. In a two-week user-randomized A/B test on LinkedIn's production support traffic, the integrated self-evolved workflow increased QA self-ser",
+        "card_summary": "LinkedIn 的 self-evolving support agent 把 RAG、auto-prompting 和生产对齐 evaluation 做成版本化闭环，在不微调基础模型的情况下持续改进客服表现。它强调 prompt、retrieval 和 evaluator 都要受 operational guardrails 管理。",
+        "full_summary": "LinkedIn 的 self-evolving support agent 把 RAG、auto-prompting 和生产对齐 evaluation 做成版本化闭环，在不微调基础模型的情况下持续改进客服表现。它强调 prompt、retrieval 和 evaluator 都要受 operational guardrails 管理。 企业客服知识、政策和产品界面持续变化，静态 assistant 很快变脆；生产系统需要能安全迭代、回滚和跨业务归因的自演化流程。 系统用离线模拟与模块化 evaluator 驱动 evolutionary auto-prompting，并通过版本控制、staged rollout、gated promotion 和 rollback 管理 prompt/retrieval/evaluation 三层。 两周用户随机 A/B 测试显示，集成自演化 workflow 让 QA self-serve 提升 9.0 个百分点，cancellation self-serve 提升 4.8 点，routing accuracy 提升 30.6 点。 Insight：这是少见的生产级 agent self-evolution 证据，值得关注 evaluator 与 guardrail 如何支撑持续改进而非一次性 benchmark。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "LinkedIn 生产客服 agent 的自演化闭环",
+        "value_reason": "这是少见的生产级 agent self-evolution 证据，值得关注 evaluator 与 guardrail 如何支撑持续改进而非一次性 benchmark。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10157v1",
+      "title": "SBCO: Self-Supervised, Verifier-Grounded Harness Optimization For Planning Agents",
+      "summary": "SBCO 面向不能靠自改代码实现自我提升的 planning agent，提出固定 meta-agent 下的 Self-supervised Block Coordinate Optimizer。它学习 verifier bank 和 harness policy，用 agent 自己的 graded feedback 改进输出，避免昂贵的 population/self-modification search。",
+      "url": "https://arxiv.org/abs/2608.10157v1",
+      "authors": [
+        "Vivek Kulkarni",
+        "Sudipta Paul",
+        "Aounon Kumar",
+        "Nicholas Tzou",
+        "Srinivas Chappidi"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-10",
+      "updated": "2026-08-10",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 91,
+        "level": "中",
+        "label": "规划 agent 的 verifier-grounded harness 优化",
+        "water_risk": "低",
+        "value_judgement": "规划 agent 的 verifier-grounded harness 优化",
+        "reason": "SBCO 面向不能靠自改代码实现自我提升的 planning agent，提出固定 meta-agent 下的 Self-supervised Block Coordinate Optimizer。它学习 verifier bank 和 harness policy，用 agent 自己的 graded feedback 改进输出，避免昂贵的 population/self-modification search。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": false,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Vivek Kulkarni",
+          "Sudipta Paul",
+          "Aounon Kumar",
+          "Nicholas Tzou",
+          "Srinivas Chappidi"
+        ],
+        "affiliations": "",
+        "date": "2026-08-10",
+        "paper_url": "https://arxiv.org/abs/2608.10157v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "规划 agent 的 verifier-grounded harness 优化",
+        "summary": "SBCO 面向不能靠自改代码实现自我提升的 planning agent，提出固定 meta-agent 下的 Self-supervised Block Coordinate Optimizer。它学习 verifier bank 和 harness policy，用 agent 自己的 graded feedback 改进输出，避免昂贵的 population/self-modification search。",
+        "highlights": [
+          "规划 agent 的 verifier-grounded harness 优化",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "Gödel-machine 式自改进适合 coding task，因为任务能力和自修改能力对齐；但规划任务的能力提升不等于会编辑自身 harness。",
+        "method": "SBCO 把 explicit constraints 拆成 per-constraint verifiers，并用近似 block coordinate ascent 和 textual gradients 调整 verifier 与 harness policy；meta-agent 固定且不需要人工标签。",
+        "experiments": "在两个规划领域中，SBCO 达到或超过定制 self-modifying baseline，同时 compute budget 少 4 到 5.5 倍。",
+        "research_help": "这篇直接服务 agent planning：把自我提升从“改自己代码”转成 verifier-grounded harness policy 优化，更适合约束明确的长程规划。",
+        "recommendation": {
+          "score": 91,
+          "level": "中",
+          "label": "规划 agent 的 verifier-grounded harness 优化",
+          "water_risk": "低",
+          "value_judgement": "规划 agent 的 verifier-grounded harness 优化",
+          "reason": "SBCO 面向不能靠自改代码实现自我提升的 planning agent，提出固定 meta-agent 下的 Self-supervised Block Coordinate Optimizer。它学习 verifier bank 和 harness policy，用 agent 自己的 graded feedback 改进输出，避免昂贵的 population/self-modification search。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": false,
+            "survey": false
+          }
+        },
+        "insight": "这篇直接服务 agent planning：把自我提升从“改自己代码”转成 verifier-grounded harness policy 优化，更适合约束明确的长程规划。",
+        "abstract_zh": "Self-improving agents seek to reduce the human engineering effort behind AI systems by enabling them to evolve and self-improve their performance over time. Recently, methods like the Darwin Gödel Machine and the Huxley Gödel Machine have been proposed which enable open-ended, recursive self-improvement through self-reference where a coding agent edits its own code. Such self-referential self-improvement methods require that the competence required to perform the task coincides or aligns well with the competence required for self-modification which is the case for coding tasks. For domains or ",
+        "full_summary": "SBCO 面向不能靠自改代码实现自我提升的 planning agent，提出固定 meta-agent 下的 Self-supervised Block Coordinate Optimizer。它学习 verifier bank 和 harness policy，用 agent 自己的 graded feedback 改进输出，避免昂贵的 population/self-modification search。 Gödel-machine 式自改进适合 coding task，因为任务能力和自修改能力对齐；但规划任务的能力提升不等于会编辑自身 harness。 SBCO 把 explicit constraints 拆成 per-constraint verifiers，并用近似 block coordinate ascent 和 textual gradients 调整 verifier 与 harness policy；meta-agent 固定且不需要人工标签。 在两个规划领域中，SBCO 达到或超过定制 self-modifying baseline，同时 compute budget 少 4 到 5.5 倍。 Insight：这篇直接服务 agent planning：把自我提升从“改自己代码”转成 verifier-grounded harness policy 优化，更适合约束明确的长程规划。",
+        "card_summary": "SBCO 面向不能靠自改代码实现自我提升的 planning agent，提出固定 meta-agent 下的 Self-supervised Block Coordinate Optimizer。它学习 verifier bank 和 harness policy，用 agent 自己的 graded feedback 改进输出，避免昂贵的 population/self-modification search。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "Gödel-machine 式自改进适合 coding task，因为任务能力和自修改能力对齐；但规划任务的能力提升不等于会编辑自身 harness。",
+        "method": "SBCO 把 explicit constraints 拆成 per-constraint verifiers，并用近似 block coordinate ascent 和 textual gradients 调整 verifier 与 harness policy；meta-agent 固定且不需要人工标签。",
+        "experiments": "在两个规划领域中，SBCO 达到或超过定制 self-modifying baseline，同时 compute budget 少 4 到 5.5 倍。",
+        "research_help": "这篇直接服务 agent planning：把自我提升从“改自己代码”转成 verifier-grounded harness policy 优化，更适合约束明确的长程规划。",
+        "insight": "这篇直接服务 agent planning：把自我提升从“改自己代码”转成 verifier-grounded harness policy 优化，更适合约束明确的长程规划。",
+        "abstract_zh": "Self-improving agents seek to reduce the human engineering effort behind AI systems by enabling them to evolve and self-improve their performance over time. Recently, methods like the Darwin Gödel Machine and the Huxley Gödel Machine have been proposed which enable open-ended, recursive self-improvement through self-reference where a coding agent edits its own code. Such self-referential self-improvement methods require that the competence required to perform the task coincides or aligns well with the competence required for self-modification which is the case for coding tasks. For domains or tasks, which do not satisfy the alignment needed, self-referential self-improvement is not available. In such cases, it is possible to adapt the above algorithms to other tasks by removing the self-referential aspect or introducing explicit self-modification of a meta-agent -- both computationally e",
+        "card_summary": "SBCO 面向不能靠自改代码实现自我提升的 planning agent，提出固定 meta-agent 下的 Self-supervised Block Coordinate Optimizer。它学习 verifier bank 和 harness policy，用 agent 自己的 graded feedback 改进输出，避免昂贵的 population/self-modification search。",
+        "full_summary": "SBCO 面向不能靠自改代码实现自我提升的 planning agent，提出固定 meta-agent 下的 Self-supervised Block Coordinate Optimizer。它学习 verifier bank 和 harness policy，用 agent 自己的 graded feedback 改进输出，避免昂贵的 population/self-modification search。 Gödel-machine 式自改进适合 coding task，因为任务能力和自修改能力对齐；但规划任务的能力提升不等于会编辑自身 harness。 SBCO 把 explicit constraints 拆成 per-constraint verifiers，并用近似 block coordinate ascent 和 textual gradients 调整 verifier 与 harness policy；meta-agent 固定且不需要人工标签。 在两个规划领域中，SBCO 达到或超过定制 self-modifying baseline，同时 compute budget 少 4 到 5.5 倍。 Insight：这篇直接服务 agent planning：把自我提升从“改自己代码”转成 verifier-grounded harness policy 优化，更适合约束明确的长程规划。",
+        "recommendation_level": "中",
+        "water_risk": "低",
+        "value_label": "规划 agent 的 verifier-grounded harness 优化",
+        "value_reason": "这篇直接服务 agent planning：把自我提升从“改自己代码”转成 verifier-grounded harness policy 优化，更适合约束明确的长程规划。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
+    {
+      "id": "2608.10108v1",
+      "title": "MESA:Task-Adaptive Multi-Structure Evidence Selection for Long-Horizon Agent Memory",
+      "summary": "MESA 针对长程 agent 百步级轨迹记忆，发现单一结构和全量结构都不是最优；不同 query 需要动态组合 summary、temporal、graph、vector 和 raw 等多种 memory view。它用 answer-level feedback 学习结构级选择和融合策略。",
+      "url": "https://arxiv.org/abs/2608.10108v1",
+      "authors": [
+        "Beidi Zhao",
+        "Yaoqi Chen",
+        "Yuru Feng",
+        "Menghao Li",
+        "Qianxi Zhang",
+        "Baotong Lu",
+        "Jianan Lu",
+        "Zhirui Wang",
+        "Xinjiang Wang",
+        "Shusen Xu",
+        "Zengzhong Li",
+        "Xiaoxiao Li",
+        "Qi Chen"
+      ],
+      "report_date": "2026-08-13",
+      "published": "2026-08-10",
+      "updated": "2026-08-10",
+      "primary_category": "",
+      "categories": [
+        "Artificial Intelligence"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "",
+      "recommendation": {
+        "score": 94,
+        "level": "高",
+        "label": "长程 agent memory 的动态多结构证据选择",
+        "water_risk": "低",
+        "value_judgement": "长程 agent memory 的动态多结构证据选择",
+        "reason": "MESA 针对长程 agent 百步级轨迹记忆，发现单一结构和全量结构都不是最优；不同 query 需要动态组合 summary、temporal、graph、vector 和 raw 等多种 memory view。它用 answer-level feedback 学习结构级选择和融合策略。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": false,
+          "codeOrTool": true,
+          "experiments": false,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Beidi Zhao",
+          "Yaoqi Chen",
+          "Yuru Feng",
+          "Menghao Li",
+          "Qianxi Zhang",
+          "Baotong Lu",
+          "Jianan Lu",
+          "Zhirui Wang",
+          "Xinjiang Wang",
+          "Shusen Xu",
+          "Zengzhong Li",
+          "Xiaoxiao Li",
+          "Qi Chen"
+        ],
+        "affiliations": "",
+        "date": "2026-08-10",
+        "paper_url": "https://arxiv.org/abs/2608.10108v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "",
+        "contribution": "长程 agent memory 的动态多结构证据选择",
+        "summary": "MESA 针对长程 agent 百步级轨迹记忆，发现单一结构和全量结构都不是最优；不同 query 需要动态组合 summary、temporal、graph、vector 和 raw 等多种 memory view。它用 answer-level feedback 学习结构级选择和融合策略。",
+        "highlights": [
+          "长程 agent memory 的动态多结构证据选择",
+          "偏水风险：低",
+          "阅读来源：arXiv 分类页、abs 页面与 PDF 正文抽取"
+        ],
+        "motivation": "长程 trajectory 中的证据可能埋在很早的步骤里；固定读取所有 memory structure 会浪费 token 并引入噪声，只选单一结构又无法组合互补证据。",
+        "method": "MESA 为每条轨迹构建五类结构视图，用 prior-guided search 和 UCB-guided scheduling 在弱监督下学习 query-adaptive subset selection 与 evidence fusion。",
+        "experiments": "在 AMA-Bench 上，MESA 比最强 baseline 高 8.5%，同时比 all-structure 方案少用 41% evidence tokens；LoCoMo 结果也扩展到 conversational memory。",
+        "research_help": "这篇非常贴合 long-horizon agent memory：关键是按任务动态选择 memory representation，而不是固定一种摘要或无脑塞全上下文。",
+        "recommendation": {
+          "score": 94,
+          "level": "高",
+          "label": "长程 agent memory 的动态多结构证据选择",
+          "water_risk": "低",
+          "value_judgement": "长程 agent memory 的动态多结构证据选择",
+          "reason": "MESA 针对长程 agent 百步级轨迹记忆，发现单一结构和全量结构都不是最优；不同 query 需要动态组合 summary、temporal、graph、vector 和 raw 等多种 memory view。它用 answer-level feedback 学习结构级选择和融合策略。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": false,
+            "codeOrTool": true,
+            "experiments": false,
+            "survey": false
+          }
+        },
+        "insight": "这篇非常贴合 long-horizon agent memory：关键是按任务动态选择 memory representation，而不是固定一种摘要或无脑塞全上下文。",
+        "abstract_zh": "Long-horizon agents accumulate trajectories spanning hundreds of interleaved reasoning, action, and observation steps, where answering a query may depend on evidence buried far back in the history. External memory stores such trajectories as structured representations, yet each structure provides a distinct and incomplete view. Existing multi-memory systems either read a fixed set of structures for every query, inflating context and introducing noise, or route each query to a single structure, preventing the composition of complementary evidence. A controlled analysis on AMA-Bench shows that t",
+        "full_summary": "MESA 针对长程 agent 百步级轨迹记忆，发现单一结构和全量结构都不是最优；不同 query 需要动态组合 summary、temporal、graph、vector 和 raw 等多种 memory view。它用 answer-level feedback 学习结构级选择和融合策略。 长程 trajectory 中的证据可能埋在很早的步骤里；固定读取所有 memory structure 会浪费 token 并引入噪声，只选单一结构又无法组合互补证据。 MESA 为每条轨迹构建五类结构视图，用 prior-guided search 和 UCB-guided scheduling 在弱监督下学习 query-adaptive subset selection 与 evidence fusion。 在 AMA-Bench 上，MESA 比最强 baseline 高 8.5%，同时比 all-structure 方案少用 41% evidence tokens；LoCoMo 结果也扩展到 conversational memory。 Insight：这篇非常贴合 long-horizon agent memory：关键是按任务动态选择 memory representation，而不是固定一种摘要或无脑塞全上下文。",
+        "card_summary": "MESA 针对长程 agent 百步级轨迹记忆，发现单一结构和全量结构都不是最优；不同 query 需要动态组合 summary、temporal、graph、vector 和 raw 等多种 memory view。它用 answer-level feedback 学习结构级选择和融合策略。",
+        "source_note": "arXiv API returned 429, so Codex manually curated from arXiv cs.AI/cs.CL/cs.LG/cs.HC recent-category HTML, abs pages, and extracted PDF text.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ]
+      },
+      "analysis": {
+        "motivation": "长程 trajectory 中的证据可能埋在很早的步骤里；固定读取所有 memory structure 会浪费 token 并引入噪声，只选单一结构又无法组合互补证据。",
+        "method": "MESA 为每条轨迹构建五类结构视图，用 prior-guided search 和 UCB-guided scheduling 在弱监督下学习 query-adaptive subset selection 与 evidence fusion。",
+        "experiments": "在 AMA-Bench 上，MESA 比最强 baseline 高 8.5%，同时比 all-structure 方案少用 41% evidence tokens；LoCoMo 结果也扩展到 conversational memory。",
+        "research_help": "这篇非常贴合 long-horizon agent memory：关键是按任务动态选择 memory representation，而不是固定一种摘要或无脑塞全上下文。",
+        "insight": "这篇非常贴合 long-horizon agent memory：关键是按任务动态选择 memory representation，而不是固定一种摘要或无脑塞全上下文。",
+        "abstract_zh": "Long-horizon agents accumulate trajectories spanning hundreds of interleaved reasoning, action, and observation steps, where answering a query may depend on evidence buried far back in the history. External memory stores such trajectories as structured representations, yet each structure provides a distinct and incomplete view. Existing multi-memory systems either read a fixed set of structures for every query, inflating context and introducing noise, or route each query to a single structure, preventing the composition of complementary evidence. A controlled analysis on AMA-Bench shows that the optimal memory configuration is typically neither a single structure nor the full union, but a tailored composition of multiple structural memories that varies with query and task demands. Motivated by these findings, we formulate structure-level dynamic selection: selecting and fusing a query-ad",
+        "card_summary": "MESA 针对长程 agent 百步级轨迹记忆，发现单一结构和全量结构都不是最优；不同 query 需要动态组合 summary、temporal、graph、vector 和 raw 等多种 memory view。它用 answer-level feedback 学习结构级选择和融合策略。",
+        "full_summary": "MESA 针对长程 agent 百步级轨迹记忆，发现单一结构和全量结构都不是最优；不同 query 需要动态组合 summary、temporal、graph、vector 和 raw 等多种 memory view。它用 answer-level feedback 学习结构级选择和融合策略。 长程 trajectory 中的证据可能埋在很早的步骤里；固定读取所有 memory structure 会浪费 token 并引入噪声，只选单一结构又无法组合互补证据。 MESA 为每条轨迹构建五类结构视图，用 prior-guided search 和 UCB-guided scheduling 在弱监督下学习 query-adaptive subset selection 与 evidence fusion。 在 AMA-Bench 上，MESA 比最强 baseline 高 8.5%，同时比 all-structure 方案少用 41% evidence tokens；LoCoMo 结果也扩展到 conversational memory。 Insight：这篇非常贴合 long-horizon agent memory：关键是按任务动态选择 memory representation，而不是固定一种摘要或无脑塞全上下文。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "长程 agent memory 的动态多结构证据选择",
+        "value_reason": "这篇非常贴合 long-horizon agent memory：关键是按任务动态选择 memory representation，而不是固定一种摘要或无脑塞全上下文。",
+        "limitations": "仍是 arXiv 预印本或技术报告，结论需要结合完整实验设置、开源可复现性和跨环境迁移继续确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF after arXiv API 429 fallback.",
+        "source_evidence": [
+          "arXiv abs metadata and submission history",
+          "Extracted arXiv PDF text",
+          "Reported method/experiment/result sections"
+        ],
+        "model": "codex-manual-curation",
+        "updated_at": "2026-08-13T01:36:00.000Z"
+      }
+    },
     {
       "id": "2608.08255v1",
       "title": "Learning from Environmental Feedback: Credit Assignment across Multiple Timescales for Agentic Reinforcement Learning",
