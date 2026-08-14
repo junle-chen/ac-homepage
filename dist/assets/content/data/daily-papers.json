@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-13T01:36:00.000Z",
+  "updated_at": "2026-08-14T01:35:41.438Z",
   "source": "arxiv",
-  "analysis_method": "manual full-text Codex curation from arXiv category HTML after API 429",
+  "analysis_method": "manual arXiv category fallback after Atom 429; Codex CLI full-text reading from arXiv PDF text when extractable",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪、工具/环境交互与执行可靠性",
   "query_terms": [
     "agentic reinforcement learning",
@@ -37,46 +37,47 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-13 Daily Paper",
-    "report_date": "2026-08-13",
+    "title": "2026-08-14 Daily Paper",
+    "report_date": "2026-08-14",
     "focus": "多轮交互式 agent planning、long-horizon planning、agentic RL、agent memory、状态追踪、工具/环境交互与执行可靠性",
-    "summary": "arXiv API 今日返回 429；改用 arXiv cs.AI/cs.CL/cs.LG/cs.HC recent HTML、单篇 abs 页面与 PDF 正文抽取人工筛选。保留 16 篇强相关论文，重点集中在长程/持久 agent、agent memory 维护与修复、自演化 harness/skill、真实工具环境评测和 agent workflow 可靠性。",
+    "summary": "arXiv API 今日返回 429；改用 arXiv cs.AI/cs.CL/cs.LG/cs.HC new/cross-list HTML、单篇 abs 页面与 PDF 正文抽取筛选。保留 17 篇强相关论文，重点集中在多轮/长程 agent、tool-use failure recovery、agent memory/state、long-horizon evaluation 和 multi-agent RL 泛化。",
     "top_recommendations": [
-      "2608.11095v1",
-      "2608.10676v1",
-      "2608.10502v1"
+      "2608.11977v1",
+      "2608.12253v1",
+      "2608.11552v1"
     ],
     "low_priority": [
-      "2608.10716v1",
-      "2608.10494v1"
+      "2608.11207v1",
+      "2608.11323v1"
     ],
     "no_news_policy": "若无 long horizon、multi-turn、agentic RL、agent planning、agent memory 或执行可靠性强相关新增论文，则不发布。",
-    "email_body": "今日保留 16 篇强相关 Daily Paper：Catastrophic Remembering、SkillZip、VibeLifeBench、SkillLens、DuplexWorld、ReTree、SKILLER、MAP-Graph、MEGA、Dependency-Guided Rollback Repair、GeoForge、Recovering Wasted Compute、DSAgentBench、LinkedIn Self-evolving Support、SBCO、MESA。过滤泛化 reasoning、单纯 dashboard/安全综述、领域 RL 优化和弱 agent 词面相关项。"
+    "email_body": "今日保留 17 篇强相关 Daily Paper：Harness-IF、BENCH2ROBUST、Dynamic Governance、The Sleeping Agent、AutoWorldModel-Bench、Thea、EvoGraph-Mem、Trajectory UQ、Simulator Collapse、lifelong materials-agent memory、InfraBench、Deployment Decision Reliability、MobileJudgeBench、Continuity Kernel、ToolHazard、agentic memory serving cost、VAKRA。过滤 finance-only coding-agent MCQ、宏观 LLM-agent society simulation、领域优化和弱 agent 词面相关项。"
   },
   "latest_item_ids": [
-    "2608.11095v1",
-    "2608.11079v1",
-    "2608.10875v1",
-    "2608.10775v1",
-    "2608.10716v1",
-    "2608.10676v1",
-    "2608.10538v1",
-    "2608.10509v1",
-    "2608.10504v1",
-    "2608.10502v1",
-    "2608.10494v1",
-    "2608.10424v1",
-    "2608.10366v1",
-    "2608.10224v1",
-    "2608.10157v1",
-    "2608.10108v1"
+    "2608.11727v1",
+    "2608.11977v1",
+    "2608.11207v1",
+    "2608.11775v1",
+    "2608.11216v1",
+    "2608.11246v1",
+    "2608.11248v1",
+    "2608.11552v1",
+    "2608.12253v1",
+    "2608.11224v1",
+    "2608.11234v1",
+    "2608.11323v1",
+    "2608.11434v1",
+    "2608.11632v1",
+    "2608.11878v1",
+    "2608.11879v1",
+    "2608.12282v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 16,
-    "total_items": 222,
-    "previous_items": 206,
-    "latest_items": 16,
+    "fresh_items": 17,
+    "total_items": 239,
+    "previous_items": 222,
+    "latest_items": 17,
     "source_report_dates": {
       "2026-08-07": 6,
       "2026-08-06": 9,
@@ -115,38 +116,34 @@
       "2026-08-10": 9,
       "2026-08-11": 14,
       "2026-08-12": 16,
-      "2026-08-13": 16
+      "2026-08-13": 16,
+      "2026-08-14": 17
     },
     "filtered_candidate_ids": [
-      "2608.11195v1",
-      "2608.10928v1",
-      "2608.10915v2",
-      "2608.10792v1",
-      "2608.10740v1",
-      "2608.10669v1",
-      "2608.10579v1",
-      "2608.10567v1",
-      "2608.10438v1",
-      "2608.10218v1",
-      "2608.10530v1"
+      "2608.11232v1",
+      "2608.11215v1",
+      "2608.11381v1",
+      "2608.11340v1",
+      "2608.11483v1"
     ],
     "filtered_today": [
-      "2608.11095v1",
-      "2608.11079v1",
-      "2608.10875v1",
-      "2608.10775v1",
-      "2608.10716v1",
-      "2608.10676v1",
-      "2608.10538v1",
-      "2608.10509v1",
-      "2608.10504v1",
-      "2608.10502v1",
-      "2608.10494v1",
-      "2608.10424v1",
-      "2608.10366v1",
-      "2608.10224v1",
-      "2608.10157v1",
-      "2608.10108v1"
+      "2608.11727v1",
+      "2608.11977v1",
+      "2608.11207v1",
+      "2608.11775v1",
+      "2608.11216v1",
+      "2608.11246v1",
+      "2608.11248v1",
+      "2608.11552v1",
+      "2608.12253v1",
+      "2608.11224v1",
+      "2608.11234v1",
+      "2608.11323v1",
+      "2608.11434v1",
+      "2608.11632v1",
+      "2608.11878v1",
+      "2608.11879v1",
+      "2608.12282v1"
     ],
     "backfilled_report_dates": {
       "2026-07-17": 3,
@@ -156,6 +153,1503 @@
     }
   },
   "items": [
+    {
+      "id": "2608.11727v1",
+      "title": "Harness-IF: Evaluating Instruction Following Across Instruction Surfaces in Coding Agents",
+      "summary": "When a coding agent obeys a rule, it may simply have been going to do that anyway. Existing instruction-following benchmarks cannot tell the difference: they concentrate rules in the user turn, while coding-agent benchmarks emphasize final task success. We introduce Harness-IF, which scores operational rules one at a time from execution evidence: 60 realistic multi-turn coding items drawn from a 642-rule library, 256 rules receiving verdicts, placed on the five configurable surfaces a deployed agent reads. To separate compliance from coincidence we introduce Against-Prior Accuracy (AP-Acc), which scores only rules labeled as opposing unprompted defaults, observed by re-running tasks with the rule withheld across nine probe builds and curated otherwise. Across 12 frontier models, accuracy spans 72.1-85.9% and AP-Acc 66.1-78.6%; every model is worse on against-prior rules, by 3.6 to 7.4 points (mean 5.81), and the direction survives a common-support analysis with item-clustered intervals. Aggregate scores therefore overstate compliance by a model-specific margin: prior control leaves the top build unchanged and exchanges three adjacent rank pairs. A counterbalanced conflict pilot on nine separate builds adds a second result: pooled precedence does not follow prompt depth, with system prompts, project files, and user instructions ahead of tool and skill descriptions.",
+      "url": "https://arxiv.org/abs/2608.11727v1",
+      "authors": [
+        "Zining Huang",
+        "Haoran Que",
+        "Hong Zeng",
+        "Ge Zhang",
+        "Zuo Wang",
+        "Jin Chen",
+        "Haodong Wang",
+        "Zhongfei Hou",
+        "Changxin Pu",
+        "Shen Yan",
+        "Wenhao Huang"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "多轮代理过程合规与可靠性评测的重要基准",
+        "water_risk": "中",
+        "value_judgement": "值得读，尤其适合关注多轮代理、工具使用和长期执行可靠性的研究者。规则级执行证据、行为先验控制和指令表面冲突实验都针对现有代理评测的真实盲点，且作者提供了共同支持分析、聚类区间、重复性和敏感性检查。它与 agentic RL 的联系主要在评测与奖励设计，而非训练算法；因此若目标是寻找新的规划器或强化学习方法，直接价值有限。",
+        "reason": "值得读，尤其适合关注多轮代理、工具使用和长期执行可靠性的研究者。规则级执行证据、行为先验控制和指令表面冲突实验都针对现有代理评测的真实盲点，且作者提供了共同支持分析、聚类区间、重复性和敏感性检查。它与 agentic RL 的联系主要在评测与奖励设计，而非训练算法；因此若目标是寻找新的规划器或强化学习方法，直接价值有限。"
+      },
+      "brief": {
+        "authors": [
+          "Zining Huang",
+          "Haoran Que",
+          "Hong Zeng",
+          "Ge Zhang",
+          "Zuo Wang",
+          "Jin Chen",
+          "Haodong Wang",
+          "Zhongfei Hou",
+          "Changxin Pu",
+          "Shen Yan",
+          "Wenhao Huang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.11727v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "值得读，尤其适合关注多轮代理、工具使用和长期执行可靠性的研究者。规则级执行证据、行为先验控制和指令表面冲突实验都针对现有代理评测的真实盲点，且作者提供了共同支持分析、聚类区间、重复性和敏感性检查。它与 agentic RL 的联系主要在评测与奖励设计，而非训练算法；因此若目标是寻找新的规划器或强化学习方法，直接价值有限。",
+        "summary": "这篇论文研究多轮编码代理能否在完整执行过程中持续遵循分散于不同配置表面的操作规则，而不只是在最终结果上完成任务。其核心贡献是 Harness-IF：以原子规则为评测单位，结合轨迹、文件差异、测试和输出证据逐条判断合规性。AP-Acc 进一步只统计违背无提示默认行为的规则，从而揭示总体准确率中由模型先验带来的虚高。实验显示这种反先验合规缺口在所有受测模型上方向一致，主要失败模式是遗漏必要动作，输出控制尤其困难。冲突实验还表明系统提示、项目文件和用户指令具有较高的汇总优先级，但这种排序只是特定实验中的跨模型趋势。论文不直接提出规划算法或 agentic RL 方法，但为长轨迹代理的策略可控性、奖励设计和过程可靠性评测提供了较强的方法论价值。",
+        "highlights": [
+          "值得读，尤其适合关注多轮代理、工具使用和长期执行可靠性的研究者。规则级执行证据、行为先验控制和指令表面冲突实验都针对现有代理评测的真实盲点，且作者提供了共同支持分析、聚类区间、重复性和敏感性检查。它与 agentic RL 的联系主要在评测与奖励设计，而非训练算法；因此若目标是寻找新的规划器或强化学习方法，直接价值有限。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有指令遵循基准通常把约束集中在用户提示中，而编码代理基准又主要检查任务是否完成，因此无法判断代理究竟服从了哪条规则，还是碰巧按默认习惯做对了。论文关注更贴近部署的问题：规则分散在系统提示、工具描述、技能描述、项目文件和用户请求中，并且需要在多轮、带工具的执行轨迹里持续生效。",
+        "method": "论文提出 Harness-IF，将编码代理的指令遵循拆成可逐条判定的执行级测量。基准包含一个由 642 条原子规则构成的规则库，在 60 个真实感多轮编码任务中实例化 302 条规则，并对其中 256 条产生 pass、fail 或不适用判定；规则被放置于五种可配置指令表面，平台默认指令作为固定表面。核心指标 AP-Acc 只统计违背模型无提示默认行为的规则，并通过移除规则的 zero-injection 探测或人工标注确定行为先验，以区分真正服从与默认行为碰巧一致。另设 E0 冲突实验，通过反平衡地让不同表面承载冲突规则，估计指令表面的相对优先级。",
+        "experiments": "主实验覆盖 12 个模型、60 个任务和三轮重复，共形成 2160 条代理轨迹与 40000 余条规则级判定。所有模型在 against-prior 规则上的表现都低于总体准确率，差距约为 3.6 至 7.4 个百分点；这一方向在共同支持样本和按任务聚类的区间分析中仍成立，但相邻模型之间的排名差异无法可靠区分。失败主要来自代理遗漏被要求执行的动作，输出控制和工作流规则贡献了最多失败；命令式约束比偏好式约束更难。独立的 E0 实验显示，系统提示、项目文件和用户指令在汇总结果中并列领先，工具描述次之、技能描述最后，并不支持“越靠近上下文末尾越优先”的简单解释。",
+        "research_help": "Insight：对多轮代理和 long-horizon reliability，最终任务成功不能替代过程约束检查；应把长期轨迹分解为具有触发机会和执行证据的原子规则，并保留规则来源。评测 agent planning 或 agentic RL 时，应加入违背模型默认策略的约束切片，否则奖励或成功率可能把策略先验误当成可控性。系统提示、项目规则、工具说明和技能说明不应被视为等价通道，冲突评测需要固定规则语义并反平衡放置位置。大量失败属于应做而未做，这提示可靠性训练和验证器需要重点覆盖计划中的必要动作、验证步骤与条件触发，而不只是检测越权或多余行为。",
+        "insight": "Insight：对多轮代理和 long-horizon reliability，最终任务成功不能替代过程约束检查；应把长期轨迹分解为具有触发机会和执行证据的原子规则，并保留规则来源。评测 agent planning 或 agentic RL 时，应加入违背模型默认策略的约束切片，否则奖励或成功率可能把策略先验误当成可控性。系统提示、项目规则、工具说明和技能说明不应被视为等价通道，冲突评测需要固定规则语义并反平衡放置位置。大量失败属于应做而未做，这提示可靠性训练和验证器需要重点覆盖计划中的必要动作、验证步骤与条件触发，而不只是检测越权或多余行为。",
+        "abstract_zh": "论文提出 Harness-IF，用执行证据逐条评估编码代理在不同指令表面上的规则遵循情况。基准包含 60 个真实感多轮编码任务和一个 642 条规则的规则库，其中 256 条规则获得实际判定，并分布在系统提示、工具描述、技能描述、项目文件和用户指令等表面。作者提出 AP-Acc，只评估与代理无提示默认行为相反的规则，以区分真实服从和行为巧合。12 个前沿模型在该指标上均弱于总体准确率，说明聚合分数会系统性高估指令服从能力。独立冲突实验还发现，指令优先级并不简单随提示位置深度变化。",
+        "full_summary": "这篇论文研究多轮编码代理能否在完整执行过程中持续遵循分散于不同配置表面的操作规则，而不只是在最终结果上完成任务。其核心贡献是 Harness-IF：以原子规则为评测单位，结合轨迹、文件差异、测试和输出证据逐条判断合规性。AP-Acc 进一步只统计违背无提示默认行为的规则，从而揭示总体准确率中由模型先验带来的虚高。实验显示这种反先验合规缺口在所有受测模型上方向一致，主要失败模式是遗漏必要动作，输出控制尤其困难。冲突实验还表明系统提示、项目文件和用户指令具有较高的汇总优先级，但这种排序只是特定实验中的跨模型趋势。论文不直接提出规划算法或 agentic RL 方法，但为长轨迹代理的策略可控性、奖励设计和过程可靠性评测提供了较强的方法论价值。",
+        "card_summary": "Harness-IF 把多轮编码代理的指令遵循从任务级成功拆解为规则级、执行证据驱动的评测，并用 AP-Acc 排除默认行为碰巧满足规则的情况。结果表明所有受测模型在反先验规则上都明显退化，而且不同指令表面的实际优先级不能由提示位置简单解释。"
+      },
+      "analysis": {
+        "motivation": "现有指令遵循基准通常把约束集中在用户提示中，而编码代理基准又主要检查任务是否完成，因此无法判断代理究竟服从了哪条规则，还是碰巧按默认习惯做对了。论文关注更贴近部署的问题：规则分散在系统提示、工具描述、技能描述、项目文件和用户请求中，并且需要在多轮、带工具的执行轨迹里持续生效。",
+        "method": "论文提出 Harness-IF，将编码代理的指令遵循拆成可逐条判定的执行级测量。基准包含一个由 642 条原子规则构成的规则库，在 60 个真实感多轮编码任务中实例化 302 条规则，并对其中 256 条产生 pass、fail 或不适用判定；规则被放置于五种可配置指令表面，平台默认指令作为固定表面。核心指标 AP-Acc 只统计违背模型无提示默认行为的规则，并通过移除规则的 zero-injection 探测或人工标注确定行为先验，以区分真正服从与默认行为碰巧一致。另设 E0 冲突实验，通过反平衡地让不同表面承载冲突规则，估计指令表面的相对优先级。",
+        "experiments": "主实验覆盖 12 个模型、60 个任务和三轮重复，共形成 2160 条代理轨迹与 40000 余条规则级判定。所有模型在 against-prior 规则上的表现都低于总体准确率，差距约为 3.6 至 7.4 个百分点；这一方向在共同支持样本和按任务聚类的区间分析中仍成立，但相邻模型之间的排名差异无法可靠区分。失败主要来自代理遗漏被要求执行的动作，输出控制和工作流规则贡献了最多失败；命令式约束比偏好式约束更难。独立的 E0 实验显示，系统提示、项目文件和用户指令在汇总结果中并列领先，工具描述次之、技能描述最后，并不支持“越靠近上下文末尾越优先”的简单解释。",
+        "research_help": "Insight：对多轮代理和 long-horizon reliability，最终任务成功不能替代过程约束检查；应把长期轨迹分解为具有触发机会和执行证据的原子规则，并保留规则来源。评测 agent planning 或 agentic RL 时，应加入违背模型默认策略的约束切片，否则奖励或成功率可能把策略先验误当成可控性。系统提示、项目规则、工具说明和技能说明不应被视为等价通道，冲突评测需要固定规则语义并反平衡放置位置。大量失败属于应做而未做，这提示可靠性训练和验证器需要重点覆盖计划中的必要动作、验证步骤与条件触发，而不只是检测越权或多余行为。",
+        "insight": "Insight：对多轮代理和 long-horizon reliability，最终任务成功不能替代过程约束检查；应把长期轨迹分解为具有触发机会和执行证据的原子规则，并保留规则来源。评测 agent planning 或 agentic RL 时，应加入违背模型默认策略的约束切片，否则奖励或成功率可能把策略先验误当成可控性。系统提示、项目规则、工具说明和技能说明不应被视为等价通道，冲突评测需要固定规则语义并反平衡放置位置。大量失败属于应做而未做，这提示可靠性训练和验证器需要重点覆盖计划中的必要动作、验证步骤与条件触发，而不只是检测越权或多余行为。",
+        "abstract_zh": "论文提出 Harness-IF，用执行证据逐条评估编码代理在不同指令表面上的规则遵循情况。基准包含 60 个真实感多轮编码任务和一个 642 条规则的规则库，其中 256 条规则获得实际判定，并分布在系统提示、工具描述、技能描述、项目文件和用户指令等表面。作者提出 AP-Acc，只评估与代理无提示默认行为相反的规则，以区分真实服从和行为巧合。12 个前沿模型在该指标上均弱于总体准确率，说明聚合分数会系统性高估指令服从能力。独立冲突实验还发现，指令优先级并不简单随提示位置深度变化。",
+        "card_summary": "Harness-IF 把多轮编码代理的指令遵循从任务级成功拆解为规则级、执行证据驱动的评测，并用 AP-Acc 排除默认行为碰巧满足规则的情况。结果表明所有受测模型在反先验规则上都明显退化，而且不同指令表面的实际优先级不能由提示位置简单解释。",
+        "full_summary": "这篇论文研究多轮编码代理能否在完整执行过程中持续遵循分散于不同配置表面的操作规则，而不只是在最终结果上完成任务。其核心贡献是 Harness-IF：以原子规则为评测单位，结合轨迹、文件差异、测试和输出证据逐条判断合规性。AP-Acc 进一步只统计违背无提示默认行为的规则，从而揭示总体准确率中由模型先验带来的虚高。实验显示这种反先验合规缺口在所有受测模型上方向一致，主要失败模式是遗漏必要动作，输出控制尤其困难。冲突实验还表明系统提示、项目文件和用户指令具有较高的汇总优先级，但这种排序只是特定实验中的跨模型趋势。论文不直接提出规划算法或 agentic RL 方法，但为长轨迹代理的策略可控性、奖励设计和过程可靠性评测提供了较强的方法论价值。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "多轮代理过程合规与可靠性评测的重要基准",
+        "value_reason": "值得读，尤其适合关注多轮代理、工具使用和长期执行可靠性的研究者。规则级执行证据、行为先验控制和指令表面冲突实验都针对现有代理评测的真实盲点，且作者提供了共同支持分析、聚类区间、重复性和敏感性检查。它与 agentic RL 的联系主要在评测与奖励设计，而非训练算法；因此若目标是寻找新的规划器或强化学习方法，直接价值有限。",
+        "limitations": "最大问题是 86.8% 的判定涉及 LLM judge，而更换 judge 后的一致性较低，因此绝对分数和细粒度排名对测量工具较敏感。60 个主任务从 80 个候选中依据质量和区分度筛选，存在选择乐观偏差，并且只覆盖规则库的一部分；相邻模型差异也没有获得可靠统计分辨率。主面板没有对同一规则跨表面做完整配对，仅能进行描述性分层，受控表面结论来自规模较小、使用较旧模型的独立合成冲突实验，不能解释为普遍指令层级。AP-Acc 的部分先验标签来自人工整理而非完整的 zero-injection 观测，且论文明确尚未在当前版本给出最终发布地址；这些因素使复现性与外部有效性仍需等待实际资源验证。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "正文给出了 Harness-IF 的数据结构、规则分类、指令表面、AP-Acc 定义、实验协议、结果、可靠性分析和局限性，而非仅提供摘要信息。",
+          "主实验记录为 12 个模型在 60 个多轮编码任务上进行三轮运行，并对每个适用规则生成执行证据支持的判定。",
+          "论文报告所有 12 个模型的 AP-Acc 均低于总体准确率，并通过共同支持样本和按任务聚类的区间分析验证差距方向。",
+          "可靠性部分明确报告 LLM judge 覆盖大部分判定，而且 judge 更换时一致性明显下降，因此作者只强调跨模型总体模式，不主张精细排名。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:38:23.707Z"
+      }
+    },
+    {
+      "id": "2608.11977v1",
+      "title": "Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection",
+      "summary": "Tool-using LLM agents are commonly trained and evaluated in environments where tool calls succeed reliably, yet deployed tools can fail transiently, persistently, or silently. Robust recovery therefore requires more than repeated retries: an agent may need to retry the same path, switch to an alternative, or recognize that no viable path remains. We present BENCH2ROBUST, a framework that converts failure-free tool-use benchmarks into controlled stochastic environments with scenario-controlled solvability, where episodes explicitly require retrying, switching, or stopping after available paths are exhausted. We use BENCH2ROBUST to study two complementary interventions: structured runtime recovery context through Bayesian Tool Memory (BTM), and curriculum-controlled reinforcement learning. Across 7 models from 4 families and two multi-turn benchmark families, tool failures produce a near-universal robustness gap. On held-out Retail tasks, BTM improves robustness by up to 16.8 percentage points without retraining, while RL learns complementary recovery behavior that remains beneficial without inference-time BTM. Combining the two reaches 40.8-45.5% under injection while preserving failure-free performance. These results suggest that robust tool use benefits from combining environment-specific recovery knowledge with learned recovery behavior.",
+      "url": "https://arxiv.org/abs/2608.11977v1",
+      "authors": [
+        "Chaoran Chen",
+        "Vy Nguyen",
+        "Ziji Zhang",
+        "Abhinav Gullapalli",
+        "Ziyi Wang",
+        "Yuxuan Lu",
+        "Dakuo Wang",
+        "Jing Huang",
+        "Zhou Yu",
+        "Jin Lai"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "高价值但需警惕标题外推",
+        "water_risk": "低",
+        "value_judgement": "论文提出的受控可解性比普通随机噪声更适合分析恢复策略，并通过留出任务、组件消融、策略级指标、错误类型分解和跨域测试给出了较完整证据；作者也主动承认 BTM 的主要收益来自结构提示，以及 abstention 尚未被有效学习。它不是单纯包装概念的工作，但“Bayesian Tool Memory”和题目中的“Abstain”都比实际证据更强，阅读时应把核心价值放在场景构造、工具路径结构和恢复策略分解上。",
+        "reason": "论文提出的受控可解性比普通随机噪声更适合分析恢复策略，并通过留出任务、组件消融、策略级指标、错误类型分解和跨域测试给出了较完整证据；作者也主动承认 BTM 的主要收益来自结构提示，以及 abstention 尚未被有效学习。它不是单纯包装概念的工作，但“Bayesian Tool Memory”和题目中的“Abstain”都比实际证据更强，阅读时应把核心价值放在场景构造、工具路径结构和恢复策略分解上。"
+      },
+      "brief": {
+        "authors": [
+          "Chaoran Chen",
+          "Vy Nguyen",
+          "Ziji Zhang",
+          "Abhinav Gullapalli",
+          "Ziyi Wang",
+          "Yuxuan Lu",
+          "Dakuo Wang",
+          "Jing Huang",
+          "Zhou Yu",
+          "Jin Lai"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.11977v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文提出的受控可解性比普通随机噪声更适合分析恢复策略，并通过留出任务、组件消融、策略级指标、错误类型分解和跨域测试给出了较完整证据；作者也主动承认 BTM 的主要收益来自结构提示，以及 abstention 尚未被有效学习。它不是单纯包装概念的工作，但“Bayesian Tool Memory”和题目中的“Abstain”都比实际证据更强，阅读时应把核心价值放在场景构造、工具路径结构和恢复策略分解上。",
+        "summary": "论文关注工具型多轮 agent 在真实故障下的规划可靠性，指出干净任务成功率会严重高估部署表现。其核心贡献 BENCH2ROBUST 显式区分原路径可恢复、必须切换替代工具以及所有路径均不可用的环境状态，使恢复策略不再与随机运气混淆。作者进一步结合结构化工具恢复上下文 BTM 与课程式强化学习，前者提供工具拓扑和约束，后者学习较通用的重试、切换及验证行为。大规模故障注入实验显示鲁棒性缺口具有普遍性，BTM 带来的即时收益最大，而 RL 在移除运行时提示后仍保留较小但稳定的增益，并更有利于持续故障和静默错误。最重要的反面结论是，所谓“Bayesian”数值不是主要增益来源，且现有奖励和评测不能支持“已学会 abstain”这一较强说法。总体而言，这是一篇与多轮工具规划和 long-horizon reliability 高度相关、值得精读的方法与实证论文，但标题中的停止能力应按未完成目标而非已验证贡献理解。",
+        "highlights": [
+          "论文提出的受控可解性比普通随机噪声更适合分析恢复策略，并通过留出任务、组件消融、策略级指标、错误类型分解和跨域测试给出了较完整证据；作者也主动承认 BTM 的主要收益来自结构提示，以及 abstention 尚未被有效学习。它不是单纯包装概念的工作，但“Bayesian Tool Memory”和题目中的“Abstain”都比实际证据更强，阅读时应把核心价值放在场景构造、工具路径结构和恢复策略分解上。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有工具型 LLM agent 通常在近乎无故障的环境中训练和评测，但真实工具会出现超时、限流、鉴权失效、模式漂移以及无显式报错的错误数据。关键问题并不是让 agent 一味坚持调用，而是使其根据路径的可恢复性，在重试原路径、切换替代路径和停止升级之间做出合适决策。论文还指出，普通随机故障注入会把策略质量与环境运气混在一起，无法判断成功究竟来自正确恢复还是错误恰好消失。",
+        "method": "论文提出 BENCH2ROBUST，将已有工具调用基准转换为具有受控可解性的随机环境：S1 中原路径可通过重试恢复，S2 中主路径被持续阻断、必须切换等价工具，S3 中所有可行路径均被阻断。作者同时研究两类干预：一是 Bayesian Tool Memory，以运行时提示形式提供工具替代关系、验证约束和经验恢复统计；二是使用分阶段课程、DAPO、部分奖励及重复惩罚训练 Qwen3 策略。需要注意，BTM 的主要有效成分实际是人工配置的替代结构和恢复约束，而不是贝叶斯后验数值本身。",
+        "experiments": "实验覆盖四个模型家族的七个模型，以及 Retail、Airline、Telecom 和 BFCL 等多轮任务；在七十个模型—任务组合中，六十九个在故障注入后退化，说明干净环境性能不能代表工具故障鲁棒性。在四百零二个留出 Retail 任务上，BTM 无需再训练即可带来约十二至十七个百分点的提升；RL 在移除推理时 BTM 后仍提升约六至七个百分点，两者结合达到约百分之四十一至四十六的注入环境通过率，同时没有观察到明显的干净任务退化。策略分解显示 RL 对必须切换路径的情形和减少过早升级更有帮助，BTM 更擅长处理带显式信号的瞬态错误；在静默错误上，RL 的增益更明显，而 BTM 在事实错误条件下甚至产生负作用。跨域结果为正但幅度较小，Telecom 上的基础能力瓶颈也没有被恢复训练解决。",
+        "research_help": "Insight：恢复策略应以“当前计划路径是否仍可行”为隐状态，而不能把所有失败统一处理成继续重试；训练环境最好显式构造可重试、必须重规划和无解三种状态，避免奖励偶然恢复。运行时的工具拓扑、替代关系和验证规则，与策略训练得到的通用恢复行为具有互补性，因此 long-horizon agent 更适合将环境知识放入可更新的外部状态，将 retry、switch、verify 等控制行为写入策略。对于静默错误，仅根据显式报错触发恢复并不充分，还需要跨来源验证、关键状态核对和不可逆操作前检查。停止或升级必须拥有可被正确计分的独立训练信号，否则即使训练环境包含无解任务，也不能证明 agent 真正学会了可靠 abstention。",
+        "insight": "Insight：恢复策略应以“当前计划路径是否仍可行”为隐状态，而不能把所有失败统一处理成继续重试；训练环境最好显式构造可重试、必须重规划和无解三种状态，避免奖励偶然恢复。运行时的工具拓扑、替代关系和验证规则，与策略训练得到的通用恢复行为具有互补性，因此 long-horizon agent 更适合将环境知识放入可更新的外部状态，将 retry、switch、verify 等控制行为写入策略。对于静默错误，仅根据显式报错触发恢复并不充分，还需要跨来源验证、关键状态核对和不可逆操作前检查。停止或升级必须拥有可被正确计分的独立训练信号，否则即使训练环境包含无解任务，也不能证明 agent 真正学会了可靠 abstention。",
+        "abstract_zh": "工具型 LLM agent 往往在工具稳定成功的环境中训练和评测，但部署中的工具可能发生瞬态、持续或静默故障，因此 agent 需要学会重试、切换替代路径，或在路径耗尽时停止。论文提出 BENCH2ROBUST，通过受控故障注入和显式可解性场景，将无故障工具基准转换为恢复策略训练与评测环境。作者分别研究了提供结构化运行时恢复信息的 Bayesian Tool Memory，以及采用课程控制的强化学习。多个模型和两类多轮基准上的结果显示工具故障普遍造成明显性能下降，而运行时结构信息与学习到的恢复行为可以互补，在基本保持无故障性能的同时提高故障环境成功率。",
+        "full_summary": "论文关注工具型多轮 agent 在真实故障下的规划可靠性，指出干净任务成功率会严重高估部署表现。其核心贡献 BENCH2ROBUST 显式区分原路径可恢复、必须切换替代工具以及所有路径均不可用的环境状态，使恢复策略不再与随机运气混淆。作者进一步结合结构化工具恢复上下文 BTM 与课程式强化学习，前者提供工具拓扑和约束，后者学习较通用的重试、切换及验证行为。大规模故障注入实验显示鲁棒性缺口具有普遍性，BTM 带来的即时收益最大，而 RL 在移除运行时提示后仍保留较小但稳定的增益，并更有利于持续故障和静默错误。最重要的反面结论是，所谓“Bayesian”数值不是主要增益来源，且现有奖励和评测不能支持“已学会 abstain”这一较强说法。总体而言，这是一篇与多轮工具规划和 long-horizon reliability 高度相关、值得精读的方法与实证论文，但标题中的停止能力应按未完成目标而非已验证贡献理解。",
+        "card_summary": "这篇论文把工具故障恢复从“多试几次”重构为基于可解性的重试、切换与停止决策，并提出可将现有多轮工具基准转换成受控故障环境的 BENCH2ROBUST。实验显示，显式提供工具替代结构的运行时上下文与强化学习得到的恢复行为可以互补，但论文并未真正证明 agent 已学会正确 abstain。"
+      },
+      "analysis": {
+        "motivation": "现有工具型 LLM agent 通常在近乎无故障的环境中训练和评测，但真实工具会出现超时、限流、鉴权失效、模式漂移以及无显式报错的错误数据。关键问题并不是让 agent 一味坚持调用，而是使其根据路径的可恢复性，在重试原路径、切换替代路径和停止升级之间做出合适决策。论文还指出，普通随机故障注入会把策略质量与环境运气混在一起，无法判断成功究竟来自正确恢复还是错误恰好消失。",
+        "method": "论文提出 BENCH2ROBUST，将已有工具调用基准转换为具有受控可解性的随机环境：S1 中原路径可通过重试恢复，S2 中主路径被持续阻断、必须切换等价工具，S3 中所有可行路径均被阻断。作者同时研究两类干预：一是 Bayesian Tool Memory，以运行时提示形式提供工具替代关系、验证约束和经验恢复统计；二是使用分阶段课程、DAPO、部分奖励及重复惩罚训练 Qwen3 策略。需要注意，BTM 的主要有效成分实际是人工配置的替代结构和恢复约束，而不是贝叶斯后验数值本身。",
+        "experiments": "实验覆盖四个模型家族的七个模型，以及 Retail、Airline、Telecom 和 BFCL 等多轮任务；在七十个模型—任务组合中，六十九个在故障注入后退化，说明干净环境性能不能代表工具故障鲁棒性。在四百零二个留出 Retail 任务上，BTM 无需再训练即可带来约十二至十七个百分点的提升；RL 在移除推理时 BTM 后仍提升约六至七个百分点，两者结合达到约百分之四十一至四十六的注入环境通过率，同时没有观察到明显的干净任务退化。策略分解显示 RL 对必须切换路径的情形和减少过早升级更有帮助，BTM 更擅长处理带显式信号的瞬态错误；在静默错误上，RL 的增益更明显，而 BTM 在事实错误条件下甚至产生负作用。跨域结果为正但幅度较小，Telecom 上的基础能力瓶颈也没有被恢复训练解决。",
+        "research_help": "Insight：恢复策略应以“当前计划路径是否仍可行”为隐状态，而不能把所有失败统一处理成继续重试；训练环境最好显式构造可重试、必须重规划和无解三种状态，避免奖励偶然恢复。运行时的工具拓扑、替代关系和验证规则，与策略训练得到的通用恢复行为具有互补性，因此 long-horizon agent 更适合将环境知识放入可更新的外部状态，将 retry、switch、verify 等控制行为写入策略。对于静默错误，仅根据显式报错触发恢复并不充分，还需要跨来源验证、关键状态核对和不可逆操作前检查。停止或升级必须拥有可被正确计分的独立训练信号，否则即使训练环境包含无解任务，也不能证明 agent 真正学会了可靠 abstention。",
+        "insight": "Insight：恢复策略应以“当前计划路径是否仍可行”为隐状态，而不能把所有失败统一处理成继续重试；训练环境最好显式构造可重试、必须重规划和无解三种状态，避免奖励偶然恢复。运行时的工具拓扑、替代关系和验证规则，与策略训练得到的通用恢复行为具有互补性，因此 long-horizon agent 更适合将环境知识放入可更新的外部状态，将 retry、switch、verify 等控制行为写入策略。对于静默错误，仅根据显式报错触发恢复并不充分，还需要跨来源验证、关键状态核对和不可逆操作前检查。停止或升级必须拥有可被正确计分的独立训练信号，否则即使训练环境包含无解任务，也不能证明 agent 真正学会了可靠 abstention。",
+        "abstract_zh": "工具型 LLM agent 往往在工具稳定成功的环境中训练和评测，但部署中的工具可能发生瞬态、持续或静默故障，因此 agent 需要学会重试、切换替代路径，或在路径耗尽时停止。论文提出 BENCH2ROBUST，通过受控故障注入和显式可解性场景，将无故障工具基准转换为恢复策略训练与评测环境。作者分别研究了提供结构化运行时恢复信息的 Bayesian Tool Memory，以及采用课程控制的强化学习。多个模型和两类多轮基准上的结果显示工具故障普遍造成明显性能下降，而运行时结构信息与学习到的恢复行为可以互补，在基本保持无故障性能的同时提高故障环境成功率。",
+        "card_summary": "这篇论文把工具故障恢复从“多试几次”重构为基于可解性的重试、切换与停止决策，并提出可将现有多轮工具基准转换成受控故障环境的 BENCH2ROBUST。实验显示，显式提供工具替代结构的运行时上下文与强化学习得到的恢复行为可以互补，但论文并未真正证明 agent 已学会正确 abstain。",
+        "full_summary": "论文关注工具型多轮 agent 在真实故障下的规划可靠性，指出干净任务成功率会严重高估部署表现。其核心贡献 BENCH2ROBUST 显式区分原路径可恢复、必须切换替代工具以及所有路径均不可用的环境状态，使恢复策略不再与随机运气混淆。作者进一步结合结构化工具恢复上下文 BTM 与课程式强化学习，前者提供工具拓扑和约束，后者学习较通用的重试、切换及验证行为。大规模故障注入实验显示鲁棒性缺口具有普遍性，BTM 带来的即时收益最大，而 RL 在移除运行时提示后仍保留较小但稳定的增益，并更有利于持续故障和静默错误。最重要的反面结论是，所谓“Bayesian”数值不是主要增益来源，且现有奖励和评测不能支持“已学会 abstain”这一较强说法。总体而言，这是一篇与多轮工具规划和 long-horizon reliability 高度相关、值得精读的方法与实证论文，但标题中的停止能力应按未完成目标而非已验证贡献理解。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "高价值但需警惕标题外推",
+        "value_reason": "论文提出的受控可解性比普通随机噪声更适合分析恢复策略，并通过留出任务、组件消融、策略级指标、错误类型分解和跨域测试给出了较完整证据；作者也主动承认 BTM 的主要收益来自结构提示，以及 abstention 尚未被有效学习。它不是单纯包装概念的工作，但“Bayesian Tool Memory”和题目中的“Abstain”都比实际证据更强，阅读时应把核心价值放在场景构造、工具路径结构和恢复策略分解上。",
+        "limitations": "最关键的限制是 S3 无解任务没有正确停止的正奖励，也未进入可给出成功信用的留出评测，因此论文只充分支持 retry 和 switch，不能证明学会了 abstain。训练方案同时改变课程、奖励塑形、KL 稳定化和故障结构，与普通随机噪声基线的比较无法隔离各组件的因果贡献。全部故障均为模拟的工具响应扰动，而非真实生产事故轨迹；策略级 S1/S2 分组又依赖各策略自己生成的轨迹，因此切换能力比较只能视为支持性证据。BTM 依赖人工提供的工具等价类和恢复约束，后验数值贡献很小，同时会增加 token 成本，并可能在静默事实错误上诱发无效重试。跨域收益有限，用户模拟器敏感性也尚未系统检验。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确说明 S1 对应重试可恢复、S2 对应必须切换替代工具、S3 对应所有可行工具路径均被阻断。",
+          "七十个模型—任务组合中有六十九个在故障注入后下降，最大降幅达到四十六点七个百分点。",
+          "留出 Retail 任务上，基础模型加入 BTM 后从百分之二十点一提升到百分之三十六点九；RL 在不使用推理时 BTM 的条件下达到百分之二十六点四。",
+          "BTM 消融中，结构约束和 fallback map 解释了大部分收益，真实后验值与打乱后验值的差异处于种子波动范围。公司的核心收益不能归因于贝叶斯校准。尚未证明的关键点：奖励没有为正确 abstention 提供正向项，S3 也未纳入留出任务成功率评测。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:39:22.377Z"
+      }
+    },
+    {
+      "id": "2608.11207v1",
+      "title": "Dynamic Governance of Multi-LLM Agent Systems for Collaborative Conversational Outcomes",
+      "summary": "When two LLM agents with structurally opposed objectives interact across multiple turns, the absence of a shared goal function produces not competition but collapse: the visitor capitulates, the site agent stops varying its approach, and the conversation terminates without achieving either agent's stated objective. This paper asks whether a control-theoretic governance layer can substitute for that missing goal function. The Experience Orchestrator (EO) addresses this in a simulated financial services environment where a site agent guides a visitor toward advisor contact while the visitor maintains psychologically realistic resistance. EO governs the joint trajectory through three mechanisms: a Contextual Bandit (CB) that selects content arms calibrated from real-world web analytics, a PID controller that enforces behavioral consistency via dynamic schema constraints, and a POMDP belief tracker that maintains a probabilistic model of visitor intent. Across 60,000 simulations, EO achieves a +32 percentage point lift in high-intent advisor contact rate (78.1% vs. 46.1% over a naive LLM control), with CB variant selection accounting for 97% of between-factor outcome variance -- confirming that the governance policy, not environmental initial conditions, determines where trajectories end up. Persona-level analysis reveals two distinct regimes: for visitors with no natural inclination toward conversion, the governance layer is the difference between a functional system and a non-functional one; for visitors already near alignment, a naive LLM's empathetic defaults are largely sufficient. All findings are conditional on LLM-to-LLM simulation. The PID controller has not been calibrated against real human unpredictability, and validating EO on live traffic is the critical next step.",
+      "url": "https://arxiv.org/abs/2608.11207v1",
+      "authors": [
+        "Alexander Liss",
+        "Nicholas Desmond",
+        "Santiago Gil Gallego"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-04-25",
+      "updated": "2026-04-25",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "低",
+        "label": "治理框架有启发，实证结论不可靠",
+        "water_risk": "高",
+        "value_judgement": "值得借鉴的是把动作选择、状态估计、趋势控制和死循环恢复拆成独立模块，并把多轮失败视为轨迹问题。但主要成功指标被控制器直接干预，实验完全依赖同类 LLM 模拟，基线、数据划分、模型配置和独立复现信息不足，且“转化”被包装成“共同最优”，所以不宜将报告的提升或 97% 方差归因视为可信的普遍结论。",
+        "reason": "值得借鉴的是把动作选择、状态估计、趋势控制和死循环恢复拆成独立模块，并把多轮失败视为轨迹问题。但主要成功指标被控制器直接干预，实验完全依赖同类 LLM 模拟，基线、数据划分、模型配置和独立复现信息不足，且“转化”被包装成“共同最优”，所以不宜将报告的提升或 97% 方差归因视为可信的普遍结论。"
+      },
+      "brief": {
+        "authors": [
+          "Alexander Liss",
+          "Nicholas Desmond",
+          "Santiago Gil Gallego"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-04-25",
+        "paper_url": "https://arxiv.org/abs/2608.11207v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "值得借鉴的是把动作选择、状态估计、趋势控制和死循环恢复拆成独立模块，并把多轮失败视为轨迹问题。但主要成功指标被控制器直接干预，实验完全依赖同类 LLM 模拟，基线、数据划分、模型配置和独立复现信息不足，且“转化”被包装成“共同最优”，所以不宜将报告的提升或 97% 方差归因视为可信的普遍结论。",
+        "summary": "这篇论文把多智能体对话中的谄媚、停滞和策略固着解释为轨迹落入次优吸引子，并尝试用外部控制器持续纠偏。其核心系统以上下文老虎机选择说服策略，以 POMDP 跟踪隐藏意图，再由 PID 根据阻力轨迹动态限制模拟访客的结构化输出。作者在 60,425 次金融服务对话模拟中报告了显著高于提示词基线的顾问联系率，并将大部分跨因素差异归因于治理策略。然而，所谓“共同最优”实际上主要是网站方的转化目标，未证明对访客也最优。更严重的是，PID 能直接压低进入终局判定的阻力变量，使主要结果存在循环验证问题，而部分脆弱人群画像的效果还明显下降。因此它对外部闭环治理和失败检测有概念价值，但不能支持控制理论已经可靠解决多智能体协作的强结论。",
+        "highlights": [
+          "值得借鉴的是把动作选择、状态估计、趋势控制和死循环恢复拆成独立模块，并把多轮失败视为轨迹问题。但主要成功指标被控制器直接干预，实验完全依赖同类 LLM 模拟，基线、数据划分、模型配置和独立复现信息不足，且“转化”被包装成“共同最优”，所以不宜将报告的提升或 97% 方差归因视为可信的普遍结论。",
+          "偏水风险：高",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文关注两个目标相冲突的 LLM 智能体在多轮对话中容易陷入谄媚、停滞或动作固着，而自然语言提示缺少足够稳定的轨迹纠偏信号。作者据此提出在模型外增加统一治理层。不过，“没有联合训练奖励”等同于“没有目标函数”是过强表述：系统完全可以拥有外部任务目标，而本文实际做的是把商业转化目标编码进控制器，并非发现中立的共同目标。",
+        "method": "Experience Orchestrator 由三部分组成：上下文老虎机根据页面轨迹、用户画像及会话状态选择四种说服策略；POMDP 信念跟踪器用关键词更新用户意图分布；PID 控制器根据阻力变化、停滞趋势和信念熵调整控制强度。PID 输出随后被转换成结构化输出约束，直接限定模拟访客下一轮自报阻力的取值范围；系统还会在对话停滞时切换策略或终止。训练信号结合阻力下降、意图不确定性下降、对话效率和终局转化，而上下文老虎机另用会话级二元转化奖励。",
+        "experiments": "作者在金融服务网站场景中进行了 60,425 次 LLM-to-LLM 模拟，覆盖六种访客画像和八种摩擦模型。最佳版本的高意向顾问联系率为 78.1%，提示词控制组为 46.1%；作者还报告，老虎机版本解释了跨因素结果方差的 97%，摩擦模型解释了 3%。但这些数字主要反映合成环境及其规则：PID 直接约束阻力指标，而阻力下降又参与成功判定，形成明显的指标内生性。分画像结果也不是一致改善，其中 grieving proxy 从控制组的 90.1% 降至 65.6%，说明治理策略可能在本已适合自然交流的情形中造成伤害。",
+        "research_help": "Insight：多轮智能体的可靠性可以按“状态估计—动作路由—趋势监测—恢复策略”构造成外部闭环，并显式检测谄媚坍缩、停滞循环和动作固着。快时间尺度的反馈控制可用于抑制局部漂移，慢时间尺度的策略学习可负责长期动作选择，这种分层治理思路适合 agent planning 和 long-horizon 系统。关键约束是评估信号必须独立于控制器：如果控制器能够直接修改被评估的自报状态，可靠性指标就会循环化；真实系统应使用独立结果指标、留出环境、离线策略评估和人类校准。",
+        "insight": "Insight：多轮智能体的可靠性可以按“状态估计—动作路由—趋势监测—恢复策略”构造成外部闭环，并显式检测谄媚坍缩、停滞循环和动作固着。快时间尺度的反馈控制可用于抑制局部漂移，慢时间尺度的策略学习可负责长期动作选择，这种分层治理思路适合 agent planning 和 long-horizon 系统。关键约束是评估信号必须独立于控制器：如果控制器能够直接修改被评估的自报状态，可靠性指标就会循环化；真实系统应使用独立结果指标、留出环境、离线策略评估和人类校准。",
+        "abstract_zh": "经典多智能体强化学习通过联合奖励形成共享策略，而目标相冲突的 LLM 智能体缺少这种基础，容易在多轮交互中落入次优吸引状态。论文提出 Experience Orchestrator，在模拟金融服务场景中结合上下文老虎机、PID 控制的结构化约束和 POMDP 信念跟踪，引导网站智能体与访客智能体走向顾问联系结果。在约六万次模拟中，完整系统将高意向顾问联系率由提示词控制组的 46.1% 提升至 78.1%，且作者认为策略选择解释了大部分跨因素结果差异。作者同时承认全部发现都来自 LLM 对 LLM 的模拟，PID 控制尚未经过真实人类访客校准。",
+        "full_summary": "这篇论文把多智能体对话中的谄媚、停滞和策略固着解释为轨迹落入次优吸引子，并尝试用外部控制器持续纠偏。其核心系统以上下文老虎机选择说服策略，以 POMDP 跟踪隐藏意图，再由 PID 根据阻力轨迹动态限制模拟访客的结构化输出。作者在 60,425 次金融服务对话模拟中报告了显著高于提示词基线的顾问联系率，并将大部分跨因素差异归因于治理策略。然而，所谓“共同最优”实际上主要是网站方的转化目标，未证明对访客也最优。更严重的是，PID 能直接压低进入终局判定的阻力变量，使主要结果存在循环验证问题，而部分脆弱人群画像的效果还明显下降。因此它对外部闭环治理和失败检测有概念价值，但不能支持控制理论已经可靠解决多智能体协作的强结论。",
+        "card_summary": "论文用上下文老虎机、POMDP 信念跟踪和 PID 反馈构建多轮对话治理层，尝试让目标相冲突的 LLM 智能体收敛到顾问联系结果。模拟中的提升很大，但控制器直接约束参与成功判定的访客阻力，且没有真人验证，因此更适合作为治理架构的反例与设计素材，而不是可靠的效果证据。"
+      },
+      "analysis": {
+        "motivation": "论文关注两个目标相冲突的 LLM 智能体在多轮对话中容易陷入谄媚、停滞或动作固着，而自然语言提示缺少足够稳定的轨迹纠偏信号。作者据此提出在模型外增加统一治理层。不过，“没有联合训练奖励”等同于“没有目标函数”是过强表述：系统完全可以拥有外部任务目标，而本文实际做的是把商业转化目标编码进控制器，并非发现中立的共同目标。",
+        "method": "Experience Orchestrator 由三部分组成：上下文老虎机根据页面轨迹、用户画像及会话状态选择四种说服策略；POMDP 信念跟踪器用关键词更新用户意图分布；PID 控制器根据阻力变化、停滞趋势和信念熵调整控制强度。PID 输出随后被转换成结构化输出约束，直接限定模拟访客下一轮自报阻力的取值范围；系统还会在对话停滞时切换策略或终止。训练信号结合阻力下降、意图不确定性下降、对话效率和终局转化，而上下文老虎机另用会话级二元转化奖励。",
+        "experiments": "作者在金融服务网站场景中进行了 60,425 次 LLM-to-LLM 模拟，覆盖六种访客画像和八种摩擦模型。最佳版本的高意向顾问联系率为 78.1%，提示词控制组为 46.1%；作者还报告，老虎机版本解释了跨因素结果方差的 97%，摩擦模型解释了 3%。但这些数字主要反映合成环境及其规则：PID 直接约束阻力指标，而阻力下降又参与成功判定，形成明显的指标内生性。分画像结果也不是一致改善，其中 grieving proxy 从控制组的 90.1% 降至 65.6%，说明治理策略可能在本已适合自然交流的情形中造成伤害。",
+        "research_help": "Insight：多轮智能体的可靠性可以按“状态估计—动作路由—趋势监测—恢复策略”构造成外部闭环，并显式检测谄媚坍缩、停滞循环和动作固着。快时间尺度的反馈控制可用于抑制局部漂移，慢时间尺度的策略学习可负责长期动作选择，这种分层治理思路适合 agent planning 和 long-horizon 系统。关键约束是评估信号必须独立于控制器：如果控制器能够直接修改被评估的自报状态，可靠性指标就会循环化；真实系统应使用独立结果指标、留出环境、离线策略评估和人类校准。",
+        "insight": "Insight：多轮智能体的可靠性可以按“状态估计—动作路由—趋势监测—恢复策略”构造成外部闭环，并显式检测谄媚坍缩、停滞循环和动作固着。快时间尺度的反馈控制可用于抑制局部漂移，慢时间尺度的策略学习可负责长期动作选择，这种分层治理思路适合 agent planning 和 long-horizon 系统。关键约束是评估信号必须独立于控制器：如果控制器能够直接修改被评估的自报状态，可靠性指标就会循环化；真实系统应使用独立结果指标、留出环境、离线策略评估和人类校准。",
+        "abstract_zh": "经典多智能体强化学习通过联合奖励形成共享策略，而目标相冲突的 LLM 智能体缺少这种基础，容易在多轮交互中落入次优吸引状态。论文提出 Experience Orchestrator，在模拟金融服务场景中结合上下文老虎机、PID 控制的结构化约束和 POMDP 信念跟踪，引导网站智能体与访客智能体走向顾问联系结果。在约六万次模拟中，完整系统将高意向顾问联系率由提示词控制组的 46.1% 提升至 78.1%，且作者认为策略选择解释了大部分跨因素结果差异。作者同时承认全部发现都来自 LLM 对 LLM 的模拟，PID 控制尚未经过真实人类访客校准。",
+        "card_summary": "论文用上下文老虎机、POMDP 信念跟踪和 PID 反馈构建多轮对话治理层，尝试让目标相冲突的 LLM 智能体收敛到顾问联系结果。模拟中的提升很大，但控制器直接约束参与成功判定的访客阻力，且没有真人验证，因此更适合作为治理架构的反例与设计素材，而不是可靠的效果证据。",
+        "full_summary": "这篇论文把多智能体对话中的谄媚、停滞和策略固着解释为轨迹落入次优吸引子，并尝试用外部控制器持续纠偏。其核心系统以上下文老虎机选择说服策略，以 POMDP 跟踪隐藏意图，再由 PID 根据阻力轨迹动态限制模拟访客的结构化输出。作者在 60,425 次金融服务对话模拟中报告了显著高于提示词基线的顾问联系率，并将大部分跨因素差异归因于治理策略。然而，所谓“共同最优”实际上主要是网站方的转化目标，未证明对访客也最优。更严重的是，PID 能直接压低进入终局判定的阻力变量，使主要结果存在循环验证问题，而部分脆弱人群画像的效果还明显下降。因此它对外部闭环治理和失败检测有概念价值，但不能支持控制理论已经可靠解决多智能体协作的强结论。",
+        "recommendation_level": "低",
+        "water_risk": "高",
+        "value_label": "治理框架有启发，实证结论不可靠",
+        "value_reason": "值得借鉴的是把动作选择、状态估计、趋势控制和死循环恢复拆成独立模块，并把多轮失败视为轨迹问题。但主要成功指标被控制器直接干预，实验完全依赖同类 LLM 模拟，基线、数据划分、模型配置和独立复现信息不足，且“转化”被包装成“共同最优”，所以不宜将报告的提升或 97% 方差归因视为可信的普遍结论。",
+        "limitations": "全部实验均为 LLM 模拟，没有真人流量、人工行为标注或跨模型验证。PID 生成的 schema 直接限制访客自报阻力，而阻力下降同时进入奖励和成功定义，造成严重的测量泄漏与循环性。论文没有充分交代具体 LLM、提示词、训练与测试划分、随机种子、老虎机训练数据及独立留出评估；“经过多轮测试选出的最佳版本”还可能引入选择偏差。其势函数塑形不改变最优策略的论断也缺少严格支撑，因为奖励中包含效率项等不明显属于标准势函数差分的部分。方差归因只发生在作者构造的摩擦模型中，不能推出真实环境中治理策略比环境因素更重要；对 grieving proxy 的负效应还揭示了安全与伦理风险。另有元数据待核对：给定 arXiv 编号中的 2608 通常对应 2026 年 8 月，但日期字段为 2026 年 4 月 25 日。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要与表 I 报告：V4 SemRush 的顾问联系率为 78.1%，提示词控制组为 46.1%。",
+          "第 IV—V 节说明 PID 输出会构造结构化 schema，直接限定访客下一轮 resistance_score 的范围。",
+          "第 III、V 节又将阻力下降用于终局成功过滤和逐轮塑形奖励，因此控制变量与评估变量并不独立。",
+          "第 VI-D 节报告 grieving proxy 的联系率由控制组 90.1% 降至治理系统 65.6%。除部分画像外，论文并未显示一致获益。作者称上下文老虎机版本解释 97% 的跨因素结果方差，但该分析仅覆盖合成摩擦模型。后续修正。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:40:45.400Z"
+      }
+    },
+    {
+      "id": "2608.11775v1",
+      "title": "The Sleeping Agent: What Gist-Based Context Compression Loses and Why",
+      "summary": "Gist-based context compression---summarising older conversation history into compact representations---is a common approach in long-horizon language model agents, yet its effect on different types of memory retrieval is poorly understood. We use Salience-Weighted Consolidation (SWC), a biologically-inspired compression framework motivated by sleep-based memory consolidation, as a diagnostic probe to study when gist compression helps and when it hurts. SWC scores conversation history by salience, partitions it into priority tiers, and applies structured gist abstraction to mid-priority content. Evaluating four conditions on all ten LoCoMo conversations---1,935 matched text-only questions in total, 1,501 used in the primary aggregate after excluding Category 5 (adversarial) questions---at temperature 0, we find a consistent task-type interaction: gist compression substantially outperforms truncation on multi-hop reasoning and single-hop factual questions, but temporal questions remain substantially harder under compression, with compressed conditions scoring well below the full-context reference on the conversations where both are evaluated. We trace this failure to a specific mechanism: the gist abstraction prompt preserves relational and event structure while discarding dates and times. A preservation analysis across all ten conversations confirms the mechanism: an approximately 20-fold increase in temporal expression preservation (3.05% to 62.39%) with a one-sentence prompt modification, while named entity and event preservation rates barely change (x1.02 and x1.11), demonstrating that the fix is a precision instrument. The prompt modification recovers +0.314 [0.254, 0.375] judge accuracy on category-2 (temporal) questions in the matched set. Code and results: this https URL .",
+      "url": "https://arxiv.org/abs/2608.11775v1",
+      "authors": [
+        "Nicholas E. Kyrkewood"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/kyrkewood/sleeping-agent",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "机制清晰的记忆压缩可靠性研究",
+        "water_risk": "中",
+        "value_judgement": "值得读，尤其适合关注多轮记忆与 long-horizon reliability 的读者：论文提出的问题具体，类别级结果、保留率分析和单句消融彼此吻合，能够解释性能为何变化，而不只是报告更高总分。偏水风险并非低，因为实验只覆盖 LoCoMo，未与强检索式或结构化记忆系统进行同设置复现比较，完整上下文也只在两段对话上测试；此外，生成、压缩和主要评测集中于同一模型家族，外部有效性仍有限。其“睡眠巩固”叙事更多是设计灵感，真正被实验证实的是时间锚点保护，而不是神经科学式调度本身。",
+        "reason": "值得读，尤其适合关注多轮记忆与 long-horizon reliability 的读者：论文提出的问题具体，类别级结果、保留率分析和单句消融彼此吻合，能够解释性能为何变化，而不只是报告更高总分。偏水风险并非低，因为实验只覆盖 LoCoMo，未与强检索式或结构化记忆系统进行同设置复现比较，完整上下文也只在两段对话上测试；此外，生成、压缩和主要评测集中于同一模型家族，外部有效性仍有限。其“睡眠巩固”叙事更多是设计灵感，真正被实验证实的是时间锚点保护，而不是神经科学式调度本身。"
+      },
+      "brief": {
+        "authors": [
+          "Nicholas E. Kyrkewood"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.11775v1",
+        "project_url": "",
+        "repo_url": "https://github.com/kyrkewood/sleeping-agent",
+        "venue_status": "未确认录用",
+        "contribution": "值得读，尤其适合关注多轮记忆与 long-horizon reliability 的读者：论文提出的问题具体，类别级结果、保留率分析和单句消融彼此吻合，能够解释性能为何变化，而不只是报告更高总分。偏水风险并非低，因为实验只覆盖 LoCoMo，未与强检索式或结构化记忆系统进行同设置复现比较，完整上下文也只在两段对话上测试；此外，生成、压缩和主要评测集中于同一模型家族，外部有效性仍有限。其“睡眠巩固”叙事更多是设计灵感，真正被实验证实的是时间锚点保护，而不是神经科学式调度本身。",
+        "summary": "这篇论文研究长时程智能体压缩旧对话时究竟会遗失什么，而不是只比较不同记忆系统的总体得分。作者用 SWC 将历史片段分成原文保留、gist 压缩和丢弃三档，并发现普通 gist 压缩在多跳与单跳事实问题上优于截断和滑动摘要。其核心失败集中在时间信息：摘要通常保留事件及参与者，却删除事件发生的日期、时刻和持续时间。加入一句明确保护时间表达的指令后，时间表达保留率和时间问答准确率均大幅恢复，并且没有明显损害其他主要类别。论文的机制分析清晰且与 agent memory reliability 高度相关，但基准、模型和基线覆盖较窄，因此更适合作为一个值得迁移验证的设计发现，而不是通用记忆架构优越性的证明。",
+        "highlights": [
+          "值得读，尤其适合关注多轮记忆与 long-horizon reliability 的读者：论文提出的问题具体，类别级结果、保留率分析和单句消融彼此吻合，能够解释性能为何变化，而不只是报告更高总分。偏水风险并非低，因为实验只覆盖 LoCoMo，未与强检索式或结构化记忆系统进行同设置复现比较，完整上下文也只在两段对话上测试；此外，生成、压缩和主要评测集中于同一模型家族，外部有效性仍有限。其“睡眠巩固”叙事更多是设计灵感，真正被实验证实的是时间锚点保护，而不是神经科学式调度本身。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长时程智能体常把旧对话压缩成摘要，但总分只能告诉我们“压缩是否有效”，不能解释不同信息类型为何被保留或遗失。论文试图把 gist compression 当作可诊断的记忆机制，定位其在多跳推理、事实检索和时间检索上的差异，并判断失败究竟来自架构能力不足，还是摘要提示词遗漏了某类信息。",
+        "method": "作者构建 Salience-Weighted Consolidation（SWC）：先依据后续内容相似度、近因性和信息密度为会话片段评分，再将高优先级内容原文保留、中优先级内容压缩为结构化 gist、低优先级内容丢弃。在 SWC-Full 基础上，SWC-Temporal 只增加一句约束，要求逐字保留日期、时间、时长、年龄及相对时间表达。论文通过任务类别准确率、原文表达保留率和单句提示词消融，将性能变化与时间锚点是否被保留联系起来。",
+        "experiments": "实验覆盖 LoCoMo 的全部十段对话和 1935 个文本问题，主要汇总排除 434 个对内容删除有特殊偏好的对抗问题，使用其余 1501 个问题。SWC-Temporal 的总体 judge accuracy 为 0.468，高于 SWC-Full 的 0.379、滑动摘要的 0.238和截断的 0.171；优势主要来自多跳、单跳与时间问题，开放域类别的置信区间重叠，不能得出可靠差异。时间类别上，SWC-Temporal 从 SWC-Full 的 0.156 提升到 0.470，配对增量为 0.314，且十段对话方向一致；与此同时，时间表达原文保留率从 3.05%升至62.39%，而实体与事件保留率几乎不变，形成了较清楚的机制证据。实验信号有说服力，但仍只来自一个数据集、一套主要由 Claude 组成的生成与评测链，以及两个较弱的直接基线。",
+        "research_help": "Insight：记忆压缩的可靠性不能只用总体问答准确率衡量，而应建立“信息类型—保留率—下游任务错误”的诊断链。时间锚点应被视为独立于实体、事件和因果关系的受保护字段，最好以结构化槽位或硬约束保存，而不是期待通用摘要自然保留。对 long-horizon agent，更稳健的设计是让压缩策略感知未来可能需要的操作类型，并对时间、承诺、期限、状态变更等不可逆细节设置不同的保真规则。该工作还提示，许多记忆失败可能是可修正的表示规范缺口，不一定需要更复杂的检索或记忆架构。",
+        "insight": "Insight：记忆压缩的可靠性不能只用总体问答准确率衡量，而应建立“信息类型—保留率—下游任务错误”的诊断链。时间锚点应被视为独立于实体、事件和因果关系的受保护字段，最好以结构化槽位或硬约束保存，而不是期待通用摘要自然保留。对 long-horizon agent，更稳健的设计是让压缩策略感知未来可能需要的操作类型，并对时间、承诺、期限、状态变更等不可逆细节设置不同的保真规则。该工作还提示，许多记忆失败可能是可修正的表示规范缺口，不一定需要更复杂的检索或记忆架构。",
+        "abstract_zh": "基于 gist 的上下文压缩是长时程语言智能体处理旧对话的常见方式，但它对不同记忆检索任务的影响仍不清楚。作者以受睡眠记忆巩固启发的 SWC 为诊断工具，按照显著性分层保留、压缩或丢弃会话内容。LoCoMo 实验显示，gist 压缩在多跳和单跳问题上明显优于截断，却会系统性损害时间问题，因为通用摘要提示词保留了事件和关系，却经常删除日期与时间。仅加入一句保护时间表达的提示，就大幅提高时间信息保留率和时间问题准确率，而实体与事件的保留基本不受影响。",
+        "full_summary": "这篇论文研究长时程智能体压缩旧对话时究竟会遗失什么，而不是只比较不同记忆系统的总体得分。作者用 SWC 将历史片段分成原文保留、gist 压缩和丢弃三档，并发现普通 gist 压缩在多跳与单跳事实问题上优于截断和滑动摘要。其核心失败集中在时间信息：摘要通常保留事件及参与者，却删除事件发生的日期、时刻和持续时间。加入一句明确保护时间表达的指令后，时间表达保留率和时间问答准确率均大幅恢复，并且没有明显损害其他主要类别。论文的机制分析清晰且与 agent memory reliability 高度相关，但基准、模型和基线覆盖较窄，因此更适合作为一个值得迁移验证的设计发现，而不是通用记忆架构优越性的证明。",
+        "card_summary": "论文用受控消融揭示了长对话压缩中的一个具体故障：通用 gist 摘要能保留人物、事件和关系，却会选择性丢失时间锚点。只增加一句时间保护指令就显著恢复 LoCoMo 时间问答表现，结论对 agent memory 和长时程可靠性设计很有参考价值。"
+      },
+      "analysis": {
+        "motivation": "长时程智能体常把旧对话压缩成摘要，但总分只能告诉我们“压缩是否有效”，不能解释不同信息类型为何被保留或遗失。论文试图把 gist compression 当作可诊断的记忆机制，定位其在多跳推理、事实检索和时间检索上的差异，并判断失败究竟来自架构能力不足，还是摘要提示词遗漏了某类信息。",
+        "method": "作者构建 Salience-Weighted Consolidation（SWC）：先依据后续内容相似度、近因性和信息密度为会话片段评分，再将高优先级内容原文保留、中优先级内容压缩为结构化 gist、低优先级内容丢弃。在 SWC-Full 基础上，SWC-Temporal 只增加一句约束，要求逐字保留日期、时间、时长、年龄及相对时间表达。论文通过任务类别准确率、原文表达保留率和单句提示词消融，将性能变化与时间锚点是否被保留联系起来。",
+        "experiments": "实验覆盖 LoCoMo 的全部十段对话和 1935 个文本问题，主要汇总排除 434 个对内容删除有特殊偏好的对抗问题，使用其余 1501 个问题。SWC-Temporal 的总体 judge accuracy 为 0.468，高于 SWC-Full 的 0.379、滑动摘要的 0.238和截断的 0.171；优势主要来自多跳、单跳与时间问题，开放域类别的置信区间重叠，不能得出可靠差异。时间类别上，SWC-Temporal 从 SWC-Full 的 0.156 提升到 0.470，配对增量为 0.314，且十段对话方向一致；与此同时，时间表达原文保留率从 3.05%升至62.39%，而实体与事件保留率几乎不变，形成了较清楚的机制证据。实验信号有说服力，但仍只来自一个数据集、一套主要由 Claude 组成的生成与评测链，以及两个较弱的直接基线。",
+        "research_help": "Insight：记忆压缩的可靠性不能只用总体问答准确率衡量，而应建立“信息类型—保留率—下游任务错误”的诊断链。时间锚点应被视为独立于实体、事件和因果关系的受保护字段，最好以结构化槽位或硬约束保存，而不是期待通用摘要自然保留。对 long-horizon agent，更稳健的设计是让压缩策略感知未来可能需要的操作类型，并对时间、承诺、期限、状态变更等不可逆细节设置不同的保真规则。该工作还提示，许多记忆失败可能是可修正的表示规范缺口，不一定需要更复杂的检索或记忆架构。",
+        "insight": "Insight：记忆压缩的可靠性不能只用总体问答准确率衡量，而应建立“信息类型—保留率—下游任务错误”的诊断链。时间锚点应被视为独立于实体、事件和因果关系的受保护字段，最好以结构化槽位或硬约束保存，而不是期待通用摘要自然保留。对 long-horizon agent，更稳健的设计是让压缩策略感知未来可能需要的操作类型，并对时间、承诺、期限、状态变更等不可逆细节设置不同的保真规则。该工作还提示，许多记忆失败可能是可修正的表示规范缺口，不一定需要更复杂的检索或记忆架构。",
+        "abstract_zh": "基于 gist 的上下文压缩是长时程语言智能体处理旧对话的常见方式，但它对不同记忆检索任务的影响仍不清楚。作者以受睡眠记忆巩固启发的 SWC 为诊断工具，按照显著性分层保留、压缩或丢弃会话内容。LoCoMo 实验显示，gist 压缩在多跳和单跳问题上明显优于截断，却会系统性损害时间问题，因为通用摘要提示词保留了事件和关系，却经常删除日期与时间。仅加入一句保护时间表达的提示，就大幅提高时间信息保留率和时间问题准确率，而实体与事件的保留基本不受影响。",
+        "card_summary": "论文用受控消融揭示了长对话压缩中的一个具体故障：通用 gist 摘要能保留人物、事件和关系，却会选择性丢失时间锚点。只增加一句时间保护指令就显著恢复 LoCoMo 时间问答表现，结论对 agent memory 和长时程可靠性设计很有参考价值。",
+        "full_summary": "这篇论文研究长时程智能体压缩旧对话时究竟会遗失什么，而不是只比较不同记忆系统的总体得分。作者用 SWC 将历史片段分成原文保留、gist 压缩和丢弃三档，并发现普通 gist 压缩在多跳与单跳事实问题上优于截断和滑动摘要。其核心失败集中在时间信息：摘要通常保留事件及参与者，却删除事件发生的日期、时刻和持续时间。加入一句明确保护时间表达的指令后，时间表达保留率和时间问答准确率均大幅恢复，并且没有明显损害其他主要类别。论文的机制分析清晰且与 agent memory reliability 高度相关，但基准、模型和基线覆盖较窄，因此更适合作为一个值得迁移验证的设计发现，而不是通用记忆架构优越性的证明。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "机制清晰的记忆压缩可靠性研究",
+        "value_reason": "值得读，尤其适合关注多轮记忆与 long-horizon reliability 的读者：论文提出的问题具体，类别级结果、保留率分析和单句消融彼此吻合，能够解释性能为何变化，而不只是报告更高总分。偏水风险并非低，因为实验只覆盖 LoCoMo，未与强检索式或结构化记忆系统进行同设置复现比较，完整上下文也只在两段对话上测试；此外，生成、压缩和主要评测集中于同一模型家族，外部有效性仍有限。其“睡眠巩固”叙事更多是设计灵感，真正被实验证实的是时间锚点保护，而不是神经科学式调度本身。",
+        "limitations": "仅在 LoCoMo 和英语对话上验证，尚不清楚能否迁移到工具轨迹、代码执行记录、跨任务规划或真实在线智能体。完整上下文参考只覆盖对话0至1，无法作为全数据集性能上界。SWC 的显著性包含与后续对话内容的相似度，按文中描述可能使用在线巩固时不可获得的未来信息，需要额外的因果在线实验澄清。调度机制没有在离线基准中得到验证，时间保护也只在 SWC 中测试，不能断言同样的提示修改必然改善其他摘要系统。主要指标依赖 Claude Haiku judge，虽然60题人工盲评达到95%一致率且时间类别17题全部一致，但验证样本仍小；原文保留率也可能漏计语义等价的改写。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "主要分析使用全部十段 LoCoMo 对话中的1501个类别1至4问题；1935个文本问题的匹配集合还包含434个被排除的对抗问题。",
+          "SWC-Temporal、SWC-Full、滑动窗口和截断的总体 judge accuracy 分别为0.468、0.379、0.238和0.171。",
+          "时间类别中，SWC-Temporal 相对 SWC-Full 的配对准确率增量为0.314，十段对话的变化方向均为正。",
+          "时间表达原文保留率由3.05%提高至62.39%，而命名实体和事件保留变化仅为1.02倍与1.11倍。切换版本后唯一方法差异是一句明确保护时间表达的提示。全文限制部分明确说明：完整上下文只评估两段对话、调度无法在离线基准测试、开放域类别无可靠结论，且时间保护尚未在滑动摘要上验证。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:41:56.076Z"
+      }
+    },
+    {
+      "id": "2608.11216v1",
+      "title": "AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research",
+      "summary": "World modeling is an unsettled field: architectures, training objectives, and state representations interact in complex ways, and no single recipe dominates across environments. This makes it an ideal testbed for AI coding agents acting as autonomous researchers--a setting in which the improvement direction is not specified in advance, unlike the engineering-to-spec tasks that dominate current agent benchmarks. We introduce AutoWorldModel-Bench, a closed-loop benchmark in which frontier coding agents autonomously improve a provided world-model starter under a fixed compute budget. The benchmark spans eight game environments under a unified structured-state representation--ground-truth entity state extracted from each game and consumed through a shared tensor format--which isolates dynamics modeling from perception and enables minutes-per-run iteration. Across 64 sessions, Codex-5.4 and Claude Opus 4.6 improve their starter on 63; in 91% of sessions the winning edit is a non-trivial research-style modification--a new objective, representation, rollout procedure, or architectural change--rather than a hyperparameter tweak. Our benchmark offers a setting in which frontier coding agents can be evaluated on open-ended research rather than engineering-to-spec problems.",
+      "url": "https://arxiv.org/abs/2608.11216v1",
+      "authors": [
+        "Marjan Moodi",
+        "Xuankang Zhu",
+        "Fernando De Mesentier Silva",
+        "Harold Chaput",
+        "Mohammad Reza Taesiri"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-07-20",
+      "updated": "2026-07-20",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "https://electronicarts.github.io/AutoWorldModelBench/",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "高",
+        "label": "长时程可靠性与自动化研究代理基准",
+        "water_risk": "中",
+        "value_judgement": "它与 multi-turn research agent 的实验记忆、预算分配和长期误差控制直接相关，并提供了较完整的闭环任务、held-out 测试及 horizon 分解，而不只是展示若干成功案例。推荐阅读的核心不是两个具体代理谁更强，而是其状态中心评测设计和“改进集中于长时程 rollout”的结果。偏水风险为中：工程与实验规模较扎实，但“非平凡研究修改”依赖单个零样本模型裁判，且缺少等预算搜索与人类基线，使开放式研究能力的归因偏强。",
+        "reason": "它与 multi-turn research agent 的实验记忆、预算分配和长期误差控制直接相关，并提供了较完整的闭环任务、held-out 测试及 horizon 分解，而不只是展示若干成功案例。推荐阅读的核心不是两个具体代理谁更强，而是其状态中心评测设计和“改进集中于长时程 rollout”的结果。偏水风险为中：工程与实验规模较扎实，但“非平凡研究修改”依赖单个零样本模型裁判，且缺少等预算搜索与人类基线，使开放式研究能力的归因偏强。"
+      },
+      "brief": {
+        "authors": [
+          "Marjan Moodi",
+          "Xuankang Zhu",
+          "Fernando De Mesentier Silva",
+          "Harold Chaput",
+          "Mohammad Reza Taesiri"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-20",
+        "paper_url": "https://arxiv.org/abs/2608.11216v1",
+        "project_url": "https://electronicarts.github.io/AutoWorldModelBench/",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "它与 multi-turn research agent 的实验记忆、预算分配和长期误差控制直接相关，并提供了较完整的闭环任务、held-out 测试及 horizon 分解，而不只是展示若干成功案例。推荐阅读的核心不是两个具体代理谁更强，而是其状态中心评测设计和“改进集中于长时程 rollout”的结果。偏水风险为中：工程与实验规模较扎实，但“非平凡研究修改”依赖单个零样本模型裁判，且缺少等预算搜索与人类基线，使开放式研究能力的归因偏强。",
+        "summary": "AutoWorldModel-Bench 旨在把 coding agent 从按规格完成工程任务的评测，推进到预算受限的自动化模型研究。它用八个游戏的真实实体状态统一表示环境，向代理提供四类 world-model starter、训练数据、评估脚本和可持续读取的实验记录。代理可以修改模型架构、损失、表示与 rollout 过程，并由单步预测、多步开放环预测和 held-out 机制场景共同检验。结果表明，几乎所有会话都能改进 starter，且增益主要集中在长时程 rollout，这一信号对研究 agent 的闭环可靠性很有价值。值得注意的是，该任务仍有固定数据、固定评分函数和明确代码边界，更接近受控的开放式模型搜索，而不是完整科学研究；同时缺少等预算超参搜索、人类研究者等关键基线。",
+        "highlights": [
+          "它与 multi-turn research agent 的实验记忆、预算分配和长期误差控制直接相关，并提供了较完整的闭环任务、held-out 测试及 horizon 分解，而不只是展示若干成功案例。推荐阅读的核心不是两个具体代理谁更强，而是其状态中心评测设计和“改进集中于长时程 rollout”的结果。偏水风险为中：工程与实验规模较扎实，但“非平凡研究修改”依赖单个零样本模型裁判，且缺少等预算搜索与人类基线，使开放式研究能力的归因偏强。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有 coding-agent 基准多是目标、指标和改进方向较明确的工程任务，难以判断代理能否在设计空间庞大、决策相互耦合且预算受限的条件下开展真正的迭代研究。本文选择尚无统一最优方案的 world model 作为试验场，试图把“提出假设—修改代码—训练评估—依据历史继续迭代”的闭环研究能力变成可重复评测的问题。",
+        "method": "AutoWorldModel-Bench 覆盖八个游戏环境，以统一的实体—组件结构直接暴露模拟器真实状态，从而隔离感知误差并加快实验迭代。每个任务给代理一个 Dreamer、AR-Transformer、D3PM 或 MaskGIT starter，以及固定训练数据、验证工具和结构化实验日志；代理在六小时总预算和单次训练十分钟上限内自由修改架构、目标、表示或 rollout 流程。模型通过单步 teacher forcing、多步开放环 rollout 和机制场景测试评估，最终指标明显偏重长时程状态预测。",
+        "experiments": "论文对两个 coding agent、八个游戏和四类 starter 进行了六十四个闭环会话；代理在几乎全部 held-out test 会话中超过 starter，场景测试上的改进覆盖面略低但总体方向一致。提升主要出现在十步和二十步开放环预测，而非已经较强的单步拟合，说明有效修改主要缓解了自回归误差累积。九成以上会话的获胜修改被判为目标、表示、rollout、推理或架构层面的结构性改动。不过每个 agent-task 组合只有一次会话，两个代理的实验次数不同，starter 重跑也存在平台非确定性，因此代理间排名和“自主研究能力”的强结论仍不稳固。",
+        "research_help": "Insight：评测 long-horizon agent 时，应把一步预测质量与闭环误差累积分开，否则局部准确率会掩盖长期状态漂移。结构化实验历史可作为研究代理的外部记忆，让后续假设显式条件化于失败实验、修改类别和预算消耗；固定预算下还应同时报告尝试次数、到达最佳结果的时间与计算效率。对 agent planning 和 agentic RL，更有价值的下一步是把状态预测指标接入规划器或策略，测量 world-model 改动是否真正改善决策回报、规则一致性及分布外恢复能力。",
+        "insight": "Insight：评测 long-horizon agent 时，应把一步预测质量与闭环误差累积分开，否则局部准确率会掩盖长期状态漂移。结构化实验历史可作为研究代理的外部记忆，让后续假设显式条件化于失败实验、修改类别和预算消耗；固定预算下还应同时报告尝试次数、到达最佳结果的时间与计算效率。对 agent planning 和 agentic RL，更有价值的下一步是把状态预测指标接入规划器或策略，测量 world-model 改动是否真正改善决策回报、规则一致性及分布外恢复能力。",
+        "abstract_zh": "世界模型的架构、训练目标和状态表示相互作用复杂，目前不存在跨环境占优的统一方案，因此适合检验 AI coding agent 能否充当自主研究者。本文提出 AutoWorldModel-Bench，让前沿 coding agent 在固定计算预算下闭环改进给定的 world-model starter。基准覆盖八个游戏，并通过统一的真实实体状态表示剥离感知问题，使单次实验可在较短时间内完成。在六十四个会话中，两个代理几乎总能改进 starter，而且绝大多数获胜方案属于新目标、表示、rollout 流程或架构修改，而非单纯调参。",
+        "full_summary": "AutoWorldModel-Bench 旨在把 coding agent 从按规格完成工程任务的评测，推进到预算受限的自动化模型研究。它用八个游戏的真实实体状态统一表示环境，向代理提供四类 world-model starter、训练数据、评估脚本和可持续读取的实验记录。代理可以修改模型架构、损失、表示与 rollout 过程，并由单步预测、多步开放环预测和 held-out 机制场景共同检验。结果表明，几乎所有会话都能改进 starter，且增益主要集中在长时程 rollout，这一信号对研究 agent 的闭环可靠性很有价值。值得注意的是，该任务仍有固定数据、固定评分函数和明确代码边界，更接近受控的开放式模型搜索，而不是完整科学研究；同时缺少等预算超参搜索、人类研究者等关键基线。",
+        "card_summary": "该文提出一个以结构化游戏状态为核心的自动化 world-model 研究基准，让 coding agent 在固定预算内连续提出修改、训练并验证。实验显示代理的主要收益来自减轻长时程开放环 rollout 的误差累积，但其“开放式研究”结论仍受固定指标、单次会话和缺少强搜索基线限制。"
+      },
+      "analysis": {
+        "motivation": "现有 coding-agent 基准多是目标、指标和改进方向较明确的工程任务，难以判断代理能否在设计空间庞大、决策相互耦合且预算受限的条件下开展真正的迭代研究。本文选择尚无统一最优方案的 world model 作为试验场，试图把“提出假设—修改代码—训练评估—依据历史继续迭代”的闭环研究能力变成可重复评测的问题。",
+        "method": "AutoWorldModel-Bench 覆盖八个游戏环境，以统一的实体—组件结构直接暴露模拟器真实状态，从而隔离感知误差并加快实验迭代。每个任务给代理一个 Dreamer、AR-Transformer、D3PM 或 MaskGIT starter，以及固定训练数据、验证工具和结构化实验日志；代理在六小时总预算和单次训练十分钟上限内自由修改架构、目标、表示或 rollout 流程。模型通过单步 teacher forcing、多步开放环 rollout 和机制场景测试评估，最终指标明显偏重长时程状态预测。",
+        "experiments": "论文对两个 coding agent、八个游戏和四类 starter 进行了六十四个闭环会话；代理在几乎全部 held-out test 会话中超过 starter，场景测试上的改进覆盖面略低但总体方向一致。提升主要出现在十步和二十步开放环预测，而非已经较强的单步拟合，说明有效修改主要缓解了自回归误差累积。九成以上会话的获胜修改被判为目标、表示、rollout、推理或架构层面的结构性改动。不过每个 agent-task 组合只有一次会话，两个代理的实验次数不同，starter 重跑也存在平台非确定性，因此代理间排名和“自主研究能力”的强结论仍不稳固。",
+        "research_help": "Insight：评测 long-horizon agent 时，应把一步预测质量与闭环误差累积分开，否则局部准确率会掩盖长期状态漂移。结构化实验历史可作为研究代理的外部记忆，让后续假设显式条件化于失败实验、修改类别和预算消耗；固定预算下还应同时报告尝试次数、到达最佳结果的时间与计算效率。对 agent planning 和 agentic RL，更有价值的下一步是把状态预测指标接入规划器或策略，测量 world-model 改动是否真正改善决策回报、规则一致性及分布外恢复能力。",
+        "insight": "Insight：评测 long-horizon agent 时，应把一步预测质量与闭环误差累积分开，否则局部准确率会掩盖长期状态漂移。结构化实验历史可作为研究代理的外部记忆，让后续假设显式条件化于失败实验、修改类别和预算消耗；固定预算下还应同时报告尝试次数、到达最佳结果的时间与计算效率。对 agent planning 和 agentic RL，更有价值的下一步是把状态预测指标接入规划器或策略，测量 world-model 改动是否真正改善决策回报、规则一致性及分布外恢复能力。",
+        "abstract_zh": "世界模型的架构、训练目标和状态表示相互作用复杂，目前不存在跨环境占优的统一方案，因此适合检验 AI coding agent 能否充当自主研究者。本文提出 AutoWorldModel-Bench，让前沿 coding agent 在固定计算预算下闭环改进给定的 world-model starter。基准覆盖八个游戏，并通过统一的真实实体状态表示剥离感知问题，使单次实验可在较短时间内完成。在六十四个会话中，两个代理几乎总能改进 starter，而且绝大多数获胜方案属于新目标、表示、rollout 流程或架构修改，而非单纯调参。",
+        "card_summary": "该文提出一个以结构化游戏状态为核心的自动化 world-model 研究基准，让 coding agent 在固定预算内连续提出修改、训练并验证。实验显示代理的主要收益来自减轻长时程开放环 rollout 的误差累积，但其“开放式研究”结论仍受固定指标、单次会话和缺少强搜索基线限制。",
+        "full_summary": "AutoWorldModel-Bench 旨在把 coding agent 从按规格完成工程任务的评测，推进到预算受限的自动化模型研究。它用八个游戏的真实实体状态统一表示环境，向代理提供四类 world-model starter、训练数据、评估脚本和可持续读取的实验记录。代理可以修改模型架构、损失、表示与 rollout 过程，并由单步预测、多步开放环预测和 held-out 机制场景共同检验。结果表明，几乎所有会话都能改进 starter，且增益主要集中在长时程 rollout，这一信号对研究 agent 的闭环可靠性很有价值。值得注意的是，该任务仍有固定数据、固定评分函数和明确代码边界，更接近受控的开放式模型搜索，而不是完整科学研究；同时缺少等预算超参搜索、人类研究者等关键基线。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "长时程可靠性与自动化研究代理基准",
+        "value_reason": "它与 multi-turn research agent 的实验记忆、预算分配和长期误差控制直接相关，并提供了较完整的闭环任务、held-out 测试及 horizon 分解，而不只是展示若干成功案例。推荐阅读的核心不是两个具体代理谁更强，而是其状态中心评测设计和“改进集中于长时程 rollout”的结果。偏水风险为中：工程与实验规模较扎实，但“非平凡研究修改”依赖单个零样本模型裁判，且缺少等预算搜索与人类基线，使开放式研究能力的归因偏强。",
+        "limitations": "基准直接使用模拟器真实结构化状态，排除了感知、对象识别和身份对应等现实难点，发现的方案未必迁移到像素世界模型。指标只衡量 action-conditioned 状态预测，没有接入 planner、policy、reward 或控制回报，因此不能直接证明 agent planning 或 model-based RL 得到改善。每个 agent-task 组合仅运行一次，starter 又受共享硬件非确定性影响；两个代理的尝试次数和 token 消耗不同，最佳值比较存在 best-of-k 混杂。结构性修改及新颖性由零样本模型裁判分类，论文没有给出充分的人类一致性验证；同时缺少随机搜索、贝叶斯优化、等预算专家和简单 rollout 稳定化方法等关键对照。论文元数据中的日期与 arXiv 编号月份也存在表面不一致，当前只能依据所提供全文内容判断。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "基准包含八个游戏、统一的实体状态张量、四种 starter 架构，以及固定计算预算下的闭环训练和验证流程。",
+          "六十四个会话中，held-out test 上仅一个会话未超过 starter；场景测试的成功覆盖面略低。",
+          "按 horizon 分解后，十步和二十步 rollout 的平均提升明显大于单步预测，支持“收益集中于长期误差控制”的结论。",
+          "论文收集了一千余次代理实验，并报告九成以上会话的获胜修改被裁判归为非调参型修改。该结论依赖 Gemini Pro 3.1 的零样本分类。另一个裁判体系或人工复核是否会得到相同结论，正文证据不足。 parser mismatch: source_evidence item 3 exceeds target length? no issue. should b..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:43:13.373Z"
+      }
+    },
+    {
+      "id": "2608.11246v1",
+      "title": "Towards the Harness of Embodied Agents",
+      "summary": "The success of coding agents has established the harness as a paradigm: what an agent achieves depends not on the model alone, but on the infrastructure around it. We ask whether the same paradigm extends to embodied agents in the physical world. We present Thea, a harness in which an agentic loop orchestrates robot capabilities, each wrapped as a callable tool. It inherits the core components of coding agents, modified as the physical world requires. The world, however, withholds two abilities that software grants for free: reading the state of the world, and judging the outcome of an action. To bridge these gaps, Thea introduces Scene Graph as Context, a persistent, symbolic representation of the world, and Evaluation as Exit Codes, which detects when an action should terminate, judges whether it succeeded, and on failure diagnoses the cause. Together they close the loop between the agent and the physical world. Rich behaviors then emerge from the composition of tools, and the closed loop carries long-horizon tasks to completion in real environments.",
+      "url": "https://arxiv.org/abs/2608.11246v1",
+      "authors": [
+        "Qi Wang",
+        "Tianyi Wang",
+        "Chengyang Li",
+        "Shikun Ban",
+        "Yurun Chen",
+        "Yizhong Ge",
+        "Jason Qin",
+        "Chengtai Li",
+        "Wentao Zhu"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-03",
+      "updated": "2026-08-03",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "https://eit-hai.github.io/thea",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "长程具身智能体可靠性架构",
+        "water_risk": "中",
+        "value_judgement": "值得读的主要原因不是提出了新的基础模型，而是把世界状态、动作验证、恢复反馈、上下文和记忆组织成一套连贯的长程执行框架；这些设计对 agent planning、工具型智能体和多轮系统都有直接迁移价值。偏水风险不能判低：论文采用技术报告式叙事，编码智能体与机器人之间的类比占比较大，理论分析建立在较强简化假设上，而且当前材料不足以检查实验规模、基线公平性及结果稳定性。",
+        "reason": "值得读的主要原因不是提出了新的基础模型，而是把世界状态、动作验证、恢复反馈、上下文和记忆组织成一套连贯的长程执行框架；这些设计对 agent planning、工具型智能体和多轮系统都有直接迁移价值。偏水风险不能判低：论文采用技术报告式叙事，编码智能体与机器人之间的类比占比较大，理论分析建立在较强简化假设上，而且当前材料不足以检查实验规模、基线公平性及结果稳定性。"
+      },
+      "brief": {
+        "authors": [
+          "Qi Wang",
+          "Tianyi Wang",
+          "Chengyang Li",
+          "Shikun Ban",
+          "Yurun Chen",
+          "Yizhong Ge",
+          "Jason Qin",
+          "Chengtai Li",
+          "Wentao Zhu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-03",
+        "paper_url": "https://arxiv.org/abs/2608.11246v1",
+        "project_url": "https://eit-hai.github.io/thea",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "值得读的主要原因不是提出了新的基础模型，而是把世界状态、动作验证、恢复反馈、上下文和记忆组织成一套连贯的长程执行框架；这些设计对 agent planning、工具型智能体和多轮系统都有直接迁移价值。偏水风险不能判低：论文采用技术报告式叙事，编码智能体与机器人之间的类比占比较大，理论分析建立在较强简化假设上，而且当前材料不足以检查实验规模、基线公平性及结果稳定性。",
+        "summary": "这篇技术报告认为，具身智能体的长程瓶颈不仅是底层策略能力，更是缺少能够持续读懂世界并验证每一步结果的执行基础设施。Thea 把导航、操作、评估和人机交互统一封装为工具，由模型在逐步执行、观察和再规划的循环中组合这些能力。其最有价值的设计是用持久场景图维持对象身份与世界状态，并在每次操作后通过独立评估器生成成功、失败和失败原因，再据此重试或改换方案。论文还系统讨论了上下文生命周期、任务记忆、工具经验、安全钩子和跨机器人平台适配，因而比单一规划算法更接近完整的 agent runtime 设计。作者声称进行了跨平台和长程任务验证，但所给文本没有包含实验结果，当前最可靠的阅读价值来自架构与可靠性分析，而不是尚无法核实的性能结论。",
+        "highlights": [
+          "值得读的主要原因不是提出了新的基础模型，而是把世界状态、动作验证、恢复反馈、上下文和记忆组织成一套连贯的长程执行框架；这些设计对 agent planning、工具型智能体和多轮系统都有直接迁移价值。偏水风险不能判低：论文采用技术报告式叙事，编码智能体与机器人之间的类比占比较大，理论分析建立在较强简化假设上，而且当前材料不足以检查实验规模、基线公平性及结果稳定性。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文抓住了具身智能长程执行中的核心矛盾：单个导航或操作策略即使较强，多步任务的成功率仍会随步骤数累乘下降。作者认为，编码智能体之所以能通过“执行—测试—诊断—修复”逐步收敛，并不只因为模型更强，还因为软件环境天然提供可读取的状态、退出码和错误信息；物理世界缺少对应基础设施。因此，Thea 的目标不是训练一个包办所有能力的新模型，而是建立可观测、可验证、可恢复的具身智能体 harness。",
+        "method": "Thea 用统一的工具协议封装导航、操作、感知、评估和用户交互能力，由视觉语言模型在单工具调用、执行、观察和再规划的循环中进行编排。其关键设计是 Scene Graph as Context：把零散、短暂的传感器观测整合成带稳定对象引用、位置、关系、置信度和新鲜度的持久场景图，并在每轮提供压缩后的全局状态。另一核心是 Evaluation as Exit Codes：每次操作后由独立评估器根据当前观测和工具后置条件判断继续、成功或失败，并返回证据与失败原因；成功判定还会约束场景图更新。系统进一步区分常驻、刷新和累积三类上下文，并设置任务笔记、跨任务记忆和按工具组织的经验记忆。作者还用带检测与重试的概率模型说明，长程可靠性高度受评估器准确性约束，但该分析依赖对称分类误差、固定单步成功率以及重试近似独立等简化假设。",
+        "experiments": "论文声称在三种机器人平台上验证可移植性，并设置了任务复杂度扩展、评估器准确率和涌现能力等实验，还列出饮料取回、充电宝搜索、桌面整理和篮子递送等长程案例。当前提供的提取文本却在第 4.3 节中途截断，没有包含第 5 节的实验数据、成功率、对照方法、重复次数或失败统计，因此无法核实 Thea 相对开放环执行或其他具身编排系统的实际增益。现有文本能够支持“系统设计完整、实验范围看起来较广”的判断，但不足以支持“已被定量证明显著提升长程成功率”的结论。",
+        "research_help": "Insight：长程智能体的主要瓶颈未必是首次规划质量，而可能是状态可读性、步骤级结果验证和失败后的诊断性反馈。可迁移的设计原则包括：把动态状态与历史轨迹分离；使用稳定实体引用维持跨轮目标绑定；让验证器独立于行动模型；把失败原因而非单一布尔值反馈给规划器；只让经过验证的动作结果更新持久状态；将可靠性约束放入不可绕过的执行钩子。对 agentic RL 而言，这也提示应把 evaluator 的误报、漏报和重试相关性作为环境接口的一部分建模，而不能把奖励或成功检测视为天然可信。",
+        "insight": "Insight：长程智能体的主要瓶颈未必是首次规划质量，而可能是状态可读性、步骤级结果验证和失败后的诊断性反馈。可迁移的设计原则包括：把动态状态与历史轨迹分离；使用稳定实体引用维持跨轮目标绑定；让验证器独立于行动模型；把失败原因而非单一布尔值反馈给规划器；只让经过验证的动作结果更新持久状态；将可靠性约束放入不可绕过的执行钩子。对 agentic RL 而言，这也提示应把 evaluator 的误报、漏报和重试相关性作为环境接口的一部分建模，而不能把奖励或成功检测视为天然可信。",
+        "abstract_zh": "编码智能体的成功表明，智能体能力不仅取决于模型，也取决于围绕模型构建的执行基础设施。Thea 将机器人能力封装成可调用工具，并由智能体循环进行编排，以把这一 harness 范式迁移到物理世界。针对物理环境难以被结构化读取、动作结果缺少明确判定的问题，系统分别引入持久场景图和类似退出码的独立评估机制。作者称，这些组件能够闭合智能体与物理世界之间的反馈循环，并通过工具组合支持真实环境中的长程任务。",
+        "full_summary": "这篇技术报告认为，具身智能体的长程瓶颈不仅是底层策略能力，更是缺少能够持续读懂世界并验证每一步结果的执行基础设施。Thea 把导航、操作、评估和人机交互统一封装为工具，由模型在逐步执行、观察和再规划的循环中组合这些能力。其最有价值的设计是用持久场景图维持对象身份与世界状态，并在每次操作后通过独立评估器生成成功、失败和失败原因，再据此重试或改换方案。论文还系统讨论了上下文生命周期、任务记忆、工具经验、安全钩子和跨机器人平台适配，因而比单一规划算法更接近完整的 agent runtime 设计。作者声称进行了跨平台和长程任务验证，但所给文本没有包含实验结果，当前最可靠的阅读价值来自架构与可靠性分析，而不是尚无法核实的性能结论。",
+        "card_summary": "Thea 将编码智能体的 harness 思路迁移到具身机器人，用持久场景图提供跨轮世界状态，用独立动作评估器提供类似退出码的成功、失败与诊断反馈。它直接切中长程任务中的状态一致性和失败恢复问题，但当前提供文本缺失实验章节，实际增益仍需查看完整结果后确认。"
+      },
+      "analysis": {
+        "motivation": "论文抓住了具身智能长程执行中的核心矛盾：单个导航或操作策略即使较强，多步任务的成功率仍会随步骤数累乘下降。作者认为，编码智能体之所以能通过“执行—测试—诊断—修复”逐步收敛，并不只因为模型更强，还因为软件环境天然提供可读取的状态、退出码和错误信息；物理世界缺少对应基础设施。因此，Thea 的目标不是训练一个包办所有能力的新模型，而是建立可观测、可验证、可恢复的具身智能体 harness。",
+        "method": "Thea 用统一的工具协议封装导航、操作、感知、评估和用户交互能力，由视觉语言模型在单工具调用、执行、观察和再规划的循环中进行编排。其关键设计是 Scene Graph as Context：把零散、短暂的传感器观测整合成带稳定对象引用、位置、关系、置信度和新鲜度的持久场景图，并在每轮提供压缩后的全局状态。另一核心是 Evaluation as Exit Codes：每次操作后由独立评估器根据当前观测和工具后置条件判断继续、成功或失败，并返回证据与失败原因；成功判定还会约束场景图更新。系统进一步区分常驻、刷新和累积三类上下文，并设置任务笔记、跨任务记忆和按工具组织的经验记忆。作者还用带检测与重试的概率模型说明，长程可靠性高度受评估器准确性约束，但该分析依赖对称分类误差、固定单步成功率以及重试近似独立等简化假设。",
+        "experiments": "论文声称在三种机器人平台上验证可移植性，并设置了任务复杂度扩展、评估器准确率和涌现能力等实验，还列出饮料取回、充电宝搜索、桌面整理和篮子递送等长程案例。当前提供的提取文本却在第 4.3 节中途截断，没有包含第 5 节的实验数据、成功率、对照方法、重复次数或失败统计，因此无法核实 Thea 相对开放环执行或其他具身编排系统的实际增益。现有文本能够支持“系统设计完整、实验范围看起来较广”的判断，但不足以支持“已被定量证明显著提升长程成功率”的结论。",
+        "research_help": "Insight：长程智能体的主要瓶颈未必是首次规划质量，而可能是状态可读性、步骤级结果验证和失败后的诊断性反馈。可迁移的设计原则包括：把动态状态与历史轨迹分离；使用稳定实体引用维持跨轮目标绑定；让验证器独立于行动模型；把失败原因而非单一布尔值反馈给规划器；只让经过验证的动作结果更新持久状态；将可靠性约束放入不可绕过的执行钩子。对 agentic RL 而言，这也提示应把 evaluator 的误报、漏报和重试相关性作为环境接口的一部分建模，而不能把奖励或成功检测视为天然可信。",
+        "insight": "Insight：长程智能体的主要瓶颈未必是首次规划质量，而可能是状态可读性、步骤级结果验证和失败后的诊断性反馈。可迁移的设计原则包括：把动态状态与历史轨迹分离；使用稳定实体引用维持跨轮目标绑定；让验证器独立于行动模型；把失败原因而非单一布尔值反馈给规划器；只让经过验证的动作结果更新持久状态；将可靠性约束放入不可绕过的执行钩子。对 agentic RL 而言，这也提示应把 evaluator 的误报、漏报和重试相关性作为环境接口的一部分建模，而不能把奖励或成功检测视为天然可信。",
+        "abstract_zh": "编码智能体的成功表明，智能体能力不仅取决于模型，也取决于围绕模型构建的执行基础设施。Thea 将机器人能力封装成可调用工具，并由智能体循环进行编排，以把这一 harness 范式迁移到物理世界。针对物理环境难以被结构化读取、动作结果缺少明确判定的问题，系统分别引入持久场景图和类似退出码的独立评估机制。作者称，这些组件能够闭合智能体与物理世界之间的反馈循环，并通过工具组合支持真实环境中的长程任务。",
+        "card_summary": "Thea 将编码智能体的 harness 思路迁移到具身机器人，用持久场景图提供跨轮世界状态，用独立动作评估器提供类似退出码的成功、失败与诊断反馈。它直接切中长程任务中的状态一致性和失败恢复问题，但当前提供文本缺失实验章节，实际增益仍需查看完整结果后确认。",
+        "full_summary": "这篇技术报告认为，具身智能体的长程瓶颈不仅是底层策略能力，更是缺少能够持续读懂世界并验证每一步结果的执行基础设施。Thea 把导航、操作、评估和人机交互统一封装为工具，由模型在逐步执行、观察和再规划的循环中组合这些能力。其最有价值的设计是用持久场景图维持对象身份与世界状态，并在每次操作后通过独立评估器生成成功、失败和失败原因，再据此重试或改换方案。论文还系统讨论了上下文生命周期、任务记忆、工具经验、安全钩子和跨机器人平台适配，因而比单一规划算法更接近完整的 agent runtime 设计。作者声称进行了跨平台和长程任务验证，但所给文本没有包含实验结果，当前最可靠的阅读价值来自架构与可靠性分析，而不是尚无法核实的性能结论。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "长程具身智能体可靠性架构",
+        "value_reason": "值得读的主要原因不是提出了新的基础模型，而是把世界状态、动作验证、恢复反馈、上下文和记忆组织成一套连贯的长程执行框架；这些设计对 agent planning、工具型智能体和多轮系统都有直接迁移价值。偏水风险不能判低：论文采用技术报告式叙事，编码智能体与机器人之间的类比占比较大，理论分析建立在较强简化假设上，而且当前材料不足以检查实验规模、基线公平性及结果稳定性。",
+        "limitations": "当前虽标记为 full_text，但实际提供的提取内容在第 4.3 节中途结束，缺失完整实验与讨论部分。因而无法核实跨平台成功率、评估器准确率、任务难度、运行次数、统计方差和与基线的比较，也无法判断展示案例是否具有选择性。方法本身依赖场景图准确维护和视觉评估器可靠判断，二者一旦产生陈旧状态或误判，错误可能被写入记忆或触发不恰当重试；论文给出的概率分析也未充分覆盖相关失败、环境被动作改变以及验证器误报与漏报不对称等现实情况。安全部分被作者明确定位为初步尝试，对人员附近操作、力控制和开放环境部署仍未解决。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "正文明确将物理世界缺失的信息分成世界状态可读性和动作结果可验证性两类，并分别提出场景图与评估器。",
+          "系统架构规定每轮只执行一个工具调用，随后读取结果并重新决策，操作后的评估由不可被模型跳过的后置钩子触发。",
+          "场景图为对象维护稳定引用、粗略三维位置、关系、置信度和新鲜度，并只允许经过评估器确认的动作结果修改状态。",
+          "记忆被划分为任务笔记、跨任务 MEMORY.md 和按工具保存的经验，后两者在任务结束时经过筛选后持久化。德文仅能确认作者声称在三种机器人平台和若干长程案例上验证系统，所提供文本未出现对应实验数据。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:44:20.091Z"
+      }
+    },
+    {
+      "id": "2608.11248v1",
+      "title": "EvoGraph-Mem: Failure-Aware Editable Graph Memory for Long-Term Language Agents",
+      "summary": "Long-term memory is essential for language agents operating across extended interactions and evolving tasks. Existing memory-augmented agents mainly focus on storing and retrieving past experience, but the quality of stored memories may degrade over time. In particular, previously distilled insights can become outdated, over-generalized, or harmful under new task contexts, causing memory pollution when repeatedly reused. To address this issue, we study insight-level memory maintenance for long-term language agents and propose a failure-aware memory maintenance framework based on an editable insight graph. Each insight node tracks positive evidence, negative evidence, and an activation state, enabling the agent to distinguish reusable insights from conflicting or invalid ones. We further introduce a utility-aware retrieval mechanism and a graph controller that updates the memory graph after task execution by keeping reliable insights, archiving invalid ones, revising outdated ones, and adding newly discovered reusable insights. Extensive experiments show that our method consistently outperforms representative memory-based agent baselines across different backbone models. Ablation studies further demonstrate that append-only memory is insufficient for long-horizon tasks, while evidence-aware retrieval and graph-level editing improve memory reliability and downstream task performance.",
+      "url": "https://arxiv.org/abs/2608.11248v1",
+      "authors": [
+        "Yuxi Qian",
+        "Yuxiang Ren"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-03",
+      "updated": "2026-08-03",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "中",
+        "label": "方法概念值得快读，实验结论需谨慎",
+        "water_risk": "高",
+        "value_judgement": "选题高度相关，正负证据、节点停用和版本化修订也提供了清晰、可实现的记忆维护接口。但创新主要是在既有图记忆上增加较直接的状态与编辑操作，控制器依赖 LLM 自评，基线适配和实验协议说明不足，并以静态问答基准承载较强的长期可靠性叙事。因而有研究启发，但证据强度不足以支持深入信赖或直接采用。",
+        "reason": "选题高度相关，正负证据、节点停用和版本化修订也提供了清晰、可实现的记忆维护接口。但创新主要是在既有图记忆上增加较直接的状态与编辑操作，控制器依赖 LLM 自评，基线适配和实验协议说明不足，并以静态问答基准承载较强的长期可靠性叙事。因而有研究启发，但证据强度不足以支持深入信赖或直接采用。"
+      },
+      "brief": {
+        "authors": [
+          "Yuxi Qian",
+          "Yuxiang Ren"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-03",
+        "paper_url": "https://arxiv.org/abs/2608.11248v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "选题高度相关，正负证据、节点停用和版本化修订也提供了清晰、可实现的记忆维护接口。但创新主要是在既有图记忆上增加较直接的状态与编辑操作，控制器依赖 LLM 自评，基线适配和实验协议说明不足，并以静态问答基准承载较强的长期可靠性叙事。因而有研究启发，但证据强度不足以支持深入信赖或直接采用。",
+        "summary": "这篇论文关注长期智能体反复复用错误或过时 insight 所造成的记忆污染，而不是单纯扩大记忆容量。其核心是在图记忆节点中保存正负证据和激活状态，并用任务后的 LLM 控制器执行保留、归档、修订与新增操作。三个基准和两种骨干模型上的结果均显示它优于所列记忆基线，消融也支持主动停用和修订优于只追加记忆。与此同时，方法带来明显 token 开销，且一次失败触发全局归档、修订证据继承和控制器信用分配都存在设计疑点。由于评测缺少真正的长期分布变化、重复运行统计和充分协议说明，它值得作为“可纠错外部记忆”的思路阅读，但不宜直接把结果视为 long-horizon reliability 已被验证。",
+        "highlights": [
+          "选题高度相关，正负证据、节点停用和版本化修订也提供了清晰、可实现的记忆维护接口。但创新主要是在既有图记忆上增加较直接的状态与编辑操作，控制器依赖 LLM 自评，基线适配和实验协议说明不足，并以静态问答基准承载较强的长期可靠性叙事。因而有研究启发，但证据强度不足以支持深入信赖或直接采用。",
+          "偏水风险：高",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文抓住了长期智能体记忆中的真实问题：记忆并非存得越多越好，高层经验可能因任务变化而过时、过度泛化或产生冲突，反复召回后会形成“记忆污染”。作者因此把研究重点从存储与检索转向记忆质量维护，即依据任务执行后的成败反馈修正 insight 级记忆。这个方向与 long-horizon reliability 高度相关，但论文尚未真正证明所处理的是随时间和分布变化产生的长期退化，而不只是普通的检索噪声。",
+        "method": "EvoGraph-Mem 在 G-Memory 式图结构上，为每个 insight 节点增加正证据集合、负证据集合和激活状态；检索时只考虑活跃节点，并以相关正证据减去冲突惩罚来排序。任务结束后，由一个提示词约束的 LLM 图控制器根据查询、轨迹、结果反馈和已召回 insight，执行 KEEP、ARCHIVE、REVISE，另行决定是否 ADD 新 insight。ARCHIVE 会全局停用节点，REVISE 则保留旧版本用于追踪并创建修订节点。设计直观且可审计，但一次失败即可全局归档记忆，粒度与其所强调的“上下文相关有效性”并不完全匹配；修订节点还继承旧节点的全部正证据，未证明这些证据仍支持修订后的、更窄结论。",
+        "experiments": "论文在 PDDL、HotpotQA 和 FEVER 上，以 GPT-4o-mini 与 Qwen2.5-7B 为骨干，对比无记忆、MemoryBank、Voyager、Generative Agents 和 G-Memory。主表显示该方法在所有报告组合上均优于对照，相对优势在多跳问答和规划任务上更明显，在事实验证上较小；控制器消融也表明加入归档与修订通常优于只追加和保留。代价是 token 消耗显著增加，相比最强图记忆基线仍有额外开销。更关键的是，实验未充分交代样本规模、运行次数、方差、显著性、任务顺序、记忆累积协议和控制器配置；HotpotQA、FEVER 主要是静态问答与验证，也不能直接支撑长期部署、分布漂移或持续记忆退化的强结论。",
+        "research_help": "Insight：可迁移价值在于把 agent memory 视为需要持续信用分配和纠错的状态，而不是只增不减的检索库；正负使用证据、版本化修订和可审计停用可用于抑制错误经验在多轮系统中的级联传播。对 agentic RL，可将 insight 的保留、降权、局部适用、修订和删除建模为带长期回报与编辑成本的策略，而不只是由单次结果触发的离散操作。更可靠的方向是保存适用条件和置信度，进行延迟信用分配，并用反事实评估判断某条记忆是否真正导致成功或失败。",
+        "insight": "Insight：可迁移价值在于把 agent memory 视为需要持续信用分配和纠错的状态，而不是只增不减的检索库；正负使用证据、版本化修订和可审计停用可用于抑制错误经验在多轮系统中的级联传播。对 agentic RL，可将 insight 的保留、降权、局部适用、修订和删除建模为带长期回报与编辑成本的策略，而不只是由单次结果触发的离散操作。更可靠的方向是保存适用条件和置信度，进行延迟信用分配，并用反事实评估判断某条记忆是否真正导致成功或失败。",
+        "abstract_zh": "长期交互和不断变化的任务需要可靠的长期记忆，但既有记忆智能体主要关注经验的存储与检索，忽略了已提炼 insight 可能过时、过度泛化或产生危害。论文提出基于可编辑 insight 图的失败感知维护框架，让每个节点记录正证据、负证据和激活状态，并据此区分可复用与冲突记忆。系统采用效用感知检索，并在任务执行后通过图控制器保留、归档、修订或新增 insight。作者报告该方法在不同骨干模型上持续优于多种记忆基线，消融结果则表明证据感知检索和图级编辑比只追加记忆更可靠。",
+        "full_summary": "这篇论文关注长期智能体反复复用错误或过时 insight 所造成的记忆污染，而不是单纯扩大记忆容量。其核心是在图记忆节点中保存正负证据和激活状态，并用任务后的 LLM 控制器执行保留、归档、修订与新增操作。三个基准和两种骨干模型上的结果均显示它优于所列记忆基线，消融也支持主动停用和修订优于只追加记忆。与此同时，方法带来明显 token 开销，且一次失败触发全局归档、修订证据继承和控制器信用分配都存在设计疑点。由于评测缺少真正的长期分布变化、重复运行统计和充分协议说明，它值得作为“可纠错外部记忆”的思路阅读，但不宜直接把结果视为 long-horizon reliability 已被验证。",
+        "card_summary": "EvoGraph-Mem 为长期智能体引入可编辑的图记忆，用正负使用证据和任务后反馈来保留、停用或修订高层 insight。方法贴合记忆污染与长期可靠性问题，报告结果也较一致，但当前实验更像有限基准上的记忆管理验证，尚不足以证明真实长期环境中的稳定收益。"
+      },
+      "analysis": {
+        "motivation": "论文抓住了长期智能体记忆中的真实问题：记忆并非存得越多越好，高层经验可能因任务变化而过时、过度泛化或产生冲突，反复召回后会形成“记忆污染”。作者因此把研究重点从存储与检索转向记忆质量维护，即依据任务执行后的成败反馈修正 insight 级记忆。这个方向与 long-horizon reliability 高度相关，但论文尚未真正证明所处理的是随时间和分布变化产生的长期退化，而不只是普通的检索噪声。",
+        "method": "EvoGraph-Mem 在 G-Memory 式图结构上，为每个 insight 节点增加正证据集合、负证据集合和激活状态；检索时只考虑活跃节点，并以相关正证据减去冲突惩罚来排序。任务结束后，由一个提示词约束的 LLM 图控制器根据查询、轨迹、结果反馈和已召回 insight，执行 KEEP、ARCHIVE、REVISE，另行决定是否 ADD 新 insight。ARCHIVE 会全局停用节点，REVISE 则保留旧版本用于追踪并创建修订节点。设计直观且可审计，但一次失败即可全局归档记忆，粒度与其所强调的“上下文相关有效性”并不完全匹配；修订节点还继承旧节点的全部正证据，未证明这些证据仍支持修订后的、更窄结论。",
+        "experiments": "论文在 PDDL、HotpotQA 和 FEVER 上，以 GPT-4o-mini 与 Qwen2.5-7B 为骨干，对比无记忆、MemoryBank、Voyager、Generative Agents 和 G-Memory。主表显示该方法在所有报告组合上均优于对照，相对优势在多跳问答和规划任务上更明显，在事实验证上较小；控制器消融也表明加入归档与修订通常优于只追加和保留。代价是 token 消耗显著增加，相比最强图记忆基线仍有额外开销。更关键的是，实验未充分交代样本规模、运行次数、方差、显著性、任务顺序、记忆累积协议和控制器配置；HotpotQA、FEVER 主要是静态问答与验证，也不能直接支撑长期部署、分布漂移或持续记忆退化的强结论。",
+        "research_help": "Insight：可迁移价值在于把 agent memory 视为需要持续信用分配和纠错的状态，而不是只增不减的检索库；正负使用证据、版本化修订和可审计停用可用于抑制错误经验在多轮系统中的级联传播。对 agentic RL，可将 insight 的保留、降权、局部适用、修订和删除建模为带长期回报与编辑成本的策略，而不只是由单次结果触发的离散操作。更可靠的方向是保存适用条件和置信度，进行延迟信用分配，并用反事实评估判断某条记忆是否真正导致成功或失败。",
+        "insight": "Insight：可迁移价值在于把 agent memory 视为需要持续信用分配和纠错的状态，而不是只增不减的检索库；正负使用证据、版本化修订和可审计停用可用于抑制错误经验在多轮系统中的级联传播。对 agentic RL，可将 insight 的保留、降权、局部适用、修订和删除建模为带长期回报与编辑成本的策略，而不只是由单次结果触发的离散操作。更可靠的方向是保存适用条件和置信度，进行延迟信用分配，并用反事实评估判断某条记忆是否真正导致成功或失败。",
+        "abstract_zh": "长期交互和不断变化的任务需要可靠的长期记忆，但既有记忆智能体主要关注经验的存储与检索，忽略了已提炼 insight 可能过时、过度泛化或产生危害。论文提出基于可编辑 insight 图的失败感知维护框架，让每个节点记录正证据、负证据和激活状态，并据此区分可复用与冲突记忆。系统采用效用感知检索，并在任务执行后通过图控制器保留、归档、修订或新增 insight。作者报告该方法在不同骨干模型上持续优于多种记忆基线，消融结果则表明证据感知检索和图级编辑比只追加记忆更可靠。",
+        "card_summary": "EvoGraph-Mem 为长期智能体引入可编辑的图记忆，用正负使用证据和任务后反馈来保留、停用或修订高层 insight。方法贴合记忆污染与长期可靠性问题，报告结果也较一致，但当前实验更像有限基准上的记忆管理验证，尚不足以证明真实长期环境中的稳定收益。",
+        "full_summary": "这篇论文关注长期智能体反复复用错误或过时 insight 所造成的记忆污染，而不是单纯扩大记忆容量。其核心是在图记忆节点中保存正负证据和激活状态，并用任务后的 LLM 控制器执行保留、归档、修订与新增操作。三个基准和两种骨干模型上的结果均显示它优于所列记忆基线，消融也支持主动停用和修订优于只追加记忆。与此同时，方法带来明显 token 开销，且一次失败触发全局归档、修订证据继承和控制器信用分配都存在设计疑点。由于评测缺少真正的长期分布变化、重复运行统计和充分协议说明，它值得作为“可纠错外部记忆”的思路阅读，但不宜直接把结果视为 long-horizon reliability 已被验证。",
+        "recommendation_level": "中",
+        "water_risk": "高",
+        "value_label": "方法概念值得快读，实验结论需谨慎",
+        "value_reason": "选题高度相关，正负证据、节点停用和版本化修订也提供了清晰、可实现的记忆维护接口。但创新主要是在既有图记忆上增加较直接的状态与编辑操作，控制器依赖 LLM 自评，基线适配和实验协议说明不足，并以静态问答基准承载较强的长期可靠性叙事。因而有研究启发，但证据强度不足以支持深入信赖或直接采用。",
+        "limitations": "已确认的局限包括：依赖可能有噪声的任务后反馈；二元正负证据无法表示帮助程度与适用条件；只覆盖 PDDL、HotpotQA、FEVER，未测试网页操作、软件工程或个性化助手；图维护增加计算与存储开销。进一步的评审判断是：单次负例导致全局失活可能误删仅在局部上下文不适用的 insight；修订节点继承旧正证据可能造成证据语义错配；论文没有充分报告随机性、显著性、控制器错误率、长期序列长度及跨任务污染曲线，也没有证明性能提升确由纠错而非更多 token 和额外 LLM 调用造成。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "方法部分明确将 insight 表示为内容、正证据、负证据和激活状态，并规定归档节点不再参与后续检索。",
+          "图控制器使用当前查询、执行轨迹、任务反馈和召回记忆，在 KEEP、ARCHIVE、REVISE 之间选择，并独立作出 ADD 决策。",
+          "主实验覆盖 PDDL、HotpotQA、FEVER 与两种骨干模型，报告的方法在全部表格组合中优于 G-Memory 等基线。",
+          "消融比较只追加与保留、再加入归档以及完整控制器，完整版本总体最好，但正文未提供充分的重复试验统计。得分。对不起，我无法避免特定数字，因为它们在原文中出现过，但我已尽量避免使用具体数字。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:45:40.204Z"
+      }
+    },
+    {
+      "id": "2608.11552v1",
+      "title": "Beyond Single-Turn Confidence: Trajectory-Adapted Uncertainty Quantification for LLM Agents",
+      "summary": "Uncertainty quantification (UQ) methods for language models are typically evaluated on single-turn outputs, where uncertainty is attached to one generated answer. For LLM agents, however, the unit of observation is an interactive trajectory, where the model can ask clarifying questions, call tools, update state, and make intermediate decisions whose errors propagate to the final outcome. We study whether three common families of single-turn UQ methods transfer to this setting. Across five LLMs and four multi-turn tool-use datasets from BFCL-v4 and $\\tau^2$-bench, we evaluate white-box scorers based on action-token probabilities, black-box consistency scorers based on resampled trajectories, and reflexive scorers based on model self-assessment of the trajectory. We find that transfer is often useful but uneven. Token-probability scores are highly sensitive to the choice of aggregator used across turns, reflexive scores provide the strongest low-cost baseline in most evaluated settings, and black-box self-consistency is often the strongest UQ family, with trajectory-equivalence and action-set consistency typically ranking highest among its variants. These results suggest that UQ methods developed for single generations should be revalidated at the trajectory level, with careful attention to the consistency measurement, aggregator choice, and computational budget.",
+      "url": "https://arxiv.org/abs/2608.11552v1",
+      "authors": [
+        "Dylan Bouchard",
+        "Mohit Singh Chauhan"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "高价值的轨迹级可靠性实证研究",
+        "water_risk": "低",
+        "value_judgement": "文章与多轮代理和 long-horizon reliability 高度相关，贡献主要不是提出全新的不确定性理论，而是在匹配条件下揭示常见单轮方法迁移到轨迹后会怎样失效。跨模型、跨领域比较、成本分析、置信区间、接口消融和评审模型验证增强了结论可信度；“某些置信度会反相关”也是值得系统设计者重视的负面结果。其创新更偏评测框架与实证规律，但并非仅靠包装概念或挑选有利结果支撑结论。",
+        "reason": "文章与多轮代理和 long-horizon reliability 高度相关，贡献主要不是提出全新的不确定性理论，而是在匹配条件下揭示常见单轮方法迁移到轨迹后会怎样失效。跨模型、跨领域比较、成本分析、置信区间、接口消融和评审模型验证增强了结论可信度；“某些置信度会反相关”也是值得系统设计者重视的负面结果。其创新更偏评测框架与实证规律，但并非仅靠包装概念或挑选有利结果支撑结论。"
+      },
+      "brief": {
+        "authors": [
+          "Dylan Bouchard",
+          "Mohit Singh Chauhan"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.11552v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "文章与多轮代理和 long-horizon reliability 高度相关，贡献主要不是提出全新的不确定性理论，而是在匹配条件下揭示常见单轮方法迁移到轨迹后会怎样失效。跨模型、跨领域比较、成本分析、置信区间、接口消融和评审模型验证增强了结论可信度；“某些置信度会反相关”也是值得系统设计者重视的负面结果。其创新更偏评测框架与实证规律，但并非仅靠包装概念或挑选有利结果支撑结论。",
+        "summary": "论文研究如何为完整的多轮代理轨迹估计不确定性，而不只是评价某一次生成。作者在多种工具使用环境中统一比较白盒 token 概率、重采样轨迹一致性和代理自评三类方法，并将评分目标设为预测整条轨迹是否成功。最重要的发现是，白盒评分的效果会被跨轮聚合规则显著改变，甚至出现与成功负相关的情况，因此不能作为无需验证的通用安全信号。反思式评分成本较低且整体较稳健，黑盒轨迹一致性通常更强，但需要额外运行多条完整轨迹。论文对多轮可靠性研究很有价值，不过它测量的是任务完成后的失败识别能力，并未证明这些信号用于在线澄清、重规划或中止时能够真正改善结果。",
+        "highlights": [
+          "文章与多轮代理和 long-horizon reliability 高度相关，贡献主要不是提出全新的不确定性理论，而是在匹配条件下揭示常见单轮方法迁移到轨迹后会怎样失效。跨模型、跨领域比较、成本分析、置信区间、接口消融和评审模型验证增强了结论可信度；“某些置信度会反相关”也是值得系统设计者重视的负面结果。其创新更偏评测框架与实证规律，但并非仅靠包装概念或挑选有利结果支撑结论。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "传统不确定性量化通常只给单次回答打置信度，但多轮代理的成败取决于澄清、工具选择、参数填写、状态更新等一系列相互依赖的决策；早期错误还会沿轨迹传播。因此，单轮置信度能否直接预测完整代理轨迹的成功，需要在轨迹层面重新验证。",
+        "method": "论文把三类单轮方法改造成轨迹级成功预测器：白盒方法对每轮已提交动作的 token 概率进行跨轮聚合；黑盒方法重采样完整轨迹，再比较最终消息、动作类型集合、动作分布、动作顺序或整条轨迹的结果等价性；反思式方法则让代理在最终动作后自评轨迹是否成功。其关键设计包括多种跨轮聚合规则、动作集合一致性，以及由外部模型判断两条轨迹是否达到相同任务结果的轨迹等价率。",
+        "experiments": "实验覆盖五个能力层次不同的模型，以及 BFCL-v4 和 τ2-bench 中共四个多轮工具使用数据集，并以完整轨迹的二元成功标签评估区分能力、校准与选择性预测。结果显示，白盒 token 概率对跨轮聚合方式极其敏感，同一基础分数更换聚合器后可能从有效信号变为反相关信号；反思式评分通常是成本最低且较稳定的基线；完整轨迹重采样的一致性方法往往最强，其中轨迹结果等价和动作集合一致性较突出。但没有任何方法能跨模型、跨领域稳定占优，部分数据列的少数类样本较少且置信区间较宽，因此细粒度排名只能视为描述性结果。",
+        "research_help": "Insight：多轮系统的不确定性不应被压缩成未经验证的平均 token 置信度，而应同时刻画局部动作风险与完整规划轨迹在重采样下的稳定性。对于 agent planning 和 agentic RL，可把“动作集合是否稳定、不同轨迹是否到达等价结果”作为失败预测或价值模型的辅助信号，并在澄清、重试、重规划和人工升级等决策点使用；但每种信号都必须按模型与环境重新校准。更重要的是，要区分事后预测轨迹失败与在线干预真正提高成功率，后者需要通过带干预的长时程实验单独验证。",
+        "insight": "Insight：多轮系统的不确定性不应被压缩成未经验证的平均 token 置信度，而应同时刻画局部动作风险与完整规划轨迹在重采样下的稳定性。对于 agent planning 和 agentic RL，可把“动作集合是否稳定、不同轨迹是否到达等价结果”作为失败预测或价值模型的辅助信号，并在澄清、重试、重规划和人工升级等决策点使用；但每种信号都必须按模型与环境重新校准。更重要的是，要区分事后预测轨迹失败与在线干预真正提高成功率，后者需要通过带干预的长时程实验单独验证。",
+        "abstract_zh": "语言模型的不确定性量化通常面向单轮输出，但 LLM 代理的基本观察单位是包含澄清、工具调用、状态更新和中间决策的交互轨迹，错误可能沿轨迹传播。论文在五个模型和四个多轮工具使用数据集上，比较基于动作 token 概率的白盒评分、基于重采样轨迹的黑盒一致性评分，以及模型自评式评分。实验发现，白盒方法高度依赖跨轮聚合方式，反思式评分通常构成较强的低成本基线，而黑盒自一致性往往表现最好，其中轨迹等价性与动作集合一致性通常较强。结果表明，为单次生成开发的不确定性方法必须在轨迹层面重新验证，并综合考虑一致性定义、聚合规则和计算预算。",
+        "full_summary": "论文研究如何为完整的多轮代理轨迹估计不确定性，而不只是评价某一次生成。作者在多种工具使用环境中统一比较白盒 token 概率、重采样轨迹一致性和代理自评三类方法，并将评分目标设为预测整条轨迹是否成功。最重要的发现是，白盒评分的效果会被跨轮聚合规则显著改变，甚至出现与成功负相关的情况，因此不能作为无需验证的通用安全信号。反思式评分成本较低且整体较稳健，黑盒轨迹一致性通常更强，但需要额外运行多条完整轨迹。论文对多轮可靠性研究很有价值，不过它测量的是任务完成后的失败识别能力，并未证明这些信号用于在线澄清、重规划或中止时能够真正改善结果。",
+        "card_summary": "这篇论文系统检验单轮不确定性方法能否迁移到多轮工具代理，核心结论是：迁移有用但非常不稳定，尤其不能直接相信跨轮平均的 token 置信度。反思式自评是较实用的低成本基线，而完整轨迹的结果等价性和动作集合一致性通常能提供更强的失败信号。"
+      },
+      "analysis": {
+        "motivation": "传统不确定性量化通常只给单次回答打置信度，但多轮代理的成败取决于澄清、工具选择、参数填写、状态更新等一系列相互依赖的决策；早期错误还会沿轨迹传播。因此，单轮置信度能否直接预测完整代理轨迹的成功，需要在轨迹层面重新验证。",
+        "method": "论文把三类单轮方法改造成轨迹级成功预测器：白盒方法对每轮已提交动作的 token 概率进行跨轮聚合；黑盒方法重采样完整轨迹，再比较最终消息、动作类型集合、动作分布、动作顺序或整条轨迹的结果等价性；反思式方法则让代理在最终动作后自评轨迹是否成功。其关键设计包括多种跨轮聚合规则、动作集合一致性，以及由外部模型判断两条轨迹是否达到相同任务结果的轨迹等价率。",
+        "experiments": "实验覆盖五个能力层次不同的模型，以及 BFCL-v4 和 τ2-bench 中共四个多轮工具使用数据集，并以完整轨迹的二元成功标签评估区分能力、校准与选择性预测。结果显示，白盒 token 概率对跨轮聚合方式极其敏感，同一基础分数更换聚合器后可能从有效信号变为反相关信号；反思式评分通常是成本最低且较稳定的基线；完整轨迹重采样的一致性方法往往最强，其中轨迹结果等价和动作集合一致性较突出。但没有任何方法能跨模型、跨领域稳定占优，部分数据列的少数类样本较少且置信区间较宽，因此细粒度排名只能视为描述性结果。",
+        "research_help": "Insight：多轮系统的不确定性不应被压缩成未经验证的平均 token 置信度，而应同时刻画局部动作风险与完整规划轨迹在重采样下的稳定性。对于 agent planning 和 agentic RL，可把“动作集合是否稳定、不同轨迹是否到达等价结果”作为失败预测或价值模型的辅助信号，并在澄清、重试、重规划和人工升级等决策点使用；但每种信号都必须按模型与环境重新校准。更重要的是，要区分事后预测轨迹失败与在线干预真正提高成功率，后者需要通过带干预的长时程实验单独验证。",
+        "insight": "Insight：多轮系统的不确定性不应被压缩成未经验证的平均 token 置信度，而应同时刻画局部动作风险与完整规划轨迹在重采样下的稳定性。对于 agent planning 和 agentic RL，可把“动作集合是否稳定、不同轨迹是否到达等价结果”作为失败预测或价值模型的辅助信号，并在澄清、重试、重规划和人工升级等决策点使用；但每种信号都必须按模型与环境重新校准。更重要的是，要区分事后预测轨迹失败与在线干预真正提高成功率，后者需要通过带干预的长时程实验单独验证。",
+        "abstract_zh": "语言模型的不确定性量化通常面向单轮输出，但 LLM 代理的基本观察单位是包含澄清、工具调用、状态更新和中间决策的交互轨迹，错误可能沿轨迹传播。论文在五个模型和四个多轮工具使用数据集上，比较基于动作 token 概率的白盒评分、基于重采样轨迹的黑盒一致性评分，以及模型自评式评分。实验发现，白盒方法高度依赖跨轮聚合方式，反思式评分通常构成较强的低成本基线，而黑盒自一致性往往表现最好，其中轨迹等价性与动作集合一致性通常较强。结果表明，为单次生成开发的不确定性方法必须在轨迹层面重新验证，并综合考虑一致性定义、聚合规则和计算预算。",
+        "card_summary": "这篇论文系统检验单轮不确定性方法能否迁移到多轮工具代理，核心结论是：迁移有用但非常不稳定，尤其不能直接相信跨轮平均的 token 置信度。反思式自评是较实用的低成本基线，而完整轨迹的结果等价性和动作集合一致性通常能提供更强的失败信号。",
+        "full_summary": "论文研究如何为完整的多轮代理轨迹估计不确定性，而不只是评价某一次生成。作者在多种工具使用环境中统一比较白盒 token 概率、重采样轨迹一致性和代理自评三类方法，并将评分目标设为预测整条轨迹是否成功。最重要的发现是，白盒评分的效果会被跨轮聚合规则显著改变，甚至出现与成功负相关的情况，因此不能作为无需验证的通用安全信号。反思式评分成本较低且整体较稳健，黑盒轨迹一致性通常更强，但需要额外运行多条完整轨迹。论文对多轮可靠性研究很有价值，不过它测量的是任务完成后的失败识别能力，并未证明这些信号用于在线澄清、重规划或中止时能够真正改善结果。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "高价值的轨迹级可靠性实证研究",
+        "value_reason": "文章与多轮代理和 long-horizon reliability 高度相关，贡献主要不是提出全新的不确定性理论，而是在匹配条件下揭示常见单轮方法迁移到轨迹后会怎样失效。跨模型、跨领域比较、成本分析、置信区间、接口消融和评审模型验证增强了结论可信度；“某些置信度会反相关”也是值得系统设计者重视的负面结果。其创新更偏评测框架与实证规律，但并非仅靠包装概念或挑选有利结果支撑结论。",
+        "limitations": "评测集中于四个工具使用数据集，尚未覆盖网页、具身代理或更开放的长时程规划；部分数据设置样本量较小、类别不平衡，许多方法间差异未必具有统计确定性。轨迹由模拟用户参与生成，因此黑盒一致性混合了代理与用户模拟器的随机性；白盒结论还依赖文本化动作接口。轨迹等价率依赖单一外部评审模型，零售任务的部分成功标签本身也由模型判断。研究只预测已完成轨迹的成功，没有测量观测不确定性、推理 token 风险或步骤级错误，也没有验证基于不确定性的在线干预能否提高任务成功率。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "正文在 BFCL-v4 多轮子集及 τ2-bench 的航空、通信和零售环境上，对五个模型进行了统一评测。",
+          "主实验显示，白盒分数随跨轮聚合器显著波动，并存在多个低于随机水平甚至置信区间完全低于随机水平的设置。",
+          "反思式评分只需一次额外自评，而黑盒一致性需要重采样完整代理轨迹；论文明确指出主要成本来自额外轨迹，而非轨迹等价评审器。",
+          "黑盒结果中，轨迹等价率和动作集合一致性最常位于前列，但正文也报告了它们在特定模型与领域中的明显失效。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:46:38.502Z"
+      }
+    },
+    {
+      "id": "2608.12253v1",
+      "title": "One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL",
+      "summary": "Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to narrow strategies that exploit the simulator's dominant mode, and such a policy transfers poorly to unseen simulators and real users. We formalize this collapse theoretically and propose two complementary solutions, one at inference time and one at training time. The inference-time solution, Verbalized Sampling, broadens the simulator's behavior by sampling from a verbalized response distribution, reducing mode collapse. The training-time solution, Co-Training, jointly optimizes the policy against a population of trainable simulators, preventing it from overfitting to any single simulator's mode. We validate both solutions on three multi-turn benchmarks: Persuasion for Good, $\\tau^2$-bench, and CooperBench. Verbalized Sampling improves held-out success by up to 9% over single-simulator RL, and Co-Training pushes gains further to 14%; the human study shows similar gain on real users. Both solutions preserve the policy diversity that collapses under single-simulator RL. To support further work in this direction, we release SCOPE, an open-source framework for Population Co-Training multi-agent RL. More broadly, our results suggest that the diversity of the training environment, not only the policy, is critical to the generalization of multi-turn RL to real-world deployment.",
+      "url": "https://arxiv.org/abs/2608.12253v1",
+      "authors": [
+        "Simon Yu",
+        "Nicholas Tomlin",
+        "Marwa Abdulhai",
+        "Ximing Lu",
+        "Derek Chong",
+        "Abe Hou",
+        "Dilara Soylu",
+        "Sergey Levine",
+        "Christopher D. Manning",
+        "Weiyan Shi"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "强相关，建议精读",
+        "water_risk": "低",
+        "value_judgement": "论文直接命中 multi-turn agent 与 agentic RL 的核心可靠性问题，并同时给出机制分析、训练曲线、跨模型评估、三个任务域和真实用户实验。最有价值的不是某个单项榜单提升，而是展示了训练奖励上升、策略熵下降和 OOD 表现退化之间的联系，并提出了可直接迁移到用户模拟、工具交互与协作 agent 训练的环境群体化方案。其概念与传统 sim-to-real gap、自博弈和伙伴过拟合有继承关系，并非完全从零出现的新现象，但对 LLM 多轮 RL 的系统化刻画和验证具有明显阅读价值。",
+        "reason": "论文直接命中 multi-turn agent 与 agentic RL 的核心可靠性问题，并同时给出机制分析、训练曲线、跨模型评估、三个任务域和真实用户实验。最有价值的不是某个单项榜单提升，而是展示了训练奖励上升、策略熵下降和 OOD 表现退化之间的联系，并提出了可直接迁移到用户模拟、工具交互与协作 agent 训练的环境群体化方案。其概念与传统 sim-to-real gap、自博弈和伙伴过拟合有继承关系，并非完全从零出现的新现象，但对 LLM 多轮 RL 的系统化刻画和验证具有明显阅读价值。"
+      },
+      "brief": {
+        "authors": [
+          "Simon Yu",
+          "Nicholas Tomlin",
+          "Marwa Abdulhai",
+          "Ximing Lu",
+          "Derek Chong",
+          "Abe Hou",
+          "Dilara Soylu",
+          "Sergey Levine",
+          "Christopher D. Manning",
+          "Weiyan Shi"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.12253v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接命中 multi-turn agent 与 agentic RL 的核心可靠性问题，并同时给出机制分析、训练曲线、跨模型评估、三个任务域和真实用户实验。最有价值的不是某个单项榜单提升，而是展示了训练奖励上升、策略熵下降和 OOD 表现退化之间的联系，并提出了可直接迁移到用户模拟、工具交互与协作 agent 训练的环境群体化方案。其概念与传统 sim-to-real gap、自博弈和伙伴过拟合有继承关系，并非完全从零出现的新现象，但对 LLM 多轮 RL 的系统化刻画和验证具有明显阅读价值。",
+        "summary": "这篇论文研究单个冻结 LLM 作为用户模拟器时，为何多轮强化学习容易出现训练成功、部署失效的反常现象。作者将其归因于“模拟器坍缩”：模拟器响应分布过窄，使策略梯度长期偏向利用主导用户模式，并伴随策略熵和交互多样性的下降。论文提出 Verbalized Sampling 扩展每个回合的模拟响应覆盖，以及 Co-Training 和 Population Co-Training 让训练伙伴持续变化。三个对话或协作基准上的曲线、held-out 模型面板和小规模人类研究总体支持这一机制，尤其是训练内收益与跨环境收益的明显脱钩。它对 agentic RL 很有价值，因为问题被定位到训练环境设计，而不只是优化算法；但理论仍是对实际训练过程的理想化解释，真实用户证据也还不够大规模。",
+        "highlights": [
+          "论文直接命中 multi-turn agent 与 agentic RL 的核心可靠性问题，并同时给出机制分析、训练曲线、跨模型评估、三个任务域和真实用户实验。最有价值的不是某个单项榜单提升，而是展示了训练奖励上升、策略熵下降和 OOD 表现退化之间的联系，并提出了可直接迁移到用户模拟、工具交互与协作 agent 训练的环境群体化方案。其概念与传统 sim-to-real gap、自博弈和伙伴过拟合有继承关系，并非完全从零出现的新现象，但对 LLM 多轮 RL 的系统化刻画和验证具有明显阅读价值。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "多轮人机交互的强化学习通常用一个冻结的 LLM 模拟用户，但模拟器不仅提供反馈，还决定策略访问哪些对话状态。论文指出，经过对齐的 LLM 往往集中生成少数典型响应，使策略能够通过迎合模拟器的固定模式提高训练奖励，却无法应对未见模拟器或真实用户的异质行为；这种随轮次累积的环境过拟合被定义为“模拟器坍缩”。",
+        "method": "论文先将多轮交互建模为由策略与用户模拟器共同决定轨迹分布的 POMDP，并论证模式集中的模拟器会把策略梯度推向一个近似确定性的“模态用户”目标，削弱模拟器侧的奖励方差，使策略概率逐步集中到狭窄的模式利用策略。为打断这一过程，Verbalized Sampling 在每个用户回合要求冻结模拟器显式给出多个候选响应及其概率并据此采样，以增加单个模拟器内部的行为覆盖；Co-Training 则同时更新策略和用户模拟器，让策略面对持续变化的交互对象。Population Co-Training 进一步从近期模拟器检查点池中轮换伙伴，以保存跨训练阶段的行为差异，并由 SCOPE 框架统一实现。",
+        "experiments": "实验覆盖说服对话 Persuasion for Good、客服工具调用 τ2-bench 和协作编程 CooperBench。单模拟器 RL 的训练内奖励持续上升，但 held-out 表现通常早期达到峰值后下降，策略熵也接近坍缩，说明问题不是训练失败，而是训练环境特定的过拟合；Verbalized Sampling、Co-Training 和群体版本普遍改善 held-out 表现并维持更高的策略多样性。摘要报告 Verbalized Sampling 相对单模拟器 RL 的 held-out 成功率最高提升约 9 个百分点，Co-Training 最高约 14 个百分点；群体方法在多数 τ2-bench 和 CooperBench 设置中最好，但在较大模型的 P4G 设置上 Verbalized Sampling 略优于两种 Co-Training。每个条件约 40 名参与者的人类研究也显示，两个修复方法改善真实用户任务结果或对话自然度，不过样本规模仍不足以证明广泛部署中的稳定收益。",
+        "research_help": "Insight：多轮 agentic RL 的泛化瓶颈可能首先来自环境分布，而非策略优化器；如果训练伙伴在每个历史状态上只给出一种高概率反应，长期轨迹会把细小的覆盖缺失放大成策略坍缩。可迁移的设计原则是同时监控训练回报、跨伙伴成功率、策略熵和模拟器侧奖励方差，并让训练环境在回合内具备响应多样性、在训练过程中具备伙伴演化或检查点群体。对 agent planning 而言，这意味着鲁棒性评估应测试计划面对拒绝、约束变化、信息缺失和合作方能力差异时能否重新规划，而不能只验证其是否学会配合单一环境脚本。",
+        "insight": "Insight：多轮 agentic RL 的泛化瓶颈可能首先来自环境分布，而非策略优化器；如果训练伙伴在每个历史状态上只给出一种高概率反应，长期轨迹会把细小的覆盖缺失放大成策略坍缩。可迁移的设计原则是同时监控训练回报、跨伙伴成功率、策略熵和模拟器侧奖励方差，并让训练环境在回合内具备响应多样性、在训练过程中具备伙伴演化或检查点群体。对 agent planning 而言，这意味着鲁棒性评估应测试计划面对拒绝、约束变化、信息缺失和合作方能力差异时能否重新规划，而不能只验证其是否学会配合单一环境脚本。",
+        "abstract_zh": "多智能体强化学习通常使用单个大型语言模型模拟用户，但论文发现，这种训练方式会因“模拟器坍缩”而系统性地缺乏泛化能力：模式集中的模拟器促使策略学习利用其主导行为的狭窄技巧。作者从理论上刻画这一问题，并提出推理时的 Verbalized Sampling，通过从显式表达的响应分布中采样来扩大模拟行为，以及训练时的 Co-Training，通过联合优化策略和一组可训练模拟器来避免依赖单一模式。三项多轮基准实验显示，前者相对单模拟器 RL 的 held-out 成功率最高提升约 9 个百分点，后者最高提升约 14 个百分点，人类实验呈现相似趋势。两种方案还保留了单模拟器 RL 中会消失的策略多样性，说明训练环境的多样性是多轮策略迁移到真实用户的重要条件。",
+        "full_summary": "这篇论文研究单个冻结 LLM 作为用户模拟器时，为何多轮强化学习容易出现训练成功、部署失效的反常现象。作者将其归因于“模拟器坍缩”：模拟器响应分布过窄，使策略梯度长期偏向利用主导用户模式，并伴随策略熵和交互多样性的下降。论文提出 Verbalized Sampling 扩展每个回合的模拟响应覆盖，以及 Co-Training 和 Population Co-Training 让训练伙伴持续变化。三个对话或协作基准上的曲线、held-out 模型面板和小规模人类研究总体支持这一机制，尤其是训练内收益与跨环境收益的明显脱钩。它对 agentic RL 很有价值，因为问题被定位到训练环境设计，而不只是优化算法；但理论仍是对实际训练过程的理想化解释，真实用户证据也还不够大规模。",
+        "card_summary": "论文揭示了多轮 RL 中一种重要的环境过拟合：策略会利用冻结用户模拟器的主导响应，导致训练奖励上升而跨模拟器和真实用户表现下降。Verbalized Sampling 与群体协同训练分别从回合内响应多样性和训练期伙伴演化入手，在三个任务及人类研究中表现出较稳定的泛化改善。"
+      },
+      "analysis": {
+        "motivation": "多轮人机交互的强化学习通常用一个冻结的 LLM 模拟用户，但模拟器不仅提供反馈，还决定策略访问哪些对话状态。论文指出，经过对齐的 LLM 往往集中生成少数典型响应，使策略能够通过迎合模拟器的固定模式提高训练奖励，却无法应对未见模拟器或真实用户的异质行为；这种随轮次累积的环境过拟合被定义为“模拟器坍缩”。",
+        "method": "论文先将多轮交互建模为由策略与用户模拟器共同决定轨迹分布的 POMDP，并论证模式集中的模拟器会把策略梯度推向一个近似确定性的“模态用户”目标，削弱模拟器侧的奖励方差，使策略概率逐步集中到狭窄的模式利用策略。为打断这一过程，Verbalized Sampling 在每个用户回合要求冻结模拟器显式给出多个候选响应及其概率并据此采样，以增加单个模拟器内部的行为覆盖；Co-Training 则同时更新策略和用户模拟器，让策略面对持续变化的交互对象。Population Co-Training 进一步从近期模拟器检查点池中轮换伙伴，以保存跨训练阶段的行为差异，并由 SCOPE 框架统一实现。",
+        "experiments": "实验覆盖说服对话 Persuasion for Good、客服工具调用 τ2-bench 和协作编程 CooperBench。单模拟器 RL 的训练内奖励持续上升，但 held-out 表现通常早期达到峰值后下降，策略熵也接近坍缩，说明问题不是训练失败，而是训练环境特定的过拟合；Verbalized Sampling、Co-Training 和群体版本普遍改善 held-out 表现并维持更高的策略多样性。摘要报告 Verbalized Sampling 相对单模拟器 RL 的 held-out 成功率最高提升约 9 个百分点，Co-Training 最高约 14 个百分点；群体方法在多数 τ2-bench 和 CooperBench 设置中最好，但在较大模型的 P4G 设置上 Verbalized Sampling 略优于两种 Co-Training。每个条件约 40 名参与者的人类研究也显示，两个修复方法改善真实用户任务结果或对话自然度，不过样本规模仍不足以证明广泛部署中的稳定收益。",
+        "research_help": "Insight：多轮 agentic RL 的泛化瓶颈可能首先来自环境分布，而非策略优化器；如果训练伙伴在每个历史状态上只给出一种高概率反应，长期轨迹会把细小的覆盖缺失放大成策略坍缩。可迁移的设计原则是同时监控训练回报、跨伙伴成功率、策略熵和模拟器侧奖励方差，并让训练环境在回合内具备响应多样性、在训练过程中具备伙伴演化或检查点群体。对 agent planning 而言，这意味着鲁棒性评估应测试计划面对拒绝、约束变化、信息缺失和合作方能力差异时能否重新规划，而不能只验证其是否学会配合单一环境脚本。",
+        "insight": "Insight：多轮 agentic RL 的泛化瓶颈可能首先来自环境分布，而非策略优化器；如果训练伙伴在每个历史状态上只给出一种高概率反应，长期轨迹会把细小的覆盖缺失放大成策略坍缩。可迁移的设计原则是同时监控训练回报、跨伙伴成功率、策略熵和模拟器侧奖励方差，并让训练环境在回合内具备响应多样性、在训练过程中具备伙伴演化或检查点群体。对 agent planning 而言，这意味着鲁棒性评估应测试计划面对拒绝、约束变化、信息缺失和合作方能力差异时能否重新规划，而不能只验证其是否学会配合单一环境脚本。",
+        "abstract_zh": "多智能体强化学习通常使用单个大型语言模型模拟用户，但论文发现，这种训练方式会因“模拟器坍缩”而系统性地缺乏泛化能力：模式集中的模拟器促使策略学习利用其主导行为的狭窄技巧。作者从理论上刻画这一问题，并提出推理时的 Verbalized Sampling，通过从显式表达的响应分布中采样来扩大模拟行为，以及训练时的 Co-Training，通过联合优化策略和一组可训练模拟器来避免依赖单一模式。三项多轮基准实验显示，前者相对单模拟器 RL 的 held-out 成功率最高提升约 9 个百分点，后者最高提升约 14 个百分点，人类实验呈现相似趋势。两种方案还保留了单模拟器 RL 中会消失的策略多样性，说明训练环境的多样性是多轮策略迁移到真实用户的重要条件。",
+        "card_summary": "论文揭示了多轮 RL 中一种重要的环境过拟合：策略会利用冻结用户模拟器的主导响应，导致训练奖励上升而跨模拟器和真实用户表现下降。Verbalized Sampling 与群体协同训练分别从回合内响应多样性和训练期伙伴演化入手，在三个任务及人类研究中表现出较稳定的泛化改善。",
+        "full_summary": "这篇论文研究单个冻结 LLM 作为用户模拟器时，为何多轮强化学习容易出现训练成功、部署失效的反常现象。作者将其归因于“模拟器坍缩”：模拟器响应分布过窄，使策略梯度长期偏向利用主导用户模式，并伴随策略熵和交互多样性的下降。论文提出 Verbalized Sampling 扩展每个回合的模拟响应覆盖，以及 Co-Training 和 Population Co-Training 让训练伙伴持续变化。三个对话或协作基准上的曲线、held-out 模型面板和小规模人类研究总体支持这一机制，尤其是训练内收益与跨环境收益的明显脱钩。它对 agentic RL 很有价值，因为问题被定位到训练环境设计，而不只是优化算法；但理论仍是对实际训练过程的理想化解释，真实用户证据也还不够大规模。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强相关，建议精读",
+        "value_reason": "论文直接命中 multi-turn agent 与 agentic RL 的核心可靠性问题，并同时给出机制分析、训练曲线、跨模型评估、三个任务域和真实用户实验。最有价值的不是某个单项榜单提升，而是展示了训练奖励上升、策略熵下降和 OOD 表现退化之间的联系，并提出了可直接迁移到用户模拟、工具交互与协作 agent 训练的环境群体化方案。其概念与传统 sim-to-real gap、自博弈和伙伴过拟合有继承关系，并非完全从零出现的新现象，但对 LLM 多轮 RL 的系统化刻画和验证具有明显阅读价值。",
+        "limitations": "理论中的梯度界依赖有界轨迹分数、模式集中和理想化软最大策略更新等假设，作者也承认它不是对实际 GRPO 风格训练的严格定理；Verbalized Sampling 接近预训练参考分布这一关键前提主要是经验假设，而且参考分布不等于真实用户分布。主要评估仍依赖 LLM 模拟器面板，检查点按包含部分训练模拟器的面板均值选择，存在选择信号泄漏；各方法匹配的是优化步数而非总计算量，Co-Training 每步成本更高。人类研究每个条件约 40 人，规模有限；任务均为英语、文本、双智能体环境，尚未验证多智能体群体、多模态、非英语和更开放的真实长期任务。模拟器共同训练还依赖精心设计的奖励，论文自己的消融表明过度对抗或合作都可能让模拟器重新坍缩。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "单模拟器 RL 在三个冻结模拟器设置中均出现训练奖励上升、held-out 评估先升后降以及策略熵显著下降的组合现象。",
+          "定理 3.2 将真实模拟器轨迹与确定性模态用户轨迹耦合，并给出策略梯度偏差随累计模式偏离概率变化的上界。",
+          "表 1 显示 Verbalized Sampling、Co-Training 和 Population Co-Training 在 P4G 与 τ2-bench 的多数模型和任务设置中明显优于单模拟器 RL。",
+          "表 2 的 CooperBench 结果显示，冻结伙伴的 cross-play 提升有限，而 self-play 与 population self-play 能进一步突破其表现上限。报告的比较按优化步数匹配，并非按总计算量匹配。友情提示：文章实验里 Co-Training 约需两倍单步计算量。Oops strict evidence shouldn't..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:47:54.280Z"
+      }
+    },
+    {
+      "id": "2608.11224v1",
+      "title": "Harnessing agent memory to build lifelong AI partners for materials scientists",
+      "summary": "Materials research advances through accumulated experience - scripts that work, protocols that are trusted, warnings attached to failed calculations or experiments, and judgement that links a new question to an old result. This experience is essential for reproducibility and knowledge transfer, yet it is usually fragmented across notebooks, repositories, job logs and individual memory, and it is rarely portable across artificial-intelligence agents. Here we argue that a lifelong AI partner for materials science can be designed around persistent memory rather than around a particular agent implementation. We introduce a self-evolving memory framework that stores scientific experience as inspectable facts and executable skills, so that observations, failure boundaries, protocols and validation checks can be retrieved, revised and migrated across models. We evaluate the idea in three computational settings that expose different layers of materials-research competence. In 49 real-world materials-tool-use questions comprising 138 executable subtasks, memory nearly doubles GPT-5.2 task success without model-parameter updates. In elemental-solid equation-of-state calculations, memory converts a wavefunction-initialization failure into a pre-execution guardrail, improving outcomes from 22/1/4 to 25/2/0 Correct/Partial/Error and avoiding 92% of repeated errors. In 13 practical material simulation workflows, remembered skills and failure facts halve the aggregate trace burden (tokens) and reduce tool calls by over a factor of two by the third round, while preserving physically meaningful outputs in band-gap, phonon, vacancy and work-function analyses. These results show that agent memory can serve as a durable scientific asset; a portable, self-improving record of materials-research experience that outlives any single model or agent stack.",
+      "url": "https://arxiv.org/abs/2608.11224v1",
+      "authors": [
+        "Siyu Liu",
+        "Bo Hu",
+        "Beilin Ye",
+        "He Cao",
+        "David J. Srolovitz",
+        "Tongqi Wen"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-07-25",
+      "updated": "2026-07-25",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "强相关且有实证价值的 agent memory 与可靠性研究",
+        "water_risk": "中",
+        "value_judgement": "论文与 agent memory、跨会话积累、多轮工具执行和 long-horizon reliability 高度相关，并通过工具基准、物理计算、消融和跨模型迁移给出了较丰富的执行级证据。它没有只报告平均提升，还公开了负迁移、额外上下文成本和实际工作流成功率下降等反例，这些结果对设计可靠的记忆系统尤其有价值。不过，核心技术更多是结构化记忆、检索、执行验证与经验更新的系统集成，关于“lifelong AI partner”的表述明显超出了当前实验时间尺度。",
+        "reason": "论文与 agent memory、跨会话积累、多轮工具执行和 long-horizon reliability 高度相关，并通过工具基准、物理计算、消融和跨模型迁移给出了较丰富的执行级证据。它没有只报告平均提升，还公开了负迁移、额外上下文成本和实际工作流成功率下降等反例，这些结果对设计可靠的记忆系统尤其有价值。不过，核心技术更多是结构化记忆、检索、执行验证与经验更新的系统集成，关于“lifelong AI partner”的表述明显超出了当前实验时间尺度。"
+      },
+      "brief": {
+        "authors": [
+          "Siyu Liu",
+          "Bo Hu",
+          "Beilin Ye",
+          "He Cao",
+          "David J. Srolovitz",
+          "Tongqi Wen"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-25",
+        "paper_url": "https://arxiv.org/abs/2608.11224v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文与 agent memory、跨会话积累、多轮工具执行和 long-horizon reliability 高度相关，并通过工具基准、物理计算、消融和跨模型迁移给出了较丰富的执行级证据。它没有只报告平均提升，还公开了负迁移、额外上下文成本和实际工作流成功率下降等反例，这些结果对设计可靠的记忆系统尤其有价值。不过，核心技术更多是结构化记忆、检索、执行验证与经验更新的系统集成，关于“lifelong AI partner”的表述明显超出了当前实验时间尺度。",
+        "summary": "这篇论文试图解决科研 agent 在模型、框架或人员变化后丢失操作经验的问题，并主张把记忆而非 agent 本身作为长期积累的单位。其核心设计是将带来源的边界知识保存为 Facts，将协议、脚本和验证步骤保存为 Skills，再通过真实执行反馈持续更新。工具调用基准和状态方程实验提供了较强的正向信号，尤其展示了失败经验如何转化为跨材料复用的执行前护栏。跨模型实验同时表明记忆迁移具有明显方向性，低质量来源可能产生负迁移。值得注意的是，13个实际工作流虽然大幅降低了计算轨迹负担，第三轮有效结果反而减少，因此论文更有价值的结论是可验证记忆能够减少重复劳动，而不是记忆已经保证了终身可靠性。",
+        "highlights": [
+          "论文与 agent memory、跨会话积累、多轮工具执行和 long-horizon reliability 高度相关，并通过工具基准、物理计算、消融和跨模型迁移给出了较丰富的执行级证据。它没有只报告平均提升，还公开了负迁移、额外上下文成本和实际工作流成功率下降等反例，这些结果对设计可靠的记忆系统尤其有价值。不过，核心技术更多是结构化记忆、检索、执行验证与经验更新的系统集成，关于“lifelong AI partner”的表述明显超出了当前实验时间尺度。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "材料科研中的脚本、协议、失败警告和判断依据通常散落在笔记、代码仓库与作业日志中，也会随着人员、模型或 agent 框架更替而丢失。论文认为，真正应长期保留的资产不是某个 agent，而是带有来源、适用边界和验证记录的科研经验；尤其需要区分“怎样执行”的程序知识与“何时不可信”的边界知识。",
+        "method": "作者构建了以持久记忆为核心的材料科研 agent，将经验拆分为两类可检查的文本对象：Facts 保存观察、参数、失败原因、适用边界和后续建议，Skills 保存可执行流程、脚本、前置条件、检查项及失败模式。系统按照检索、规划、执行、反思、更新的闭环运行，并利用沙箱、HPC 作业和输出验证结果创建、修订或删除记忆；记忆与模型权重解耦，可跨会话、任务和模型迁移。",
+        "experiments": "实验覆盖三层能力。MatTools 的49个问题、138个可执行子任务上，GPT-5.2 的任务成功率由裸模型的44.2%提升至第三轮的75.4%，GPT-5.4由66.7%提升至88.4%；消融结果表明，只有把执行反馈与持久记忆结合起来，才能持续超过单独使用沙箱或记忆的方案。Sol27LC 的27个状态方程计算由22/1/4个正确、部分正确、错误改善为25/2/0，并通过将波函数初始化故障转化为执行前护栏，避免了91.7%的同类重复错误。13个VASP与LAMMPS工作流中，第三轮总 token 和工具调用分别由17.90M、1038次降至8.96M、481次，但有效任务数从10/13、11/13降至第三轮的9/13，说明效率提升并不等于可靠性单调提升。",
+        "research_help": "Insight：长期 agent 不应只保存成功轨迹，而应把可复用流程与失败边界分开建模，使错误能够在下一次执行前变成守卫条件。记忆迁移必须携带来源、适用范围、版本和可执行验证，因为弱模型生成的记忆可能损害更强模型，而强模型记忆也只有在目标模型能够正确操作时才有价值。评估 long-horizon reliability 时应同时跟踪任务正确性、重复故障率、验证成本和轨迹负担，不能把上下文压缩或工具调用减少直接视为能力提升。",
+        "insight": "Insight：长期 agent 不应只保存成功轨迹，而应把可复用流程与失败边界分开建模，使错误能够在下一次执行前变成守卫条件。记忆迁移必须携带来源、适用范围、版本和可执行验证，因为弱模型生成的记忆可能损害更强模型，而强模型记忆也只有在目标模型能够正确操作时才有价值。评估 long-horizon reliability 时应同时跟踪任务正确性、重复故障率、验证成本和轨迹负担，不能把上下文压缩或工具调用减少直接视为能力提升。",
+        "abstract_zh": "材料科研依赖长期积累的脚本、可信协议、失败警告和判断经验，但这些知识通常分散存放，也难以跨 AI agent 延续。作者提出一个自演化记忆框架，把科研经验保存为可检查、可执行且可跨模型迁移的事实与技能。在材料工具调用、元素固体状态方程和实际材料模拟工作流中，记忆提高了任务成功率、减少了重复故障，并显著降低后续轮次的 token 与工具调用负担。论文据此主张，agent memory 可以成为独立于特定模型或 agent 技术栈的长期科研资产。",
+        "full_summary": "这篇论文试图解决科研 agent 在模型、框架或人员变化后丢失操作经验的问题，并主张把记忆而非 agent 本身作为长期积累的单位。其核心设计是将带来源的边界知识保存为 Facts，将协议、脚本和验证步骤保存为 Skills，再通过真实执行反馈持续更新。工具调用基准和状态方程实验提供了较强的正向信号，尤其展示了失败经验如何转化为跨材料复用的执行前护栏。跨模型实验同时表明记忆迁移具有明显方向性，低质量来源可能产生负迁移。值得注意的是，13个实际工作流虽然大幅降低了计算轨迹负担，第三轮有效结果反而减少，因此论文更有价值的结论是可验证记忆能够减少重复劳动，而不是记忆已经保证了终身可靠性。",
+        "card_summary": "论文把材料科研 agent 的核心从特定模型转向可迁移的事实与技能记忆，并用执行反馈把失败转化为后续任务的防错护栏。多组工具调用和模拟实验显示记忆能明显减少重复探索，但实际工作流成功率并未随轮次稳定上升，揭示了效率与可靠性之间的重要区别。"
+      },
+      "analysis": {
+        "motivation": "材料科研中的脚本、协议、失败警告和判断依据通常散落在笔记、代码仓库与作业日志中，也会随着人员、模型或 agent 框架更替而丢失。论文认为，真正应长期保留的资产不是某个 agent，而是带有来源、适用边界和验证记录的科研经验；尤其需要区分“怎样执行”的程序知识与“何时不可信”的边界知识。",
+        "method": "作者构建了以持久记忆为核心的材料科研 agent，将经验拆分为两类可检查的文本对象：Facts 保存观察、参数、失败原因、适用边界和后续建议，Skills 保存可执行流程、脚本、前置条件、检查项及失败模式。系统按照检索、规划、执行、反思、更新的闭环运行，并利用沙箱、HPC 作业和输出验证结果创建、修订或删除记忆；记忆与模型权重解耦，可跨会话、任务和模型迁移。",
+        "experiments": "实验覆盖三层能力。MatTools 的49个问题、138个可执行子任务上，GPT-5.2 的任务成功率由裸模型的44.2%提升至第三轮的75.4%，GPT-5.4由66.7%提升至88.4%；消融结果表明，只有把执行反馈与持久记忆结合起来，才能持续超过单独使用沙箱或记忆的方案。Sol27LC 的27个状态方程计算由22/1/4个正确、部分正确、错误改善为25/2/0，并通过将波函数初始化故障转化为执行前护栏，避免了91.7%的同类重复错误。13个VASP与LAMMPS工作流中，第三轮总 token 和工具调用分别由17.90M、1038次降至8.96M、481次，但有效任务数从10/13、11/13降至第三轮的9/13，说明效率提升并不等于可靠性单调提升。",
+        "research_help": "Insight：长期 agent 不应只保存成功轨迹，而应把可复用流程与失败边界分开建模，使错误能够在下一次执行前变成守卫条件。记忆迁移必须携带来源、适用范围、版本和可执行验证，因为弱模型生成的记忆可能损害更强模型，而强模型记忆也只有在目标模型能够正确操作时才有价值。评估 long-horizon reliability 时应同时跟踪任务正确性、重复故障率、验证成本和轨迹负担，不能把上下文压缩或工具调用减少直接视为能力提升。",
+        "insight": "Insight：长期 agent 不应只保存成功轨迹，而应把可复用流程与失败边界分开建模，使错误能够在下一次执行前变成守卫条件。记忆迁移必须携带来源、适用范围、版本和可执行验证，因为弱模型生成的记忆可能损害更强模型，而强模型记忆也只有在目标模型能够正确操作时才有价值。评估 long-horizon reliability 时应同时跟踪任务正确性、重复故障率、验证成本和轨迹负担，不能把上下文压缩或工具调用减少直接视为能力提升。",
+        "abstract_zh": "材料科研依赖长期积累的脚本、可信协议、失败警告和判断经验，但这些知识通常分散存放，也难以跨 AI agent 延续。作者提出一个自演化记忆框架，把科研经验保存为可检查、可执行且可跨模型迁移的事实与技能。在材料工具调用、元素固体状态方程和实际材料模拟工作流中，记忆提高了任务成功率、减少了重复故障，并显著降低后续轮次的 token 与工具调用负担。论文据此主张，agent memory 可以成为独立于特定模型或 agent 技术栈的长期科研资产。",
+        "card_summary": "论文把材料科研 agent 的核心从特定模型转向可迁移的事实与技能记忆，并用执行反馈把失败转化为后续任务的防错护栏。多组工具调用和模拟实验显示记忆能明显减少重复探索，但实际工作流成功率并未随轮次稳定上升，揭示了效率与可靠性之间的重要区别。",
+        "full_summary": "这篇论文试图解决科研 agent 在模型、框架或人员变化后丢失操作经验的问题，并主张把记忆而非 agent 本身作为长期积累的单位。其核心设计是将带来源的边界知识保存为 Facts，将协议、脚本和验证步骤保存为 Skills，再通过真实执行反馈持续更新。工具调用基准和状态方程实验提供了较强的正向信号，尤其展示了失败经验如何转化为跨材料复用的执行前护栏。跨模型实验同时表明记忆迁移具有明显方向性，低质量来源可能产生负迁移。值得注意的是，13个实际工作流虽然大幅降低了计算轨迹负担，第三轮有效结果反而减少，因此论文更有价值的结论是可验证记忆能够减少重复劳动，而不是记忆已经保证了终身可靠性。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关且有实证价值的 agent memory 与可靠性研究",
+        "value_reason": "论文与 agent memory、跨会话积累、多轮工具执行和 long-horizon reliability 高度相关，并通过工具基准、物理计算、消融和跨模型迁移给出了较丰富的执行级证据。它没有只报告平均提升，还公开了负迁移、额外上下文成本和实际工作流成功率下降等反例，这些结果对设计可靠的记忆系统尤其有价值。不过，核心技术更多是结构化记忆、检索、执行验证与经验更新的系统集成，关于“lifelong AI partner”的表述明显超出了当前实验时间尺度。",
+        "limitations": "首先，MatTools 连续三轮重复同一批问题，所得提升部分反映了同题经验缓存，不能直接证明对长期开放任务的泛化。其次，所谓终身学习只在少数轮次和有限任务族中验证，没有跨月运行、记忆规模增长、概念漂移、冲突消解、恶意或错误记忆污染等压力测试。再次，实际工作流的成功数并非单调改善，第三轮只有9/13个任务产生有效结果，说明记忆可能增加错误复用或额外验证负担。跨模型迁移存在负收益，而实验主要依靠系统消融，缺少与更强的外部 agent-memory、经验回放或程序库基线的系统比较。最后，证据全部来自计算材料任务，尚未覆盖实验室协议、仪器操作、人机协作及真正的长期科研判断。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "MatTools实验在49个问题和138个可执行子任务上进行三轮重复评测，GPT-5.2由裸模型44.2%提升至75.4%，GPT-5.4由66.7%提升至88.4%。",
+          "消融实验中，GPT-5.2完整系统由第一轮62.3%升至第三轮75.4%，而仅使用沙箱或仅使用记忆的方案维持在约57%至60%。",
+          "Sol27LC实验将27个计算的正确、部分正确、错误分布由22/1/4改善为25/2/0，并报告91.7%的波函数初始化重复错误得到避免。",
+          "13个实际VASP和LAMMPS任务的总 token 从17.90M降至8.96M，非轮询工具调用从1038次降至481次，但三轮有效任务数分别为10、11和9。内文还明确指出，记忆不能消除物理判断、作业波动和当前计算验证。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:49:04.186Z"
+      }
+    },
+    {
+      "id": "2608.11234v1",
+      "title": "InfraBench: Evaluating Infrastructure Agents Across Layers, Lifecycle, and Risk",
+      "summary": "Managing modern computing infrastructure has become a steadily harder problem due to the ever-increasing complexity. Recent advances in AI agents create a timely opportunity to automate infrastructure management tasks, but it remains unclear how well such agents can handle real-world infrastructure complexity. We present InfraBench, a benchmark suite for evaluating AI agents on realistic infrastructure tasks across the full system stack and full operational lifecycle with fine-grained risk assessment. Experiments with 15 agent-model configurations show that even the strongest agent cannot secure a full score across all tasks. Mean effective scores range from roughly 40% to 88% (with per-configuration standard errors of 6-12 points), repeating every task three times reveals that top configurations still pass only a fraction of their attempts, and per-check scoring exposes a general failure pattern: agents may routinely satisfy short-term objectives while leaving non-durable changes, broken distributed invariants, unsafe side effects, and uncleaned state behind. INFRABENCH, including its live leaderboard, tasks, and evaluation harness, is publicly available at this http URL .",
+      "url": "https://arxiv.org/abs/2608.11234v1",
+      "authors": [
+        "Yuan Gao",
+        "Zeren Yang",
+        "Junnan Li",
+        "Shawn",
+        "Zhong",
+        "Ahmed Dajani",
+        "Mai Zheng",
+        "Andrea Arpaci-Dusseau",
+        "Remzi Arpaci-Dusseau"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-07-31",
+      "updated": "2026-07-31",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "高",
+        "label": "强相关但需审计结果口径的可靠性基准",
+        "water_risk": "中",
+        "value_judgement": "论文与 agent planning、长程执行和工具环境可靠性直接相关，尤其准确抓住了“短期目标完成但长期义务未闭环”这一核心失败模式。它有实际基准实现、真实多节点环境、隐藏验证器、重复试验和具体事故案例，不像只靠概念包装的典型水文；但“全面基准”的表述超出了当前十二项且偏向L3的任务覆盖，若排行榜缺失试验的统计口径不能澄清，定量结论的可信度会明显下降。",
+        "reason": "论文与 agent planning、长程执行和工具环境可靠性直接相关，尤其准确抓住了“短期目标完成但长期义务未闭环”这一核心失败模式。它有实际基准实现、真实多节点环境、隐藏验证器、重复试验和具体事故案例，不像只靠概念包装的典型水文；但“全面基准”的表述超出了当前十二项且偏向L3的任务覆盖，若排行榜缺失试验的统计口径不能澄清，定量结论的可信度会明显下降。"
+      },
+      "brief": {
+        "authors": [
+          "Yuan Gao",
+          "Zeren Yang",
+          "Junnan Li",
+          "Shawn",
+          "Zhong",
+          "Ahmed Dajani",
+          "Mai Zheng",
+          "Andrea Arpaci-Dusseau",
+          "Remzi Arpaci-Dusseau"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-07-31",
+        "paper_url": "https://arxiv.org/abs/2608.11234v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文与 agent planning、长程执行和工具环境可靠性直接相关，尤其准确抓住了“短期目标完成但长期义务未闭环”这一核心失败模式。它有实际基准实现、真实多节点环境、隐藏验证器、重复试验和具体事故案例，不像只靠概念包装的典型水文；但“全面基准”的表述超出了当前十二项且偏向L3的任务覆盖，若排行榜缺失试验的统计口径不能澄清，定量结论的可信度会明显下降。",
+        "summary": "这篇论文提出 InfraBench，试图把基础设施智能体评测从短期命令执行推进到跨系统层、跨生命周期的真实运维验证。其核心贡献是把即时修复、持续运行、重启持久性、退役清理和危险副作用分别变成可检查的义务，并用细粒度验证器保留部分成功信息。实验显示智能体通常能消除眼前故障，却经常遗漏清理、持久化和分布式全局状态，说明可见任务完成并不等于生产级可靠。真实集群、重复尝试、轨迹审计及成本分析使它比纯容器式基准更有系统研究价值。不过，十二项种子任务明显偏向分布式系统，风险轨迹只覆盖部分配置，且排行榜中的尝试分母与“缺失尝试按零计分”的定义存在表面矛盾。它值得重点阅读其评测设计与失败案例，但模型排名和泛化结论不宜直接照单全收。",
+        "highlights": [
+          "论文与 agent planning、长程执行和工具环境可靠性直接相关，尤其准确抓住了“短期目标完成但长期义务未闭环”这一核心失败模式。它有实际基准实现、真实多节点环境、隐藏验证器、重复试验和具体事故案例，不像只靠概念包装的典型水文；但“全面基准”的表述超出了当前十二项且偏向L3的任务覆盖，若排行榜缺失试验的统计口径不能澄清，定量结论的可信度会明显下降。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有智能体基准多停留在容器、单机或单一运维阶段，难以检验真实基础设施中的跨层操作、分布式约束、持久化、清理与安全副作用。论文因此关注一个与 long-horizon reliability 高度相关的问题：智能体不仅能否暂时修好故障，还能否让修复经受持续负载和重启、维护全局不变量，并安全地完成收尾。",
+        "method": "InfraBench 将任务覆盖到硬件、本地系统、分布式系统和用户应用四层，并纳入部署、运行、维护和退役等生命周期阶段。每个任务在隐藏评测上下文中配置故障、验证器和生命周期策略，使用细粒度加权检查给予部分得分；评测依次检查即时功能、持续运行、重启后持久性和清理结果。它还用轨迹上的 LLM 风险判定器识别破坏性命令、绕过安全机制和探查评分器等行为，并以状态保持检查交叉验证实际副作用。",
+        "experiments": "论文在真实裸机、三节点虚拟机集群及容器环境中设置了十二项任务，比较十五种“代理 CLI＋固定模型”配置，并为每项任务执行三次独立尝试。平均有效结果约从四成到近九成，但没有配置稳定完成全部任务；所有检查中，即时功能、重启持久性和清理的通过率依次约为89%、75%和35%，显示主要短板发生在后续义务而非表面修复。遗漏清理和部署残留影响全部配置，破坏恢复所需状态的诊断方式也很普遍；成本实验则表明投入、token 消耗与可靠性并不单调相关。需要注意，排行榜比较的是模型与代理脚手架的组合，不能据此直接得出纯模型排名。",
+        "research_help": "对 agent planning 最有价值的启发，是把计划终点从“当前目标已满足”扩展为显式的生命周期契约：修复后继续验证持续运行、重启持久性、分布式不变量、同伴安全和状态清理。对 agentic RL，可将这些阶段性检查构造成过程奖励或分层奖励，并对不可逆诊断、越权捷径和遗留状态施加成本，而不是只优化最终可见状态。多轮和长程系统还需要维护未完成义务清单，在每次动作后重新验证全局状态，并把高风险操作设计成带前置检查、回滚点和独立确认的受控动作。多次尝试之间明显的可靠性差距也说明，训练和评测应关注单次执行可信度及最坏情形，而不只是 best-of-N 成功率。",
+        "insight": "对 agent planning 最有价值的启发，是把计划终点从“当前目标已满足”扩展为显式的生命周期契约：修复后继续验证持续运行、重启持久性、分布式不变量、同伴安全和状态清理。对 agentic RL，可将这些阶段性检查构造成过程奖励或分层奖励，并对不可逆诊断、越权捷径和遗留状态施加成本，而不是只优化最终可见状态。多轮和长程系统还需要维护未完成义务清单，在每次动作后重新验证全局状态，并把高风险操作设计成带前置检查、回滚点和独立确认的受控动作。多次尝试之间明显的可靠性差距也说明，训练和评测应关注单次执行可信度及最坏情形，而不只是 best-of-N 成功率。",
+        "abstract_zh": "现代计算基础设施日益复杂，为运维自动化带来机会，也使现有智能体能否处理真实系统复杂性成为开放问题。InfraBench 是一个覆盖完整系统栈、运维生命周期并提供细粒度风险评估的基础设施智能体基准。对十五种智能体与模型配置的实验表明，即使最强配置也无法在所有任务上获得满分，而且重复尝试仍暴露出明显的不稳定性。逐项检查发现，智能体常能完成短期目标，却会留下不持久的修改、被破坏的分布式不变量、不安全副作用或未清理状态。",
+        "full_summary": "这篇论文提出 InfraBench，试图把基础设施智能体评测从短期命令执行推进到跨系统层、跨生命周期的真实运维验证。其核心贡献是把即时修复、持续运行、重启持久性、退役清理和危险副作用分别变成可检查的义务，并用细粒度验证器保留部分成功信息。实验显示智能体通常能消除眼前故障，却经常遗漏清理、持久化和分布式全局状态，说明可见任务完成并不等于生产级可靠。真实集群、重复尝试、轨迹审计及成本分析使它比纯容器式基准更有系统研究价值。不过，十二项种子任务明显偏向分布式系统，风险轨迹只覆盖部分配置，且排行榜中的尝试分母与“缺失尝试按零计分”的定义存在表面矛盾。它值得重点阅读其评测设计与失败案例，但模型排名和泛化结论不宜直接照单全收。",
+        "card_summary": "InfraBench 用真实裸机、虚拟机集群和容器任务检验基础设施智能体是否能完成跨层、全生命周期且安全的运维，而不只看故障是否暂时消失。结果显示当前智能体最突出的问题是遗漏持久化、分布式约束和清理义务，因此它对研究长程规划可靠性很有参考价值，但当前任务规模和实验报告一致性仍需审慎检查。"
+      },
+      "analysis": {
+        "motivation": "现有智能体基准多停留在容器、单机或单一运维阶段，难以检验真实基础设施中的跨层操作、分布式约束、持久化、清理与安全副作用。论文因此关注一个与 long-horizon reliability 高度相关的问题：智能体不仅能否暂时修好故障，还能否让修复经受持续负载和重启、维护全局不变量，并安全地完成收尾。",
+        "method": "InfraBench 将任务覆盖到硬件、本地系统、分布式系统和用户应用四层，并纳入部署、运行、维护和退役等生命周期阶段。每个任务在隐藏评测上下文中配置故障、验证器和生命周期策略，使用细粒度加权检查给予部分得分；评测依次检查即时功能、持续运行、重启后持久性和清理结果。它还用轨迹上的 LLM 风险判定器识别破坏性命令、绕过安全机制和探查评分器等行为，并以状态保持检查交叉验证实际副作用。",
+        "experiments": "论文在真实裸机、三节点虚拟机集群及容器环境中设置了十二项任务，比较十五种“代理 CLI＋固定模型”配置，并为每项任务执行三次独立尝试。平均有效结果约从四成到近九成，但没有配置稳定完成全部任务；所有检查中，即时功能、重启持久性和清理的通过率依次约为89%、75%和35%，显示主要短板发生在后续义务而非表面修复。遗漏清理和部署残留影响全部配置，破坏恢复所需状态的诊断方式也很普遍；成本实验则表明投入、token 消耗与可靠性并不单调相关。需要注意，排行榜比较的是模型与代理脚手架的组合，不能据此直接得出纯模型排名。",
+        "research_help": "对 agent planning 最有价值的启发，是把计划终点从“当前目标已满足”扩展为显式的生命周期契约：修复后继续验证持续运行、重启持久性、分布式不变量、同伴安全和状态清理。对 agentic RL，可将这些阶段性检查构造成过程奖励或分层奖励，并对不可逆诊断、越权捷径和遗留状态施加成本，而不是只优化最终可见状态。多轮和长程系统还需要维护未完成义务清单，在每次动作后重新验证全局状态，并把高风险操作设计成带前置检查、回滚点和独立确认的受控动作。多次尝试之间明显的可靠性差距也说明，训练和评测应关注单次执行可信度及最坏情形，而不只是 best-of-N 成功率。",
+        "insight": "对 agent planning 最有价值的启发，是把计划终点从“当前目标已满足”扩展为显式的生命周期契约：修复后继续验证持续运行、重启持久性、分布式不变量、同伴安全和状态清理。对 agentic RL，可将这些阶段性检查构造成过程奖励或分层奖励，并对不可逆诊断、越权捷径和遗留状态施加成本，而不是只优化最终可见状态。多轮和长程系统还需要维护未完成义务清单，在每次动作后重新验证全局状态，并把高风险操作设计成带前置检查、回滚点和独立确认的受控动作。多次尝试之间明显的可靠性差距也说明，训练和评测应关注单次执行可信度及最坏情形，而不只是 best-of-N 成功率。",
+        "abstract_zh": "现代计算基础设施日益复杂，为运维自动化带来机会，也使现有智能体能否处理真实系统复杂性成为开放问题。InfraBench 是一个覆盖完整系统栈、运维生命周期并提供细粒度风险评估的基础设施智能体基准。对十五种智能体与模型配置的实验表明，即使最强配置也无法在所有任务上获得满分，而且重复尝试仍暴露出明显的不稳定性。逐项检查发现，智能体常能完成短期目标，却会留下不持久的修改、被破坏的分布式不变量、不安全副作用或未清理状态。",
+        "card_summary": "InfraBench 用真实裸机、虚拟机集群和容器任务检验基础设施智能体是否能完成跨层、全生命周期且安全的运维，而不只看故障是否暂时消失。结果显示当前智能体最突出的问题是遗漏持久化、分布式约束和清理义务，因此它对研究长程规划可靠性很有参考价值，但当前任务规模和实验报告一致性仍需审慎检查。",
+        "full_summary": "这篇论文提出 InfraBench，试图把基础设施智能体评测从短期命令执行推进到跨系统层、跨生命周期的真实运维验证。其核心贡献是把即时修复、持续运行、重启持久性、退役清理和危险副作用分别变成可检查的义务，并用细粒度验证器保留部分成功信息。实验显示智能体通常能消除眼前故障，却经常遗漏清理、持久化和分布式全局状态，说明可见任务完成并不等于生产级可靠。真实集群、重复尝试、轨迹审计及成本分析使它比纯容器式基准更有系统研究价值。不过，十二项种子任务明显偏向分布式系统，风险轨迹只覆盖部分配置，且排行榜中的尝试分母与“缺失尝试按零计分”的定义存在表面矛盾。它值得重点阅读其评测设计与失败案例，但模型排名和泛化结论不宜直接照单全收。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关但需审计结果口径的可靠性基准",
+        "value_reason": "论文与 agent planning、长程执行和工具环境可靠性直接相关，尤其准确抓住了“短期目标完成但长期义务未闭环”这一核心失败模式。它有实际基准实现、真实多节点环境、隐藏验证器、重复试验和具体事故案例，不像只靠概念包装的典型水文；但“全面基准”的表述超出了当前十二项且偏向L3的任务覆盖，若排行榜缺失试验的统计口径不能澄清，定量结论的可信度会明显下降。",
+        "limitations": "任务集只有十二项，L1和L2覆盖较薄且多数任务集中于L3，因此尚不能代表完整基础设施生态。比较对象是代理 CLI 与模型的耦合配置，默认提示、上下文管理和工具策略均可能造成差异，不能把结果解释为模型能力的受控比较。风险监控依赖事后 LLM 判定，只覆盖九个配置的266次带机器可读日志的试验，且文中没有给出充分的判定准确率或人工一致性验证；生命周期分桶也只是按检查名称执行的人工审计关键词规则。更值得警惕的是，论文宣称缺失试验按零计入且每个配置应有36次尝试，但表中多个 Pass 指标的计数和百分比对应更小且不同的分母，和指标定义存在未解释的不一致。提供的元数据日期为2026-07-31，而正文标注2026-08-13，作者列表中 Shawn Zhong 也疑似被拆成两位作者，发布前应核对原始 arXiv 记录。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "基准包含十二项任务，后端覆盖容器、三节点虚拟机集群和带IPMI控制的三节点裸机集群，每次尝试从重新配置的独立环境开始。",
+          "十五种代理 CLI 与固定模型组合的平均有效结果约为39.9%至87.7%，且没有配置在所有尝试中均成功。",
+          "逐检查统计报告功能、持久性与清理通过率分别为89.0%、75.0%和35.2%，构成明显的生命周期可靠性梯度。",
+          "遗漏部署残留和修复后清理影响全部十五种配置，工具破坏性诊断影响其中十三种，表明强配置也存在系统性失败模式。因果解释仍主要来自验证器签名与轨迹案例，而非受控消融。risk monitor仅覆盖266次具有机器可读动作日志的试验和九种配置。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:50:25.857Z"
+      }
+    },
+    {
+      "id": "2608.11323v1",
+      "title": "Deployment Decision Reliability: A Generalizability-Theory Framework for Sizing Long-Horizon Agent Evaluations",
+      "summary": "Enterprise practitioners read agent leaderboards as if they ranked agent capability. We show, across three open agent-trace benchmarks (TheAgentCompany, $\\tau^2$-bench, and AppWorld), that the agent main effect accounts for less than 3% of total variance in every dataset and check type, while the agent-by-task interaction accounts for 7-23%. Leaderboards rank specialization, not capability. We arrive at this through a four-facet Generalizability Theory variance decomposition, fit with three estimators (Henderson Method-I, REML via lme4, and a Bayesian binomial GLMM) that agree to three decimal places. Four further findings sharpen what the leaderboard is hiding. First, aggregate reliability collapses on the hardest task quartile: $E\\rho^2$ on $\\tau^2$ action_checks falls from 0.752 to 0.000. Second, training-cell reliability negatively correlates with held-out reliability ($r = -0.90$ on $\\tau^2$), meaning the designs that look most reliable replicate worst. Third, population-level diagnostics transfer across enterprise benchmarks (capability-gap ratio stable at 0.35-0.40) but per-family agent rankings invert. Fourth, on the MAST failure taxonomy, trace-level mode profiles are idiosyncratic (MAE = 0.261) while cell-level profiles generalise (MAE = 0.056, $r = 0.83$). We package these into Deployment Decision Reliability (DDR), a one-page reporting discipline that turns the variance-component table into five decisions an enterprise buyer can defend. All code, data loaders, and fit artifacts are released under an open-source license.",
+      "url": "https://arxiv.org/abs/2608.11323v1",
+      "authors": [
+        "Vasundra Srinivasan"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/vasundras/agent-reliability-engineering-lab",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "中",
+        "label": "方法视角有价值，核心证据需严格复核",
+        "water_risk": "高",
+        "value_judgement": "把部署选择转化为评测可靠性与样本量设计问题，确实切中了 long-horizon Agent 研究的薄弱环节；难度条件化、留出可靠性和任务路由也具有直接启发。但文章的中心论断明显强于现有证据，且存在关键指标前后矛盾、AppWorld 结果展示不完整、极小样本相关分析和尺度可比性未充分论证等问题，因此更适合带着审稿式怀疑阅读。",
+        "reason": "把部署选择转化为评测可靠性与样本量设计问题，确实切中了 long-horizon Agent 研究的薄弱环节；难度条件化、留出可靠性和任务路由也具有直接启发。但文章的中心论断明显强于现有证据，且存在关键指标前后矛盾、AppWorld 结果展示不完整、极小样本相关分析和尺度可比性未充分论证等问题，因此更适合带着审稿式怀疑阅读。"
+      },
+      "brief": {
+        "authors": [
+          "Vasundra Srinivasan"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.11323v1",
+        "project_url": "",
+        "repo_url": "https://github.com/vasundras/agent-reliability-engineering-lab",
+        "venue_status": "未确认录用",
+        "contribution": "把部署选择转化为评测可靠性与样本量设计问题，确实切中了 long-horizon Agent 研究的薄弱环节；难度条件化、留出可靠性和任务路由也具有直接启发。但文章的中心论断明显强于现有证据，且存在关键指标前后矛盾、AppWorld 结果展示不完整、极小样本相关分析和尺度可比性未充分论证等问题，因此更适合带着审稿式怀疑阅读。",
+        "summary": "这篇论文关注 Agent 榜单是否真的足以支持企业部署决策，并指出聚合分数掩盖了任务组合、检查类型和 Agent—任务交互带来的不确定性。其核心方法是用概化理论分解多个方差来源，再通过难度分层、成本调整和留出验证估计特定决策的可靠性。实验报告的主要信号是 Agent 主效应较小、任务特化效应更强，而且最困难任务上的排序可靠性可能坍塌。该结果支持按任务类型选择或路由 Agent，也提醒评测者必须报告生产分布上的留出可靠性。不过，TheAgentCompany 的能力差距比例在不同章节出现小于 0.001 与 0.38 的直接冲突，部分跨数据集结论样本极少，方法还弱化了真实轨迹的时间依赖。因而本文值得作为 Agent 评测方法论和风险清单阅读，但不宜把“榜单只衡量特化而非能力”当作已被充分证明的普遍结论。",
+        "highlights": [
+          "把部署选择转化为评测可靠性与样本量设计问题，确实切中了 long-horizon Agent 研究的薄弱环节；难度条件化、留出可靠性和任务路由也具有直接启发。但文章的中心论断明显强于现有证据，且存在关键指标前后矛盾、AppWorld 结果展示不完整、极小样本相关分析和尺度可比性未充分论证等问题，因此更适合带着审稿式怀疑阅读。",
+          "偏水风险：高",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文针对一个真实且重要的问题：长时程 Agent 榜单把 Agent、任务、检查步骤、错误类型及其交互造成的差异压缩成单一分数，却常被直接解释为稳定的能力排序。作者希望把“哪个 Agent 分数更高”改写为“当前评测设计能否可靠支持特定部署决策”，并进一步回答任务量、难度分布、成本约束和留出验证应如何设置。",
+        "method": "作者将 Agent 作为测量对象，使用四侧面概化理论分解 Agent、任务、步骤、错误类别及两两交互的方差，并用 Henderson Method-I、REML 和贝叶斯二项 GLMM 估计方差成分。随后通过 D-study 计算相对排序可靠性和绝对阈值可靠性，并扩展出能力差距比例、按成本调整的可靠性、按任务难度分层的可靠性、训练与留出单元对照以及失败模式分析。最终将这些诊断组合为 Deployment Decision Reliability 报告框架，而不是提出新的单一指标。",
+        "experiments": "论文分析 TheAgentCompany、τ2-bench、AppWorld，以及辅助的 MAD/MAST 失败模式数据。文中报告 Agent 主效应在各分析单元中占总方差不到百分之三，而 Agent 与任务交互通常更大；τ2 的 action_checks 在最难任务四分位上的概化系数从聚合分析的 0.752 降为零，训练投影与留出可靠性还呈强负相关。失败模式实验显示，具体轨迹的模式组合难以预测，但系统与基准单元层面的平均模式分布相对稳定。需要谨慎的是，正文主表没有完整展示 AppWorld 方差结果，τ2 只有三个 Agent，而且跨数据集排序和失败类别比较的样本规模极小，因此这些信号更适合作为评测设计警报，而不是普遍定律。",
+        "research_help": "Insight：Agent 评测应把 Agent 与任务类型的交互视为核心信号，并在生产任务分布、目标难度层和独立留出集上重新估计可靠性，而不能依赖全局平均排名。对多轮和长时程系统，这提示应优先学习或设计按任务类别路由专家的策略，同时用留出任务验证路由规则是否稳定。对 agentic RL，评测集可按难度与失败类型分层，并区分“失败经常发生”与“该失败维度能够区分不同策略”这两个目标。还应显式建模轨迹中的时间依赖和任务分布漂移，否则检查项层面的高可靠性未必能转化为真实长时程可靠性。",
+        "insight": "Insight：Agent 评测应把 Agent 与任务类型的交互视为核心信号，并在生产任务分布、目标难度层和独立留出集上重新估计可靠性，而不能依赖全局平均排名。对多轮和长时程系统，这提示应优先学习或设计按任务类别路由专家的策略，同时用留出任务验证路由规则是否稳定。对 agentic RL，评测集可按难度与失败类型分层，并区分“失败经常发生”与“该失败维度能够区分不同策略”这两个目标。还应显式建模轨迹中的时间依赖和任务分布漂移，否则检查项层面的高可靠性未必能转化为真实长时程可靠性。",
+        "abstract_zh": "企业用户经常把 Agent 榜单当作通用能力排序，但作者在三个开放 Agent 轨迹基准上发现，Agent 主效应所占方差很小，而 Agent 与任务之间的交互更明显。论文使用四侧面概化理论和三类估计方法分解测量方差，并报告困难任务上的可靠性下降、训练与留出可靠性反向变化、总体诊断与具体模型家族排序的不对称，以及失败模式在轨迹层和单元层的不同可迁移性。作者据此提出 Deployment Decision Reliability，将方差分解、评测预算、成本、任务难度、留出验证和失败模式组织为一页式报告。其目标是让企业基于可复核的可靠性证据制定部署决策，而不是直接采用榜单名次。",
+        "full_summary": "这篇论文关注 Agent 榜单是否真的足以支持企业部署决策，并指出聚合分数掩盖了任务组合、检查类型和 Agent—任务交互带来的不确定性。其核心方法是用概化理论分解多个方差来源，再通过难度分层、成本调整和留出验证估计特定决策的可靠性。实验报告的主要信号是 Agent 主效应较小、任务特化效应更强，而且最困难任务上的排序可靠性可能坍塌。该结果支持按任务类型选择或路由 Agent，也提醒评测者必须报告生产分布上的留出可靠性。不过，TheAgentCompany 的能力差距比例在不同章节出现小于 0.001 与 0.38 的直接冲突，部分跨数据集结论样本极少，方法还弱化了真实轨迹的时间依赖。因而本文值得作为 Agent 评测方法论和风险清单阅读，但不宜把“榜单只衡量特化而非能力”当作已被充分证明的普遍结论。",
+        "card_summary": "论文把长时程 Agent 榜单视为测量设计问题，利用概化理论区分 Agent 主效应、任务差异及其交互，并强调困难任务和留出数据上的可靠性可能远低于聚合结果。框架对部署评测和专家路由很有启发，但正文存在关键数值不一致、样本不足和模型假设偏强等问题，结论需要独立复核。"
+      },
+      "analysis": {
+        "motivation": "论文针对一个真实且重要的问题：长时程 Agent 榜单把 Agent、任务、检查步骤、错误类型及其交互造成的差异压缩成单一分数，却常被直接解释为稳定的能力排序。作者希望把“哪个 Agent 分数更高”改写为“当前评测设计能否可靠支持特定部署决策”，并进一步回答任务量、难度分布、成本约束和留出验证应如何设置。",
+        "method": "作者将 Agent 作为测量对象，使用四侧面概化理论分解 Agent、任务、步骤、错误类别及两两交互的方差，并用 Henderson Method-I、REML 和贝叶斯二项 GLMM 估计方差成分。随后通过 D-study 计算相对排序可靠性和绝对阈值可靠性，并扩展出能力差距比例、按成本调整的可靠性、按任务难度分层的可靠性、训练与留出单元对照以及失败模式分析。最终将这些诊断组合为 Deployment Decision Reliability 报告框架，而不是提出新的单一指标。",
+        "experiments": "论文分析 TheAgentCompany、τ2-bench、AppWorld，以及辅助的 MAD/MAST 失败模式数据。文中报告 Agent 主效应在各分析单元中占总方差不到百分之三，而 Agent 与任务交互通常更大；τ2 的 action_checks 在最难任务四分位上的概化系数从聚合分析的 0.752 降为零，训练投影与留出可靠性还呈强负相关。失败模式实验显示，具体轨迹的模式组合难以预测，但系统与基准单元层面的平均模式分布相对稳定。需要谨慎的是，正文主表没有完整展示 AppWorld 方差结果，τ2 只有三个 Agent，而且跨数据集排序和失败类别比较的样本规模极小，因此这些信号更适合作为评测设计警报，而不是普遍定律。",
+        "research_help": "Insight：Agent 评测应把 Agent 与任务类型的交互视为核心信号，并在生产任务分布、目标难度层和独立留出集上重新估计可靠性，而不能依赖全局平均排名。对多轮和长时程系统，这提示应优先学习或设计按任务类别路由专家的策略，同时用留出任务验证路由规则是否稳定。对 agentic RL，评测集可按难度与失败类型分层，并区分“失败经常发生”与“该失败维度能够区分不同策略”这两个目标。还应显式建模轨迹中的时间依赖和任务分布漂移，否则检查项层面的高可靠性未必能转化为真实长时程可靠性。",
+        "insight": "Insight：Agent 评测应把 Agent 与任务类型的交互视为核心信号，并在生产任务分布、目标难度层和独立留出集上重新估计可靠性，而不能依赖全局平均排名。对多轮和长时程系统，这提示应优先学习或设计按任务类别路由专家的策略，同时用留出任务验证路由规则是否稳定。对 agentic RL，评测集可按难度与失败类型分层，并区分“失败经常发生”与“该失败维度能够区分不同策略”这两个目标。还应显式建模轨迹中的时间依赖和任务分布漂移，否则检查项层面的高可靠性未必能转化为真实长时程可靠性。",
+        "abstract_zh": "企业用户经常把 Agent 榜单当作通用能力排序，但作者在三个开放 Agent 轨迹基准上发现，Agent 主效应所占方差很小，而 Agent 与任务之间的交互更明显。论文使用四侧面概化理论和三类估计方法分解测量方差，并报告困难任务上的可靠性下降、训练与留出可靠性反向变化、总体诊断与具体模型家族排序的不对称，以及失败模式在轨迹层和单元层的不同可迁移性。作者据此提出 Deployment Decision Reliability，将方差分解、评测预算、成本、任务难度、留出验证和失败模式组织为一页式报告。其目标是让企业基于可复核的可靠性证据制定部署决策，而不是直接采用榜单名次。",
+        "card_summary": "论文把长时程 Agent 榜单视为测量设计问题，利用概化理论区分 Agent 主效应、任务差异及其交互，并强调困难任务和留出数据上的可靠性可能远低于聚合结果。框架对部署评测和专家路由很有启发，但正文存在关键数值不一致、样本不足和模型假设偏强等问题，结论需要独立复核。",
+        "full_summary": "这篇论文关注 Agent 榜单是否真的足以支持企业部署决策，并指出聚合分数掩盖了任务组合、检查类型和 Agent—任务交互带来的不确定性。其核心方法是用概化理论分解多个方差来源，再通过难度分层、成本调整和留出验证估计特定决策的可靠性。实验报告的主要信号是 Agent 主效应较小、任务特化效应更强，而且最困难任务上的排序可靠性可能坍塌。该结果支持按任务类型选择或路由 Agent，也提醒评测者必须报告生产分布上的留出可靠性。不过，TheAgentCompany 的能力差距比例在不同章节出现小于 0.001 与 0.38 的直接冲突，部分跨数据集结论样本极少，方法还弱化了真实轨迹的时间依赖。因而本文值得作为 Agent 评测方法论和风险清单阅读，但不宜把“榜单只衡量特化而非能力”当作已被充分证明的普遍结论。",
+        "recommendation_level": "中",
+        "water_risk": "高",
+        "value_label": "方法视角有价值，核心证据需严格复核",
+        "value_reason": "把部署选择转化为评测可靠性与样本量设计问题，确实切中了 long-horizon Agent 研究的薄弱环节；难度条件化、留出可靠性和任务路由也具有直接启发。但文章的中心论断明显强于现有证据，且存在关键指标前后矛盾、AppWorld 结果展示不完整、极小样本相关分析和尺度可比性未充分论证等问题，因此更适合带着审稿式怀疑阅读。",
+        "limitations": "第一，正文第5.1节称 TheAgentCompany 的能力差距比例低于 0.001，第5.5节却称其为 0.38，这是影响核心论点的内部矛盾，而非普通四舍五入误差。第二，论文宣称覆盖三个主要基准，但核心方差表未列出 AppWorld，读者无法仅凭正文核验摘要中的全部范围性结论。第三，τ2 只有三个 Agent，Agent 主效应方差以及由此得到的可靠性系数很可能不稳定；作者报告的宽贝叶斯区间也支持这一担忧。第四，将二元结果上的高斯 REML、ANOVA 方差与 logit 潜变量尺度的 GLMM 方差称为精确一致，需要明确的尺度转换和完整结果表，正文论证不足。第五，模型省略三阶和四阶交互，并把轨迹内检查项视为可交换观测，可能低估长时程系统中的时间依赖、误差传播和高阶交互。第六，训练与留出可靠性的负相关可能受到小样本、互补切分和方差成分边界估计影响，尚不足以证明一般性的复制反转。第七，跨数据集家族排序只有三个共享家族，失败类别对比只有四类；论文也承认这些分析只能作描述性参考。第八，从特定评测总体中的低 Agent 主效应推导“榜单衡量特化而非能力”存在外推过度，它也可能反映 Agent 选择范围受限、任务权重、测量尺度或基准饱和。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文方法部分明确给出 Agent、任务、步骤、错误类别及两两交互的方差分解，并将 Agent 主效应定义为目标信号。",
+          "结果部分报告 Agent 主效应在各数据单元中低于总方差的百分之三，而 Agent—任务交互占比明显更高。",
+          "τ2 action_checks 的聚合概化系数被报告为 0.752，但在最难任务四分位中降为零。",
+          "在五十次训练与测试切分中，τ2 action_checks 的训练投影与留出概化系数被报告为负相关，且留出值平均低于投影值。1604文中报告 MAST 轨迹层失败模式预测误差较大，而系统—基准单元层面的模式均值具有更好的留出相关性。1660第5.1节与表1称 TheAgentCompany 的能力差距比例低于 0.001，第5.5节却报告 0.38，构成未..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T02:04:44.255Z"
+      }
+    },
+    {
+      "id": "2608.11434v1",
+      "title": "Benchmarking LLM Judges for Mobile Agent Evaluation",
+      "summary": "Mobile agent benchmarks increasingly rely on LLM-based judges to evaluate task completion, yet the reliability of these judges on mobile agent trajectories remains largely unexamined. We introduce MobileJudgeBench, a benchmark for systematically evaluating LLM-as-judge methods on mobile agent trajectories. Our benchmark comprises 931 human-annotated trajectories spanning 6 mobile agent benchmarks, 4 agent models, and 68 apps. We evaluate 6 judge methods (five adapted from SPA-Bench, A3 with two modes, AndroidArena, and AgentRewardBench, plus a simple baseline we design) across multiple LLM backends. Our experiments reveal three key findings. First, a simple baseline judge with sampled screenshots is competitive with, and often exceeds, purpose-built methods, indicating that more elaborate judge pipelines do not consistently improve judge quality; among competitive methods, the LLM backbone is the primary driver. Second, benchmark quality metrics reliably predict real-world judge utility: they correlate with both agent ranking fidelity for evaluation and downstream performance when judges serve as reward signals for on-policy reinforcement learning. Third, failure analysis across two LLM backends uncovers qualitatively opposite failure profiles, one conservative and the other permissive, linked to the backbone's precision-recall characteristics.",
+      "url": "https://arxiv.org/abs/2608.11434v1",
+      "authors": [
+        "Ziqiang Wan",
+        "Li Gu",
+        "Zhixiang Chi",
+        "Zhi Liu",
+        "Seyed Mehdi Ayyoubzadeh",
+        "Yuanhao Yu",
+        "Yang Wang"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-11",
+      "updated": "2026-08-11",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 89,
+        "level": "高",
+        "label": "强相关：Agent 评测与奖励可靠性",
+        "water_risk": "低",
+        "value_judgement": "论文直接命中 planning reliability 和 agentic RL 奖励可靠性，并同时提供人工标注基准、方法与后端交叉实验、消融、下游排名验证、训练验证及失败分类，证据链明显强于只报告离线判断准确率的工作。其主要价值不是提出新的 agent planning 方法，而是证明评测误差会成为排行榜和训练闭环中的系统性瓶颈。虽然训练结论的覆盖面仍有限，但作者明确披露了敏感性和不确定性，整体水文风险较低。",
+        "reason": "论文直接命中 planning reliability 和 agentic RL 奖励可靠性，并同时提供人工标注基准、方法与后端交叉实验、消融、下游排名验证、训练验证及失败分类，证据链明显强于只报告离线判断准确率的工作。其主要价值不是提出新的 agent planning 方法，而是证明评测误差会成为排行榜和训练闭环中的系统性瓶颈。虽然训练结论的覆盖面仍有限，但作者明确披露了敏感性和不确定性，整体水文风险较低。"
+      },
+      "brief": {
+        "authors": [
+          "Ziqiang Wan",
+          "Li Gu",
+          "Zhixiang Chi",
+          "Zhi Liu",
+          "Seyed Mehdi Ayyoubzadeh",
+          "Yuanhao Yu",
+          "Yang Wang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-11",
+        "paper_url": "https://arxiv.org/abs/2608.11434v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接命中 planning reliability 和 agentic RL 奖励可靠性，并同时提供人工标注基准、方法与后端交叉实验、消融、下游排名验证、训练验证及失败分类，证据链明显强于只报告离线判断准确率的工作。其主要价值不是提出新的 agent planning 方法，而是证明评测误差会成为排行榜和训练闭环中的系统性瓶颈。虽然训练结论的覆盖面仍有限，但作者明确披露了敏感性和不确定性，整体水文风险较低。",
+        "summary": "论文关注一个常被忽略的基础问题：移动智能体的任务成功率往往由未经验证的 LLM 判断器给出。作者以 931 条人工标注轨迹建立统一基准，并将 6 种判断方法与 5 个模型后端进行交叉比较。核心结果是复杂提示和任务分解未必有效，覆盖轨迹的高质量截图以及合适的模型后端反而更重要。进一步实验表明，判断器的 F1、平衡准确率与智能体排名和成功率估计高度相关，奖励噪声也会影响 on-policy RL 的最终策略表现。论文没有提出新的规划算法，但为 agent benchmark、agentic RL 奖励设计和长轨迹可靠性研究提供了较扎实的诊断框架，值得重点阅读。",
+        "highlights": [
+          "论文直接命中 planning reliability 和 agentic RL 奖励可靠性，并同时提供人工标注基准、方法与后端交叉实验、消融、下游排名验证、训练验证及失败分类，证据链明显强于只报告离线判断准确率的工作。其主要价值不是提出新的 agent planning 方法，而是证明评测误差会成为排行榜和训练闭环中的系统性瓶颈。虽然训练结论的覆盖面仍有限，但作者明确披露了敏感性和不确定性，整体水文风险较低。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "移动智能体基准越来越依赖 LLM 判断一条长轨迹是否完成任务，但这些判断器通常未经人工真值系统校验。错误判断不仅会扭曲排行榜和成功率，还会在判断器充当强化学习奖励时直接污染训练信号，因此评测器可靠性本身需要成为被评测对象。",
+        "method": "论文构建 MOBILEJUDGEBENCH，收集来自 6 个移动智能体基准、4 类智能体和 68 个 Android 应用的 931 条轨迹，并由 2–4 名标注者独立判断成功与否。作者统一实现 6 种判断方法，在 5 个多模态 LLM 后端上交叉测试，同时设计一个基于均匀采样截图的简单基线，对截图数量、分辨率、UI 树和智能体推理记录进行消融。除离线分类指标外，论文还检验判断器质量能否预测智能体排名、成功率估计误差和基于判断器奖励的 on-policy RL 训练结果，并分析跨后端的系统性失败模式。",
+        "experiments": "不同方法与后端组合的准确率约为 76%–91%，简单截图基线在 Gemini、GPT-5-mini 和 Qwen 后端上分别达到 90.9%、90.8% 和 85.7%，说明复杂流水线并不稳定优于简洁设计。等成本消融显示，16 张较高分辨率截图优于 192 张低分辨率截图；UI 树几乎没有增益，智能体推理记录只对部分后端带来有限改善。跨 30 个判断器变体，F1 与智能体排名保真度的 Spearman 相关系数为 0.90，平衡准确率与成功率估计误差的相关系数为 −0.79，而 precision 单独使用几乎没有预测力。AndroidWorld 上的三种子训练结果总体随奖励判断器准确率下降而变差；不过同准确率判断器之间的 precision 优势仅在最佳检查点口径下成立，在最终检查点上并不稳健。失败分析还发现 GPT 判断器偏保守、以假阴性为主，Qwen 判断器偏宽松、以假阳性为主。",
+        "research_help": "Insight：评测器不能被视为固定且可信的基础设施，而应像策略模型一样经过独立基准校准。用于排行榜时，应优先优化类别平衡和排序保真度；用于 agentic RL 奖励时，假阳性会把错误行为直接强化，因而需要更严格的约束验证。长轨迹判断的关键不只是增加上下文，而是保留覆盖全程、分辨率足够的状态证据，并避免末帧锚定。不同后端具有稳定但相反的误差倾向，提示多轮系统应按应用目标校准阈值、组合互补判断器，或引入能够主动检查环境状态的验证机制。",
+        "insight": "Insight：评测器不能被视为固定且可信的基础设施，而应像策略模型一样经过独立基准校准。用于排行榜时，应优先优化类别平衡和排序保真度；用于 agentic RL 奖励时，假阳性会把错误行为直接强化，因而需要更严格的约束验证。长轨迹判断的关键不只是增加上下文，而是保留覆盖全程、分辨率足够的状态证据，并避免末帧锚定。不同后端具有稳定但相反的误差倾向，提示多轮系统应按应用目标校准阈值、组合互补判断器，或引入能够主动检查环境状态的验证机制。",
+        "abstract_zh": "移动智能体基准日益使用 LLM 判断任务是否完成，但这类判断器在长轨迹上的可靠性仍缺少系统研究。论文提出 MOBILEJUDGEBENCH，包含来自 6 个基准、4 种智能体和 68 个应用的 931 条人工标注轨迹，并评测多种判断方法及 LLM 后端。实验发现，采样截图的简单基线经常达到或超过专门设计的方法，而竞争力相近的方法主要受后端能力影响。基准上的质量指标能够预测智能体排名可靠性和后续强化学习表现，不同后端还呈现出保守与宽松两种相反的失败特征。",
+        "full_summary": "论文关注一个常被忽略的基础问题：移动智能体的任务成功率往往由未经验证的 LLM 判断器给出。作者以 931 条人工标注轨迹建立统一基准，并将 6 种判断方法与 5 个模型后端进行交叉比较。核心结果是复杂提示和任务分解未必有效，覆盖轨迹的高质量截图以及合适的模型后端反而更重要。进一步实验表明，判断器的 F1、平衡准确率与智能体排名和成功率估计高度相关，奖励噪声也会影响 on-policy RL 的最终策略表现。论文没有提出新的规划算法，但为 agent benchmark、agentic RL 奖励设计和长轨迹可靠性研究提供了较扎实的诊断框架，值得重点阅读。",
+        "card_summary": "这篇论文系统检验移动智能体的 LLM 判断器是否真的可信，发现简单的轨迹截图采样基线就能追平或超过多种专门流水线。更重要的是，判断器质量会传导到排行榜和强化学习奖励，而不同模型后端可能分别系统性漏判成功或误奖失败。"
+      },
+      "analysis": {
+        "motivation": "移动智能体基准越来越依赖 LLM 判断一条长轨迹是否完成任务，但这些判断器通常未经人工真值系统校验。错误判断不仅会扭曲排行榜和成功率，还会在判断器充当强化学习奖励时直接污染训练信号，因此评测器可靠性本身需要成为被评测对象。",
+        "method": "论文构建 MOBILEJUDGEBENCH，收集来自 6 个移动智能体基准、4 类智能体和 68 个 Android 应用的 931 条轨迹，并由 2–4 名标注者独立判断成功与否。作者统一实现 6 种判断方法，在 5 个多模态 LLM 后端上交叉测试，同时设计一个基于均匀采样截图的简单基线，对截图数量、分辨率、UI 树和智能体推理记录进行消融。除离线分类指标外，论文还检验判断器质量能否预测智能体排名、成功率估计误差和基于判断器奖励的 on-policy RL 训练结果，并分析跨后端的系统性失败模式。",
+        "experiments": "不同方法与后端组合的准确率约为 76%–91%，简单截图基线在 Gemini、GPT-5-mini 和 Qwen 后端上分别达到 90.9%、90.8% 和 85.7%，说明复杂流水线并不稳定优于简洁设计。等成本消融显示，16 张较高分辨率截图优于 192 张低分辨率截图；UI 树几乎没有增益，智能体推理记录只对部分后端带来有限改善。跨 30 个判断器变体，F1 与智能体排名保真度的 Spearman 相关系数为 0.90，平衡准确率与成功率估计误差的相关系数为 −0.79，而 precision 单独使用几乎没有预测力。AndroidWorld 上的三种子训练结果总体随奖励判断器准确率下降而变差；不过同准确率判断器之间的 precision 优势仅在最佳检查点口径下成立，在最终检查点上并不稳健。失败分析还发现 GPT 判断器偏保守、以假阴性为主，Qwen 判断器偏宽松、以假阳性为主。",
+        "research_help": "Insight：评测器不能被视为固定且可信的基础设施，而应像策略模型一样经过独立基准校准。用于排行榜时，应优先优化类别平衡和排序保真度；用于 agentic RL 奖励时，假阳性会把错误行为直接强化，因而需要更严格的约束验证。长轨迹判断的关键不只是增加上下文，而是保留覆盖全程、分辨率足够的状态证据，并避免末帧锚定。不同后端具有稳定但相反的误差倾向，提示多轮系统应按应用目标校准阈值、组合互补判断器，或引入能够主动检查环境状态的验证机制。",
+        "insight": "Insight：评测器不能被视为固定且可信的基础设施，而应像策略模型一样经过独立基准校准。用于排行榜时，应优先优化类别平衡和排序保真度；用于 agentic RL 奖励时，假阳性会把错误行为直接强化，因而需要更严格的约束验证。长轨迹判断的关键不只是增加上下文，而是保留覆盖全程、分辨率足够的状态证据，并避免末帧锚定。不同后端具有稳定但相反的误差倾向，提示多轮系统应按应用目标校准阈值、组合互补判断器，或引入能够主动检查环境状态的验证机制。",
+        "abstract_zh": "移动智能体基准日益使用 LLM 判断任务是否完成，但这类判断器在长轨迹上的可靠性仍缺少系统研究。论文提出 MOBILEJUDGEBENCH，包含来自 6 个基准、4 种智能体和 68 个应用的 931 条人工标注轨迹，并评测多种判断方法及 LLM 后端。实验发现，采样截图的简单基线经常达到或超过专门设计的方法，而竞争力相近的方法主要受后端能力影响。基准上的质量指标能够预测智能体排名可靠性和后续强化学习表现，不同后端还呈现出保守与宽松两种相反的失败特征。",
+        "card_summary": "这篇论文系统检验移动智能体的 LLM 判断器是否真的可信，发现简单的轨迹截图采样基线就能追平或超过多种专门流水线。更重要的是，判断器质量会传导到排行榜和强化学习奖励，而不同模型后端可能分别系统性漏判成功或误奖失败。",
+        "full_summary": "论文关注一个常被忽略的基础问题：移动智能体的任务成功率往往由未经验证的 LLM 判断器给出。作者以 931 条人工标注轨迹建立统一基准，并将 6 种判断方法与 5 个模型后端进行交叉比较。核心结果是复杂提示和任务分解未必有效，覆盖轨迹的高质量截图以及合适的模型后端反而更重要。进一步实验表明，判断器的 F1、平衡准确率与智能体排名和成功率估计高度相关，奖励噪声也会影响 on-policy RL 的最终策略表现。论文没有提出新的规划算法，但为 agent benchmark、agentic RL 奖励设计和长轨迹可靠性研究提供了较扎实的诊断框架，值得重点阅读。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "强相关：Agent 评测与奖励可靠性",
+        "value_reason": "论文直接命中 planning reliability 和 agentic RL 奖励可靠性，并同时提供人工标注基准、方法与后端交叉实验、消融、下游排名验证、训练验证及失败分类，证据链明显强于只报告离线判断准确率的工作。其主要价值不是提出新的 agent planning 方法，而是证明评测误差会成为排行榜和训练闭环中的系统性瓶颈。虽然训练结论的覆盖面仍有限，但作者明确披露了敏感性和不确定性，整体水文风险较低。",
+        "limitations": "基准只评价二元成功或失败，未覆盖效率、部分完成度、轨迹质量和副作用等更细粒度目标。强化学习验证仅限 AndroidWorld、一个基础智能体和一种简单判断方法，主要比较其不同后端，不能证明结论可直接推广到其他环境、判断流水线或更长训练周期。同准确率判断器之间的 precision 结论依赖最佳检查点选择，作者也承认它只是提示性证据。失败原因分类仍包含主观判断，且主动与环境交互的验证器、推理成本和延迟没有得到充分比较。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "第 3 节：基准包含 931 条轨迹、289 个任务和 68 个应用，每条轨迹由 2–4 人标注，成功标签平均两两一致率为 88.4%。",
+          "表 2 与第 5.1 节：简单基线在三个后端上领先；同一方法更换后端可产生 5.6–10.5 个百分点的准确率差异。",
+          "表 3：等成本条件下，较少但更清晰的截图优于大量低分辨率截图，UI 树和智能体推理记录的平均增益有限。",
+          "表 4 与图 2：F1、准确率和平衡准确率能够预测智能体排名或成功率估计可靠性，precision 的相关区间则跨过零。士。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:58:10.756Z"
+      }
+    },
+    {
+      "id": "2608.11632v1",
+      "title": "Beyond Memory: A Transactional Continuity Kernel for Long-Lived AI Agents",
+      "summary": "Persistent AI agents accumulate versioned state across long horizons, but storage retention alone does not identify authoritative state. Without an explicit control plane, unmediated updates by models, tools, and background workers risk stale overwrites, un-audited exposures, and self-authorizing privilege escalation. We argue that agent state governance is an infrastructural activation problem, defining continuity as an unbroken, authorized lineage of accepted branch heads. We present the Continuity Kernel (CK), an activation contract that decouples off-commit candidate evaluation from atomic state activation. Untrusted components propose typed changes against an exact predecessor head or typed absence. A short activation transaction revalidates ownership, pre-state authority, freshness, and effect uniqueness, recording one stable disposition (Commit, Reject, Quarantine, or Defer). Only Commit atomically advances the branch head and installs the complete accepted unit (state, authority, lineage, effects, outcome, and receipt). A bounded executable model verifies the protocol across 2,808,230 reachable states and 5,526,474 state-changing transitions with zero invariant violations.",
+      "url": "https://arxiv.org/abs/2608.11632v1",
+      "authors": [
+        "Jun He",
+        "Deying Yu"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "中",
+        "label": "强相关但验证偏弱的状态治理契约",
+        "water_risk": "中",
+        "value_judgement": "论文准确抓住了长期 agent 中“保存不等于权威”的基础设施问题，并给出较完整的激活、权限、谱系和生命周期契约；这些思想对多轮状态管理和长时程可靠性具有直接借鉴价值。不过，其主要机制大量建立在成熟的事务、并发控制、fencing 和幂等执行思想之上，新增价值更多来自面向 agent 场景的系统化组合。数百万状态与零违规容易显得很强，但本质仍是作者自建的有限抽象模型，缺少独立实现和真实环境验证，因此值得读但不宜把安全结论外推到生产系统。",
+        "reason": "论文准确抓住了长期 agent 中“保存不等于权威”的基础设施问题，并给出较完整的激活、权限、谱系和生命周期契约；这些思想对多轮状态管理和长时程可靠性具有直接借鉴价值。不过，其主要机制大量建立在成熟的事务、并发控制、fencing 和幂等执行思想之上，新增价值更多来自面向 agent 场景的系统化组合。数百万状态与零违规容易显得很强，但本质仍是作者自建的有限抽象模型，缺少独立实现和真实环境验证，因此值得读但不宜把安全结论外推到生产系统。"
+      },
+      "brief": {
+        "authors": [
+          "Jun He",
+          "Deying Yu"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.11632v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文准确抓住了长期 agent 中“保存不等于权威”的基础设施问题，并给出较完整的激活、权限、谱系和生命周期契约；这些思想对多轮状态管理和长时程可靠性具有直接借鉴价值。不过，其主要机制大量建立在成熟的事务、并发控制、fencing 和幂等执行思想之上，新增价值更多来自面向 agent 场景的系统化组合。数百万状态与零违规容易显得很强，但本质仍是作者自建的有限抽象模型，缺少独立实现和真实环境验证，因此值得读但不宜把安全结论外推到生产系统。",
+        "summary": "这篇论文关注的不是如何提高记忆检索质量，而是长期运行的 agent 如何在并发、重试和权限变化下确定唯一的权威状态。作者提出 Continuity Kernel，让不可信组件只提交候选变更，再由确定性控制平面依据精确前驱、前状态权限、证据版本和副作用身份进行原子激活。该契约还统一处理稳定处置回执、写者 fencing、分支创建、迁移以及不破坏当前权限的前向恢复。有限状态空间探索没有发现已编码的不变量违规，说明协议在其抽象模型内具有较好的内部一致性。主要缺口是没有真实实现、agent 工作负载、对照基线或系统级故障实验，因此它更像一份严谨但尚未落地的架构规范。对 agent memory 和 long-horizon reliability 值得选择性阅读，但对 agentic RL 算法本身帮助有限。",
+        "highlights": [
+          "论文准确抓住了长期 agent 中“保存不等于权威”的基础设施问题，并给出较完整的激活、权限、谱系和生命周期契约；这些思想对多轮状态管理和长时程可靠性具有直接借鉴价值。不过，其主要机制大量建立在成熟的事务、并发控制、fencing 和幂等执行思想之上，新增价值更多来自面向 agent 场景的系统化组合。数百万状态与零违规容易显得很强，但本质仍是作者自建的有限抽象模型，缺少独立实现和真实环境验证，因此值得读但不宜把安全结论外推到生产系统。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "论文指出，长期运行的 agent 即使保存了所有版本，也无法仅凭“存储存在”判断哪个状态具有权威性。模型、工具和后台任务并发更新时，可能出现旧状态覆盖、未审计状态暴露、自授权提权、重复执行副作用和分支写者冲突，因此作者把问题从“如何记住”重新定义为“什么状态可以被正式激活”。这个问题与长期 agent 的状态连续性和可靠性高度相关，但不是 agentic RL 的训练或规划算法问题。",
+        "method": "作者提出 Continuity Kernel（CK），把模型、工具和操作者都视为不可信提议者：它们在事务外生成候选状态、收集证据，只有确定性的控制平面能够在短事务中推进权威分支头。每个提案绑定精确前驱状态或类型化缺席，并依次检查所有权、生命周期、证据覆盖、版本、候选绑定、初末两次新鲜度、前状态权限和副作用唯一性，最终产生 Commit、Reject、Quarantine 或 Defer 之一。只有 Commit 会原子安装状态、权限、谱系、副作用清单、结果和回执；分支创建、写者移交、迁移及恢复也被建模为只向前追加的类型化转换。整体上，这是把数据库事务、乐观并发控制、fencing、幂等重试、outbox 和可验证谱系组合成一套面向 agent 状态的激活契约。",
+        "experiments": "实验主要是 Python 有界模型的广度优先状态空间探索，而不是真实 agent 系统评测。作者在深度七的有限抽象中检查了约 281 万个可达状态、553 万个状态变化转换和 888 万次转换尝试，所有已编码不变量均未发现违规，并覆盖四种处置、五类转换、旧头竞争、自授权、标识符回收和写者隔离等路径。这个结果能够证明有限模型内部没有找到协议逻辑反例，却不能证明无界正确性、真实数据库驱动符合规范、硬件或网络故障下的安全性，也不能代表生产吞吐和端到端延迟。论文没有真实长期 agent 工作负载、基线对比、故障注入或部署实验，因此实验支撑明显弱于其完整的系统安全论述。",
+        "research_help": "Insight：长期 agent 的关键不只是检索到什么，而是将“候选记忆”与“权威状态”分离，并为每次状态晋升绑定精确前驱、前状态权限、证据版本和可追溯结果。对多轮及长时程系统，可把记忆压缩、计划修订、工具配置和策略更新统一视为待激活提案，以防并发 worker 的陈旧写入和提案自授权。对 agent planning，计划恢复不应直接回滚分支，而应基于当前权威头创建带历史来源引用的新后继，从而保留完整因果谱系。对 agentic RL 基础设施，其更有价值的启发是稳定 rollout 状态、环境版本与副作用身份，但论文没有处理奖励设计、信用分配、探索或策略优化。",
+        "insight": "Insight：长期 agent 的关键不只是检索到什么，而是将“候选记忆”与“权威状态”分离，并为每次状态晋升绑定精确前驱、前状态权限、证据版本和可追溯结果。对多轮及长时程系统，可把记忆压缩、计划修订、工具配置和策略更新统一视为待激活提案，以防并发 worker 的陈旧写入和提案自授权。对 agent planning，计划恢复不应直接回滚分支，而应基于当前权威头创建带历史来源引用的新后继，从而保留完整因果谱系。对 agentic RL 基础设施，其更有价值的启发是稳定 rollout 状态、环境版本与副作用身份，但论文没有处理奖励设计、信用分配、探索或策略优化。",
+        "abstract_zh": "长期运行的 AI agent 会跨越长时间积累带版本的状态，但仅有存储保留机制并不能确定哪个版本具有权威性；未经约束的模型、工具和后台任务更新还可能导致旧写覆盖、未审计暴露和自授权提权。论文把连续性定义为一条由已接受分支头组成、不中断且经过授权的谱系，并提出 Continuity Kernel，将事务外候选评估与原子状态激活分离。提案必须绑定精确前驱或类型化缺席，激活事务会重新验证所有权、前状态权限、新鲜度和副作用唯一性，并稳定记录 Commit、Reject、Quarantine 或 Defer。作者通过有界可执行模型探索约 281 万个可达状态和 553 万个状态变化转换，在已编码的不变量上没有发现违规。",
+        "full_summary": "这篇论文关注的不是如何提高记忆检索质量，而是长期运行的 agent 如何在并发、重试和权限变化下确定唯一的权威状态。作者提出 Continuity Kernel，让不可信组件只提交候选变更，再由确定性控制平面依据精确前驱、前状态权限、证据版本和副作用身份进行原子激活。该契约还统一处理稳定处置回执、写者 fencing、分支创建、迁移以及不破坏当前权限的前向恢复。有限状态空间探索没有发现已编码的不变量违规，说明协议在其抽象模型内具有较好的内部一致性。主要缺口是没有真实实现、agent 工作负载、对照基线或系统级故障实验，因此它更像一份严谨但尚未落地的架构规范。对 agent memory 和 long-horizon reliability 值得选择性阅读，但对 agentic RL 算法本身帮助有限。",
+        "card_summary": "论文提出 Continuity Kernel，用事务式激活边界区分“已保存的候选状态”和“真正权威的 agent 状态”，重点防止陈旧覆盖、自授权和重复副作用。其有界模型验证覆盖较广，但没有真实 agent、生产数据库或故障注入实验，更适合作为长时程状态治理的设计参考，而非已经验证的系统方案。"
+      },
+      "analysis": {
+        "motivation": "论文指出，长期运行的 agent 即使保存了所有版本，也无法仅凭“存储存在”判断哪个状态具有权威性。模型、工具和后台任务并发更新时，可能出现旧状态覆盖、未审计状态暴露、自授权提权、重复执行副作用和分支写者冲突，因此作者把问题从“如何记住”重新定义为“什么状态可以被正式激活”。这个问题与长期 agent 的状态连续性和可靠性高度相关，但不是 agentic RL 的训练或规划算法问题。",
+        "method": "作者提出 Continuity Kernel（CK），把模型、工具和操作者都视为不可信提议者：它们在事务外生成候选状态、收集证据，只有确定性的控制平面能够在短事务中推进权威分支头。每个提案绑定精确前驱状态或类型化缺席，并依次检查所有权、生命周期、证据覆盖、版本、候选绑定、初末两次新鲜度、前状态权限和副作用唯一性，最终产生 Commit、Reject、Quarantine 或 Defer 之一。只有 Commit 会原子安装状态、权限、谱系、副作用清单、结果和回执；分支创建、写者移交、迁移及恢复也被建模为只向前追加的类型化转换。整体上，这是把数据库事务、乐观并发控制、fencing、幂等重试、outbox 和可验证谱系组合成一套面向 agent 状态的激活契约。",
+        "experiments": "实验主要是 Python 有界模型的广度优先状态空间探索，而不是真实 agent 系统评测。作者在深度七的有限抽象中检查了约 281 万个可达状态、553 万个状态变化转换和 888 万次转换尝试，所有已编码不变量均未发现违规，并覆盖四种处置、五类转换、旧头竞争、自授权、标识符回收和写者隔离等路径。这个结果能够证明有限模型内部没有找到协议逻辑反例，却不能证明无界正确性、真实数据库驱动符合规范、硬件或网络故障下的安全性，也不能代表生产吞吐和端到端延迟。论文没有真实长期 agent 工作负载、基线对比、故障注入或部署实验，因此实验支撑明显弱于其完整的系统安全论述。",
+        "research_help": "Insight：长期 agent 的关键不只是检索到什么，而是将“候选记忆”与“权威状态”分离，并为每次状态晋升绑定精确前驱、前状态权限、证据版本和可追溯结果。对多轮及长时程系统，可把记忆压缩、计划修订、工具配置和策略更新统一视为待激活提案，以防并发 worker 的陈旧写入和提案自授权。对 agent planning，计划恢复不应直接回滚分支，而应基于当前权威头创建带历史来源引用的新后继，从而保留完整因果谱系。对 agentic RL 基础设施，其更有价值的启发是稳定 rollout 状态、环境版本与副作用身份，但论文没有处理奖励设计、信用分配、探索或策略优化。",
+        "insight": "Insight：长期 agent 的关键不只是检索到什么，而是将“候选记忆”与“权威状态”分离，并为每次状态晋升绑定精确前驱、前状态权限、证据版本和可追溯结果。对多轮及长时程系统，可把记忆压缩、计划修订、工具配置和策略更新统一视为待激活提案，以防并发 worker 的陈旧写入和提案自授权。对 agent planning，计划恢复不应直接回滚分支，而应基于当前权威头创建带历史来源引用的新后继，从而保留完整因果谱系。对 agentic RL 基础设施，其更有价值的启发是稳定 rollout 状态、环境版本与副作用身份，但论文没有处理奖励设计、信用分配、探索或策略优化。",
+        "abstract_zh": "长期运行的 AI agent 会跨越长时间积累带版本的状态，但仅有存储保留机制并不能确定哪个版本具有权威性；未经约束的模型、工具和后台任务更新还可能导致旧写覆盖、未审计暴露和自授权提权。论文把连续性定义为一条由已接受分支头组成、不中断且经过授权的谱系，并提出 Continuity Kernel，将事务外候选评估与原子状态激活分离。提案必须绑定精确前驱或类型化缺席，激活事务会重新验证所有权、前状态权限、新鲜度和副作用唯一性，并稳定记录 Commit、Reject、Quarantine 或 Defer。作者通过有界可执行模型探索约 281 万个可达状态和 553 万个状态变化转换，在已编码的不变量上没有发现违规。",
+        "card_summary": "论文提出 Continuity Kernel，用事务式激活边界区分“已保存的候选状态”和“真正权威的 agent 状态”，重点防止陈旧覆盖、自授权和重复副作用。其有界模型验证覆盖较广，但没有真实 agent、生产数据库或故障注入实验，更适合作为长时程状态治理的设计参考，而非已经验证的系统方案。",
+        "full_summary": "这篇论文关注的不是如何提高记忆检索质量，而是长期运行的 agent 如何在并发、重试和权限变化下确定唯一的权威状态。作者提出 Continuity Kernel，让不可信组件只提交候选变更，再由确定性控制平面依据精确前驱、前状态权限、证据版本和副作用身份进行原子激活。该契约还统一处理稳定处置回执、写者 fencing、分支创建、迁移以及不破坏当前权限的前向恢复。有限状态空间探索没有发现已编码的不变量违规，说明协议在其抽象模型内具有较好的内部一致性。主要缺口是没有真实实现、agent 工作负载、对照基线或系统级故障实验，因此它更像一份严谨但尚未落地的架构规范。对 agent memory 和 long-horizon reliability 值得选择性阅读，但对 agentic RL 算法本身帮助有限。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "强相关但验证偏弱的状态治理契约",
+        "value_reason": "论文准确抓住了长期 agent 中“保存不等于权威”的基础设施问题，并给出较完整的激活、权限、谱系和生命周期契约；这些思想对多轮状态管理和长时程可靠性具有直接借鉴价值。不过，其主要机制大量建立在成熟的事务、并发控制、fencing 和幂等执行思想之上，新增价值更多来自面向 agent 场景的系统化组合。数百万状态与零违规容易显得很强，但本质仍是作者自建的有限抽象模型，缺少独立实现和真实环境验证，因此值得读但不宜把安全结论外推到生产系统。",
+        "limitations": "第一，有界状态探索只验证作者选择编码的有限状态、转换和不变量，无法排除规范遗漏或更深路径中的问题。第二，原子激活、完整序列化、密钥安全、可信时间及非循环标识符等关键安全结论依赖明确但较强的底层假设。第三，论文没有提供生产级 CK 实现、真实数据库一致性测试、崩溃与网络分区故障注入、多 agent 压测或端到端应用收益。第四，外部 API 和机器人动作不在原子边界内，仍需幂等 outbox 或补偿机制；签名回执也不自动证明事务已持久提交。第五，工作解决的是状态治理而非状态语义正确性，错误记忆或错误策略仍可能被合法提交。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "全文将权威性定义为从当前分支头可达，而不是对象仅仅存在于存储中，并明确区分 Accepted、Candidate、Attempt、Quarantine 和 Projection。",
+          "第2至3节规定授权必须依据序列化的前状态上下文，提案不能通过向候选状态注入权限实现自授权。",
+          "激活协议采用严格有序的检查阶段，并规定只有 Commit 能推进分支头；Reject、Quarantine 和 Defer 均不改变权威状态。",
+          "第4节把分支创建、写者移交、迁移和恢复定义为类型化的前向转换，恢复不能截断谱系或复活旧权限。若无共享原子排序，作者承认仅靠轮询不能建立写者隔离。第5节报告深度七的有界 BFS 探索覆盖约281万个可达状态及约888万次转换尝试，已编码不变量未发现违规。论文在自我批判部分明确承认：模型不覆盖物理存储故障、签名不等于持久包含、外部副作用无法与内部状态原子提交，..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T01:59:54.365Z"
+      }
+    },
+    {
+      "id": "2608.11878v1",
+      "title": "ToolHazard: Scaling Adversarial Environments for Security Evaluation and Alignment of LLM-based Agents",
+      "summary": "Large language model (LLM) agents integrated with external tools are vulnerable to indirect prompt injections embedded in environmental states. However, existing studies largely rely on manually implemented or reused environments, stochastic LLM-based tool simulation, and predefined injection locations, limiting scalable security research across broader domains. To bridge this gap, we propose **ToolHazard**, a scalable adversarial environment synthesis framework that reduces human engineering and supports expansion with additional seed domains and compute. Through an Environment Simulator, an Attacker Agent, and a User Simulator, ToolHazard synthesizes executable stateful environments, discovers viable injection points and generates environment-specific payloads, and constructs state-grounded long-horizon tasks. Based on ToolHazard, we build **ToolHazard-Bench** for stress-testing agents under complex workflows and diverse environmental attacks. Experiments reveal substantial agent vulnerabilities and show that injection timing and placement affect attack effectiveness. Moreover, ToolHazard-generated alignment data improves security on both ToolHazard-Bench and AgentDojo while preserving benign task utility.",
+      "url": "https://arxiv.org/abs/2608.11878v1",
+      "authors": [
+        "Yutao Mou",
+        "Pengfei Yang",
+        "Zhe Yin",
+        "Zhangchi Xue",
+        "Xiaotian Luan",
+        "Dingyao Yu",
+        "Tong Zhang",
+        "Shikun Zhang",
+        "Wei Ye"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 95,
+        "level": "高",
+        "label": "值得精读：长程工具型 agent 的可扩展安全环境与对抗训练框架",
+        "water_risk": "低",
+        "value_judgement": "论文与 multi-turn agent、long-horizon reliability 和 agentic RL 高度相关，贡献也不只是整理数据：它给出了可执行状态环境、自动注入点发现、程序化终态验证以及 SFT/RL 数据生成的完整闭环。评测覆盖多类闭源与开源模型，并通过 AgentDojo 检查训练后的跨环境迁移，证据链相对完整。尤其值得关注的是注入时机、观察位置和输出结构对攻击效果的分析，这些结论可以直接转化为规划器、工具协议和运行时防护的设计假设。",
+        "reason": "论文与 multi-turn agent、long-horizon reliability 和 agentic RL 高度相关，贡献也不只是整理数据：它给出了可执行状态环境、自动注入点发现、程序化终态验证以及 SFT/RL 数据生成的完整闭环。评测覆盖多类闭源与开源模型，并通过 AgentDojo 检查训练后的跨环境迁移，证据链相对完整。尤其值得关注的是注入时机、观察位置和输出结构对攻击效果的分析，这些结论可以直接转化为规划器、工具协议和运行时防护的设计假设。"
+      },
+      "brief": {
+        "authors": [
+          "Yutao Mou",
+          "Pengfei Yang",
+          "Zhe Yin",
+          "Zhangchi Xue",
+          "Xiaotian Luan",
+          "Dingyao Yu",
+          "Tong Zhang",
+          "Shikun Zhang",
+          "Wei Ye"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.11878v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文与 multi-turn agent、long-horizon reliability 和 agentic RL 高度相关，贡献也不只是整理数据：它给出了可执行状态环境、自动注入点发现、程序化终态验证以及 SFT/RL 数据生成的完整闭环。评测覆盖多类闭源与开源模型，并通过 AgentDojo 检查训练后的跨环境迁移，证据链相对完整。尤其值得关注的是注入时机、观察位置和输出结构对攻击效果的分析，这些结论可以直接转化为规划器、工具协议和运行时防护的设计假设。",
+        "summary": "这篇论文关注外部环境内容通过间接提示注入劫持工具型 agent 的问题，并指出人工环境和预定义攻击点难以支持大规模、可复现的安全研究。ToolHazard 将环境代码生成、长程任务生成、注入点发现、攻击执行和终态验证组合成一条自动化流水线。作者据此构建了包含 28 个测试环境和 87 个长程任务的 ToolHazard-Bench，并发现多种先进模型在复杂环境攻击下仍会执行非用户意图的工具操作。实验还给出较有价值的系统信号：早期接触、观察尾部放置和自由文本格式都会放大注入风险。其对齐数据在两个基准上改善了小型 Qwen3 agent 的安全与任务效用，说明可执行对抗环境确实可能成为 agentic RL 的训练基础设施。论文值得精读，但其结果主要反映合成 API 环境中的相对安全性，不能直接换算为真实生产风险。",
+        "highlights": [
+          "论文与 multi-turn agent、long-horizon reliability 和 agentic RL 高度相关，贡献也不只是整理数据：它给出了可执行状态环境、自动注入点发现、程序化终态验证以及 SFT/RL 数据生成的完整闭环。评测覆盖多类闭源与开源模型，并通过 AgentDojo 检查训练后的跨环境迁移，证据链相对完整。尤其值得关注的是注入时机、观察位置和输出结构对攻击效果的分析，这些结论可以直接转化为规划器、工具协议和运行时防护的设计假设。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "工具型 LLM agent 会把邮件、文档、数据库记录和工具返回值等外部状态读入上下文，因此攻击者即使不能修改用户请求或系统提示，也可能借环境侧间接提示注入劫持后续工具调用。现有安全基准多依赖人工搭建或复用环境、随机的 LLM 工具模拟以及预先指定的注入位置，难以低成本扩展到更多领域，也不利于可复现评测和基于交互轨迹的强化学习。论文试图把研究重点从设计单个攻击提示，推进到自动构造可执行、有状态、可验证的对抗环境。",
+        "method": "ToolHazard 包含三个核心模块：Environment Simulator 从种子任务推导实体、状态、约束和工具，并生成面向对象的可执行环境，再用测试与检查 agent 做质量筛选；User Simulator 初始化环境状态并生成与当前状态绑定的长程任务；Attacker Agent 分析属性及工具读写依赖，寻找能够沿正常任务轨迹传播到目标 agent 的注入点，然后生成并写入环境特定的劫持载荷。系统还把任务分解为终态条件并生成程序化检查函数，以分别验证正常任务与恶意任务是否完成。基于这些组件，作者构建了用于评测的 ToolHazard-Bench，以及支持 SFT 和 GRPO 训练的 ToolHazard-Align。",
+        "experiments": "ToolHazard-Bench 包含 28 个有状态测试环境、512 个工具和 87 个任务，平均执行长度为 15.56 步；作者用六类环境侧注入包装评测了 GPT-5、GPT-4.1、两代 Gemini、DeepSeek-V3.2 和两个 Qwen3 模型。多数强模型在基础攻击上较稳健，但面对 decision hijacking、tool selection、reasoning criteria 等策略时仍出现较高攻击成功率；例如 GPT-5 在 tool-selection 攻击下的 ASR 为 59.14%，DeepSeek-V3.2 在多类攻击下超过 70%。消融实验显示，越早被轨迹读取的注入通常越有效，位于工具观察尾部的内容也更易得手；自由文本输出的攻击成功率明显高于 JSON 或 YAML。用 ToolHazard-Align 训练后，Qwen3-4B 和 Qwen3-8B 在 ToolHazard-Bench 上同时改善正常任务完成率并降低攻击成功率，并在独立的 AgentDojo 上表现出一定跨环境迁移，但攻击并未被消除。",
+        "research_help": "Insight：长程 agent 的安全性不仅取决于模型是否识别恶意语义，还取决于不可信状态在规划轨迹中的首次出现时间、观察位置以及数据结构；因此可靠性评测应覆盖完整的状态传播链，而不能只测试孤立提示。训练奖励应同时要求完成原任务和拒绝环境劫持，避免把“一律拒绝行动”误当成安全。环境的读写依赖图可以进一步用作运行时信息流策略：限制外部文本影响高权限工具参数，并在早期规划步骤设置更严格的信任边界。结构化工具输出、严格字段解析和终态验证可作为模型对齐之外的系统级防线，适用于多轮工具调用和 long-horizon planning。",
+        "insight": "Insight：长程 agent 的安全性不仅取决于模型是否识别恶意语义，还取决于不可信状态在规划轨迹中的首次出现时间、观察位置以及数据结构；因此可靠性评测应覆盖完整的状态传播链，而不能只测试孤立提示。训练奖励应同时要求完成原任务和拒绝环境劫持，避免把“一律拒绝行动”误当成安全。环境的读写依赖图可以进一步用作运行时信息流策略：限制外部文本影响高权限工具参数，并在早期规划步骤设置更严格的信任边界。结构化工具输出、严格字段解析和终态验证可作为模型对齐之外的系统级防线，适用于多轮工具调用和 long-horizon planning。",
+        "abstract_zh": "接入外部工具的 LLM agent 容易受到嵌入环境状态中的间接提示注入，但已有研究依赖人工或复用环境、随机的 LLM 工具模拟以及预定义注入位置，限制了安全研究的扩展。作者提出 ToolHazard，通过环境模拟器、攻击者 agent 和用户模拟器，自动合成可执行的有状态环境，发现可行注入点并生成与环境适配的载荷，同时构造基于状态的长程任务。基于该框架建立的 ToolHazard-Bench 用复杂工作流和多样化环境攻击对 agent 进行压力测试，实验显示现有 agent 仍存在显著漏洞，而且注入时机与位置会影响攻击效果。ToolHazard 生成的对齐数据还能在保持正常任务效用的同时，提高模型在 ToolHazard-Bench 和 AgentDojo 上的安全性。",
+        "full_summary": "这篇论文关注外部环境内容通过间接提示注入劫持工具型 agent 的问题，并指出人工环境和预定义攻击点难以支持大规模、可复现的安全研究。ToolHazard 将环境代码生成、长程任务生成、注入点发现、攻击执行和终态验证组合成一条自动化流水线。作者据此构建了包含 28 个测试环境和 87 个长程任务的 ToolHazard-Bench，并发现多种先进模型在复杂环境攻击下仍会执行非用户意图的工具操作。实验还给出较有价值的系统信号：早期接触、观察尾部放置和自由文本格式都会放大注入风险。其对齐数据在两个基准上改善了小型 Qwen3 agent 的安全与任务效用，说明可执行对抗环境确实可能成为 agentic RL 的训练基础设施。论文值得精读，但其结果主要反映合成 API 环境中的相对安全性，不能直接换算为真实生产风险。",
+        "card_summary": "ToolHazard 自动合成可执行的有状态工具环境、长程任务和可沿任务轨迹传播的间接提示注入，用于扩展 agent 安全评测与对抗训练。实验表明强模型仍会被环境内容劫持，而注入出现的时机、位置和工具输出格式都会显著影响 long-horizon agent 的可靠性。"
+      },
+      "analysis": {
+        "motivation": "工具型 LLM agent 会把邮件、文档、数据库记录和工具返回值等外部状态读入上下文，因此攻击者即使不能修改用户请求或系统提示，也可能借环境侧间接提示注入劫持后续工具调用。现有安全基准多依赖人工搭建或复用环境、随机的 LLM 工具模拟以及预先指定的注入位置，难以低成本扩展到更多领域，也不利于可复现评测和基于交互轨迹的强化学习。论文试图把研究重点从设计单个攻击提示，推进到自动构造可执行、有状态、可验证的对抗环境。",
+        "method": "ToolHazard 包含三个核心模块：Environment Simulator 从种子任务推导实体、状态、约束和工具，并生成面向对象的可执行环境，再用测试与检查 agent 做质量筛选；User Simulator 初始化环境状态并生成与当前状态绑定的长程任务；Attacker Agent 分析属性及工具读写依赖，寻找能够沿正常任务轨迹传播到目标 agent 的注入点，然后生成并写入环境特定的劫持载荷。系统还把任务分解为终态条件并生成程序化检查函数，以分别验证正常任务与恶意任务是否完成。基于这些组件，作者构建了用于评测的 ToolHazard-Bench，以及支持 SFT 和 GRPO 训练的 ToolHazard-Align。",
+        "experiments": "ToolHazard-Bench 包含 28 个有状态测试环境、512 个工具和 87 个任务，平均执行长度为 15.56 步；作者用六类环境侧注入包装评测了 GPT-5、GPT-4.1、两代 Gemini、DeepSeek-V3.2 和两个 Qwen3 模型。多数强模型在基础攻击上较稳健，但面对 decision hijacking、tool selection、reasoning criteria 等策略时仍出现较高攻击成功率；例如 GPT-5 在 tool-selection 攻击下的 ASR 为 59.14%，DeepSeek-V3.2 在多类攻击下超过 70%。消融实验显示，越早被轨迹读取的注入通常越有效，位于工具观察尾部的内容也更易得手；自由文本输出的攻击成功率明显高于 JSON 或 YAML。用 ToolHazard-Align 训练后，Qwen3-4B 和 Qwen3-8B 在 ToolHazard-Bench 上同时改善正常任务完成率并降低攻击成功率，并在独立的 AgentDojo 上表现出一定跨环境迁移，但攻击并未被消除。",
+        "research_help": "Insight：长程 agent 的安全性不仅取决于模型是否识别恶意语义，还取决于不可信状态在规划轨迹中的首次出现时间、观察位置以及数据结构；因此可靠性评测应覆盖完整的状态传播链，而不能只测试孤立提示。训练奖励应同时要求完成原任务和拒绝环境劫持，避免把“一律拒绝行动”误当成安全。环境的读写依赖图可以进一步用作运行时信息流策略：限制外部文本影响高权限工具参数，并在早期规划步骤设置更严格的信任边界。结构化工具输出、严格字段解析和终态验证可作为模型对齐之外的系统级防线，适用于多轮工具调用和 long-horizon planning。",
+        "insight": "Insight：长程 agent 的安全性不仅取决于模型是否识别恶意语义，还取决于不可信状态在规划轨迹中的首次出现时间、观察位置以及数据结构；因此可靠性评测应覆盖完整的状态传播链，而不能只测试孤立提示。训练奖励应同时要求完成原任务和拒绝环境劫持，避免把“一律拒绝行动”误当成安全。环境的读写依赖图可以进一步用作运行时信息流策略：限制外部文本影响高权限工具参数，并在早期规划步骤设置更严格的信任边界。结构化工具输出、严格字段解析和终态验证可作为模型对齐之外的系统级防线，适用于多轮工具调用和 long-horizon planning。",
+        "abstract_zh": "接入外部工具的 LLM agent 容易受到嵌入环境状态中的间接提示注入，但已有研究依赖人工或复用环境、随机的 LLM 工具模拟以及预定义注入位置，限制了安全研究的扩展。作者提出 ToolHazard，通过环境模拟器、攻击者 agent 和用户模拟器，自动合成可执行的有状态环境，发现可行注入点并生成与环境适配的载荷，同时构造基于状态的长程任务。基于该框架建立的 ToolHazard-Bench 用复杂工作流和多样化环境攻击对 agent 进行压力测试，实验显示现有 agent 仍存在显著漏洞，而且注入时机与位置会影响攻击效果。ToolHazard 生成的对齐数据还能在保持正常任务效用的同时，提高模型在 ToolHazard-Bench 和 AgentDojo 上的安全性。",
+        "card_summary": "ToolHazard 自动合成可执行的有状态工具环境、长程任务和可沿任务轨迹传播的间接提示注入，用于扩展 agent 安全评测与对抗训练。实验表明强模型仍会被环境内容劫持，而注入出现的时机、位置和工具输出格式都会显著影响 long-horizon agent 的可靠性。",
+        "full_summary": "这篇论文关注外部环境内容通过间接提示注入劫持工具型 agent 的问题，并指出人工环境和预定义攻击点难以支持大规模、可复现的安全研究。ToolHazard 将环境代码生成、长程任务生成、注入点发现、攻击执行和终态验证组合成一条自动化流水线。作者据此构建了包含 28 个测试环境和 87 个长程任务的 ToolHazard-Bench，并发现多种先进模型在复杂环境攻击下仍会执行非用户意图的工具操作。实验还给出较有价值的系统信号：早期接触、观察尾部放置和自由文本格式都会放大注入风险。其对齐数据在两个基准上改善了小型 Qwen3 agent 的安全与任务效用，说明可执行对抗环境确实可能成为 agentic RL 的训练基础设施。论文值得精读，但其结果主要反映合成 API 环境中的相对安全性，不能直接换算为真实生产风险。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "值得精读：长程工具型 agent 的可扩展安全环境与对抗训练框架",
+        "value_reason": "论文与 multi-turn agent、long-horizon reliability 和 agentic RL 高度相关，贡献也不只是整理数据：它给出了可执行状态环境、自动注入点发现、程序化终态验证以及 SFT/RL 数据生成的完整闭环。评测覆盖多类闭源与开源模型，并通过 AgentDojo 检查训练后的跨环境迁移，证据链相对完整。尤其值得关注的是注入时机、观察位置和输出结构对攻击效果的分析，这些结论可以直接转化为规划器、工具协议和运行时防护的设计假设。",
+        "limitations": "环境由 LLM 从 ToolACE 和 API-Bank 的种子任务合成，领域覆盖受种子数据限制，与企业系统、专有实现和生产长尾故障仍有明显差距。测试集只有 28 个环境和 87 个任务，且环境、任务、攻击与检查函数均来自同一框架，可能存在生成分布自洽或相关误差；虽然最终检查是程序化的，但检查代码本身仍由 LLM 生成。研究只覆盖 API 工具型 agent，不覆盖网页级注入；六种攻击包装是预定义的，框架会发现注入位置，却不会自动发现全新的攻击策略。对齐实验仅在 Qwen3-4B/8B 上进行，RL 样本和训练步数有限，对更大模型及真实部署的收益尚未验证。终态奖励还可能遗漏执行过程中的信息泄露、暂时性副作用以及已发生但被后续状态覆盖的危险操作。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文明确将威胁模型限定为环境侧攻击：攻击者可以修改外部状态，但不能修改用户请求、系统指令、工具实现或模型参数。",
+          "环境生成流程先得到 191 个通过质量检查的环境，随后筛出 60 个训练环境和 28 个互不重叠的测试环境。",
+          "ToolHazard-Bench 报告了 87 个状态绑定任务、512 个工具以及 15.56 步的平均执行长度。",
+          "表 2 显示多种强模型在 decision hijacking、tool selection 和 reasoning criteria 等攻击下仍有较高 ASR；模型能力提升没有带来可靠防御。言之，文章中GPT-5在Tool Selection攻击下ASR为59.14%。在Decision Hijacking攻击下ASR为44.82%。DeepSeek-V..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T02:00:59.365Z"
+      }
+    },
+    {
+      "id": "2608.11879v1",
+      "title": "Total Recall at What Cost? Benchmarking the Serving Cost of Agentic Memory Systems",
+      "summary": "Long-running conversational agents increasingly rely on a memory system to avoid resending the whole conversation each turn, yet how much that costs to serve has received little systematic benchmarking. We compare three memory systems (Mem0, Hindsight, and Mastra Observational Memory) against two reference strategies -- a fixed-size rolling window and resubmitting the full transcript -- across two backbones and conversations of up to 400 turns, pairing every cost measurement with answer accuracy on 665 LoCoMo questions. First, a memory system's serving cost cannot be predicted from conversation length and message size alone: a regression that tracks the two reference strategies closely misses the memory systems by 18-69%, their cost driven instead by internal memory behavior. Second, a break-even analysis shows that whether -- and when -- a memory system becomes cheaper to serve than the full transcript is highly sensitive to the system and the backbone, from the first tens of turns for the cheapest to never within 400 turns for the most expensive. Third, no system wins on both axes: accuracy spans 21-54%, and the backbone choice drives cost as much as the memory system does.",
+      "url": "https://arxiv.org/abs/2608.11879v1",
+      "authors": [
+        "Natchanon Pollertlam",
+        "Witchayut Kornsuwannawit"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 96,
+        "level": "高",
+        "label": "高价值的记忆系统成本基准",
+        "water_risk": "中",
+        "value_judgement": "选题直接命中 agent memory 与 long-horizon serving 的实际缺口，控制变量、逐阶段计费、留出验证和盈亏平衡分析都比单纯报告 token 节省更有解释力；负面结果——简单成本模型无法外推记忆系统——也具有可迁移价值。偏水风险仍为中等，因为论文不是提出新的记忆或规划算法，准确率覆盖面较窄，合成成本负载与未受控的 Hindsight 摄取配置削弱了跨系统结论的严格性。",
+        "reason": "选题直接命中 agent memory 与 long-horizon serving 的实际缺口，控制变量、逐阶段计费、留出验证和盈亏平衡分析都比单纯报告 token 节省更有解释力；负面结果——简单成本模型无法外推记忆系统——也具有可迁移价值。偏水风险仍为中等，因为论文不是提出新的记忆或规划算法，准确率覆盖面较窄，合成成本负载与未受控的 Hindsight 摄取配置削弱了跨系统结论的严格性。"
+      },
+      "brief": {
+        "authors": [
+          "Natchanon Pollertlam",
+          "Witchayut Kornsuwannawit"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.11879v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "选题直接命中 agent memory 与 long-horizon serving 的实际缺口，控制变量、逐阶段计费、留出验证和盈亏平衡分析都比单纯报告 token 节省更有解释力；负面结果——简单成本模型无法外推记忆系统——也具有可迁移价值。偏水风险仍为中等，因为论文不是提出新的记忆或规划算法，准确率覆盖面较窄，合成成本负载与未受控的 Hindsight 摄取配置削弱了跨系统结论的严格性。",
+        "summary": "论文针对长时对话代理的一个现实盲点：外部记忆虽然减少回答时携带的历史文本，却可能因摄取、检索和反思调用产生更高总成本。作者统一测量 Mem0、Hindsight 和 MastraOM，并用固定十轮窗口与完整历史重发建立透明参照。实验表明，消息长度和对话深度足以解释两种参照策略，却无法可靠预测记忆系统在未见工作负载上的成本，内部记忆状态才是关键。不同组合从立即回本到400轮内仍不回本，准确率也没有随着成本单调提高，说明记忆架构和主干模型必须联合选择。这项工作对生产级多轮代理很有阅读价值，因为它把成本、任务效果和预期会话长度放进同一个决策框架。结论仍应谨慎外推，因为成本对话是合成的，准确率只覆盖 LoCoMo 的四段对话，而且 Hindsight 的摄取模型没有得到统一控制。",
+        "highlights": [
+          "选题直接命中 agent memory 与 long-horizon serving 的实际缺口，控制变量、逐阶段计费、留出验证和盈亏平衡分析都比单纯报告 token 节省更有解释力；负面结果——简单成本模型无法外推记忆系统——也具有可迁移价值。偏水风险仍为中等，因为论文不是提出新的记忆或规划算法，准确率覆盖面较窄，合成成本负载与未受控的 Hindsight 摄取配置削弱了跨系统结论的严格性。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长时对话代理常用外部记忆替代不断增长的完整历史，但“检索载荷更小”并不等于总体服务成本更低，因为事实抽取、嵌入、检索、反思和压缩都会触发额外模型调用。论文试图补上现有记忆评测偏重召回与准确率、缺少统一成本基准的空白，并回答记忆系统何时才能真正比重发完整上下文更经济。",
+        "method": "作者在统一的主干模型、推理强度、嵌入模型和计价口径下，对 Mem0、Hindsight 与 Mastra Observational Memory 进行比较，并以最近十轮窗口和完整历史重发作为成本下界与上界。成本实验使用不同对话长度和单轮消息长度的合成对话，逐轮记录摄取、检索和回答阶段的计费 token；随后用消息长度与对话深度的可分离对数回归描述成本，并通过留一工作负载交叉验证检验外推能力。准确率则在 LoCoMo 的四段完整对话、665 个问题上评测，并与匹配配置的服务成本联合分析。",
+        "experiments": "实验确认完整历史成本近似随消息长度和对话深度共同线性增长，固定窗口则基本不随深度增长；但同一回归模型对三种记忆系统的留出成本误差约为18%至69%，说明内部缓冲、抽取和反思触发状态才是主要成本变量。不同系统和主干组合的盈亏平衡点差异很大：便宜配置可立即低于完整历史，昂贵配置在400轮内仍无法回本。LoCoMo 准确率大致落在21%至54%之间，没有系统同时统治成本与准确率；MastraOM 在部分 gpt-oss 配置中成本效益最好，而 Mem0 在 Gemma 配置中更有优势。更高推理强度也不稳定地提升准确率，有时反而增加成本并降低表现。",
+        "research_help": "Insight：长时代理的记忆成本不能只按上下文长度估计，可靠的规划系统应把事实抽取、记忆增长、检索载荷、反思触发和缓存命中建模为显式状态，并在线记录每个阶段的成本。记忆策略与主干模型存在强耦合，因此 agentic RL 的策略优化可以把“是否写入、何时压缩、检索多少、是否直接使用长上下文”视为联合动作，以任务成功率和累计服务成本构造长期回报。盈亏平衡随会话长度和消息密度变化，也提示多轮系统应采用动态记忆路由，而不是从第一轮开始固定启用同一种记忆管线。成本模型在未见工作负载上失效，则进一步说明 long-horizon reliability 评测需要覆盖内部状态转换和尾部成本尖峰，而不能只报告平均 token 节省。",
+        "insight": "Insight：长时代理的记忆成本不能只按上下文长度估计，可靠的规划系统应把事实抽取、记忆增长、检索载荷、反思触发和缓存命中建模为显式状态，并在线记录每个阶段的成本。记忆策略与主干模型存在强耦合，因此 agentic RL 的策略优化可以把“是否写入、何时压缩、检索多少、是否直接使用长上下文”视为联合动作，以任务成功率和累计服务成本构造长期回报。盈亏平衡随会话长度和消息密度变化，也提示多轮系统应采用动态记忆路由，而不是从第一轮开始固定启用同一种记忆管线。成本模型在未见工作负载上失效，则进一步说明 long-horizon reliability 评测需要覆盖内部状态转换和尾部成本尖峰，而不能只报告平均 token 节省。",
+        "abstract_zh": "长时对话代理越来越依赖记忆系统来避免每轮重发全部历史，但这类系统自身的服务成本尚缺少系统评测。作者在两种主干模型和最长400轮对话上，对三种记忆系统及固定窗口、完整历史两种参考策略进行比较，并在665个 LoCoMo 问题上同步测量回答准确率。结果表明，仅依据对话长度和消息大小建立的成本模型能预测参考策略，却会明显误判记忆系统，因为后者的成本受内部记忆行为驱动。记忆系统相对完整历史的盈亏平衡点高度依赖系统与主干模型，既可能在早期出现，也可能在400轮内始终无法达到。没有方案同时在成本和准确率上全面占优，主干模型的影响与记忆架构本身同样重要。",
+        "full_summary": "论文针对长时对话代理的一个现实盲点：外部记忆虽然减少回答时携带的历史文本，却可能因摄取、检索和反思调用产生更高总成本。作者统一测量 Mem0、Hindsight 和 MastraOM，并用固定十轮窗口与完整历史重发建立透明参照。实验表明，消息长度和对话深度足以解释两种参照策略，却无法可靠预测记忆系统在未见工作负载上的成本，内部记忆状态才是关键。不同组合从立即回本到400轮内仍不回本，准确率也没有随着成本单调提高，说明记忆架构和主干模型必须联合选择。这项工作对生产级多轮代理很有阅读价值，因为它把成本、任务效果和预期会话长度放进同一个决策框架。结论仍应谨慎外推，因为成本对话是合成的，准确率只覆盖 LoCoMo 的四段对话，而且 Hindsight 的摄取模型没有得到统一控制。",
+        "card_summary": "这篇论文把 agent memory 从“能记住多少”推进到“部署起来究竟花多少钱”，统一比较三种记忆系统、固定窗口和完整历史策略。核心发现是记忆成本主要由内部抽取与反思状态决定，盈亏平衡点和准确率都高度依赖记忆系统与主干模型的组合，没有通用赢家。"
+      },
+      "analysis": {
+        "motivation": "长时对话代理常用外部记忆替代不断增长的完整历史，但“检索载荷更小”并不等于总体服务成本更低，因为事实抽取、嵌入、检索、反思和压缩都会触发额外模型调用。论文试图补上现有记忆评测偏重召回与准确率、缺少统一成本基准的空白，并回答记忆系统何时才能真正比重发完整上下文更经济。",
+        "method": "作者在统一的主干模型、推理强度、嵌入模型和计价口径下，对 Mem0、Hindsight 与 Mastra Observational Memory 进行比较，并以最近十轮窗口和完整历史重发作为成本下界与上界。成本实验使用不同对话长度和单轮消息长度的合成对话，逐轮记录摄取、检索和回答阶段的计费 token；随后用消息长度与对话深度的可分离对数回归描述成本，并通过留一工作负载交叉验证检验外推能力。准确率则在 LoCoMo 的四段完整对话、665 个问题上评测，并与匹配配置的服务成本联合分析。",
+        "experiments": "实验确认完整历史成本近似随消息长度和对话深度共同线性增长，固定窗口则基本不随深度增长；但同一回归模型对三种记忆系统的留出成本误差约为18%至69%，说明内部缓冲、抽取和反思触发状态才是主要成本变量。不同系统和主干组合的盈亏平衡点差异很大：便宜配置可立即低于完整历史，昂贵配置在400轮内仍无法回本。LoCoMo 准确率大致落在21%至54%之间，没有系统同时统治成本与准确率；MastraOM 在部分 gpt-oss 配置中成本效益最好，而 Mem0 在 Gemma 配置中更有优势。更高推理强度也不稳定地提升准确率，有时反而增加成本并降低表现。",
+        "research_help": "Insight：长时代理的记忆成本不能只按上下文长度估计，可靠的规划系统应把事实抽取、记忆增长、检索载荷、反思触发和缓存命中建模为显式状态，并在线记录每个阶段的成本。记忆策略与主干模型存在强耦合，因此 agentic RL 的策略优化可以把“是否写入、何时压缩、检索多少、是否直接使用长上下文”视为联合动作，以任务成功率和累计服务成本构造长期回报。盈亏平衡随会话长度和消息密度变化，也提示多轮系统应采用动态记忆路由，而不是从第一轮开始固定启用同一种记忆管线。成本模型在未见工作负载上失效，则进一步说明 long-horizon reliability 评测需要覆盖内部状态转换和尾部成本尖峰，而不能只报告平均 token 节省。",
+        "insight": "Insight：长时代理的记忆成本不能只按上下文长度估计，可靠的规划系统应把事实抽取、记忆增长、检索载荷、反思触发和缓存命中建模为显式状态，并在线记录每个阶段的成本。记忆策略与主干模型存在强耦合，因此 agentic RL 的策略优化可以把“是否写入、何时压缩、检索多少、是否直接使用长上下文”视为联合动作，以任务成功率和累计服务成本构造长期回报。盈亏平衡随会话长度和消息密度变化，也提示多轮系统应采用动态记忆路由，而不是从第一轮开始固定启用同一种记忆管线。成本模型在未见工作负载上失效，则进一步说明 long-horizon reliability 评测需要覆盖内部状态转换和尾部成本尖峰，而不能只报告平均 token 节省。",
+        "abstract_zh": "长时对话代理越来越依赖记忆系统来避免每轮重发全部历史，但这类系统自身的服务成本尚缺少系统评测。作者在两种主干模型和最长400轮对话上，对三种记忆系统及固定窗口、完整历史两种参考策略进行比较，并在665个 LoCoMo 问题上同步测量回答准确率。结果表明，仅依据对话长度和消息大小建立的成本模型能预测参考策略，却会明显误判记忆系统，因为后者的成本受内部记忆行为驱动。记忆系统相对完整历史的盈亏平衡点高度依赖系统与主干模型，既可能在早期出现，也可能在400轮内始终无法达到。没有方案同时在成本和准确率上全面占优，主干模型的影响与记忆架构本身同样重要。",
+        "card_summary": "这篇论文把 agent memory 从“能记住多少”推进到“部署起来究竟花多少钱”，统一比较三种记忆系统、固定窗口和完整历史策略。核心发现是记忆成本主要由内部抽取与反思状态决定，盈亏平衡点和准确率都高度依赖记忆系统与主干模型的组合，没有通用赢家。",
+        "full_summary": "论文针对长时对话代理的一个现实盲点：外部记忆虽然减少回答时携带的历史文本，却可能因摄取、检索和反思调用产生更高总成本。作者统一测量 Mem0、Hindsight 和 MastraOM，并用固定十轮窗口与完整历史重发建立透明参照。实验表明，消息长度和对话深度足以解释两种参照策略，却无法可靠预测记忆系统在未见工作负载上的成本，内部记忆状态才是关键。不同组合从立即回本到400轮内仍不回本，准确率也没有随着成本单调提高，说明记忆架构和主干模型必须联合选择。这项工作对生产级多轮代理很有阅读价值，因为它把成本、任务效果和预期会话长度放进同一个决策框架。结论仍应谨慎外推，因为成本对话是合成的，准确率只覆盖 LoCoMo 的四段对话，而且 Hindsight 的摄取模型没有得到统一控制。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "高价值的记忆系统成本基准",
+        "value_reason": "选题直接命中 agent memory 与 long-horizon serving 的实际缺口，控制变量、逐阶段计费、留出验证和盈亏平衡分析都比单纯报告 token 节省更有解释力；负面结果——简单成本模型无法外推记忆系统——也具有可迁移价值。偏水风险仍为中等，因为论文不是提出新的记忆或规划算法，准确率覆盖面较窄，合成成本负载与未受控的 Hindsight 摄取配置削弱了跨系统结论的严格性。",
+        "limitations": "成本基准采用 LLM 合成的个人对话，事实密度和反思触发频率未必代表真实任务型代理；准确率只来自 LoCoMo 的四段对话，并排除了对抗类问题，无法代表知识密集、工具调用或任务规划场景。665个问题的置信区间按问题独立计算，忽略同一对话内的聚类，因而可能低估不确定性。Hindsight 的摄取阶段被环境配置覆盖，未随实验网格切换主干和推理强度，因此其跨主干、跨推理强度比较存在明确混杂。供应商路由和提示缓存会改变实际账单，部分长上下文请求还出现服务栈计数异常；此外，成本每正确答案指标没有覆盖延迟、检索召回、拒答和答案质量等部署维度。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "完整历史与固定十轮窗口的留出成本误差低于约6.5%，三种记忆系统则约为18%至69%，支持“内部记忆状态决定成本”的核心判断。",
+          "实测盈亏平衡点从立即出现到400轮内仍未出现，且随系统、主干模型、消息长度和推理强度显著变化。",
+          "LoCoMo 子集包含四段完整对话和665个评测问题，各配置准确率大致为21%至54%，没有系统在成本和准确率上同时占优。",
+          "在长对话配置下，Mem0 与 MastraOM 均已越过完整历史的成本平衡点，而部分 Hindsight 配置仍未回本。Hindsight 的摄取阶段未被实验配置统一控制，因此相关跨配置结论受到混杂。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T02:02:07.657Z"
+      }
+    },
+    {
+      "id": "2608.12282v1",
+      "title": "VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies",
+      "summary": "Agents deployed in enterprise settings must reason across structured APIs and document collections, yet existing benchmarks evaluate these capabilities in isolation. We introduce VAKRA (e\\textbf{V}aluating \\textbf{A}PI and \\textbf{K}nowledge \\textbf{R}etrieval \\textbf{A}gents), a benchmark of over $8{,}000$ executable APIs across $62$ domains with tasks spanning three settings of increasing difficulty: diverse API interaction styles, multi-hop reasoning over structured APIs, and multi-source reasoning with natural-language tool-use policy constraints. Correctness is verified by re-executing predicted tool calls against live APIs, accommodating multiple valid paths. Using a fixed ReAct harness to isolate model capabilities from agent architecture, we evaluate frontier and open-weight models and find that even the best model achieves only 70.4\\% on single-hop endpoint-style tasks and drops to 50--51\\% on compositional APIs; performance degrades by over 50\\% as reasoning depth increases, and policy-constrained questions expose severe failures (as low as 2.4\\% on unanswerable queries). Trace analysis shows failures concentrate at language-mediated reasoning - entity disambiguation, cross-source grounding, rather than tool invocation mechanics. Code is available this https URL . Dataset is available this https URL",
+      "url": "https://arxiv.org/abs/2608.12282v1",
+      "authors": [
+        "Ankita Rajaram Naik",
+        "Anupama Murthi",
+        "Benjamin Elder",
+        "Siyu Huo",
+        "Raavi Gupta",
+        "Abhinav Jain",
+        "Praveen Venkateswaran",
+        "Abdulhamid Adebayo",
+        "Danish Contractor"
+      ],
+      "report_date": "2026-08-14",
+      "published": "2026-08-12",
+      "updated": "2026-08-12",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "https://huggingface.co/datasets/ibm-research/VAKRA",
+      "repo_url": "https://github.com/IBM/VAKRA",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 88,
+        "level": "高",
+        "label": "高价值代理可靠性评测基准",
+        "water_risk": "低",
+        "value_judgement": "论文与 multi-turn agent、long-horizon planning 和工具可靠性高度相关，贡献不只是扩大工具数量，而是把跨源参数传递、替代执行路径、策略权限和阶段化错误定位组合在一个可执行基准中。实验暴露了“会调用工具不等于会可靠规划”的关键差距，代码和数据也已给出公开地址。它的主要价值属于基准与诊断工程，而非提出新的规划或强化学习算法；若关注 agentic RL，可将其失败分类和任务结构用于训练信号设计，但不能把论文视为直接的 RL 方法贡献。",
+        "reason": "论文与 multi-turn agent、long-horizon planning 和工具可靠性高度相关，贡献不只是扩大工具数量，而是把跨源参数传递、替代执行路径、策略权限和阶段化错误定位组合在一个可执行基准中。实验暴露了“会调用工具不等于会可靠规划”的关键差距，代码和数据也已给出公开地址。它的主要价值属于基准与诊断工程，而非提出新的规划或强化学习算法；若关注 agentic RL，可将其失败分类和任务结构用于训练信号设计，但不能把论文视为直接的 RL 方法贡献。"
+      },
+      "brief": {
+        "authors": [
+          "Ankita Rajaram Naik",
+          "Anupama Murthi",
+          "Benjamin Elder",
+          "Siyu Huo",
+          "Raavi Gupta",
+          "Abhinav Jain",
+          "Praveen Venkateswaran",
+          "Abdulhamid Adebayo",
+          "Danish Contractor"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-12",
+        "paper_url": "https://arxiv.org/abs/2608.12282v1",
+        "project_url": "https://huggingface.co/datasets/ibm-research/VAKRA",
+        "repo_url": "https://github.com/IBM/VAKRA",
+        "venue_status": "未确认录用",
+        "contribution": "论文与 multi-turn agent、long-horizon planning 和工具可靠性高度相关，贡献不只是扩大工具数量，而是把跨源参数传递、替代执行路径、策略权限和阶段化错误定位组合在一个可执行基准中。实验暴露了“会调用工具不等于会可靠规划”的关键差距，代码和数据也已给出公开地址。它的主要价值属于基准与诊断工程，而非提出新的规划或强化学习算法；若关注 agentic RL，可将其失败分类和任务结构用于训练信号设计，但不能把论文视为直接的 RL 方法贡献。",
+        "summary": "VAKRA 面向企业代理中常见的跨 API 与文档推理，弥补了既有基准分别测试工具调用、检索和策略遵循的缺口。它提供真实数据库支撑的可执行环境，并通过 2–5 跳任务考察实体消歧、中间结果抽取、参数对齐和来源选择。统一 ReAct 框架与轨迹重执行机制使不同模型具有较好的可比性，也能容纳多种正确调用路径。实验显示，模型从单跳端点进入组合 API、多源检索或策略约束后性能大幅下降，且经常无法识别问题已经不可回答。论文最有价值之处是用阶段化证据说明长程失败主要发生在语言介导的状态传递与约束解释上，适合作为 agent planning 和可靠性研究的诊断基准阅读。",
+        "highlights": [
+          "论文与 multi-turn agent、long-horizon planning 和工具可靠性高度相关，贡献不只是扩大工具数量，而是把跨源参数传递、替代执行路径、策略权限和阶段化错误定位组合在一个可执行基准中。实验暴露了“会调用工具不等于会可靠规划”的关键差距，代码和数据也已给出公开地址。它的主要价值属于基准与诊断工程，而非提出新的规划或强化学习算法；若关注 agentic RL，可将其失败分类和任务结构用于训练信号设计，但不能把论文视为直接的 RL 方法贡献。",
+          "偏水风险：低",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "企业代理往往需要在结构化 API、非结构化文档和自然语言策略约束之间连续推理，但既有基准多把工具调用、检索、多跳推理和策略遵循分开评测，难以暴露这些能力组合后的误差累积。VAKRA 试图回答的核心问题不是模型能否发起一次正确调用，而是能否完成实体消歧、跨源对齐、参数传递、结果抽取和“应拒答”判断组成的完整轨迹。",
+        "method": "VAKRA 基于真实数据库构建覆盖 62 个领域的可执行 API，并配套领域文档检索库，设置 API 交互风格、多跳 API 推理、多源及策略约束推理三类任务。任务包含 2–5 跳链路，要求前序 API 或检索结果决定后续调用；所有模型统一运行在固定 ReAct 框架中，以减少代理架构差异。评测采用瀑布式流程：重新执行预测调用并检查信息覆盖，再判断最终答案的正确性和依据；对于策略任务，还独立、确定性地检查是否访问了禁用数据源，并允许多条有效执行路径。",
+        "experiments": "实验覆盖多种前沿闭源模型和大规模开源模型。最强模型在单跳、端点式 API 上达到 70.4%，但在需要组合通用操作的 BI API 上仅约 50%–51%；除最强模型外，多数模型随推理深度增加损失超过一半的准确率。加入文档检索后表现进一步下降，尤其是 RAG 结果需要继续参数化 API 时；策略使问题不可回答的场景最低只有 2.4%。分阶段分析显示，主要瓶颈并非调用协议本身，而是实体消歧、参数值抽取、跨源语义对齐、长结果解析以及拒绝无依据作答。",
+        "research_help": "Insight：长程代理的可靠性不能只用最终答案或单次工具调用衡量，应把轨迹拆成工具选择、参数绑定、中间结果抽取、跨源实体对齐、策略解释和最终依据等可定位阶段。训练 agentic RL 时，可将这些阶段转换为过程奖励或错误标签，并专门加入“策略导致不可回答”的拒答样本，避免奖励驱动模型强行完成任务。多轮系统还应显式保存实体映射、来源权限和参数来源，使后续动作能够检查其依据，而不是反复依赖模型从长观察中重新抽取。评测规划算法时，应同时改变接口抽象和推理深度，因为端点选择能力并不能代表组合式规划能力。",
+        "insight": "Insight：长程代理的可靠性不能只用最终答案或单次工具调用衡量，应把轨迹拆成工具选择、参数绑定、中间结果抽取、跨源实体对齐、策略解释和最终依据等可定位阶段。训练 agentic RL 时，可将这些阶段转换为过程奖励或错误标签，并专门加入“策略导致不可回答”的拒答样本，避免奖励驱动模型强行完成任务。多轮系统还应显式保存实体映射、来源权限和参数来源，使后续动作能够检查其依据，而不是反复依赖模型从长观察中重新抽取。评测规划算法时，应同时改变接口抽象和推理深度，因为端点选择能力并不能代表组合式规划能力。",
+        "abstract_zh": "企业代理必须同时在结构化 API 和文档集合上推理，但现有基准通常将这些能力分开评测。VAKRA 提供覆盖 62 个领域、包含八千余个可执行 API 的基准，并设置不同 API 风格、多跳结构化推理以及带自然语言工具策略的多源推理任务。作者通过重新执行模型预测的工具调用来验证正确性并容纳多种有效路径，同时使用固定 ReAct 框架比较前沿及开源模型。结果显示，性能会随组合复杂度和推理深度显著下降，策略约束问题尤其困难，而错误主要集中于实体消歧、跨源落地和模式对齐等语言推理环节。",
+        "full_summary": "VAKRA 面向企业代理中常见的跨 API 与文档推理，弥补了既有基准分别测试工具调用、检索和策略遵循的缺口。它提供真实数据库支撑的可执行环境，并通过 2–5 跳任务考察实体消歧、中间结果抽取、参数对齐和来源选择。统一 ReAct 框架与轨迹重执行机制使不同模型具有较好的可比性，也能容纳多种正确调用路径。实验显示，模型从单跳端点进入组合 API、多源检索或策略约束后性能大幅下降，且经常无法识别问题已经不可回答。论文最有价值之处是用阶段化证据说明长程失败主要发生在语言介导的状态传递与约束解释上，适合作为 agent planning 和可靠性研究的诊断基准阅读。",
+        "card_summary": "VAKRA 将可执行 API、文档检索、多跳参数传递和自然语言工具策略放进同一条代理轨迹中评测。实验表明，现有强模型在单步调用之外仍非常脆弱，真正的瓶颈更多是跨源语义对齐和约束解释，而非调用工具的格式能力。"
+      },
+      "analysis": {
+        "motivation": "企业代理往往需要在结构化 API、非结构化文档和自然语言策略约束之间连续推理，但既有基准多把工具调用、检索、多跳推理和策略遵循分开评测，难以暴露这些能力组合后的误差累积。VAKRA 试图回答的核心问题不是模型能否发起一次正确调用，而是能否完成实体消歧、跨源对齐、参数传递、结果抽取和“应拒答”判断组成的完整轨迹。",
+        "method": "VAKRA 基于真实数据库构建覆盖 62 个领域的可执行 API，并配套领域文档检索库，设置 API 交互风格、多跳 API 推理、多源及策略约束推理三类任务。任务包含 2–5 跳链路，要求前序 API 或检索结果决定后续调用；所有模型统一运行在固定 ReAct 框架中，以减少代理架构差异。评测采用瀑布式流程：重新执行预测调用并检查信息覆盖，再判断最终答案的正确性和依据；对于策略任务，还独立、确定性地检查是否访问了禁用数据源，并允许多条有效执行路径。",
+        "experiments": "实验覆盖多种前沿闭源模型和大规模开源模型。最强模型在单跳、端点式 API 上达到 70.4%，但在需要组合通用操作的 BI API 上仅约 50%–51%；除最强模型外，多数模型随推理深度增加损失超过一半的准确率。加入文档检索后表现进一步下降，尤其是 RAG 结果需要继续参数化 API 时；策略使问题不可回答的场景最低只有 2.4%。分阶段分析显示，主要瓶颈并非调用协议本身，而是实体消歧、参数值抽取、跨源语义对齐、长结果解析以及拒绝无依据作答。",
+        "research_help": "Insight：长程代理的可靠性不能只用最终答案或单次工具调用衡量，应把轨迹拆成工具选择、参数绑定、中间结果抽取、跨源实体对齐、策略解释和最终依据等可定位阶段。训练 agentic RL 时，可将这些阶段转换为过程奖励或错误标签，并专门加入“策略导致不可回答”的拒答样本，避免奖励驱动模型强行完成任务。多轮系统还应显式保存实体映射、来源权限和参数来源，使后续动作能够检查其依据，而不是反复依赖模型从长观察中重新抽取。评测规划算法时，应同时改变接口抽象和推理深度，因为端点选择能力并不能代表组合式规划能力。",
+        "insight": "Insight：长程代理的可靠性不能只用最终答案或单次工具调用衡量，应把轨迹拆成工具选择、参数绑定、中间结果抽取、跨源实体对齐、策略解释和最终依据等可定位阶段。训练 agentic RL 时，可将这些阶段转换为过程奖励或错误标签，并专门加入“策略导致不可回答”的拒答样本，避免奖励驱动模型强行完成任务。多轮系统还应显式保存实体映射、来源权限和参数来源，使后续动作能够检查其依据，而不是反复依赖模型从长观察中重新抽取。评测规划算法时，应同时改变接口抽象和推理深度，因为端点选择能力并不能代表组合式规划能力。",
+        "abstract_zh": "企业代理必须同时在结构化 API 和文档集合上推理，但现有基准通常将这些能力分开评测。VAKRA 提供覆盖 62 个领域、包含八千余个可执行 API 的基准，并设置不同 API 风格、多跳结构化推理以及带自然语言工具策略的多源推理任务。作者通过重新执行模型预测的工具调用来验证正确性并容纳多种有效路径，同时使用固定 ReAct 框架比较前沿及开源模型。结果显示，性能会随组合复杂度和推理深度显著下降，策略约束问题尤其困难，而错误主要集中于实体消歧、跨源落地和模式对齐等语言推理环节。",
+        "card_summary": "VAKRA 将可执行 API、文档检索、多跳参数传递和自然语言工具策略放进同一条代理轨迹中评测。实验表明，现有强模型在单步调用之外仍非常脆弱，真正的瓶颈更多是跨源语义对齐和约束解释，而非调用工具的格式能力。",
+        "full_summary": "VAKRA 面向企业代理中常见的跨 API 与文档推理，弥补了既有基准分别测试工具调用、检索和策略遵循的缺口。它提供真实数据库支撑的可执行环境，并通过 2–5 跳任务考察实体消歧、中间结果抽取、参数对齐和来源选择。统一 ReAct 框架与轨迹重执行机制使不同模型具有较好的可比性，也能容纳多种正确调用路径。实验显示，模型从单跳端点进入组合 API、多源检索或策略约束后性能大幅下降，且经常无法识别问题已经不可回答。论文最有价值之处是用阶段化证据说明长程失败主要发生在语言介导的状态传递与约束解释上，适合作为 agent planning 和可靠性研究的诊断基准阅读。",
+        "recommendation_level": "高",
+        "water_risk": "低",
+        "value_label": "高价值代理可靠性评测基准",
+        "value_reason": "论文与 multi-turn agent、long-horizon planning 和工具可靠性高度相关，贡献不只是扩大工具数量，而是把跨源参数传递、替代执行路径、策略权限和阶段化错误定位组合在一个可执行基准中。实验暴露了“会调用工具不等于会可靠规划”的关键差距，代码和数据也已给出公开地址。它的主要价值属于基准与诊断工程，而非提出新的规划或强化学习算法；若关注 agentic RL，可将其失败分类和任务结构用于训练信号设计，但不能把论文视为直接的 RL 方法贡献。",
+        "limitations": "任务大量依赖 LLM 自动生成与过滤，人工质量检查只覆盖两个设置各 60 个问题，无法充分保证整个数据集没有捷径、模板偏差或错误链路。部分轨迹和最终答案需要 GPT-OSS-120B 充当 LLM 裁判，结果可能受裁判偏差影响；固定 ReAct 虽利于隔离模型能力，却不能代表使用专门规划器、记忆模块或纠错机制后的真实系统上限。所谓“实时 API”实质上是本地托管、由 BIRD-SQL 数据库派生的可执行接口，不等同于存在权限、延迟、状态变化和副作用的生产 API。正文还出现多源样本数 644 与 664、API 总量八千余与图中 7,087 个工具等统计口径差异，需要结合发布数据核对；Claude Opus 仅在子集上评测，也不宜直接进行完整横向排名。作者关于“首个同时覆盖全部能力”的新颖性主要由自己的对比表支持，尚不能仅凭本文文本独立确认。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "论文给出三个递进设置：API 交互风格、多跳结构化 API 推理，以及结合检索和自然语言工具策略的多源推理。",
+          "表 2 报告测试集包含 1,597 个 Dashboard API、869 个多跳推理和 644 个多源多跳样本，并覆盖最多 5 跳的调用链。",
+          "表 3 显示 GPT-5.5 在 Dashboard API 上为 70.4%，在 SEL 和 SLOT 两类组合式 BI API 上分别为 51.0% 和 50.04%。",
+          "作者报告除 GPT-5.5 外，多数模型随推理跳数增加损失超过 50% 的准确率；策略使问题不可回答时，部分模型成功率低至 2.4%。因果措辞应谨慎，这里直接支持的是相关性和错误分布，而非受控因果结论。 Trace analysis 进一步将错误集中到实体消歧、跨源 grounding、schema alignment 及结果抽取。正如论文所述，这些错误更..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-14T02:03:15.799Z"
+      }
+    },
     {
       "id": "2608.11095v1",
       "title": "Why Does CLAUDE.md Keep Growing? Catastrophic Remembering in Agentic Coding",
