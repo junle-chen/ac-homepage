@@ -28,7 +28,7 @@ I am a first-year PhD student in Computer Science and Engineering at The Hong Ko
 
 - [Trip+: Benchmarking Agents in Personalized Interactive Travel Planning](https://arxiv.org/abs/2606.21169)  
   **Junle Chen**, Wei Chen, Yehong Xu, Zhengjun Huang, Yuqian Wu, Zhoujin Tian, Kai Wang, Lei Wang, Xiaofang Zhou.  
-  *arXiv preprint arXiv:2606.21169, 2026*
+  *EMNLP 2026 (Main)*
 
 - [M^3Exam: Benchmarking Multimodal Memory for Realistic User-Agent Interactions](https://arxiv.org/abs/2606.07402)  
   Zhengjun Huang, Wenxuan Liu, Zhoujin Tian, Wei Chen, **Junle Chen**, Yuqian Wu, Fangyuan Zhang, Qintian Guo, Xiaofang Zhou.  
@@ -40,7 +40,7 @@ I am a first-year PhD student in Computer Science and Engineering at The Hong Ko
 
 - [Back to Basics: Let Conversational Agents Remember with Just Retrieval and Generation](https://arxiv.org/abs/2604.11628)  
   Yuqian Wu, Wei Chen, Zhengjun Huang, **Junle Chen**, Qingxiang Liu, Kai Wang, Xiaofang Zhou, Yuxuan Liang.  
-  *arXiv preprint arXiv:2604.11628, 2026*
+  *COLM 2026*
 
 - [UrbanFM: Scaling Urban Spatio-Temporal Foundation Models](https://arxiv.org/abs/2602.20677)  
   Wei Chen, Yuqian Wu, **Junle Chen**, Xiaofang Zhou, Yuxuan Liang.  
