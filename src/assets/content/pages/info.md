@@ -6,11 +6,11 @@ subtitle: Academic profile
 
 # Junle Chen(陈俊乐)
 
-First-year PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology, advised by Professor Xiaofang Zhou.
+PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology, advised by Professor Xiaofang Zhou.
 
 ## About Me
 
-I am a first-year PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology. My current research focuses on large language models, long-horizon agents, and spatial-temporal data.
+I am a PhD student in Computer Science and Engineering at The Hong Kong University of Science and Technology. My current research focuses on large language models, long-horizon agents, and spatial-temporal data.
 
 ## Education
 
