@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T01:48:22.995Z",
+  "updated_at": "2026-08-29T01:39:46.381Z",
   "source": "arxiv",
   "analysis_method": "Codex CLI paper reading from arXiv PDF text when extractable; fallback entries are marked as abstract.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
@@ -37,41 +37,32 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-28 Daily Paper",
-    "report_date": "2026-08-28",
+    "title": "2026-08-29 Daily Paper",
+    "report_date": "2026-08-29",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日从 arXiv 候选中保留 8 篇高相关论文，重点是 live long-horizon self-improvement、软件操作 agent 的结构化环境接口、人类/Agent ML 开发规划、行为轨迹驱动的个性化规划、长期多模态记忆、向量记忆和 agentic RL 状态抽取；剔除领域 MARL、市场仿真、系统性能和重复旧论文。",
+    "summary": "今日从 arXiv 候选中只保留 1 篇高相关论文，重点是具身场景重排中的长时序规划、空间记忆、局部观测和执行阶段可靠性；剔除重复旧论文、领域 MARL/市场仿真/空战环境、系统综述和规划相关性间接的评测工程。",
     "top_recommendations": [
-      "2608.26530v1",
-      "2608.26991v1",
-      "2608.26086v1"
+      "2608.27371v1"
     ],
     "low_priority": [
+      "2608.27334v1",
       "2608.26683v1",
       "2608.27046v1",
       "2608.26896v1",
-      "2608.25419v1",
-      "2608.25794v1"
+      "2608.25419v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-08-28 Daily Paper\n\n今日从 arXiv 候选中保留 8 篇高相关论文，重点是 live long-horizon self-improvement、软件操作 agent 的结构化环境接口、人类/Agent ML 开发规划、行为轨迹驱动的个性化规划、长期多模态记忆、向量记忆和 agentic RL 状态抽取；剔除领域 MARL、市场仿真、系统性能和重复旧论文。\n\n最值得读的 3 篇\n1. PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents\n- PILOT 把长程 agent 的执行轨迹即时交给 supervisor，用在线纠偏和持久技能更新同时改进当前 run 与未来 harness。它直接命中 live self-improvement、经验记忆和长程任务可靠性，是今天最值得优先读的系统型工作。\n2. ASIL: Replacing Screenshot-and-Click with Structured State and Semantic Actions\n- ASIL 指出截图点击接口会让软件操作 agent 在长程任务中丢状态、动作脆弱，并提出结构化状态、语义动作、验证器和 trace contract。它对构建可回放、可验证、可训练的环境交互层很有迁移价值。\n3. TraceML: An Empirical Analysis of Human-Agent Planning in Machine Learning Development\n- TraceML 用 Kaggle 式 ML 开发轨迹比较人类和 agent，发现 agent 缺少方案历史、放弃原因和回退/重访机制。它给 long-horizon planning 的记忆结构、转向策略和训练信号提供了具体诊断。\n\n本次保留论文\n- 2608.26807v1 Behavior2Trip: Towards Personalized Travel Planning via User Behavior Trajectory\n- 2608.26530v1 PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents\n- 2608.26991v1 ASIL: Replacing Screenshot-and-Click with Structured State and Semantic Actions\n- 2608.26788v1 Decoupling Planning and Control for Instructable Agents\n- 2608.26983v1 GraphMemix: Query-Aware Evidence Forests for Long-Term Multimodal Agent Memory\n- 2608.26895v1 When Memory Takes Gradients: Collaborative Vector Memory for Agentic Recommender Systems\n- 2608.27142v1 GRAIN: Bridging Name and Narrative Shifts in Real-World Graph Reasoning through Invariance-Rewarded Agentic RL\n- 2608.26086v1 TraceML: An Empirical Analysis of Human-Agent Planning in Machine Learning Development\n\n本次剔除 / 不重复计入\n- 2608.26683v1 SIGMA：合作 MARL 聚合/抗噪，只有间接多智能体启发，未直接命中 LLM agent planning。\n- 2608.27046v1 Performance Foundations：偏 reasoning LM 训练/推理系统性能，不能直接证明规划可靠性提升。\n- 2608.26896v1 AI agents in Algorithmic Electricity Markets：领域市场仿真和合谋分析，和个人主页关注的 agent planning 距离较远。\n- 2608.25419v1 BVR Sim：空战 RL 环境，昨天已判断为领域环境类弱相关。\n- 2608.25794v1 pFedMARL：联邦学习聚合 MARL，昨天已判断为领域优化类弱相关。\n- 2608.25711v1 / 2608.25329v1 / 2608.25340v1：已在 2026-08-27 发布，今天不重复计入 latest。"
+    "email_body": "2026-08-29 Daily Paper\n\n今日从 arXiv 候选中只保留 1 篇高相关论文，重点是具身场景重排中的长时序规划、空间记忆、局部观测和执行阶段可靠性；剔除重复旧论文、领域 MARL/市场仿真/空战环境、系统综述和规划相关性间接的评测工程。\n\n最值得读的论文\n1. Embodied Scene Rearrangement Planning\n- ESRP-Bench 把房间级家具重排置于第一视角、遮挡和无全局真值条件下，直接检验 Agent 的空间记忆、长序列规划、放置验证和失败恢复能力。所有基线在困难场景完整成功率为 0%，主要失败发生在抓取后放置阶段，对 long-horizon environment interaction 的诊断价值很高。\n\n本次保留论文\n- 2608.27371v1 Embodied Scene Rearrangement Planning\n\n本次剔除 / 不重复计入\n- 2608.27334v1 BTS-AgentBench：可重放评测工程有价值，但规划研究相关性偏间接，未达到今日强相关阈值。\n- 2608.26683v1 SIGMA：含噪协作 MARL 聚合，只有结构化误差传播启发，未直接研究 LLM agent planning。\n- 2608.27046v1 Performance Foundations：高质量 reasoning/RL 系统综述，但不提出新的 agent planning 或长程交互方法。\n- 2608.26896v1 AI agents in Algorithmic Electricity Markets：电力市场多智能体仿真，机制诊断有价值但领域外推有限。\n- 2608.25419v1 BVR Sim：空战 MARL 环境，基础设施价值大于 agent planning 贡献。\n- 2608.26807v1 / 2608.26530v1 / 2608.26991v1 / 2608.26788v1 / 2608.26983v1 / 2608.26895v1 / 2608.27142v1 / 2608.25711v1 / 2608.25329v1 / 2608.25340v1：已在 2026-08-27 或 2026-08-28 发布，今天不重复计入 latest。"
   },
   "latest_item_ids": [
-    "2608.26807v1",
-    "2608.26530v1",
-    "2608.26991v1",
-    "2608.26788v1",
-    "2608.26983v1",
-    "2608.26895v1",
-    "2608.27142v1",
-    "2608.26086v1"
+    "2608.27371v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 8,
-    "total_items": 413,
-    "previous_items": 405,
-    "latest_items": 8,
+    "fresh_items": 1,
+    "total_items": 414,
+    "previous_items": 413,
+    "latest_items": 1,
     "source_report_dates": {
       "2026-08-28": 8,
       "2026-08-27": 10,
@@ -108,19 +99,13 @@
       "2026-07-07": 1,
       "2026-07-06": 8,
       "2026-07-04": 8,
-      "2026-07-02": 2
+      "2026-07-02": 2,
+      "2026-08-29": 1
     },
     "filtered_candidate_ids": [
-      "2608.26807v1",
-      "2608.26530v1",
-      "2608.26991v1",
-      "2608.26788v1",
-      "2608.26983v1",
-      "2608.26895v1",
-      "2608.27142v1",
-      "2608.26086v1"
+      "2608.27371v1"
     ],
-    "filtered_today": 8,
+    "filtered_today": 1,
     "backfilled_report_dates": {
       "2026-07-17": 3,
       "2026-07-24": 1,
@@ -129,6 +114,122 @@
     }
   },
   "items": [
+    {
+      "id": "2608.27371v1",
+      "title": "Embodied Scene Rearrangement Planning",
+      "summary": "This paper introduces Embodied Scene Rearrangement Planning (ESRP), a novel task requiring embodied agents to rearrange furniture in 3D scenes to match a target configuration using only egocentric observations and a top-down target layout. Unlike prior rearrangement tasks, ESRP precludes global state access and introduces mutual object occlusions, reflecting the practical constraints of real-world robotic deployment. These factors make aligning partial egocentric observations with the global target layout particularly challenging for long-horizon planning. To facilitate research, we present ESRP-Bench, a comprehensive benchmark built on OmniGibson featuring over 5,400 scene pairs and 8,200 objects. We define three multi-level metrics to evaluate rearrangement quality and provide four baselines: a hierarchical task-and-motion planning method, a vision-language-model-based method, and two learning-based approaches (IL and RL). Experimental results demonstrate that current methods struggle to complete the task efficiently, highlighting ESRP as a challenging frontier for embodied agents in scene understanding and long-horizon task planning. This work serves as a stepping stone toward deploying intelligent agents in real-world scenarios. Project page: https://pie-lab.cn/ESRP/.",
+      "url": "http://arxiv.org/abs/2608.27371v1",
+      "authors": [
+        "Canzhi Chen",
+        "Zan Wang",
+        "Siqi Zhu",
+        "Qi Wu",
+        "Yixuan Li",
+        "Wei Liang"
+      ],
+      "report_date": "2026-08-29",
+      "published": "2026-08-27",
+      "updated": "2026-08-27",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 70,
+        "level": "高",
+        "label": "高相关的基准与诊断型论文",
+        "water_risk": "中",
+        "value_judgement": "论文与 long-horizon planning、部分可观测多轮执行和 planning reliability 高度相关，任务定义、数据规模、跨范式基线及分阶段失败分析共同形成了较完整的研究基础设施。尤其是困难场景全线失败和放置阶段占主导的结果，为场景记忆、闭环验证、动态重规划与恢复机制提供了明确研究靶点。不过，它的贡献主要是任务和基准，尚未给出能显著解决问题的新算法；真实部署的论证也弱于其问题设定的现实性，因此更适合用于选题、评测和失败机制研究，而非直接借鉴成熟方案。",
+        "reason": "论文与 long-horizon planning、部分可观测多轮执行和 planning reliability 高度相关，任务定义、数据规模、跨范式基线及分阶段失败分析共同形成了较完整的研究基础设施。尤其是困难场景全线失败和放置阶段占主导的结果，为场景记忆、闭环验证、动态重规划与恢复机制提供了明确研究靶点。不过，它的贡献主要是任务和基准，尚未给出能显著解决问题的新算法；真实部署的论证也弱于其问题设定的现实性，因此更适合用于选题、评测和失败机制研究，而非直接借鉴成熟方案。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Canzhi Chen",
+          "Zan Wang",
+          "Siqi Zhu",
+          "Qi Wu",
+          "Yixuan Li",
+          "Wei Liang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-27",
+        "paper_url": "https://arxiv.org/abs/2608.27371v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "论文与 long-horizon planning、部分可观测多轮执行和 planning reliability 高度相关，任务定义、数据规模、跨范式基线及分阶段失败分析共同形成了较完整的研究基础设施。尤其是困难场景全线失败和放置阶段占主导的结果，为场景记忆、闭环验证、动态重规划与恢复机制提供了明确研究靶点。不过，它的贡献主要是任务和基准，尚未给出能显著解决问题的新算法；真实部署的论证也弱于其问题设定的现实性，因此更适合用于选题、评测和失败机制研究，而非直接借鉴成熟方案。",
+        "summary": "论文提出 ESRP，把家具重排定义为仅依靠第一视角 RGB 和俯视目标图完成的三维长时序规划任务，以弥补现有桌面任务或二维全局状态设定与真实部署之间的差距。作者构建了覆盖 5,495 个场景对和 8,213 件可移动家具的 ESRP-Bench，并同时提供强化学习、模仿学习、VLM-ReAct 和特权 TAMP 四类基线。最强的 ESRP-PLAN 整体成功率也只有 30.20%，而在移动 4至6 件家具的困难场景中，全部方法均无法完整成功。失败分解进一步显示，学习与 VLM 方法的大多数失败发生在已经抓取物体之后，暴露出目标对齐、精确放置及长序列状态维护的问题。论文的主要价值是提供了一个能区分感知瓶颈与规划瓶颈的困难基准，而不是提出性能领先的新规划算法。由于操作被简化为即时抓取、实验完全在仿真中进行且缺少稳定性和真实迁移验证，其部署意义仍需后续工作确认。",
+        "highlights": [
+          "论文与 long-horizon planning、部分可观测多轮执行和 planning reliability 高度相关，任务定义、数据规模、跨范式基线及分阶段失败分析共同形成了较完整的研究基础设施。尤其是困难场景全线失败和放置阶段占主导的结果，为场景记忆、闭环验证、动态重规划与恢复机制提供了明确研究靶点。不过，它的贡献主要是任务和基准，尚未给出能显著解决问题的新算法；真实部署的论证也弱于其问题设定的现实性，因此更适合用于选题、评测和失败机制研究，而非直接借鉴成熟方案。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有重排研究多局限于桌面小物体，或把房间级任务简化为可访问全局状态的二维规划，无法充分反映真实机器人面对的局部观测、遮挡、空间约束和动态场景变化。论文因此提出 ESRP，要求智能体仅凭第一视角 RGB、俯视目标布局和抓取状态，在三维房间内完成多件家具的长时序重排，重点考察全局状态推断、对象顺序规划与可靠执行。",
+        "method": "论文构建了基于 OmniGibson 和 3D-FRONT 的 ESRP-Bench，包含 5,495 个初始—目标场景对、24 类房间和 8,213 件可移动家具，并按待移动物体数量划分难度。动作空间由离散导航及 fetch、release 组成，以整体成功率、对象成功率和剩余距离比衡量最终质量。作者提供四类基线：基于扩散策略的行为克隆 ESRP-BC、采用 CNN-LSTM 与 PPO 的 ESRP-PPO、通过 ReAct 提示调用视觉语言模型的 ESRP-VLM，以及使用完整地图和精确位姿等特权状态的分层 TAMP 方法 ESRP-PLAN。",
+        "experiments": "最强的特权规划基线 ESRP-PLAN 整体成功率为 30.20%，PPO、BC 和 Qwen3-VL 基线分别为 20.18%、19.09% 和 17.64%；换用 Gemini 2.5 Flash-Lite 后，VLM 成功率提高到 23.01%，但该结果仅报告单次运行。难度增长带来断崖式退化：在需要移动 4至6 件物体的困难场景中，所有方法的完整成功率均为 0%，即使拥有全局真值的规划器也只能部分放置对象。学习方法约 61%至67%的轨迹止于抓取之后、正确放置之前，说明主要瓶颈不是接近或抓取物体，而是局部观测下的目标对齐、放置决策与长序列误差控制。结果有较强诊断价值，但尚无真实机器人实验、重复运行方差或跨数据分布泛化验证。",
+        "research_help": "Insight：该基准揭示，提升单步视觉识别或更换更强基础模型并不足以解决长时序可靠性；系统需要持续维护可更新的全局场景记忆，并把对象对应、顺序选择、路径可行性和放置验证纳入闭环规划。困难场景中连特权规划器也无法完整成功，说明多对象依赖和执行约束本身就会造成组合爆炸，应考虑分层规划、可行性预检、失败恢复与动态重规划，而不只是端到端动作预测。大量失败集中在抓取后的放置阶段，也提示训练和评测应按执行阶段分解信用与可靠性，并显式监测进度、状态漂移和累积误差。",
+        "recommendation": {
+          "score": 70,
+          "level": "中",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "需要谨慎：可能有启发，但先看实验和设定是否扎实。",
+          "reason": "和 long-horizon planning / multi-step task 相关；摘要给出实验、benchmark 或 baseline 证据。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：该基准揭示，提升单步视觉识别或更换更强基础模型并不足以解决长时序可靠性；系统需要持续维护可更新的全局场景记忆，并把对象对应、顺序选择、路径可行性和放置验证纳入闭环规划。困难场景中连特权规划器也无法完整成功，说明多对象依赖和执行约束本身就会造成组合爆炸，应考虑分层规划、可行性预检、失败恢复与动态重规划，而不只是端到端动作预测。大量失败集中在抓取后的放置阶段，也提示训练和评测应按执行阶段分解信用与可靠性，并显式监测进度、状态漂移和累积误差。",
+        "abstract_zh": "本文提出具身场景重排规划 ESRP：智能体只能利用第一视角观测和俯视目标布局，将三维场景中的家具调整到目标配置。与已有重排任务不同，ESRP 不提供全局状态，并引入物体相互遮挡，使局部观测与全局目标的对齐及长时序规划更加困难。作者基于 OmniGibson 构建 ESRP-Bench，包含超过 5,400 个场景对和 8,200 件物体，并设计三级评测指标与规划、视觉语言模型、模仿学习和强化学习基线。实验显示现有方法难以高效完成任务，表明场景理解和长时序任务规划仍是具身家具重排的重要瓶颈。",
+        "full_summary": "论文提出 ESRP，把家具重排定义为仅依靠第一视角 RGB 和俯视目标图完成的三维长时序规划任务，以弥补现有桌面任务或二维全局状态设定与真实部署之间的差距。作者构建了覆盖 5,495 个场景对和 8,213 件可移动家具的 ESRP-Bench，并同时提供强化学习、模仿学习、VLM-ReAct 和特权 TAMP 四类基线。最强的 ESRP-PLAN 整体成功率也只有 30.20%，而在移动 4至6 件家具的困难场景中，全部方法均无法完整成功。失败分解进一步显示，学习与 VLM 方法的大多数失败发生在已经抓取物体之后，暴露出目标对齐、精确放置及长序列状态维护的问题。论文的主要价值是提供了一个能区分感知瓶颈与规划瓶颈的困难基准，而不是提出性能领先的新规划算法。由于操作被简化为即时抓取、实验完全在仿真中进行且缺少稳定性和真实迁移验证，其部署意义仍需后续工作确认。",
+        "card_summary": "ESRP-Bench 将房间级家具重排置于第一视角、无全局真值和物体遮挡条件下，用大规模三维场景检验智能体的空间记忆与长时序规划能力。所有基线在复杂场景中的完整成功率都降至零，且主要失败发生在抓取后的目标放置阶段，是一篇对具身规划可靠性很有诊断价值的基准论文。"
+      },
+      "analysis": {
+        "motivation": "现有重排研究多局限于桌面小物体，或把房间级任务简化为可访问全局状态的二维规划，无法充分反映真实机器人面对的局部观测、遮挡、空间约束和动态场景变化。论文因此提出 ESRP，要求智能体仅凭第一视角 RGB、俯视目标布局和抓取状态，在三维房间内完成多件家具的长时序重排，重点考察全局状态推断、对象顺序规划与可靠执行。",
+        "method": "论文构建了基于 OmniGibson 和 3D-FRONT 的 ESRP-Bench，包含 5,495 个初始—目标场景对、24 类房间和 8,213 件可移动家具，并按待移动物体数量划分难度。动作空间由离散导航及 fetch、release 组成，以整体成功率、对象成功率和剩余距离比衡量最终质量。作者提供四类基线：基于扩散策略的行为克隆 ESRP-BC、采用 CNN-LSTM 与 PPO 的 ESRP-PPO、通过 ReAct 提示调用视觉语言模型的 ESRP-VLM，以及使用完整地图和精确位姿等特权状态的分层 TAMP 方法 ESRP-PLAN。",
+        "experiments": "最强的特权规划基线 ESRP-PLAN 整体成功率为 30.20%，PPO、BC 和 Qwen3-VL 基线分别为 20.18%、19.09% 和 17.64%；换用 Gemini 2.5 Flash-Lite 后，VLM 成功率提高到 23.01%，但该结果仅报告单次运行。难度增长带来断崖式退化：在需要移动 4至6 件物体的困难场景中，所有方法的完整成功率均为 0%，即使拥有全局真值的规划器也只能部分放置对象。学习方法约 61%至67%的轨迹止于抓取之后、正确放置之前，说明主要瓶颈不是接近或抓取物体，而是局部观测下的目标对齐、放置决策与长序列误差控制。结果有较强诊断价值，但尚无真实机器人实验、重复运行方差或跨数据分布泛化验证。",
+        "research_help": "Insight：该基准揭示，提升单步视觉识别或更换更强基础模型并不足以解决长时序可靠性；系统需要持续维护可更新的全局场景记忆，并把对象对应、顺序选择、路径可行性和放置验证纳入闭环规划。困难场景中连特权规划器也无法完整成功，说明多对象依赖和执行约束本身就会造成组合爆炸，应考虑分层规划、可行性预检、失败恢复与动态重规划，而不只是端到端动作预测。大量失败集中在抓取后的放置阶段，也提示训练和评测应按执行阶段分解信用与可靠性，并显式监测进度、状态漂移和累积误差。",
+        "insight": "Insight：该基准揭示，提升单步视觉识别或更换更强基础模型并不足以解决长时序可靠性；系统需要持续维护可更新的全局场景记忆，并把对象对应、顺序选择、路径可行性和放置验证纳入闭环规划。困难场景中连特权规划器也无法完整成功，说明多对象依赖和执行约束本身就会造成组合爆炸，应考虑分层规划、可行性预检、失败恢复与动态重规划，而不只是端到端动作预测。大量失败集中在抓取后的放置阶段，也提示训练和评测应按执行阶段分解信用与可靠性，并显式监测进度、状态漂移和累积误差。",
+        "abstract_zh": "本文提出具身场景重排规划 ESRP：智能体只能利用第一视角观测和俯视目标布局，将三维场景中的家具调整到目标配置。与已有重排任务不同，ESRP 不提供全局状态，并引入物体相互遮挡，使局部观测与全局目标的对齐及长时序规划更加困难。作者基于 OmniGibson 构建 ESRP-Bench，包含超过 5,400 个场景对和 8,200 件物体，并设计三级评测指标与规划、视觉语言模型、模仿学习和强化学习基线。实验显示现有方法难以高效完成任务，表明场景理解和长时序任务规划仍是具身家具重排的重要瓶颈。",
+        "card_summary": "ESRP-Bench 将房间级家具重排置于第一视角、无全局真值和物体遮挡条件下，用大规模三维场景检验智能体的空间记忆与长时序规划能力。所有基线在复杂场景中的完整成功率都降至零，且主要失败发生在抓取后的目标放置阶段，是一篇对具身规划可靠性很有诊断价值的基准论文。",
+        "full_summary": "论文提出 ESRP，把家具重排定义为仅依靠第一视角 RGB 和俯视目标图完成的三维长时序规划任务，以弥补现有桌面任务或二维全局状态设定与真实部署之间的差距。作者构建了覆盖 5,495 个场景对和 8,213 件可移动家具的 ESRP-Bench，并同时提供强化学习、模仿学习、VLM-ReAct 和特权 TAMP 四类基线。最强的 ESRP-PLAN 整体成功率也只有 30.20%，而在移动 4至6 件家具的困难场景中，全部方法均无法完整成功。失败分解进一步显示，学习与 VLM 方法的大多数失败发生在已经抓取物体之后，暴露出目标对齐、精确放置及长序列状态维护的问题。论文的主要价值是提供了一个能区分感知瓶颈与规划瓶颈的困难基准，而不是提出性能领先的新规划算法。由于操作被简化为即时抓取、实验完全在仿真中进行且缺少稳定性和真实迁移验证，其部署意义仍需后续工作确认。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "高相关的基准与诊断型论文",
+        "value_reason": "论文与 long-horizon planning、部分可观测多轮执行和 planning reliability 高度相关，任务定义、数据规模、跨范式基线及分阶段失败分析共同形成了较完整的研究基础设施。尤其是困难场景全线失败和放置阶段占主导的结果，为场景记忆、闭环验证、动态重规划与恢复机制提供了明确研究靶点。不过，它的贡献主要是任务和基准，尚未给出能显著解决问题的新算法；真实部署的论证也弱于其问题设定的现实性，因此更适合用于选题、评测和失败机制研究，而非直接借鉴成熟方案。",
+        "limitations": "实验仅在 OmniGibson 中完成，抓取和释放采用即时附着等高层抽象，不能验证真实家具操作中的控制误差、动力学、安全性和 sim-to-real 鲁棒性。ESRP-PLAN 使用完整占据图、精确物体与机器人位姿等特权信息，与其他仅用局部观测的方法并非完全同等条件。困难场景最多只有 4至6 件待移动家具，却已全部零成功，说明基准很难，但也限制了对更长任务规模的有效比较。专家轨迹由初始布局生成过程的反向轨迹得到，可能带有规则生成器偏置；文中也未提供多随机种子方差，强化 VLM 的结果还是单次运行。论文关于现实迁移和“首个”任务的表述主要依赖设定与既有工作类比，缺少真实机器人实验和更全面的新颖性核验。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "任务观测仅包含 128×128 第一视角 RGB、128×128 俯视目标图和二值抓取状态，不提供真实定位或全局状态。",
+          "ESRP-Bench 报告 5,495 个场景、24 类房间和 8,213 件可移动家具，每个场景包含 1至6 件待重排物体。",
+          "整体结果中 ESRP-PPO、ESRP-BC、ESRP-VLM 和 ESRP-PLAN 的成功率分别为 20.18%、19.09%、17.64% 和 30.20%。",
+          "在困难级别中，四种方法的完整成功率均为 0%；拥有特权全局信息的 ESRP-PLAN 对象成功率仍为 22.00%。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-08-29T01:35:39.825Z"
+      }
+    },
     {
       "id": "2608.26807v1",
       "title": "Behavior2Trip: Towards Personalized Travel Planning via User Behavior Trajectory",
