@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-31T01:41:02.150Z",
+  "updated_at": "2026-09-01T01:34:32.567Z",
   "source": "arxiv",
   "analysis_method": "Codex CLI paper reading from arXiv PDF text when extractable; fallback entries are marked as abstract.",
   "query_focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
@@ -37,37 +37,33 @@
     "codex_reader": "Downloads arXiv PDFs, extracts text with pdftotext or bundled Python PDF libraries, then calls codex exec to write Chinese motivation/method/experiment/research-help fields."
   },
   "digest": {
-    "title": "2026-08-31 Daily Paper",
-    "report_date": "2026-08-31",
+    "title": "2026-09-01 Daily Paper",
+    "report_date": "2026-09-01",
     "focus": "多轮交互式 agent planning、long-horizon planning、stateful/personalized planning、agent memory、planning reliability、agentic RL",
-    "summary": "今日保留 7 篇高相关论文，重点是长时程上下文管理、agentic RL 信用分配、多轮工具反馈、风险敏感交互式规划、树状 rollout 训练效率、可验证安全规划，以及外部记忆对不可回答问题可靠性的影响；剔除了领域 MARL、间接 benchmark 工程和已发布旧论文。",
+    "summary": "今日保留 4 篇高相关新论文，重点是 agentic RAG 的可逆记忆与信用分配、多智能体时序逻辑规划、纵向临床 agent 的时间有效记忆，以及长期 LLM agent 的选择性遗忘负结果；剔除了通信域 MARL，并恢复已发布旧论文的原日期。",
     "top_recommendations": [
-      "2608.28476v1",
-      "2608.28128v1",
-      "2608.27924v1"
+      "2608.29622v1",
+      "2608.29490v1",
+      "2608.29528v1"
     ],
     "low_priority": [
-      "2608.28158v1",
-      "2608.28305v1"
+      "2608.28978v1"
     ],
     "no_news_policy": "如果没有新的高相关论文，自动化应返回“今日无高相关新增论文”，不写邮件正文文件，也不发送邮件。",
-    "email_body": "2026-08-31 Daily Paper\n\n今日保留 7 篇高相关论文，重点是长时程上下文管理、agentic RL 信用分配、多轮工具反馈、风险敏感交互式规划、树状 rollout 训练效率、可验证安全规划，以及外部记忆对不可回答问题可靠性的影响；剔除了领域 MARL、间接 benchmark 工程和已发布旧论文。\n\n最值得读的论文\n1. ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL\n- ContextPilot 把规划、长期记忆、可恢复历史折叠和软压缩纳入 Agent 的主动上下文管理，并用关键上下文编辑节点的分支 rollout 做更细粒度的 RL 信用分配。它直接命中 long-horizon multi-turn agent 的状态管理问题，实验也同时报告任务表现和上下文预算。\n\n2. VICT: Verifier-Instrumented Credit Tracing for Long-Horizon LLM Agent Reinforcement Learning\n- VICT 将程序化验证器拆成可追踪事实，并把奖励修正只施加到与验证事实有 proof edge 的动作上，缓解长程 Agent 训练里终局奖励过度广播的问题。ALFWorld 和 WebShop 结果支持它对 agentic RL 训练效率和可审计性的价值。\n\n3. What Makes Agent Memory Useful for Reliable Unanswerable Question Handling?\n- 这篇论文不是单纯追求更高拒答率，而是拆解记忆表示、经验来源和迁移对不可回答问题处理的影响。它的负结果与机制分析对 agent memory、长期可靠性和多轮工具型系统设计很有参考价值。\n\n本次保留论文\n- 2608.28476v1 ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL\n- 2608.27796v1 ReToolSQL: Agentic Reinforcement Learning for Robust Text-to-SQL\n- 2608.27847v1 From Uncertainty to Clinical Risk: Severity-Aware Conformal Planning for Interactive Medical Diagnosis\n- 2608.28158v1 HARTS: Efficient Agentic Reinforcement Learning for Hybrid-Attention Models over Arbitrary Rollout Trees\n- 2608.28128v1 VICT: Verifier-Instrumented Credit Tracing for Long-Horizon LLM Agent Reinforcement Learning\n- 2608.28305v1 PanelShield: Verifiable Closed-Loop Safe Planning for Robotic Industrial Panel Operation\n- 2608.27924v1 What Makes Agent Memory Useful for Reliable Unanswerable Question Handling?\n\n本次剔除 / 不重复计入\n- 2608.27909v1 Low-Altitude Fluid Antenna Network with Multi-Agent Reinforcement Learning：低空通信域 MARL 与数字孪生仿真，只有间接启发，未直接研究 LLM agent planning 或长程交互可靠性。\n- 2608.27334v1 BTS-AgentBench：可重放 benchmark 工程有价值，但对规划、学习或自主探索的直接贡献不足，沿用前次弱相关判断。\n- 2608.26807v1 / 2608.26530v1 / 2608.26991v1 / 2608.26788v1 / 2608.26983v1 / 2608.26895v1 / 2608.27142v1：已在 2026-08-28 发布，今天不重复改日期或计入 latest。"
+    "email_body": "2026-09-01 Daily Paper\n\n今日保留 4 篇高相关新论文，重点是 agentic RAG 的可逆记忆与信用分配、多智能体时序逻辑规划、纵向临床 agent 的时间有效记忆，以及长期 LLM agent 的选择性遗忘负结果；剔除了通信域 MARL，并恢复已发布旧论文的原日期。\n\n最值得读的论文\n1. AgenticRag-R1: Agentic Reinforcement Learning with Stack Memory for Multi-Step Reasoning, Retrieval and Memorizing\n- 这篇论文把 Plan、Think、Search、Summary、Backtrack 和 Conclusion 显式做成可训练动作，并用可逆记忆栈缓解 Agentic RAG 中错误状态难撤销、终局奖励难归因的问题。它直接命中 agentic RL、长程检索推理、记忆压缩和动作级信用分配，但实验主要还是问答基准，开放环境可靠性不能外推过度。\n\n2. Generalizable Multi-Agent Planning from Signal Temporal Logic Specifications via Diffusion\n- DIFF-MA 将单智能体轨迹先验、STL 鲁棒度梯度和 GCBF+ 闭环可达性损失结合，用测试时规范引导生成多智能体计划。它不是 LLM agentic RL 论文，但对 agent planning 中“任务约束如何保留到推理时注入”很有参考价值。\n\n3. MedCache: Efficient and Temporally Valid Memory for Longitudinal Clinical Agents\n- MedCache 把长期临床 agent 的记忆建成带有效区间和来源的事实集合，并通过重叠专科视图和 owner gate 控制证据组装。它的贡献在长期状态、陈旧证据和跨时间可靠性，适合从 agent memory 角度阅读。\n\n本次保留论文\n- 2608.29622v1 AgenticRag-R1: Agentic Reinforcement Learning with Stack Memory for Multi-Step Reasoning, Retrieval and Memorizing\n- 2608.29490v1 Generalizable Multi-Agent Planning from Signal Temporal Logic Specifications via Diffusion\n- 2608.29528v1 MedCache: Efficient and Temporally Valid Memory for Longitudinal Clinical Agents\n- 2608.28978v1 Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents\n\n本次剔除 / 不重复计入\n- 2608.28878v1 Hybrid Offline-Online Multi-Agent Decision Transformers for Wireless Resource Management：无线资源管理域 MARL，对通用 LLM agent planning 或长程交互可靠性贡献间接。\n- 2608.27909v1 Low-Altitude Fluid Antenna Network with Multi-Agent Reinforcement Learning：延续前次判断，低空通信域 MARL，不直接研究 LLM agent planning 或长程交互可靠性。\n- 2608.28476v1 / 2608.27796v1 / 2608.27847v1 / 2608.28158v1 / 2608.28128v1 / 2608.28305v1 / 2608.27924v1：已在 2026-08-31 发布，今天不重复改日期或计入 latest。\n- 2608.26807v1 / 2608.26530v1 / 2608.26991v1：已在 2026-08-28 发布，今天不重复改日期或计入 latest。"
   },
   "latest_item_ids": [
-    "2608.28476v1",
-    "2608.27796v1",
-    "2608.27847v1",
-    "2608.28158v1",
-    "2608.28128v1",
-    "2608.28305v1",
-    "2608.27924v1"
+    "2608.29622v1",
+    "2608.29490v1",
+    "2608.29528v1",
+    "2608.28978v1"
   ],
   "archive": {
     "policy": "append_or_update_by_arxiv_id",
-    "fresh_items": 7,
-    "total_items": 421,
-    "previous_items": 414,
-    "latest_items": 7,
+    "fresh_items": 4,
+    "total_items": 425,
+    "previous_items": 421,
+    "latest_items": 4,
     "source_report_dates": {
       "2026-08-28": 8,
       "2026-08-27": 10,
@@ -106,18 +102,16 @@
       "2026-07-04": 8,
       "2026-07-02": 2,
       "2026-08-29": 1,
-      "2026-08-31": 7
+      "2026-08-31": 7,
+      "2026-09-01": 4
     },
     "filtered_candidate_ids": [
-      "2608.28476v1",
-      "2608.27796v1",
-      "2608.27847v1",
-      "2608.28158v1",
-      "2608.28128v1",
-      "2608.28305v1",
-      "2608.27924v1"
+      "2608.29622v1",
+      "2608.29490v1",
+      "2608.29528v1",
+      "2608.28978v1"
     ],
-    "filtered_today": 7,
+    "filtered_today": 4,
     "backfilled_report_dates": {
       "2026-07-17": 3,
       "2026-07-24": 1,
@@ -126,6 +120,487 @@
     }
   },
   "items": [
+    {
+      "id": "2608.29622v1",
+      "title": "AgenticRag-R1: Agentic Reinforcement Learning with Stack Memory for Multi-Step Reasoning, Retrieval and Memorizing",
+      "summary": "Retrieval-Augmented Generation (RAG) improves the factuality of large language models (LLMs), yet existing RAG systems often struggle with complex, multi-step reasoning that requires adaptive retrieval and continuous revision of intermediate contexts. Recent reinforcement learning (RL)-based agentic RAG methods partially alleviate this issue, but typically rely on coarse-grained action spaces and trajectory-level rewards, resulting in weak reward assignment and a bias toward short-horizon, stereotyped reasoning template. To address, we propose AgenticRag-R1, a RL framework that deeply integrates reasoning, retrieval, and memory via a memory stack and fine-grained action space, supported by hierarchical action-aware rewards and an information-aware trajectory rejection strategy to enable effective long-horizon learning. Experiments across a diverse set of multi-hop, open-domain, and agentic reasoning benchmarks, spanning multiple backbone model sizes, demonstrate that AgenticRag-R1 consistently outperforms strong baselines. Moreover, AgenticRag-R1 learns more robust, interpretable, and memory-aware reasoning behaviors, highlighting the effect of fine-grained action modeling and information-aware optimization for long-horizon reasoning. Our code is anonymous available at https://github.com/jiangxinke/Harness-RL/tree/AgenticRAG-R1-Whitebox.",
+      "url": "http://arxiv.org/abs/2608.29622v1",
+      "authors": [
+        "Xinke Jiang",
+        "Yue Fang",
+        "Zhibang Yang",
+        "Jiaran Gao",
+        "Zhixin Zhang",
+        "Tao Feng",
+        "Rihong Qiu",
+        "Wentao Zhang",
+        "Hongxin Ding",
+        "Ruizhe Zhang",
+        "Yongxin Xu",
+        "Yuheng Huang",
+        "Xu Chu",
+        "Junfeng Zhao",
+        "Yasha Wang"
+      ],
+      "report_date": "2026-09-01",
+      "published": "2026-08-30",
+      "updated": "2026-08-30",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/jiangxinke/Harness-RL/tree/AgenticRAG-R1-Whitebox",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 98,
+        "level": "高",
+        "label": "强相关的方法论文，建议批判性精读",
+        "water_risk": "中",
+        "value_judgement": "论文直接覆盖 agentic RL、显式规划动作、可逆记忆、动作级信用分配和长轨迹筛选，方法结构清晰，且提供了较完整的组件与动作消融，对设计可靠的多轮检索代理具有较高参考价值。偏水风险没有评为低，是因为主要证据仍来自问答基准，长程能力基本通过放宽步数预算间接证明；同时存在实验波动、个别负向结果、平均值疑似计算错误以及文字结论过度概括等问题。",
+        "reason": "论文直接覆盖 agentic RL、显式规划动作、可逆记忆、动作级信用分配和长轨迹筛选，方法结构清晰，且提供了较完整的组件与动作消融，对设计可靠的多轮检索代理具有较高参考价值。偏水风险没有评为低，是因为主要证据仍来自问答基准，长程能力基本通过放宽步数预算间接证明；同时存在实验波动、个别负向结果、平均值疑似计算错误以及文字结论过度概括等问题。",
+        "signals": {
+          "agenticRl": true,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Xinke Jiang",
+          "Yue Fang",
+          "Zhibang Yang",
+          "Jiaran Gao",
+          "Zhixin Zhang",
+          "Tao Feng",
+          "Rihong Qiu",
+          "Wentao Zhang",
+          "Hongxin Ding",
+          "Ruizhe Zhang",
+          "Yongxin Xu",
+          "Yuheng Huang",
+          "Xu Chu",
+          "Junfeng Zhao",
+          "Yasha Wang"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-30",
+        "paper_url": "https://arxiv.org/abs/2608.29622v1",
+        "project_url": "",
+        "repo_url": "https://github.com/jiangxinke/Harness-RL/tree/AgenticRAG-R1-Whitebox",
+        "venue_status": "未确认录用",
+        "contribution": "论文直接覆盖 agentic RL、显式规划动作、可逆记忆、动作级信用分配和长轨迹筛选，方法结构清晰，且提供了较完整的组件与动作消融，对设计可靠的多轮检索代理具有较高参考价值。偏水风险没有评为低，是因为主要证据仍来自问答基准，长程能力基本通过放宽步数预算间接证明；同时存在实验波动、个别负向结果、平均值疑似计算错误以及文字结论过度概括等问题。",
+        "summary": "论文针对 Agentic RAG 中追加式记忆难以纠错、终局奖励难以归因以及 RL 偏爱短轨迹的问题，提出带可逆记忆栈的强化学习框架。其核心是让规划、思考、检索、摘要、回退和作答成为显式动作，并分别给予格式、检索质量和记忆操作方面的过程监督。作者还根据 rollout 的奖励质量和行为差异筛选训练轨迹，希望把优化资源集中到更具长程学习价值的样本上。多组问答实验的平均结果及组件消融支持记忆操作和细粒度奖励确实有效，但这仍主要是检索问答证据，而非复杂开放环境中的长期规划验证。由于长步数结果并不普遍单调、个别任务落后于基线且报告中存在数值或表述不一致，本文值得精读其状态设计和信用分配机制，但实验结论不宜照单全收。",
+        "highlights": [
+          "论文直接覆盖 agentic RL、显式规划动作、可逆记忆、动作级信用分配和长轨迹筛选，方法结构清晰，且提供了较完整的组件与动作消融，对设计可靠的多轮检索代理具有较高参考价值。偏水风险没有评为低，是因为主要证据仍来自问答基准，长程能力基本通过放宽步数预算间接证明；同时存在实验波动、个别负向结果、平均值疑似计算错误以及文字结论过度概括等问题。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有 RL 型 Agentic RAG 往往把思考、检索和记忆写入压缩为粗粒度、追加式轨迹，并主要依赖最终答案奖励。这会导致中间动作难以获得准确的信用分配，错误信息写入后也难以撤销，使策略偏向短程、模板化的检索推理。论文希望把规划、检索、压缩和纠错显式建模为可训练的状态操作，并让训练更多覆盖有信息量的长轨迹。",
+        "method": "AGENTICRAG-R1 使用后进先出的记忆栈表示可修改的内部状态，并定义 Plan、Think、Search、Summary、Backtrack 和 Conclusion 等细粒度动作；其中 Summary 可压缩若干栈元素，Backtrack 可弹出错误状态，从而支持显式回滚。训练奖励由最终答案奖励和动作级过程奖励组成：格式奖励约束动作结构，检索奖励评价查询与证据的相关性，记忆奖励评价压缩或回退是否合理，并用奖励预算抑制无意义的频繁调用。论文还依据同一问题多次 rollout 的奖励均值、方差和单轨迹质量进行全批次筛选，保留作者认为更具信息量的轨迹参与策略优化。",
+        "experiments": "作者在过滤后的多跳问答数据上训练不同规模的 Qwen2.5，并在多跳、开放域问答和 agentic QA 基准上比较传统 RAG、ReAct、Search-R1、ARPO、Mem1 等方法；完整模型在三个模型规模下都取得最高的表中平均结果。消融实验显示，移除记忆动作、轨迹筛选、检索奖励或记忆奖励均会明显退化，Backtrack 和 Summary 的贡献尤其突出。增加最大交互步数后，部分数据集的最终表现明显提高，说明模型能够利用更长预算，但结果并非论文文字所称的普遍稳定或单调提升：Bamboogle 和 TriviaQA 都出现较大波动。此外，完整模型在个别模型—数据集组合上落后于强基线，表格中还存在平均值疑似计算错误，因此“持续优于强基线”的表述需要保留判断。",
+        "research_help": "Insight：长程 agent 的关键不只是扩大上下文或允许更多步骤，而是把内部状态设计成可检查、可压缩、可撤销的对象；追加式 scratchpad 一旦写入错误，后续推理很容易持续放大它。将 Plan、Summary、Backtrack 等状态转移暴露为独立动作，可以在语义动作边界上进行信用分配，也便于分析失败发生在哪一步。训练数据选择可以同时考虑轨迹质量和同一任务下的行为差异，以避免 RL 只学习容易获得即时奖励的短路径；但方差驱动的拒绝采样也可能改变任务分布，必须结合阈值稳定性和未筛选测试进行验证。对多轮系统而言，更有价值的可靠性评测应进一步测试注入错误证据后的恢复率、回滚是否删除了关键事实，以及摘要压缩后能否保持跨步约束。",
+        "recommendation": {
+          "score": 98,
+          "level": "高",
+          "label": "强烈推荐",
+          "water_risk": "低",
+          "value_judgement": "有价值：优先进入今日精读候选。",
+          "reason": "直接覆盖 agentic RL 或 policy optimization；和 long-horizon planning / multi-step task 相关；包含 agent memory、stateful 或 personalized agent 信号；摘要给出实验、benchmark 或 baseline 证据；摘要中出现公开代码仓库。",
+          "signals": {
+            "agenticRl": true,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长程 agent 的关键不只是扩大上下文或允许更多步骤，而是把内部状态设计成可检查、可压缩、可撤销的对象；追加式 scratchpad 一旦写入错误，后续推理很容易持续放大它。将 Plan、Summary、Backtrack 等状态转移暴露为独立动作，可以在语义动作边界上进行信用分配，也便于分析失败发生在哪一步。训练数据选择可以同时考虑轨迹质量和同一任务下的行为差异，以避免 RL 只学习容易获得即时奖励的短路径；但方差驱动的拒绝采样也可能改变任务分布，必须结合阈值稳定性和未筛选测试进行验证。对多轮系统而言，更有价值的可靠性评测应进一步测试注入错误证据后的恢复率、回滚是否删除了关键事实，以及摘要压缩后能否保持跨步约束。",
+        "abstract_zh": "RAG 能提高语言模型的事实性，但在需要自适应检索和持续修订中间上下文的多步推理中仍然困难。现有基于强化学习的 Agentic RAG 通常采用粗粒度动作和轨迹级奖励，因而信用分配较弱，并偏向短程、固定模板式推理。AGENTICRAG-R1 通过记忆栈、细粒度动作、分层动作感知奖励和信息感知轨迹筛选，把推理、检索与记忆管理结合起来。作者报告该方法在多类检索推理基准和不同规模的骨干模型上优于强基线，并学习出更稳健、可解释且具有记忆管理能力的行为。",
+        "full_summary": "论文针对 Agentic RAG 中追加式记忆难以纠错、终局奖励难以归因以及 RL 偏爱短轨迹的问题，提出带可逆记忆栈的强化学习框架。其核心是让规划、思考、检索、摘要、回退和作答成为显式动作，并分别给予格式、检索质量和记忆操作方面的过程监督。作者还根据 rollout 的奖励质量和行为差异筛选训练轨迹，希望把优化资源集中到更具长程学习价值的样本上。多组问答实验的平均结果及组件消融支持记忆操作和细粒度奖励确实有效，但这仍主要是检索问答证据，而非复杂开放环境中的长期规划验证。由于长步数结果并不普遍单调、个别任务落后于基线且报告中存在数值或表述不一致，本文值得精读其状态设计和信用分配机制，但实验结论不宜照单全收。",
+        "card_summary": "这篇工作把 Agentic RAG 的规划、检索、摘要和回退建模为作用于可逆记忆栈的独立动作，并以动作级奖励和轨迹筛选训练这些行为。方法与长程可靠性高度相关，平均结果和消融实验较强，但长步数实验存在明显波动，部分文字结论也比表格证据更乐观。"
+      },
+      "analysis": {
+        "motivation": "现有 RL 型 Agentic RAG 往往把思考、检索和记忆写入压缩为粗粒度、追加式轨迹，并主要依赖最终答案奖励。这会导致中间动作难以获得准确的信用分配，错误信息写入后也难以撤销，使策略偏向短程、模板化的检索推理。论文希望把规划、检索、压缩和纠错显式建模为可训练的状态操作，并让训练更多覆盖有信息量的长轨迹。",
+        "method": "AGENTICRAG-R1 使用后进先出的记忆栈表示可修改的内部状态，并定义 Plan、Think、Search、Summary、Backtrack 和 Conclusion 等细粒度动作；其中 Summary 可压缩若干栈元素，Backtrack 可弹出错误状态，从而支持显式回滚。训练奖励由最终答案奖励和动作级过程奖励组成：格式奖励约束动作结构，检索奖励评价查询与证据的相关性，记忆奖励评价压缩或回退是否合理，并用奖励预算抑制无意义的频繁调用。论文还依据同一问题多次 rollout 的奖励均值、方差和单轨迹质量进行全批次筛选，保留作者认为更具信息量的轨迹参与策略优化。",
+        "experiments": "作者在过滤后的多跳问答数据上训练不同规模的 Qwen2.5，并在多跳、开放域问答和 agentic QA 基准上比较传统 RAG、ReAct、Search-R1、ARPO、Mem1 等方法；完整模型在三个模型规模下都取得最高的表中平均结果。消融实验显示，移除记忆动作、轨迹筛选、检索奖励或记忆奖励均会明显退化，Backtrack 和 Summary 的贡献尤其突出。增加最大交互步数后，部分数据集的最终表现明显提高，说明模型能够利用更长预算，但结果并非论文文字所称的普遍稳定或单调提升：Bamboogle 和 TriviaQA 都出现较大波动。此外，完整模型在个别模型—数据集组合上落后于强基线，表格中还存在平均值疑似计算错误，因此“持续优于强基线”的表述需要保留判断。",
+        "research_help": "Insight：长程 agent 的关键不只是扩大上下文或允许更多步骤，而是把内部状态设计成可检查、可压缩、可撤销的对象；追加式 scratchpad 一旦写入错误，后续推理很容易持续放大它。将 Plan、Summary、Backtrack 等状态转移暴露为独立动作，可以在语义动作边界上进行信用分配，也便于分析失败发生在哪一步。训练数据选择可以同时考虑轨迹质量和同一任务下的行为差异，以避免 RL 只学习容易获得即时奖励的短路径；但方差驱动的拒绝采样也可能改变任务分布，必须结合阈值稳定性和未筛选测试进行验证。对多轮系统而言，更有价值的可靠性评测应进一步测试注入错误证据后的恢复率、回滚是否删除了关键事实，以及摘要压缩后能否保持跨步约束。",
+        "insight": "Insight：长程 agent 的关键不只是扩大上下文或允许更多步骤，而是把内部状态设计成可检查、可压缩、可撤销的对象；追加式 scratchpad 一旦写入错误，后续推理很容易持续放大它。将 Plan、Summary、Backtrack 等状态转移暴露为独立动作，可以在语义动作边界上进行信用分配，也便于分析失败发生在哪一步。训练数据选择可以同时考虑轨迹质量和同一任务下的行为差异，以避免 RL 只学习容易获得即时奖励的短路径；但方差驱动的拒绝采样也可能改变任务分布，必须结合阈值稳定性和未筛选测试进行验证。对多轮系统而言，更有价值的可靠性评测应进一步测试注入错误证据后的恢复率、回滚是否删除了关键事实，以及摘要压缩后能否保持跨步约束。",
+        "abstract_zh": "RAG 能提高语言模型的事实性，但在需要自适应检索和持续修订中间上下文的多步推理中仍然困难。现有基于强化学习的 Agentic RAG 通常采用粗粒度动作和轨迹级奖励，因而信用分配较弱，并偏向短程、固定模板式推理。AGENTICRAG-R1 通过记忆栈、细粒度动作、分层动作感知奖励和信息感知轨迹筛选，把推理、检索与记忆管理结合起来。作者报告该方法在多类检索推理基准和不同规模的骨干模型上优于强基线，并学习出更稳健、可解释且具有记忆管理能力的行为。",
+        "card_summary": "这篇工作把 Agentic RAG 的规划、检索、摘要和回退建模为作用于可逆记忆栈的独立动作，并以动作级奖励和轨迹筛选训练这些行为。方法与长程可靠性高度相关，平均结果和消融实验较强，但长步数实验存在明显波动，部分文字结论也比表格证据更乐观。",
+        "full_summary": "论文针对 Agentic RAG 中追加式记忆难以纠错、终局奖励难以归因以及 RL 偏爱短轨迹的问题，提出带可逆记忆栈的强化学习框架。其核心是让规划、思考、检索、摘要、回退和作答成为显式动作，并分别给予格式、检索质量和记忆操作方面的过程监督。作者还根据 rollout 的奖励质量和行为差异筛选训练轨迹，希望把优化资源集中到更具长程学习价值的样本上。多组问答实验的平均结果及组件消融支持记忆操作和细粒度奖励确实有效，但这仍主要是检索问答证据，而非复杂开放环境中的长期规划验证。由于长步数结果并不普遍单调、个别任务落后于基线且报告中存在数值或表述不一致，本文值得精读其状态设计和信用分配机制，但实验结论不宜照单全收。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "强相关的方法论文，建议批判性精读",
+        "value_reason": "论文直接覆盖 agentic RL、显式规划动作、可逆记忆、动作级信用分配和长轨迹筛选，方法结构清晰，且提供了较完整的组件与动作消融，对设计可靠的多轮检索代理具有较高参考价值。偏水风险没有评为低，是因为主要证据仍来自问答基准，长程能力基本通过放宽步数预算间接证明；同时存在实验波动、个别负向结果、平均值疑似计算错误以及文字结论过度概括等问题。",
+        "limitations": "实验主要围绕基于固定 Wikipedia 快照的问答任务，尚不能证明方法能处理具有环境反馈、长期目标和不可逆后果的真实规划任务。过程奖励依赖大型通用奖励模型，可能引入评价偏差和额外计算成本，而所给文本未展示充分的奖励模型替换实验、成本对齐或人工动作质量评估。全批次拒绝采样需要调节阈值，也可能系统性丢弃低奖励但有探索价值的轨迹。论文声称覆盖更多基准，但主结果表只呈现七个；长程实验的若干序列明显非单调，且至少一个基线平均值与分项结果疑似不一致。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "方法部分明确给出基于 LIFO 记忆栈的 Plan、Think、Search、Backtrack、Summary 和 Conclusion 动作，其中 Backtrack 与 Summary 都包含弹栈和重新压栈操作。",
+          "奖励由最终答案奖励以及格式、检索相关性和记忆操作质量三类过程奖励构成，过程奖励只施加在相应动作位置，并设置轨迹级预算。",
+          "主结果表显示完整模型在三个骨干规模下均取得最高的表中平均结果，但在小模型的 Bamboogle 和大模型的 Natural Questions 上低于部分强基线。",
+          "组件消融中，删除记忆动作或信息感知轨迹筛选都会显著降低平均表现，同时删除两者的下降更大；单动作消融显示 Backtrack 和 Summary 比 Plan 带来更明显的贡献。涉及的主要指标是 F1。主干为Qwen2.5-1.5B/3B/7B。数据集为HotpotQA、2Wiki、MusiQue、Bamboogle、Natural Questions、Tr..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-09-01T01:36:19.736Z"
+      }
+    },
+    {
+      "id": "2608.29490v1",
+      "title": "Generalizable Multi-Agent Planning from Signal Temporal Logic Specifications via Diffusion",
+      "summary": "Multi-agent systems in the real-world (e.g., drone swarms, autonomous cars, warehouse robots) must satisfy rich, temporal tasks while avoiding collisions. Signal Temporal Logic (STL) elegantly encodes such objectives, but current STL planning methods face critical limitations. State-of-the-art optimization-based approaches can handle arbitrary STL specifications but struggle with scalability, becoming computationally impractical as the number of agents grows. Learning-based methods efficiently handle a large number of agents with rapid planning times but fare poorly when deployment-time objectives differ from those used during training, and do not support planning tasks that require different specifications to be ascribed to different agents (i.e., heterogeneity) or team-level specifications requiring coordination of multiple agents. This fundamental trade-off between generalizability and scalability presents a challenge for realizing multi-agent STL planning algorithms in practice. To overcome this challenge, we introduce a new diffusion method for multi-agent planning with STL specifications. Using a differentiable approximation of STL, we integrate the STL gradient in the denoising process, making our approach generalizable to novel formulas whose predicates are placed anywhere within the goal region covered during training, while achieving the same scalability as existing learning-based methods. Our method supports heterogeneous specifications, and by using diffusion models, naturally enhances plan diversity, thereby significantly reducing safety-related violations (e.g., collisions) among agents. A detailed evaluation study justifies the utility of STL-guided diffusion-based multi-agent planners for constructing generalizable, scalable, and diverse plans. Videos and code are available at https://www.jeappen.com/diff-ma-stl/ and https://github.com/jeappen/diff-ma-stl .",
+      "url": "http://arxiv.org/abs/2608.29490v1",
+      "authors": [
+        "Joe Eappen",
+        "Zikang Xiong",
+        "Shreyash S. Iyengar",
+        "Suresh Jagannathan"
+      ],
+      "report_date": "2026-09-01",
+      "published": "2026-08-30",
+      "updated": "2026-08-30",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/jeappen/diff-ma-stl",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 82,
+        "level": "高",
+        "label": "推荐",
+        "water_risk": "中",
+        "value_judgement": "值得读：直接讨论多智能体时序逻辑规划，但不是 LLM agent 或 agentic RL 论文。",
+        "reason": "直接覆盖 multi-agent planning、temporal-logic task specification、long-horizon constraint satisfaction 和闭环安全执行问题；实验有成功率、规划速度与路径聚集对照，但任务设定偏机器人/控制，和 LLM agent planning 的连接需要读者主动迁移。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": false,
+          "longHorizon": true,
+          "memory": false,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Joe Eappen",
+          "Zikang Xiong",
+          "Shreyash S. Iyengar",
+          "Suresh Jagannathan"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-30",
+        "paper_url": "https://arxiv.org/abs/2608.29490v1",
+        "project_url": "",
+        "repo_url": "https://github.com/jeappen/diff-ma-stl",
+        "venue_status": "未确认录用",
+        "contribution": "论文问题与 long-horizon planning、规划可靠性和测试时约束注入高度相关，方法组合清楚，实验同时报告成功率、规划开销、延迟、多样性和高密度退化，而非只展示少量成功案例。水文风险并非低：最强对照主要是独立运行的单智能体规划器，它们在规划阶段看不到智能体交互；同等支持异构 STL、团队规范和碰撞感知的可扩展基线缺失，因此优势部分来自问题能力的不对称。扩散推理还依赖 256 个去噪步骤、每轮 8 个候选及最多 40 次重采样，论文所谓快速更接近 GPU 批处理下相对传统优化器的结论，而不是低计算成本。总体仍有实质方法和明确负面结果，不像单纯包装扩散模型，但强泛化与可靠性表述需要按其受限条件理解。",
+        "summary": "论文针对多智能体 STL 规划中“优化方法通用但难扩展、学习方法高效但任务固化”的矛盾，提出测试时规范引导的扩散规划器 DIFF-MA。它只在单智能体轨迹上训练生成先验，推理时再通过 STL 鲁棒度梯度和 GCBF+ 闭环可达性损失联合生成多智能体计划，因此可处理新谓词、异构公式及 CaTL+ 团队任务。实验显示，该方法在 32 智能体条件下相较独立单智能体规划基线具有更高成功率、更快规划速度和更低路径聚集，但通过更长、更保守的执行轨迹换取安全。其可靠性依赖准确动力学、GCBF+ 控制器和最多 40 次重采样，且计划层面的 STL 认证不等于闭环执行保证。论文对生成式 agent planning 的主要价值，是具体说明了如何把任务约束留到推理时注入，并将采样多样性转化为协调可靠性；但高密度扩展、障碍物死锁和同步联合规范仍未解决。",
+        "highlights": [
+          "论文问题与 long-horizon planning、规划可靠性和测试时约束注入高度相关，方法组合清楚，实验同时报告成功率、规划开销、延迟、多样性和高密度退化，而非只展示少量成功案例。水文风险并非低：最强对照主要是独立运行的单智能体规划器，它们在规划阶段看不到智能体交互；同等支持异构 STL、团队规范和碰撞感知的可扩展基线缺失，因此优势部分来自问题能力的不对称。扩散推理还依赖 256 个去噪步骤、每轮 8 个候选及最多 40 次重采样，论文所谓快速更接近 GPU 批处理下相对传统优化器的结论，而不是低计算成本。总体仍有实质方法和明确负面结果，不像单纯包装扩散模型，但强泛化与可靠性表述需要按其受限条件理解。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "现有多智能体 STL 规划存在明显两难：基于优化的方法能处理运行时给定的复杂逻辑规范，却随智能体数量和碰撞约束快速膨胀；学习式方法推理较快，但通常把任务规范固化在训练阶段，难以零样本适配异构任务和团队级协作。论文因此试图同时获得可扩展性、测试时规范泛化和轨迹多样性，并减少密集场景中由路径聚集导致的碰撞。",
+        "method": "DIFF-MA 首先只用单智能体轨迹训练扩散先验，训练数据覆盖一个预定义目标区域，而不学习固定的多智能体任务。推理时，它并行采样所有智能体的轨迹，将可微 STL 鲁棒度梯度注入 EDM 去噪过程，并通过基于 GCBF+ 闭环 rollout 的可达性损失，使候选计划兼顾逻辑满足、系统动力学和智能体间交互。该方法支持每个智能体拥有不同 STL 公式，也支持 CaTL+ 团队规范；最终通过批量候选生成和最多 40 轮重采样选择鲁棒度最高的计划。这里的 STL 检查只认证计划层面的规范满足，可执行性和实际无碰撞并没有由扩散规划器给出端到端形式保证。",
+        "experiments": "实验覆盖 DubinsCar 仿真、最多 128 个智能体的扩展测试以及 Robotarium 差分驱动机器人演示，并评估异构 STL、CaTL+ 团队任务、规划时间、任务成功率、到达时间和路径多样性。正文报告 DIFF-MA 在 32 智能体任务上至少达到 84% 成功率，相对 STLPY-SA 提升 36%，总体规划速度快约 3–200 倍；团队任务中无需显式分配，在 32 智能体时平均成功率接近 90%，比带 oracle 分配的 STLPY-SA 高逾 30%。代价是路径更保守，32 智能体时约比 STLPY-SA 长 48%，每智能体完成时间约为单智能体基线的 1.3–1.9 倍。扩展到 128 个智能体后安全率降至 42%，整体表现与 STLPY-SA 接近，说明固定地图中的高密度协调仍是明确瓶颈。",
+        "research_help": "Insight：这项工作展示了一种可迁移的规划架构——让生成模型负责提供动力学可行且多模态的轨迹先验，把任务规范、团队耦合和安全反馈留到推理阶段注入，从而避免每次任务变化都重新训练。对 long-horizon reliability 更重要的启发是，轨迹多样性不仅是生成质量指标，也能主动降低多智能体拥塞和死锁风险；但“计划满足逻辑”不能替代“闭环执行可靠”，需要分别度量规范满足、可达性、碰撞和延迟。批量采样、精确鲁棒度筛选和单调保留最佳候选可作为多轮 agent planning 的 test-time compute 模式，不过重采样只能提高经验成功率，不能自动形成端到端保证。论文还表明，规划器与安全控制器分层虽然利于扩展，却会在高密度、障碍物和同步约束下暴露局部安全决策与全局任务完成之间的冲突。",
+        "recommendation": {
+          "score": 82,
+          "level": "高",
+          "label": "推荐",
+          "water_risk": "中",
+          "value_judgement": "值得读：直接讨论多智能体时序逻辑规划，但不是 LLM agent 或 agentic RL 论文。",
+          "reason": "直接覆盖 multi-agent planning、temporal-logic task specification、long-horizon constraint satisfaction 和闭环安全执行问题；实验有成功率、规划速度与路径聚集对照，但任务设定偏机器人/控制，和 LLM agent planning 的连接需要读者主动迁移。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": false,
+            "longHorizon": true,
+            "memory": false,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：这项工作展示了一种可迁移的规划架构——让生成模型负责提供动力学可行且多模态的轨迹先验，把任务规范、团队耦合和安全反馈留到推理阶段注入，从而避免每次任务变化都重新训练。对 long-horizon reliability 更重要的启发是，轨迹多样性不仅是生成质量指标，也能主动降低多智能体拥塞和死锁风险；但“计划满足逻辑”不能替代“闭环执行可靠”，需要分别度量规范满足、可达性、碰撞和延迟。批量采样、精确鲁棒度筛选和单调保留最佳候选可作为多轮 agent planning 的 test-time compute 模式，不过重采样只能提高经验成功率，不能自动形成端到端保证。论文还表明，规划器与安全控制器分层虽然利于扩展，却会在高密度、障碍物和同步约束下暴露局部安全决策与全局任务完成之间的冲突。",
+        "abstract_zh": "现实中的多智能体系统需要在避免碰撞的同时完成丰富的时序任务，但现有 STL 规划方法难以兼顾可扩展性和对新规范的泛化。论文提出一种 STL 引导的扩散规划方法，将可微 STL 梯度注入去噪过程，使模型能够适应训练目标区域内的新谓词与新公式。该方法支持不同智能体执行不同规范以及团队级协作任务，并利用扩散采样的多样性减少智能体之间的安全冲突。实验表明，这种方法在保持学习式方法扩展能力的同时，能够生成更通用、更多样且成功率更高的多智能体计划。",
+        "full_summary": "论文针对多智能体 STL 规划中“优化方法通用但难扩展、学习方法高效但任务固化”的矛盾，提出测试时规范引导的扩散规划器 DIFF-MA。它只在单智能体轨迹上训练生成先验，推理时再通过 STL 鲁棒度梯度和 GCBF+ 闭环可达性损失联合生成多智能体计划，因此可处理新谓词、异构公式及 CaTL+ 团队任务。实验显示，该方法在 32 智能体条件下相较独立单智能体规划基线具有更高成功率、更快规划速度和更低路径聚集，但通过更长、更保守的执行轨迹换取安全。其可靠性依赖准确动力学、GCBF+ 控制器和最多 40 次重采样，且计划层面的 STL 认证不等于闭环执行保证。论文对生成式 agent planning 的主要价值，是具体说明了如何把任务约束留到推理时注入，并将采样多样性转化为协调可靠性；但高密度扩展、障碍物死锁和同步联合规范仍未解决。",
+        "card_summary": "DIFF-MA 用单智能体扩散先验生成多智能体联合轨迹，并在推理阶段注入 STL、可达性和碰撞相关引导，从而零样本处理异构及团队级任务。它在最多 32 个智能体时表现强劲且轨迹更分散，但在 128 个智能体的高密度场景中安全率明显下降，尚未解决端到端执行保证。"
+      },
+      "analysis": {
+        "motivation": "现有多智能体 STL 规划存在明显两难：基于优化的方法能处理运行时给定的复杂逻辑规范，却随智能体数量和碰撞约束快速膨胀；学习式方法推理较快，但通常把任务规范固化在训练阶段，难以零样本适配异构任务和团队级协作。论文因此试图同时获得可扩展性、测试时规范泛化和轨迹多样性，并减少密集场景中由路径聚集导致的碰撞。",
+        "method": "DIFF-MA 首先只用单智能体轨迹训练扩散先验，训练数据覆盖一个预定义目标区域，而不学习固定的多智能体任务。推理时，它并行采样所有智能体的轨迹，将可微 STL 鲁棒度梯度注入 EDM 去噪过程，并通过基于 GCBF+ 闭环 rollout 的可达性损失，使候选计划兼顾逻辑满足、系统动力学和智能体间交互。该方法支持每个智能体拥有不同 STL 公式，也支持 CaTL+ 团队规范；最终通过批量候选生成和最多 40 轮重采样选择鲁棒度最高的计划。这里的 STL 检查只认证计划层面的规范满足，可执行性和实际无碰撞并没有由扩散规划器给出端到端形式保证。",
+        "experiments": "实验覆盖 DubinsCar 仿真、最多 128 个智能体的扩展测试以及 Robotarium 差分驱动机器人演示，并评估异构 STL、CaTL+ 团队任务、规划时间、任务成功率、到达时间和路径多样性。正文报告 DIFF-MA 在 32 智能体任务上至少达到 84% 成功率，相对 STLPY-SA 提升 36%，总体规划速度快约 3–200 倍；团队任务中无需显式分配，在 32 智能体时平均成功率接近 90%，比带 oracle 分配的 STLPY-SA 高逾 30%。代价是路径更保守，32 智能体时约比 STLPY-SA 长 48%，每智能体完成时间约为单智能体基线的 1.3–1.9 倍。扩展到 128 个智能体后安全率降至 42%，整体表现与 STLPY-SA 接近，说明固定地图中的高密度协调仍是明确瓶颈。",
+        "research_help": "Insight：这项工作展示了一种可迁移的规划架构——让生成模型负责提供动力学可行且多模态的轨迹先验，把任务规范、团队耦合和安全反馈留到推理阶段注入，从而避免每次任务变化都重新训练。对 long-horizon reliability 更重要的启发是，轨迹多样性不仅是生成质量指标，也能主动降低多智能体拥塞和死锁风险；但“计划满足逻辑”不能替代“闭环执行可靠”，需要分别度量规范满足、可达性、碰撞和延迟。批量采样、精确鲁棒度筛选和单调保留最佳候选可作为多轮 agent planning 的 test-time compute 模式，不过重采样只能提高经验成功率，不能自动形成端到端保证。论文还表明，规划器与安全控制器分层虽然利于扩展，却会在高密度、障碍物和同步约束下暴露局部安全决策与全局任务完成之间的冲突。",
+        "insight": "Insight：这项工作展示了一种可迁移的规划架构——让生成模型负责提供动力学可行且多模态的轨迹先验，把任务规范、团队耦合和安全反馈留到推理阶段注入，从而避免每次任务变化都重新训练。对 long-horizon reliability 更重要的启发是，轨迹多样性不仅是生成质量指标，也能主动降低多智能体拥塞和死锁风险；但“计划满足逻辑”不能替代“闭环执行可靠”，需要分别度量规范满足、可达性、碰撞和延迟。批量采样、精确鲁棒度筛选和单调保留最佳候选可作为多轮 agent planning 的 test-time compute 模式，不过重采样只能提高经验成功率，不能自动形成端到端保证。论文还表明，规划器与安全控制器分层虽然利于扩展，却会在高密度、障碍物和同步约束下暴露局部安全决策与全局任务完成之间的冲突。",
+        "abstract_zh": "现实中的多智能体系统需要在避免碰撞的同时完成丰富的时序任务，但现有 STL 规划方法难以兼顾可扩展性和对新规范的泛化。论文提出一种 STL 引导的扩散规划方法，将可微 STL 梯度注入去噪过程，使模型能够适应训练目标区域内的新谓词与新公式。该方法支持不同智能体执行不同规范以及团队级协作任务，并利用扩散采样的多样性减少智能体之间的安全冲突。实验表明，这种方法在保持学习式方法扩展能力的同时，能够生成更通用、更多样且成功率更高的多智能体计划。",
+        "card_summary": "DIFF-MA 用单智能体扩散先验生成多智能体联合轨迹，并在推理阶段注入 STL、可达性和碰撞相关引导，从而零样本处理异构及团队级任务。它在最多 32 个智能体时表现强劲且轨迹更分散，但在 128 个智能体的高密度场景中安全率明显下降，尚未解决端到端执行保证。",
+        "full_summary": "论文针对多智能体 STL 规划中“优化方法通用但难扩展、学习方法高效但任务固化”的矛盾，提出测试时规范引导的扩散规划器 DIFF-MA。它只在单智能体轨迹上训练生成先验，推理时再通过 STL 鲁棒度梯度和 GCBF+ 闭环可达性损失联合生成多智能体计划，因此可处理新谓词、异构公式及 CaTL+ 团队任务。实验显示，该方法在 32 智能体条件下相较独立单智能体规划基线具有更高成功率、更快规划速度和更低路径聚集，但通过更长、更保守的执行轨迹换取安全。其可靠性依赖准确动力学、GCBF+ 控制器和最多 40 次重采样，且计划层面的 STL 认证不等于闭环执行保证。论文对生成式 agent planning 的主要价值，是具体说明了如何把任务约束留到推理时注入，并将采样多样性转化为协调可靠性；但高密度扩展、障碍物死锁和同步联合规范仍未解决。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得精读的生成式多智能体规划工作",
+        "value_reason": "论文问题与 long-horizon planning、规划可靠性和测试时约束注入高度相关，方法组合清楚，实验同时报告成功率、规划开销、延迟、多样性和高密度退化，而非只展示少量成功案例。水文风险并非低：最强对照主要是独立运行的单智能体规划器，它们在规划阶段看不到智能体交互；同等支持异构 STL、团队规范和碰撞感知的可扩展基线缺失，因此优势部分来自问题能力的不对称。扩散推理还依赖 256 个去噪步骤、每轮 8 个候选及最多 40 次重采样，论文所谓快速更接近 GPU 批处理下相对传统优化器的结论，而不是低计算成本。总体仍有实质方法和明确负面结果，不像单纯包装扩散模型，但强泛化与可靠性表述需要按其受限条件理解。",
+        "limitations": "泛化仅覆盖训练时目标区域内的矩形谓词，并非对任意空间、任意谓词或任意 STL 结构的无条件泛化。方法假设能够获得准确动力学，并依赖 GCBF+ 进行规划引导和执行安全控制；在障碍物环境中可能因局部安全优先而死锁。STL 重采样只能认证生成计划，轨迹可达性通过软损失促进，闭环规范满足与无碰撞主要依靠经验评估。论文重点处理异步 MA-STL-A 和 CaTL+，尚不支持更一般的联合状态规范、严格同步时序关系和显式延迟建模。128 智能体时安全率降至 42%，表明固定空间内的密集协调没有随模型自然扩展；此外，缺少能力完全匹配的多智能体基线以及更系统的实体机器人统计测试。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "摘要与第 IV 节说明：模型只在单智能体轨迹上训练，并在测试时利用可微 STL 梯度和可达性损失联合生成多智能体轨迹。",
+          "第 IV-C 节说明：每轮并行生成 8 个候选计划，最多重采样 40 次，并明确指出接受测试只认证计划层面的 STL 满足，可达性没有形式保证。",
+          "第 VI 节报告：DIFF-MA 在 32 智能体条件下至少达到 84% 成功率，相对 STLPY-SA 提升 36%，规划速度约快 3–200 倍。",
+          "图 5 及结果部分报告：CaTL+ 团队任务在 32 智能体时平均成功率接近 90%，比最佳 STLPY-SA 基线高逾 30%。订正：该比较中的 STLPY-SA 获得 oracle 任务分配，但规划阶段仍不建模智能体交互。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-09-01T01:37:09.205Z"
+      }
+    },
+    {
+      "id": "2608.29528v1",
+      "title": "MedCache: Efficient and Temporally Valid Memory for Longitudinal Clinical Agents",
+      "summary": "Longitudinal clinical agents must maintain an evolving patient state from evidence distributed across visits, time points, and specialties. However, how agent memory should be designed for this setting remains unclear. We introduce a benchmark of multi-visit, multi-specialty patient records that evaluates long-context evidence retrieval, cross-time evidence aggregation, and cross-specialty clinical reasoning. Using this benchmark, we systematically study four memory design choices: curation, organization, retrieval, and memory-augmented reasoning. We find that temporal validity is more important than simply retaining more history; specialty-factorized memory reduces context but can hide shared evidence; and multiple agents help when specialists must reason together, not merely when evidence comes from multiple memories. Guided by these findings, we propose \\textit{MedCache}, a hybrid framework that constructs temporally valid patient memory, organizes evidence into overlapping specialty views, routes each query to relevant memories, and adaptively invokes one or multiple specialists. Experiments show that MedCache improves reasoning accuracy and memory efficiency over strong single-agent and multi-agent baselines, while generalizing across model backbones and external datasets.",
+      "url": "http://arxiv.org/abs/2608.29528v1",
+      "authors": [
+        "Hei Ting",
+        "Chan",
+        "Chenwei Wu",
+        "Xueshen Liu",
+        "Boyuan Zheng",
+        "Liyue Shen",
+        "Jiasi Chen",
+        "Z. Morley Mao"
+      ],
+      "report_date": "2026-09-01",
+      "published": "2026-08-30",
+      "updated": "2026-08-30",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.DC",
+        "cs.MA"
+      ],
+      "project_url": "",
+      "repo_url": "",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 80,
+        "level": "高",
+        "label": "推荐",
+        "water_risk": "中",
+        "value_judgement": "值得读：核心是长期状态与时间有效性，不是通用规划器。",
+        "reason": "聚焦纵向临床 agent 的跨访问、跨专科、跨时间记忆有效性，直接命中长期 agent memory 和可靠证据组织；实验覆盖准确率、上下文效率和抗干扰，但领域和任务结构较强。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": false,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Hei Ting",
+          "Chan",
+          "Chenwei Wu",
+          "Xueshen Liu",
+          "Boyuan Zheng",
+          "Liyue Shen",
+          "Jiasi Chen",
+          "Z. Morley Mao"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-30",
+        "paper_url": "https://arxiv.org/abs/2608.29528v1",
+        "project_url": "",
+        "repo_url": "",
+        "venue_status": "未确认录用",
+        "contribution": "它直接覆盖 agent memory、multi-turn state maintenance 和 long-horizon reliability，且不只提出框架，还通过受控实验区分时间整理、记忆归属、路由与多智能体协作各自的作用。尤其值得读的是“时间有效性优先于历史数量”以及“跨记忆访问不等于必须多智能体推理”这两个可迁移结论。偏水风险仍为中等，因为主要结果来自规模较小、单中心、人工构造的多项选择基准，部分 owner-routing 标签又与构建记忆所用的同一专科注册表绑定，可能放大框架的适配优势。",
+        "summary": "论文关注纵向临床智能体中的一个关键可靠性问题：模型不仅要找回历史信息，还必须判断哪些事实在当前时间点仍然有效。作者用 LEMMA-Bench 系统比较不同记忆整理、分区、检索和多智能体推理设计，并发现陈旧证据是主要错误来源，严格的专科隔离也会遮蔽共享信息。MedCache 因而维护带有效区间和来源的事实，将其映射到可重叠的专科视图，再由学习式 owner gate 按查询组装证据。系统把记忆访问与智能体数量解耦，普通检索和跨时间问题交给单一 reader，真正涉及多专科约束的决策才启动协调推理。实验给出了较强的准确率、上下文效率和抗干扰信号，但收益主要集中在含陈旧、无关或跨专科证据的环境，尚不足以证明它在所有纵向病历任务上优于完整上下文。",
+        "highlights": [
+          "它直接覆盖 agent memory、multi-turn state maintenance 和 long-horizon reliability，且不只提出框架，还通过受控实验区分时间整理、记忆归属、路由与多智能体协作各自的作用。尤其值得读的是“时间有效性优先于历史数量”以及“跨记忆访问不等于必须多智能体推理”这两个可迁移结论。偏水风险仍为中等，因为主要结果来自规模较小、单中心、人工构造的多项选择基准，部分 owner-routing 标签又与构建记忆所用的同一专科注册表绑定，可能放大框架的适配优势。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "纵向临床智能体需要从跨就诊、跨时间和跨专科的病历中持续维护患者状态，但现有长上下文、RAG 和压缩记忆容易保留已被后续记录取代的旧事实；多智能体系统又可能割裂共享证据、重复处理上下文或产生冲突意见。论文因此研究四个关键设计问题：记忆如何按时间更新、如何在专科间组织、如何按查询检索，以及何时真正需要多智能体协作。",
+        "method": "论文先构建 LEMMA-Bench，以多次住院的纵向病历测试长上下文证据定位、跨时间聚合和跨专科推理，并对单智能体与多智能体记忆方案进行受控拆解。在此基础上提出 MedCache：将病历规范化为带事件时间、可用时间、有效区间和来源标识的临床事实；通过可重叠的专科归属建立多个记忆视图；使用学习式 owner gate 选择持有相关证据的记忆；再根据问题类型选择单一 reader 或并行专科智能体与协调器。系统还加入确定性规则或模型验证，并通过稳定指南前缀与动态患者证据后缀复用前缀缓存。",
+        "experiments": "LEMMA-Bench 包含来自 MIMIC-IV 的 91 名患者和 188 道多项选择题，覆盖 82 道证据检索、46 道跨时间聚合和 60 道跨专科推理题。主实验中 MedCache 报告 0.936 的总体准确率，略高于最强基线 ClinicalAgents 的 0.915，同时把平均输入上下文从 31.5k 降至 8.7k tokens；消融实验显示 learned gate 的影响最大，去除时间有效性维护则明显损害跨时间任务。随着陈旧和无关证据增加，MedCache 的表现保持稳定，而 RAG、BM25 记忆和完整记录方案显著下降；路由也在 Qwen、Mistral 和 eICU 数据上表现出上下文节省或准确率收益。不过外部笔记数据的患者范围对照中，干净输入上的完整上下文仍明显优于 MedCache，说明它的优势主要出现在陈旧、无关或跨专科证据较多的场景。",
+        "research_help": "Insight：长期记忆的核心不是尽可能保存历史，而是显式维护事实的有效区间、替代关系和可追溯来源；这比单纯扩大上下文或做语义相似检索更直接地改善 long-horizon reliability。记忆路由与智能体激活应当解耦：一个 reader 可以读取多个 owner 的证据，只有当多个约束需要分别判断和协调时才值得启动多智能体。可重叠但共享统一事实标识的分区方式，为 agent planning 和多轮系统提供了兼顾局部上下文、跨模块可见性与去重的一般设计。其验证机制也提示，规划系统可将可执行规则交给确定性检查器，将难以形式化的部分留给模型验证，并在失败时触发重执行而不是静默改写结果。",
+        "recommendation": {
+          "score": 80,
+          "level": "高",
+          "label": "推荐",
+          "water_risk": "中",
+          "value_judgement": "值得读：核心是长期状态与时间有效性，不是通用规划器。",
+          "reason": "聚焦纵向临床 agent 的跨访问、跨专科、跨时间记忆有效性，直接命中长期 agent memory 和可靠证据组织；实验覆盖准确率、上下文效率和抗干扰，但领域和任务结构较强。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": false,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长期记忆的核心不是尽可能保存历史，而是显式维护事实的有效区间、替代关系和可追溯来源；这比单纯扩大上下文或做语义相似检索更直接地改善 long-horizon reliability。记忆路由与智能体激活应当解耦：一个 reader 可以读取多个 owner 的证据，只有当多个约束需要分别判断和协调时才值得启动多智能体。可重叠但共享统一事实标识的分区方式，为 agent planning 和多轮系统提供了兼顾局部上下文、跨模块可见性与去重的一般设计。其验证机制也提示，规划系统可将可执行规则交给确定性检查器，将难以形式化的部分留给模型验证，并在失败时触发重执行而不是静默改写结果。",
+        "abstract_zh": "纵向临床智能体需要从分散在多次就诊、不同时间点和多个专科中的证据持续维护患者状态，但适合这一场景的记忆设计仍不明确。论文构建了一个多就诊、多专科病历基准，用于评估长上下文证据检索、跨时间证据聚合和跨专科临床推理，并系统研究记忆整理、组织、检索及记忆增强推理四类设计。实验发现，维护信息的时间有效性比单纯保留更多历史更重要；专科化记忆能减少上下文，却可能遮蔽共享证据；只有在不同专科确实需要共同推理时，多智能体才比单智能体更有帮助。基于这些发现，论文提出 MedCache，通过时间有效的患者记忆、可重叠的专科视图、查询路由和自适应专科协作，提高推理准确性与记忆效率，并在不同模型和外部数据集上进行验证。",
+        "full_summary": "论文关注纵向临床智能体中的一个关键可靠性问题：模型不仅要找回历史信息，还必须判断哪些事实在当前时间点仍然有效。作者用 LEMMA-Bench 系统比较不同记忆整理、分区、检索和多智能体推理设计，并发现陈旧证据是主要错误来源，严格的专科隔离也会遮蔽共享信息。MedCache 因而维护带有效区间和来源的事实，将其映射到可重叠的专科视图，再由学习式 owner gate 按查询组装证据。系统把记忆访问与智能体数量解耦，普通检索和跨时间问题交给单一 reader，真正涉及多专科约束的决策才启动协调推理。实验给出了较强的准确率、上下文效率和抗干扰信号，但收益主要集中在含陈旧、无关或跨专科证据的环境，尚不足以证明它在所有纵向病历任务上优于完整上下文。",
+        "card_summary": "MedCache 研究纵向智能体如何避免被陈旧记忆误导，并将患者事实组织成可重叠、可按需路由的专科记忆。其关键启示是把“读取哪些记忆”与“启动多少智能体”分开：跨记忆取证通常可由单一 reader 完成，只有耦合的多专科约束才需要协作。"
+      },
+      "analysis": {
+        "motivation": "纵向临床智能体需要从跨就诊、跨时间和跨专科的病历中持续维护患者状态，但现有长上下文、RAG 和压缩记忆容易保留已被后续记录取代的旧事实；多智能体系统又可能割裂共享证据、重复处理上下文或产生冲突意见。论文因此研究四个关键设计问题：记忆如何按时间更新、如何在专科间组织、如何按查询检索，以及何时真正需要多智能体协作。",
+        "method": "论文先构建 LEMMA-Bench，以多次住院的纵向病历测试长上下文证据定位、跨时间聚合和跨专科推理，并对单智能体与多智能体记忆方案进行受控拆解。在此基础上提出 MedCache：将病历规范化为带事件时间、可用时间、有效区间和来源标识的临床事实；通过可重叠的专科归属建立多个记忆视图；使用学习式 owner gate 选择持有相关证据的记忆；再根据问题类型选择单一 reader 或并行专科智能体与协调器。系统还加入确定性规则或模型验证，并通过稳定指南前缀与动态患者证据后缀复用前缀缓存。",
+        "experiments": "LEMMA-Bench 包含来自 MIMIC-IV 的 91 名患者和 188 道多项选择题，覆盖 82 道证据检索、46 道跨时间聚合和 60 道跨专科推理题。主实验中 MedCache 报告 0.936 的总体准确率，略高于最强基线 ClinicalAgents 的 0.915，同时把平均输入上下文从 31.5k 降至 8.7k tokens；消融实验显示 learned gate 的影响最大，去除时间有效性维护则明显损害跨时间任务。随着陈旧和无关证据增加，MedCache 的表现保持稳定，而 RAG、BM25 记忆和完整记录方案显著下降；路由也在 Qwen、Mistral 和 eICU 数据上表现出上下文节省或准确率收益。不过外部笔记数据的患者范围对照中，干净输入上的完整上下文仍明显优于 MedCache，说明它的优势主要出现在陈旧、无关或跨专科证据较多的场景。",
+        "research_help": "Insight：长期记忆的核心不是尽可能保存历史，而是显式维护事实的有效区间、替代关系和可追溯来源；这比单纯扩大上下文或做语义相似检索更直接地改善 long-horizon reliability。记忆路由与智能体激活应当解耦：一个 reader 可以读取多个 owner 的证据，只有当多个约束需要分别判断和协调时才值得启动多智能体。可重叠但共享统一事实标识的分区方式，为 agent planning 和多轮系统提供了兼顾局部上下文、跨模块可见性与去重的一般设计。其验证机制也提示，规划系统可将可执行规则交给确定性检查器，将难以形式化的部分留给模型验证，并在失败时触发重执行而不是静默改写结果。",
+        "insight": "Insight：长期记忆的核心不是尽可能保存历史，而是显式维护事实的有效区间、替代关系和可追溯来源；这比单纯扩大上下文或做语义相似检索更直接地改善 long-horizon reliability。记忆路由与智能体激活应当解耦：一个 reader 可以读取多个 owner 的证据，只有当多个约束需要分别判断和协调时才值得启动多智能体。可重叠但共享统一事实标识的分区方式，为 agent planning 和多轮系统提供了兼顾局部上下文、跨模块可见性与去重的一般设计。其验证机制也提示，规划系统可将可执行规则交给确定性检查器，将难以形式化的部分留给模型验证，并在失败时触发重执行而不是静默改写结果。",
+        "abstract_zh": "纵向临床智能体需要从分散在多次就诊、不同时间点和多个专科中的证据持续维护患者状态，但适合这一场景的记忆设计仍不明确。论文构建了一个多就诊、多专科病历基准，用于评估长上下文证据检索、跨时间证据聚合和跨专科临床推理，并系统研究记忆整理、组织、检索及记忆增强推理四类设计。实验发现，维护信息的时间有效性比单纯保留更多历史更重要；专科化记忆能减少上下文，却可能遮蔽共享证据；只有在不同专科确实需要共同推理时，多智能体才比单智能体更有帮助。基于这些发现，论文提出 MedCache，通过时间有效的患者记忆、可重叠的专科视图、查询路由和自适应专科协作，提高推理准确性与记忆效率，并在不同模型和外部数据集上进行验证。",
+        "card_summary": "MedCache 研究纵向智能体如何避免被陈旧记忆误导，并将患者事实组织成可重叠、可按需路由的专科记忆。其关键启示是把“读取哪些记忆”与“启动多少智能体”分开：跨记忆取证通常可由单一 reader 完成，只有耦合的多专科约束才需要协作。",
+        "full_summary": "论文关注纵向临床智能体中的一个关键可靠性问题：模型不仅要找回历史信息，还必须判断哪些事实在当前时间点仍然有效。作者用 LEMMA-Bench 系统比较不同记忆整理、分区、检索和多智能体推理设计，并发现陈旧证据是主要错误来源，严格的专科隔离也会遮蔽共享信息。MedCache 因而维护带有效区间和来源的事实，将其映射到可重叠的专科视图，再由学习式 owner gate 按查询组装证据。系统把记忆访问与智能体数量解耦，普通检索和跨时间问题交给单一 reader，真正涉及多专科约束的决策才启动协调推理。实验给出了较强的准确率、上下文效率和抗干扰信号，但收益主要集中在含陈旧、无关或跨专科证据的环境，尚不足以证明它在所有纵向病历任务上优于完整上下文。",
+        "recommendation_level": "高",
+        "water_risk": "中",
+        "value_label": "值得精读的系统与记忆设计论文",
+        "value_reason": "它直接覆盖 agent memory、multi-turn state maintenance 和 long-horizon reliability，且不只提出框架，还通过受控实验区分时间整理、记忆归属、路由与多智能体协作各自的作用。尤其值得读的是“时间有效性优先于历史数量”以及“跨记忆访问不等于必须多智能体推理”这两个可迁移结论。偏水风险仍为中等，因为主要结果来自规模较小、单中心、人工构造的多项选择基准，部分 owner-routing 标签又与构建记忆所用的同一专科注册表绑定，可能放大框架的适配优势。",
+        "limitations": "基准只有 91 名患者和 188 道多项选择题，来源主要是单一回顾性 MIMIC-IV 队列，缺少多机构、开放式决策、前瞻性工作流和临床结局验证。owner target 与记忆放置共享同一个 concept-to-specialty registry，因此满 owner recall 只证明路由与内部注册表一致，不能验证注册表本身是否临床完整或正确。外部笔记实验显示，在先按患者身份清除干扰后，完整上下文在干净数据上优于 MedCache，削弱了其普遍准确率优势。论文还存在不同实验设置下总体结果为 0.936 与固定种子消融表为 0.920 的口径差异，虽然可能来自重跑或设置不同，但正文没有充分解释；同时尚未量化真实部署中的记忆更新错误、协调冲突、验证器漏检及临床安全风险。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "表 2 显示，多数系统错误主要来自写入或使用过时证据；例如 Zep 和 MDAgents 的错误中，陈旧证据占比最高。",
+          "表 3 的受控实验表明，非独占专科记忆有利于证据检索与跨时间聚合，而单一 reader 在跨专科推理上明显弱于多专科协作。",
+          "表 4 中 learned gate 与 LLM selector 都取得完整的专科召回和 0.945 总体准确率，但 learned gate 的路由延迟仅约 7ms，而 LLM selector 约为 343ms。",
+          "主结果报告 MedCache 达到 0.936 总体准确率、平均使用 8.7k 输入 tokens；ClinicalAgents 为 0.915 和 31.5k tokens。消融中移除 learned gate 或 validity curation 均造成明显下降。外部患者范围对照则显示，干净 EHRNoteQA 和 LongHealth 上完整上下文..."
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-09-01T01:38:02.764Z"
+      }
+    },
+    {
+      "id": "2608.28978v1",
+      "title": "Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents",
+      "summary": "Knowledge graphs have been proposed as a structured alternative to flat retrieval-augmented generation for long-term agent memory, on the assumption that representing conversations as entities and relations improves recall. We evaluate that assumption directly. Our framework extracts each conversational turn into typed nodes and attributed edges, answers questions from a two-hop subgraph, and periodically prunes nodes that score low on a weighted combination of recency, access frequency, degree centrality, and age. On LongMemEval, the graph does not outperform a flat vector baseline at a matched candidate-generation budget of five retrieval roots: token F1 is $0.417$ against $0.468$, and a paired bootstrap over 500 questions gives $Δ= -0.050$ (95\\% CI $[-0.085, -0.016]$). The gap is widest on questions that require recalling a specific prior assistant turn, where judged correctness falls from $0.911$ to $0.607$, suggesting that decomposing a turn into entities discards the surface form these questions depend on. The forgetting module is more successful. Applied once to a persistent 27{,}021-node graph, it removes 9.8\\% of nodes and 9.5\\% of stored bytes; token F1 is unchanged ($+0.001$, 95\\% CI $[-0.015, +0.016]$) and judged correctness falls by $1.6$ points, with the 95\\% interval bounding any loss at $3.8$ points ($[-0.038, +0.006]$). Because our extractor is a single small model evaluated on one benchmark, these results characterise this extraction-based pipeline rather than graph-structured memory in general. Code: https://github.com/skhanzad/Selective-Amnesia",
+      "url": "http://arxiv.org/abs/2608.28978v1",
+      "authors": [
+        "Theo Rusu",
+        "Sourena Khanzadeh",
+        "Manar Alalfi"
+      ],
+      "report_date": "2026-09-01",
+      "published": "2026-08-29",
+      "updated": "2026-08-29",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "project_url": "",
+      "repo_url": "https://github.com/skhanzad/Selective-Amnesia",
+      "venue_status": "未确认录用",
+      "recommendation": {
+        "score": 78,
+        "level": "中",
+        "label": "值得读",
+        "water_risk": "中",
+        "value_judgement": "值得读：负结果对长期 agent memory 设计有参考价值。",
+        "reason": "研究长期 LLM agent 的图记忆与选择性遗忘，并诚实报告图抽象相对平面检索的退化；价值在长期记忆设计的反例和消融，而不是提出成熟规划算法。",
+        "signals": {
+          "agenticRl": false,
+          "multiTurn": true,
+          "longHorizon": true,
+          "memory": true,
+          "reliability": true,
+          "codeOrTool": true,
+          "experiments": true,
+          "survey": false
+        }
+      },
+      "brief": {
+        "authors": [
+          "Theo Rusu",
+          "Sourena Khanzadeh",
+          "Manar Alalfi"
+        ],
+        "affiliations": "arXiv metadata 未提供；需要正文或项目页确认单位。",
+        "date": "2026-08-29",
+        "paper_url": "https://arxiv.org/abs/2608.28978v1",
+        "project_url": "",
+        "repo_url": "https://github.com/skhanzad/Selective-Amnesia",
+        "venue_status": "未确认录用",
+        "contribution": "值得阅读的主要原因是论文没有迎合“GraphRAG 必然更强”的流行叙事，而是给出了显著反例，并准确定位到结构化抽取会损害助手回合的高保真回忆；这对多轮代理记忆设计很有迁移价值。不过方法本身较为常规，遗忘仅达到有限压缩，且没有证明四项加权评分优于随机删除、按年龄删除或平面记忆压缩。实验中的持久图把 500 个独立问题的会话合并，形成的跨用户干扰也未必对应真实部署，因此更适合当作设计警示和初步实证，而不是成熟方案或强结论论文。",
+        "summary": "论文研究长期对话代理的两个核心问题：知识图谱是否比平面文本检索更可靠，以及不断增长的记忆能否安全遗忘。它将对话抽取成实体关系图，通过向量检索和两跳遍历构造回答上下文，再依据新近性、频率、中心性和年龄删除低分节点。LongMemEval 结果显示，图方案总体明显落后于平面基线，尤其会破坏对助手历史回答的精确回忆，表明结构化抽象存在严重的信息损失。遗忘实验确实减少了约一成存储并保持近似 F1，但裁判正确率仍有小幅下降，而且没有随机裁剪或更简单策略的等压缩对照。论文最有价值之处不是提出了一个已经成熟的记忆框架，而是用较诚实的负结果说明长期代理需要图结构与原始证据共存，并对更新和遗忘策略进行分任务验证。",
+        "highlights": [
+          "值得阅读的主要原因是论文没有迎合“GraphRAG 必然更强”的流行叙事，而是给出了显著反例，并准确定位到结构化抽取会损害助手回合的高保真回忆；这对多轮代理记忆设计很有迁移价值。不过方法本身较为常规，遗忘仅达到有限压缩，且没有证明四项加权评分优于随机删除、按年龄删除或平面记忆压缩。实验中的持久图把 500 个独立问题的会话合并，形成的跨用户干扰也未必对应真实部署，因此更适合当作设计警示和初步实证，而不是成熟方案或强结论论文。",
+          "偏水风险：中",
+          "阅读来源：PDF 全文抽取"
+        ],
+        "motivation": "长期对话代理需要持续积累用户事实、历史建议和跨会话关系，但平面向量检索容易受噪声与冗余影响，知识图谱又可能无限膨胀。论文同时检验两个常被默认接受的假设：把对话拆成图结构是否真的优于保存原始文本，以及能否依据记忆效用主动遗忘而不明显损害回答质量。",
+        "method": "系统用 GPT-4o-mini 将每个用户或助手回合抽取为九类节点及带属性的关系边，经标题匹配和向量相似度去重后写入持久图。查询时先定位五个相关根节点，再做最多两跳、十五个节点的子图扩展；遗忘模块则综合最近访问、访问频率、节点度和创建轮次计算重要性，删除低于阈值的节点及关联边。该方案的关键特征是结构化存储与显式生命周期管理，但没有保留完整原始回合作为兜底记忆。",
+        "experiments": "论文在 LongMemEval 的 500 个问题上比较图记忆与检索五个原始文本块的平面向量基线。图方案总体 token F1 为 0.417，低于基线的 0.468，配对差值为 −0.050，95% 置信区间不跨零；LLM 裁判正确率也从 0.536 降至 0.454。损失最明显的是回忆助手先前具体回答的任务，正确率由 0.911 降至 0.607，说明实体—关系抽取丢失了措辞、强调对象和完整上下文；图结构仅在时间推理的裁判指标上出现很小的局部优势。对包含 27,021 个节点的持久图执行一次遗忘后，节点和存储字节分别减少 9.8% 与 9.5%，F1 变化为 +0.001，而裁判正确率下降 0.016；差异区间均跨零，但这只能说明当前样本未检出显著退化，不能证明遗忘没有代价。",
+        "research_help": "Insight：长期代理记忆不应把“结构化”直接等同于“更可靠”；关系图适合保存实体关联、事件顺序和可更新状态，原始回合或高保真摘要则应承担精确事实、历史建议与措辞敏感型回忆。更稳妥的系统可以采用双轨记忆，在图节点中保留指向原始证据的引用，并按任务类型决定图遍历、文本检索或二者融合。遗忘策略需要风险感知：除了访问频率和中心性，还应考虑信息唯一性、未来任务价值、冲突状态及可恢复性，并用受保护记忆、软删除或分层归档避免不可逆丢失。对 long-horizon reliability 而言，还应持续测量跨会话干扰、更新覆盖错误和遗忘后的最坏类别退化，而不能只看总体平均指标。",
+        "recommendation": {
+          "score": 78,
+          "level": "中",
+          "label": "值得读",
+          "water_risk": "中",
+          "value_judgement": "值得读：负结果对长期 agent memory 设计有参考价值。",
+          "reason": "研究长期 LLM agent 的图记忆与选择性遗忘，并诚实报告图抽象相对平面检索的退化；价值在长期记忆设计的反例和消融，而不是提出成熟规划算法。",
+          "signals": {
+            "agenticRl": false,
+            "multiTurn": true,
+            "longHorizon": true,
+            "memory": true,
+            "reliability": true,
+            "codeOrTool": true,
+            "experiments": true,
+            "survey": false
+          }
+        },
+        "insight": "Insight：长期代理记忆不应把“结构化”直接等同于“更可靠”；关系图适合保存实体关联、事件顺序和可更新状态，原始回合或高保真摘要则应承担精确事实、历史建议与措辞敏感型回忆。更稳妥的系统可以采用双轨记忆，在图节点中保留指向原始证据的引用，并按任务类型决定图遍历、文本检索或二者融合。遗忘策略需要风险感知：除了访问频率和中心性，还应考虑信息唯一性、未来任务价值、冲突状态及可恢复性，并用受保护记忆、软删除或分层归档避免不可逆丢失。对 long-horizon reliability 而言，还应持续测量跨会话干扰、更新覆盖错误和遗忘后的最坏类别退化，而不能只看总体平均指标。",
+        "abstract_zh": "知识图谱常被视为平面检索增强生成之外更适合长期代理记忆的结构化方案，本文直接检验这一假设。系统把对话回合抽取为带类型的节点和属性关系，通过两跳子图回答问题，并按新近性、访问频率、中心性和年龄选择性删除低重要性节点。在 LongMemEval 上，图记忆没有超过候选根数量匹配的平面向量基线，尤其不擅长回忆助手先前回答中的具体内容。遗忘模块删除了约一成节点和存储空间，token F1 基本不变，但裁判正确率略有下降且差异未达到统计显著。作者强调，结论只适用于当前单一小模型抽取器和单一基准上的实现，不能推广为对所有图记忆的否定。",
+        "full_summary": "论文研究长期对话代理的两个核心问题：知识图谱是否比平面文本检索更可靠，以及不断增长的记忆能否安全遗忘。它将对话抽取成实体关系图，通过向量检索和两跳遍历构造回答上下文，再依据新近性、频率、中心性和年龄删除低分节点。LongMemEval 结果显示，图方案总体明显落后于平面基线，尤其会破坏对助手历史回答的精确回忆，表明结构化抽象存在严重的信息损失。遗忘实验确实减少了约一成存储并保持近似 F1，但裁判正确率仍有小幅下降，而且没有随机裁剪或更简单策略的等压缩对照。论文最有价值之处不是提出了一个已经成熟的记忆框架，而是用较诚实的负结果说明长期代理需要图结构与原始证据共存，并对更新和遗忘策略进行分任务验证。",
+        "card_summary": "这篇论文用负结果提醒我们：把对话抽取成知识图谱并不会自然改善长期记忆，反而可能因丢失原始措辞而显著伤害精确回忆。其选择性遗忘机制能压缩约一成图存储且未检出显著总体退化，但实验覆盖和对照仍不足以证明遗忘策略本身优于简单裁剪。"
+      },
+      "analysis": {
+        "motivation": "长期对话代理需要持续积累用户事实、历史建议和跨会话关系，但平面向量检索容易受噪声与冗余影响，知识图谱又可能无限膨胀。论文同时检验两个常被默认接受的假设：把对话拆成图结构是否真的优于保存原始文本，以及能否依据记忆效用主动遗忘而不明显损害回答质量。",
+        "method": "系统用 GPT-4o-mini 将每个用户或助手回合抽取为九类节点及带属性的关系边，经标题匹配和向量相似度去重后写入持久图。查询时先定位五个相关根节点，再做最多两跳、十五个节点的子图扩展；遗忘模块则综合最近访问、访问频率、节点度和创建轮次计算重要性，删除低于阈值的节点及关联边。该方案的关键特征是结构化存储与显式生命周期管理，但没有保留完整原始回合作为兜底记忆。",
+        "experiments": "论文在 LongMemEval 的 500 个问题上比较图记忆与检索五个原始文本块的平面向量基线。图方案总体 token F1 为 0.417，低于基线的 0.468，配对差值为 −0.050，95% 置信区间不跨零；LLM 裁判正确率也从 0.536 降至 0.454。损失最明显的是回忆助手先前具体回答的任务，正确率由 0.911 降至 0.607，说明实体—关系抽取丢失了措辞、强调对象和完整上下文；图结构仅在时间推理的裁判指标上出现很小的局部优势。对包含 27,021 个节点的持久图执行一次遗忘后，节点和存储字节分别减少 9.8% 与 9.5%，F1 变化为 +0.001，而裁判正确率下降 0.016；差异区间均跨零，但这只能说明当前样本未检出显著退化，不能证明遗忘没有代价。",
+        "research_help": "Insight：长期代理记忆不应把“结构化”直接等同于“更可靠”；关系图适合保存实体关联、事件顺序和可更新状态，原始回合或高保真摘要则应承担精确事实、历史建议与措辞敏感型回忆。更稳妥的系统可以采用双轨记忆，在图节点中保留指向原始证据的引用，并按任务类型决定图遍历、文本检索或二者融合。遗忘策略需要风险感知：除了访问频率和中心性，还应考虑信息唯一性、未来任务价值、冲突状态及可恢复性，并用受保护记忆、软删除或分层归档避免不可逆丢失。对 long-horizon reliability 而言，还应持续测量跨会话干扰、更新覆盖错误和遗忘后的最坏类别退化，而不能只看总体平均指标。",
+        "insight": "Insight：长期代理记忆不应把“结构化”直接等同于“更可靠”；关系图适合保存实体关联、事件顺序和可更新状态，原始回合或高保真摘要则应承担精确事实、历史建议与措辞敏感型回忆。更稳妥的系统可以采用双轨记忆，在图节点中保留指向原始证据的引用，并按任务类型决定图遍历、文本检索或二者融合。遗忘策略需要风险感知：除了访问频率和中心性，还应考虑信息唯一性、未来任务价值、冲突状态及可恢复性，并用受保护记忆、软删除或分层归档避免不可逆丢失。对 long-horizon reliability 而言，还应持续测量跨会话干扰、更新覆盖错误和遗忘后的最坏类别退化，而不能只看总体平均指标。",
+        "abstract_zh": "知识图谱常被视为平面检索增强生成之外更适合长期代理记忆的结构化方案，本文直接检验这一假设。系统把对话回合抽取为带类型的节点和属性关系，通过两跳子图回答问题，并按新近性、访问频率、中心性和年龄选择性删除低重要性节点。在 LongMemEval 上，图记忆没有超过候选根数量匹配的平面向量基线，尤其不擅长回忆助手先前回答中的具体内容。遗忘模块删除了约一成节点和存储空间，token F1 基本不变，但裁判正确率略有下降且差异未达到统计显著。作者强调，结论只适用于当前单一小模型抽取器和单一基准上的实现，不能推广为对所有图记忆的否定。",
+        "card_summary": "这篇论文用负结果提醒我们：把对话抽取成知识图谱并不会自然改善长期记忆，反而可能因丢失原始措辞而显著伤害精确回忆。其选择性遗忘机制能压缩约一成图存储且未检出显著总体退化，但实验覆盖和对照仍不足以证明遗忘策略本身优于简单裁剪。",
+        "full_summary": "论文研究长期对话代理的两个核心问题：知识图谱是否比平面文本检索更可靠，以及不断增长的记忆能否安全遗忘。它将对话抽取成实体关系图，通过向量检索和两跳遍历构造回答上下文，再依据新近性、频率、中心性和年龄删除低分节点。LongMemEval 结果显示，图方案总体明显落后于平面基线，尤其会破坏对助手历史回答的精确回忆，表明结构化抽象存在严重的信息损失。遗忘实验确实减少了约一成存储并保持近似 F1，但裁判正确率仍有小幅下降，而且没有随机裁剪或更简单策略的等压缩对照。论文最有价值之处不是提出了一个已经成熟的记忆框架，而是用较诚实的负结果说明长期代理需要图结构与原始证据共存，并对更新和遗忘策略进行分任务验证。",
+        "recommendation_level": "中",
+        "water_risk": "中",
+        "value_label": "负结果有启发，遗忘结论尚不充分",
+        "value_reason": "值得阅读的主要原因是论文没有迎合“GraphRAG 必然更强”的流行叙事，而是给出了显著反例，并准确定位到结构化抽取会损害助手回合的高保真回忆；这对多轮代理记忆设计很有迁移价值。不过方法本身较为常规，遗忘仅达到有限压缩，且没有证明四项加权评分优于随机删除、按年龄删除或平面记忆压缩。实验中的持久图把 500 个独立问题的会话合并，形成的跨用户干扰也未必对应真实部署，因此更适合当作设计警示和初步实证，而不是成熟方案或强结论论文。",
+        "limitations": "仅使用 LongMemEval 一个基准、一个 GPT-4o-mini 抽取器，并由同类模型承担生成和裁判，模型相关偏差未被充分隔离。图检索虽然与基线同为五个根候选，但会扩展到十五个节点，原始文本与序列化图的实际信息量和 token 预算并未严格匹配。遗忘实验只测试一个人工设定的阈值和压缩点，没有参数扫描、随机裁剪、按年龄裁剪或匹配压缩率的对照，也没有拆解四个重要性信号的贡献。方法声称每 400 回合周期性遗忘，但核心持久图实验是在全部摄取完成后执行一次，不能验证在线反复遗忘的累积风险。将 500 组彼此独立的 haystack 合成单一图会引入非自然的实体冲突和跨对话干扰；此外，实验二的绝对正确率较低，因此“质量基本保持”是在一个已经退化的系统上成立。统计上未检出显著下降不等于等效或无损，裁判正确率的区间仍允许存在实际可感知的损失。",
+        "source_scope": "full_text",
+        "source_note": "Extracted from arXiv PDF.",
+        "source_evidence": [
+          "实验一中，GraphRAG 的总体 token F1 为 0.417，平面 RAG 为 0.468；配对 bootstrap 差值为 −0.050，95% CI 为 [−0.085, −0.016]。",
+          "单会话助手问题上，图记忆的裁判正确率为 0.607，平面基线为 0.911，作者将主要原因归结为实体关系抽取丢失原始回合的表层表达和强调信息。",
+          "持久图遗忘后，节点从 27,021 降至 24,368，存储从 440.6MB 降至 398.6MB；token F1 从 0.292 变为 0.293。",
+          "遗忘相对不遗忘的裁判正确率差值为 −0.016，95% CI 为 [−0.038, +0.006]，说明未达到统计显著，但不能排除一定程度的质量损失。数据集未提供第三方独立判断。"
+        ],
+        "model": "codex-cli",
+        "updated_at": "2026-09-01T01:38:57.176Z"
+      }
+    },
     {
       "id": "2608.28476v1",
       "title": "ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL",
