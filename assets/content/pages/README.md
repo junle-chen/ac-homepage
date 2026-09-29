@@ -61,7 +61,7 @@ npm run build
 npm run dev
 ```
 
-The generated site is in `dist/`. For GitHub Pages, publish the built files from the `gh-pages` branch and keep `CNAME` set to `junle.site`.
+The generated site is in `dist/`. For GitHub Pages, publish the built files from the `gh-pages` branch and keep `CNAME` set to `junle.cc`.
 
 ## Citation And References
 
