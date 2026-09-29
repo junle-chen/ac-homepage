@@ -4,7 +4,7 @@ title: About me
 subtitle: Who am I?
 ---
 
-Hi, my name is **Junle Chen**. My website is available at [https://junle.site](https://junle.site).
+Hi, my name is **Junle Chen**. My website is available at [https://junle.cc](https://junle.cc).
 
 This site is my personal research workspace. I use it to keep long-form notes, quick memos, daily arXiv paper reading, Zotero paper lists, and links related to my research workflow.
 

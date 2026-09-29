@@ -9,7 +9,7 @@ If you like this template or wish to use it, please consider giving this reposit
 [![Giscus](https://img.shields.io/badge/Comments-Giscus-7C3AED)](https://giscus.app/)
 [![License: LGPL-3.0](https://img.shields.io/badge/License-LGPL--3.0-blue.svg)](LICENSE)
 
-- 🌐 Live demo: [https://junle.site](https://junle.site)
+- 🌐 Live demo: [https://junle.cc](https://junle.cc)
 - 🧩 Repository: [junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage)
 - ⭐ Like it? Star the repo and adapt it for your own academic homepage.
 
