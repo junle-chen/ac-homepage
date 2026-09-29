@@ -9,7 +9,7 @@ If you like this template or wish to use it, please consider giving this reposit
 [![Giscus](https://img.shields.io/badge/Comments-Giscus-7C3AED)](https://giscus.app/)
 [![License: LGPL-3.0](https://img.shields.io/badge/License-LGPL--3.0-blue.svg)](LICENSE)
 
-- 🌐 Live demo: [https://junle.cc](https://junle.cc)
+- 🌐 Live demo: [https://junle-chen.github.io](https://junle-chen.github.io)
 - 🧩 Repository: [junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage)
 - ⭐ Like it? Star the repo and adapt it for your own academic homepage.
 
@@ -226,17 +226,32 @@ Each note uses its own `data-comment-term`, so every note gets a separate discus
 
 ## 🚀 Deploy
 
+The source stays in [junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage).
+The root website, [https://junle-chen.github.io](https://junle-chen.github.io), is published by
+[junle-chen/junle-chen.github.io](https://github.com/junle-chen/junle-chen.github.io)
+using its `Publish ac-homepage` GitHub Actions workflow.
+
 ```bash
 npm run build
+# Commit and push the intended source and generated changes to main first.
+npm run pages:publish -- --wait
 ```
 
-GitHub Pages settings:
+The publisher submits the committed source revision to the publishing repository.
+The workflow builds `ac-homepage/main` and verifies the live source revision.
+A scheduled check also picks up source changes every 15 minutes; GitHub may delay scheduled runs.
+Local uncommitted files are never included in the deployment request.
 
-- Source: Deploy from a branch
-- Branch: `gh-pages`
-- Folder: `/ (root)`
-- Custom domain: optional
-- Enforce HTTPS: enabled
+The GitHub root website must have no custom domain configured, and `dist/CNAME` must not exist.
+The `ac-homepage` Pages deployment keeps `junle.cc` as its custom domain and serves the
+HTTPS redirect from `redirects/junle.cc/`, preserving paths, query strings and fragments.
+Keep `.nojekyll` in that redirect deployment. Publishing the full `dist/` back to the
+`ac-homepage` `gh-pages` branch would replace the redirect, so use the publisher command above.
+
+Supabase Authentication URL Configuration:
+
+- Site URL: `https://junle-chen.github.io`
+- Redirect URL: `https://junle-chen.github.io/`
 
 ## 📁 Project Structure
 

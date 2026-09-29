@@ -22,7 +22,7 @@ function getHomepageContent() {
 }
 
 gulp.task('clean', function () {
-	return del(['./dist/css/', './dist/js/'])
+	return del(['./dist/css/', './dist/js/', './dist/CNAME'])
 })
 
 gulp.task('css', function () {

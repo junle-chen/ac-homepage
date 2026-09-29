@@ -4,7 +4,7 @@ Academic Homepage Template keeps clear credit for runtime services, libraries, t
 
 ## Project
 
-- Site: [junle.cc](https://junle.cc)
+- Site: [junle-chen.github.io](https://junle-chen.github.io)
 - Repository: [junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage)
 - Code license: `LGPL-3.0-only`
 - Notices: `NOTICE.md`

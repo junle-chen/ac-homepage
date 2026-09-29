@@ -61,7 +61,7 @@ npm run build
 npm run dev
 ```
 
-The generated site is in `dist/`. For GitHub Pages, publish the built files from the `gh-pages` branch and keep `CNAME` set to `junle.cc`.
+The generated site is in `dist/`. After committing and pushing `main` in `ac-homepage`, run `npm run pages:publish -- --wait`. The publishing repository `junle-chen.github.io` builds this source with GitHub Actions. The primary build must not contain a `CNAME` file. The separate `ac-homepage/gh-pages` deployment serves the `junle.cc` HTTPS redirect from `redirects/junle.cc/`.
 
 ## Citation And References
 
