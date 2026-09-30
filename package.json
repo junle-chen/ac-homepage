@@ -18,8 +18,7 @@
 		"test:visitor-regions": "node tests/visitor-regions.test.js",
 		"predev": "gulp build",
 		"dev": "gulp watch",
-		"build": "gulp build",
-		"pages:publish": "node scripts/publish-pages.js"
+		"build": "gulp build"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.4.4",

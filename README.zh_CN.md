@@ -1,11 +1,15 @@
 # ⭐ Academic Homepage Template
 
+> 主网站源码和 Daily Paper 后续更新已迁至
+> [junle-chen/junle-chen.github.io](https://github.com/junle-chen/junle-chen.github.io)。
+> 本仓库保留旧源码快照，`gh-pages` 分支只负责 `junle.cc` 跳转。
+
 If you like this template or wish to use it, please consider giving this repository a ⭐ star.
 
 这是一个静态 academic homepage / research workspace 模板，适合把个人主页、研究笔记、论文阅读和轻量实时交互放在同一个网页里。
 
 - 🌐 在线示例：[junle-chen.github.io](https://junle-chen.github.io)
-- 🧩 源码仓库：[junle-chen/ac-homepage](https://github.com/junle-chen/ac-homepage)
+- 🧩 主源码仓库：[junle-chen/junle-chen.github.io](https://github.com/junle-chen/junle-chen.github.io)
 - ⭐ 如果这个模板对你有帮助，给仓库一个 star 就可以了。
 
 ## ✨ 模板能力

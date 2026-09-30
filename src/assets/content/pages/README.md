@@ -61,7 +61,7 @@ npm run build
 npm run dev
 ```
 
-The generated site is in `dist/`. After committing and pushing `main` in `ac-homepage`, run `npm run pages:publish -- --wait`. The publishing repository `junle-chen.github.io` builds this source with GitHub Actions. The primary build must not contain a `CNAME` file. The separate `ac-homepage/gh-pages` deployment serves the `junle.cc` HTTPS redirect from `redirects/junle.cc/`.
+The primary website and Daily Paper source now live in `junle-chen.github.io/master`, which builds and deploys through GitHub Actions. This repository's `gh-pages` deployment serves only the `junle.cc` HTTPS redirect; do not publish this repository's full `dist/` to that branch.
 
 ## Citation And References
 
